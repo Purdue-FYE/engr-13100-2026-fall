@@ -1,0 +1,76 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: "Purdue University ENGR 13100"
+author: '<a href="/spring-2026/Appendices/contributors.html">Contributors</a>'
+copyright: "2025 All rights reserved."
+logo: logo.png
+only_build_toc_files : true
+
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: cache
+
+# Parse and render settings
+parse:
+  myst_heading_anchors: 4
+  myst_enable_extensions:
+    # - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - fieldlist
+    # - html_admonition
+    # - html_image
+    - linkify
+    - replacements
+    # - smartquotes
+    - substitution
+    - tasklist
+    - attrs_block
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+# bibtex_bibfiles:
+#   - references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/Purdue-ENGR-13100/spring-2026 # Online location of your book
+  path_to_book: source  # Optional path to your book, relative to the repository root
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  favicon: avatar.png
+  use_issues_button: true
+  use_repository_button: true
+
+# Underlines on Firefox were disappearing when using the default chtml output
+# for mathjax.
+# See:
+# - https://github.com/mathjax/MathJax/issues/2795
+# - https://bugzilla.mozilla.org/show_bug.cgi?id=1741887
+# - https://github.com/executablebooks/jupyter-book/issues/1174#issuecomment-759857170
+sphinx:
+  config:
+    myst_words_per_minute: 100
+    language: en
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
+    html_static_path: ["_static"]
+    html_css_files: ["custom.css"]
+    html_copy_source: false
+  # Hide the download button
+  # https://github.com/executablebooks/jupyter-book/issues/1186#issuecomment-822224459
+    html_theme_options:
+      repository_url: https://github.com/Purdue-ENGR-13300/spring-2025
+      use_issues_button: true
+      use_download_button: false
+      home_page_in_toc: true
+  extra_extensions:
+   - sphinxcontrib.youtube

@@ -1,0 +1,14 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Start Here
+    numbered: False
+    chapters:
+    - file: Start_Here/syllabus
+    - file: Start_Here/meet_the_team
+    - file: Start_Here/help_sessions
+    - file: Start_Here/course_schedule
+    - file: Start_Here/course_software/course_software
