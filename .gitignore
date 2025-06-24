@@ -1,0 +1,56 @@
+# Virtual environments
+.env*
+
+# Jupyter-Book output
+source/_build/
+source/_build/**/
+
+# Python byte code
+__pycache__/
+**/__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/*
+!.vscode/ltex*
+!.vscode/settings.json
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db*
+Desktop.ini
+~*
+
+# Intermediate files
+_intermediate/
+
+# Linux
+*~
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.idx
+*.ind
+*.lof
+*.lot
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+
+# Other
+*.swp
+*.swo
+*.swn
+*.bak
+*.orig
+*.old
