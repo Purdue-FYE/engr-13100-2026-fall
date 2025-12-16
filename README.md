@@ -5,7 +5,7 @@ website. The materials are published as a Jupyter Book and are accessible to
 students [here][course-website]. Please note, this repository and its contents
 are exclusively for the teaching team and should not be shared with students.
 
-[course-website]: https://purdue-engr-13100.github.io/spring-2026/intro.html
+[course-website]: https://purdue-fye.github.io/engr-131-2026-fall
 
 
 ## Table of Contents
@@ -38,7 +38,7 @@ be found under the 'Codespaces' and 'Local Installation' sections respectively.
 This site is continuously evolving. If you encounter any problems with the
 content or functionality of this site, please report it by opening an issue. You
 can access the issue tracker at
-https://github.com/Purdue-ENGR-13100/content/issues.  If you come across an
+https://github.com/Purdue-FYE/13100_content/issues.  If you come across an
 issue that you can resolve, feel free to address it.  The instructions for
 Codespaces below provide a straightforward way to set up a development
 environment for this book. We recommend creating a new branch for your changes
@@ -297,7 +297,7 @@ cleanly merged.  This can be done with the following commands.
 
    ![Create a new repository](docs/figures/new_repo/create.png)
 
-   1. Pick a name for the new repository (e.g. `2025-fall`).
+   1. Pick a name for the new repository (e.g. `engr-13100-2026-fall`).
 
    2. Make sure the repository is public.
 
@@ -315,7 +315,7 @@ cleanly merged.  This can be done with the following commands.
    ![Add new repository as a remote](docs/figures/new_repo/add_remote.png)
 
    ```sh
-   git remote add 2025-fall https://github.com/Purdue-ENGR-13300/2025-fall.git
+   git remote add engr-13100-2026-fall https://github.com/Purdue-FYE/engr-13100-2026-fall.git
    ```
 
 
@@ -326,14 +326,14 @@ cleanly merged.  This can be done with the following commands.
       script so that new codespaces will include this new remote by default.
 
       ```sh
-      git remote add 2025-fall https://github.com/Purdue-ENGR-13300/2025-fall.git
+      git remote add engr-13100-2026-fall https://github.com/Purdue-FYE/engr-13100-2026-fall.git
       ```
 
    2. Change the `REPO` variable on the first line of the `Makefile` to the new
       repository's name.
 
       ```make
-      REPO = 2025-fall
+      REPO = engr-13100-2026-fall
       ```
 
    3. Edit the `.github/workflows/publish.yml` file to change the
@@ -341,7 +341,7 @@ cleanly merged.  This can be done with the following commands.
       repository name.
 
       ```yaml
-      destination-repository-name: 2025-fall
+      destination-repository-name: engr-13100-2026-fall
       ```
 
 4. Finally, stage, commit, and push the changes to origin main.
@@ -352,7 +352,7 @@ cleanly merged.  This can be done with the following commands.
 ### Jupyter Book
 
 - [Executable Books](https://executablebooks.org/en/latest/)
-- [Jupyter Book](https://jupyterbook.org/en/stable/intro.html)
+- [Jupyter Book](https://jupyterbook.org/v1/intro.html)
 - [MyST Parser](https://myst-parser.readthedocs.io/en/latest/index.html)
 - [Sphinx Book Theme](https://sphinx-book-theme.readthedocs.io/en/stable/index.html)
 - [Roles and Directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#)

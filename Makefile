@@ -1,5 +1,5 @@
-REPO = 2026-Fall
-URL = https://purdue-engr-13100.github.io/$(REPO)
+REPO = engr-131-2026-fall
+URL = https://purdue-fye.github.io/$(REPO)
 
 # Create a list of all sample output files to be generated, by scanning through
 # the test_cases, changing source to source/_build/intermediate, and changing

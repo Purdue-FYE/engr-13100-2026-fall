@@ -1,0 +1,29 @@
+[project]
+name = "ENGR-13100"
+version = "0.1.0"
+description = "Transforming Ideas to Innovation"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "faker>=37.3.0",
+    "fastapi>=0.115.12",
+    "generic-grader>=0.1.22",
+    "ghp-import>=2.1.0",
+    "jupyter-book>=1<2",
+    "matplotlib>=3.10.3",
+    "opencv-python>=4.12.0.88",
+    "pandas>=2.3.1",
+    "pre-commit>=4.1.0",
+    "pytest>=8.4.0",
+    "python-multipart>=0.0.20",
+    "requests>=2.32.3",
+    "sphinxcontrib-youtube",
+    "uvicorn>=0.34.3",
+]
+
+[tool.ruff]
+fix = true
+exclude = ["**/solution.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

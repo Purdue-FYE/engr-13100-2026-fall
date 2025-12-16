@@ -1,0 +1,57 @@
+// For format details, see https://aka.ms/devcontainer.json.
+// Find images here: https://github.com/devcontainers/images/tree/main/src
+// Find features here: https://containers.dev/features
+{
+	"name": "ENGR-13100 Dev Container",
+	"image": "mcr.microsoft.com/devcontainers/base:1-debian-12",
+	"features": {
+		"ghcr.io/devcontainers/features/desktop-lite:1": {
+			"password": "engr131"
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [6080],
+	"portsAttributes": {
+	  "6080": {
+		"label": "desktop"
+	  }
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": ".devcontainer/post-create.sh",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+	"customizations": {
+		// Configure codespace repository access.
+		// This codespace will have access to the 13100_content repository with write permissions.
+		"codespaces": {
+			"repositories": {
+				"Purdue-FYE/13100_content": {
+					"permissions": "write-all"
+				}
+			}
+		},
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"charliermarsh.ruff",
+				"github.copilot-chat",
+				"mhutchie.git-graph",
+				"ms-python.python",
+				"ms-vscode.live-server",
+				"ms-vsliveshare.vsliveshare",
+				"valentjn.vscode-ltex"
+			],
+			"settings": {
+    			"python.interpreter.infoVisibility": "always"
+            }
+		}
+	}
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
