@@ -1,0 +1,2 @@
+{"rule":"PHRASE_REPETITION","sentence":"^\\QExecutable Books\nJupyter Book\nMyST Parser\nRoles and Directives\nDocutils roles\nSphinx roles\nDocutils directives\nSphinx directives\nSphinx YouTube extension\\E$"}
+{"rule":"PHRASE_REPETITION","sentence":"^\\QExecutable Books\nJupyter Book\nMyST Parser\nSphinx Book Theme\nRoles and Directives\nDocutils roles\nSphinx roles\nDocutils directives\nSphinx directives\nSphinx YouTube extension\\E$"}
