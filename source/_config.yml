@@ -29,6 +29,7 @@ parse:
     - tasklist
     - attrs_block
 
+
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
@@ -50,6 +51,9 @@ html:
   favicon: avatar.png
   use_issues_button: true
   use_repository_button: true
+  header_includes: |
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 
 # Underlines on Firefox were disappearing when using the default chtml output
 # for mathjax.
@@ -66,7 +70,7 @@ sphinx:
     html_css_files: ["custom.css"]
     html_copy_source: false
   # Hide the download button
-  # https://github.com/executablebooks/jupyter-book/issues/1186#issuecomment-822224459
+  # https://github.com/executablebooks/jupyter-book/issues/1186#issuecomment-759857170
     html_theme_options:
       repository_url: https://github.com/Purdue-ENGR-13300/spring-2025
       use_issues_button: true
@@ -74,3 +78,4 @@ sphinx:
       home_page_in_toc: true
   extra_extensions:
    - sphinxcontrib.youtube
+   - pyscript_directive

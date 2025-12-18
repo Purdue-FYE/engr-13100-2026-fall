@@ -39,6 +39,8 @@ Prerequisites
 :name: section_schedule
 
 | Section |  CRN  |         Meeting Times | Classroom |                 Instructor |               Email |
+|:-------:|:-----:|:---------------------:|:---------:|:--------------------------:|:-------------------:|
+
 ```
 
 ## Course Description

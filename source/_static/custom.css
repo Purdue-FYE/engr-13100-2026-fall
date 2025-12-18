@@ -1,0 +1,133 @@
+:root {
+  --custom-color: #cbb992;
+
+  /* Primary Colors */
+  --purdue-boilermaker-gold: #cfb991;
+  --purdue-black: #000000;
+
+  /* Supporting Colors */
+  --purdue-aged: #8e6f3e;
+  --purdue-rush: #daaa00;
+  --purdue-field: #ddb945;
+  --purdue-dust: #ebd99f;
+
+  --purdue-steel: #555960;
+  --purdue-cool-gray: #6f727b;
+  --purdue-railway-gray: #9d9795;
+  --purdue-steam: #c4bfc0;
+}
+
+.text-left{
+  text-align: left !important;
+}
+.text-right{
+  text-align: right !important;
+}
+
+/* Example custom colors for light and dark theme */
+html[data-theme="dark"] {
+  --pst-color-primary: var(--purdue-steam);
+  --sample-output-bg-color: var(--lt-color-gray-700);
+  --test-case-table-rule-color: var(--lt-color-gray-700);
+  --deliverables-table-bg-color: var(--purdue-aged);
+}
+
+html[data-theme="light"] {
+  --pst-color-primary: var(--purdue-black);
+  --sample-output-bg-color: var(--lt-color-gray-200);
+  --test-case-table-rule-color: var(--lt-color-gray-900);
+  --deliverables-table-bg-color: var(--purdue-dust);
+}
+
+.admonition.sample-output, div.admonition.sample-output {
+  font-family: monospace;
+	border-color: var(--pst-color-attention);
+  background-color: var(--sample-output-bg-color);
+  overflow-x: auto;  /* Add horizontal scroll bar to wide output. */
+  overflow-y: auto;  /* Add vertical scroll bar to long output. */
+  max-height: 30rem; /* Limit height of output. */
+  display: grid;   /* Allow header to stretch horizontally. */
+  white-space: pre;
+}
+
+.admonition.sample-output > .admonition-title::before, div.admonition.sample-output > .admonition-title::before {
+	background-color: var(--pst-color-attention-bg);
+}
+
+.admonition.sample-output > .admonition-title::after, div.admonition.sample-output > .admonition-title::after {
+	color: var(--pst-color-attention);
+  content: ""; /* Font Awesome icon for "code-compare" */
+}
+
+div.output-file {
+  overflow-x: auto;  /* Add horizontal scroll bar to wide output. */
+  overflow-y: auto;  /* Add vertical scroll bar to long output. */
+  max-height: 30rem; /* Limit height of output. */
+  display: grid;   /* Allow header to stretch horizontally. */
+}
+
+img.sample-output {
+  border-radius: .25rem;
+  box-shadow: 0 .2rem .5rem var(--pst-color-shadow),0 0 .0625rem var(--pst-color-shadow) !important;
+}
+
+table.table.test-case-table {
+  border-block: 2px solid var(--test-case-table-rule-color);
+}
+
+table.table.test-case-table thead tr {
+	background-color: var(--pst-color-attention-bg);
+  border-bottom: 1px solid var(--test-case-table-rule-color);
+}
+
+.table thead tr, table thead tr {
+  border-bottom: 1px solid var(--test-case-table-rule-color);
+}
+
+table td {
+  border-bottom: none;
+}
+
+table.table.deliverables > thead > tr{
+  background-color: var(--deliverables-table-bg-color);
+}
+
+.user-input {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Use lower case letters for second level ordered list */
+ol.arabic ol.arabic {
+	list-style: lower-alpha;
+}
+
+/* Use roman numerals for third level ordered list */
+ol.arabic ol ol.arabic {
+	list-style: lower-roman;
+}
+
+.no-smoothing {
+  image-rendering: pixelated; /* Standard */
+}
+
+/* Center specified columns in tables. */
+.col-1-center td:nth-child(1),
+.col-1-center th:nth-child(1) {
+    text-align: center;
+}
+
+.col-2-center td:nth-child(2),
+.col-2-center th:nth-child(2) {
+    text-align: center;
+}
+
+.col-3-center td:nth-child(3),
+.col-3-center th:nth-child(3) {
+    text-align: center;
+}
+
+.col-center td,
+.col-center th {
+    text-align: center;
+}

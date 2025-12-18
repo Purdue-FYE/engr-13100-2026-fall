@@ -1,4 +1,4 @@
-REPO = engr-131-2026-fall
+REPO = engr-13100-2026-fall
 URL = https://purdue-fye.github.io/$(REPO)
 
 # Create a list of all sample output files to be generated, by scanning through
@@ -19,13 +19,13 @@ sample_output = $(foreach file,$(solutions),\
 
 # Re-build only pages that are new/changed since last run.
 default:
-	jupyter-book build -W source
+	PYTHONPATH="$(PWD)/source/_extensions:$(PYTHONPATH)" jupyter-book build -W source
 	touch source/_build/html/.nojekyll
 
 
 # Re-build all pages.
 all:
-	jupyter-book build -W --all source
+	PYTHONPATH="$(PWD)/source/_extensions:$(PYTHONPATH)" jupyter-book build -W --all source
 	echo "View this site [here]($(URL))." > source/_build/html/README.md
 
 # Publish to production site.

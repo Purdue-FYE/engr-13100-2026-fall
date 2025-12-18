@@ -5,6 +5,7 @@ description = "Transforming Ideas to Innovation"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "docutils>=0.21.2",
     "faker>=37.3.0",
     "fastapi>=0.115.12",
     "generic-grader>=0.1.22",
