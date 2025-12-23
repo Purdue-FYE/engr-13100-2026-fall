@@ -362,6 +362,7 @@ dependencies = [
     { name = "pytest" },
     { name = "python-multipart" },
     { name = "requests" },
+    { name = "sphinx-pyscript" },
     { name = "sphinxcontrib-youtube" },
     { name = "uvicorn" },
 ]
@@ -381,6 +382,7 @@ requires-dist = [
     { name = "pytest", specifier = ">=8.4.0" },
     { name = "python-multipart", specifier = ">=0.0.20" },
     { name = "requests", specifier = ">=2.32.3" },
+    { name = "sphinx-pyscript", specifier = ">=0.1.0" },
     { name = "sphinxcontrib-youtube" },
     { name = "uvicorn", specifier = ">=0.34.3" },
 ]
@@ -2004,6 +2006,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/37/1e/577bae038372885ebc34bd8c0f290295785a0250cac6528eb6d50e4b92d5/sphinx-multitoc-numbering-0.1.3.tar.gz", hash = "sha256:c9607671ac511236fa5d61a7491c1031e700e8d498c9d2418e6c61d1251209ae", size = 4542, upload-time = "2021-03-15T12:01:43.758Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ec/9f/902f2030674cd9473fdbe5a2c2dec2618c27ec853484c35f82cf8df40ece/sphinx_multitoc_numbering-0.1.3-py3-none-any.whl", hash = "sha256:33d2e707a9b2b8ad636b3d4302e658a008025106fe0474046c651144c26d8514", size = 4616, upload-time = "2021-03-15T12:01:42.419Z" },
+]
+
+[[package]]
+name = "sphinx-pyscript"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyyaml" },
+    { name = "sphinx" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/12/6c/f788398526077945146ad8ab4671c30f42981b57050ae887fccd369737b1/sphinx_pyscript-0.1.0.tar.gz", hash = "sha256:e8d2ffec4f60fb24804b7e5946fa4e8fd923d03228c17cfd858f202dc0803972", size = 7295, upload-time = "2023-01-11T02:22:33.423Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/94/c2/d0b46a34237cbff42b54346f98b1fca4876ed2cf59d0ee2c89de06218a1b/sphinx_pyscript-0.1.0-py3-none-any.whl", hash = "sha256:3d863627e8180bd028b9b6251c0b3ebef5a02ed007c43542344e17b2d5603967", size = 3576, upload-time = "2023-01-11T02:22:30.972Z" },
 ]
 
 [[package]]

@@ -3,7 +3,7 @@
 
 title: "Purdue University ENGR 13100"
 author: '<a href="/spring-2026/Appendices/contributors.html">Contributors</a>'
-copyright: "2026 All rights reserved."
+copyright: "2026 All rights reserved"
 logo: logo.png
 only_build_toc_files : true
 
@@ -52,8 +52,8 @@ html:
   use_issues_button: true
   use_repository_button: true
   header_includes: |
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
-    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.05.1/pyscript.css">
+    <script defer src="https://pyscript.net/releases/2023.05.1/pyscript.js"></script>
 
 # Underlines on Firefox were disappearing when using the default chtml output
 # for mathjax.
@@ -78,4 +78,4 @@ sphinx:
       home_page_in_toc: true
   extra_extensions:
    - sphinxcontrib.youtube
-   - pyscript_directive
+   - sphinx_pyscript

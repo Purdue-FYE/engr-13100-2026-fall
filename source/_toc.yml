@@ -13,7 +13,7 @@ parts:
     - file: 00_Start_Here/course_schedule
     - file: 00_Start_Here/course_software/course_software
   
-  - caption: Python
-    numbered: True
-    chapters:
-    - file: 02_Python/test
+  # - caption: Python
+  #   numbered: True
+  #   chapters:
+  #   - file: 02_Python/test
