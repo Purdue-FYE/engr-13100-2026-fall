@@ -26,10 +26,11 @@
 	// "customizations": {},
 	"customizations": {
 		// Configure codespace repository access.
-		// This codespace will have access to the 13100_content repository with write permissions.
+		// This codespace will have access to all repositories in the 
+		// Purdue-FYE organization with write permissions.
 		"codespaces": {
 			"repositories": {
-				"Purdue-FYE/13100_content": {
+				"Purdue-FYE/*": {
 					"permissions": "write-all"
 				}
 			}
