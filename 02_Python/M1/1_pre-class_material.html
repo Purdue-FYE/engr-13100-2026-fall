@@ -1,0 +1,1385 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.1. Pre-Class Assignments &#8212; Purdue University ENGR 13100</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=95f955fd" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=a8e58a58"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_Python/M1/1_pre-class_material';</script>
+    <link rel="icon" href="../../_static/avatar.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="1. Python 1" href="0_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Purdue University ENGR 13100 - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Purdue University ENGR 13100 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ENGR 13100<br> Transforming Ideas to Innovation I
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_Start_Here/syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../00_Start_Here/meet_the_team.html">Meet Your Instructional Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../00_Start_Here/help_sessions.html">Help Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../00_Start_Here/course_schedule.html">Course Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../00_Start_Here/course_software/course_software.html">Course Software</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_overview.html">1. <strong class="program">Python</strong> 1</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Pre-Class Assignments</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Purdue-ENGR-13300/spring-2025/issues/new?title=Issue%20on%20page%20%2F02_Python/M1/1_pre-class_material.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pre-Class Assignments</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world">HELLO WORLD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">OPERATORS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-operators">Math Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-operators">Boolean Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-operators">Assignment Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bitwise-operators">Bitwise Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-operators">Identity Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membership-operators">Membership Operators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">VARIABLES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-operator">Assignment operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-statements">Assignment statements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-assignment-operators">Compound Assignment Operators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">DATA TYPES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic Data Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-data-types">Sequence Data Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-indexing-and-slicing">Basic indexing and slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-type-operations">Mixed Type Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-conversion">Data Type Conversion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-function-input">INPUT FUNCTION - input()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outputs">OUTPUTS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print-function">print() function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-function">format() function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatted-print-statements-f-print">Formatted print statements (f-print)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math-module">MATH MODULE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-methods">IMPORT METHODS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-module">import a module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-module-using-an-alias">import a module using an alias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-specific-functions-from-a-module">import specific functions from a module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-specific-functions-from-a-module-using-an-alias">import specific functions from a module using an alias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-all-functions-from-a-module-using-the-operator">import all functions from a module using the * operator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-module">RANDOM MODULE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-function">Help function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-libraries">PYTHON LIBRARIES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-a-library">Installing a library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math"><code class="code highlight python docutils literal highlight-python"><span class="n">math</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy"><code class="code highlight python docutils literal highlight-python"><span class="n">numpy</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib"><code class="code highlight python docutils literal highlight-python"><span class="n">matplotlib</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas"><code class="code highlight python docutils literal highlight-python"><span class="n">pandas</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keywords">KEYWORDS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reserved-words">Reserved words</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#engr-13300-python-template">ENGR 13300 Python Template</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="raw-html"><div class="d-none"></span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand\blank{~\underline{\hspace{1.2cm}}~}\\% Bold symbols (vectors)
+\newcommand\bs[1]{\mathbf{#1}}\\% Differential
+\newcommand\dd[2][]{\mathrm{d}^{#1}{#2}}  % use as \dd, \dd{x}, or \dd[2]{x}\\% Poor man's siunitx
+\newcommand\unit[1]{\mathrm{#1}}
+\newcommand\num[1]{#1}
+\newcommand\qty[2]{#1~\unit{#2}}\\\newcommand\per{/}
+\newcommand\squared{{}^2}
+\newcommand\cubed{{}^3}
+%
+% Scale
+\newcommand\milli{\unit{m}}
+\newcommand\centi{\unit{c}}
+\newcommand\kilo{\unit{k}}
+\newcommand\mega{\unit{M}}
+%
+% Percent
+\newcommand\percent{\unit{{\kern-4mu}\%}}
+%
+% Angle
+\newcommand\radian{\unit{rad}}
+\newcommand\degree{\unit{{\kern-4mu}^\circ}}
+%
+% Time
+\newcommand\second{\unit{s}}
+\newcommand\s{\second}
+\newcommand\minute{\unit{min}}
+\newcommand\hour{\unit{h}}
+%
+% Distance
+\newcommand\meter{\unit{m}}
+\newcommand\m{\meter}
+\newcommand\inch{\unit{in}}
+\newcommand\foot{\unit{ft}}
+%
+% Force
+\newcommand\newton{\unit{N}}
+\newcommand\kip{\unit{kip}} % kilopound in &quot;freedom&quot; units - edit made by Sri
+%
+% Mass
+\newcommand\gram{\unit{g}}
+\newcommand\g{\gram}
+\newcommand\kilogram{\unit{kg}}
+\newcommand\kg{\kilogram}
+\newcommand\grain{\unit{grain}}
+\newcommand\ounce{\unit{oz}}
+%
+% Temperature
+\newcommand\kelvin{\unit{K}}
+\newcommand\K{\kelvin}
+\newcommand\celsius{\unit{{}^\circ C}}
+\newcommand\C{\celsius}
+\newcommand\fahrenheit{\unit{{}^\circ F}}
+\newcommand\F{\fahrenheit}
+%
+% Area
+\newcommand\sqft{\unit{sq\,\foot}}  % square foot
+%
+% Volume
+\newcommand\liter{\unit{L}}
+\newcommand\gallon{\unit{gal}}
+%
+% Frequency
+\newcommand\hertz{\unit{Hz}}
+\newcommand\rpm{\unit{rpm}}
+%
+% Voltage
+\newcommand\volt{\unit{V}}
+\newcommand\V{\volt}
+\newcommand\millivolt{\milli\volt}
+\newcommand\mV{\milli\volt}
+\newcommand\kilovolt{\kilo\volt}
+\newcommand\kV{\kilo\volt}
+%
+% Current
+\newcommand\ampere{\unit{A}}
+\newcommand\A{\ampere}
+\newcommand\milliampereA{\milli\ampere}
+\newcommand\mA{\milli\ampere}
+\newcommand\kiloampereA{\kilo\ampere}
+\newcommand\kA{\kilo\ampere}
+%
+% Resistance
+\newcommand\ohm{\Omega}
+\newcommand\milliohm{\milli\ohm}
+\newcommand\kiloohm{\kilo\ohm} % correct SI spelling
+\newcommand\kilohm{\kilo\ohm} % &quot;American&quot; spelling used in siunitx
+\newcommand\megaohm{\mega\ohm} % correct SI spelling
+\newcommand\megohm{\mega\ohm} % &quot;American&quot; spelling used in siunitx
+%
+% Capacitance
+\newcommand\farad{\unit{F}}
+\newcommand\F{\farad}
+\newcommand\microfarad{\micro\farad}
+\newcommand\muF{\micro\farad}
+%
+% Inductance
+\newcommand\henry{\unit{H}}
+\newcommand\H{\henry}
+\newcommand\millihenry{\milli\henry}
+\newcommand\mH{\milli\henry}
+%
+% Power
+\newcommand\watt{\unit{W}}
+\newcommand\W{\watt}
+\newcommand\milliwatt{\milli\watt}
+\newcommand\mW{\milli\watt}
+\newcommand\kilowatt{\kilo\watt}
+\newcommand\kW{\kilo\watt}
+%
+% Energy
+\newcommand\joule{\unit{J}}
+\newcommand\J{\joule}
+%
+% Composite units
+%
+% Torque
+\newcommand\ozin{\unit{\ounce}\,\unit{in}}
+\newcommand\newtonmeter{\unit{\newton\,\meter}}
+%
+% Pressure
+\newcommand\psf{\unit{psf}}  % pounds per square foot
+\newcommand\pcf{\unit{pcf}}  % pounds per cubic foot
+\newcommand\pascal{\unit{Pa}}
+\newcommand\Pa{\pascal}
+\newcommand\ksi{\unit{ksi}} % kilopound per square inch
+\newcommand\bar{\unit{bar}}
+\end{aligned}\end{align} \]</div>
+<p><span class="raw-html"></div></span></p>
+<p>Dec 23, 2025 | 1737 words | 17 min read</p>
+<section class="tex2jax_ignore mathjax_ignore" id="pre-class-assignments">
+<span id="py-m1-pre-class"></span><h1><span class="section-number">1.1. </span>Pre-Class Assignments<a class="headerlink" href="#pre-class-assignments" title="Link to this heading">#</a></h1>
+<p>Create and execute simple scripts comprised of basic <strong class="program">Python</strong> concepts.
+Apply course code standard in development of <strong class="program">Python</strong> scripts.
+Modularize and comment code in <strong class="program">Python</strong> for readability and
+reusability.</p>
+<p>Here is the link to the <a class="reference external" href="https://docs.python.org/3.13/"><strong class="program">Python</strong> Official Documentation</a></p>
+<section id="hello-world">
+<h2>HELLO WORLD<a class="headerlink" href="#hello-world" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_lvftifgt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_m3s2a7rj" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_0_helloworld"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/b3555b00f916d874a56eb2dcbc5e93e0/00_hello_world.py"><code class="xref download docutils literal notranslate"><span class="pre">00_hello_world.py</span></code></a></p>
+</section>
+<section id="operators">
+<h2>OPERATORS<a class="headerlink" href="#operators" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_c5slan08&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_hhz95c74" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_1_operators"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/209617930cd81b7389c8d49c5fb4041f/01_operators.py"><code class="xref download docutils literal notranslate"><span class="pre">01_operators.py</span></code></a></p>
+<section id="math-operators">
+<h3>Math Operators<a class="headerlink" href="#math-operators" title="Link to this heading">#</a></h3>
+<p>used to perform basic operations</p>
+<ul class="simple">
+<li><p>Addition <code class="code highlight python docutils literal highlight-python"><span class="o">+</span></code>: returns the sum of two numbers</p></li>
+<li><p>Subtraction <code class="code highlight python docutils literal highlight-python"><span class="o">-</span></code>: returns the difference of two numbers</p></li>
+<li><p>Multiplication <code class="code highlight python docutils literal highlight-python"><span class="o">*</span></code>: returns the product of two numbers</p></li>
+<li><p>Division <code class="code highlight python docutils literal highlight-python"><span class="o">/</span></code>: returns the quotient of two numbers</p></li>
+<li><p>Modulus <code class="code highlight python docutils literal highlight-python"><span class="o">%</span></code>: returns the remainder of the division</p></li>
+<li><p>Exponentiation <code class="code highlight python docutils literal highlight-python"><span class="o">**</span></code>: raises the first number to the power of the second number</p></li>
+<li><p>Floor division <code class="code highlight python docutils literal highlight-python"><span class="o">//</span></code>: returns the integer part of the division result</p></li>
+</ul>
+<p>Operands - Operands are the values that the operator acts on.</p>
+<p>Order of operations is determined by precedence:</p>
+<ol class="arabic simple">
+<li><p>Parentheses <code class="code highlight python docutils literal highlight-python"><span class="p">()</span></code></p></li>
+<li><p>Exponents <code class="code highlight python docutils literal highlight-python"><span class="o">**</span></code></p></li>
+<li><p>Multiplication and Division <code class="code highlight python docutils literal highlight-python"><span class="o">*</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="o">/</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="o">%</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="o">//</span></code></p></li>
+<li><p>Addition and Subtraction <code class="code highlight python docutils literal highlight-python"><span class="o">+</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="o">-</span></code></p></li>
+</ol>
+<p>If two operators have the same precedence, they are applied from left to right</p>
+</section>
+<section id="boolean-operators">
+<h3>Boolean Operators<a class="headerlink" href="#boolean-operators" title="Link to this heading">#</a></h3>
+<p>used to combine conditional statements</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="ow">not</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if the statement is false and vice versa</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="ow">and</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if both statements are true</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="ow">or</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if one of the statements is true</p></li>
+</ul>
+</section>
+<section id="comparison-operators">
+<h3>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Link to this heading">#</a></h3>
+<p>used to compare two values, returns a boolean value.</p>
+<ul class="simple">
+<li><p>greater than <code class="code highlight python docutils literal highlight-python"><span class="o">&gt;</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if the left operand is greater than the right operand</p></li>
+<li><p>less than <code class="code highlight python docutils literal highlight-python"><span class="o">&lt;</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if the left operand is less than the right operand</p></li>
+<li><p>greater than or equal to <code class="code highlight python docutils literal highlight-python"><span class="o">&gt;=</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if the left operand is greater than or equal to the right operand</p></li>
+<li><p>less than or equal to <code class="code highlight python docutils literal highlight-python"><span class="o">&lt;=</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if the left operand is less than or equal to the right operand</p></li>
+<li><p>equal to <code class="code highlight python docutils literal highlight-python"><span class="o">==</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if the operands are equal</p></li>
+<li><p>not equal to <code class="code highlight python docutils literal highlight-python"><span class="o">!=</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if the operands are not equal</p></li>
+</ul>
+</section>
+<section id="assignment-operators">
+<h3>Assignment Operators<a class="headerlink" href="#assignment-operators" title="Link to this heading">#</a></h3>
+<p><code class="code highlight python docutils literal highlight-python"><span class="o">=</span></code> is used to assign values to variables.</p>
+<p>See <a class="reference internal" href="#variables">Variables</a></p>
+<!-- See [Variables](#variables) I want to link the variables heading below-->
+<!-- this above line returns an error however, it does show up on the website, but commented for now -->
+</section>
+<section id="bitwise-operators">
+<h3>Bitwise Operators<a class="headerlink" href="#bitwise-operators" title="Link to this heading">#</a></h3>
+<p>used to perform bitwise operations</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="o">&amp;</span></code> : Bitwise AND</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="o">|</span></code> : Bitwise OR</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="o">^</span></code> : Bitwise XOR</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="o">~</span></code> : Bitwise NOT</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="o">&lt;&lt;</span></code> : Bitwise left shift</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="o">&gt;&gt;</span></code> : Bitwise right shift</p></li>
+</ul>
+</section>
+<section id="identity-operators">
+<h3>Identity Operators<a class="headerlink" href="#identity-operators" title="Link to this heading">#</a></h3>
+<p>used to compare the memory location of two objects</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="ow">is</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if both variables are the same object</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="ow">is</span> <span class="ow">not</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if both variables are not the same object</p></li>
+</ul>
+</section>
+<section id="membership-operators">
+<h3>Membership Operators<a class="headerlink" href="#membership-operators" title="Link to this heading">#</a></h3>
+<p>used to test if a sequence is present in an object</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="ow">in</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if a sequence is present in the object</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="ow">not</span> <span class="ow">in</span></code> : returns <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> if a sequence is not present in the object</p></li>
+</ul>
+</section>
+</section>
+<section id="variables">
+<span id="id1"></span><h2>VARIABLES<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_j3ymtkkr&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_uhk9dekm" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_2_variables"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/75db04cde812380ae08f701c5c369b4b/02_variables.py"><code class="xref download docutils literal notranslate"><span class="pre">02_variables.py</span></code></a></p>
+<p>A variable is a name that refers to a value. Variables are used to store data
+that can be referenced and manipulated in a program.</p>
+<section id="assignment-operator">
+<h3>Assignment operator<a class="headerlink" href="#assignment-operator" title="Link to this heading">#</a></h3>
+<p><code class="code highlight python docutils literal highlight-python"><span class="o">=</span></code> is used to assign a value to a variable</p>
+<ul class="simple">
+<li><p>The value on the right side of the assignment operator is assigned to the
+variable on the left side.</p></li>
+<li><p>Variable names can contain letters, numbers, and underscores.</p></li>
+<li><p>They must start with a letter or an underscore.</p></li>
+<li><p>Variable names are case-sensitive.</p></li>
+<li><p>Variables can be reassigned to new values at any time.</p></li>
+<li><p>Variables can point to any data type.</p></li>
+</ul>
+<p>Expressions are anything that can be evaluated to a value.
+For example: <code class="code highlight python docutils literal highlight-python"><span class="mi">1</span><span class="o">+</span><span class="mi">2</span></code></p>
+<p>Literals are fixed values that are written directly into the code.
+For example: <code class="code highlight python docutils literal highlight-python"><span class="mi">1</span></code> or <code class="code highlight python docutils literal highlight-python"><span class="s2">&quot;Hello World!&quot;</span></code></p>
+</section>
+<section id="assignment-statements">
+<h3>Assignment statements<a class="headerlink" href="#assignment-statements" title="Link to this heading">#</a></h3>
+<p>used to create variables and assign values to them.</p>
+<p>Syntax: variable = expression or literal</p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span></code><br>
+<code class="code highlight python docutils literal highlight-python"><span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span></code></p>
+</section>
+<section id="compound-assignment-operators">
+<h3>Compound Assignment Operators<a class="headerlink" href="#compound-assignment-operators" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">a</span><span class="o">+=</span><span class="mi">3</span></code> equates to <code class="code highlight python docutils literal highlight-python"><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">3</span></code> (Add and assign)</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">a</span><span class="o">-=</span><span class="mi">3</span></code> equates to <code class="code highlight python docutils literal highlight-python"><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">3</span></code> (Subtract and assign)</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">a</span><span class="o">*=</span><span class="mi">3</span></code> equates to <code class="code highlight python docutils literal highlight-python"><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">3</span></code> (Multiply and assign)</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">a</span><span class="o">/=</span><span class="mi">3</span></code> equates to <code class="code highlight python docutils literal highlight-python"><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="mi">3</span></code> (Divide and assign)</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">a</span><span class="o">%=</span><span class="mi">3</span></code> equates to <code class="code highlight python docutils literal highlight-python"><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">3</span></code> (Modulus and assign)</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">a</span><span class="o">**=</span><span class="mi">3</span></code> equates to <code class="code highlight python docutils literal highlight-python"><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">3</span></code> (Exponentiate and assign)</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">a</span><span class="o">//=</span><span class="mi">3</span></code> equates to <code class="code highlight python docutils literal highlight-python"><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="mi">3</span></code> (Floor divide and assign)</p></li>
+</ul>
+<p>Python does not have increment <code class="code highlight python docutils literal highlight-python"><span class="o">++</span></code> and decrement <code class="code highlight python docutils literal highlight-python"><span class="o">--</span></code> operators.</p>
+</section>
+</section>
+<section id="data-types">
+<h2>DATA TYPES<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_10gsd3vf&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_8aslw5os" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_3_datatypes"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/fc9c4db883dfb9a101c82ada812db5d8/03_data_types.py"><code class="xref download docutils literal notranslate"><span class="pre">03_data_types.py</span></code></a></p>
+<p>You can use the <code class="code highlight python docutils literal highlight-python"><span class="nb">type</span><span class="p">()</span></code> function to get the datatype of a variable or a literal.</p>
+<section id="basic-data-types">
+<h3>Basic Data Types<a class="headerlink" href="#basic-data-types" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Integer <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span></code> - whole numbers</p></li>
+<li><p>Float <code class="code highlight python docutils literal highlight-python"><span class="nb">float</span></code> - numbers with decimal points</p></li>
+<li><p>String <code class="code highlight python docutils literal highlight-python"><span class="nb">str</span></code> - sequence of characters</p></li>
+<li><p>Boolean <code class="code highlight python docutils literal highlight-python"><span class="nb">bool</span></code> - True or False</p></li>
+<li><p>None <code class="code highlight python docutils literal highlight-python"><span class="n">NoneType</span></code> - represents the absence of a value</p></li>
+</ul>
+</section>
+<section id="sequence-data-types">
+<h3>Sequence Data Types<a class="headerlink" href="#sequence-data-types" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>List - comma separated values enclosed in square brackets, <code class="code highlight python docutils literal highlight-python"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="nb">list</span><span class="p">()</span></code></p></li>
+<li><p>Tuple - comma separated values enclosed in parentheses, <code class="code highlight python docutils literal highlight-python"><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="nb">tuple</span><span class="p">()</span></code></p></li>
+<li><p>Set - comma separated values enclosed in curly braces, <code class="code highlight python docutils literal highlight-python"><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="nb">set</span><span class="p">()</span></code></p></li>
+<li><p>Dictionary - key-value pairs enclosed in curly braces, <code class="code highlight python docutils literal highlight-python"><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">}</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="nb">dict</span><span class="p">()</span></code></p></li>
+<li><p>Range - <code class="code highlight python docutils literal highlight-python"><span class="nb">range</span><span class="p">()</span></code> returns a sequence of numbers</p>
+<p>Syntax: <code class="code highlight python docutils literal highlight-python"><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span></code></p>
+<ul class="simple">
+<li><p>start - optional, an integer number specifying at which position to start.</p></li>
+<li><p>stop - required, an integer number specifying at which position to stop (not included)</p></li>
+<li><p>step - optional, an integer number specifying the incrementation.</p></li>
+<li><p>Default values: start=0, stop - no default values as it is required, step=1</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="basic-indexing-and-slicing">
+<h3>Basic indexing and slicing<a class="headerlink" href="#basic-indexing-and-slicing" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Indexing - accessing a single element of a sequence</p></li>
+<li><p>Slicing - accessing multiple elements of a sequence</p></li>
+<li><p>Indexing starts from 0</p></li>
+<li><p>Negative indexing starts from -1 (last element)</p></li>
+<li><p>Slicing syntax: <code class="code highlight python docutils literal highlight-python"><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">:</span><span class="n">step</span><span class="p">]</span></code></p>
+<ul>
+<li><p>start - starting index</p></li>
+<li><p>stop - stopping index</p></li>
+<li><p>step - incrementation</p></li>
+<li><p>Default values: start=0, stop=len(sequence), step=1</p></li>
+</ul>
+</li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="sequence table" id="tab-py-m1-pre-class-sequence">
+<caption><span class="caption-number">Table 1.1 </span><span class="caption-text">Sequence Differences</span><a class="headerlink" href="#tab-py-m1-pre-class-sequence" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Sequence</p></th>
+<th class="head text-center"><p>Mutability</p></th>
+<th class="head text-center"><p>Order</p></th>
+<th class="head text-center"><p>Unique Elements</p></th>
+<th class="head text-center"><p>Editablity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>List</p></td>
+<td class="text-center"><p>Mutable</p></td>
+<td class="text-center"><p>Ordered</p></td>
+<td class="text-center"><p>allows duplicates</p></td>
+<td class="text-center"><p>replaced or changed or added or removed</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Tuple</p></td>
+<td class="text-center"><p>Immutable</p></td>
+<td class="text-center"><p>Ordered</p></td>
+<td class="text-center"><p>allows duplicates</p></td>
+<td class="text-center"><p>cannot be replaced or changed or added or removed</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Set</p></td>
+<td class="text-center"><p>Mutable</p></td>
+<td class="text-center"><p>Unordered</p></td>
+<td class="text-center"><p>no duplicates</p></td>
+<td class="text-center"><p>cannot be replaced or changed, only added or removed</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Dictionary</p></td>
+<td class="text-center"><p>Mutable</p></td>
+<td class="text-center"><p>Unordered</p></td>
+<td class="text-center"><p>no duplicate keys</p></td>
+<td class="text-center"><p>replaced or changed or added or removed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="mixed-type-operations">
+<h3>Mixed Type Operations<a class="headerlink" href="#mixed-type-operations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Adding two integers results in an integer: <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span></code> + <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span></code> = <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span></code></p></li>
+<li><p>Adding an integer and a float results in a float: <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span></code> + <code class="code highlight python docutils literal highlight-python"><span class="nb">float</span></code> = <code class="code highlight python docutils literal highlight-python"><span class="nb">float</span></code></p></li>
+<li><p>Adding a string and a number, results in an error: <code class="code highlight python docutils literal highlight-python"><span class="nb">str</span></code> + <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span></code> = <code class="code highlight python docutils literal highlight-python"><span class="ne">TypeError</span></code></p></li>
+<li><p>Adding two strings concatenates them and results in a string: <code class="code highlight python docutils literal highlight-python"><span class="nb">str</span></code> + <code class="code highlight python docutils literal highlight-python"><span class="nb">str</span></code> = <code class="code highlight python docutils literal highlight-python"><span class="nb">str</span></code></p></li>
+<li><p>Multiplying a string by an integer repeats the string and results in a string: <code class="code highlight python docutils literal highlight-python"><span class="nb">str</span></code> * <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span></code> = <code class="code highlight python docutils literal highlight-python"><span class="nb">str</span></code></p></li>
+<li><p>Division always results in a float: <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span></code> / <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span></code> = <code class="code highlight python docutils literal highlight-python"><span class="nb">float</span></code></p></li>
+<li><p>Floor division always results in an integer: <code class="code highlight python docutils literal highlight-python"><span class="nb">float</span></code> // <code class="code highlight python docutils literal highlight-python"><span class="nb">float</span></code> = <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span></code></p></li>
+</ul>
+</section>
+<section id="data-type-conversion">
+<h3>Data Type Conversion<a class="headerlink" href="#data-type-conversion" title="Link to this heading">#</a></h3>
+<div class="note admonition">
+<p class="admonition-title">Notes</p>
+<p>The behavior of some of these conversion functions may surprise you.  Common uses and
+“gotchas” are summarized here, but you can find full details on each function in <a class="reference external" href="https://docs.python.org/3/library/functions.html">the
+official documentation</a>.</p>
+</div>
+<dl class="simple myst">
+<dt><code class="code highlight python docutils literal highlight-python"><span class="nb">int</span><span class="p">()</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="nb">float</span><span class="p">()</span></code></dt><dd><p>accept numbers or strings as arguments, and converts them to integers or floats
+respectively.</p>
+<ul class="simple">
+<li><p>A leading <code class="code highlight python docutils literal highlight-python"><span class="o">+</span></code> or <code class="code highlight python docutils literal highlight-python"><span class="o">-</span></code> can be used to specify the sign of a number.</p></li>
+<li><p>Whitespace at the beginning or end of strings passed to <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span><span class="p">()</span></code> or
+<code class="code highlight python docutils literal highlight-python"><span class="nb">float</span><span class="p">()</span></code> is allowed (e.g. <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;123  &quot;</span><span class="p">)</span></code> returns <code class="code highlight python docutils literal highlight-python"><span class="mi">123</span></code>).</p></li>
+<li><p>Underscores between digits can be used to improve readability (e.g.
+<code class="code highlight python docutils literal highlight-python"><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1_000_000&quot;</span><span class="p">)</span></code> returns <code class="code highlight python docutils literal highlight-python"><span class="mi">1000000</span></code>), but use of commas results in an
+error (e.g. <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1,000,000&quot;</span><span class="p">)</span></code> raises <code class="code highlight python docutils literal highlight-python"><span class="ne">ValueError</span></code>).</p></li>
+<li><p>Both <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">)</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span><span class="p">(</span><span class="mf">5.3</span><span class="p">)</span></code> return <code class="code highlight python docutils literal highlight-python"><span class="mi">5</span></code>, but
+<code class="code highlight python docutils literal highlight-python"><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;5.3&quot;</span><span class="p">)</span></code> raises a <code class="code highlight python docutils literal highlight-python"><span class="ne">ValueError</span></code>.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="nb">float</span><span class="p">()</span></code> accepts special strings like <code class="code highlight python docutils literal highlight-python"><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span></code> and
+<code class="code highlight python docutils literal highlight-python"><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;NaN&quot;</span><span class="p">)</span></code> but <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span><span class="p">()</span></code> does not.</p></li>
+<li><p>Both <code class="code highlight python docutils literal highlight-python"><span class="nb">int</span><span class="p">()</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="nb">float</span><span class="p">()</span></code> accept booleans (<code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> and
+<code class="code highlight python docutils literal highlight-python"><span class="kc">False</span></code>) as inputs, returning <code class="code highlight python docutils literal highlight-python"><span class="mi">1</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="mi">0</span></code> or <code class="code highlight python docutils literal highlight-python"><span class="mf">1.0</span></code> and
+<code class="code highlight python docutils literal highlight-python"><span class="mf">0.0</span></code> respectively.</p></li>
+</ul>
+</dd>
+<dt><code class="code highlight python docutils literal highlight-python"><span class="nb">str</span><span class="p">()</span></code></dt><dd><p>converts its argument to a string.</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="nb">str</span><span class="p">()</span></code> converts booleans to the strings <code class="code highlight python docutils literal highlight-python"><span class="s2">&quot;True</span></code> or
+<code class="code highlight python docutils literal highlight-python"><span class="s2">&quot;False&quot;</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="code highlight python docutils literal highlight-python"><span class="nb">bool</span><span class="p">()</span></code></dt><dd><p>converts its argument to a boolean.</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="nb">bool</span><span class="p">()</span></code> converts empty values (<code class="code highlight python docutils literal highlight-python"><span class="mi">0</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="s2">&quot;&quot;</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="p">[]</span></code>,
+<code class="code highlight python docutils literal highlight-python"><span class="p">{}</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="kc">None</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="kc">False</span></code>) to <code class="code highlight python docutils literal highlight-python"><span class="kc">False</span></code>, but
+<code class="code highlight python docutils literal highlight-python"><span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;False&quot;</span><span class="p">)</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="nb">bool</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span></code> will all return
+<code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="code highlight python docutils literal highlight-python"><span class="nb">list</span><span class="p">()</span></code></dt><dd><p>converts an iterable argument to a list.</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="nb">list</span><span class="p">()</span></code> will split strings into chars (e.g. <code class="code highlight python docutils literal highlight-python"><span class="nb">list</span><span class="p">(</span><span class="s2">&quot;ENGR133&quot;</span><span class="p">)</span></code>
+returns <code class="code highlight python docutils literal highlight-python"><span class="p">[</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">]</span></code>).</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="nb">list</span><span class="p">()</span></code> will only read the keys when passed a dictionary (e.g.
+<code class="code highlight python docutils literal highlight-python"><span class="nb">list</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span></code> returns <code class="code highlight python docutils literal highlight-python"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span></code>).</p></li>
+</ul>
+</dd>
+<dt><code class="code highlight python docutils literal highlight-python"><span class="nb">tuple</span><span class="p">()</span></code></dt><dd><p>converts an iterable argument to a tuple.</p>
+</dd>
+<dt><code class="code highlight python docutils literal highlight-python"><span class="nb">dict</span><span class="p">()</span></code></dt><dd><p>converts key-value, mapping, or iterable arguments to a dictionary.</p>
+<ul class="simple">
+<li><p>e.g.  <code class="code highlight python docutils literal highlight-python"><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="nb">dict</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span></code> are both valid and return
+<code class="code highlight python docutils literal highlight-python"><span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="code highlight python docutils literal highlight-python"><span class="nb">set</span><span class="p">()</span></code></dt><dd><p>converts an iterable argument to a set.</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="nb">set</span><span class="p">()</span></code> can split strings while deleting duplicate characters (e.g.
+<code class="code highlight python docutils literal highlight-python"><span class="nb">set</span><span class="p">(</span><span class="s2">&quot;helloooo&quot;</span><span class="p">)</span></code> returns <code class="code highlight python docutils literal highlight-python"><span class="p">{</span><span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">}</span></code>).</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="strings">
+<h3>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h3>
+<p>Single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code>, double quotes <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, or triple quotes <code class="docutils literal notranslate"><span class="pre">'''</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> can be used
+to define strings You can add backward-slash <code class="docutils literal notranslate"><span class="pre">\</span></code> before the quote to escape it.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pete&#39;</span><span class="p">)</span>                 <span class="c1"># Output: Pete</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pete&#39;s hammer&quot;</span><span class="p">)</span>        <span class="c1"># Output: Pete&#39;s</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Pete&#39;s &quot;hammer&quot; &quot;&quot;&quot;</span><span class="p">)</span> <span class="c1"># Output: Pete&#39;s &quot;hammer&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pete</span><span class="se">\&#39;</span><span class="s1">s &quot;hammer&quot;&#39;</span><span class="p">)</span>     <span class="c1"># Output: Pete&#39;s &quot;hammer&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="input-function-input">
+<h2>INPUT FUNCTION - input()<a class="headerlink" href="#input-function-input" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_0ret78pn&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_mjla0g27" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_4_input"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/cac157ba4aeeb483abd10d4ab9304ef2/04_input_function.py"><code class="xref download docutils literal notranslate"><span class="pre">04_input_function.py</span></code></a></p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p><strong class="program">Python</strong> <code class="code highlight python docutils literal highlight-python"><span class="nb">input</span><span class="p">()</span></code> function always returns a <code class="code highlight python docutils literal highlight-python"><span class="nb">str</span></code> as its datatype.</p>
+</div>
+<p>Converting user input</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nested functions in Python</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>For the purpose of this course, you will not worry about validating and sanitizing user input.
+If you are interested in learning more about it, you can check out <a class="reference external" href="https://docs.python.org/3.13/tutorial/errors.html">exception handling</a> in Python.</p>
+</section>
+<section id="outputs">
+<h2>OUTPUTS<a class="headerlink" href="#outputs" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_1dldtux4&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_7oh6rpwd" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_5_outputs"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/5e8864aacb698115c3938170e9f15953/05_outputs.py"><code class="xref download docutils literal notranslate"><span class="pre">05_outputs.py</span></code></a></p>
+<section id="print-function">
+<h3>print() function<a class="headerlink" href="#print-function" title="Link to this heading">#</a></h3>
+<p><code class="code highlight python docutils literal highlight-python"><span class="nb">print</span><span class="p">()</span></code> function - prints the given object to the standard output device (screen)</p>
+<p>Examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="mi">616</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="n">world</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="mi">616</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;***&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are&quot;</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="s2">&quot;students in the class&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="format-function">
+<h3>format() function<a class="headerlink" href="#format-function" title="Link to this heading">#</a></h3>
+<p><code class="code highlight python docutils literal highlight-python"><span class="nb">format</span><span class="p">()</span></code> function - accepts a number and a format specifier and returns as a string</p>
+<p>Syntax: <code class="code highlight python docutils literal highlight-python"><span class="nb">format</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">format_specifier</span><span class="p">)</span></code></p>
+<p>format_specifier syntax - <code class="code highlight python docutils literal highlight-python"><span class="s2">&quot;[width][grouping_option][.precision][type]&quot;</span></code></p>
+<ul class="simple">
+<li><p>width - minimum number of characters to be printed (default is 0)</p></li>
+<li><p>grouping_option - comma (,) to use comma as a thousand separator</p></li>
+<li><p>precision - number of decimal places to be printed</p></li>
+<li><p>type - d for integer, f for float, s for string</p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">123.4567</span><span class="p">,</span> <span class="s2">&quot;.2f&quot;</span><span class="p">)</span>       <span class="c1"># Output is &quot;123.46&quot;</span>
+<span class="nb">format</span><span class="p">(</span><span class="mf">1234.56789</span><span class="p">,</span> <span class="s2">&quot;10,.2f&quot;</span><span class="p">)</span>  <span class="c1"># Output is &quot;  1,234.57&quot;</span>
+<span class="nb">format</span><span class="p">(</span><span class="mi">1234</span><span class="p">,</span> <span class="s2">&quot;10_d&quot;</span><span class="p">)</span>          <span class="c1"># Output is &quot;     1_234&quot;</span>
+<span class="nb">format</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="s2">&quot;0.0%&quot;</span><span class="p">)</span>           <span class="c1"># Output is &quot;20.0%&quot;</span>
+<span class="nb">format</span><span class="p">(</span><span class="mf">12345.6789</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">)</span>       <span class="c1"># Output is &quot;1.234568e+04&quot; which is 1.234568 x 10^4</span>
+<span class="nb">format</span><span class="p">(</span><span class="mf">12345.6789</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>       <span class="c1"># Output is &quot;1.234568E+04&quot; which is 1.234568 x 10^4</span>
+<span class="nb">format</span><span class="p">(</span><span class="mf">12345.6789</span><span class="p">,</span> <span class="s2">&quot;.2e&quot;</span><span class="p">)</span>     <span class="c1"># Output is &quot;1.23e+04&quot; which is 1.23 x 10^4</span>
+<span class="nb">format</span><span class="p">(</span><span class="mf">0.00000012345</span><span class="p">,</span> <span class="s2">&quot;.4E&quot;</span><span class="p">)</span>  <span class="c1"># Output is &quot;1.2345E-07&quot; which is 1.2345 x 10^-7</span>
+</pre></div>
+</div>
+</section>
+<section id="formatted-print-statements-f-print">
+<h3>Formatted print statements (f-print)<a class="headerlink" href="#formatted-print-statements-f-print" title="Link to this heading">#</a></h3>
+<p>Here is the <strong class="program">Python</strong> Official Documentation link to <a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals">formatted string literals</a></p>
+<p>Syntax: <code class="code highlight python docutils literal highlight-python"><span class="sa">f</span><span class="s2">&quot;string </span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s2">&quot;</span></code></p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">item</span> <span class="o">=</span> <span class="s2">&quot;apple&quot;</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="mf">1234.56789</span>
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2"> costs $</span><span class="si">{</span><span class="n">cost</span><span class="si">}</span><span class="s2">&quot;</span>             <span class="c1"># Output is &quot;apple costs $1234.56789&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2"> costs $</span><span class="si">{</span><span class="n">cost</span><span class="si">:</span><span class="s2">,.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Output is &quot;apple costs $1,234.57&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="math-module">
+<h2>MATH MODULE<a class="headerlink" href="#math-module" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_cwermqoz&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_r0sbw236" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_6_math_module"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/125eea2b63e76f86ed2c789ed7b16ad6/06_math_module.py"><code class="xref download docutils literal notranslate"><span class="pre">06_math_module.py</span></code></a></p>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="n">math</span><span class="o">.&lt;</span><span class="n">function</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong class="program">Python</strong> has a built-in module called <code class="code highlight python docutils literal highlight-python"><span class="n">math</span></code> that contains a collection of mathematical functions</p></li>
+<li><p>To use the <code class="code highlight python docutils literal highlight-python"><span class="n">math</span></code> module, you must import it using the <code class="code highlight python docutils literal highlight-python"><span class="kn">import</span></code> keyword</p></li>
+<li><p>To access functions in the <code class="code highlight python docutils literal highlight-python"><span class="n">math</span></code> module, you must use the module name
+followed by a period (<code class="code highlight python docutils literal highlight-python"><span class="o">.</span></code>) and then the <code class="code highlight python docutils literal highlight-python"><span class="n">function</span> <span class="n">name</span></code></p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">()</span>       <span class="c1"># square root of a number</span>
+<span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">()</span>       <span class="c1"># ceiling of a number (round up to the next integer)</span>
+<span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">()</span>      <span class="c1"># floor of a number (round down to the previous integer)</span>
+<span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">()</span>  <span class="c1"># factorial of a number</span>
+</pre></div>
+</div>
+<p>More details on the <code class="code highlight python docutils literal highlight-python"><span class="n">math</span></code> module can be found in the <a class="reference external" href="https://docs.python.org/3/library/math.html">official documentation</a>.</p>
+</section>
+<section id="import-methods">
+<h2>IMPORT METHODS<a class="headerlink" href="#import-methods" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_3ex3ms3e&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_3a8kyry0" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_7_import_methods"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/df541be453536f3b0514bace9b46c01c/07_import_methods.py"><code class="xref download docutils literal notranslate"><span class="pre">07_import_methods.py</span></code></a></p>
+<p>There are several ways to import a module or a function from a module</p>
+<section id="import-a-module">
+<h3>import a module<a class="headerlink" href="#import-a-module" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>  <span class="c1"># Output: 5.0</span>
+</pre></div>
+</div>
+</section>
+<section id="import-a-module-using-an-alias">
+<h3>import a module using an alias<a class="headerlink" href="#import-a-module-using-an-alias" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">m</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>  <span class="c1"># Output: -20.0 , (cos(pi) = -1)</span>
+</pre></div>
+</div>
+</section>
+<section id="import-specific-functions-from-a-module">
+<h3>import specific functions from a module<a class="headerlink" href="#import-specific-functions-from-a-module" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>  <span class="c1"># Output: -20.0</span>
+</pre></div>
+</div>
+</section>
+<section id="import-specific-functions-from-a-module-using-an-alias">
+<h3>import specific functions from a module using an alias<a class="headerlink" href="#import-specific-functions-from-a-module-using-an-alias" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">s</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>  <span class="c1"># Output: 5.0</span>
+</pre></div>
+</div>
+</section>
+<section id="import-all-functions-from-a-module-using-the-operator">
+<h3>import all functions from a module using the * operator<a class="headerlink" href="#import-all-functions-from-a-module-using-the-operator" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>  <span class="c1"># Output: 5.0</span>
+</pre></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p>To import all functions (using the * method) from a module is <strong>NOT</strong> recommended.</p>
+<p>This is because it can overwrite functions that already exist in the program and/or It can be difficult to determine where a function came from.</p>
+</div>
+</section>
+</section>
+<section id="random-module">
+<h2>RANDOM MODULE<a class="headerlink" href="#random-module" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_ro0klbdt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_4dtc4qkh" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_8_random_module"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/8a2bad0f38715adfa3b4d02399dd3035/08_random_module.py"><code class="xref download docutils literal notranslate"><span class="pre">08_random_module.py</span></code></a></p>
+<p>The <code class="code highlight python docutils literal highlight-python"><span class="n">random</span></code> module provides a number of functions that can be used to
+generate random numbers. Random numbers are used in various applications such as
+games, simulations, cryptography, and statistical analysis.</p>
+<p>True Random Number Generator (TRNG)</p>
+<ul class="simple">
+<li><p>Generates random numbers based on physical processes such as
+atmospheric noise, radioactive decay, or thermal noise.</p></li>
+<li><p>The random numbers generated by a TRNG are truly random.</p></li>
+<li><p>They are completely unpredictable and uniformly distributed.</p></li>
+<li><p>They are slow and expensive to implement.</p></li>
+</ul>
+<p>Pseudo-Random Number Generator (PRNG)</p>
+<ul class="simple">
+<li><p>Generates random numbers using a deterministic algorithm.</p></li>
+<li><p>The random numbers generated by a PRNG are not truly random.</p></li>
+<li><p>They are predictable and reproducible.</p></li>
+<li><p>They can be initialized with a seed value, which determines the sequence
+of random numbers generated.</p></li>
+<li><p>They are fast and efficient.</p></li>
+</ul>
+<p>Some commonly used functions in the random module are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="p">()</span>    <span class="c1"># generates a random float number between 0 and 1.</span>
+<span class="n">randint</span><span class="p">()</span>   <span class="c1"># generates a random integer number between two specified integers.</span>
+<span class="n">uniform</span><span class="p">()</span>   <span class="c1"># generates a random float number within a specified range.</span>
+<span class="n">seed</span><span class="p">()</span>      <span class="c1"># initializes the random number generator.</span>
+<span class="n">randrange</span><span class="p">()</span> <span class="c1"># generates a random integer number within a specified range with a step.</span>
+            <span class="c1"># Syntax: random.randrange(start, stop, step)</span>
+<span class="n">choice</span><span class="p">()</span>    <span class="c1"># returns a random element from a sequence.</span>
+<span class="n">choices</span><span class="p">()</span>   <span class="c1"># returns a random sample of elements from a sequence with replacement.</span>
+<span class="n">sample</span><span class="p">()</span>    <span class="c1"># returns a random sample of elements from a sequence without replacement.</span>
+<span class="n">shuffle</span><span class="p">()</span>   <span class="c1"># shuffles the elements of a sequence.</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the random module</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="c1"># generate a random float number between 0 and 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>  <span class="c1"># Output: 0.6394267984578837</span>
+
+<span class="c1"># generate a random integer number between 1 and 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: 7</span>
+
+<span class="c1"># generate a random float number between 1 and 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: 5.123456789012345</span>
+
+<span class="c1"># initialize the random number generator with a seed value</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># generate a random integer number between 1 and 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: 10</span>
+
+<span class="c1"># generate a random integer number between 1 and 10 with a step of 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># Output: 7</span>
+
+<span class="c1"># generate a random element from a sequence</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: 3</span>
+
+<span class="c1"># generate a random sample of elements from a sequence with replacement</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>  <span class="c1"># Output: [3, 1, 5]</span>
+
+<span class="c1"># generate a random sample of elements from a sequence without replacement</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>  <span class="c1"># Output: [3, 1, 5]</span>
+
+<span class="c1"># shuffle the elements of a sequence</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1"># Output: [3, 1, 5, 2, 4]</span>
+</pre></div>
+</div>
+<section id="help-function">
+<h3>Help function<a class="headerlink" href="#help-function" title="Link to this heading">#</a></h3>
+<p>To access the help function, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Enter the python interpreter by typing <code class="code docutils literal notranslate"><span class="pre">python3</span></code> in the terminal.</p></li>
+<li><p>Type <code class="code docutils literal notranslate"><span class="pre">help()</span></code> in the python interpreter.</p></li>
+<li><p>For example, type <code class="code docutils literal notranslate"><span class="pre">help(random)</span></code> to get help on the random module.
+This will display the help information for the random module.</p></li>
+<li><p>To quit the help function, type <code class="code docutils literal notranslate"><span class="pre">quit()</span></code>.</p></li>
+<li><p>To quit the python interpreter, type <code class="code docutils literal notranslate"><span class="pre">exit()</span></code> or <code class="code docutils literal notranslate"><span class="pre">quit()</span></code>.</p></li>
+</ol>
+</section>
+</section>
+<section id="python-libraries">
+<h2>PYTHON LIBRARIES<a class="headerlink" href="#python-libraries" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_sg168zya&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_kr37xirg" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_9_python_libraries"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/6a3149e9cda0d0a0b9ba627935f157a9/09_python_libraries.py"><code class="xref download docutils literal notranslate"><span class="pre">09_python_libraries.py</span></code></a></p>
+<p><strong class="program">Python</strong> libraries are collections of functions and methods that allow you to perform many actions without writing your code.</p>
+<p><strong class="program">Python</strong> modules are files that contain <strong class="program">Python</strong> code. They can define functions, classes, and variables.</p>
+<p><strong class="program">Python</strong> has a vast collection of libraries and modules that can be used to
+perform various tasks.</p>
+<section id="installing-a-library">
+<h3>Installing a library<a class="headerlink" href="#installing-a-library" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>To install a library, you can use the <code class="code highlight python docutils literal highlight-python"><span class="n">pip</span></code> command (Python package manager)</p></li>
+<li><p>For example, to install the <code class="code highlight python docutils literal highlight-python"><span class="n">numpy</span></code> library, you can use the following command in the terminal:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+</pre></div>
+</div>
+</li>
+<li><p>To install <code class="code highlight python docutils literal highlight-python"><span class="n">pip</span></code>, you can use the following command in the terminal:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="o">--</span><span class="n">version</span>              <span class="c1"># Check if pip is installed</span>
+  <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">ensurepip</span> <span class="o">--</span><span class="n">user</span>           <span class="c1"># Install pip</span>
+  <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>  <span class="c1"># Upgrade pip</span>
+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="math">
+<h3><code class="code highlight python docutils literal highlight-python"><span class="n">math</span></code><a class="headerlink" href="#math" title="Link to this heading">#</a></h3>
+<p>Provides mathematical functions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the math module</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># Output: 4.0</span>
+</pre></div>
+</div>
+</section>
+<section id="numpy">
+<h3><code class="code highlight python docutils literal highlight-python"><span class="n">numpy</span></code><a class="headerlink" href="#numpy" title="Link to this heading">#</a></h3>
+<p>Provides support for large, multidimensional arrays and matrices.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the numpy module</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Create a simple array</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+
+<span class="c1"># Multiply each element by 2</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="c1"># Print the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: [ 2  4  6  8 10]</span>
+</pre></div>
+</div>
+</section>
+<section id="matplotlib">
+<h3><code class="code highlight python docutils literal highlight-python"><span class="n">matplotlib</span></code><a class="headerlink" href="#matplotlib" title="Link to this heading">#</a></h3>
+<p>Provides plotting functions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the matplotlib module</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Create a simple plot</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Simple Plot&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x-axis&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y-axis&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="pandas">
+<h3><code class="code highlight python docutils literal highlight-python"><span class="n">pandas</span></code><a class="headerlink" href="#pandas" title="Link to this heading">#</a></h3>
+<p>Provides data structures and data analysis tools.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Create a simple DataFrame</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Peter&quot;</span><span class="p">,</span> <span class="s2">&quot;Linda&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span>
+    <span class="s2">&quot;City&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;London&quot;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Display the DataFrame</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="n">df</span>
+<span class="p">)</span>  <span class="c1"># Output:     Name  Age  City 0  John  25  New York 1  Anna  36  Paris 2  Peter  29  Berlin 3  Linda  42  London</span>
+
+<span class="c1"># Accessing a specific column</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span>  <span class="c1"># Access the &#39;Age&#39; column</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>  <span class="c1"># Output: 0    25, 1    36, 2    29, 3    42, Name: Age, dtype: int64</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="keywords">
+<h2>KEYWORDS<a class="headerlink" href="#keywords" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_zs3gj9tz&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_8n4f9ehp" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_10_keywords"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/6995aeef2f9d41f4165af9970f44374c/10_keywords.py"><code class="xref download docutils literal notranslate"><span class="pre">10_keywords.py</span></code></a></p>
+<section id="reserved-words">
+<h3>Reserved words<a class="headerlink" href="#reserved-words" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Keywords are reserved words in <strong class="program">Python</strong> that have special meaning and cannot be used as variable names.</p></li>
+<li><p>Keywords are case-sensitive.</p></li>
+<li><p><strong class="program">Python</strong> has 35 keywords.</p></li>
+<li><p>You can get a list of keywords using the <code class="code highlight python docutils literal highlight-python"><span class="n">keyword</span></code> module.</p></li>
+<li><p>You can check if a word is a keyword using the <code class="code highlight python docutils literal highlight-python"><span class="n">iskeyword</span><span class="p">()</span></code> function.</p></li>
+<li><p>You can get a list of built-in functions and variables using the <code class="code highlight python docutils literal highlight-python"><span class="n">builtins</span></code> module.</p></li>
+<li><p>You can check if a word is a built-in function or variable using the <code class="code highlight python docutils literal highlight-python"><span class="nb">dir</span><span class="p">()</span></code> function.</p></li>
+<li><p>You can check if a word is a built-in function or variable using the <code class="code highlight python docutils literal highlight-python"><span class="ow">is</span></code> identity operator.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the keyword module</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">keyword</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">keyword</span><span class="o">.</span><span class="n">kwlist</span><span class="p">)</span>  <span class="c1"># List of reserved words</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">keyword</span><span class="o">.</span><span class="n">iskeyword</span><span class="p">(</span><span class="s2">&quot;break&quot;</span><span class="p">))</span>  <span class="c1"># Output: True</span>
+
+<span class="c1"># import the builtins module</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">builtins</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">builtins</span><span class="p">))</span>  <span class="c1"># List of built-in functions and variables</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="ne">ArithmeticError</span> <span class="ow">is</span> <span class="n">builtins</span><span class="o">.</span><span class="n">ArithmeticError</span><span class="p">)</span>  <span class="c1"># Output: True</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="engr-13300-python-template">
+<h2>ENGR 13300 Python Template<a class="headerlink" href="#engr-13300-python-template" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_kwtdhb2t&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_x2tuzeo5" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="ENGR133_python_template"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/fdaf5e15bbaeb0ddb1f3b1102a55ca52/ENGR131_Python_Template.py"><code class="xref download docutils literal notranslate"><span class="pre">ENGR131_Python_Template.py</span></code></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./02_Python/M1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span><strong class="program">Python</strong> 1</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world">HELLO WORLD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">OPERATORS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-operators">Math Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-operators">Boolean Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-operators">Assignment Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bitwise-operators">Bitwise Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-operators">Identity Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membership-operators">Membership Operators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">VARIABLES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-operator">Assignment operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-statements">Assignment statements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-assignment-operators">Compound Assignment Operators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">DATA TYPES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic Data Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-data-types">Sequence Data Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-indexing-and-slicing">Basic indexing and slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-type-operations">Mixed Type Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-conversion">Data Type Conversion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-function-input">INPUT FUNCTION - input()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outputs">OUTPUTS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print-function">print() function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-function">format() function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatted-print-statements-f-print">Formatted print statements (f-print)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math-module">MATH MODULE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-methods">IMPORT METHODS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-module">import a module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-module-using-an-alias">import a module using an alias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-specific-functions-from-a-module">import specific functions from a module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-specific-functions-from-a-module-using-an-alias">import specific functions from a module using an alias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-all-functions-from-a-module-using-the-operator">import all functions from a module using the * operator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-module">RANDOM MODULE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-function">Help function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-libraries">PYTHON LIBRARIES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-a-library">Installing a library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math"><code class="code highlight python docutils literal highlight-python"><span class="n">math</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy"><code class="code highlight python docutils literal highlight-python"><span class="n">numpy</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib"><code class="code highlight python docutils literal highlight-python"><span class="n">matplotlib</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas"><code class="code highlight python docutils literal highlight-python"><span class="n">pandas</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keywords">KEYWORDS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reserved-words">Reserved words</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#engr-13300-python-template">ENGR 13300 Python Template</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="/spring-2026/Appendices/contributors.html">Contributors</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
