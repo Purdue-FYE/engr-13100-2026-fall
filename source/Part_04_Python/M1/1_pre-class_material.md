@@ -1,0 +1,696 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+```{include} /macros.md
+```
+```{code-cell} ipython3
+:tags: ["remove-cell"]
+
+from myst_nb import glue
+
+mnum = "py1_pre"
+
+glue("deliverable_py1_pre_0_py", mnum+"_0_username.py")
+```
+
+(Py:M1:pre-class)=
+# Pre-Class Assignments
+
+Create and execute simple scripts comprised of basic {program}`Python` concepts.
+Apply course code standard in development of {program}`Python` scripts.
+Modularize and comment code in {program}`Python` for readability and
+reusability.
+
+Here is the link to the [{program}`Python` Official Documentation](https://docs.python.org/3.13/)
+
+## HELLO WORLD
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_lvftifgt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_m3s2a7rj" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_0_helloworld"></iframe>
+
+{download}`00_hello_world.py<materials/00_hello_world.py>`
+
+
+## OPERATORS
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_c5slan08&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_hhz95c74" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_1_operators"></iframe>
+
+{download}`01_operators.py<materials/01_operators.py>`
+
+### Math Operators
+used to perform basic operations
+
+- Addition {python}`+`: returns the sum of two numbers
+- Subtraction {python}`-`: returns the difference of two numbers
+- Multiplication {python}`*`: returns the product of two numbers
+- Division {python}`/`: returns the quotient of two numbers
+- Modulus {python}`%`: returns the remainder of the division
+- Exponentiation {python}`**`: raises the first number to the power of the second number
+- Floor division {python}`//`: returns the integer part of the division result
+
+Operands - Operands are the values that the operator acts on.
+
+Order of operations is determined by precedence:
+1. Parentheses {python}`()`
+2. Exponents {python}`**`
+3. Multiplication and Division {python}`*`, {python}`/`, {python}`%`, {python}`//`
+4. Addition and Subtraction {python}`+`, {python}`-`
+
+If two operators have the same precedence, they are applied from left to right
+
+### Boolean Operators
+used to combine conditional statements
+
+- {python}`not` : returns {python}`True` if the statement is false and vice versa
+- {python}`and` : returns {python}`True` if both statements are true
+- {python}`or` : returns {python}`True` if one of the statements is true
+
+### Comparison Operators
+used to compare two values, returns a boolean value.
+
+- greater than {python}`>` : returns {python}`True` if the left operand is greater than the right operand
+- less than {python}`<` : returns {python}`True` if the left operand is less than the right operand
+- greater than or equal to {python}`>=` : returns {python}`True` if the left operand is greater than or equal to the right operand
+- less than or equal to {python}`<=` : returns {python}`True` if the left operand is less than or equal to the right operand
+- equal to {python}`==` : returns {python}`True` if the operands are equal
+- not equal to {python}`!=` : returns {python}`True` if the operands are not equal
+
+### Assignment Operators
+{python}`=` is used to assign values to variables.
+
+See [Variables](#variables)
+<!-- See [Variables](#variables) I want to link the variables heading below-->
+<!-- this above line returns an error however, it does show up on the website, but commented for now -->
+
+### Bitwise Operators
+used to perform bitwise operations
+
+- {python}`&` : Bitwise AND
+- {python}`|` : Bitwise OR
+- {python}`^` : Bitwise XOR
+- {python}`~` : Bitwise NOT
+- {python}`<<` : Bitwise left shift
+- {python}`>>` : Bitwise right shift
+
+### Identity Operators
+used to compare the memory location of two objects
+- {python}`is` : returns {python}`True` if both variables are the same object
+- {python}`is not` : returns {python}`True` if both variables are not the same object
+
+### Membership Operators
+used to test if a sequence is present in an object
+- {python}`in` : returns {python}`True` if a sequence is present in the object
+- {python}`not in` : returns {python}`True` if a sequence is not present in the object
+
+(variables)=
+## VARIABLES
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_j3ymtkkr&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_uhk9dekm" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_2_variables"></iframe>
+
+{download}`02_variables.py<materials/02_variables.py>`
+
+A variable is a name that refers to a value. Variables are used to store data
+that can be referenced and manipulated in a program.
+
+### Assignment operator
+{python}`=` is used to assign a value to a variable
+
+- The value on the right side of the assignment operator is assigned to the
+  variable on the left side.
+- Variable names can contain letters, numbers, and underscores.
+- They must start with a letter or an underscore.
+- Variable names are case-sensitive.
+- Variables can be reassigned to new values at any time.
+- Variables can point to any data type.
+
+Expressions are anything that can be evaluated to a value.
+For example: {python}`1+2`
+
+Literals are fixed values that are written directly into the code.
+For example: {python}`1` or {python}`"Hello World!"`
+
+### Assignment statements
+
+used to create variables and assign values to them.
+
+Syntax: variable = expression or literal
+
+{python}`a = 1+2`<br>
+{python}`b = "Hello World!"`
+
+### Compound Assignment Operators
+
+- {python}`a+=3` equates to {python}`a = a + 3` (Add and assign)
+- {python}`a-=3` equates to {python}`a = a - 3` (Subtract and assign)
+- {python}`a*=3` equates to {python}`a = a * 3` (Multiply and assign)
+- {python}`a/=3` equates to {python}`a = a / 3` (Divide and assign)
+- {python}`a%=3` equates to {python}`a = a % 3` (Modulus and assign)
+- {python}`a**=3` equates to {python}`a = a ** 3` (Exponentiate and assign)
+- {python}`a//=3` equates to {python}`a = a // 3` (Floor divide and assign)
+
+Python does not have increment {python}`++` and decrement {python}`--` operators.
+
+## DATA TYPES
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_10gsd3vf&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_8aslw5os" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_3_datatypes"></iframe>
+
+{download}`03_data_types.py<materials/03_data_types.py>`
+
+You can use the {python}`type()` function to get the datatype of a variable or a literal.
+
+### Basic Data Types
+- Integer {python}`int` - whole numbers
+- Float {python}`float` - numbers with decimal points
+- String {python}`str` - sequence of characters
+- Boolean {python}`bool` - True or False
+- None {python}`NoneType` - represents the absence of a value
+
+### Sequence Data Types
+- List - comma separated values enclosed in square brackets, {python}`[1, 2, 3]`, {python}`list()`
+- Tuple - comma separated values enclosed in parentheses, {python}`(1, 2, 3)`, {python}`tuple()`
+- Set - comma separated values enclosed in curly braces, {python}`{1, 2, 3}`, {python}`set()`
+- Dictionary - key-value pairs enclosed in curly braces, {python}`{"name": "John", "age": 20}`, {python}`dict()`
+- Range - {python}`range()` returns a sequence of numbers
+
+  Syntax: {python}`range(start, stop, step)`
+    - start - optional, an integer number specifying at which position to start.
+    - stop - required, an integer number specifying at which position to stop (not included)
+    - step - optional, an integer number specifying the incrementation.
+    - Default values: start=0, stop - no default values as it is required, step=1
+
+### Basic indexing and slicing
+- Indexing - accessing a single element of a sequence
+- Slicing - accessing multiple elements of a sequence
+- Indexing starts from 0
+- Negative indexing starts from -1 (last element)
+- Slicing syntax: {python}`[start:stop:step]`
+    - start - starting index
+    - stop - stopping index
+    - step - incrementation
+    - Default values: start=0, stop=len(sequence), step=1
+
+```{table} Sequence Differences
+:class: sequence
+:name: tab:Py:M1:pre_class_sequence
+|  Sequence  | Mutability |   Order  |  Unique Elements  | Editablity |
+|:----------:|:----------:|:---------:|:-----------------:|:----------:|
+| List       |  Mutable  |  Ordered | allows duplicates | replaced or changed or added or removed|
+| Tuple      | Immutable |  Ordered | allows duplicates | cannot be replaced or changed or added or removed |
+| Set        |  Mutable  | Unordered|   no duplicates   | cannot be replaced or changed, only added or removed |
+| Dictionary |  Mutable  | Unordered| no duplicate keys | replaced or changed or added or removed|
+```
+
+### Mixed Type Operations
+- Adding two integers results in an integer: {python}`int` + {python}`int` = {python}`int`
+- Adding an integer and a float results in a float: {python}`int` + {python}`float` = {python}`float`
+- Adding a string and a number, results in an error: {python}`str` + {python}`int` = {python}`TypeError`
+- Adding two strings concatenates them and results in a string: {python}`str` + {python}`str` = {python}`str`
+- Multiplying a string by an integer repeats the string and results in a string: {python}`str` * {python}`int` = {python}`str`
+- Division always results in a float: {python}`int` / {python}`int` = {python}`float`
+- Floor division always results in an integer: {python}`float` // {python}`float` = {python}`int`
+
+
+### Data Type Conversion
+
+```{admonition} Notes
+:class: note
+
+The behavior of some of these conversion functions may surprise you.  Common uses and
+"gotchas" are summarized here, but you can find full details on each function in [the
+official documentation](https://docs.python.org/3/library/functions.html).
+```
+
+{python}`int()` and {python}`float()`
+: accept numbers or strings as arguments, and converts them to integers or floats
+  respectively.
+
+  - A leading {python}`+` or {python}`-` can be used to specify the sign of a number.
+
+  - Whitespace at the beginning or end of strings passed to {python}`int()` or
+    {python}`float()` is allowed (e.g. {python}`int("123  ")` returns {python}`123`).
+
+  - Underscores between digits can be used to improve readability (e.g.
+    {python}`int("1_000_000")` returns {python}`1000000`), but use of commas results in an
+    error (e.g. {python}`int("1,000,000")` raises {python}`ValueError`).
+
+  - Both {python}`int("5")` and {python}`int(5.3)` return {python}`5`, but
+    {python}`int("5.3")` raises a {python}`ValueError`.
+
+  - {python}`float()` accepts special strings like {python}`float("inf")` and
+    {python}`float("NaN")` but {python}`int()` does not.
+
+  - Both {python}`int()` and {python}`float()` accept booleans ({python}`True` and
+    {python}`False`) as inputs, returning {python}`1` and {python}`0` or {python}`1.0` and
+    {python}`0.0` respectively.
+
+{python}`str()`
+: converts its argument to a string.
+
+  - {python}`str()` converts booleans to the strings {python}`"True` or
+    {python}`"False"`.
+
+{python}`bool()`
+: converts its argument to a boolean.
+
+  - {python}`bool()` converts empty values ({python}`0`, {python}`""`, {python}`[]`,
+    {python}`{}`, {python}`None`, {python}`False`) to {python}`False`, but
+    {python}`bool("0")`, {python}`bool("False")`, {python}`bool([0])` will all return
+    {python}`True`.
+
+{python}`list()`
+: converts an iterable argument to a list.
+
+  - {python}`list()` will split strings into chars (e.g. {python}`list("ENGR133")`
+    returns {python}`["E", "N", "G", "R", "1", "3", "3"]`).
+
+  - {python}`list()` will only read the keys when passed a dictionary (e.g.
+    {python}`list({1: "a", "b": 2})` returns {python}`[1, 'b']`).
+
+{python}`tuple()`
+: converts an iterable argument to a tuple.
+
+{python}`dict()`
+: converts key-value, mapping, or iterable arguments to a dictionary.
+
+  - e.g.  {python}`dict(a=1)` and {python}`dict([("a", 1)])` are both valid and return
+    {python}`{'a': 1}`.
+
+{python}`set()`
+: converts an iterable argument to a set.
+
+  - {python}`set()` can split strings while deleting duplicate characters (e.g.
+    {python}`set("helloooo")` returns {python}`{"h", "e", "l", "o"}`).
+
+
+### Strings
+
+Single quotes `'`, double quotes `"`, or triple quotes `'''` or `"""` can be used
+to define strings You can add backward-slash `\` before the quote to escape it.
+
+Example:
+```python
+print('Pete')                 # Output: Pete
+print("Pete's hammer")        # Output: Pete's
+print("""Pete's "hammer" """) # Output: Pete's "hammer"
+
+print('Pete\'s "hammer"')     # Output: Pete's "hammer"
+```
+
+## INPUT FUNCTION - input()
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_0ret78pn&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_mjla0g27" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_4_input"></iframe>
+
+{download}`04_input_function.py<materials/04_input_function.py>`
+
+Example:
+
+```python
+user_name = input("Enter your name: ")
+```
+
+```{admonition} Note
+:class: note 
+
+{program}`Python` {python}`input()` function always returns a {python}`str` as its datatype.
+```
+
+Converting user input
+```python
+age = input("Enter your age: ")
+age = int(age)
+```
+
+Nested functions in Python
+```python
+age = int(input("Enter your age: "))
+```
+```python
+age = float(input("Enter your age: "))
+```
+
+For the purpose of this course, you will not worry about validating and sanitizing user input.
+If you are interested in learning more about it, you can check out [exception handling](https://docs.python.org/3.13/tutorial/errors.html) in Python.
+
+## OUTPUTS
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_1dldtux4&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_7oh6rpwd" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_5_outputs"></iframe>
+
+{download}`05_outputs.py<materials/05_outputs.py>`
+
+### print() function
+
+{python}`print()` function - prints the given object to the standard output device (screen)
+
+Examples:
+```python
+world = 616
+print("Hello World")
+print("Hello", "World")
+print("Hello", "World", world)
+print("Hello", "World", 616, sep="***", end="!")
+print("There are",120,"students in the class", sep=" ", end=".\n")
+```
+
+### format() function
+
+{python}`format()` function - accepts a number and a format specifier and returns as a string
+
+Syntax: {python}`format(number, format_specifier)`
+
+format_specifier syntax - {python}`"[width][grouping_option][.precision][type]"`
+- width - minimum number of characters to be printed (default is 0)
+- grouping_option - comma (,) to use comma as a thousand separator
+- precision - number of decimal places to be printed
+- type - d for integer, f for float, s for string
+
+Examples:
+```python
+format(123.4567, ".2f")       # Output is "123.46"
+format(1234.56789, "10,.2f")  # Output is "  1,234.57"
+format(1234, "10_d")          # Output is "     1_234"
+format(0.2, "0.0%")           # Output is "20.0%"
+format(12345.6789, "e")       # Output is "1.234568e+04" which is 1.234568 x 10^4
+format(12345.6789, "E")       # Output is "1.234568E+04" which is 1.234568 x 10^4
+format(12345.6789, ".2e")     # Output is "1.23e+04" which is 1.23 x 10^4
+format(0.00000012345, ".4E")  # Output is "1.2345E-07" which is 1.2345 x 10^-7
+```
+
+### Formatted print statements (f-print)
+
+Here is the {program}`Python` Official Documentation link to [formatted string literals](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals)
+
+Syntax: {python}`f"string {variable}"`
+
+Example:
+```python
+item = "apple"
+cost = 1234.56789
+f"{item} costs ${cost}"             # Output is "apple costs $1234.56789"
+print(f"{item} costs ${cost:,.2f}") # Output is "apple costs $1,234.57"
+```
+
+
+## MATH MODULE
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_cwermqoz&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_r0sbw236" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_6_math_module"></iframe>
+
+{download}`06_math_module.py<materials/06_math_module.py>`
+
+Syntax:
+```python
+import math
+
+math.<function name>()
+```
+
+- {program}`Python` has a built-in module called {python}`math` that contains a collection of mathematical functions
+- To use the {python}`math` module, you must import it using the {python}`import` keyword
+- To access functions in the {python}`math` module, you must use the module name
+  followed by a period ({python}`.`) and then the {python}`function name`
+
+Examples:
+```python
+math.sqrt()       # square root of a number
+math.ceil()       # ceiling of a number (round up to the next integer)
+math.floor()      # floor of a number (round down to the previous integer)
+math.factorial()  # factorial of a number
+```
+
+More details on the {python}`math` module can be found in the [official documentation](https://docs.python.org/3/library/math.html).
+
+
+## IMPORT METHODS
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_3ex3ms3e&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_3a8kyry0" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_7_import_methods"></iframe>
+
+{download}`07_import_methods.py<materials/07_import_methods.py>`
+
+There are several ways to import a module or a function from a module
+### import a module
+
+```python
+import math
+
+print(math.sqrt(25))  # Output: 5.0
+```
+
+### import a module using an alias
+
+```python
+import math as m
+
+print(20 * m.cos(m.pi))  # Output: -20.0 , (cos(pi) = -1)
+```
+
+### import specific functions from a module
+
+```python
+from math import cos, pi
+
+print(20 * cos(pi))  # Output: -20.0
+```
+
+### import specific functions from a module using an alias
+
+```python
+from math import sqrt as s
+
+print(s(25))  # Output: 5.0
+```
+
+### import all functions from a module using the * operator
+
+```python
+from math import *
+
+print(sqrt(25))  # Output: 5.0
+```
+```{admonition} Warning
+:class: warning
+
+To import all functions (using the * method) from a module is **NOT** recommended.
+
+This is because it can overwrite functions that already exist in the program and/or It can be difficult to determine where a function came from.
+```
+
+
+## RANDOM MODULE
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_ro0klbdt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_4dtc4qkh" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_8_random_module"></iframe>
+
+{download}`08_random_module.py<materials/08_random_module.py>`
+
+The {python}`random` module provides a number of functions that can be used to
+generate random numbers. Random numbers are used in various applications such as
+games, simulations, cryptography, and statistical analysis.
+
+True Random Number Generator (TRNG)
+  - Generates random numbers based on physical processes such as
+    atmospheric noise, radioactive decay, or thermal noise.
+  - The random numbers generated by a TRNG are truly random.
+  - They are completely unpredictable and uniformly distributed.
+  - They are slow and expensive to implement.
+
+Pseudo-Random Number Generator (PRNG)
+  - Generates random numbers using a deterministic algorithm.
+  - The random numbers generated by a PRNG are not truly random.
+  - They are predictable and reproducible.
+  - They can be initialized with a seed value, which determines the sequence
+    of random numbers generated.
+  - They are fast and efficient.
+
+Some commonly used functions in the random module are:
+
+```python
+random()    # generates a random float number between 0 and 1.
+randint()   # generates a random integer number between two specified integers.
+uniform()   # generates a random float number within a specified range.
+seed()      # initializes the random number generator.
+randrange() # generates a random integer number within a specified range with a step.
+            # Syntax: random.randrange(start, stop, step)
+choice()    # returns a random element from a sequence.
+choices()   # returns a random sample of elements from a sequence with replacement.
+sample()    # returns a random sample of elements from a sequence without replacement.
+shuffle()   # shuffles the elements of a sequence.
+```
+
+Example:
+```python
+# import the random module
+import random
+
+# generate a random float number between 0 and 1
+print(random.random())  # Output: 0.6394267984578837
+
+# generate a random integer number between 1 and 10
+print(random.randint(1, 10))  # Output: 7
+
+# generate a random float number between 1 and 10
+print(random.uniform(1, 10))  # Output: 5.123456789012345
+
+# initialize the random number generator with a seed value
+random.seed(10)
+
+# generate a random integer number between 1 and 10
+print(random.randint(1, 10))  # Output: 10
+
+# generate a random integer number between 1 and 10 with a step of 2
+print(random.randrange(1, 10, 2))  # Output: 7
+
+# generate a random element from a sequence
+print(random.choice([1, 2, 3, 4, 5]))  # Output: 3
+
+# generate a random sample of elements from a sequence with replacement
+print(random.choices([1, 2, 3, 4, 5], k=3))  # Output: [3, 1, 5]
+
+# generate a random sample of elements from a sequence without replacement
+print(random.sample([1, 2, 3, 4, 5], k=3))  # Output: [3, 1, 5]
+
+# shuffle the elements of a sequence
+arr = [1, 2, 3, 4, 5]
+random.shuffle(arr)
+print(arr)  # Output: [3, 1, 5, 2, 4]
+```
+### Help function
+
+To access the help function, follow these steps:
+
+1. Enter the python interpreter by typing {code}`python3` in the terminal.
+
+2. Type {code}`help()` in the python interpreter.
+
+3. For example, type {code}`help(random)` to get help on the random module.
+   This will display the help information for the random module.
+
+4. To quit the help function, type {code}`quit()`.
+
+5. To quit the python interpreter, type {code}`exit()` or {code}`quit()`.
+
+## PYTHON LIBRARIES
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_sg168zya&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_kr37xirg" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_9_python_libraries"></iframe>
+
+{download}`09_python_libraries.py<materials/09_python_libraries.py>`
+
+{program}`Python` libraries are collections of functions and methods that allow you to perform many actions without writing your code.
+
+{program}`Python` modules are files that contain {program}`Python` code. They can define functions, classes, and variables.
+
+{program}`Python` has a vast collection of libraries and modules that can be used to
+perform various tasks.
+
+### Installing a library
+- To install a library, you can use the {python}`pip` command (Python package manager)
+- For example, to install the {python}`numpy` library, you can use the following command in the terminal:
+  ```python
+  python3 -m pip install numpy
+  ```
+- To install {python}`pip`, you can use the following command in the terminal:
+  ```python
+    python3 -m pip --version              # Check if pip is installed
+    python3 -m ensurepip --user           # Install pip
+    python3 -m pip install --upgrade pip  # Upgrade pip
+
+### {python}`math`
+
+Provides mathematical functions.
+```python
+# import the math module
+import math
+
+print(math.sqrt(16))  # Output: 4.0
+```
+
+### {python}`numpy`
+Provides support for large, multidimensional arrays and matrices.
+  ```python
+  python3 -m pip install numpy
+  ```
+
+```python
+# import the numpy module
+import numpy as np
+
+# Create a simple array
+arr = np.array([1, 2, 3, 4, 5])
+
+# Multiply each element by 2
+result = arr * 2
+
+# Print the result
+print(result)  # Output: [ 2  4  6  8 10]
+```
+
+### {python}`matplotlib`
+Provides plotting functions.
+```python
+# import the matplotlib module
+import matplotlib.pyplot as plt
+
+# Create a simple plot
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
+
+plt.plot(x, y)
+plt.title("Simple Plot")
+plt.xlabel("x-axis")
+plt.ylabel("y-axis")
+plt.show()
+```
+
+### {python}`pandas`
+Provides data structures and data analysis tools.
+```python
+import pandas as pd
+
+# Create a simple DataFrame
+data = {
+    "Name": ["John", "Anna", "Peter", "Linda"],
+    "Age": [25, 36, 29, 42],
+    "City": ["New York", "Paris", "Berlin", "London"],
+}
+
+df = pd.DataFrame(data)
+
+# Display the DataFrame
+print(
+    df
+)  # Output:     Name  Age  City 0  John  25  New York 1  Anna  36  Paris 2  Peter  29  Berlin 3  Linda  42  London
+
+# Accessing a specific column
+ages = df["Age"]  # Access the 'Age' column
+print(ages)  # Output: 0    25, 1    36, 2    29, 3    42, Name: Age, dtype: int64
+```
+
+## KEYWORDS
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_zs3gj9tz&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_8n4f9ehp" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_10_keywords"></iframe>
+
+{download}`10_keywords.py<materials/10_keywords.py>`
+
+### Reserved words
+- Keywords are reserved words in {program}`Python` that have special meaning and cannot be used as variable names.
+- Keywords are case-sensitive.
+- {program}`Python` has 35 keywords.
+- You can get a list of keywords using the {python}`keyword` module.
+- You can check if a word is a keyword using the {python}`iskeyword()` function.
+- You can get a list of built-in functions and variables using the {python}`builtins` module.
+- You can check if a word is a built-in function or variable using the {python}`dir()` function.
+- You can check if a word is a built-in function or variable using the {python}`is` identity operator.
+
+Example:
+```python
+# import the keyword module
+import keyword
+
+print(keyword.kwlist)  # List of reserved words
+print(keyword.iskeyword("break"))  # Output: True
+
+# import the builtins module
+import builtins
+
+print(dir(builtins))  # List of built-in functions and variables
+
+print(ArithmeticError is builtins.ArithmeticError)  # Output: True
+```
+
+
+## ENGR 13300 Python Template
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_kwtdhb2t&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_x2tuzeo5" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="ENGR133_python_template"></iframe>
+
+{download}`ENGR131_Python_Template.py</02_Python/ENGR131_Python_Template.py>`

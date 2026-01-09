@@ -15,7 +15,7 @@ myst:
 ```{include} /macros.md
 ```
 
-(start_here:syllabus)=
+(course_resources:syllabus)=
 # Syllabus
 
 ## Course Information
