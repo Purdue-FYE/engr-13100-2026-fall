@@ -36,7 +36,7 @@ sample_output = $(foreach file,$(solutions),\
 
 # Re-build only pages that are new/changed since last run.
 default: $(sample_output)
-	PYTHONPATH="$(PWD)/source/_extensions:$(PYTHONPATH)" jupyter-book build -W source
+	jupyter-book build -W source
 	touch source/_build/html/.nojekyll
 
 

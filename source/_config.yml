@@ -5,7 +5,7 @@ title: "Purdue University ENGR 13100"
 author: '<a href="/spring-2026/Appendices/contributors.html">Contributors</a>'
 copyright: "2026 All rights reserved"
 logo: logo.png
-only_build_toc_files : false
+only_build_toc_files : true
 
 # See https://jupyterbook.org/content/execute.html
 execute:

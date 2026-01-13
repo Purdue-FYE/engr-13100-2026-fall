@@ -86,8 +86,8 @@ work within the limits of the machine it is running on. As a result, there may b
 differences between what you compute by hand and what {program}`Python` computes.
 
 Unless mentioned otherwise, for all {program}`Python` tasks (pre-class, team and
-individual) you will be writing your scripts using {download}`ENGR133_Python_Template.py
-</Part_3_Python/ENGR133_Python_Template.py>`. This template contains header information
+individual) you will be writing your scripts using {download}`ENGR131_Python_Template.py
+</Part_04_Python/ENGR131_Python_Template.py>`. This template contains header information
 that must always be edited to reflect the task your {program}`Python` file is meant to
 solve, and you will always be prompted in the problem statement to rename the file.
 
@@ -110,8 +110,8 @@ be needed for this task. It is important for your learning and ability to contri
 future assignments that you understand the covered topics.  In this task, you will be
 doing calculations in {program}`Python`.
 
-1. Make a copy of the {download}`ENGR133_Python_Template.py
-   </Part_3_Python/ENGR133_Python_Template.py>` {program}`Python` template and rename
+1. Make a copy of the {download}`ENGR131_Python_Template.py
+</Part_04_Python/ENGR131_Python_Template.py>` {program}`Python` template and rename
    the file to {glue:text}`../../../1_pre-class_material.md::deliverable_py1_pre_0_py:`.
 
 2. Make sure to fill out all header information, including a short description
@@ -164,7 +164,7 @@ doing calculations in {program}`Python`.
    the assignment on Gradescope.
 
 % Automatically generated Sample Output section.
-```{include} /_build/intermediate/Part_3_Python/M1/tasks/pre_0/a/sample_output.md
+```{include} /_build/intermediate/Part_04_Python/M1/tasks/pre_0/a/sample_output.md
 ```
 
 ```{list-table} Deliverables
