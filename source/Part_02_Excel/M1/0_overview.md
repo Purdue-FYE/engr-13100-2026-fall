@@ -45,5 +45,3 @@ At the end of this module, you will be able to:
 
 These learning objectives are directly connected to the following Course
 Outcomes:
-
-{{}}
