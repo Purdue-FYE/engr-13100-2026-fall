@@ -65,7 +65,7 @@ myst:
 ```{include} /macros.md
 ```
 
-# Task 0
+# Pre-Class Task 0
 
 
 ## Learning Objectives
