@@ -21,7 +21,7 @@ glue("deliverable_py1_pre_0_py", mnum+"_0_username.py")
 ```
 
 (Py:M1:pre-class)=
-# Pre-Class Assignments
+# Pre-Class Videos
 
 Create and execute simple scripts comprised of basic {program}`Python` concepts.
 Apply course code standard in development of {program}`Python` scripts.
