@@ -7,20 +7,29 @@ parts:
   - caption: Start Here
     numbered: False
     chapters:
-    - file: 00_Course_Resources/syllabus
-    - file: 00_Course_Resources/meet_the_team
-    - file: 00_Course_Resources/help_sessions
-    - file: 00_Course_Resources/course_schedule
-    - file: 00_Course_Resources/course_software/course_software
+    - file: Part_00_Course_Resources/syllabus
+    - file: Part_00_Course_Resources/meet_the_team
+    - file: Part_00_Course_Resources/help_sessions
+    - file: Part_00_Course_Resources/course_schedule
+    - file: Part_00_Course_Resources/course_software/course_software
 
-  # - caption: Professional Preparation and Teaming
-  #   numbered: True
-  #   chapters:
+  - caption: Professional Preparation and Teaming
+    numbered: True
+    chapters:
+      # Professional Preperation Module
+    - file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
 
-  # - caption: Excel
-  #   numbered: True
-  #   chapters:
+      # Teaming Module
+    - file: Part_01_Professional_Development/M2_Teaming/0_overview
 
+  - caption: Excel
+    numbered: True
+    chapters:
+    # Excel Module 1
+    - file: Part_02_Excel/M1/0_overview
+      sections:
+      - file: Part_02_Excel/M1/1_pre-class_material
+      - file: Part_02_Excel/M1/tasks/pre_0/a/instructions
   # - caption: Project 1
   #   numbered: True
   #   chapters:
@@ -30,15 +39,15 @@ parts:
     chapters:
     # Python Module 1
   
-    - file: 04_Python/M1/0_overview
+    - file: Part_04_Python/M1/0_overview
       sections:
-      - file: 04_Python/M1/1_pre-class_material
-      - file: 04_Python/M1/tasks/pre_0/instructions
-      # - file: 04_Python/M1/tasks/team_1/instructions
-      # - file: 04_Python/M1/tasks/team_2/instructions
-      # - file: 04_Python/M1/tasks/team_3/instructions
-      # - file: 04_Python/M1/tasks/ind_1/instructions
-      # - file: 04_Python/M1/tasks/ind_2/instructions
+      - file: Part_04_Python/M1/1_pre-class_material
+      - file: Part_04_Python/M1/tasks/pre_0/a/instructions
+      # - file: Part_04_Python/M1/tasks/team_1/instructions
+      # - file: Part_04_Python/M1/tasks/team_2/instructions
+      # - file: Part_04_Python/M1/tasks/team_3/instructions
+      # - file: Part_04_Python/M1/tasks/ind_1/instructions
+      # - file: Part_04_Python/M1/tasks/ind_2/instructions
 
   # - caption: Project 2
   #   numbered: True

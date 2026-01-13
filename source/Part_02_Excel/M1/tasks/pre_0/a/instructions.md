@@ -33,7 +33,7 @@ the Academic Integrity Quiz.
 
 ## Review the Syllabus
 
-Click on {ref}`start_here:syllabus` under {guilabel}`Start Here` from the left
+Click on {ref}`course_resources:syllabus` under {guilabel}`Start Here` from the left
 navigation panel and review the syllabus
 
 Read the course syllabus.  It contains important information about the course,

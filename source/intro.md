@@ -17,9 +17,6 @@ py-config:
 (home_page)=
 # **ENGR 13100**<br> *Transforming Ideas to Innovation I*
 
-```{tableofcontents}
-```
-
 ```{py-repl}
 :output: replOutput
 
@@ -55,4 +52,4 @@ ENGR 131 covers the following topics during the semester:
 
 - Overview of engineering majors offered by Purdue University.
 
-For detailed course outcomes, please read {ref}`the syllabus<start_here:syllabus>`.
+For detailed course outcomes, please read {ref}`the syllabus<course_resources:syllabus>`.
