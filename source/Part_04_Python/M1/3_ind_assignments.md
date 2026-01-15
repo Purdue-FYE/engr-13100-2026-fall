@@ -14,6 +14,9 @@ kernelspec:
 (Py:M1:individual)=
 # Individual Assignments
 
+```{tableofcontents}
+```
+
 The purpose of this assignment is to learn how to perform arithmetic operations
 in {program}`Python`, create and execute simple scripts comprised of basic
 {program}`Python` concepts, apply course code standard in development of
