@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pre-Class Task 0 &#8212; Purdue University ENGR 13100</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css?v=95f955fd" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../../_static/documentation_options.js?v=a8e58a58"></script>
+    <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Part_04_Python/M1/tasks/pre_0/a/instructions';</script>
+    <link rel="icon" href="../../../../../_static/avatar.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4.2. Team Assignments" href="../../../2_team_assignments.html" />
+    <link rel="prev" title="4.1. Pre-Class Assignments" href="../../../1_pre-class_material.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.png" class="logo__image only-light" alt="Purdue University ENGR 13100 - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo.png" class="logo__image only-dark" alt="Purdue University ENGR 13100 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../../intro.html">
+                    ENGR 13100<br> Transforming Ideas to Innovation I
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/meet_the_team.html">Meet Your Instructional Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/help_sessions.html">Help Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/course_schedule.html">Course Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/course_software/course_software.html">Course Software</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Professional Preparation and Teaming</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/0_overview.html">1. Professional Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/0_overview.html">2. Teaming</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Excel</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M1/0_overview.html">3. <strong class="program">MS Excel</strong> 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_02_Excel/M1/1_pre-class_material.html">3.1. Pre-Class Assignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_02_Excel/M1/tasks/pre_0/a/instructions.html">3.2. Task 0</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../0_overview.html">4. <strong class="program">Python</strong> 1</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../../1_pre-class_material.html">4.1. Pre-Class Assignments</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Pre-Class Task 0</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../2_team_assignments.html">4.2. Team Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../team_1/b/instructions.html">Team Task 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../team_2/a/instructions.html">Team Task 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../team_3/b/instructions.html">Team Task 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../3_ind_assignments.html">4.3. Individual Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ind_1/a/instructions.html">Individual Task 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ind_2/b/instructions.html">Individual Task 2</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Purdue-ENGR-13300/spring-2025/issues/new?title=Issue%20on%20page%20%2FPart_04_Python/M1/tasks/pre_0/a/instructions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pre-Class Task 0</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-instructions">Task Instructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-output">Sample Output</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="raw-html"><div class="d-none"></span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand\blank{~\underline{\hspace{1.2cm}}~}\\% Bold symbols (vectors)
+\newcommand\bs[1]{\mathbf{#1}}\\% Differential
+\newcommand\dd[2][]{\mathrm{d}^{#1}{#2}}  % use as \dd, \dd{x}, or \dd[2]{x}\\% Poor man's siunitx
+\newcommand\unit[1]{\mathrm{#1}}
+\newcommand\num[1]{#1}
+\newcommand\qty[2]{#1~\unit{#2}}\\\newcommand\per{/}
+\newcommand\squared{{}^2}
+\newcommand\cubed{{}^3}
+%
+% Scale
+\newcommand\milli{\unit{m}}
+\newcommand\centi{\unit{c}}
+\newcommand\kilo{\unit{k}}
+\newcommand\mega{\unit{M}}
+%
+% Percent
+\newcommand\percent{\unit{{\kern-4mu}\%}}
+%
+% Angle
+\newcommand\radian{\unit{rad}}
+\newcommand\degree{\unit{{\kern-4mu}^\circ}}
+%
+% Time
+\newcommand\second{\unit{s}}
+\newcommand\s{\second}
+\newcommand\minute{\unit{min}}
+\newcommand\hour{\unit{h}}
+%
+% Distance
+\newcommand\meter{\unit{m}}
+\newcommand\m{\meter}
+\newcommand\inch{\unit{in}}
+\newcommand\foot{\unit{ft}}
+%
+% Force
+\newcommand\newton{\unit{N}}
+\newcommand\kip{\unit{kip}} % kilopound in &quot;freedom&quot; units - edit made by Sri
+%
+% Mass
+\newcommand\gram{\unit{g}}
+\newcommand\g{\gram}
+\newcommand\kilogram{\unit{kg}}
+\newcommand\kg{\kilogram}
+\newcommand\grain{\unit{grain}}
+\newcommand\ounce{\unit{oz}}
+%
+% Temperature
+\newcommand\kelvin{\unit{K}}
+\newcommand\K{\kelvin}
+\newcommand\celsius{\unit{{}^\circ C}}
+\newcommand\C{\celsius}
+\newcommand\fahrenheit{\unit{{}^\circ F}}
+\newcommand\F{\fahrenheit}
+%
+% Area
+\newcommand\sqft{\unit{sq\,\foot}}  % square foot
+%
+% Volume
+\newcommand\liter{\unit{L}}
+\newcommand\gallon{\unit{gal}}
+%
+% Frequency
+\newcommand\hertz{\unit{Hz}}
+\newcommand\rpm{\unit{rpm}}
+%
+% Voltage
+\newcommand\volt{\unit{V}}
+\newcommand\V{\volt}
+\newcommand\millivolt{\milli\volt}
+\newcommand\mV{\milli\volt}
+\newcommand\kilovolt{\kilo\volt}
+\newcommand\kV{\kilo\volt}
+%
+% Current
+\newcommand\ampere{\unit{A}}
+\newcommand\A{\ampere}
+\newcommand\milliampereA{\milli\ampere}
+\newcommand\mA{\milli\ampere}
+\newcommand\kiloampereA{\kilo\ampere}
+\newcommand\kA{\kilo\ampere}
+%
+% Resistance
+\newcommand\ohm{\Omega}
+\newcommand\milliohm{\milli\ohm}
+\newcommand\kiloohm{\kilo\ohm} % correct SI spelling
+\newcommand\kilohm{\kilo\ohm} % &quot;American&quot; spelling used in siunitx
+\newcommand\megaohm{\mega\ohm} % correct SI spelling
+\newcommand\megohm{\mega\ohm} % &quot;American&quot; spelling used in siunitx
+%
+% Capacitance
+\newcommand\farad{\unit{F}}
+\newcommand\F{\farad}
+\newcommand\microfarad{\micro\farad}
+\newcommand\muF{\micro\farad}
+%
+% Inductance
+\newcommand\henry{\unit{H}}
+\newcommand\H{\henry}
+\newcommand\millihenry{\milli\henry}
+\newcommand\mH{\milli\henry}
+%
+% Power
+\newcommand\watt{\unit{W}}
+\newcommand\W{\watt}
+\newcommand\milliwatt{\milli\watt}
+\newcommand\mW{\milli\watt}
+\newcommand\kilowatt{\kilo\watt}
+\newcommand\kW{\kilo\watt}
+%
+% Energy
+\newcommand\joule{\unit{J}}
+\newcommand\J{\joule}
+%
+% Composite units
+%
+% Torque
+\newcommand\ozin{\unit{\ounce}\,\unit{in}}
+\newcommand\newtonmeter{\unit{\newton\,\meter}}
+%
+% Pressure
+\newcommand\psf{\unit{psf}}  % pounds per square foot
+\newcommand\pcf{\unit{pcf}}  % pounds per cubic foot
+\newcommand\pascal{\unit{Pa}}
+\newcommand\Pa{\pascal}
+\newcommand\ksi{\unit{ksi}} % kilopound per square inch
+\newcommand\bar{\unit{bar}}
+\end{aligned}\end{align} \]</div>
+<p><span class="raw-html"></div></span></p>
+<p>Jan 15, 2026 | 474 words | 5 min read</p>
+<section class="tex2jax_ignore mathjax_ignore" id="pre-class-task-0">
+<h1>Pre-Class Task 0<a class="headerlink" href="#pre-class-task-0" title="Link to this heading">#</a></h1>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>Perform arithmetic operations (i.e., addition, subtraction, multiplication, division,
+and exponentiation), in <strong class="program">Python</strong> while keeping in mind order of operations;
+Employ <strong class="program">Visual Studio Code</strong> to write, edit, and save <strong class="program">Python</strong> code;
+Output <strong class="program">Python</strong> data from script to screen.</p>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p><strong class="program">Python 3</strong> is a powerful programming language for performing computations,
+scripting, and database management. As an engineering tool, it offers standard
+mathematical operations as part of its basic environment.  Therefore, you can design
+standard computational models, process data, and generate reports. The language must
+work within the limits of the machine it is running on. As a result, there may be
+differences between what you compute by hand and what <strong class="program">Python</strong> computes.</p>
+<p>Unless mentioned otherwise, for all <strong class="program">Python</strong> tasks (pre-class, team and
+individual) you will be writing your scripts using <a class="reference download internal" download="" href="../../../../../_downloads/19256f18ef8faabee85374609ee85ef8/ENGR131_Python_Template.py"><code class="xref download docutils literal notranslate"><span class="pre">ENGR131_Python_Template.py</span></code></a>. This template contains header information
+that must always be edited to reflect the task your <strong class="program">Python</strong> file is meant to
+solve, and you will always be prompted in the problem statement to rename the file.</p>
+<p>The template contains a section for importing modules, and a function called
+<code class="code highlight python docutils literal highlight-python"><span class="n">main</span><span class="p">()</span></code> where you will be writing your code. While user-defined functions will
+be taught in more detail in the next <strong class="program">Python</strong> module, for now you will just
+need to remember to write all your code within <code class="code highlight python docutils literal highlight-python"><span class="n">main</span><span class="p">()</span></code>. Note that, when writing
+code inside a function, it must be indented 1 tab (or 4 spaces) relative to the
+indentation level of the function.</p>
+</section>
+<section id="task-instructions">
+<h2>Task Instructions<a class="headerlink" href="#task-instructions" title="Link to this heading">#</a></h2>
+<p>Before beginning this activity, read through the pre-class material, and completely
+watch the pre-class videos. Additionally, do some research into some common
+<strong class="program">Python</strong> libraries (i.e. the
+<a class="reference external" href="https://docs.python.org/3/library/math.html"><code class="docutils literal notranslate"><span class="pre">math</span></code></a> library will be helpful for this
+assignment). There are many functions within the <code class="docutils literal notranslate"><span class="pre">math</span></code> library in particular that will
+be needed for this task. It is important for your learning and ability to contribute to
+future assignments that you understand the covered topics.  In this task, you will be
+doing calculations in <strong class="program">Python</strong>.</p>
+<ol class="arabic">
+<li><p>Make a copy of the <a class="reference download internal" download="" href="../../../../../_downloads/19256f18ef8faabee85374609ee85ef8/ENGR131_Python_Template.py"><code class="xref download docutils literal notranslate"><span class="pre">ENGR131_Python_Template.py</span></code></a> <strong class="program">Python</strong> template and rename
+the file to <span class="pasted-text">py1_pre_0_username.py</span>.</p></li>
+<li><p>Make sure to fill out all header information, including a short description
+of the code.</p></li>
+<li><p>Include all needed import statements in the labeled section of the template.</p>
+<div class="hint admonition">
+<p class="admonition-title">Hint</p>
+<p>The <code class="code highlight python docutils literal highlight-python"><span class="n">math</span></code> module may be useful.</p>
+</div>
+</li>
+<li><p>In your main script, initialize three variables <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code> (<span class="math notranslate nohighlight">\(101\)</span>, <span class="math notranslate nohighlight">\(7\)</span>, and <span class="math notranslate nohighlight">\(12.34\)</span>) that
+can be used in the calculations.</p></li>
+<li><p>Implement the following three equations in <strong class="program">Python</strong> using three more
+variables to store the results.  Use appropriate <code class="code highlight python docutils literal highlight-python"><span class="n">math</span></code> function calls where
+needed.  Be careful with order of operations.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(c^2 - \sin(b)^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b!\cdot (\cos(\dfrac{\pi}{c})- a)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{c^{\pi e} \sin^{-1}{(\sqrt{3}/2)}}{a^e b}\)</span></p></li>
+</ol>
+<div class="hint admonition">
+<p class="admonition-title">Hint</p>
+<p>In <strong class="program">Python</strong>, you can compute the inverse of a trigonometric function using
+the <code class="code docutils literal notranslate"><span class="pre">math</span></code> module. For example, the inverse sine function, denoted as
+<span class="math notranslate nohighlight">\(\sin^{-1}\)</span> can be calculated using <code class="code docutils literal notranslate"><span class="pre">math.asin()</span></code>.</p>
+</div>
+</li>
+<li><p>After each calculation, print the output to the command window rounded to three decimal places.  Research
+<a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals">f-strings</a>
+and the <a class="reference external" href="https://docs.python.org/3/library/string.html#format-specification-mini-language">format specification
+mini-language</a>
+to learn how to round the output to three decimal places without
+changing the stored value.</p>
+<div class="hint admonition">
+<p class="admonition-title">Hint</p>
+<p>Do not use the <code class="code highlight python docutils literal highlight-python"><span class="nb">round</span><span class="p">()</span></code> function.</p>
+</div>
+</li>
+<li><p>Save the file as
+<span class="pasted-text">py1_pre_0_username.py</span> and turn in
+the assignment on Gradescope.</p></li>
+</ol>
+<section id="sample-output">
+<span id="mod-part-04-python-m1-pre-0-a-sample-output"></span><h3>Sample Output<a class="headerlink" href="#sample-output" title="Link to this heading">#</a></h3>
+<div class="sample-output admonition">
+<p class="admonition-title">Sample Output</p>
+<p><span class="raw-html">$ <span class='user-input'>python3 py1_pre_0_username.py</span></span>
+<span class="raw-html">equation 1: 151.844</span>
+<span class="raw-html">equation 2: -504162.451</span>
+<span class="raw-html">equation 3: 1112.146</span></p>
+</div>
+<div class="pst-scrollable-table-container"><table class="deliverables table" id="tab-py-m1-pre-class-deliverables">
+<caption><span class="caption-number">Table 4.1 </span><span class="caption-text">Deliverables</span><a class="headerlink" href="#tab-py-m1-pre-class-deliverables" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Deliverables</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="pasted-text">py1_pre_0_username.py</span></p></td>
+<td><p>Your completed <strong class="program">Python</strong> code.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Part_04_Python/M1/tasks/pre_0/a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../../1_pre-class_material.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>Pre-Class Assignments</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../2_team_assignments.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>Team Assignments</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-instructions">Task Instructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-output">Sample Output</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="/spring-2026/Appendices/contributors.html">Contributors</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
