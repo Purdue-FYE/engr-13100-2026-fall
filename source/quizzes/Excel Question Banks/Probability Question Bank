@@ -1,0 +1,20 @@
+Question 1: Relative Probability
+
+You are a civil engineer collecting data at the traffic intersection by Armstrong Hall. Every 30 seconds, you 
+
+
+
+Question 2: Z-score probability (set up Z score formula)
+
+You are a biomedical engineer analyzing the recovery times of patients after a new type of minimally invasive surgery. You collected data from 300 patients and found that the average recovery time is 14.4 days, with a variance of 9 days² and a standard deviation of 3 days. A histogram of recovery times appears to follow a normal distribution.
+
+A new patient recovers in 18.2 days. You want to know what percentage of patients had a longer recovery time than this new patient, using the Z-score method. Write the fraction you would use to find the Z-score. Do not evaluate the mathematical expression. 
+
+
+Question 3: Z-score Probability (range)
+You are a chemical engineer developing a new mixing procedure for a chemical compound. You add an indicator to the mixture that changes color after the solution is adequately mixed. You collected data on the indicator response times for 60 trials. The distribution of times is approximately normally distributed with:
+- A mean time of 10 seconds
+- A median time of 9 seconds
+- A variance of 4 seconds²
+- A range of 5.4 seconds
+The research team considers the reaction to be “moderately controlled” if the indicator response time is between 7 and 12 seconds. Approximately what percentage of trials are moderately controlled? Round your answer to one decimal place.
