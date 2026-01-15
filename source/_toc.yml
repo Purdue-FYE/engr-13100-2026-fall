@@ -38,24 +38,31 @@ parts:
     numbered: 2
     chapters:
     # Python Module 1
-  
     - file: Part_04_Python/M1/0_overview
       sections:
       - file: Part_04_Python/M1/1_pre-class_material
-      - file: Part_04_Python/M1/tasks/pre_0/a/instructions
+        sections:
+        - file: Part_04_Python/M1/tasks/pre_0/a/instructions
+  
       - file: Part_04_Python/M1/2_team_assignments
-        title: Placeholder
+        sections:
+        - file: Part_04_Python/M1/tasks/team_1/b/instructions
+        - file: Part_04_Python/M1/tasks/team_2/a/instructions
+        - file: Part_04_Python/M1/tasks/team_3/b/instructions
+
       - file: Part_04_Python/M1/3_ind_assignments
-        title: Placeholder
-      - file: Part_04_Python/M1/tasks/team_1/b/instructions
-      - file: Part_04_Python/M1/tasks/team_2/a/instructions
-      - file: Part_04_Python/M1/tasks/team_3/b/instructions
-      - file: Part_04_Python/M1/tasks/ind_1/a/instructions
-      - file: Part_04_Python/M1/tasks/ind_2/b/instructions
+        sections:
+        - file: Part_04_Python/M1/tasks/ind_1/a/instructions
+        - file: Part_04_Python/M1/tasks/ind_2/b/instructions
 
    
- 
+
 
   # - caption: Project 2
   #   numbered: True
   #   chapters:
+
+  - caption: Setup
+    hidden: true
+    chapters:
+    - file: assignment_names

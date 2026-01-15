@@ -12,54 +12,40 @@ kernelspec:
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 
-from myst_nb import glue
-
-mnum = "py1_team"
-
-glue("deliverable_py1_team_1_pdf", mnum+"_1_teamnumber.pdf")
-glue("deliverable_py1_team_1_py", mnum+"_1_teamnumber.py")
-
-glue("deliverable_py1_team_2_part_a_pdf", mnum+"_2_part_a_teamnumber.pdf")
-glue("deliverable_py1_team_2_pdf", mnum+"_2_teamnumber.pdf")
-glue("deliverable_py1_team_2_py", mnum+"_2_teamnumber.py")
-
-glue("deliverable_py1_team_3_pdf", mnum+"_3_teamnumber.pdf")
-glue("deliverable_py1_team_3_py", mnum+"_3_teamnumber.py")
-```
-
-```{code-cell} ipython3
-
+import pandas as pd
 from myst_nb import glue
 from IPython.display import Markdown, display
 
-assignment_dict = {
-    "py1_team1_1": "py1_team_1_teamnumber.pdf",
-    "py1_team1_2": "py1_team_1_teamnumber.py",
+# Read the CSV containing deliverable information
+csv_path = 'engr131_student_deliverables_list.csv'
+df = pd.read_csv(csv_path)
 
-    "py1_team2_1": "py1_team_2_part_a_teamnumber.pdf",
-    "py1_team2_2": "py1_team_2_teamnumber.pdf",
-    "py1_team2_3": "py1_team_2_teamnumber.py",
+# Iterate through the DataFrame to glue variables
+for index, row in df.iterrows():
+    # Construct a unique key based on module, mode, task, and deliverable number
+    # Example key base: py1_team_1_1
+    key_parts = [
+        str(row['module']),
+        str(row['mode']),
+        str(row['task number']),
+        str(row['deliverable number'])
+    ]
+    base_key = "_".join(key_parts)
 
-    "py1_team3_1": "py1_team_3_teamnumber.pdf",
-    "py1_team3_2": "py1_team_3_teamnumber.py",
-}
+    # Glue the deliverable name (filename)
+    # Usage in markdown: {glue:text}`deliverable_py1_team_1_1_name`
+    glue(f"deliverable_{base_key}_name", row['deliverable name'], display=False)
 
-for key, value in assignment_dict.items():
-    glue("deliverable_"+key, value)
+    # Glue the deliverable description
+    # Usage in markdown: {glue:text}`deliverable_py1_team_1_1_desc`
+    glue(f"deliverable_{base_key}_desc", row['deliverable description'], display=False)
+```
 
-# Dictionary mapping assignment keys to descriptions
-descriptions = {
-    "py1_team1_1": "Team 1 PDF Deliverable",
-    "py1_team1_2": "Team 1 Python Script",
-    "py1_team2_1": "Team 2 Part A PDF",
-    "py1_team2_2": "Team 2 PDF Deliverable",
-    "py1_team2_3": "Team 2 Python Script",
-    "py1_team3_1": "Team 3 PDF Deliverable",
-    "py1_team3_2": "Team 3 Python Script",
-}
+```{code-cell} ipython3
+:tags: ["remove-input"]
 
-# Define the filter string for the specific assignment (e.g., "py1_team1")
-assignment_filter = "py1_team1"
+# This cell generates a table of all deliverables defined in the CSV
+# to verify that they have been loaded correctly.
 
 # Dynamically generate the list-table markdown
 table_md = """
@@ -67,16 +53,22 @@ table_md = """
 :class: deliverables
 :name: tab:dynamic_deliverables
 :header-rows: 1
+:widths: 20 40 40
 
-* - Deliverables
+* - Key Base
+  - Deliverable Name
   - Description
 """
 
-for key in assignment_dict:
-    if assignment_filter in key:
-        glue_key = f"deliverable_{key}"
-        desc = descriptions.get(key, "Description not provided")
-        table_md += f"* - {{glue:text}}`{glue_key}`\n  - {desc}\n"
+for index, row in df.iterrows():
+    key_parts = [
+        str(row['module']),
+        str(row['mode']),
+        str(row['task number']),
+        str(row['deliverable number'])
+    ]
+    base_key = "_".join(key_parts)
+    table_md += f"* - `{base_key}`\n  - {{glue:text}}`deliverable_{base_key}_name`\n  - {{glue:text}}`deliverable_{base_key}_desc`\n"
 
 table_md += "```"
 

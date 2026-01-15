@@ -14,6 +14,9 @@ kernelspec:
 (Py:M1:team)=
 # Team Assignments
 
+```{tableofcontents}
+```
+
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 
