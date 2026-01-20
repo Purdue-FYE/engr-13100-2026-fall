@@ -7,12 +7,12 @@ You are a civil engineer collecting data at the traffic intersection by Armstron
 - 4: Turn arrow
 
 At the end of 10 minutes, you counted the frequency of each state:
-|State|Frequency|
-|----|----|
-|1|9|
-|2|3|
-|3|4|
-|4|4|
+| State | Frequency |
+| ---- | ---- |
+| 1 | 9 |
+| 2 | 3 |
+| 3 | 4 |
+| 4 | 4 |
 
 
 1a) Using relative probability, what proportion of the measurements was the light not in state 4?
