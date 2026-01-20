@@ -1,0 +1,29 @@
+You are a civil engineer collecting data at the traffic intersection by Armstrong Hall. Every 30 seconds, you record the state of a traffic light:
+- 1: Green
+- 2: Yellow
+- 3: Red
+- 4: Turn arrow
+
+At the end of 10 minutes, you counted the frequency of each state:
+| State | Frequency |
+|:---- | ----: |
+| 1 | 9 |
+| 2 | 3 |
+| 3 | 4 |
+| 4 | 4 |
+
+
+a) Using relative probability, what proportion of the measurements was the light not in state 4?
+
+solution: 9 + 3 + 4 / 20 = 16/20 = 4/5
+
+b) Using relative probability, what proportion of the measurements was the light yellow?
+
+solution: 3/20
+
+c) Your supervisor asks you how many hours in a 24-hour period the light is yellow. How would you answer?
+
+sample solution: 3/20 = x/24
+x = 24*3/20 = 6*3/5 = 18/5 = 3.6 hours
+
+Given this data, we could extrapolate that the light is yellow 3.6 hours in a 24 hour period, but this may not be accurate because our measurements only came from a 10-minute period with infrequent measurements. I would collect more data throughout the day for a more accurate conclusion.
