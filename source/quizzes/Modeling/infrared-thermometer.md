@@ -6,10 +6,10 @@ Laboratory tests show the coating performs best when applied at a surface densit
 *Note: You may assume that the buoy is symmetric about its center.*
 
 
-![Wave and Water Quality Buoy](./3r-sdb050-boya-oleaje-calidad-agua.jpg)
+![Non-Contact Infrared Thermometer](./3r-sdb050-boya-oleaje-calidad-agua.jpg)
 Darrera wave and water quality buoy.$^1$
 
-1. https://www.darrera.com/en/product/3r-sdb050-wave-water-quality-buoy/
+1. https://sperdirect.com/collections/ir-thermometers/products/clinical-grade-infrared-touchless-forehead-thermometer-sper-certified-copy
 
 #### Question 3.1
 (a) Which two 3-dimensional shapes will you use to approximate the buoy’s exterior?
