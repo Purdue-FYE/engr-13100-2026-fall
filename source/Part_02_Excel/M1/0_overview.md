@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (Ex:M1:Excel_1)=
-# {program}`MS Excel` 1
+# Spreadsheet Foundations
 The first module in this course is designed for students to learn about the course
 structure, how to turn in assignments, and what the assessments will be like.  Students
 will be introduced to the team learning approach and the flipped classroom model.
@@ -45,3 +45,11 @@ At the end of this module, you will be able to:
 
 These learning objectives are directly connected to the following Course
 Outcomes:
+
+{{PR01}}
+{{PR02}}
+{{PR03}}
+{{PR08}}
+{{DV01}}
+{{DV02}}
+{{DV03}}
