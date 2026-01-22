@@ -14,7 +14,7 @@ parts:
     - file: Part_00_Course_Resources/course_software/course_software
 
   - caption: Professional Preparation and Teaming
-    numbered: True
+    numbered: False
     chapters:
       # Professional Preperation Module
     - file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
@@ -109,6 +109,11 @@ parts:
   # - caption: Project 2
   #   numbered: True
   #   chapters:
+
+  - caption: Appendices
+    numbered: False
+    chapters:
+    - file: Appendices/contributors
 
   # - caption: Setup
   #   hidden: true

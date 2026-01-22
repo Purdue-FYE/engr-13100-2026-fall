@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (Py:M1:Python_1)=
-# {program}`Python` Foundations
+# Python Foundations
 
 In this module students will be introduced to the {program}`Python` programming
 environment, learn to create, save and run script files, perform simple
