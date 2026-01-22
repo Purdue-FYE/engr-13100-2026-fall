@@ -28,6 +28,145 @@ parse:
     - substitution
     - tasklist
     - attrs_block
+  myst_substitutions:
+    "PR": | 
+      :PR: Programming - Write professional, well-organized, and error-free code. Store and access data appropriately; perform calculations using built-in functions and operators; and apply selection, repetition, and user-defined functions to solve problems. Translate written descriptions or flowcharts into working code. Students will demonstrate programming objectives using any appropriate programming or computational environment unless otherwise specified. For these objectives, “code” may include scripts, functions, formulas, or structured spreadsheet logic, depending on the tool used.
+    "PR01": |
+      :PR01: Programming Standards - Develop code that follows established programming standards and conventions.
+    "PR02": |
+      :PR02: Data Storage - Store and access data appropriately.
+    "PR03": |
+      :PR03: Calculations - Perform algebraic, array, relational, and logical operations using a programming language. Effectively utilize built-in functions.
+    "PR04": |
+      :PR04: Modular Programming - Create and use modular code components, including scripts and user-defined functions.
+    "PR05": |
+      :PR05: Code Structures - Understand and write sequential and non-sequential code structures to achieve a programming objective.
+    "PR06": |
+      :PR06: Translate Program Descriptions - Translate written descriptions or flowcharts into working code.
+    "PR07": |
+      :PR07: Test Cases & Tracking - Test and track information through flowcharts and programs.
+    "PR08": |
+      :PR08: Debugging - Debug and refine code so that it achieves its objective without dynamic or semantic errors.
+    "DV": | 
+      :DV: Data Visualization - Visually represent data and derive meaningful information from data. Demonstrate ability to accurately describe data sets through foundational descriptive statistics and then perform simple inferential statistics through understanding probability concepts and linear regression.
+    "DV01": |
+      :DV01: Table & Plot Formatting - Prepare tables and plots for technical presentation with proper formatting. Include descriptive titles, axis labels with units, appropriately scaled axes, and visible legends.
+    "DV02": |
+      :DV02: Summary Statistics - Describe the central tendency (mean, median, mode) and variability (standard deviation, variance) of data using appropriate tools or methods.
+    "DV03": |
+      :DV03: Graphical Comparison of Data - Describe the central tendency (mean, median, mode) and variability (standard deviation, variance) of data using appropriate tools or methods.
+    "DV04": |
+      :DV04: Regression Model Construction - Construct regression models that describe relationships between variables and support prediction.
+    "DV05": |
+      :DV05: Regression Model Evaluation - Evaluate and compare regression models using quantitative metrics (SSE, SST, and R²) and contextual reasoning.
+    "DV06": |
+      :DV06: Probability & Distributions Apply probability concepts and distribution characteristics to quantify likelihood and interpret uncertainty in data.
+    "UC": |
+      :UC: Universal Concepts - Demonstrate an understanding of foundational engineering concepts, including conservation principles and system modeling, that apply across engineering disciplines.
+    "UC01": |
+      :UC01: Conservation Principles in Boundary Systems - Demonstrate an understanding of conservation principles (e.g., mass, energy, momentum, and/or change) applied to a defined system boundary.
+    "UC02": |
+      :UC02: Schematic Representation of Systems - Describe engineering systems or processes using schematic diagrams that represent inputs, outputs, and accumulations.
+    "UC03": |
+      :UC03: Mathematical Modeling of Systems - Define engineering systems or processes using mathematical models that represent inputs, outputs, and accumulations.
+    "UC04": |
+      :UC04: Types of Engineering Models - Differentiate between common types of models used in engineering and explain their purposes and limitations.
+    "UC05": |
+      :UC05: System Efficiency & Performance - Calculate and interpret the efficiency of a system, product, or process in terms of energy, cost, or other engineering performance measures.
+    "PS": |
+      :PS: Problem Scoping - Develop and refine a problem statement based on stakeholder needs and evolving evidence.
+    "PS01": |
+      :PS01: Stakeholder-Based Problem Definition - Explain the problem based on synthesis of client, user, and stakeholder needs.
+    "PS02": |
+      :PS02: Contextual Importance of the Problem - Justify the importance of the problem using global, societal, economic, or environmental context.
+    "PS03": |
+      :PS03: Constraints & Criteria - Define key criteria and constraints that address client and user needs.
+    "PS04": |
+      :PS04: Competing or Conflicting Needs - Identify competing or conflicting needs that influence the problem definition.
+    "PS05": |
+      :PS05: Problem Revision - Revise the problem statement based on new evidence or insights.
+    "IF": |
+      :IF: Information Fluency - Generate ideas fluently and explore multiple potential solutions.
+    "IF01": |
+      :IF01: Idea Generation - Generate a wide range of solution ideas, including non-obvious or combined approaches.
+    "IF02": |
+      :IF02: Use Ideation Strategies - Use and document multiple ideation strategies to generate ideas.
+    "IF03": |
+      :IF03: Generate testable prototypes representing potential solutions.
+    "EB": |
+      :EB: Evidence-Based Decision Making - Use evidence to compare, evaluate, and improve potential solutions.
+    "EB01": |
+      :EB01: Testing and Comparison - Test prototypes and analyze results to compare alternative solutions.
+    "EB02": |
+      :EB02: Assumptions Under Uncertainty - Identify assumptions made when information is limited or unavailable.
+    "EB03": |
+      :EB03: Data-Supported Justification - Justify decisions or comparisons using explicit reference to data.
+    "EB04": |
+      :EB04: Metrics and Weighting - Justify evaluation metrics and weighting based on stakeholder priorities.
+    "EB05": |
+      :EB05: Iterative Improvement - Present findings from iterative testing or optimization efforts.
+    "EB06": |
+      :EB06: Reasoned Decision Explanation - Clearly articulate reasoning when evaluating alternatives or making decisions.
+    "SQ": |
+      :SQ: Solution Quality - Design solutions that meet technical requirements and stakeholder needs.
+    "SQ01": |
+      :SQ01: Technical Accuracy - Use accurate scientific, mathematical, and technical concepts, units, and data.
+    "SQ02": |
+      :SQ02: Meeting Criteria and Constraints - Justify solution quality based on defined criteria and constraints.
+    "SQ03": |
+      :SQ03: Trade-offs and Limitations - Explain trade-offs and limitations in the final solution.
+    "SQ04": |
+      :SQ04: Value Proposition - Present a clear value proposition highlighting benefits and novelty.
+    "EC": |
+      :EC: Ethical & Contextual Reasoning - Understand and explain the broader impacts of engineering decisions or recommendations, considering ethics, uncertainty, risk, and stakeholder responsibility.
+    "EC01": |
+      :EC01: Consider Context, Safety, and Uncertainty - Justify engineering decisions or recommendations by considering cultural, economic, environmental, safety, and uncertainty-related factors.
+    "EC02": |
+      :EC02: Recognize Limits, Trade-offs, and Confidence - Recognize limitations, trade-offs, and uncertainty in engineering work and communicate appropriate levels of confidence in conclusions.
+    "EC03": |
+      :EC03: Make Honest and Responsible Recommendations - Make recommendations that are honest, responsible, and consistent with evidence, while acknowledging broader impacts and professional responsibility.
+    "PA": |
+      :PA: Process Awareness - Reflect on individual and team problem-solving or design processes to support continuous improvement.
+    "PA01": |
+      :PA01: Identify Strengths in Process - Identify effective strategies, behaviors, or decisions used during the problem-solving or design process.
+    "PA02": |
+      :PA02: Identify Limitations in Process - Identify limitations, challenges, or inefficiencies in the problem-solving or design approach.
+    "PA03": |
+      :PA03: Plan for Process Improvement - Identify concrete behaviors or strategies to improve future problem-solving or design efforts.
+    "IL": |
+      :IL: Information Literacy - Locate, evaluate, and use information appropriately to support engineering problem solving, modeling, and decision-making.
+    "IL01": |
+      :IL01: Asking Questions to Guide Research - Identify gaps in knowledge and pose clear, specific questions that guide research and information gathering.
+    "IL02": |
+      :IL02: Gathering Reliable Information - Locate and select relevant, credible sources appropriate to the engineering context.
+    "IL03": |
+      :IL03: Supporting Claims with Evidence - Use data, examples, or published sources appropriately to support claims, assumptions, or recommendations.
+    "IL04": |
+      :IL04: In-Text Citations - Include appropriate in-text citations to indicate the source of information, data, or ideas.
+    "IL05": |
+      :IL05: Reference List and Source Documentation - Provide a complete and properly formatted reference list for all external sources used.
+    "TM": |
+      :TM: Teaming - Contribute meaningfully to team projects and discussions. Demonstrate responsibility, collaboration, and mutual learning in group work.
+    "TM01": |
+      :TM01: Acknowledge Team Strengths - Recognize and respect the unique knowledge, skills, and experiences that each teammate brings. Use this awareness to distribute responsibilities or seek support when needed.
+    "TM02": |
+      :TM02: Document Contributions - Provide clear evidence of individual contributions to the team’s work, including technical, written, or supportive tasks.
+    "TM03": |
+      :TM03: Support Team Interactions - Demonstrate collaboration by offering help, asking questions, and actively engaging with teammates to support shared learning and mutual respect.
+    "TM04": |
+      :TM04: Meet Team Commitments - Complete tasks on time and at an appropriate standard. Communicate clearly and early if support is needed or deadlines cannot be met. Follow through on team expectations.
+    "PC": |
+      :PC: Professional Communication - Communicate engineering concepts, ideas, and decisions effectively and professionally through written, visual, and oral formats.
+    "PC01": |
+      :PC01: Written Communication Standards - Use professional tone, clear sentence structure, and correct spelling and grammar in all written work.
+    "PC02": |
+      :PC02: Communicating Results from Analysis - Clearly state conclusions or results derived from code, models, or data analysis.
+    "PC03": |
+      :PC03: Captioning Visuals - Include professional captions for all figures, tables, and plots that describe what is shown and why it is relevant.
+    "PC04": |
+      :PC04: Visual Communication of Engineering Contexts - Create visuals that clearly communicate engineering data, models, or concepts to a technical audience and support claims or conclusions.
+    "PC05": |
+      :PC05: Meeting Assignment Expectations - Fully complete all parts of each assignment according to provided instructions.
 
 
 # Define the name of the latex output file for PDF builds
