@@ -169,6 +169,7 @@ parse:
       :PC05: Meeting Assignment Expectations - Fully complete all parts of each assignment according to provided instructions.
 
 
+
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
