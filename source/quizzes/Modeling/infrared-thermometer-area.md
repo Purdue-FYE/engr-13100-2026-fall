@@ -11,7 +11,9 @@ Non-Contact Infrared Thermometer. $^1$
 
 For your reference, a formula sheet of simple shapes is provided.
 ![Surface areas and volumes of simple shapes](areas-and-volumes.png)
+
 Surface areas and volumes of simple shapes. $^2$
+
 2. https://www.learncbse.in/surface-areas-and-volumes-class-10-notes/
 
 #### Question 1
