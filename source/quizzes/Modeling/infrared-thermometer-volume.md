@@ -11,7 +11,8 @@ Non-Contact Infrared Thermometer. $^1$
 
 For your reference, a formula sheet of simple shapes is provided.
 ![Surface areas and volumes of simple shapes](areas-and-volumes.png)
-
+Surface areas and volumes of simple shapes. $^2$
+2. https://www.learncbse.in/surface-areas-and-volumes-class-10-notes/
 
 #### Question 1
 (a) Which two 3-dimensional shapes will you use to approximate the thermometer’s volume?
@@ -26,25 +27,20 @@ Example:
 $$V=\frac{4}{3}\pi r^3$$ 
 
 where 
-- $A$ is the lateral surface area of a right circular cylinder, 
-- $r$ is the base radius 
-- $h$ is the height.
+- $V$ is the volume of a solid sphere, 
+- $r$ is the radius 
 
 _____
 Insert your answer below:
 
 #### Question 3.2
-Using the recommended surface density and cost information:
+Using the provided cost information:
 
-(a) Describe in words or provide a mathematical expression for calculating the total cost of the coating. (Do not attempt to calculate the total cost.)
+(a) Describe in words or provide a mathematical expression for calculating the total cost of the prototype. (Do not attempt to calculate the total cost.)
 
 (b) Explain in one or two sentences why your approach in (a) provides a useful early-stage estimate for the engineering team.
 
-(c) Does your model over estimate or under estimate the true surface area of the buoy? Explain your reasoning.
+(c) Does your model over estimate or under estimate the true volume of the thermometer? Explain your reasoning.
 
 #### Question 3.3
-(a) Suppose later design reviews require you to model the capsule with three or more simple, 3-dimensional shapes. What modifications would you make to your original two-shape model?
-
-(b) List one added complexity that arises when calculating the surface area for a model with multiple shapes compared to your original two-shape model.
-
-(c) What is one benefit of using a more complex, multi-shape model.
+(a) Suppose later design reviews require you to model the thermometer with three or more simple, 3-dimensional shapes. What modifications would you make to your original two-shape model?
