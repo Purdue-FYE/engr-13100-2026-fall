@@ -1,27 +1,29 @@
 An thermal-engineering team is developing a smaller version of an infared thermometer based on an existing design. To keep the early-stage model simple, the engineers decide to represent the thermometer using two elementary three-dimensional shapes that approximate its overall geometry.
 
-The primary material in the designs costs 
-Laboratory tests show the coating performs best when applied at a surface density of $7.5 \frac{kg}{m^2}$. The supplier charges $285 per kilogram of coating.
+The primary material in the designs costs $15 per cubic centimeter.
 
-*Note: You may assume that the buoy is symmetric about its center.*
+![Non-Contact Infrared Thermometer, angle 1](infrared-thermometer-img-1.png)
+![Non-Contact Infrared Thermometer, angle 2](infrared-thermometer-img-2.png)
 
-
-![Non-Contact Infrared Thermometer](./3r-sdb050-boya-oleaje-calidad-agua.jpg)
-Darrera wave and water quality buoy.$^1$
+Non-Contact Infrared Thermometer. $^1$
 
 1. https://sperdirect.com/collections/ir-thermometers/products/clinical-grade-infrared-touchless-forehead-thermometer-sper-certified-copy
 
-#### Question 3.1
-(a) Which two 3-dimensional shapes will you use to approximate the buoy’s exterior?
+For your reference, a formula sheet of simple shapes is provided.
+![Surface areas and volumes of simple shapes](areas-and-volumes.png)
+
+
+#### Question 1
+(a) Which two 3-dimensional shapes will you use to approximate the thermometer’s volume?
 
 (b) Explain in 1–2 sentences why these shapes are appropriate.
 
 
-(c) Write the surface-area equations for your model and define every variable you introduce (use symbols, not numbers except for constants). An example of proper definition formatting is shown below.
+(c) Write the volume equations for your model and define every variable you introduce (use symbols, not numbers except for constants). An example of proper definition formatting is shown below.
 ___
 Example:
 
-$$A=2πrh$$ 
+$$V=\frac{4}{3}\pi r^3$$ 
 
 where 
 - $A$ is the lateral surface area of a right circular cylinder, 
