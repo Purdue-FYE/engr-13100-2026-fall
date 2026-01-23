@@ -11,5 +11,135 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M1:PY1)=
+(Py:M1:py1_ind)=
 # PY1 Python Foundations
+
+## In this assignment, you will:
+
+- Collect and validate user input using variables and appropriate data types
+- Simulate medical device testing using randomly generated data
+- Store, access, and analyze test results using lists and indexing
+- Apply mathematical operations to evaluate device performance
+- Use logical decision-making to determine pass/fail outcomes
+- Format and display professional, clearly labeled program output
+- Apply basic string manipulation to clean and organize input data
+- Identify and explain common Python errors encountered in programming
+- Communicate technical results clearly through a short, written report
+
+## Learning Objectives Covered
+
+- PR01: Programming Standards
+- PR02: Data Storage
+- PR03: Calculations
+- PR08: Debugging
+
+## Q1 Medical Device Prototype Testing Program
+(XX Points)
+
+### Background
+
+You are a Biomedical Engineer working in a research and development lab. Your supervisor has asked you to create a Python program that simulates testing a new medical device prototype.
+
+### Files Needed
+
+### Program Requirements
+
+#### Part 1: User Input
+
+Your program must ask the user for:
+- The medical device name
+- Prototype ID number
+- Researcher’s last name
+- Researcher’s title
+
+#### Part 2: Professional Header
+
+Output a clear, professional header that includes the test information provided by the user and the date and time of the test (timestamp).
+
+#### Part 3: Simulated Test Data
+
+1.	Generate at least 5 random test values between 5 and 100.
+2.	Store the values in a list
+
+#### Part 4: Mathematical Analysis
+
+Using the list of test values, your program must:
+
+1.	Calculate and display the average test value
+2.	Perform one additional math calculation. Choose one:
+- Square root
+- Sine of the average
+- A pi-based calculation
+
+All values must be clearly labeled and formatted with two decimal places.
+
+#### Part 5: Pass/Fail Evaluation
+
+You must determine whether the device passes or fails based on this rule:
+
+If the average test value is greater than or equal to a defined passing threshold, the device passes. Otherwise, it fails.
+
+```{admonition} Note
+   :class: note
+
+   Although we have not covered {python}`if` statements yet in this course, you must not use an {python}`if` statement for this part of the assignment.
+```
+#### Part 6: String Processing & Data Organization
+
+Your program must demonstrate:
+- String concatenation or repetition in at least one output line
+- Splitting at least one piece of user input into a sequence and displaying the result
+
+### Output Requirements
+
+Your program output must include:
+- A professional header
+- Clearly labeled test values and calculations
+- Pass/fail result
+- Clean formatting and spacing for readability
+
+### Sample Output
+
+Include sample output section here.
+
+### Deliverables
+
+- Python .py file
+
+## Q2 Medical Device Prototype Testing Report
+
+### Background
+
+Your supervisor has asked you to report back with testing results.
+
+Your written report should be written as a professional technical memo to your laboratory supervisor. Assume your supervisor is scientifically knowledgeable but did not run your program themselves. The report should be 1-2 well-structured paragraphs and have a clear, professional tone (no casual language). You may include bullet points to list items, but the entire report cannot be organized in bullet points.
+
+#### Content Requirements
+
+Your memo must address the following:
+1.	Purpose of the Program
+- What the medical device testing program is designed to simulate
+- What kind of data the program generates and why it is relevant to prototype evaluation
+2. Testing & Analysis Process
+- How test values were generated
+- How the data was stored and analyzed
+3. Performance Evaluation
+- Pass/fail criteria used in the program
+- How the program determines and report the final device status
+4. Technical Challenges & Debugging
+- One programming error you encountered
+- What caused the error
+- How you identified and corrected it
+
+### Deliverables
+
+- Go to grade scope assignment and write/copy-paste your report in your submission
+
+## Q3 Analysis Questions
+
+1. first question here
+2. second question here
+
+### Deliverables
+
+- Go to grade scope assignment and type your answers into your submission.
