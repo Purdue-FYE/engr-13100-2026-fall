@@ -11,7 +11,7 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Ex:M2:pre-class)=
-# Pre-Class Assignments
+(Py:M3:individual)=
+# Individual Assignments
 
 Content for this module is under development.
