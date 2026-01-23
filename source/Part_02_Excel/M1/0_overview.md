@@ -31,7 +31,7 @@ easy for others to understand.
 - Creating graphs and plots in {program}`MS Excel`
 
 
-```{rubric} Learning Objectives and Course Outcomes
+```{rubric} Skills and Learning Objectives
 ```
 
 At the end of this module, you will be able to:
@@ -43,8 +43,7 @@ At the end of this module, you will be able to:
 - Use absolute, relative, and mixed addressing in {program}`MS Excel`
 - Create plots appropriate for technical presentation in {program}`MS Excel`
 
-These learning objectives are directly connected to the following Course
-Outcomes:
+These skills are directly connected to the following Learning Objectives:
 
 {{PR01}}
 {{PR02}}

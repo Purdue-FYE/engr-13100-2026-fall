@@ -31,7 +31,7 @@ within script files.
 - Math library in {program}`Python`
 
 
-```{rubric} Learning Objectives and Course Outcomes
+```{rubric} Skills and Learning Objectives
 ```
 
 At the end of this module, you will be able to:
@@ -43,8 +43,7 @@ At the end of this module, you will be able to:
 - Use inputs from the screen in a {program}`Python` script
 - Output data to the screen in a {program}`Python` script
 
-These learning objectives are directly connected to the following Course
-Outcomes:
+These skills are directly connected to the following Learning Objectives:
 
 {{PR01}}
 {{PR02}}

@@ -22,15 +22,14 @@ kernelspec:
 
 
 
-```{rubric} Learning Objectives and Course Outcomes
+```{rubric} Skills and Learning Objectives
 ```
 
 At the end of this module, you will be able to:
 
+- Do thing 1
 
-
-These learning objectives are directly connected to the following Course
-Outcomes:
+These skills are directly connected to the following Learning Objectives:
 
 {{PR01}}
 {{PR02}}
