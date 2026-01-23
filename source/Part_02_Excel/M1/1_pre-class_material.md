@@ -14,7 +14,4 @@ kernelspec:
 (Ex:M1:pre-class)=
 # Pre-Class Assignments
 
-The purpose of this assignment is to take the Academic Integrity at Purdue
-Acknowledgement quiz on Brightspace and review the course syllabus.
-
-See {ref}`Ex:M1:task0`
+Content for this module is under development.
