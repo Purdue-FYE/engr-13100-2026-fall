@@ -131,10 +131,10 @@ be an input from the user, while the second {{ element }}'s {{ measurement }} sh
 hardcoded as {{ fixed_value_md }}.
 
 A flowchart illustrating your program's logic should be created and saved in a PDF file
-named {glue:text}`../../../3_ind_assignments.md::deliverable_py1_ind_2_pdf:`.  Start
+named .  Start
 your {program}`Python` script from {download}`ENGR131_Python_Template.py
 </Part_04_Python/ENGR131_Python_Template.py>` and save it as
-{glue:text}`../../../3_ind_assignments.md::deliverable_py1_ind_2_py:`.  Use the sample
+.  Use the sample
 output section below to verify that your program outputs correct values.
 
 % Automatically generated Sample Output section.
@@ -151,19 +151,4 @@ output section below to verify that your program outputs correct values.
   characters and {math}`2` decimal places.
 
 {{ unit_hint }}
-```
-
-```{list-table} Deliverables
-:class: deliverables
-:name: tab:Py:M1:individual_2_deliverables
-:header-rows: 1
-
-* - Deliverables
-  - Description
-
-* - {glue:text}`../../../3_ind_assignments.md::deliverable_py1_ind_2_pdf:`
-  - Flowchart(s) for this task.
-
-* - {glue:text}`../../../3_ind_assignments.md::deliverable_py1_ind_2_py:`
-  - Your completed {program}`Python` code.
 ```

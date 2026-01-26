@@ -100,7 +100,9 @@ Your program output must include:
 
 ### Sample Output
 
-Include sample output section here.
+% Automatically generated Sample Output section.
+```{include} /_build/intermediate/Part_04_Python/M1/tasks/ind_1/b/sample_output.md
+```
 
 ### Deliverables
 
