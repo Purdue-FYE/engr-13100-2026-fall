@@ -26,7 +26,7 @@ Surface areas and volumes of simple shapes. $^2$
 ___
 Example:
 
-$$A=4pi r^2$$ 
+$$A=4\pi r^2$$ 
 
 where 
 - $A$ is the surface area of a sphere
