@@ -1,4 +1,4 @@
-Your engineering team has been contracted by the LA 2028 Olympics Committee to perform some tests on the new ice hockey rink. The ice has a constant coefficient of friction, $\mu$, of 0.02 (no units).
+Your engineering team has been contracted by the French Alps 2030 Olympics Committee to perform some tests on the new ice hockey rink. The ice has a constant coefficient of friction, $\mu$, of 0.02 (no units).
 
 Someone placed some hockey pucks that do not meet the regulation standards in a bucket. You know that a regulation hockey puck weighs 160g, and has a normal force of approximately 1.6N. 
 
