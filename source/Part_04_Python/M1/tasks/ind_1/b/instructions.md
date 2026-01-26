@@ -42,36 +42,39 @@ You are a Biomedical Engineer working in a research and development lab. Your su
 
 ### Files Needed
 
+Start your Python script from INSERT .PY TEMPLATE HERE and save it as py1_ind_1_username.py. Use the sample output section below to verify that your program outputs correct values.
+
 ### Program Requirements
 
 #### Part 1: User Input
 
 Your program must ask the user for:
-- The medical device name
-- Prototype ID number
-- Researcher’s last name
-- Researcher’s title
+1. The medical device name
+2. Prototype ID number
+3. Researcher’s last name
+4. Researcher’s title
 
 #### Part 2: Professional Header
 
-Output a clear, professional header that includes the test information provided by the user and the date and time of the test (timestamp).
+Output a clear, professional header that includes:
+- The test information provided by the user
+- The date and time of the test (timestamp)
 
 #### Part 3: Simulated Test Data
 
-1.	Generate at least 5 random test values between 5 and 100.
-2.	Store the values in a list
+Generate at least 5 random test values between 5 and 100. Store the values in a list.
 
 #### Part 4: Mathematical Analysis
 
 Using the list of test values, your program must:
+- Calculate and display the average test value
+- Perform one additional math calculation. Choose one: square root, sine of the average, a pi-based calculation.
 
-1.	Calculate and display the average test value
-2.	Perform one additional math calculation. Choose one:
-- Square root
-- Sine of the average
-- A pi-based calculation
+```{admonition} Note
+   :class: note
 
-All values must be clearly labeled and formatted with two decimal places.
+    All values must be clearly labeled and formatted with two decimal places.
+```
 
 #### Part 5: Pass/Fail Evaluation
 
@@ -84,6 +87,7 @@ If the average test value is greater than or equal to a defined passing threshol
 
    Although we have not covered {python}`if` statements yet in this course, you must not use an {python}`if` statement for this part of the assignment.
 ```
+
 #### Part 6: String Processing & Data Organization
 
 Your program must demonstrate:
@@ -93,10 +97,10 @@ Your program must demonstrate:
 ### Output Requirements
 
 Your program output must include:
-- A professional header
-- Clearly labeled test values and calculations
-- Pass/fail result
-- Clean formatting and spacing for readability
+1. A professional header
+2. Clearly labeled test values and calculations
+3. Pass/fail result
+4. Clean formatting and spacing for readability
 
 ### Sample Output
 
@@ -106,7 +110,7 @@ Your program output must include:
 
 ### Deliverables
 
-- Python .py file
+Submit your python file (py1_ind_1_username.py) to (INSERT ASSIGNMENT NAME) on Grade Scope.
 
 ## Q2 Medical Device Prototype Testing Report
 
@@ -119,29 +123,41 @@ Your written report should be written as a professional technical memo to your l
 #### Content Requirements
 
 Your memo must address the following:
-1.	Purpose of the Program
+**1.	Purpose of the Program**
 - What the medical device testing program is designed to simulate
 - What kind of data the program generates and why it is relevant to prototype evaluation
-2. Testing & Analysis Process
+**2. Testing & Analysis Process**
 - How test values were generated
 - How the data was stored and analyzed
-3. Performance Evaluation
+**3. Performance Evaluation**
 - Pass/fail criteria used in the program
 - How the program determines and report the final device status
-4. Technical Challenges & Debugging
+**4. Technical Challenges & Debugging**
 - One programming error you encountered
 - What caused the error
 - How you identified and corrected it
 
 ### Deliverables
 
-- Go to grade scope assignment and write/copy-paste your report in your submission
+Go to grade scope assignment and write/copy-paste your report in your submission
 
 ## Q3 Analysis Questions
 
-1. first question here
+Navigate to (INSERT ASSIGNMENT NAME) in Grade Scope and answer the following questions in their respective text boxes.
+
+1. For each error type below, provide a definition of the error type in your own words and provide an example of how your
+
+
+
 2. second question here
 
 ### Deliverables
 
-- Go to grade scope assignment and type your answers into your submission.
+
+Submit your report to (INSERT ASSIGNMENT NAME HERE) on Grade Scope.
+
+```{admonition} Note
+   :class: note
+
+  We recommend writing your report in a .txt file or MS Word document and then copy-paste it into Grade Scope. You can reference your report in the saved file for future assignments with similar tasks.
+```
