@@ -3,14 +3,13 @@ Your engineering team has been contracted by the French Alps 2030 Olympics Commi
 ![Excel Tables](descriptive-statistics-1-img.png)
 
 ## Part a)
-Enter the numerical values you would find in cells G6, G7, and G11. 
+Write the numerical values you would find in cells G6, G7, and G11. 
 
 ## Part b)
-Enter the formulas you would use in cells G8, G9, G10, and G12.
+Write the formulas you would use in cells G8, G9, G10, and G12.
 
 ## Part c)
-Excel says the value in G12 from your formula is 4.0. Enter the numerical value you would get for Standard Deviation in cell G13.
+Excel says the value in G12 from your formula is 4.0. Write the numerical Excel would calculate in cell G13.
 
 ## Part d)
 Complete column H.
-
