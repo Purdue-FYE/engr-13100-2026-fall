@@ -123,15 +123,19 @@ Your written report should be written as a professional technical memo to your l
 #### Content Requirements
 
 Your memo must address the following:
+
 **1.	Purpose of the Program**
 - What the medical device testing program is designed to simulate
 - What kind of data the program generates and why it is relevant to prototype evaluation
+
 **2. Testing & Analysis Process**
 - How test values were generated
 - How the data was stored and analyzed
+
 **3. Performance Evaluation**
 - Pass/fail criteria used in the program
 - How the program determines and report the final device status
+
 **4. Technical Challenges & Debugging**
 - One programming error you encountered
 - What caused the error
@@ -139,25 +143,39 @@ Your memo must address the following:
 
 ### Deliverables
 
-Go to grade scope assignment and write/copy-paste your report in your submission
-
-## Q3 Analysis Questions
-
-Navigate to (INSERT ASSIGNMENT NAME) in Grade Scope and answer the following questions in their respective text boxes.
-
-1. For each error type below, provide a definition of the error type in your own words and provide an example of how your
-
-
-
-2. second question here
-
-### Deliverables
-
-
 Submit your report to (INSERT ASSIGNMENT NAME HERE) on Grade Scope.
 
 ```{admonition} Note
    :class: note
 
-  We recommend writing your report in a .txt file or MS Word document and then copy-paste it into Grade Scope. You can reference your report in the saved file for future assignments with similar tasks.
+  We recommend writing and saving your report in a .txt file or MS Word document and then copy-paste it into Grade Scope. You can reference your report in the saved file for future assignments with similar tasks.
 ```
+
+## Q3 Analysis Questions
+
+Navigate to (INSERT ASSIGNMENT NAME) in Grade Scope and answer the following questions in their respective text boxes.
+
+### Q3.1 Understanding Python Errors
+
+For each error type listed below:
+
+(a) Define the error in your own words.
+
+(b) Write a short Python code example (based on your program from Question 1) that would cause this error.
+
+(c) Briefly explain why the error occurs in your example.
+
+- TypeError
+- IndexError
+- ValueError
+- NameError
+
+### Q3.2 Reflection on Data Types
+
+In a short paragraph (3–5 sentences), explain why understanding Python data types is important when writing code. In your response, be sure to:
+
+(a) Describe at least one problem that can happen if you use the wrong data type
+
+(b) Give a brief example of how a data type affects the outcome of a calculation or operation
+
+(c) Explain how paying attention to data types can help with debugging or improving your code
