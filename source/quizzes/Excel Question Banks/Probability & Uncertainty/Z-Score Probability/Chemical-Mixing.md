@@ -6,3 +6,7 @@ You are a chemical engineer developing a new mixing procedure for a chemical com
 
 
 The research team considers the reaction to be “moderately controlled” if the indicator response time is between 7 and 12 seconds. Approximately what percentage of trials are moderately controlled? Round your answer to one decimal place.
+
+You may use a Z-score table for this question.
+
+![Table of Z-scores](z-score-table.pdf)
