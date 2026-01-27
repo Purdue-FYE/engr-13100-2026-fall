@@ -3,4 +3,6 @@ You are a chemical engineer developing a new mixing procedure for a chemical com
 - A median time of 9 seconds
 - A variance of 4 seconds²
 - A range of 5.4 seconds
+
+
 The research team considers the reaction to be “moderately controlled” if the indicator response time is between 7 and 12 seconds. Approximately what percentage of trials are moderately controlled? Round your answer to one decimal place.
