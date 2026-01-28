@@ -42,7 +42,7 @@ You are a Biomedical Engineer working in a research and development lab. Your su
 
 ### Files Needed
 
-Start your Python script from INSERT .PY TEMPLATE HERE and save it as py1_ind_1_username.py. Use the sample output section below to verify that your program outputs correct values.
+Start your Python script from INSERT PYTHON TEMPLATE HERE and save it as py1_ind_1_username.py. Use the sample output section below to verify that your program outputs correct values.
 
 ### Program Requirements
 
@@ -150,32 +150,3 @@ Submit your report to (INSERT ASSIGNMENT NAME HERE) on Grade Scope.
 
   We recommend writing and saving your report in a .txt file or MS Word document and then copy-paste it into Grade Scope. You can reference your report in the saved file for future assignments with similar tasks.
 ```
-
-## Q3 Analysis Questions
-
-Navigate to (INSERT ASSIGNMENT NAME) in Grade Scope and answer the following questions in their respective text boxes.
-
-### Q3.1 Understanding Python Errors
-
-For each error type listed below:
-
-(a) Define the error in your own words.
-
-(b) Write a short Python code example (based on your program from Question 1) that would cause this error.
-
-(c) Briefly explain why the error occurs in your example.
-
-- TypeError
-- IndexError
-- ValueError
-- NameError
-
-### Q3.2 Reflection on Data Types
-
-In a short paragraph (3–5 sentences), explain why understanding Python data types is important when writing code. In your response, be sure to:
-
-(a) Describe at least one problem that can happen if you use the wrong data type
-
-(b) Give a brief example of how a data type affects the outcome of a calculation or operation
-
-(c) Explain how paying attention to data types can help with debugging or improving your code
