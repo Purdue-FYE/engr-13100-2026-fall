@@ -6,15 +6,15 @@ You are a civil engineer collecting data at the traffic intersection by Armstron
 
 At the end of 10 minutes, you counted the frequency of each state:
 | State | Frequency |
-|:---- | ----: |
+|---- | ---- |
 | 1 | 9 |
 | 2 | 3 |
 | 3 | 4 |
 | 4 | 4 |
 
 
-a) Using relative probability, what proportion of the measurements was the light not in state 4?
+a) Using relative probability, what proportion of the measurements was the light not in state 4? Write your answer as a fraction or decimal.
 
-b) Using relative probability, what proportion of the measurements was the light yellow?
+b) Using relative probability, what proportion of the measurements was the light yellow? Write your answer as a fraction or decimal.
 
 c) Your supervisor asks you how many hours in a 24-hour period the light is yellow. How would you answer?
