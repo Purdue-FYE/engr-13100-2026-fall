@@ -11,7 +11,8 @@ Your teammate started a chart with the data.
 
 ## Question a) What type of chart is this?
 
+Question a answer: ___________________
 
-## Question b) Format the chart for technical presentation by writing in chart elements.
+## Question b) Format the chart for technical presentation by writing elements on the chart.
 
 1. https://www.kaggle.com/datasets/erickfhernandezp/global-carnivorous-plants-with-climate-data
