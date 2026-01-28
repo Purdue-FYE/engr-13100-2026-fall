@@ -1,14 +1,16 @@
-### Q1.4 Equality vs Identity
+### Q1.4 == vs is (Conceptual Reasoning)
 
-Consider the following code:
+Two lists, A and B, are created separately, and both contain the same values:
 
-    a = [1, 2, 3]
-    b = [1, 2, 3]
+    A = [1, 2, 3]
+    B = [1, 2, 3]
 
-(a) What is the result of `a == b`?
+Answer the following questions without running any code:
 
-(b) What is the result of `a is b`?
+(a) If you compare A and B using `==`, would the result be `True` or `False`? Explain briefly.
 
-(c) Explain the conceptual difference between `==` and `is`.
+(b) If you compare A and B using `is`, would the result be `True` or `False`? Explain briefly.
 
-(d) Describe a situation where using `is` is more appropriate than `==`.
+(c) In your own words, describe the conceptual difference between using `==` and using `is` in Python.
+
+(d) Give one example of a situation where using `is` is more appropriate than using `==`.
