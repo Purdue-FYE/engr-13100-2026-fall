@@ -37,4 +37,4 @@ Converting to a percentage:
 
 0.7745 x 100% = 77.5%
 
-Therefore, approximately **$77.5\%$** of the trials are moderately controlled. #
+Therefore, approximately **$77.5\$ %** of the trials are moderately controlled. #
