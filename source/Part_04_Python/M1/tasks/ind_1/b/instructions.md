@@ -85,7 +85,7 @@ If the average test value is greater than or equal to a defined passing threshol
 ```{admonition} Note
    :class: note
 
-   Although we have not covered {python}`if` statements yet in this course, you must not use an {python}`if` statement for this part of the assignment.
+   Because we have not covered {python}`if` statements yet in this course, you cannot use an {python}`if` statement for this part of the assignment.
 ```
 
 #### Part 6: String Processing & Data Organization
