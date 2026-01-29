@@ -25,7 +25,7 @@ Sample rubric:
 Sample rubric:
 - [ ] Correct/incorrect
 
-## c) Your supervisor asks you how many hours in a 24-hour period the light is yellow. How would you answer?
+## c) Your supervisor asks you how many hours in a 24-hour period the light is yellow. In one to two sentences, briefly explain how you would answer?
 
 ### sample solution: 
 $$
