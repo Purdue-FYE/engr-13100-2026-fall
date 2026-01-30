@@ -42,7 +42,14 @@ You are a Biomedical Engineer working in a research and development lab. Your su
 
 ### Files Needed
 
-Start your Python script from INSERT PYTHON TEMPLATE HERE and save it as py1_ind_1_username.py. Use the sample output section below to verify that your program outputs correct values.
+Download the {program}`Python` template {download}`ENGR131_Python_Template.py
+</Part_04_Python/ENGR131_Python_Template.py>` and save it as py1_ind_1_username.py. Use the sample output section below to verify that your program outputs correct values.
+
+```{admonition} Note
+   :class: note
+
+    Remember to include comments in your python script to practice professional programming standards.
+```
 
 ### Program Requirements
 
@@ -80,7 +87,7 @@ Using the list of test values, your program must:
 
 You must determine whether the device passes or fails based on this rule:
 
-If the average test value is greater than or equal to a defined passing threshold, the device passes. Otherwise, it fails.
+If the average test value is greater than or equal to a defined passing threshold created by you (e.g., threshold = 6), the device passes. Otherwise, it fails.
 
 ```{admonition} Note
    :class: note
