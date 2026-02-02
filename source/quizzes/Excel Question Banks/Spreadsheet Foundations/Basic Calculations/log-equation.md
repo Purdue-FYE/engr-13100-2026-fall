@@ -2,7 +2,7 @@ One of your classmates set up this Excel sheet.
 
 ![A screenshot of an Excel Spreadsheet](log-equation-image.png)
 
-They entered an increment value of 20 in cell F1. You need to complete the first column of table 2 (the z column), with the values increasing by your increment value.
+They entered an increment value of 20 in cell F1. Your task is to complete the first column of table 2 (the z column), with the values increasing by your increment value.
 
 ### Question a) Write the formula you would type in cell E6. How would you populate the rest of the column?
 
