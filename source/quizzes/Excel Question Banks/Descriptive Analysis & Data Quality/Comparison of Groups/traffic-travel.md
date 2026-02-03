@@ -8,7 +8,7 @@ Write a descriptive title for this chart.
 
 What type of chart is this?
 
-Your teammate calculated some descriptive statistics for the dataset but forgot to label which one was which. Match the following values with the appropriate statistic:
+Your teammate calculated some descriptive statistics for the dataset but forgot to label which one was which. Complete the table below by matching the following values with the appropriate statistics:
 
 - $49.56\ \mathrm{km^2/h^2}$
 - $13.81\ \mathrm{km/h}$
