@@ -1,4 +1,6 @@
-You are a civil engineer working for the city of Indianapolis. You have been provided a dataset of 100 car trips that ended in Indianapolis in Fall 2024.
+You are a civil engineer working for the city of Indianapolis. You have been provided a dataset  $^1$ of 100 car trips that ended in Indianapolis in Fall 2024.
+
+1. [https://www.kaggle.com/datasets/algozee/traffic-data-set](https://www.kaggle.com/datasets/algozee/traffic-data-set)
 
 Your teammate plotted the data for you.
 
