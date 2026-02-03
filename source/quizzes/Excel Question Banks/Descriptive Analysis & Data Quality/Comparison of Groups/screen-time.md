@@ -22,13 +22,13 @@ Your teammate made four histograms to show the distributions of (1) Social Media
 ![Screenshot of four basic histograms](screen-time-img.png)
 
 ### Question c) What does the vertical axis represent?
-- [ ] Age of app users
+- [ ] Age of app users (years)
 - [ ] Number of users
 - [ ] Screen time usage (hours)
 - [ ] Cell Phone Carrier
 
 ### Question d) What does the horizontal axis represent?
-- [ ] Age of app users
+- [ ] Age of app users (years)
 - [ ] Number of users
 - [ ] Screen time usage (hours)
 - [ ] Cell Phone Carrier
