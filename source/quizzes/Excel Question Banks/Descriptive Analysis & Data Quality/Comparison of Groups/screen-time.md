@@ -51,4 +51,4 @@ Your teammate made four histograms to show the distributions of (1) Social Media
 - [ ] (3) Productivity App Usage
 - [ ] (4) Total Screen Time
 
-### QUestion h) In 1-2 sentences, explain your answer(s) in (e). 
+### Question h) In 1-2 sentences, explain your answer(s) in (e). 
