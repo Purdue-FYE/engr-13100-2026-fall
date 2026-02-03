@@ -8,10 +8,12 @@ Your teammate plotted the data for you.
 
 ### Question b) What type of chart is this?
 
-### Question c) Your teammate calculated some descriptive statistics for the dataset but forgot to label which one was which. Complete the table below by matching the following values with the appropriate statistics:
+### Question c) Your teammate calculated some descriptive statistics for the dataset but forgot to label which one was which. Complete the table below by matching the following values with the appropriate statistics. Some extra values that you will not use are given.
 
 - $49.56\ \mathrm{km^2/h^2}$
+- 54.77\ \mathrm{km/h}$
 - $13.81\ \mathrm{km/h}$
+- $89.07\ \mathrm{km/h}$
 - $109.52\ \mathrm{km^2/h^2}$
 - $21.86\ \mathrm{km/h}$
 
