@@ -2,6 +2,7 @@ You are a computer engineer developing a new app to help users reduce their scre
 
 $^1$ [https://www.kaggle.com/datasets/jayjoshi37/daily-internet-usage-statistics-by-age-group/data](https://www.kaggle.com/datasets/jayjoshi37/daily-internet-usage-statistics-by-age-group/data)
 
+## Part 1
 ### Question a) You want to make a histogram to show the distribution of the data. Approximately how many bins would be appropriate for this dataset?
 - [ ] 5
 - [ ] 10
