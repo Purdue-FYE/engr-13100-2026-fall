@@ -4,11 +4,11 @@ Your teammate plotted the data for you.
 
 ![Partially completed traffic travel chart](traffic-travel-img.png)
 
-Write a descriptive title for this chart.
+### Question a) Write a descriptive title for this chart.
 
-What type of chart is this?
+### Question b) What type of chart is this?
 
-Your teammate calculated some descriptive statistics for the dataset but forgot to label which one was which. Complete the table below by matching the following values with the appropriate statistics:
+### Question c) Your teammate calculated some descriptive statistics for the dataset but forgot to label which one was which. Complete the table below by matching the following values with the appropriate statistics:
 
 - $49.56\ \mathrm{km^2/h^2}$
 - $13.81\ \mathrm{km/h}$
