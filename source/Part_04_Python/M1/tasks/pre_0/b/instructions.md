@@ -51,8 +51,8 @@ Write, run, and test python code for the following questions. Remember to includ
 
 #### Program Requirements:
 
-1.	Ask the user to input a value between 1 and 100 and assign the input value to variable `a`.
-2.	Ask the user to input a value between 75 and 225 and assign the input value to variable `b`.
+1.	Ask the user to input a value between 1 and 10 and assign the input value to variable `a`.
+2.	Ask the user to input a value between 3 and 8 and assign the input value to variable `b`.
 3.	Convert both input values to float.
 4.	Calculate and store the following separate variables:
 - Sum
@@ -64,17 +64,12 @@ Write, run, and test python code for the following questions. Remember to includ
 6.	Display a clearly labeled, multi-line output
 7.	Format all numerical values to two decimal places.
 
-#### Example Output:
+### Sample Output
 
-    --- Math Report ---
-    Number 1: 5.00
-    Number 2: 2.00
-    Sum: 7.00
-    Difference: 3.00
-    Product: 10.00
-    Quotient: 2.50
-    Power: 25.00
-    Sqrt(|Number 1|): 2.24
-    Sqrt(|Number 2|): 1.41
+% Automatically generated Sample Output section.
+```{include} /_build/intermediate/Part_04_Python/M1/tasks/pre_0/b/sample_output.md
+```
 
-	
+### Deliverables
+
+Submit your python file (py1_pre_X_username.py) to (INSERT ASSIGNMENT NAME) on GradeScope.
