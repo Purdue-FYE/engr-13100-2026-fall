@@ -8,7 +8,7 @@ $^1$ [https://purr.purdue.edu/publications/4747/1](https://purr.purdue.edu/publi
 
 ### Question b) The data for site 1 is on the x-axis, and the data for site 2 is on the y-axis. Label both axes and replace the title with a more descriptive one.
 
-### Question c) The research team wants to model the relationship between flowrares at these sites with a linear equation. Draw a linear trendline on the plot.
+### Question c) The research team wants to model the relationship between flowrates at these sites with a linear equation. Draw a linear trendline on the plot.
 
 ### Question d) Estimate the equation of your trendline.
 
