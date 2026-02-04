@@ -15,6 +15,6 @@ cases = {
         "entries": ["Blood Pressure Monitor", 
                     "102", 
                     "smith", 
-                    "clinical researcher"],
+                    "senior clinical researcher"],
     },
 }

@@ -55,7 +55,7 @@ def main():
     researcher_title = input("Enter researcher's title: ").strip().title()
 
     # Demonstrate split (sequence data type)
-    name_parts = researcher_last.split()
+    title_parts = researcher_title.split()
 
     # ----------------------------------------
     # Part 2 – Professional Header
@@ -117,7 +117,7 @@ def main():
     # ----------------------------------------
 
     print("\nFormatted Researcher Tag:", (researcher_last + "_") * 2)
-    print("Split Researcher Name Sequence:", name_parts)
+    print("Split Researcher Title Sequence:", title_parts)
 
 
 if __name__ == "__main__":

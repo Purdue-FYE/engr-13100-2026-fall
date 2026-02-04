@@ -38,8 +38,8 @@ import math
 def main():
 
     # 1–3. Generate random numbers and cast to float
-    a = float(input(f"Enter a number between 1 and 100: "))
-    b = float(input(f"Enter a number between 75 and 125: "))
+    a = float(input(f"Enter a number between 1 and 10: "))
+    b = float(input(f"Enter a number between 3 and 8: "))
 
     # 4. Calculate values
     sum_val = a + b
