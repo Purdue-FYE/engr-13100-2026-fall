@@ -1,6 +1,6 @@
 A team of Purdue researchers collected streamflow data $^1$ at six sites in the Upper Wabash River basin. They asked your engineering team to analyze the relationship between the streamflow at site 1: Wabash River at Huntington, and site 2: Salamonie River at Dora. Your teammate plotted the data from 2023, shown below. Streamflow is measured in $m^3$ per second.
 
-$^1$ [https://purr.purdue.edu/publications/4747/1](https://purr.purdue.edu/publications/4747/1)
+$^1$ [Rahman, S.; Bowling, L. C. (2024). Long-term naturalized streamflow for six sites in the Upper Wabash River basin. Purdue University Research Repository. doi:10.4231/ZMWG-Z621](https://purr.purdue.edu/publications/4747/1)
 
 ![Sample Chart](stream-flow-img.png)
 
