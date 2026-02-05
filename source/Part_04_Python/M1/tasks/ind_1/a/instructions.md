@@ -187,17 +187,3 @@ Complete the following steps in your previously created {program}`MS Word` docum
    specific.
 
 Save the {program}`MS Word` document as a PDF with the name
-{glue:text}`../../../3_ind_assignments.md::deliverable_py1_ind_1_pdf:`.
-
-```{list-table} Deliverables
-:class: deliverables
-:name: tab:Py:M1:individual_1_deliverables
-:header-rows: 1
-
-* - Deliverables
-  - Description
-
-* - {glue:text}`../../../3_ind_assignments.md::deliverable_py1_ind_1_pdf:`
-  - A PDF of your completed {program}`MS Word` document with all calculations and
-    answers to the questions.
-```
