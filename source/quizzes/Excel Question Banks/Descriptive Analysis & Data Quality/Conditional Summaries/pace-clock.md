@@ -13,7 +13,7 @@ Table 1: Interval 30
 |10|30|
 
 
-You can use conditional logic to complete Table 2 in Excel to show the seconds on the clock when they would leave, given any interval between 5 and 55 seconds inclusive, listed in cell C1. Note that Table 1 is formatted as Number, not Short Date or Time.
+You can use conditional logic to complete Table 2 in Excel to show the seconds on the clock when they would leave, given any interval between 5 and 55 seconds inclusive, listed in cell C1. Note that Table 2 is formatted as Number, not Short Date or Time.
 
 ![Table 2 in Excel](pace-clock-img.png)
 
