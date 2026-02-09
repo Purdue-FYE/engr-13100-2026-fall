@@ -1,39 +1,42 @@
-A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette. 
+A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette from 1975 to 2024. 
 
 $^1$ [Ordonez, R. A.; West, T. D.; Casteel, S. N.; Stevens, R.; Vyn, T. J. (2025). Soybean yield dataset for the Long-Term Rotation and Tillage study conducted by the Agronomy Department at Purdue University from 1975-2024.. Purdue University Research Repository. doi:10.4231/TH1A-M536](https://purr.purdue.edu/publications/4928/1)
 
-One column of data is the plant heights at 8 weeks, measured in cm.
-| Plant # | 8wk Plant Height |
-|--------:|-----------------:|
-| 1  | 39 |
-| 2  | 55 |
-| 3  | 55 |
-| 4  | 53 |
-| 5  | 53 |
-| 6  | 60 |
-| 7  | 57 |
-| 8  | 54 |
-| 9  | 58 |
-| 10 | 51 |
-| 11 | 42 |
-| 12 | 51 |
-| 13 | 57 |
-| 14 | 60 |
-| 15 | 58 |
-| 16 | 45 |
-| 17 | 62 |
-| 18 | 65 |
-| 19 | 64 |
-| 20 | 63 |
-| 21 | 58 |
-| 22 | 63 |
-| 23 | 52 |
-| 24 | 47 |
-| 25 | 41 |
-| 26 | 51 |
+Your teammate created a histogram of the soybean yield, measured in kg/ha (kilograms per hectare, a unit of surface mass density, as in mass per area) 
 
-### Question a) What is an appropriate number of bins to use to represent this data in a histogram?
+[Soybean Yield Histogram](soybean-yield-img.png)
 
-### Question b) What is an appropriate bin width for this histogram? What bin width will you use?
+### Question a) Label both axes and write a descriptive chart title.
 
-### Question c) Draw a histogram to represent this data. Remember to properly format it, including a title and axis labels.
+### Question b) This histogram clearly shows outliers. What is one possible reason these outliers are present in the dataset?
+
+### Question c) Your teammate recommends you delete all the outliers. Provide one argument why this is a good idea, and one argument why this is a bad idea.
+
+### Question d) Your team decides to create an underflow bin. Quickly sketch the new histogram, showing the underflow bin. Label the bin range of the underflow bin and the first bin to the right of it.
+
+### Question e) After a team discussion, you decide to delete 93 outliers. Which values will increase?
+- [ ] sample size
+- [ ] mean
+- [ ] median
+- [ ] mode
+- [ ] standard deviation
+- [ ] range
+
+### Question f) Which values will decrease?
+- [ ] sample size
+- [ ] mean
+- [ ] median
+- [ ] mode
+- [ ] standard deviation
+- [ ] range
+
+### Question g) Which numerical value changed the most?
+- [ ] sample size
+- [ ] mean
+- [ ] median
+- [ ] mode
+- [ ] standard deviation
+- [ ] range
+
+
+
