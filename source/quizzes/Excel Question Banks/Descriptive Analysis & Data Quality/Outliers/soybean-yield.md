@@ -34,7 +34,6 @@ Your teammate created a histogram of the soybean yield, measured in kg/ha (kilog
 - [ ] sample size
 - [ ] mean
 - [ ] median
-- [ ] mode
 - [ ] standard deviation
 - [ ] range
 
