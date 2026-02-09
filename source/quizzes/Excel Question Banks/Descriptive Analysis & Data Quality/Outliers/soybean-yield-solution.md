@@ -12,7 +12,7 @@ Title: Soybean Yield in West Lafayette from 1975 to 2024
 - This is a bad idea because this data is still valueable to be included in analysis, as it represents some area with lower yield.
 
 ### Question d) Your team decides to create an underflow bin. Quickly sketch the new histogram, showing the underflow bin. Label the bin range of the underflow bin and the first bin to the right of it.
-
+!(Histogram sketch)[soybean-yield-solution-img.jpeg]
 
 ### Question e) After a team discussion, you decide to delete 93 outliers. Which values will increase?
 - [ ] sample size
