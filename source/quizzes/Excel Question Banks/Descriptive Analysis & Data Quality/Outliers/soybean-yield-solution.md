@@ -12,30 +12,29 @@ Title: Soybean Yield in West Lafayette from 1975 to 2024
 - This is a bad idea because this data is still valueable to be included in analysis, as it represents some area with lower yield.
 
 ### Question d) Your team decides to create an underflow bin. Quickly sketch the new histogram, showing the underflow bin. Label the bin range of the underflow bin and the first bin to the right of it.
-!(Histogram sketch)[soybean-yield-solution-img.jpeg]
+![Histogram sketch](soybean-yield-solution-img.jpeg)
 
 ### Question e) After a team discussion, you decide to delete 93 outliers. Which values will increase?
 - [ ] sample size
-- [ ] mean
-- [ ] median
+- [x] mean
+- [x] median
 - [ ] mode
 - [ ] standard deviation
 - [ ] range
 
 ### Question f) Which values will decrease?
-- [ ] sample size
+- [x] sample size
 - [ ] mean
 - [ ] median
 - [ ] mode
-- [ ] standard deviation
-- [ ] range
+- [x] standard deviation
+- [x] range
 
 ### Question g) Which numerical value changed the most?
 - [ ] sample size
 - [ ] mean
 - [ ] median
-- [ ] mode
 - [ ] standard deviation
-- [ ] range
+- [x] range
 
-
+Range changes the most, by approximetly 1300 or more. Sample size will change by exactly 93. Mean and median will increase slightly but certinly not by more than 1300. Standard deviation will also change, but on a much smaller magnitude as it is the average squared deviation from the mean.
