@@ -2,7 +2,7 @@ Your team of biologial engineers collected data on the climate that 100 carniver
 
 You downloaded the data $^1$ in Excel. Your teammate started a chart with the data.
 
-![Preliminary chart](regression-1-chart.png)
+![Preliminary chart](carniverous-plants-img.png)
 
 
 ## Question a) Is linear regression appropriate for this dataset? Why or why not?
