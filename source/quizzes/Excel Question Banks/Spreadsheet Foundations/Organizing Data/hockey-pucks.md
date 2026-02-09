@@ -2,7 +2,7 @@ Your engineering team has been contracted by the French Alps 2030 Olympics Commi
 
 Someone placed five hockey pucks of different sizes in a bucket. The puck with the highest normal force is 1.9 Newtons (N). Each puck measures 0.1N of normal force less than the previous.
 
-![Excel table](table-formatting-img.png)
+![Excel table](hockey-pucks-img.png)
 
 ## Part a)
 Complete Table 1 with the given information. Do not use any formulas in this table. 
