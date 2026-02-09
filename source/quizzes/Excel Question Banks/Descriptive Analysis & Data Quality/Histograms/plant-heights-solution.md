@@ -15,4 +15,4 @@ Bin width $\approx$ Range / number of bins = 26 / 5 = 5.2
 
 ### Question c) Draw a histogram to represent this data. Remember to properly format it, including a title and axis labels.
 
-![Question c solution histogram](soybean-yield-solution-img.png)
+![Question c solution histogram](plant-heights-solution-img.png)
