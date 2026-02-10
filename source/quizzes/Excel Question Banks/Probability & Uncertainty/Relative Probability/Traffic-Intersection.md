@@ -21,3 +21,5 @@ b) Using relative probability, what proportion of the measurements was the light
 
 c) Your supervisor asks you how many hours in a 24-hour period the light is yellow. In one to two sentences, briefly explain how you would answer?
 <div style="width:100%; height:4cm; border:1px solid black;"></div>
+
+<div style="page-break-after: always;"></div>

@@ -13,3 +13,5 @@ Excel says the value in G12 from your formula is 4.0. Write the numerical value 
 
 ## Part d)
 Complete column H.
+
+<div style="page-break-after: always;"></div>

@@ -4,7 +4,8 @@ You are a civil engineer working for the city of Indianapolis. You have been pro
 
 Your teammate plotted the data for you.
 
-![Partially completed traffic travel chart](traffic-travel-img.png)
+<!-- ![Partially completed traffic travel chart](traffic-travel-img.png) -->
+<img src="traffic-travel-img.png" alt="Partially completed traffic travel chart" width="60%" style="display: block; margin: auto;">
 
 ### Question a) Write a descriptive title on this chart.
 
@@ -27,3 +28,5 @@ Your teammate plotted the data for you.
 | Average weekend speed |  |
 | Variance of weekday speed |  |
 | Variance of weekend speed |  |
+
+<div style="page-break-after: always;"></div>

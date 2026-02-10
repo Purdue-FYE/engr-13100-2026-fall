@@ -3,3 +3,5 @@ You are a biomedical engineer analyzing the recovery times of patients after a n
 A new patient recovers in 18.2 days. You want to know what percentage of patients had a longer recovery time than this new patient, using the Z-score method. Write the fraction you would use to find the Z-score. Do not evaluate the mathematical expression. 
 
 <div style="width:100%; height:4cm; border:1px solid black;"></div>
+
+<div style="page-break-after: always;"></div>

@@ -2,14 +2,16 @@ Your team of biologial engineers collected data on the climate that 100 carniver
 
 You downloaded the data $^1$ in Excel. Your teammate started a chart with the data.
 
-![Preliminary chart](carniverous-plants-img.png)
-
+<!-- ![Preliminary chart](carniverous-plants-img.png) -->
+<img src="carniverous-plants-img.png" alt="Preliminary chart" style="width:80%; display:block; margin:auto;">
 
 ### Question a) Is linear regression appropriate for this dataset? Why or why not?
 <div style="width:100%; height:3cm; border:1px solid black;"></div>
 
 ### Question b) Rewrite the regression equation, replacing the generic variables y and x with descriptive variables.
 <div style="width:100%; height:2cm; border:1px solid black;"></div>
+
+<div style="page-break-after: always;"></div>
 
 ### Question c.1) One of your teammates tells you that the mean monthly temperature around the world is 22 degrees Celsius at sea level (0 m elevation). He suggests fixing the intercept to 22. What will happen to the slope of your trendline if you fix the intercept to 22?
 - [ ] It will increase
@@ -30,3 +32,5 @@ You downloaded the data $^1$ in Excel. Your teammate started a chart with the da
 <div style="width:100%; height:3cm; border:1px solid black;"></div>
 
 1. https://www.kaggle.com/datasets/erickfhernandezp/global-carnivorous-plants-with-climate-data
+
+<div style="page-break-after: always;"></div>

@@ -15,6 +15,6 @@ The equation for Friction Force is $F_{f} = \mu * F_{N}$. Write the column label
 
 ### Question d)
 After completing cell F6 in Question c, You used Excel to copy/drag the formula you wrote in cell F6 down the column. What formula is now in cell F8?
-
-
 <div style="width:100%; height:2cm; border:1px solid black;"></div>
+
+<div style="page-break-after: always;"></div>

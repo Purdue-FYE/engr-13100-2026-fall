@@ -30,6 +30,8 @@ OUTPUT_DIR.mkdir()
 # Keys = folder paths inside QUESTION_BANK
 # Values = number of questions to pull from that folder
 EXAM_STRUCTURE = {
+    "Academic Integrity Q0": 1,
+
     "Descriptive Analysis & Data Quality/Comparison of Groups": 1,
     "Descriptive Analysis & Data Quality/Conditional Summaries": 1,
     "Descriptive Analysis & Data Quality/Histograms": 1,
@@ -118,7 +120,7 @@ for version in range(NUM_VERSIONS):
             images_to_copy.update(images)
 
     # Shuffle questions across topics
-    random.shuffle(exam_questions)
+    #random.shuffle(exam_questions)
 
     # -----------------------------
     # BUILD EXAM MARKDOWN TEXT
@@ -127,7 +129,7 @@ for version in range(NUM_VERSIONS):
     version_letter = chr(65 + version)
     exam_text = f"# Exam Version {version_letter}\n\n"
 
-    for i, question_file in enumerate(exam_questions, start=1):
+    for i, question_file in enumerate(exam_questions, start=0): #starts with q0
         exam_text += f"## Question {i}\n\n"
         exam_text += question_file.read_text() + "\n\n"
 

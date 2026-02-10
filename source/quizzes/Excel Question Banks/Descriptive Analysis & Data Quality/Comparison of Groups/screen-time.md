@@ -47,3 +47,5 @@ Your teammate made four histograms to show the distributions of (1) Social Media
 - [ ] (2) Entertainment App Usage
 - [ ] (3) Productivity App Usage
 - [ ] (4) Total Screen Time
+
+<div style="page-break-after: always;"></div>

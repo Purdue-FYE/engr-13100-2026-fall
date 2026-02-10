@@ -14,6 +14,8 @@ Your teammate created a histogram of the soybean yield, measured in kg/ha (kilog
 
 ### Question d) Your team decides to create an underflow bin. Quickly sketch the new histogram, showing the underflow bin. Label the bin range of the underflow bin and the first bin to the right of it.
 
+<div style="page-break-after: always;"></div>
+
 ### Question e) After a team discussion, you decide to delete 93 outliers. Which values will increase?
 - [ ] sample size
 - [ ] mean
@@ -37,5 +39,4 @@ Your teammate created a histogram of the soybean yield, measured in kg/ha (kilog
 - [ ] standard deviation
 - [ ] range
 
-
-
+<div style="page-break-after: always;"></div>
