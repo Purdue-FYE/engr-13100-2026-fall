@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: "Purdue University ENGR 13100"
-author: '<a href="/spring-2026/Appendices/contributors.html">Contributors</a>'
+author: '<a href="/engr-13100-2026-fall/Appendices/contributors.html">Contributors</a>'
 copyright: "2026 All rights reserved"
 logo: logo.png
 only_build_toc_files : true
@@ -167,6 +167,7 @@ parse:
       :PC04: Visual Communication of Engineering Contexts - Create visuals that clearly communicate engineering data, models, or concepts to a technical audience and support claims or conclusions.
     "PC05": |
       :PC05: Meeting Assignment Expectations - Fully complete all parts of each assignment according to provided instructions.
+
 
 
 # Define the name of the latex output file for PDF builds
