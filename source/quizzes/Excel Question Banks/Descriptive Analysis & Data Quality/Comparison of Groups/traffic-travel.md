@@ -6,9 +6,10 @@ Your teammate plotted the data for you.
 
 ![Partially completed traffic travel chart](traffic-travel-img.png)
 
-### Question a) Write a descriptive title for this chart.
+### Question a) Write a descriptive title on this chart.
 
 ### Question b) What type of chart is this?
+<div style="width:100%; height:1cm; border:1px solid black;"></div>
 
 ### Question c) Your teammate calculated some descriptive statistics for the dataset but forgot to label which one was which. Complete the table below by matching the following values with the appropriate statistics. Some extra values that you will not use are given.
 
@@ -26,4 +27,3 @@ Your teammate plotted the data for you.
 | Average weekend speed |  |
 | Variance of weekday speed |  |
 | Variance of weekend speed |  |
-

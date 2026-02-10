@@ -6,7 +6,7 @@ They entered an increment value of 20 in cell F1. Your task is to complete the f
 
 ### Question a) Write the formula you would type in cell E6. How would you populate the rest of the column?
 
-Question a answer: ___________________________
+<div style="width:100%; height:3cm; border:1px solid black;"></div>
 
 This formula is used to calculate a, given constant x, constant y, and variable z. You need to calculate the value of a for every value of z in your table.
 
@@ -16,6 +16,4 @@ $$
 
 ### Question b) Write the formula you would type in cell F5. How would you populate the rest of the column?
 
-Question b answer formula: ___________________________
-
-Question b answer description: _________________________________________________________________________________
+<div style="width:100%; height:4cm; border:1px solid black;"></div>

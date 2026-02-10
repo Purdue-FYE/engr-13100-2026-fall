@@ -7,6 +7,7 @@ They want you to analyze the relationship between Winter Severity Index (x-axis,
 ![Fish Stock chart](fish-stock-img.png)
 
 ### Question a) What kind of chart is this?
+<div style="width:100%; height:1cm; border:1px solid black;"></div>
 
 ### Question b) Label both axes and replace the title with a more descriptive one.
 
@@ -16,5 +17,7 @@ They want you to analyze the relationship between Winter Severity Index (x-axis,
 - [ ] between 0.67 and 1.00
 
 ### Question d) Excel calculated the linear regression equation as y = -0.05x + 138.6. Following this linear trend, what is the expected fish length when the winter severity index is 20?
+<div style="width:100%; height:4cm; border:1px solid black;"></div>
 
 ### Question e) Is your answer in Question d accurate? Explain why or why not in 1-2 sentences.
+<div style="width:100%; height:5cm; border:1px solid black;"></div>

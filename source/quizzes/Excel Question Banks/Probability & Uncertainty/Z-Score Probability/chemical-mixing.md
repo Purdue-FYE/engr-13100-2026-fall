@@ -9,4 +9,6 @@ The research team considers the reaction to be “moderately controlled” if th
 
 You may use a Z-score table for this question.
 
-![Table of Z-scores](z-score-table.pdf)
+![Table of Z-scores](z-score-table.pdf) <!-- needs to be image file for embed -->
+
+<div style="width:100%; height:8cm; border:1px solid black;"></div>

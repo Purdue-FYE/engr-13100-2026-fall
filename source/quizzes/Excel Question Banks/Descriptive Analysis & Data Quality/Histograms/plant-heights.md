@@ -33,7 +33,11 @@ One column of data is the plant heights at 8 weeks, measured in cm.
 | 26 | 51 |
 
 ### Question a) What is an appropriate number of bins to use to represent this data in a histogram?
+<div style="width:100%; height:1cm; border:1px solid black;"></div>
 
 ### Question b) What is an appropriate bin width for this histogram? What bin width will you use?
+<div style="width:100%; height:1cm; border:1px solid black;"></div>
 
 ### Question c) Draw a histogram to represent this data. Remember to properly format it, including a title and axis labels.
+
+<div style="width:100%; height:5cm; border:1px solid black;"></div>

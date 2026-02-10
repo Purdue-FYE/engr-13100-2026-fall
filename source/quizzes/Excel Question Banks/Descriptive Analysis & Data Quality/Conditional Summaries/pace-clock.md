@@ -20,5 +20,6 @@ You can use conditional logic to complete Table 2 in Excel to show the seconds o
 ### Question a) Write your formula in cell F4.
 
 ### Question b) How would you populate the rest of column F?
+<div style="width:100%; height:2cm; border:1px solid black;"></div>
 
 ### Question c) Another athlete is sharing the lane, and starts every interval 5 seconds after the first athlete. Add a column to Table 2 to show what clock time they start their laps at.

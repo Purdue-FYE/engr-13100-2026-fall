@@ -6,29 +6,29 @@ They made a spreadsheet in Excel showing the time they left for class, in "minut
 
 ### Question a) Read questions b, c, and d. What might be a helpful calculation to add to column E?
 
-_____________________________________________________________________________________________
+<div style="width:100%; height:3cm; border:1px solid black;"></div>
 
-What column label would you put in cell E3?
+### What column label would you put in cell E3?
 
-____________________
+<div style="width:100%; height:2cm; border:1px solid black;"></div>
 
-What formula would you put in cell E4?
+### What formula would you put in cell E4?
 
-____________________
+<div style="width:100%; height:2cm; border:1px solid black;"></div>
 
-How would you populate the column?
+### How would you populate the column?
 
-____________________
+<div style="width:100%; height:2cm; border:1px solid black;"></div>
 
 
 ### Question b) Your roommate wants to know how many days they walked to class partially or completley in the dark. Write an Excel formula that would calculate this.
 
-____________________
+<div style="width:100%; height:2cm; border:1px solid black;"></div>
 
 ### Question c) Your roommate wants to know how many days they walked to class completley in the light. Write an Excel formula that would calculate this.
 
-____________________
+<div style="width:100%; height:2cm; border:1px solid black;"></div>
 
 ### Question d) Your roommate wants to know how many days they were late to class. Write an Excel formula that would calculate this.
 
-____________________
+<div style="width:100%; height:2cm; border:1px solid black;"></div>

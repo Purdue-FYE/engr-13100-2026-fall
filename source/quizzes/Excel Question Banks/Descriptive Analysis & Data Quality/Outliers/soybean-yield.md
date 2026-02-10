@@ -4,7 +4,7 @@ $^1$ [Ordonez, R. A.; West, T. D.; Casteel, S. N.; Stevens, R.; Vyn, T. J. (2025
 
 Your teammate created a histogram of the soybean yield, measured in kg/ha (kilograms per hectare, a unit of surface mass density, as in mass per area) 
 
-[Soybean Yield Histogram](soybean-yield-img.png)
+![Soybean Yield Histogram](soybean-yield-img.png)
 
 ### Question a) Label both axes and write a descriptive chart title.
 

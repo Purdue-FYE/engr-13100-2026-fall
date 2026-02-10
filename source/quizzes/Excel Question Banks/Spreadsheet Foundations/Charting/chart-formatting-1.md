@@ -11,7 +11,7 @@ Your teammate plotted the data in Excel, shown below.
 
 ## Question a) What type of chart is this?
 
-Question a answer: ___________________
+<div style="width:100%; height:1cm; border:1px solid black;"></div>
 
 ## Question b) Format the chart for technical presentation by writing elements on the chart.
 
