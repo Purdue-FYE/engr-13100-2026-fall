@@ -31,7 +31,7 @@ also be useful as you learn to program in Python.
 Here is the link to the [{program}`Python` Official Documentation](https://docs.python.org/3.13/)
 
 ## HELLO WORLD
-
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_czzo9p11&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_41keacx5%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Hello World"></iframe>
 
 {download}`00_hello_world.py<materials/00_hello_world.py>`
 
@@ -62,6 +62,7 @@ using triple quotes.
 ```
 
 ## OPERATORS
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_spmnyodl&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_hvhxziu8%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Operators"></iframe>
 
 {download}`01_operators.py<materials/01_operators.py>`
 
@@ -130,7 +131,7 @@ used to test if a sequence is present in an object
 
 (Py:M1:pre-class:variables)=
 ## VARIABLES
-
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_vm3ttge4&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_fxfrgttm%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Variables"></iframe>
 
 {download}`02_variables.py<materials/02_variables.py>`
 
@@ -176,7 +177,7 @@ Syntax: {python}`variable = <expression or literal>`
 Python does not have increment {python}`++` and decrement {python}`--` operators.
 
 ## DATA TYPES
-
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_qw3d9dl8&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_fpb8zioc%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Data Types"></iframe>
 
 {download}`03_data_types.py<materials/03_data_types.py>`
 
@@ -464,7 +465,7 @@ for student in ma162_students:
 
 (Py:M1:Python_1:materials:input)=
 ## INPUT FUNCTION - input()
-
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_71cfk085&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_5vt3lpqf%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Input"></iframe>
 
 {download}`04_input_function.py<materials/04_input_function.py>`
 
@@ -498,7 +499,7 @@ For the purpose of this course, you will not worry about validating and sanitizi
 If you are interested in learning more about it, you can check out [exception handling](https://docs.python.org/3.13/tutorial/errors.html) in Python.
 
 ## OUTPUTS
-
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_1ocbj64l&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_mrh4gkmc%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Output"></iframe>
 
 {download}`05_outputs.py<materials/05_outputs.py>`
 
@@ -556,7 +557,7 @@ print(f"{item} costs ${cost:,.2f}") # Output is "apple costs $1,234.57"
 
 
 ## MATH MODULE
-
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_9fmgkhzp&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_d0tfwh4n%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Math Module"></iframe>
 
 {download}`06_math_module.py<materials/06_math_module.py>`
 
@@ -584,7 +585,7 @@ More details on the {python}`math` module can be found in the [official document
 
 
 ## IMPORT METHODS
-
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_c32dbown&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_7tnd9qev%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Import Methods"></iframe>
 
 {download}`07_import_methods.py<materials/07_import_methods.py>`
 
@@ -638,7 +639,7 @@ This is because it can overwrite functions that already exist in the program and
 
 
 ## RANDOM MODULE
-
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_3onfc1l4&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_ggckmpbf%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Random Module"></iframe>
 
 {download}`08_random_module.py<materials/08_random_module.py>`
 
@@ -729,7 +730,7 @@ To access the help function, follow these steps:
 5. To quit the python interpreter, type {code}`exit()` or {code}`quit()`.
 
 ## PYTHON LIBRARIES (PACKAGES)
-
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_6wwuv7aq&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_h29h2y5n%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Python Libraries and Packages"></iframe>
 
 {download}`09_python_libraries.py<materials/09_python_libraries.py>`
 
@@ -825,6 +826,7 @@ print(ages)  # Output: 0    25, 1    36, 2    29, 3    42, Name: Age, dtype: int
 
 ## KEYWORDS
 
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_n60jzuka&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_20m9ujoa%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Keywords"></iframe>
 
 {download}`10_keywords.py<materials/10_keywords.py>`
 
@@ -856,8 +858,9 @@ print(ArithmeticError is builtins.ArithmeticError)  # Output: True
 
 
 ## ENGR 13100 Python Template
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_kwtdhb2t&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_x2tuzeo5" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="ENGR133_python_template"></iframe>
 
-{download}`ENGR131_Python_Template.py<source/Part_04_Python/ENGR131_Python_Template.py>`
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_h2t2l7rb&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_kgnba9g3%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="FYE_python_template"></iframe>
+
+{download}`ENGR131_Python_Template.py<../ENGR131_Python_Template.py>`
 
 <!-- {download}`ENGR133_Python_Template.py<source/Part_3_Python/ENGR133_Python_Template.py>`-->
