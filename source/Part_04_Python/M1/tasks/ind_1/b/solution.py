@@ -6,7 +6,7 @@ Description:
     This program simulates testing a new medical device prototype
 
 Assignment Information:
-    Assignment:     4.3.1 Py1 Ind 1
+    Assignment:     5.3.1 Py1 Ind 1
     Team ID:        LC0 - 00
     Author:         Holly Fortener, hforten@purdue.edu
     Date:           01/23/2026
