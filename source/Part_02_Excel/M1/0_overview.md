@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (Ex:M1:Excel_1)=
-# {program}`MS Excel` 1
+# Spreadsheet Foundations
 The first module in this course is designed for students to learn about the course
 structure, how to turn in assignments, and what the assessments will be like.  Students
 will be introduced to the team learning approach and the flipped classroom model.
@@ -31,7 +31,7 @@ easy for others to understand.
 - Creating graphs and plots in {program}`MS Excel`
 
 
-```{rubric} Learning Objectives and Course Outcomes
+```{rubric} Skills and Learning Objectives
 ```
 
 At the end of this module, you will be able to:
@@ -43,5 +43,12 @@ At the end of this module, you will be able to:
 - Use absolute, relative, and mixed addressing in {program}`MS Excel`
 - Create plots appropriate for technical presentation in {program}`MS Excel`
 
-These learning objectives are directly connected to the following Course
-Outcomes:
+These skills are directly connected to the following Learning Objectives:
+
+{{PR01}}
+{{PR02}}
+{{PR03}}
+{{PR08}}
+{{DV01}}
+{{DV02}}
+{{DV03}}

@@ -12,11 +12,11 @@ kernelspec:
 ```
 
 (Py:M1:Python_1)=
-# {program}`Python` 1
+# Python Foundations
 
 In this module students will be introduced to the {program}`Python` programming
-environment, learn to create, save and run script files, and perform simple
-mathematical operations in the file.  The intent of this module is to get
+environment, learn to create, save and run script files, perform simple
+mathematical operations in the file, and manipulate strings.  The intent of this module is to get
 comfortable with the {program}`Python` environment and learn basic operations
 within script files.
 
@@ -31,7 +31,7 @@ within script files.
 - Math library in {program}`Python`
 
 
-```{rubric} Learning Objectives and Course Outcomes
+```{rubric} Skills and Learning Objectives
 ```
 
 At the end of this module, you will be able to:
@@ -43,7 +43,9 @@ At the end of this module, you will be able to:
 - Use inputs from the screen in a {program}`Python` script
 - Output data to the screen in a {program}`Python` script
 
-These learning objectives are directly connected to the following Course
-Outcomes:
+These skills are directly connected to the following Learning Objectives:
 
-INSERT COURSE OUTCOMES HERE
+{{PR01}}
+{{PR02}}
+{{PR03}}
+{{PR08}}

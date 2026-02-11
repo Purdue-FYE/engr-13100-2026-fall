@@ -5,7 +5,7 @@ website. The materials are published as a Jupyter Book and are accessible to
 students [here][course-website]. Please note, this repository and its contents
 are exclusively for the teaching team and should not be shared with students.
 
-[course-website]: https://purdue-fye.github.io/engr-131-2026-fall
+[course-website]: https://purdue-fye.github.io/engr-13100-2026-fall
 
 
 ## Table of Contents

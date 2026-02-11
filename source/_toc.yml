@@ -14,7 +14,7 @@ parts:
     - file: Part_00_Course_Resources/course_software/course_software
 
   - caption: Professional Preparation and Teaming
-    numbered: True
+    numbered: False
     chapters:
       # Professional Preperation Module
     - file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
@@ -29,7 +29,44 @@ parts:
     - file: Part_02_Excel/M1/0_overview
       sections:
       - file: Part_02_Excel/M1/1_pre-class_material
-      - file: Part_02_Excel/M1/tasks/pre_0/a/instructions
+        sections:
+        - file: Part_02_Excel/M1/tasks/pre_0/a/instructions
+
+      # - file: Part_02_Excel/M1/2_assignments
+      #   sections:
+      #   - file: Part_02_Excel/M1/tasks/1/a/instructions
+
+    # Excel Module 2
+    - file: Part_02_Excel/M2/0_overview
+      sections:
+      - file: Part_02_Excel/M2/1_pre-class_material
+      #  sections:
+      #   - file: Part_02_Excel/M2/tasks/pre_0/a/instructions
+
+      # - file: Part_02_Excel/M2/2_assignments
+      #   sections:
+      #   - file: Part_02_Excel/M2/tasks/1/a/instructions
+
+    # Excel Module 3
+    - file: Part_02_Excel/M3/0_overview
+      # sections:
+      # - file: Part_02_Excel/M3/1_pre-class_material
+      #  sections:
+      #   - file: Part_02_Excel/M3/tasks/pre_0/a/instructions
+      # - file: Part_02_Excel/M3/2_assignments
+      #   sections:
+      #   - file: Part_02_Excel/M3/tasks/1/a/instructions
+
+    # Excel Module 4
+    - file: Part_02_Excel/M4/0_overview
+      # sections:
+      # - file: Part_02_Excel/M4/1_pre-class_material
+      #  sections:
+      #   - file: Part_02_Excel/M4/tasks/pre_0/a/instructions
+      # - file: Part_02_Excel/M4/2_assignments
+      #   sections:
+      #   - file: Part_02_Excel/M4/tasks/1/a/instructions
+
   # - caption: Project 1
   #   numbered: True
   #   chapters:
@@ -38,17 +75,47 @@ parts:
     numbered: 2
     chapters:
     # Python Module 1
-  
     - file: Part_04_Python/M1/0_overview
       sections:
       - file: Part_04_Python/M1/1_pre-class_material
-      - file: Part_04_Python/M1/tasks/pre_0/a/instructions
-      # - file: Part_04_Python/M1/tasks/team_1/instructions
-      # - file: Part_04_Python/M1/tasks/team_2/instructions
-      # - file: Part_04_Python/M1/tasks/team_3/instructions
-      # - file: Part_04_Python/M1/tasks/ind_1/instructions
-      # - file: Part_04_Python/M1/tasks/ind_2/instructions
+        sections:
+        - file: Part_04_Python/M1/tasks/pre_0/b/instructions
+  
+      # - file: Part_04_Python/M1/2_team_assignments
+      #   sections:
+      #   - file: Part_04_Python/M1/tasks/team_1/b/instructions
+      #   - file: Part_04_Python/M1/tasks/team_2/a/instructions
+      #   - file: Part_04_Python/M1/tasks/team_3/b/instructions
+
+      - file: Part_04_Python/M1/2_assignments
+        sections:
+        - file: Part_04_Python/M1/tasks/ind_1/b/instructions
+        - file: Part_04_Python/M1/tasks/ind_2/b/instructions
+
+    # Python Module 2
+    - file: Part_04_Python/M2/0_overview
+
+    # Python Module 3
+    - file: Part_04_Python/M3/0_overview
+
+    # Python Module 4
+    - file: Part_04_Python/M4/0_overview
+
+    # Python Module 5
+    - file: Part_04_Python/M5/0_overview
+   
+
 
   # - caption: Project 2
   #   numbered: True
   #   chapters:
+
+  - caption: Appendices
+    numbered: False
+    chapters:
+    - file: Appendices/contributors
+
+  # - caption: Setup
+  #   hidden: true
+  #   chapters:
+  #   - file: assignment_names
