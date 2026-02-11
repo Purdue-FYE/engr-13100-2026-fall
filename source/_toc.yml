@@ -13,7 +13,7 @@ parts:
     - file: Part_00_Course_Resources/course_schedule
     - file: Part_00_Course_Resources/course_software/course_software
 
-  - caption: Professional Preparation and Teaming
+  - caption: Professional Engineering Skills
     numbered: False
     chapters:
       # Professional Preperation Module
