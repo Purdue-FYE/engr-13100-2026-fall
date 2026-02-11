@@ -109,8 +109,6 @@ Your program output must include:
 3. Pass/fail result
 4. Clean formatting and spacing for readability
 
-### Sample Output
-
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M1/tasks/ind_1/b/sample_output.md
 ```
