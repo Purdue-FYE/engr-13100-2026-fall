@@ -4,6 +4,11 @@
 format: jb-book
 root: intro
 parts:
+  # - caption: Setup
+  #   hidden: true
+  #   chapters:
+  #   - file: glue_factory
+
   - caption: Start Here
     numbered: False
     chapters:
@@ -13,7 +18,7 @@ parts:
     - file: Part_00_Course_Resources/course_schedule
     - file: Part_00_Course_Resources/course_software/course_software
 
-  - caption: Professional Preparation and Teaming
+  - caption: Professional Engineering Skills
     numbered: False
     chapters:
       # Professional Preperation Module
@@ -123,8 +128,3 @@ parts:
     numbered: False
     chapters:
     - file: Appendices/contributors
-
-  # - caption: Setup
-  #   hidden: true
-  #   chapters:
-  #   - file: assignment_names
