@@ -1,6 +1,8 @@
 An thermal-engineering team is developing a smaller version of an infared thermometer based on an existing design. To keep the early-stage model simple, the engineers decide to represent the thermometer using two simple three-dimensional shapes that approximate its overall geometry.
 
 Learning Objectives:
+- PR02
+- PR03
 - UC02: Schematic Representation of Systems - Describe engineering systems or processes using schematic diagrams that represent inputs, outputs, and accumulations.
 - UC03: Mathematical Modeling of Systems - Define engineering systems or processes using mathematical models that represent inputs, outputs, and accumulations.
 - PS01: Stakeholder-Based Problem Definition - Explain the problem based on synthesis of client, user, and stakeholder needs.
