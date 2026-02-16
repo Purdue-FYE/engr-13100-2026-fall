@@ -65,7 +65,7 @@ myst:
 ```{include} /macros.md
 ```
 
-# Task 0
+# Pre-Class Task 0
 
 
 ## Learning Objectives
@@ -112,7 +112,7 @@ doing calculations in {program}`Python`.
 
 1. Make a copy of the {download}`ENGR131_Python_Template.py
 </Part_04_Python/ENGR131_Python_Template.py>` {program}`Python` template and rename
-   the file to {glue:text}`../../../1_pre-class_material.md::deliverable_py1_pre_0_py:`.
+   the file to .
 
 2. Make sure to fill out all header information, including a short description
    of the code.
@@ -160,19 +160,9 @@ doing calculations in {program}`Python`.
    ```
 
 7. Save the file as
-   {glue:text}`../../../1_pre-class_material.md::deliverable_py1_pre_0_py:` and turn in
+ and turn in
    the assignment on Gradescope.
 
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M1/tasks/pre_0/a/sample_output.md
 ```
-
-```{list-table} Deliverables
-:class: deliverables
-:name: tab:Py:M1:pre_class_deliverables
-:header-rows: 1
-
-* - Deliverables
-  - Description
-* - {glue:text}`../../../1_pre-class_material.md::deliverable_py1_pre_0_py:`
-  - Your completed {program}`Python` code.

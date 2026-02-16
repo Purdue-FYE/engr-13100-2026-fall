@@ -10,34 +10,59 @@ kernelspec:
 ---
 ```{include} /macros.md
 ```
-```{code-cell} ipython3
-:tags: ["remove-cell"]
-
-from myst_nb import glue
-
-mnum = "py1_pre"
-
-glue("deliverable_py1_pre_0_py", mnum+"_0_username.py")
-```
 
 (Py:M1:pre-class)=
 # Pre-Class Assignments
 
-Create and execute simple scripts comprised of basic {program}`Python` concepts.
-Apply course code standard in development of {program}`Python` scripts.
-Modularize and comment code in {program}`Python` for readability and
+Use the resources on this page to learn how to:
+- Create and execute simple scripts comprised of basic {program}`Python` concepts.
+- Apply course code standard in development of {program}`Python` scripts.
+- Modularize and comment code in {program}`Python` for readability and
 reusability.
+
+## Install VS Code
+Before engaging with the lessons below, install and setup Python and VS Code on 
+the computer you will be using for class by following 
+the instructions on the ["Course Software" page](start_here:course_software).
+
+The [{program}`Python` Official Documentation](start_here:course_software) will 
+also be useful as you learn to program in Python.
 
 Here is the link to the [{program}`Python` Official Documentation](https://docs.python.org/3.13/)
 
 ## HELLO WORLD
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_lvftifgt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_m3s2a7rj" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_0_helloworld"></iframe>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_czzo9p11&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_41keacx5%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Hello World"></iframe>
 
 {download}`00_hello_world.py<materials/00_hello_world.py>`
 
 
+## COMMENTS
+
+Comments are text within the code that is ignored by the {program}`Python` interpreter. They are used to explain the code and make it more readable.
+
+### Single-line Comments
+Start with a hash symbol {python}`#`.
+
+```python
+# This is a comment
+print("Hello World")  # This is an inline comment
+```
+
+### Multi-line Comments
+Can be created by using a hash symbol {python}`#` on each line or by using triple quotes `'''` or `"""`.
+
+```python
+# This is a multi-line comment
+# using hash symbols.
+
+"""
+This is a multi-line comment
+using triple quotes.
+"""
+```
+
 ## OPERATORS
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_c5slan08&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_hhz95c74" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_1_operators"></iframe>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_spmnyodl&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_hvhxziu8%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Operators"></iframe>
 
 {download}`01_operators.py<materials/01_operators.py>`
 
@@ -82,9 +107,7 @@ used to compare two values, returns a boolean value.
 ### Assignment Operators
 {python}`=` is used to assign values to variables.
 
-See [Variables](#variables)
-<!-- See [Variables](#variables) I want to link the variables heading below-->
-<!-- this above line returns an error however, it does show up on the website, but commented for now -->
+See [Variables](Py:M1:pre-class:variables)
 
 ### Bitwise Operators
 used to perform bitwise operations
@@ -106,9 +129,9 @@ used to test if a sequence is present in an object
 - {python}`in` : returns {python}`True` if a sequence is present in the object
 - {python}`not in` : returns {python}`True` if a sequence is not present in the object
 
-(variables)=
+(Py:M1:pre-class:variables)=
 ## VARIABLES
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_j3ymtkkr&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_uhk9dekm" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_2_variables"></iframe>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_vm3ttge4&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_fxfrgttm%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Variables"></iframe>
 
 {download}`02_variables.py<materials/02_variables.py>`
 
@@ -134,9 +157,9 @@ For example: {python}`1` or {python}`"Hello World!"`
 
 ### Assignment statements
 
-used to create variables and assign values to them.
+Used to create variables and assign values to them.
 
-Syntax: variable = expression or literal
+Syntax: {python}`variable = <expression or literal>`
 
 {python}`a = 1+2`<br>
 {python}`b = "Hello World!"`
@@ -154,7 +177,7 @@ Syntax: variable = expression or literal
 Python does not have increment {python}`++` and decrement {python}`--` operators.
 
 ## DATA TYPES
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_10gsd3vf&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_8aslw5os" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_3_datatypes"></iframe>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_qw3d9dl8&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_fpb8zioc%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Data Types"></iframe>
 
 {download}`03_data_types.py<materials/03_data_types.py>`
 
@@ -168,10 +191,13 @@ You can use the {python}`type()` function to get the datatype of a variable or a
 - None {python}`NoneType` - represents the absence of a value
 
 ### Sequence Data Types
+
+These are also referred to as iterables.
+
 - List - comma separated values enclosed in square brackets, {python}`[1, 2, 3]`, {python}`list()`
 - Tuple - comma separated values enclosed in parentheses, {python}`(1, 2, 3)`, {python}`tuple()`
-- Set - comma separated values enclosed in curly braces, {python}`{1, 2, 3}`, {python}`set()`
-- Dictionary - key-value pairs enclosed in curly braces, {python}`{"name": "John", "age": 20}`, {python}`dict()`
+- Set - Unordered comma separated unique values enclosed in curly braces, {python}`{1, 2, 3}`, {python}`set()`
+- Dictionary - Ordered key-value pairs enclosed in curly braces with unique keys, {python}`{"name": "John", "age": 20}`, {python}`dict()`
 - Range - {python}`range()` returns a sequence of numbers
 
   Syntax: {python}`range(start, stop, step)`
@@ -199,7 +225,7 @@ You can use the {python}`type()` function to get the datatype of a variable or a
 | List       |  Mutable  |  Ordered | allows duplicates | replaced or changed or added or removed|
 | Tuple      | Immutable |  Ordered | allows duplicates | cannot be replaced or changed or added or removed |
 | Set        |  Mutable  | Unordered|   no duplicates   | cannot be replaced or changed, only added or removed |
-| Dictionary |  Mutable  | Unordered| no duplicate keys | replaced or changed or added or removed|
+| Dictionary |  Mutable  |  Ordered | no duplicate keys | replaced or changed or added or removed|
 ```
 
 ### Mixed Type Operations
@@ -268,6 +294,12 @@ official documentation](https://docs.python.org/3/library/functions.html).
   - {python}`list()` will only read the keys when passed a dictionary (e.g.
     {python}`list({1: "a", "b": 2})` returns {python}`[1, 'b']`).
 
+  - {python}`list()` can be sorted in place using the {python}`.sort()` method (e.g.
+    {python}`my_list.sort()`). This modifies the original list and returns {python}`None`.
+
+  - To create a sorted copy of a list without modifying the original list, use the
+    {python}`sorted()` function (e.g. {python}`sorted_list = sorted(my_list)`).
+
 {python}`tuple()`
 : converts an iterable argument to a tuple.
 
@@ -298,8 +330,142 @@ print("""Pete's "hammer" """) # Output: Pete's "hammer"
 print('Pete\'s "hammer"')     # Output: Pete's "hammer"
 ```
 
+(Py:M1:Python_1:materials:data_types:sets)=
+### Sets
+
+A set is an unordered collection of unique items. Sets are mutable, meaning you can
+add or remove items after its creation. Sets are defined using curly braces `{}` or the
+{python}`set()` function.
+
+Example:
+```python
+# Creating a set using curly braces
+my_set = {1, 2, 3, 4, 5}
+print(my_set)  # Output: {1, 2, 3, 4, 5}
+
+# Creating a set using the set() function
+magic_word = "abracadabra"
+another_set = set(magic_word)
+print(another_set)  # Output: {'a', 'b', 'c', 'd', 'r'}
+```
+
+When printing a set, the order of elements may vary between different runs since sets
+are unordered. A simple solution is to print the sorted version of the set using the
+{python}`sorted()` function. Note that this returns a list, not a set.
+
+Example:
+```python
+my_set = {3, 1, 4, 2}
+my_set.add(2)  # Adding a duplicate element, will have no effect
+my_set.add(5)  # Adding a new element
+my_set.remove(3)  # Removing an element
+my_set.discard(10)  # Discarding a non-existing element, will have no effect
+print(sorted(my_set))  # Output : [1, 2, 4, 5]
+
+my_set.clear()  # Clearing all elements from the set
+print(my_set)  # Output: set()
+```
+
+Sets support various advanced operations known as set operations in mathematics.
+
+Example:
+```python
+set_a = {1, 2, 3}
+set_b = {3, 4, 5}
+set_c = {7, 8, 9}
+
+# This is a non-exhaustive list of set operations
+print(set_a.union(set_b))          # Output: {1, 2, 3, 4, 5}
+print(set_a.intersection(set_b))   # Output: {3}
+print(set_a.difference(set_b))     # Output: {1, 2}
+print(set_a.symmetric_difference(set_b))  # Output: {1, 2, 4, 5}
+print(set_a.isdisjoint(set_c))    # Output: True
+```
+
+
+### Dictionaries
+
+Dictionaries are used to store data values in key, value pairs.  Dictionaries are useful
+when you want to store grouped data in a single organized structure.  As a simple
+example, think of a standard English dictionary where you have words (keys) and their
+definitions (values).
+
+Dictionaries are defined using curly braces `{}` with key-value pairs separated by
+commas.  Alternatively, the `dict()` constructor can be used to create dictionaries.
+
+Example:
+
+```{code-cell} python
+student_1 = {
+    "name": "Alice",
+    "age": 21,
+    "major": "Computer Science"
+}
+print(student_1["name"])             # Output: Alice
+print(student_1["age"])              # Output: 21
+student_1["age"] = 22                # Update age using assignment
+print(student_1["age"])              # Output: 22
+student_1["graduation_year"] = 2028  # Add new key-value pair by assignment
+print(student_1["graduation_year"])  # Output: 2028
+```
+
+Alternative: Using dict() constructor
+
+```{code-cell} python
+student_2 = dict(name="Bob", age=20, major="Civil Engineering")
+student_2.update({"age": 21})                # Update age using the update method
+print(student_2["age"])                      # Output: 21
+student_2.update({"graduation_year": 2026})  # Add new key-value pair with the update method
+print(student_2["graduation_year"])          # Output: 2026
+```
+
+Dictionary methods and functions
+
+```{code-cell} python
+print(student_1)           # Output: {'name': 'Alice', 'age': 22, 'major': 'Computer Science', 'graduation_year': 2028}
+print(type(student_1))     # Output: <class 'dict'>
+print(len(student_1))      # Output: 4
+print(student_1.keys())    # Output: dict_keys(['name', 'age', 'major', 'graduation_year'])
+print(student_1.values())  # Output: dict_values(['Alice', 22, 'Computer Science', 2028])
+print(student_1.items())   # Output: dict_items([('name', 'Alice'), ('age', 22), ('major', 'Computer Science'), ('graduation_year', 2028)])
+```
+
+Accessing keys and values as a list
+
+```{code-cell} python
+print(list(student_2.values())) # Output: ['Bob', 21, 'Civil Engineering', 2026]
+```
+
+Dictionaries do not need to have values of the same data type. Values can be sequences
+such as lists, tuples, and sets, or even other dictionaries.
+
+```{code-cell} python
+student_3 = {
+    "name": "Charlie",
+    "age": 23,
+    "major": "Electrical Engineering",
+    "graduation_year": 2029,
+}
+```
+
+We can now make a list of dictionaries to represent multiple students
+
+```{code-cell} python
+ma162_students = [student_1, student_2, student_3]
+```
+
+We can also filter students based on certain criteria
+
+```{code-cell} python
+for student in ma162_students:
+    if "Engineering" in student["major"]:
+        print(f"{student['name']} is an Engineering major.")
+```
+
+
+(Py:M1:Python_1:materials:input)=
 ## INPUT FUNCTION - input()
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_0ret78pn&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_mjla0g27" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_4_input"></iframe>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_71cfk085&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_5vt3lpqf%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Input"></iframe>
 
 {download}`04_input_function.py<materials/04_input_function.py>`
 
@@ -310,7 +476,7 @@ user_name = input("Enter your name: ")
 ```
 
 ```{admonition} Note
-:class: note 
+:class: note
 
 {program}`Python` {python}`input()` function always returns a {python}`str` as its datatype.
 ```
@@ -333,7 +499,7 @@ For the purpose of this course, you will not worry about validating and sanitizi
 If you are interested in learning more about it, you can check out [exception handling](https://docs.python.org/3.13/tutorial/errors.html) in Python.
 
 ## OUTPUTS
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_1dldtux4&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_7oh6rpwd" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_5_outputs"></iframe>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_1ocbj64l&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_mrh4gkmc%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Output"></iframe>
 
 {download}`05_outputs.py<materials/05_outputs.py>`
 
@@ -391,7 +557,7 @@ print(f"{item} costs ${cost:,.2f}") # Output is "apple costs $1,234.57"
 
 
 ## MATH MODULE
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_cwermqoz&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_r0sbw236" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_6_math_module"></iframe>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_9fmgkhzp&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_d0tfwh4n%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Math Module"></iframe>
 
 {download}`06_math_module.py<materials/06_math_module.py>`
 
@@ -419,7 +585,7 @@ More details on the {python}`math` module can be found in the [official document
 
 
 ## IMPORT METHODS
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_3ex3ms3e&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_3a8kyry0" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_7_import_methods"></iframe>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_c32dbown&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_7tnd9qev%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Import Methods"></iframe>
 
 {download}`07_import_methods.py<materials/07_import_methods.py>`
 
@@ -473,7 +639,7 @@ This is because it can overwrite functions that already exist in the program and
 
 
 ## RANDOM MODULE
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_ro0klbdt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_4dtc4qkh" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_8_random_module"></iframe>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_3onfc1l4&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_ggckmpbf%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Random Module"></iframe>
 
 {download}`08_random_module.py<materials/08_random_module.py>`
 
@@ -563,12 +729,12 @@ To access the help function, follow these steps:
 
 5. To quit the python interpreter, type {code}`exit()` or {code}`quit()`.
 
-## PYTHON LIBRARIES
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_sg168zya&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_kr37xirg" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_9_python_libraries"></iframe>
+## PYTHON LIBRARIES (PACKAGES)
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_6wwuv7aq&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_h29h2y5n%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Python Libraries and Packages"></iframe>
 
 {download}`09_python_libraries.py<materials/09_python_libraries.py>`
 
-{program}`Python` libraries are collections of functions and methods that allow you to perform many actions without writing your code.
+{program}`Python` packages, often called libraries, are collections of functions and methods that allow you to perform many actions without writing your code.
 
 {program}`Python` modules are files that contain {program}`Python` code. They can define functions, classes, and variables.
 
@@ -659,7 +825,8 @@ print(ages)  # Output: 0    25, 1    36, 2    29, 3    42, Name: Age, dtype: int
 ```
 
 ## KEYWORDS
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_zs3gj9tz&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_8n4f9ehp" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="511_10_keywords"></iframe>
+
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_n60jzuka&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_20m9ujoa%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Keywords"></iframe>
 
 {download}`10_keywords.py<materials/10_keywords.py>`
 
@@ -690,7 +857,10 @@ print(ArithmeticError is builtins.ArithmeticError)  # Output: True
 ```
 
 
-## ENGR 13300 Python Template
-<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_kwtdhb2t&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_x2tuzeo5" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="ENGR133_python_template"></iframe>
+## ENGR 13100 Python Template
 
-{download}`ENGR131_Python_Template.py</Part_04_Python/ENGR131_Python_Template.py>`
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_h2t2l7rb&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_kgnba9g3%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="FYE_python_template"></iframe>
+
+{download}`ENGR131_Python_Template.py<../ENGR131_Python_Template.py>`
+
+<!-- {download}`ENGR133_Python_Template.py<source/Part_3_Python/ENGR133_Python_Template.py>`-->
