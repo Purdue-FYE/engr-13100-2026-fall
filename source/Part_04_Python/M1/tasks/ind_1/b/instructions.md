@@ -48,7 +48,7 @@ Download the {program}`Python` template {download}`ENGR131_Python_Template.py
 ```{admonition} Note
    :class: note
 
-    Remember to include comments in your python script to practice professional programming standards.
+Remember to include comments in your python script to practice professional programming standards.
 ```
 
 ### Program Requirements
@@ -80,7 +80,7 @@ Using the list of test values, your program must:
 ```{admonition} Note
    :class: note
 
-    All values must be clearly labeled and formatted with two decimal places.
+All values must be clearly labeled and formatted with two decimal places.
 ```
 
 #### Part 5: Pass/Fail Evaluation
@@ -92,7 +92,7 @@ If the average test value is greater than or equal to a defined passing threshol
 ```{admonition} Note
    :class: note
 
-   Because we have not covered {python}`if` statements yet in this course, you cannot use an {python}`if` statement for this part of the assignment.
+Because we have not covered {python}`if` statements yet in this course, you cannot use an {python}`if` statement for this part of the assignment.
 ```
 
 #### Part 6: String Processing & Data Organization
@@ -153,5 +153,5 @@ Submit your report to (INSERT ASSIGNMENT NAME HERE) on Grade Scope.
 ```{admonition} Note
    :class: note
 
-  We recommend writing and saving your report in a .txt file or MS Word document and then copy-paste it into Grade Scope. You can reference your report in the saved file for future assignments with similar tasks.
+We recommend writing and saving your report in a .txt file or MS Word document and then copy-paste it into Grade Scope. You can reference your report in the saved file for future assignments with similar tasks.
 ```

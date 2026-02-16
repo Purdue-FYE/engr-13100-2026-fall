@@ -48,7 +48,7 @@ Download the {program}`Python` template {download}`ENGR131_Python_Template.py
 ```{admonition} Note
    :class: note
 
-    Remember to include comments in your python script to practice professional programming standards.
+Remember to include comments in your python script to practice professional programming standards.
 ```
 
 ### Program Requirements

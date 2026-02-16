@@ -42,7 +42,7 @@ Download the {program}`Python` template {download}`ENGR131_Python_Template.py
 ```{admonition} Note
    :class: note
 
-    Remember to include comments in your python script to practice professional programming standards.
+Remember to include comments in your python script to practice professional programming standards.
 ```
 
 ### Program Requirements
@@ -88,3 +88,9 @@ We recommend using https://app.diagrams.net/ to design and export your flowchart
 ### Deliverables
 
 Submit your `Python` script (py2_pre_1_username.py) and flowchart (py2_pre_1_username_flowchart.pf) to (INSERT ASSIGNMENT NAME) on GradeScope.
+
+### Q2 Analysis Question
+
+Navigate to (INSERT ASSIGNMENT NAME) on GradeScope and answer the following:
+
+1. Do you think the Python program you wrote for this assignment is efficient? Explain why or why not.
