@@ -1,8 +1,8 @@
 ## Py2.6
 
-Use the flowchart to fill in 1 blank in the Python code.
+Use the flowchart to fill in 2 blanks in the Python code.
 
-[See flowchart in Python M2 quiz files - Py2.5_flowchart.jpg]
+[See flowchart in Python M2 quiz files - Py2.6_flowchart.jpg]
 
 ```python
 # Calculate current (I) with voltage (V) and resistance (R) using Ohm's Law (V = I*R)
