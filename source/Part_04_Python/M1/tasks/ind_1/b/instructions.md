@@ -42,7 +42,7 @@ You are a Biomedical Engineer working in a research and development lab. Your su
 
 ### Files Needed
 
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:`. Use the sample output section below to verify that your program outputs correct values.
+<!-- Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:`. Use the sample output section below to verify that your program outputs correct values. -->
 
 ```{admonition} Note
    :class: note
@@ -114,7 +114,7 @@ Your program output must include:
 
 ### Deliverables
 
-Submit your python file {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
+<!-- Submit your python file {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope. -->
 
 ## Q2 Medical Device Prototype Testing Report
 
@@ -153,5 +153,4 @@ Submit your report to (INSERT ASSIGNMENT NAME HERE) on Gradescope.
    :class: note
 
 We recommend writing and saving your report in a .txt file or MS Word document and then copy-paste it into Grade Scope. You can reference your report in the saved file for future assignments with similar tasks.
-  We recommend writing and saving your report in a .txt file or MS Word document and then copy-paste it into Gradescope. You can reference your report in the saved file for future assignments with similar tasks.
 ```

@@ -1,41 +1,26 @@
 notes = " "
 
-labels = [
-    "Soil moisture (%)",
-    "Rain forecast (mm)",
-    "Maintenance required",
-    "Low pressure",
-]
+labels = ["A"]
 
 cases = {
-    ## maintenance required → DO NOT IRRIGATE
     1: {
         "callable": "main",
-        "entries": [15, 0, "yes", "no"],
+        "entries": [-46],
     },
-    ## low pressure → DO NOT IRRIGATE (overrides rain and soil)
     2: {
         "callable": "main",
-        "entries": [5, 23, "no", "yes"],
+        "entries": [124],
     },
-    ## significant rain → DELAY (overrides soil)
     3: {
         "callable": "main",
-        "entries": [15, 23, "no", "no"],
+        "entries": [256],
     },
-    ## RUN FULL (soil < 20%, low rain)
     4: {
         "callable": "main",
-        "entries": [15, 0, "no", "no"],
+        "entries": [73],
     },
-    ## RUN REDUCED (25% > soil ≥ 20%, low rain)
     5: {
         "callable": "main",
-        "entries": [21, 0, "no", "no"],
-    },
-    ## SKIP - DO NOT IRRIGATE (soil ≥ 25%, low rain)
-    6: {
-        "callable": "main",
-        "entries": [36, 10, "no", "no"],
+        "entries": [-10],
     }
 }
