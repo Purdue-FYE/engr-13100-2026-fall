@@ -1,8 +1,15 @@
-An thermal-engineering team is developing a smaller version of an infared thermometer based on an existing design. To keep the early-stage model simple, the engineers decide to represent the thermometer using two simple three-dimensional shapes that approximate its overall geometry.
+# Assignment # - Modeling Surface Areas and Volumes
 
-Learning Objectives:
-- PR02
-- PR03
+## In this assignment, you will:
+- Apply mathematical modeling to a real-world engineering scenario
+- Model surface areas and volumes using several simple shapes
+- Describe a problem in your own words
+- Use Excel to organize data and perform calculations
+- Follow FYE communication standards
+
+## Learning Objectives Covered
+- PR02:
+- PR03:
 - UC02: Schematic Representation of Systems - Describe engineering systems or processes using schematic diagrams that represent inputs, outputs, and accumulations.
 - UC03: Mathematical Modeling of Systems - Define engineering systems or processes using mathematical models that represent inputs, outputs, and accumulations.
 - PS01: Stakeholder-Based Problem Definition - Explain the problem based on synthesis of client, user, and stakeholder needs.
@@ -15,7 +22,12 @@ Learning Objectives:
 - PC04: Visual Communication of Engineering Contexts - Create visuals that clearly communicate engineering data, models, or concepts to a technical audience and support claims or conclusions.
 - PC05: Meeting Assignment Expectations - Fully complete all parts of each assignment according to provided instructions.
 
+## Question 1: Academic Integrity Statement
+{Academic integrity statement}
 
+## Question 2: Infared Thermometer
+
+An thermal-engineering team is developing a smaller version of an infared thermometer based on an existing design. To keep the early-stage model simple, the engineers decide to represent the thermometer using two simple three-dimensional shapes that approximate its overall geometry.
 The primary material in the designs costs $54 per cubic inch. The smooth coating that envelops the surface of the design costs $120 per square inch.
 
 ![Non-Contact Infrared Thermometer, angle 1](infrared-thermometer-img-1.png)
@@ -25,15 +37,14 @@ Non-Contact Infrared Thermometer. $^1$
 
 1. https://sperdirect.com/collections/ir-thermometers/products/clinical-grade-infrared-touchless-forehead-thermometer-sper-certified-copy
 
-#### Question 1
-(a) Which two 3-dimensional shapes could you use to approximate the thermometer’s volume?
+#### (a) Which two 3-dimensional shapes could you use to approximate the thermometer’s volume?
 
-(b) Sketch the thermometer's shape, and overlay your shapes. Upload your sketch.
+#### (b) Sketch the thermometer's shape, and overlay your shapes. Upload your sketch.
 
-(c) Explain in 1–2 sentences why these shapes are appropriate.
+#### (c) Explain in 1–2 sentences why these shapes are appropriate.
 
 
-(d) Write the volume equations for your model and define every variable you introduce (use symbols, not numbers except for constants). An example of proper definition formatting is shown below.
+#### (d) Write the volume equations for your model and define every variable you introduce (use symbols, not numbers except for constants). An example of proper definition formatting is shown below.
 ___
 Example:
 
