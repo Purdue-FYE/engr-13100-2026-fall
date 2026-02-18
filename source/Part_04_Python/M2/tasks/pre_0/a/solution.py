@@ -6,10 +6,10 @@ Description:
     Replace this line with a description of your program.
 
 Assignment Information:
-    Assignment:     6.1.1 Py2 PCA 6A
+    Assignment:     6.1.1 PY2 PCA 6A
     Team ID:        LC0 - 00
     Author:         Holly Fortener, hforten@purdue.edu
-    Date:           08/29/2024
+    Date:           02/18/2026
 
 Contributors:
     Name, login@purdue [repeat for each]
@@ -32,73 +32,22 @@ Academic Integrity Statement:
 """
 
 def main():
-    print("Irrigation Advisor (Pre-class, loop-free)")
+    A = int(input("Enter an integer value for A: "))
 
-    # --- Validate soil input ---
-    soil = input("Soil moisture (%) [0–60]: ")
-    if soil.strip() >= "0" and soil.strip() <= "60":
-        soil = float(soil)
+    if A < -22 or A > 324:
+        A = A - 16
+        print(f"A = {A}")
+    elif A > 102 and A < 157:
+        A = A * (-5)
+        print(f"A = {A}")
+    elif A >= 241:
+        A = A - 98
+        print(f"A = {A}")
+    elif A >= 51 and A <= 87:
+        A = A - 37
+        print(f"A = {A}")
     else:
-        print("Warning: Soil moisture seems out of expected range.")
-        return
-    
-    # --- Validate rain input ---
-    rain = input("Rain forecast (mm) [0–50]: ")
-    if rain.strip() >= "0" and rain.strip() <= "50":
-        rain = float(rain)
-    else:
-        print("Warning: Rain forecast seems out of expected range.")
-        return
-
-    # --- Validate maintenance input ---
-    maintenance_needed = input("Maintenance required? (yes/no): ")
-    maintenance_needed = str(maintenance_needed).strip().lower()
-    if maintenance_needed == "yes":
-        maintenance_needed = "yes"
-    elif maintenance_needed == "no":
-        maintenance_needed = "no"
-    else:
-        print("Warning: expected 'yes' or 'no'. Using 'no'.")
-        maintenance_needed = "no"
-    
-    # --- Validate low_pressure input ---
-    low_pressure = input("Low pressure detected? (yes/no): ")
-    low_pressure = str(low_pressure).strip().lower()
-    if low_pressure == "yes":
-        low_pressure = "yes"
-    elif low_pressure == "no":
-        low_pressure = "no"
-    else:
-        print("Warning: expected 'yes' or 'no'. Using 'no'.")
-        low_pressure = "no"
-
-    # --- Decision Logic (single if-elif-else chain) ---
-    # Order matters: maintenance → pressure → rain → soil bands
-    if maintenance_needed == "yes":
-        action = "DO NOT IRRIGATE"
-        reason = "Maintenance required."
-    elif low_pressure == "yes":
-        action = "DO NOT IRRIGATE"
-        reason = "Low pressure condition."
-    elif rain >= 10:
-        action = "DELAY"
-        reason = f"Significant rain expected ({rain} mm)."
-    elif soil < 20:
-        action = "RUN FULL"
-        reason = f"Dry soil ({soil}%) and low rain forecast."
-    elif 20 <= soil < 25:
-        action = "RUN REDUCED"
-        reason = "Borderline moisture."
-    else:
-        action = "SKIP"
-        reason = f"Soil moisture is adequate ({soil}%)."
-
-    # --- Output ---
-    print("\n--- Recommendation ---")
-    print(f"Action: {action}")
-    print(f"Reason: {reason}")
-    print("----------------------")
-
+        print("A is invalid")
 
 if __name__ == "__main__":
     main()

@@ -39,7 +39,7 @@ This template contains header information that must always be edited to reflect 
 The template contains a section for importing modules, and a function called
 {python}`main()` where you will be writing your code. While user-defined functions will be taught in more detail in the next {program}`Python` module, for now you will just need to remember to write all your code within {python}`main()`. Note that, when writing code inside a function, it must be indented 1 tab (or 4 spaces) relative to the indentation level of the function.
 
-For this activity, download the {program}`Python` template {download}`ENGR131_Python_Template.py
+For this assignment, download the {program}`Python` template {download}`ENGR131_Python_Template.py
 </Part_04_Python/ENGR131_Python_Template.py>` and save as "py1_pre_1_username.py."
 
 ## Activity Instructions & Submission
