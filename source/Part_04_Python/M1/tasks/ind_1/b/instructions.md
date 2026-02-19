@@ -42,13 +42,12 @@ You are a Biomedical Engineer working in a research and development lab. Your su
 
 ### Files Needed
 
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save it as py1_ind_1_username.py. Use the sample output section below to verify that your program outputs correct values.
+<!-- Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:`. Use the sample output section below to verify that your program outputs correct values. -->
 
 ```{admonition} Note
    :class: note
 
-    Remember to include comments in your python script to practice professional programming standards.
+Remember to include comments in your python script to practice professional programming standards.
 ```
 
 ### Program Requirements
@@ -80,7 +79,7 @@ Using the list of test values, your program must:
 ```{admonition} Note
    :class: note
 
-    All values must be clearly labeled and formatted with two decimal places.
+All values must be clearly labeled and formatted with two decimal places.
 ```
 
 #### Part 5: Pass/Fail Evaluation
@@ -92,7 +91,7 @@ If the average test value is greater than or equal to a defined passing threshol
 ```{admonition} Note
    :class: note
 
-   Because we have not covered {python}`if` statements yet in this course, you cannot use an {python}`if` statement for this part of the assignment.
+Because we have not covered {python}`if` statements yet in this course, you cannot use an {python}`if` statement for this part of the assignment.
 ```
 
 #### Part 6: String Processing & Data Organization
@@ -109,15 +108,13 @@ Your program output must include:
 3. Pass/fail result
 4. Clean formatting and spacing for readability
 
-### Sample Output
-
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M1/tasks/ind_1/b/sample_output.md
 ```
 
 ### Deliverables
 
-Submit your python file (py1_ind_1_username.py) to (INSERT ASSIGNMENT NAME) on Grade Scope.
+<!-- Submit your python file {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope. -->
 
 ## Q2 Medical Device Prototype Testing Report
 
@@ -150,10 +147,10 @@ Your memo must address the following:
 
 ### Deliverables
 
-Submit your report to (INSERT ASSIGNMENT NAME HERE) on Grade Scope.
+Submit your report to (INSERT ASSIGNMENT NAME HERE) on Gradescope.
 
 ```{admonition} Note
    :class: note
 
-  We recommend writing and saving your report in a .txt file or MS Word document and then copy-paste it into Grade Scope. You can reference your report in the saved file for future assignments with similar tasks.
+We recommend writing and saving your report in a .txt file or MS Word document and then copy-paste it into Grade Scope. You can reference your report in the saved file for future assignments with similar tasks.
 ```

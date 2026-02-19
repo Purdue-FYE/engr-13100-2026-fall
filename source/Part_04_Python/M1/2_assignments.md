@@ -23,17 +23,5 @@ Python concepts, apply course code standard in development of
 Python scripts, and modularize and comment code in Python
 for readability and reusability.
 
-```{code-cell} ipython3
-:tags: ["remove-cell"]
-
-from myst_nb import glue
-
-mnum = "py1_ind"
-
-glue("deliverable_py1_ind_1_pdf", mnum+"_1_username.pdf")
-glue("deliverable_py1_ind_2_pdf", mnum+"_2_username.pdf")
-glue("deliverable_py1_ind_2_py", mnum+"_2_username.py")
-```
-
 ```{include} /guidelines/individual.md
 ```

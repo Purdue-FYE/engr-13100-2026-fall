@@ -11,7 +11,7 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M1:pre_0)=
+(Py:M1:py1_pre_0)=
 # Pre-Class Activity #X: Python Foundations
 
 ## Learning Objectives
@@ -34,14 +34,13 @@ differences between what you compute by hand and what {program}`Python` computes
 
 Unless mentioned otherwise, for all {program}`Python` assignments (pre-class, team and individual) you will be writing your scripts using {download}`ENGR131_Python_Template.py
 </Part_04_Python/ENGR131_Python_Template.py>`. 
-This template contains header information that must always be edited to reflect the task your {program}`Python` file is meant to
-solve, and you will always be prompted in the problem statement to rename the file.
+This template contains header information that must always be edited to reflect the task your {program}`Python` file is meant to solve, and you will always be prompted in the problem statement to rename the file.
 
 The template contains a section for importing modules, and a function called
 {python}`main()` where you will be writing your code. While user-defined functions will be taught in more detail in the next {program}`Python` module, for now you will just need to remember to write all your code within {python}`main()`. Note that, when writing code inside a function, it must be indented 1 tab (or 4 spaces) relative to the indentation level of the function.
 
-For this activity, download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save as "py1_pca_4_username.py."
+For this assignment, download the {program}`Python` template {download}`ENGR131_Python_Template.py
+</Part_04_Python/ENGR131_Python_Template.py>` and save as "py1_pre_1_username.py."
 
 ## Activity Instructions & Submission
 
@@ -63,8 +62,6 @@ Write, run, and test python code for the following questions. Remember to includ
 5.	Calculate the square root of the absolute value of each number
 6.	Display a clearly labeled, multi-line output
 7.	Format all numerical values to two decimal places.
-
-### Sample Output
 
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M1/tasks/pre_0/b/sample_output.md
