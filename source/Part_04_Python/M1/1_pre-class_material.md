@@ -13,21 +13,25 @@ kernelspec:
 
 (Py:M1:pre-class)=
 # Pre-Class Assignments
+The Pre-Class Materials (PCMs) and Pre-Class Activities (PCAs) are your **core learning materials** in ENGR 131. Completing them **before each class session** ensures you’re ready for in-class discussions, activities, and assignments.
 
-Create and execute simple scripts comprised of basic {program}`Python` concepts.
-Apply course code standard in development of {program}`Python` scripts.
-Modularize and comment code in {program}`Python` for readability and
-reusability.
+## What to Expect
 
-```{code-cell} ipython3
-:tags: ["remove-cell"]
+- Watch short instructional videos to learn key concepts and prepare for class.
+- Read and review the accompanying notes, examples, or scripts provided in the materials.
+- Complete the associated pre-class activities (PCAs) to check your understanding and reinforce learning.
+- Materials are available anytime — revisit them as needed to deepen your understanding.
 
-from myst_nb import glue
+## Materials and Activities for this Module
 
-mnum = "py1_pre"
-
-glue("deliverable_py1_pre_0_py", mnum+"_0_username.py")
+```{tableofcontents}
 ```
 
-```{include} /guidelines/pre-class.md
-```
+## Helpful Python Resources
+- Browse the official Python documentation for additional explanations and examples:  
+  [Python Official Documentation](https://docs.python.org/3.13/)
+
+- Download and use the course Python template when working on activities and assignments:  
+  {download}`ENGR131_Python_Template.py</Part_04_Python/ENGR131_Python_Template.py>`
+
+

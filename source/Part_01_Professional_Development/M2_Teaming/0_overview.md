@@ -14,8 +14,11 @@ kernelspec:
 # Teaming
 This is a project- and team-based course. You will collaborate with classmates on a variety of assignments and a team project that reflects authentic engineering scenarios. To support effective teamwork, this course uses CATME for both team formation and peer &amp; team evaluations.
 
-> [!NOTE]
-> Late submissions of CATME assignments are not accepted.
+```{admonition} Note
+   :class: note
+Late submissions of CATME assignments are not accepted.
+```
+
 
 ## Team Formation Survey
 
