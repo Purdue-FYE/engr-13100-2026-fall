@@ -108,7 +108,7 @@ parts:
 
       - file: Part_04_Python/M2/2_assignments
         sections:
-        - file: Part_04_Python/M2/tasks/ind_1/instructions
+        - file: Part_04_Python/M2/tasks/ind_1/a/instructions
 
     # Python Module 3
     - file: Part_04_Python/M3/0_overview
