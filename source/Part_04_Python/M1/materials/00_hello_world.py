@@ -1,9 +1,14 @@
 """
-WRITE A PROGRAM TO PRINT "HELLO WORLD!" TO THE CONSOLE
+ENGR 131
+Module 1 – Running Your First Python Script
 
-HOW TO RUN THE PYTHON SCRIPT WITHOUT THE RUN BUTTON
+This program prints a message to the console.
 
-HOW TO ACCESS THE PYTHON INTERACTIVE MODE
+Learning Goals:
+- Understand how to run a Python script
+- Use the print() function to display output
+- Observe how Python executes code line by line
 """
 
-print("Hello World!")
+# This line prints text to the console.
+print("Hello, World!")
