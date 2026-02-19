@@ -70,6 +70,7 @@ import pathlib
 # DO NOT EDIT THIS CELL MANUALLY
 
 """
+    seen_ids = set()
     for path in assignments:
         dir_name_str = str(path.as_posix())
         unique_id = clean_id(dir_name_str)
@@ -85,6 +86,11 @@ import pathlib
         except IndexError:
              print(f"⚠️ Warning: Fallback ID for {path}")
              short_id = unique_id.replace("/", "_")
+
+        if short_id in seen_ids:
+            print(f"   [SKIP]   duplicate deliverable id '{short_id}' from {path}")
+            continue
+        seen_ids.add(short_id)
 
         content += f"# {short_id}\n"
         for suffix, pattern in DELIVERABLE_TYPES.items():
@@ -194,6 +200,37 @@ def main():
     assignments = find_assignment_files(toc['parts'] if 'parts' in toc else toc)
     print(f"Found {len(assignments)} instruction files.")
     
+    # detect duplicate short_ids and optionally eliminate extras
+    unique = []
+    seen = {}
+    for path in assignments:
+        dir_name_str = str(path.as_posix())
+        unique_id = clean_id(dir_name_str)
+        path_parts = unique_id.split("/")
+        try:
+            short_id = (
+                path_parts[1].split("_")[-1][0:2]
+                + path_parts[2].replace('m', '')
+                + "_"
+                + path_parts[4]
+            )
+        except IndexError:
+            short_id = unique_id.replace("/", "_")
+
+        if short_id in seen:
+            seen[short_id].append(path)
+        else:
+            seen[short_id] = [path]
+            unique.append(path)
+
+    # warn about duplicates
+    for sid, paths in seen.items():
+        if len(paths) > 1:
+            print(f"⚠️ Duplicate deliverable id '{sid}' found in: {', '.join(str(p) for p in paths)}")
+
+    assignments = unique
+    print(f"Processing {len(assignments)} unique instruction files after deduplication.")
+
     generate_master_notebook(assignments)
     
     print("Auditing Markdown files...")
