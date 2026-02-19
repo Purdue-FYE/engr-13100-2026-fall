@@ -4,3 +4,5 @@ An engineer wants to show the relative percentage of four different pollutants i
 - [ ] Bar Chart
 - [ ] Pie Chart
 - [ ] Scatter Chart
+
+<div style="page-break-after: always;"></div>

@@ -4,3 +4,5 @@ An engineer wants to show the amounts of four different pollutants in the atmosp
 - [ ] Bar Chart
 - [ ] Pie Chart
 - [ ] Scatter Chart
+
+<div style="page-break-after: always;"></div>
