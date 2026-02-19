@@ -5,12 +5,6 @@ uv sync
 git remote add engr-13100-2026-fall https://github.com/Purdue-FYE/engr-13100-2026-fall.git
 pre-commit install
 
-# Install Lua
-sudo apt-get install -y lua5.3
-
-# Install texlive
-sudo apt-get install -y texlive-full
-
 # # Install MATLAB X11 dependencies
 # #
 # # MATLAB requires several graphical libraries to run that are not installed by
