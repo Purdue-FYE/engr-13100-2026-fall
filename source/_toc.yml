@@ -4,10 +4,10 @@
 format: jb-book
 root: intro
 parts:
-  # - caption: Setup
-  #   hidden: true
-  #   chapters:
-  #   - file: glue_factory
+  - caption: Setup
+    hidden: true
+    chapters:
+    - file: glue_factory
 
   - caption: Start Here
     numbered: False

@@ -3,5 +3,6 @@
     "livePreview.defaultPreviewPath": "${workspaceFolder}/source/_build/html/index.html",
     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
     "python.terminal.activateEnvironment": true,
-    "python.terminal.activateEnvInCurrentTerminal": true
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "makefile.configureOnOpen": false
 }

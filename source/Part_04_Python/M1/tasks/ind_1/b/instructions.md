@@ -7,6 +7,9 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+deliverables:
+  - report_pdf
+  - py
 ---
 ```{include} /macros.md
 ```
@@ -147,10 +150,10 @@ Your memo must address the following:
 
 ### Deliverables
 
-Submit your report to (INSERT ASSIGNMENT NAME HERE) on Gradescope.
+Submit your report named {glue:text}`../../../../../glue_factory.md::py1_ind_1_report_pdf:` to (INSERT ASSIGNMENT NAME HERE) on Gradescope.
 
 ```{admonition} Note
    :class: note
 
-We recommend writing and saving your report in a .txt file or MS Word document and then copy-paste it into Grade Scope. You can reference your report in the saved file for future assignments with similar tasks.
+We recommend writing and saving your report in a .txt file or MS Word document and then copy-paste it into Gradescope. You can reference your report in the saved file for future assignments with similar tasks.
 ```
