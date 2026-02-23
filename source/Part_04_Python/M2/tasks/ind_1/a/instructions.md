@@ -16,6 +16,14 @@ kernelspec:
 
 ## In this assignment, you will:
 
+- Apply logical decision-making using `if`, `elif`, and `else` statements to solve real-world engineering problems.
+- Validate and manage user input to ensure accurate and reliable program behavior.
+- Translate written problem statements and flowcharts into functional Python code.
+- Develop and implement user-defined functions (UDFs) to modularize and organize your programs.
+- Perform engineering calculations using mathematical formulas and appropriate units.
+- Practice professional programming standards, including commenting, readability, and structure.
+- Test and debug your code using provided cases to verify correctness.
+
 ## Learning Objectives
 
 - PR01: Programming Standards
@@ -38,8 +46,7 @@ Your task is to write a short Python program using `if‑elif‑else` to decide 
 
 ### Files Needed
 
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save it as py2_ind_1_username.py. Use the sample output section below to verify that your program outputs correct values.
+Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py2_ind_1_py:`. Use the sample output section below to verify that your program outputs correct values.
 
 ```{admonition} Note
    :class: note
@@ -73,7 +80,7 @@ Your program must follow this order of decisions:
 2. If the user specifies that the irrigation system is experiencing low pressure, print "DO NOT IRRIGATE - low pressure condition."
 3. If the forecast is expecting 10 mm or more of rain, print "DELAY - significant rainfall expected."
 4. If the soil moisture is measured at less than 20%, print "RUN FULL" to indicate the irrigation system will output the normal amount needed.
-5. If `20% >= soil moisture <= 25%`, print "RUN REDUCED" to indicate that system will output less water than normal.
+5. If soil moisture is greater than or equal to 20% AND less than or equal to 25%, print "RUN REDUCED" to indicate that system will output less water than normal.
 6. Otherwise, if the soil moisture is greater than 25%, then print "SKIP - soil moisture is adequate".
 
 
@@ -89,7 +96,7 @@ We recommend using https://app.diagrams.net/ to design and export your flowchart
 
 ### Deliverables
 
-Submit your `Python` script (py2_ind_1_username.py) and flowchart (py2_ind_1_username_flowchart.pf) to (INSERT ASSIGNMENT NAME) on GradeScope.
+Submit your python file {glue:text}`../../../../../glue_factory.md::py2_ind_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
 
 ## Q2 Escaping an Unknown Planet
 (XX Points)
@@ -100,29 +107,23 @@ You find yourself abandoned on an unknown planet! However, since you are an aspi
 
 ### Files Needed
 
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save it as py2_ind_1_username.py. Use the sample output section below to verify that your program outputs correct values.
-
-```{admonition} Note
-   :class: note
-
-Remember to include comments in your python script to practice professional programming standards.
-```
+Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py2_ind_1_py:`.
 
 ### Program Requirements
 
 As the scripts and programs we write become more complex, we often do not want to put all of our code directly in the `main` function. Python allows users to easily write their own functions in order to modularize their programs; these are called user-defined functions (UDFs).
 
-For this assignment, a flowchart for your {program}`Python` program is shown in {numref}`fig:Py:M2:ind_1:flowchart`. Find the output of the program given the following initial conditions:
+For this assignment, a flowchart for your {program}`Python` program is shown in {numref}`fig:Py:M2:ind_1:flowchart`. Using the flowchart and the following initial conditions, develop a {program}`Python` program to determine the escape velocity.
 
-```{table} Table 6.1
+
+```{table} 
 :class: cases
 :name: tab:M2:ind_2_cases
 
 | $\rho$ $({\kilo\gram}/{\meter^3})$ | $r$ $({\meter})$ | $G$ $({\meter^3}/{\kg*\s^2})$ |
-|:----------------------------------:|:---------------:|:----------------------------:|
-|                             5513.0 |         6371000 |       $6.6743\times10^{-11}$ |
-|                             1879.8 |         2574730 |       $6.6743\times10^{-11}$ |
+|:----------------------------------:|:---------------:|:------------------------------:|
+|                             5513.0 |         6371000 |         $6.6743\times10^{-11}$ |
+|                             1879.8 |         2574730 |         $6.6743\times10^{-11}$ |
 ```
 
 The escape velocity of the projectile is given by:
@@ -164,7 +165,7 @@ Where
 ```{admonition} Note
    :class: note
 
-Convert the radius from m to km before printing to the terminal. This can be done using simple division in  {program}`Python`
+Convert the radius from m to km before printing to the terminal. This can be done using simple division in  {program}`Python`.
 ```
 
 ```{figure} flowchart.jpg
@@ -181,12 +182,14 @@ The flowchart includes multiple UDFs. Be sure to include all of the UDFs represe
 
 ### Deliverables
 
-Submit your python file (py2_ind_1_username.py) to (INSERT ASSIGNMENT NAME) on GradeScope.
+Submit your {program}`Python` file to (INSERT ASSIGNMENT NAME) on Gradescope.
+
+<!-- Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::py2_ind_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope. -->
 
 ## Q3 Analysis Questions
 
 Navigate to (INSERT ASSIGNMENT NAME) on GradeScope and answer the following:
 
-1. Do you think the Python program you wrote for this assignment is efficient? Explain why or why not.
+1. How do you think the {program}`Python` program you wrote Q1 or Q2 could be more efficient?
 
-2. ??
+2. For Q1 and Q2, how is the context of each problem important?

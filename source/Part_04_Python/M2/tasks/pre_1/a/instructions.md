@@ -11,7 +11,7 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M2:py2_pre_0_a)=
+(Py:M2:py2_pre_1)=
 # Pre-Class Activity #X: Logic & Modularity
 
 ## Learning Objectives
@@ -28,7 +28,7 @@ kernelspec:
 ## Files Needed
 
 For this assignment, download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save as "py1_pre_0_a_username.py."
+</Part_04_Python/ENGR131_Python_Template.py>` and save as "py2_pre_1_username.py."
 
 ## Activity Instructions & Submission
 
@@ -49,9 +49,9 @@ Conditions:
 Use the sample input/output below to test your code.
 
 % Automatically generated Sample Output section.
-```{include} /_build/intermediate/Part_04_Python/M2/tasks/pre_0/a/sample_output.md
+```{include} /_build/intermediate/Part_04_Python/M2/tasks/pre_1/a/sample_output.md
 ```
 
 ### Deliverables
 
-Submit your python file (py1_pre_0_a_username.py) to (INSERT ASSIGNMENT NAME) on GradeScope.
+Submit your python file (py2_pre_1_username.py) to (INSERT ASSIGNMENT NAME) on GradeScope.
