@@ -42,7 +42,7 @@ You are a Biomedical Engineer working in a research and development lab. Your su
 
 ### Files Needed
 
-<!-- Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:`. Use the sample output section below to verify that your program outputs correct values. -->
+Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:`. Use the sample output section below to verify that your program outputs correct values.
 
 ```{admonition} Note
    :class: note
@@ -114,7 +114,7 @@ Your program output must include:
 
 ### Deliverables
 
-<!-- Submit your python file {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope. -->
+Submit your python file {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
 
 ## Q2 Medical Device Prototype Testing Report
 
