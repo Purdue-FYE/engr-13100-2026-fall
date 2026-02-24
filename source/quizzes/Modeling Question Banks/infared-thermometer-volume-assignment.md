@@ -8,6 +8,7 @@
 - Follow FYE communication standards
 
 ## Learning Objectives Covered
+- {{PR02}}
 - PR02:
 - PR03:
 - UC02: Schematic Representation of Systems - Describe engineering systems or processes using schematic diagrams that represent inputs, outputs, and accumulations.
