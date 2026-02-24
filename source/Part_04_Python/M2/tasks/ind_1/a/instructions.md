@@ -83,7 +83,6 @@ Your program must follow this order of decisions:
 5. If soil moisture is greater than or equal to 20% AND less than or equal to 25%, print "RUN REDUCED" to indicate that system will output less water than normal.
 6. Otherwise, if the soil moisture is greater than 25%, then print "SKIP - soil moisture is adequate".
 
-
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M2/tasks/ind_1/a/sample_output.md
 ```

@@ -36,14 +36,14 @@ sample_output = $(foreach file,$(solutions),\
 
 # Re-build only pages that are new/changed since last run.
 default: $(sample_output)
-	python source/manage_deliverables.py
+	python3 source/manage_deliverables.py
 	jupyter-book build -W source
 	touch source/_build/html/.nojekyll
 
 
 # Re-build all pages.
 all: $(sample_output)
-	python source/manage_deliverables.py
+	python3 source/manage_deliverables.py
 	PYTHONPATH="$(PWD)/source/_extensions:$(PYTHONPATH)" jupyter-book build -W --all source
 	echo "View this site [here]($(URL))." > source/_build/html/README.md
 
@@ -60,9 +60,9 @@ pub: all
 	$$(filter $$(subst _build/intermediate/,,$$(subst sample_output.md,solution.m,$$@)), $(solutions_MA)) \
 	$$(filter $$(subst _build/intermediate/,,$$(subst sample_output.md,instructions.md,$$@)), $(instructions)) \
 	source/generate.py
-	python source/generate.py $@
+	python3 source/generate.py $@
 
-# All python files in exercise's test subdirectory are prerequisite.  Also include .png
+# All python3 files in exercise's test subdirectory are prerequisite.  Also include .png
 # and .txt files, and all the grader specific files.
 #
 #  - % in the target matches the % in the prerequisites.
