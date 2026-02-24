@@ -77,7 +77,7 @@ Your program must follow this order of decisions:
 6. Otherwise, if the soil moisture is greater than 25%, then print "SKIP - soil moisture is adequate".
 
 % Automatically generated Sample Output section.
-```{include} /_build/intermediate/Part_04_Python/M2/tasks/ind_1/sample_output.md
+```{include} /_build/intermediate/Part_04_Python/M2/tasks/ind_1/a/sample_output.md
 ```
 
 #### Part 4
