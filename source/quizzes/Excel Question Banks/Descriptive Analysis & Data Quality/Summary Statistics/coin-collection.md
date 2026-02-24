@@ -1,0 +1,1 @@
+Your friend is sorting their collection of antique coins. You are recording data for each coin: coins have a *denomination*, which is the value of the coin (1 for penny, 5 for nickel, 100 for dollar, etc.). The coins also have a *date*, which is the four-digit year that the coin was minted (produced). 
