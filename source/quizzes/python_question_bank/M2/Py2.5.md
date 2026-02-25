@@ -6,6 +6,7 @@ Use the flowchart to fill in 2 blanks in the Python code.
 
 ### Editor - weekly_pay.py
 ```python
+
 # Calculate weekly pay based on hours worked
 hours = float(input("Enter hours: "))
 _________________
@@ -16,5 +17,6 @@ else:
     pay = regular_pay + overtime
     print(f"Overtime: ${overtime:.2f}")
 print(f"Weekly Pay: ${pay:.2f}")
+
 ```
 
