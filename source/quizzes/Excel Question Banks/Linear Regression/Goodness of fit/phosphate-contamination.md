@@ -5,8 +5,7 @@ The engineers would like to build a linear model so that phosphate concentration
 ![Scatter Plot model](phosphate-contamination-img.png)
 
 
-### Question a) Format the chart for technical presentation by writing-in chart elements
-<div style="width:100%; height:1cm; border:1px solid black;"></div>
+### Question a) Format the chart for technical presentation by writing-in the chart elements.
 
 ### Question b) What is the slope of the regression model?
 <div style="width:100%; height:1cm; border:1px solid black;"></div>
