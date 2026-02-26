@@ -1,5 +1,7 @@
 ### Question a) Format the chart for technical presentation by writing-in the chart elements.
 Title: Absorbance and concentration at 880nm for phosphate contamination in river water
+horizontal axis label: Phosphate concentration (mg/L)
+vertical axis label: Absorbance (%)
 
 ### Question b) What is the slope of the regression model?
 0.02 % / (mg/L)
