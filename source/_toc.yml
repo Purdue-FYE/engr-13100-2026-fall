@@ -103,6 +103,7 @@ parts:
       sections:
       - file: Part_04_Python/M2/1_pre-class_material
         sections:
+        - file: Part_04_Python/M2/1.1_materials
         - file: Part_04_Python/M2/tasks/pre_1/a/instructions
         - file: Part_04_Python/M2/tasks/pre_2/a/instructions
 
