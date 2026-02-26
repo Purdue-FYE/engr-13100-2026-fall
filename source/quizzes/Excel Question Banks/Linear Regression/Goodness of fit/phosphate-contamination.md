@@ -1,4 +1,4 @@
-A team of chemical engineers is developing a colorimetric sensor to monitor phosphate contamination in river water. To calibrate the sensor, they prepared a series of standard solutions with known phosphate concentrations (mg/L) and measured the optical absorbance (%) of each solution at λ=880 nm using a spectrophotometer (a device that measures the amount of light that a sample absorbs). T
+A team of chemical engineers is developing a colorimetric sensor to monitor phosphate contamination in river water. To calibrate the sensor, they prepared a series of standard solutions with known phosphate concentrations (mg/L) and measured the optical absorbance (%) of each solution at λ=880 nm using a spectrophotometer (a device that measures the amount of light that a sample absorbs).
 
 The engineers would like to build a linear model so that phosphate concentrations can be estimated from absorbance readings quickly during field work. Your teammate started a scatter plot in Excel that shows Absorbance on the vertical axis and Concentration on the horizontal axis. 
 
