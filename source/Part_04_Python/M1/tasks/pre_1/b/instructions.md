@@ -11,7 +11,7 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M1:py1_pre_1)=
+(Py:M1:py1_pre_0)=
 # PCA #X: Python Foundations
 
 ## Learning Objectives
