@@ -46,6 +46,4 @@ These skills are directly connected to the following Learning Objectives:
 {{PR03}}
 {{PR08}}
 {{DV01}}
-{{DV02}}
-{{DV03}}
 {{PC05}}
