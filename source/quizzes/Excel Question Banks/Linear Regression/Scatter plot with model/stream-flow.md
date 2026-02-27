@@ -5,11 +5,18 @@ $^1$ [Rahman, S.; Bowling, L. C. (2024). Long-term naturalized streamflow for si
 ![Sample Chart](stream-flow-img.png)
 
 ### Question a) What kind of chart is this?
+<div style="width:100%; height:1cm; border:1px solid black;"></div>
 
 ### Question b) The data for site 1 is on the x-axis, and the data for site 2 is on the y-axis. Label both axes and replace the title with a more descriptive one.
 
 ### Question c) The research team wants to model the relationship between flowrates at these sites with a linear equation. Draw a linear trendline on the plot.
 
+<div style="page-break-after: always;"></div>
+
 ### Question d) Estimate the equation of your trendline.
+<div style="width:100%; height:3cm; border:1px solid black;"></div>
 
 ### Question e) Is linear regression appropriate for this dataset? Explain why or why not in 1-2 sentences.
+<div style="width:100%; height:4cm; border:1px solid black;"></div>
+
+<div style="page-break-after: always;"></div>

@@ -32,15 +32,13 @@ differences between what you compute by hand and what {program}`Python` computes
 
 ## Files Needed
 
-Unless mentioned otherwise, for all {program}`Python` assignments (pre-class, team and individual) you will be writing your scripts using {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>`. 
+Unless mentioned otherwise, for all {program}`Python` assignments you will be writing your scripts using the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>`.
 This template contains header information that must always be edited to reflect the task your {program}`Python` file is meant to solve, and you will always be prompted in the problem statement to rename the file.
 
 The template contains a section for importing modules, and a function called
 {python}`main()` where you will be writing your code. While user-defined functions will be taught in more detail in the next {program}`Python` module, for now you will just need to remember to write all your code within {python}`main()`. Note that, when writing code inside a function, it must be indented 1 tab (or 4 spaces) relative to the indentation level of the function.
 
-For this assignment, download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save as "py1_pre_1_username.py."
+<!-- Download the {program}`Python` template (above) and save it as {glue:text}`../../../../../glue_factory.md::py1_pre_1_py:`. Use the sample output section below to verify that your program outputs correct values. -->
 
 ## Activity Instructions & Submission
 
@@ -64,9 +62,9 @@ Write, run, and test python code for the following questions. Remember to includ
 7.	Format all numerical values to two decimal places.
 
 % Automatically generated Sample Output section.
-```{include} /_build/intermediate/Part_04_Python/M1/tasks/pre_0/b/sample_output.md
+```{include} /_build/intermediate/Part_04_Python/M1/tasks/pre_1/b/sample_output.md
 ```
 
 ### Deliverables
 
-Submit your python file (py1_pre_X_username.py) to (INSERT ASSIGNMENT NAME) on GradeScope.
+<!-- Submit your python file {glue:text}`../../../../../glue_factory.md::py1_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope. -->

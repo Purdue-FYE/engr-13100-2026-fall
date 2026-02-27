@@ -4,7 +4,7 @@ $^1$ [Ordonez, R. A.; West, T. D.; Casteel, S. N.; Stevens, R.; Vyn, T. J. (2025
 
 Your teammate created a histogram of the soybean yield, measured in kg/ha (kilograms per hectare, a unit of surface mass density, as in mass per area) 
 
-[Soybean Yield Histogram](soybean-yield-img.png)
+![Soybean Yield Histogram](soybean-yield-img.png)
 
 ### Question a) Label both axes and write a descriptive chart title.
 
@@ -13,6 +13,8 @@ Your teammate created a histogram of the soybean yield, measured in kg/ha (kilog
 ### Question c) Your teammate recommends you delete all the outliers. Provide one argument why this is a good idea, and one argument why this is a bad idea.
 
 ### Question d) Your team decides to create an underflow bin. Quickly sketch the new histogram, showing the underflow bin. Label the bin range of the underflow bin and the first bin to the right of it.
+
+<div style="page-break-after: always;"></div>
 
 ### Question e) After a team discussion, you decide to delete 93 outliers. Which values will increase?
 - [ ] sample size
@@ -37,5 +39,4 @@ Your teammate created a histogram of the soybean yield, measured in kg/ha (kilog
 - [ ] standard deviation
 - [ ] range
 
-
-
+<div style="page-break-after: always;"></div>

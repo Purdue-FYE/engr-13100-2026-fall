@@ -15,10 +15,14 @@ Table 1: Interval 30
 
 You can use conditional logic to complete Table 2 in Excel to show the seconds on the clock when they would leave, given any interval between 5 and 55 seconds inclusive, listed in cell C1. Note that Table 2 is formatted as Number, not Short Date or Time.
 
-![Table 2 in Excel](pace-clock-img.png)
+<!-- ![Table 2 in Excel](pace-clock-img.png) -->
+<img src="pace-clock-img.png" alt="Table 2 in Excel" width="80%" style="display: block; margin: auto;">
 
 ### Question a) Write your formula in cell F4.
 
 ### Question b) How would you populate the rest of column F?
+<div style="width:100%; height:2cm; border:1px solid black;"></div>
 
 ### Question c) Another athlete is sharing the lane, and starts every interval 5 seconds after the first athlete. Add a column to Table 2 to show what clock time they start their laps at.
+
+<div style="page-break-after: always;"></div>

@@ -217,5 +217,6 @@ sphinx:
       use_download_button: false
       home_page_in_toc: true
   extra_extensions:
-   - sphinxcontrib.youtube
-   - sphinx_pyscript
+    - sphinxcontrib.mermaid
+    - sphinxcontrib.youtube
+    - sphinx_pyscript

@@ -11,10 +11,7 @@ $^1$ [https://www.kaggle.com/datasets/jayjoshi37/daily-internet-usage-statistics
 - [ ] 25
 
 ### Question b) In 1-2 sentences, explain your answer in (a).
-
-
-
-
+<div style="width:100%; height:4cm; border:1px solid black;"></div>
 
 ## Part 2
 Your teammate made four histograms to show the distributions of (1) Social Media Usage, (2) Entertainment App Usage, (3) Productivity App Usage, and (4) Total Screen Time (sum of 1-3).
@@ -51,4 +48,4 @@ Your teammate made four histograms to show the distributions of (1) Social Media
 - [ ] (3) Productivity App Usage
 - [ ] (4) Total Screen Time
 
-### Question h) In 1-2 sentences, explain your answer(s) in (e). 
+<div style="page-break-after: always;"></div>
