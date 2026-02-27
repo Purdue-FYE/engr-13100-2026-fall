@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (Py:M1:py1_pre_0)=
-# Pre-Class Activity #X: Python Foundations
+# PCA #X: Python Foundations
 
 ## Learning Objectives
 

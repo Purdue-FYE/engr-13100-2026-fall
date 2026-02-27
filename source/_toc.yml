@@ -28,13 +28,14 @@ parts:
     - file: Part_01_Professional_Development/M2_Teaming/0_overview
 
   - caption: Excel
-    numbered: True
+    numbered: 2
     chapters:
     # Excel Module 1
     - file: Part_02_Excel/M1/0_overview
       sections:
       - file: Part_02_Excel/M1/1_pre-class_material
         sections:
+        - file: Part_02_Excel/M1/1.1_materials
         - file: Part_02_Excel/M1/tasks/pre_0/a/instructions
 
       # - file: Part_02_Excel/M1/2_assignments

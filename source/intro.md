@@ -43,10 +43,10 @@ ENGR 131 covers the following topics during the semester:
 
 - Team projects (modeling and design).
 
-- {program}`Excel` basics (calculations, importing data, relational operators,
+- Spreadsheet basics (calculations, importing data, relational operators,
   plotting data).
 
-- {program}`Python` basics (scripts, data types, importing data, relational
+- Programming basics (scripts, data types, importing data, relational
   operators, logical operators, plotting data, user-defined functions, selection
   structures, while loops, for loops, and nested loops).
 
