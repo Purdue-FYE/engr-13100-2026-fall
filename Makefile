@@ -40,12 +40,13 @@ default: $(sample_output)
 	jupyter-book build -W source
 	touch source/_build/html/.nojekyll
 
-
 # Re-build all pages.
 all: $(sample_output)
 	python3 source/manage_deliverables.py
 	PYTHONPATH="$(PWD)/source/_extensions:$(PYTHONPATH)" jupyter-book build -W --all source
 	echo "View this site [here]($(URL))." > source/_build/html/README.md
+
+graders: clean-graders $(archives)
 
 # Publish to production site.
 pub: all
