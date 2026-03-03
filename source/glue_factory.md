@@ -75,7 +75,7 @@ glue('py2_pre_2_xlsx', 'py2_pre_2_username.xlsx', display=False)
 glue('py2_pre_2_zip', 'py2_pre_2_username.zip', display=False)
 
 # py2_ica_1
-glue('py2_ica_1_ica1_py', 'py2_ica_1_ica1_username.py', display=False)
+glue('py2_ica_1_py', 'py2_ica_1_username.py', display=False)
 
 # py2_ind_1
 glue('py2_ind_1_pdf', 'py2_ind_1_username.pdf', display=False)
