@@ -118,7 +118,7 @@ Follow these steps carefully.
   - the chart is visible and readable
   - no error messages appear
 2. Go to **File > Export > Create PDF** (or Save As > PDF)
-3. Save the file as deliverable_PowerData_pdf, replacing "login" with your Purdue username. 
+3. Save the file as {glue:text}`../../../../../glue_factory.md::ex1_pre_0_powerdatavalues_pdf:`, replacing "username" with your Purdue username. 
 
 #### Step 2 - Export Formulas PDF
 1. In Excel, enable **Show Formulas**: 
