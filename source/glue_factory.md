@@ -43,10 +43,8 @@ import pathlib
 #     ext: py
 
 # ex1_pre_0
-glue('ex1_pre_0_pdf', 'ex1_pre_0_username.pdf', display=False)
-glue('ex1_pre_0_py', 'ex1_pre_0_username.py', display=False)
-glue('ex1_pre_0_xlsx', 'ex1_pre_0_username.xlsx', display=False)
-glue('ex1_pre_0_zip', 'ex1_pre_0_username.zip', display=False)
+glue('ex1_pre_0_powerdatavalues_pdf', 'ex1_pre_0_powerdatavalues_username.pdf', display=False)
+glue('ex1_pre_0_powerdataformulas_pdf', 'ex1_pre_0_powerdataformulas_username.pdf', display=False)
 
 # py1_pre_1
 glue('py1_pre_1_pdf', 'py1_pre_1_username.pdf', display=False)
