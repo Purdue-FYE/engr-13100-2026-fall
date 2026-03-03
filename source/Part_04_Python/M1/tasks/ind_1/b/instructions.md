@@ -29,7 +29,7 @@ deliverables:
 - Identify and explain common Python errors encountered in programming
 - Communicate technical results clearly through a short, written report
 
-## Learning Objectives Covered
+## Learning Objectives
 
 - PR01: Programming Standards
 - PR02: Data Storage
