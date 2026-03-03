@@ -262,7 +262,7 @@ import pathlib
     print(f"✅ Generated Glue Factory: {MASTER_NOTEBOOK}")
 
 def audit_and_fix_references(assignments):
-    placeholder_regex = re.compile(r"\bdeliverable_([a-z0-9_]+)\b")
+    placeholder_regex = re.compile(r"\bdeliverable_([A-Za-z0-9_]+)\b")
     glue_regex = re.compile(r"({glue:[a-z]+})`([^`]+)`")
 
     master_notebook_path = pathlib.Path(MASTER_NOTEBOOK)
