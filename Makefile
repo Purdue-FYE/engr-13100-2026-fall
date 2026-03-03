@@ -38,12 +38,14 @@ sample_output = $(foreach file,$(solutions),\
 default: $(sample_output)
 	python3 source/manage_deliverables.py
 	jupyter-book build -W source
+	rm -f source/_build/html/glue_factory.html source/_build/html/_sources/glue_factory.md
 	touch source/_build/html/.nojekyll
 
 # Re-build all pages.
 all: $(sample_output)
 	python3 source/manage_deliverables.py
 	PYTHONPATH="$(PWD)/source/_extensions:$(PYTHONPATH)" jupyter-book build -W --all source
+	rm -f source/_build/html/glue_factory.html source/_build/html/_sources/glue_factory.md
 	echo "View this site [here]($(URL))." > source/_build/html/README.md
 
 graders: clean-graders $(archives)

@@ -4,10 +4,6 @@
 format: jb-book
 root: intro
 parts:
-  # - caption: Setup
-  #   hidden: true
-  #   chapters:
-  #   - file: glue_factory
 
   - caption: Start Here
     numbered: False
@@ -17,6 +13,7 @@ parts:
     - file: Part_00_Course_Resources/help_sessions
     - file: Part_00_Course_Resources/course_schedule
     - file: Part_00_Course_Resources/course_software/course_software
+    - file: glue_factory
 
   - caption: Professional Engineering Skills
     numbered: False
