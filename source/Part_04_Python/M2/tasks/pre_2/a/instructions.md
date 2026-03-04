@@ -45,8 +45,7 @@ This is useful for estimating heating in resistors and designing safe circuits.
 
 ## Files Needed
 
-For this assignment, download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save as "py2_pre_2_username.py."
+For this assignment, download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save as {glue:text}`../../../../../glue_factory.md::py2_pre_2_py:`.
 
 ## Activity Instructions & Submission
 
@@ -66,4 +65,4 @@ Test your Python code using the sample input/output below.
 
 ### Deliverables
 
-Submit your python file (py2_pre_2_username.py) to (INSERT ASSIGNMENT NAME) on GradeScope.
+Submit your python file {glue:text}`../../../../../glue_factory.md::py2_pre_2_py:` to (INSERT ASSIGNMENT NAME) on GradeScope.
