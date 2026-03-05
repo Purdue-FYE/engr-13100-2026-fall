@@ -83,14 +83,15 @@ Your formula must:
 When copied down the column, your formula should work correctly without editing. 
 
 ### Part E - Data Visualization
-Create a **bar chart (clustered column chart) that displays: 
+Create a bar chart (clustered column chart) or line chart that displays: 
 - Day on the horizontal (x) axis
-- Energy Usage (kWh) on the vertical (y) axis. 
+- Adjusted Energy Usage (kWh) on the vertical (y) axis. 
+You do not have to order your values from highest to lowest. 
 
 Your chart must include: 
 - A descriptive chart title
 - Horizontal axis label: **Day**
-- Vertical axis label: **Energy Usage (kWh)**
+- Vertical axis label: **Adjusted Energy Usage (kWh)**
 - Clear, readable formatting
 
 The chart should clearly communicate the variation in energy usage across the week. Place the chart below the dataset without covering any data or calculations. 
@@ -137,4 +138,3 @@ Follow these steps carefully.
     - Do not include extra spaces
   2. Answer the conceptual questions in 2-3 complete sentences. 
 4. Click **Submit Assignment**
-```
