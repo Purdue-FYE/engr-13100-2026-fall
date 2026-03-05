@@ -36,4 +36,8 @@ select = ["E", "F", "I"]
 
 [tool.uv.sources]
 gradescope-utils = { git = "https://github.com/pritchettk/gradescope-utils-extended" }
+generic-grader = { git = "https://github.com/pritchettk/generic-grader.git" }
+
+[tool.uv.sources]
+gradescope-utils = { git = "https://github.com/pritchettk/gradescope-utils-extended" }
 generic-grader = { git = "https://github.com/pritchettk/generic-grader" }
