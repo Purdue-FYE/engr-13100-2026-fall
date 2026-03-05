@@ -91,7 +91,7 @@ for exercise in EXERCISES:
                 continue
 
             if (
-                path.suffix in (".py", ".txt", ".csv", ".png", ".jpg")
+                path.suffix in (".py", ".txt", ".csv", ".png", ".jpg", ".xlsx")
                 and path.is_file()
             ):
                 if path.name.endswith("solution.py"):
@@ -117,6 +117,22 @@ for exercise in EXERCISES:
                     fo.writestr(str(Path("tests") / file_name), reference)
                     continue
 
+                if path.name.endswith("solution.xlsx"):
+                    # Handle Excel solutions
+                    prefix = path.name.removesuffix("solution.xlsx")
+                    if unit in prefix and number in prefix:
+                        file_name = f"{prefix}reference.xlsx"
+                    elif number in prefix:
+                        file_name = f"{unit}_{prefix}reference.xlsx"
+                    else:
+                        file_name = f"{unit}_{number}_{prefix}reference.xlsx"
+
+                    fo.writestr(
+                        str(Path("tests") / file_name),
+                        path.read_bytes(),
+                    )
+                    continue
+
                 if path.name.endswith("test_cases.py"):
                     # Skip test cases
                     continue
@@ -126,6 +142,10 @@ for exercise in EXERCISES:
                         # Add the grader image to the zip file.
                         new_name = path.name.replace("grader_", "")
                         fo.writestr(str(Path("tests") / new_name), path.read_bytes())
+                    continue
+
+                if path.suffix == ".xlsx":
+                    fo.writestr(str(Path("tests") / path.name), path.read_bytes())
                     continue
 
                 rendered = j2_env.get_template(str(path)).render(**parameters)
@@ -174,6 +194,19 @@ for exercise in EXERCISES:
                 # Write the reference solution to the unzipped directory.
                 with open(unzip_dir / file_name, "w") as f:
                     f.write(reference)
+            elif path.name.endswith("solution.xlsx"):
+                # Copy the reference workbook as the submitted workbook.
+                id = "teamnumber" if "team" in number else "username"
+                prefix = path.name.removesuffix("solution.xlsx")
+                if unit in prefix and number in prefix:
+                    file_name = f"{prefix}{id}.xlsx"
+                elif number in prefix:
+                    file_name = f"{unit}_{prefix}{id}.xlsx"
+                else:
+                    file_name = f"{unit}_{number}_{prefix}{id}.xlsx"
+
+                with open(unzip_dir / file_name, "wb") as f:
+                    f.write(path.read_bytes())
             elif path.name.endswith("test_cases.py") or path.name.endswith(
                 "test_config.py"
             ):
