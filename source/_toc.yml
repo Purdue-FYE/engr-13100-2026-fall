@@ -117,6 +117,12 @@ parts:
 
     # Python Module 3
     - file: Part_04_Python/M3/0_overview
+      sections:
+      - file: Part_04_Python/M3/1_pre-class_material
+        sections:
+        # - file: Part_04_Python/M3/1.1_materials
+        - file: Part_04_Python/M3/tasks/pre_1/a/instructions
+        - file: Part_04_Python/M3/tasks/pre_2/a/instructions
 
     # Python Module 4
     - file: Part_04_Python/M4/0_overview
