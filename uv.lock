@@ -377,7 +377,7 @@ requires-dist = [
     { name = "docutils", specifier = ">=0.21.2" },
     { name = "faker", specifier = ">=37.3.0" },
     { name = "fastapi", specifier = ">=0.115.12" },
-    { name = "generic-grader", git = "https://github.com/pritchettk/generic-grader.git" },
+    { name = "generic-grader", git = "https://github.com/pritchettk/generic-grader" },
     { name = "ghp-import", specifier = ">=2.1.0" },
     { name = "gradescope-utils", git = "https://github.com/pritchettk/gradescope-utils-extended" },
     { name = "gradescope-utils", git = "https://github.com/pritchettk/gradescope-utils-extended" },
@@ -517,7 +517,7 @@ wheels = [
 [[package]]
 name = "generic-grader"
 version = "0.2.3"
-source = { git = "https://github.com/pritchettk/generic-grader.git#8a9214579103781e9b55265cc1f4c3b7600e368a" }
+source = { git = "https://github.com/pritchettk/generic-grader#c5646f6a2c2e9c5104fd17bacf75a2c2c62aff01" }
 dependencies = [
     { name = "attrs" },
     { name = "freezegun" },
