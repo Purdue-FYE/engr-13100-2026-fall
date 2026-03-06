@@ -46,6 +46,12 @@ import pathlib
 glue('ex1_pre_0_powerdatavalues_pdf', 'ex1_pre_0_powerdatavalues_username.pdf', display=False)
 glue('ex1_pre_0_powerdataformulas_pdf', 'ex1_pre_0_powerdataformulas_username.pdf', display=False)
 
+# ex2_pre_1
+glue('ex2_pre_1_pdf', 'ex2_pre_1_username.pdf', display=False)
+glue('ex2_pre_1_py', 'ex2_pre_1_username.py', display=False)
+glue('ex2_pre_1_xlsx', 'ex2_pre_1_username.xlsx', display=False)
+glue('ex2_pre_1_zip', 'ex2_pre_1_username.zip', display=False)
+
 # py1_pre_1
 glue('py1_pre_1_pdf', 'py1_pre_1_username.pdf', display=False)
 glue('py1_pre_1_py', 'py1_pre_1_username.py', display=False)

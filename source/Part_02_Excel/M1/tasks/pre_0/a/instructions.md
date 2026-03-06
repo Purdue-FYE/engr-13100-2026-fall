@@ -14,7 +14,7 @@ deliverables:
 ```{include} /macros.md
 ```
 (Ex:M1:task0)=
-# PCA #1: Engineering Data Analysis in Excel
+# PCA #1: Calculations and Charting in Excel
 
 ## Learning Objectives
 
@@ -30,7 +30,6 @@ Download and open the following file for this activity:{download}`PCA01_PowerDat
 You will complete your work in the provided Excel file and submit:
 - A PDF showing calculated values
 - A PDF showing formulas used
-- Responses to questions directly in Gradescope
 
 ## Background
 Engineers frequently analyze power usage data to evaluate system performance and efficiency.
@@ -83,14 +82,15 @@ Your formula must:
 When copied down the column, your formula should work correctly without editing. 
 
 ### Part E - Data Visualization
-Create a **bar chart (clustered column chart) that displays: 
+Create a bar chart (clustered column chart) or line chart that displays: 
 - Day on the horizontal (x) axis
-- Energy Usage (kWh) on the vertical (y) axis. 
+- Adjusted Energy Usage (kWh) on the vertical (y) axis. 
+You do not have to order your values from highest to lowest. 
 
 Your chart must include: 
 - A descriptive chart title
 - Horizontal axis label: **Day**
-- Vertical axis label: **Energy Usage (kWh)**
+- Vertical axis label: **Adjusted Energy Usage (kWh)**
 - Clear, readable formatting
 
 The chart should clearly communicate the variation in energy usage across the week. Place the chart below the dataset without covering any data or calculations. 
@@ -103,12 +103,10 @@ After completing your calculations:
 
 If your results differ significantly, review your formulas and references. 
 
-### Gradescope Submission Instructions
-You will submit two PDF files and complete short-answer questions in Gradescope.
+## Gradescope Submission Instructions - NEEDS UPDATING
+You will submit two PDF files. Follow these steps carefully.
 
-Follow these steps carefully.
-
-#### Step 1 - Export Values PDF
+### Step 1 - Export Values PDF
 1. In Excel, ensure: 
   - all calculations are visible
   - the chart is visible and readable
@@ -116,7 +114,7 @@ Follow these steps carefully.
 2. Go to **File > Export > Create PDF** (or Save As > PDF)
 3. Save the file as deliverable_PowerData_pdf, replacing "login" with your Purdue username. 
 
-#### Step 2 - Export Formulas PDF
+### Step 2 - Export Formulas PDF
 1. In Excel, enable **Show Formulas**: 
   - Windows: Press **Crtl + `**
   - Mac: Press **Control + `**
@@ -126,7 +124,7 @@ Follow these steps carefully.
 3. Export again as a PDF.
 4. Save the file as `PCA01_PowerData_formulas_login.pdf`, replacing "login" with your Purdue username. 
 
-#### Step 3 - Upload Files to Gradescope
+### Step 3 - Upload Files to Gradescope
 1. Go to the PCA #1 assignment in Gradescope. 
 2. Upload both PDF files: 
   - `PCA01_PowerData_values_login.pdf`
@@ -137,4 +135,3 @@ Follow these steps carefully.
     - Do not include extra spaces
   2. Answer the conceptual questions in 2-3 complete sentences. 
 4. Click **Submit Assignment**
-```
