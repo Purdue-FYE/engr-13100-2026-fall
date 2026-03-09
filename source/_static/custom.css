@@ -131,3 +131,39 @@ ol.arabic ol ol.arabic {
 .col-center th {
     text-align: center;
 }
+
+/* --- Table hover accessibility fix --- */
+html[data-theme="light"] table tbody tr:hover,
+html[data-theme="light"] table.table tbody tr:hover {
+  background-color: var(--purdue-dust) !important;
+}
+
+html[data-theme="light"] table tbody tr:hover td,
+html[data-theme="light"] table.table tbody tr:hover td,
+html[data-theme="light"] table tbody tr:hover th,
+html[data-theme="light"] table.table tbody tr:hover th {
+  color: var(--purdue-black) !important;
+}
+
+html[data-theme="dark"] table tbody tr:hover,
+html[data-theme="dark"] table.table tbody tr:hover {
+  background-color: #353840 !important;
+}
+
+html[data-theme="dark"] table tbody tr:hover td,
+html[data-theme="dark"] table.table tbody tr:hover td,
+html[data-theme="dark"] table tbody tr:hover th,
+html[data-theme="dark"] table.table tbody tr:hover th {
+  color: #ffffff !important;
+}
+
+/* --- Card styling improvement --- */
+
+.sd-card {
+  border-radius: 8px;
+}
+
+.sd-card-header {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
