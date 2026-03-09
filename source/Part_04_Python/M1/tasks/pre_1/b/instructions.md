@@ -11,7 +11,7 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M1:py1_pre_0)=
+(Py:M1:py1_pre_1)=
 # PCA #X: Python Foundations
 
 ## Learning Objectives
@@ -38,7 +38,7 @@ This template contains header information that must always be edited to reflect 
 The template contains a section for importing modules, and a function called
 {python}`main()` where you will be writing your code. While user-defined functions will be taught in more detail in the next {program}`Python` module, for now you will just need to remember to write all your code within {python}`main()`. Note that, when writing code inside a function, it must be indented 1 tab (or 4 spaces) relative to the indentation level of the function.
 
-<!-- Download the {program}`Python` template (above) and save it as {glue:text}`../../../../../glue_factory.md::py1_pre_1_py:`. Use the sample output section below to verify that your program outputs correct values. -->
+Download the {program}`Python` template (above) and save it as {glue:text}`../../../../../glue_factory.md::py1_pre_1_py:`. Use the sample output section below to verify that your program outputs correct values.
 
 ## Activity Instructions & Submission
 
@@ -67,4 +67,4 @@ Write, run, and test python code for the following questions. Remember to includ
 
 ### Deliverables
 
-<!-- Submit your python file {glue:text}`../../../../../glue_factory.md::py1_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope. -->
+Submit your python file {glue:text}`../../../../../glue_factory.md::py1_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Create a virtual frame buffer to use as a display for turtle and matplotlib.
+Xvfb :1 &
+export DISPLAY=:1
+
+# Set up autograder files
+cp /autograder/submission/*.py /autograder/source
+cd /autograder/source
+
+# Run the tests.
+source /env/bin/activate
+python3.13 run_tests.py
+
+# Close the virtual frame buffer.  This prevents "Server is already active ..."
+# errors if for some reason we need to `run_autograder` again.
+pkill Xvfb

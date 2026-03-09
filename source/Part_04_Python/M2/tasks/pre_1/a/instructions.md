@@ -27,8 +27,7 @@ kernelspec:
 
 ## Files Needed
 
-For this assignment, download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save as "py2_pre_1_username.py."
+For this assignment, download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save as {glue:text}`../../../../../glue_factory.md::py2_pre_1_py:`.
 
 ## Activity Instructions & Submission
 
@@ -52,6 +51,6 @@ Use the sample input/output below to test your code.
 ```{include} /_build/intermediate/Part_04_Python/M2/tasks/pre_1/a/sample_output.md
 ```
 
-### Deliverables
+## Deliverables
 
-Submit your python file (py2_pre_1_username.py) to (INSERT ASSIGNMENT NAME) on GradeScope.
+Submit your python file {glue:text}`../../../../../glue_factory.md::py2_pre_1_py:` to (INSERT ASSIGNMENT NAME) on GradeScope.
