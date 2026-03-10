@@ -31,10 +31,7 @@ For this assignment, download the {program}`Python` template {download}`ENGR131_
 
 ## Activity Instructions & Submission
 
-You must code a single selection structure that will perform 
-mathematical operations under certain conditions. Your selection 
-structure must follow the statements below and should work 
-for any integer, A, given by the user.
+You must code a single selection structure that will perform mathematical operations under certain conditions. Your selection structure must follow the statements below and should work for any integer, A, given by the user.
 
 Conditions:
 1. If A is less than -22 or greater than 324, then reassign A to the value of A minus 16.

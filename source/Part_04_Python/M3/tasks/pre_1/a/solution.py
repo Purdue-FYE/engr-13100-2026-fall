@@ -6,7 +6,7 @@ Description:
     Replace this line with a description of your program.
 
 Assignment Information:
-    Assignment:     7.1.2 pre_2
+    Assignment:     7.1.1 pre_1
     Team ID:        LC0 - 00
     Author:         Holly Fortener, hforten@purdue.edu
     Date:           03/09/2026
@@ -32,11 +32,13 @@ Academic Integrity Statement:
 """
 
 def main():
+    num = int(input("Enter a number: "))
 
-    var = input("Enter a character: ")
+    while num != 0:
+        print("You entered:", num)
+        num = int(input("Enter a number: "))
 
-    for i in range(10):
-        print(var * (i + 1))
+    print("Done!")
 
 if __name__ == "__main__":
     main()

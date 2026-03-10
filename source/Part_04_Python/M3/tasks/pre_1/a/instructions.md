@@ -25,37 +25,29 @@ kernelspec:
 - PR07: Test cases & Tracking
 - PR08: Debugging
 
+## Files Needed
+
+Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py3_pre_1_py:`.
+
 ## Activity Instructions & Submission
 
-Navigate to [INSERT ASSIGNMENT NAME] on Gradescope and complete the following:
+Write a Python program that repeatedly asks the user to enter a number. The program should stop only when the user enters 0.
 
-### Part A
+Follow these steps:
 
-The `while` loop below contains an `if` statement. Review the code and determine the following:
+1. Prompt the user to enter a number and store it in a variable called `num`.
+2. Create a `while` loop that continues running as long as the number is not equal to 0.
+3. Inside the `while` loop:
+- Print the number the user entered.
+- Ask the user to enter another number and store it again in `num`.
+- When the user enters 0, the loop should stop and the program should print "Done!".
 
-1. What will be displayed in the terminal when the program is run?
+Test your program using the sample input/output below.
 
-2. How many times will the `while` loop iterate?
-
-```python 
-x = 1
-i = 1
-
-print(f"Starting while loop iteration: i = {i}, x = {x}")
-while i < 10:
-    if x < 3:
-        x += 1
-        print(f"Incremented x; Current x = {x}")
-    i += 2
-print(f"Final value of i: {i}")
+% Automatically generated Sample Output section.
+```{include} /_build/intermediate/Part_04_Python/M3/tasks/pre_1/a/sample_output.md
 ```
 
-### Part B
+## Deliverables
 
-Create a flowchart for the `while` loop in Part A. Reference the "Loop Basics" video [INSERT LINK HERE] for how to create flowcharts with loops. When you are finished, upload your flowchart as a .pdf file.
-
-We recommend using https://app.diagrams.net/ to design and export your flowchart as a .pdf file. Reference the Flowcharts [INSERT LINK TO PRE-CLASS MATERIALS HERE] section of the Python 2 pre-class materials for which shapes to use.
-
-### Part C
-
-1. How would you change the `while` loop to run infinitely? Include two ways you could do this in your answer.
+Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::py3_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
