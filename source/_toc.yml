@@ -19,10 +19,16 @@ parts:
     numbered: False
     chapters:
       # Professional Preperation Module
-    - file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
+    #- file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
 
       # Teaming Module
     - file: Part_01_Professional_Development/M2_Teaming/0_overview
+      sections: 
+      - file: Part_01_Professional_Development/M2_Teaming/2_CATME_inst
+      - file: Part_01_Professional_Development/M2_Teaming/1_TM_assignments
+        sections: 
+        - file: Part_01_Professional_Development/M2_Teaming/1_TM1_pcm_teaming
+        - file: Part_01_Professional_Development/M2_Teaming/1_TM1_inst
 
   - caption: Excel
     numbered: 2
