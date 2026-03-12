@@ -75,3 +75,68 @@ A03: Classes 4A-4B, release 4A due 5A *** AI assignment???
 Other notes: 
 - EYMs/CE
 - teamwork (scorm due by 3B currently); need to rewrite scorm, reorganize teaming page to create a CATME specific page
+
+
+IMPORTING DATA in excel - probably put that in LIN REG right now. 
+
+
+
+topic
+Course Introduction
+XL: Spreadsheet Foundations
+XL: Descriptive Statistics & Logical Functions
+XL: Distributions - Histograms and Outliers
+XL: Probability
+XL: Linear Regression
+AI: AI Placeholder? 
+AI: AI Placeholder? (cont.)
+PY: Python Foundations
+PY: Sequences/Strings/Modules
+PY: Selection Structures
+PY: User-Defined Functions
+PY: While Loops
+PY: For Loops
+PY: Data Manipulation (pandas/numpy)
+PY: Data Visualization & Statistics
+PY: Linear Regression in PY
+PY: Linear Regression in PY (cont.)
+PR: Design Project
+PR: Design Project (cont.)
+PR: Design Project (cont.)
+PR: Design Project (cont.)
+PR: Design Project (cont.)
+PR: Design Project (cont.)
+PR: Design Project (cont.)
+PR: Design Project (cont.)
+
+EX: Exam 1 - Excel?
+EX: Exam 2 - Python 1? 
+EX: Exam 3 - Python 2?
+
+Teams start 4A at the earliest. 
+
+All content classes have: 
+1 PCA for each content class day
+1 HW covering skills from at least two class days
+
+Overlapping content classes with Design Project days to allow for more time to get feedback on prototype iterations.
+Overlapping teaming/engineering content throughout the course
+
+What does Ruth want the most buy in on? 
+Does she want us to finish the content weeks? Assignments? Etc?
+Do we want assessments to look like they do now? Do we want three exams?
+Where do we need the help from Ruth? Design project. 
+
+Timeline - want content mostly set in stone by end of the semester/start of summer.
+Testing and tweaks during the summer. 
+
+Design Project: 
+ - are there any initial ideas that Ruth has? 
+ - data centers and plants on the roof and water usage
+ - greenhouse? 
+
+Theme Weeks: 
+- SEEE
+- CE
+
+Slides philosophy: 

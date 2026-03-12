@@ -11,7 +11,7 @@ parts:
     - file: Part_00_Course_Resources/syllabus
     - file: Part_00_Course_Resources/meet_the_team
     - file: Part_00_Course_Resources/help_sessions
-    - file: Part_00_Course_Resources/course_schedule
+    - file: Part_00_Course_Resources/course_schedule/course_schedule
     - file: Part_00_Course_Resources/course_software/course_software
     - file: glue_factory
 
