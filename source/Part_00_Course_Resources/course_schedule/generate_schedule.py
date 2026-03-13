@@ -252,6 +252,7 @@ html[data-theme="dark"] {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+    min-width: 700px;
 }
 
 .schedule-table td,
@@ -271,6 +272,7 @@ html[data-theme="dark"] {
 
 .exam-table {
   margin-bottom: 1.25rem;
+  min-width: 700px;
 }
 
 .exam-header td {
@@ -376,6 +378,11 @@ html[data-theme="dark"] {
 .schedule-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.assignment-body td:nth-child(2),
+.assignment-head th:nth-child(2) {
+  min-width: 12rem;
 }
 
 </style>

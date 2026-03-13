@@ -64,7 +64,7 @@ comprehension checks 11-1 to 11-4 on g 325-326
 
 Assignment Ideas: 
 Stats/plotting/logical functions question: plotting two sets of data on a scatter plot, using a legend; then doing some sort of calculation
-RQ 11-8 on pg 358; create a table, do calulation for volume; create a graph x2 to show relationship
+RQ 11-8 on pg 358; create a table, do calculation for volume; create a graph x2 to show relationship
 RQ 13-3 for linear reg
 
 A01: Classes 1B-2B, release 2A due 3A
