@@ -53,34 +53,8 @@ html[data-theme="dark"] {
 
   .exam-slot-row td {
   background: #1e293b;
-  color: #93c5fd;
+  color: #BBD9FC;
 }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sch-text: #e5e7eb;
-    --sch-border: #374151;
-    --sch-surface: transparent;
-
-    --sch-exam-header-bg: transparent;
-    --sch-exam-row-bg: #111827;
-
-    --sch-week-bg: transparent;
-    --sch-week-text: #d1d5db;
-
-    --sch-class-bg: #1b2430;
-    --sch-class-text: #f3f4f6;
-
-    --sch-break-bg: #3f2f12;
-    --sch-break-text: #fef3c7;
-
-    --sch-assignment-head-bg: #111827;
-    --sch-assignment-head-text: #d1d5db;
-
-    --sch-assignment-body-bg: #0b1220;
-    --sch-assignment-body-text: #f3f4f6;
-  }
 }
 
 .schedule-wrap {
@@ -198,10 +172,41 @@ html[data-theme="dark"] {
   white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --sch-col-1: 5.5rem;
+    --sch-col-3: 3.5rem;
+    --sch-col-4: 6.5rem;
+    --sch-col-5: 5.5rem;
+  }
+
+  .schedule-table,
+  .assignment-table {
+    font-size: 0.82rem;
+  }
+
+  .schedule-table td,
+  .schedule-table th,
+  .assignment-table td,
+  .assignment-table th {
+    padding: 0.45rem 0.5rem;
+  }
+
+  .nowrap {
+    white-space: normal;
+  }
+}
+
+.schedule-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 </style>
 
 <div class="schedule-wrap">
   <div class="schedule-meta"><strong>Semester:</strong> Fall 2026</div>
+  <div class="schedule-scroll">
   <table class="schedule-table exam-table">
     <colgroup>
       <col style="width: var(--sch-col-1)">
@@ -214,7 +219,8 @@ html[data-theme="dark"] {
       <tr class="exam-row"><td class="nowrap">Exam 3</td><td>In-Class Exam (Class 13A)</td></tr>
     </tbody>
   </table>
-  <div class="week-block">
+  </div>
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -247,7 +253,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -279,7 +285,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -295,7 +301,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -311,7 +317,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -327,7 +333,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -343,7 +349,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -359,7 +365,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -375,7 +381,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -391,7 +397,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -407,7 +413,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -423,7 +429,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -439,7 +445,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -455,7 +461,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -471,7 +477,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">
@@ -487,7 +493,7 @@ html[data-theme="dark"] {
       </tbody>
     </table>
   </div>
-  <div class="week-block">
+  <div class="week-block schedule-scroll">
     <table class="schedule-table week-table">
       <colgroup>
         <col style="width: var(--sch-col-1)">

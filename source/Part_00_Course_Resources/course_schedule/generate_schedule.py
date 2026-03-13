@@ -229,34 +229,8 @@ html[data-theme="dark"] {
 
   .exam-slot-row td {
   background: #1e293b;
-  color: #93c5fd;
+  color: #BBD9FC;
 }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sch-text: #e5e7eb;
-    --sch-border: #374151;
-    --sch-surface: transparent;
-
-    --sch-exam-header-bg: transparent;
-    --sch-exam-row-bg: #111827;
-
-    --sch-week-bg: transparent;
-    --sch-week-text: #d1d5db;
-
-    --sch-class-bg: #1b2430;
-    --sch-class-text: #f3f4f6;
-
-    --sch-break-bg: #3f2f12;
-    --sch-break-text: #fef3c7;
-
-    --sch-assignment-head-bg: #111827;
-    --sch-assignment-head-text: #d1d5db;
-
-    --sch-assignment-body-bg: #0b1220;
-    --sch-assignment-body-text: #f3f4f6;
-  }
 }
 
 .schedule-wrap {
@@ -374,6 +348,36 @@ html[data-theme="dark"] {
   white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --sch-col-1: 5.5rem;
+    --sch-col-3: 3.5rem;
+    --sch-col-4: 6.5rem;
+    --sch-col-5: 5.5rem;
+  }
+
+  .schedule-table,
+  .assignment-table {
+    font-size: 0.82rem;
+  }
+
+  .schedule-table td,
+  .schedule-table th,
+  .assignment-table td,
+  .assignment-table th {
+    padding: 0.45rem 0.5rem;
+  }
+
+  .nowrap {
+    white-space: normal;
+  }
+}
+
+.schedule-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 </style>
 """.strip()
 
@@ -383,6 +387,7 @@ html[data-theme="dark"] {
     parts.append(f'  <div class="schedule-meta"><strong>Semester:</strong> {html.escape(SEMESTER_NAME)}</div>')
 
     # Exam schedule table
+    parts.append('  <div class="schedule-scroll">')
     parts.append('  <table class="schedule-table exam-table">')
     parts.append('    <colgroup>')
     parts.append('      <col style="width: var(--sch-col-1)">')
@@ -396,6 +401,7 @@ html[data-theme="dark"] {
         )
     parts.append('    </tbody>')
     parts.append('  </table>')
+    parts.append('  </div>')
 
     # Group slots by week
     slots_by_week: dict[int, list[ClassSlot]] = {}
@@ -407,7 +413,7 @@ html[data-theme="dark"] {
         week_slots = slots_by_week[week_num]
         week_label = week_slots[0].week_label
 
-        parts.append('  <div class="week-block">')
+        parts.append('  <div class="week-block schedule-scroll">')
         parts.append('    <table class="schedule-table week-table">')
         parts.append('      <colgroup>')
         parts.append('        <col style="width: var(--sch-col-1)">')
