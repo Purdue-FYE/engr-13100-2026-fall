@@ -167,3 +167,16 @@ html[data-theme="dark"] table.table tbody tr:hover th {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
+
+/* Hide internal glue factory page from sidebar navigation */
+.bd-sidebar a[href$="/glue_factory.html"],
+.bd-toc-nav a[href$="/glue_factory.html"],
+.toc-entry a[href$="/glue_factory.html"] {
+  display: none !important;
+}
+
+.bd-sidebar li:has(a[href$="/glue_factory.html"]),
+.bd-toc-nav li:has(a[href$="/glue_factory.html"]),
+.toc-entry:has(a[href$="/glue_factory.html"]) {
+  display: none !important;
+}
