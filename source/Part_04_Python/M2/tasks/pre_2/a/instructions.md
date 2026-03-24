@@ -63,6 +63,6 @@ Test your Python code using the sample input/output below.
 ```{include} /_build/intermediate/Part_04_Python/M2/tasks/pre_2/a/sample_output.md
 ```
 
-### Deliverables
+## Deliverables
 
 Submit your python file {glue:text}`../../../../../glue_factory.md::py2_pre_2_py:` to (INSERT ASSIGNMENT NAME) on GradeScope.

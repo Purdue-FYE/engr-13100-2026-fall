@@ -1,0 +1,6 @@
+class_slot,assignment_id,name,points,type,due_date
+1A,PCA01,Course Policies Exploration,10,Pre-Class Activity,Class 2A
+1A,PCA02,Spreadsheet Basics,5,Pre-Class Activity,Class 2B
+1B,EX01,Spreadsheet Foundations,10,Exercise,Class 3A
+2A,HW01,Descriptive Statistics,20,Homework,Class 3B
+2B,MS01,Project Team Formation,5,Milestone,Class 4A

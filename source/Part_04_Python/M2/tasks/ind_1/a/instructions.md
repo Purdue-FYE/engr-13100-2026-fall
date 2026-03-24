@@ -181,9 +181,7 @@ The flowchart includes multiple UDFs. Be sure to include all of the UDFs represe
 
 ### Deliverables
 
-Submit your {program}`Python` file to (INSERT ASSIGNMENT NAME) on Gradescope.
-
-<!-- Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::py2_ind_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope. -->
+Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::py2_ind_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
 
 ## Q3 Analysis Questions
 

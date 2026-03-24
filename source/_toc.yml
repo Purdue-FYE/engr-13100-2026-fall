@@ -11,7 +11,7 @@ parts:
     - file: Part_00_Course_Resources/syllabus
     - file: Part_00_Course_Resources/meet_the_team
     - file: Part_00_Course_Resources/help_sessions
-    - file: Part_00_Course_Resources/course_schedule
+    - file: Part_00_Course_Resources/course_schedule/course_schedule
     - file: Part_00_Course_Resources/course_software/course_software
     - file: glue_factory
 
@@ -19,10 +19,16 @@ parts:
     numbered: False
     chapters:
       # Professional Preperation Module
-    - file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
+    #- file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
 
       # Teaming Module
     - file: Part_01_Professional_Development/M2_Teaming/0_overview
+      sections: 
+      - file: Part_01_Professional_Development/M2_Teaming/2_CATME_inst
+      - file: Part_01_Professional_Development/M2_Teaming/1_TM_assignments
+        sections: 
+        - file: Part_01_Professional_Development/M2_Teaming/1_TM1_pcm_teaming
+        - file: Part_01_Professional_Development/M2_Teaming/1_TM1_inst
 
   - caption: Excel
     numbered: 2
@@ -43,8 +49,9 @@ parts:
     - file: Part_02_Excel/M2/0_overview
       sections:
       - file: Part_02_Excel/M2/1_pre-class_material
-      #  sections:
-      #   - file: Part_02_Excel/M2/tasks/pre_0/a/instructions
+        sections:
+         - file: Part_02_Excel/M2/1.1_materials
+         - file: Part_02_Excel/M2/tasks/pre_1/a/instructions
 
       # - file: Part_02_Excel/M2/2_assignments
       #   sections:
@@ -117,6 +124,12 @@ parts:
 
     # Python Module 3
     - file: Part_04_Python/M3/0_overview
+      sections:
+      - file: Part_04_Python/M3/1_pre-class_material
+        sections:
+        # - file: Part_04_Python/M3/1.1_materials
+        - file: Part_04_Python/M3/tasks/pre_1/a/instructions
+        - file: Part_04_Python/M3/tasks/pre_2/a/instructions
 
     # Python Module 4
     - file: Part_04_Python/M4/0_overview

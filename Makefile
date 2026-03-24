@@ -87,3 +87,8 @@ clean-all:
 clean-graders:
 	# Remove all built grader files
 	rm -rf source/_build/graders
+
+# Schedule generating
+schedule:
+	python source/Part_00_Course_Resources/course_schedule/generate_schedule.py
+	make pub

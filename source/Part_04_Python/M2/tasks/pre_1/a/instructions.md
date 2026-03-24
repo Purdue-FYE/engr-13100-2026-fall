@@ -31,10 +31,7 @@ For this assignment, download the {program}`Python` template {download}`ENGR131_
 
 ## Activity Instructions & Submission
 
-You must code a single selection structure that will perform 
-mathematical operations under certain conditions. Your selection 
-structure must follow the statements below and should work 
-for any integer, A, given by the user.
+You must code a single selection structure that will perform mathematical operations under certain conditions. Your selection structure must follow the statements below and should work for any integer, A, given by the user.
 
 Conditions:
 1. If A is less than -22 or greater than 324, then reassign A to the value of A minus 16.
@@ -51,6 +48,6 @@ Use the sample input/output below to test your code.
 ```{include} /_build/intermediate/Part_04_Python/M2/tasks/pre_1/a/sample_output.md
 ```
 
-### Deliverables
+## Deliverables
 
 Submit your python file {glue:text}`../../../../../glue_factory.md::py2_pre_1_py:` to (INSERT ASSIGNMENT NAME) on GradeScope.
