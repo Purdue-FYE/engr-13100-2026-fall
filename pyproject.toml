@@ -8,9 +8,8 @@ dependencies = [
     "docutils>=0.21.2",
     "faker>=37.3.0",
     "fastapi>=0.115.12",
-    "generic-grader",
+    "generic-grader>=0.1.22",
     "ghp-import>=2.1.0",
-    "gradescope-utils",
     "jinja2>=3.1.6",
     "jupyter-book>=1<2",
     "matplotlib>=3.10.3",
@@ -33,7 +32,3 @@ exclude = ["**/solution.py"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
-
-[tool.uv.sources]
-gradescope-utils = { git = "https://github.com/pritchettk/gradescope-utils-extended" }
-generic-grader = { git = "https://github.com/pritchettk/generic-grader" }

@@ -6,7 +6,6 @@ export DISPLAY=:1
 
 # Set up autograder files
 cp /autograder/submission/*.py /autograder/source
-cp /autograder/submission/*.xlsx /autograder/source
 cd /autograder/source
 
 # Run the tests.

@@ -43,10 +43,14 @@ import pathlib
 #     ext: py
 
 # ex1_pre_0
-glue('ex1_pre_0_pdf', 'ex1_pre_0_username.pdf', display=False)
-glue('ex1_pre_0_py', 'ex1_pre_0_username.py', display=False)
-glue('ex1_pre_0_xlsx', 'ex1_pre_0_username.xlsx', display=False)
-glue('ex1_pre_0_zip', 'ex1_pre_0_username.zip', display=False)
+glue('ex1_pre_0_powerdatavalues_pdf', 'ex1_pre_0_powerdatavalues_username.pdf', display=False)
+glue('ex1_pre_0_powerdataformulas_pdf', 'ex1_pre_0_powerdataformulas_username.pdf', display=False)
+
+# ex2_pre_1
+glue('ex2_pre_1_pdf', 'ex2_pre_1_username.pdf', display=False)
+glue('ex2_pre_1_py', 'ex2_pre_1_username.py', display=False)
+glue('ex2_pre_1_xlsx', 'ex2_pre_1_username.xlsx', display=False)
+glue('ex2_pre_1_zip', 'ex2_pre_1_username.zip', display=False)
 
 # py1_pre_1
 glue('py1_pre_1_pdf', 'py1_pre_1_username.pdf', display=False)
@@ -64,11 +68,20 @@ glue('py1_ind_2_py', 'py1_ind_2_username.py', display=False)
 glue('py1_ind_2_xlsx', 'py1_ind_2_username.xlsx', display=False)
 glue('py1_ind_2_zip', 'py1_ind_2_username.zip', display=False)
 
+# py2_pre_1
+glue('py2_pre_1_pdf', 'py2_pre_1_username.pdf', display=False)
+glue('py2_pre_1_py', 'py2_pre_1_username.py', display=False)
+glue('py2_pre_1_xlsx', 'py2_pre_1_username.xlsx', display=False)
+glue('py2_pre_1_zip', 'py2_pre_1_username.zip', display=False)
+
 # py2_pre_2
 glue('py2_pre_2_pdf', 'py2_pre_2_username.pdf', display=False)
 glue('py2_pre_2_py', 'py2_pre_2_username.py', display=False)
 glue('py2_pre_2_xlsx', 'py2_pre_2_username.xlsx', display=False)
 glue('py2_pre_2_zip', 'py2_pre_2_username.zip', display=False)
+
+# py2_ica_1
+glue('py2_ica_1_py', 'py2_ica_1_username.py', display=False)
 
 # py2_ind_1
 glue('py2_ind_1_pdf', 'py2_ind_1_username.pdf', display=False)
@@ -87,5 +100,17 @@ glue('py3_pre_2_pdf', 'py3_pre_2_username.pdf', display=False)
 glue('py3_pre_2_py', 'py3_pre_2_username.py', display=False)
 glue('py3_pre_2_xlsx', 'py3_pre_2_username.xlsx', display=False)
 glue('py3_pre_2_zip', 'py3_pre_2_username.zip', display=False)
+
+# py4_pre_1
+glue('py4_pre_1_pdf', 'py4_pre_1_username.pdf', display=False)
+glue('py4_pre_1_py', 'py4_pre_1_username.py', display=False)
+glue('py4_pre_1_xlsx', 'py4_pre_1_username.xlsx', display=False)
+glue('py4_pre_1_zip', 'py4_pre_1_username.zip', display=False)
+
+# py4_pre_2
+glue('py4_pre_2_pdf', 'py4_pre_2_username.pdf', display=False)
+glue('py4_pre_2_py', 'py4_pre_2_username.py', display=False)
+glue('py4_pre_2_xlsx', 'py4_pre_2_username.xlsx', display=False)
+glue('py4_pre_2_zip', 'py4_pre_2_username.zip', display=False)
 
 ```

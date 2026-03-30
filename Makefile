@@ -5,19 +5,16 @@ URL = https://purdue-fye.github.io/$(REPO)
 # scanning through the tasks directories in each module.
 modules = $(wildcard source/Part*/M*)
 instructions = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*instructions.md))
-solutions_Ex = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*solution.xlsx))
 solutions_Py = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*solution.py))
 solutions_MA = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*solution.m))
-solutions =    $(solutions_Py) $(solutions_MA)
+solutions = $(solutions_Py) $(solutions_MA)
 test_cases = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*test_cases.py))
 grader_files = $(wildcard grader/*)
 quiz_files = $(wildcard source/quizzes/TTYK*.tex) $(wildcard source/quizzes/CQ*.tex)
 
-archives = $(foreach file,$(solutions_Py) $(solutions_Ex),\
+archives = $(foreach file,$(solutions_Py),\
 	$(subst source/,source/_build/graders/,\
-		$(subst solution.py,autograder.zip,\
-			$(subst solution.xlsx,autograder.zip,$(file))\
-		)\
+		$(subst solution.py,autograder.zip,$(file))\
 	)\
 )
 
@@ -87,8 +84,3 @@ clean-all:
 clean-graders:
 	# Remove all built grader files
 	rm -rf source/_build/graders
-
-# Schedule generating
-schedule:
-	python source/Part_00_Course_Resources/course_schedule/generate_schedule.py
-	make pub

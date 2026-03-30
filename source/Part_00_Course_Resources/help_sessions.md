@@ -16,5 +16,3 @@ Note: Help sessions will be canceled during Week [##] for Thanksgiving Break ([d
 ## Join the Queue
 
 [ENGR 131 Help Sessions Sign-Up]
-
-PUT QR Code HERE? 

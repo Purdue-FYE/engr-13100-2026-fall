@@ -26,9 +26,9 @@
 ## Question 1: Academic Integrity Statement
 {Academic integrity statement}
 
-## Question 2: Infrared Thermometer
+## Question 2: Infared Thermometer
 
-A thermal-engineering team is developing a smaller version of an infrared thermometer based on an existing design. To keep the early-stage model simple, the engineers decide to represent the thermometer using two simple three-dimensional shapes that approximate its overall geometry.
+An thermal-engineering team is developing a smaller version of an infared thermometer based on an existing design. To keep the early-stage model simple, the engineers decide to represent the thermometer using two simple three-dimensional shapes that approximate its overall geometry.
 The primary material in the designs costs $54 per cubic inch. The smooth coating that envelops the surface of the design costs $120 per square inch.
 
 ![Non-Contact Infrared Thermometer, angle 1](infrared-thermometer-img-1.png)
@@ -68,11 +68,4 @@ Using the provided cost information:
 (c) Does your model over estimate or under estimate the true volume of the thermometer? Explain your reasoning.
 
 #### Question 3.3
-In Excel, create a properly formatted constants table with units in mm for each measured dimension. Approximate these values for your design based on the values found on the sper direct website linked above. 
-
-Then, decrement and increment each value in a column so you have 5 values lower than your constant and 5 values greater than your constant. Each value should be 0.1mm more than the previous. Use appropriate cell referencing with your constants table.
-
-Now you have a range of 11 values in a column. Use appropriate cell referencing to calculate your volume formula on each value so you have a column of volume data.
-
-#### Question 3.4
 (a) Suppose later design reviews require you to model the thermometer with three or more simple, 3-dimensional shapes. What modifications would you make to your original two-shape model?
