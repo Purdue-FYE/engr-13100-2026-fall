@@ -31,7 +31,7 @@ parts:
         - file: Part_01_Professional_Development/M2_Teaming/1_TM1_inst
 
   - caption: Excel
-    numbered: 2
+    numbered: 3
     chapters:
     # Excel Module 1
     - file: Part_02_Excel/M1/0_overview
@@ -83,7 +83,7 @@ parts:
     - file: Part_03_AI/0_overview
   
   - caption: Python
-    numbered: 2
+    numbered: 3
     chapters:
     
     # Python Module 1
