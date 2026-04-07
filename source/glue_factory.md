@@ -62,12 +62,6 @@ glue('py1_pre_1_zip', 'py1_pre_1_username.zip', display=False)
 glue('py1_ind_1_report_pdf', 'py1_ind_1_report_username.pdf', display=False)
 glue('py1_ind_1_py', 'py1_ind_1_username.py', display=False)
 
-# py1_ind_2
-glue('py1_ind_2_pdf', 'py1_ind_2_username.pdf', display=False)
-glue('py1_ind_2_py', 'py1_ind_2_username.py', display=False)
-glue('py1_ind_2_xlsx', 'py1_ind_2_username.xlsx', display=False)
-glue('py1_ind_2_zip', 'py1_ind_2_username.zip', display=False)
-
 # py2_pre_1
 glue('py2_pre_1_pdf', 'py2_pre_1_username.pdf', display=False)
 glue('py2_pre_1_py', 'py2_pre_1_username.py', display=False)

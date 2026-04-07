@@ -34,7 +34,15 @@ def sanitize_token(value):
     return token
 
 def compute_assignment_id(path):
-    dir_name_str = str(path.as_posix())
+    # Normalize to repo-relative path so ID parsing is stable even when
+    # absolute paths are discovered.
+    path_obj = pathlib.Path(path)
+    try:
+        rel_path = path_obj.resolve().relative_to(PROJECT_ROOT.resolve())
+    except ValueError:
+        rel_path = path_obj
+
+    dir_name_str = str(rel_path.as_posix())
     unique_id = clean_id(dir_name_str)
     path_parts = unique_id.split("/")
 
@@ -386,18 +394,7 @@ def main():
     unique = []
     seen = {}
     for path in assignments:
-        dir_name_str = str(path.as_posix())
-        unique_id = clean_id(dir_name_str)
-        path_parts = unique_id.split("/")
-        try:
-            short_id = (
-                path_parts[1].split("_")[-1][0:2]
-                + path_parts[2].replace('m', '')
-                + "_"
-                + path_parts[4]
-            )
-        except IndexError:
-            short_id = unique_id.replace("/", "_")
+        short_id = compute_assignment_id(path)
 
         if short_id in seen:
             seen[short_id].append(path)

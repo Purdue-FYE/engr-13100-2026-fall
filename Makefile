@@ -16,13 +16,13 @@ quiz_files = $(wildcard source/quizzes/TTYK*.tex) $(wildcard source/quizzes/CQ*.
 grader_task_dirs = $(sort $(dir $(solutions_Py) $(solutions_Ex) $(solutions_MA)))
 archives = $(addsuffix autograder.zip,$(subst source/,source/_build/graders/,$(grader_task_dirs)))
 
-# Create a list of all sample output files to be generated, by scanning through
-# the test_cases, changing source to source/_build/intermediate, and changing
-# the file extension from .py to .md.
+# Create a list of all sample output files to be generated for code-based tasks
+# (.py and .m). Excel tasks keep solution.xlsx files, but do not produce
+# sample_output artifacts.
 #
 # E.g. source/Part_3_Python/M1/tasks/ind_2/a/test_cases.py
 #   -> source/_build/intermediate/Part_3_Python/M1/tasks/ind_2/a/solution.md
-sample_output = $(foreach file,$(solutions),\
+sample_output = $(foreach file,$(solutions_Py) $(solutions_MA),\
 	$(subst source/,source/_build/intermediate/,\
 		$(subst solution.,sample_output.,\
 			$(subst .py,.md,\
