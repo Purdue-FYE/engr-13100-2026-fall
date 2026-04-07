@@ -10,10 +10,12 @@ DEFAULT_DELIVERABLE_EXTENSIONS = ["pdf", "py", "xlsx", "zip"]
 TOKEN_SANITIZE_REGEX = re.compile(r"[^a-z0-9_]+")
 FRONT_MATTER_REGEX = re.compile(r"\A---\s*\n(.*?)\n---\s*(?:\n|$)", re.DOTALL)
 
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[2]
+SOURCE_DIR = PROJECT_ROOT / "source"
 # Assumes structure: project_root/source/_toc.yml
-TOC_FILE = "source/_toc.yml"
+TOC_FILE = SOURCE_DIR / "_toc.yml"
 # Must be inside source/ to be visible to Jupyter Book
-MASTER_NOTEBOOK = "source/glue_factory.md"
+MASTER_NOTEBOOK = SOURCE_DIR / "glue_factory.md"
 
 def load_toc(path):
     if not pathlib.Path(path).exists():
@@ -165,7 +167,7 @@ def get_assignment_deliverables(path, assignment_id):
 
     return deliverables
 
-def find_assignment_files(toc_data, base_path=pathlib.Path("./source")):
+def find_assignment_files(toc_data, base_path=SOURCE_DIR):
     found_files = []
     items = toc_data if isinstance(toc_data, list) else [toc_data]
     
