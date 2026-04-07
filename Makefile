@@ -5,18 +5,16 @@ URL = https://purdue-fye.github.io/$(REPO)
 # scanning through the tasks directories in each module.
 modules = $(wildcard source/Part*/M*)
 instructions = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*instructions.md))
+solutions_Ex = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*solution.xlsx))
 solutions_Py = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*solution.py))
 solutions_MA = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*solution.m))
-solutions = $(solutions_Py) $(solutions_MA)
+solutions = $(solutions_Ex) $(solutions_Py) $(solutions_MA)
 test_cases = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*test_cases.py))
 grader_files = $(wildcard grader/*)
 quiz_files = $(wildcard source/quizzes/TTYK*.tex) $(wildcard source/quizzes/CQ*.tex)
 
-archives = $(foreach file,$(solutions_Py),\
-	$(subst source/,source/_build/graders/,\
-		$(subst solution.py,autograder.zip,$(file))\
-	)\
-)
+grader_task_dirs = $(sort $(dir $(solutions_Py) $(solutions_Ex) $(solutions_MA)))
+archives = $(addsuffix autograder.zip,$(subst source/,source/_build/graders/,$(grader_task_dirs)))
 
 # Create a list of all sample output files to be generated, by scanning through
 # the test_cases, changing source to source/_build/intermediate, and changing
@@ -71,7 +69,7 @@ pub: all
 #  - % in the target matches the % in the prerequisites.
 #  - $(@D)  is the directory part of the filename.
 %autograder.zip : \
-	$$(wildcard $(@D)/*.py) $$(wildcard $(@D)/*.png) $$(wildcard $(@D)/*.txt) $(grader_files)
+	$$(wildcard $(@D)/*.py) $$(wildcard $(@D)/*.png) $$(wildcard $(@D)/*.txt) $$(wildcard $(@D)/*.xlsx) $(grader_files)
 	python3 source/generate_graders.py "$(@D)"
 
 # Clean up

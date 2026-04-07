@@ -5,6 +5,7 @@ Xvfb :1 &
 export DISPLAY=:1
 
 # Set up autograder files
+cp /autograder/submission/*.xlsx /autograder/source
 cp /autograder/submission/*.py /autograder/source
 cd /autograder/source
 

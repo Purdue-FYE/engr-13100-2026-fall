@@ -25,4 +25,4 @@ source env/bin/activate
 
 # Upgrade pip, then install wheel so we won't have to build other requirements.
 python3.13 -m pip install --upgrade pip wheel
-python3.13 -m pip install generic-grader pandas faker opencv-python
+python3.13 -m pip install git+https://github.com/pritchettk/generic-grader git+https://github.com/pritchettk/gradescope-utils-extended pandas faker opencv-python
