@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (Py:M2:py2_pre_1)=
-# Pre-Class Activity #X: Logic & Modularity
+# PCA #X: Logic & Modularity
 
 ## Learning Objectives
 

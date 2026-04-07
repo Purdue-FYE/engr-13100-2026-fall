@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (Py:M3:py3_pre_1)=
-# Pre-Class Activity #X: Looping Structures
+# PCA #X: Looping Structures
 
 ## Learning Objectives
 

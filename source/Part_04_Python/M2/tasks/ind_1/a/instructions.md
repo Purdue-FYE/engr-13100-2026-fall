@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (Py:M2:py2_ind_1)=
-# PY2 Logic & Modularity
+# Individual Assignment #X: Logic & Modularity
 
 ## In this assignment, you will:
 

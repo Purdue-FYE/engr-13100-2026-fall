@@ -84,6 +84,7 @@ parts:
   - caption: Python
     numbered: 2
     chapters:
+    
     # Python Module 1
     - file: Part_04_Python/M1/0_overview
       sections:
@@ -101,7 +102,7 @@ parts:
       - file: Part_04_Python/M1/2_assignments
         sections:
         - file: Part_04_Python/M1/tasks/ind_1/b/instructions
-        - file: Part_04_Python/M1/tasks/ind_2/b/instructions
+        # - file: Part_04_Python/M1/tasks/ind_2/b/instructions
 
     # Python Module 2
     - file: Part_04_Python/M2/0_overview
