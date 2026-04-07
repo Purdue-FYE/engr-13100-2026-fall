@@ -15,7 +15,7 @@ deliverables:
 ```
 
 (Py:M1:py1_ind)=
-# PY1 Python Foundations
+# Individual Assignment #X: Python Foundations
 
 ## In this assignment, you will:
 

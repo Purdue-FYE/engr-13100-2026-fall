@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (Py:M4:py4_pre_2)=
-# Pre-Class Activity #X: Data Analysis & Visualization
+# PCA #X: Plotting & Statistics
 
 ## Learning Objectives
 
