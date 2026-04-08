@@ -1,0 +1,598 @@
+<style>
+:root {
+  --sch-col-1: 7rem;
+  --sch-col-3: 4.5rem;
+  --sch-col-4: 12rem;
+  --sch-col-5: 8rem;
+
+  --sch-text: #1f2937;
+  --sch-border: #d1d5db;
+  --sch-surface: #ffffff;
+
+  --sch-exam-header-bg: transparent;
+  --sch-exam-row-bg: #f8fbff;
+
+  --sch-week-bg: transparent;
+  --sch-week-text: #374151;
+
+  --sch-class-bg: #e9eef4;
+  --sch-class-text: #1f2937;
+
+  --sch-break-bg: #fef3c7;
+  --sch-break-text: #78350f;
+
+  --sch-assignment-head-bg: #f7f8fa;
+  --sch-assignment-head-text: #4b5563;
+
+  --sch-assignment-body-bg: #ffffff;
+  --sch-assignment-body-text: #1f2937;
+}
+
+html[data-theme="dark"] {
+  --sch-text: #e5e7eb;
+  --sch-border: #374151;
+  --sch-surface: transparent;
+
+  --sch-exam-header-bg: transparent;
+  --sch-exam-row-bg: #111827;
+
+  --sch-week-bg: transparent;
+  --sch-week-text: #d1d5db;
+
+  --sch-class-bg: #1b2430;
+  --sch-class-text: #f3f4f6;
+
+  --sch-break-bg: #3f2f12;
+  --sch-break-text: #fef3c7;
+
+  --sch-assignment-head-bg: #111827;
+  --sch-assignment-head-text: #d1d5db;
+
+  --sch-assignment-body-bg: #0b1220;
+  --sch-assignment-body-text: #f3f4f6;
+
+  .exam-slot-row td {
+  background: #1e293b;
+  color: #BBD9FC;
+}
+}
+
+.schedule-wrap {
+  max-width: 1100px;
+  margin: 1.5rem auto;
+  color: var(--sch-text);
+}
+
+.schedule-meta {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.week-block {
+  margin-bottom: 1rem;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+    min-width: 700px;
+}
+
+.schedule-table td,
+.schedule-table th {
+  border: 1px solid var(--sch-border);
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  color: inherit;
+}
+
+.schedule-table tr:hover td,
+.schedule-table tr:hover th {
+  background: inherit;
+  color: inherit;
+}
+
+.exam-table {
+  margin-bottom: 1.25rem;
+  min-width: 700px;
+}
+
+.exam-header td {
+  background: var(--sch-exam-header-bg);
+  color: var(--sch-text);
+  font-weight: 700;
+  padding: 0.6rem 0.75rem 0.6rem 1rem;
+  font-size: 1.2rem;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 2px solid var(--sch-border);
+  padding-left: 0.2rem;
+}
+
+.exam-row td {
+  background: var(--sch-exam-row-bg);
+  color: var(--sch-text);
+}
+
+.exam-row td:first-child {
+  width: var(--sch-col-1);
+  white-space: nowrap;
+}
+
+.week-label td {
+  background: var(--sch-week-bg);
+  color: var(--sch-week-text);
+  font-weight: 700;
+  font-size: 1.2rem; 
+  padding: 0.55rem 0.25rem 0.55rem 1rem;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid var(--sch-border);
+  padding-left: 0.2rem;
+}
+
+.class-row td {
+  background: var(--sch-class-bg);
+  color: var(--sch-class-text);
+  font-weight: 600;
+}
+
+.break-row td {
+  background: var(--sch-break-bg);
+  color: var(--sch-break-text);
+  font-weight: 600;
+}
+
+/* ================================
+   Exam rows inside weekly schedule
+   ================================ */
+.exam-slot-row td {
+  background: #e6fffb;   /* very light turquoise */
+  color: #0f766e;        /* teal text */
+  font-weight: 600;
+}
+
+.assignment-head th {
+  background: var(--sch-assignment-head-bg);
+  color: var(--sch-assignment-head-text);
+  font-weight: 600;
+}
+
+.assignment-body td {
+  background: var(--sch-assignment-body-bg);
+  color: var(--sch-assignment-body-text);
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sch-col-1: 5.5rem;
+    --sch-col-3: 3.5rem;
+    --sch-col-4: 6.5rem;
+    --sch-col-5: 5.5rem;
+  }
+
+  .schedule-table,
+  .assignment-table {
+    font-size: 0.82rem;
+  }
+
+  .schedule-table td,
+  .schedule-table th,
+  .assignment-table td,
+  .assignment-table th {
+    padding: 0.45rem 0.5rem;
+  }
+
+  .nowrap {
+    white-space: normal;
+  }
+}
+
+.schedule-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.assignment-body td:nth-child(2),
+.assignment-head th:nth-child(2) {
+  min-width: 12rem;
+}
+
+</style>
+
+<div class="schedule-wrap">
+  <div class="schedule-meta"><strong>Semester:</strong> Fall 2026</div>
+  <div class="schedule-scroll">
+  <table class="schedule-table exam-table">
+    <colgroup>
+      <col style="width: var(--sch-col-1)">
+      <col>
+    </colgroup>
+    <tbody>
+      <tr class="exam-header"><td colspan="2">Exam Schedule</td></tr>
+      <tr class="exam-row"><td class="nowrap">Exam 1</td><td>In-Class Exam (Class 5A)</td></tr>
+      <tr class="exam-row"><td class="nowrap">Exam 2</td><td>In-Class Exam (Class 10A)</td></tr>
+      <tr class="exam-row"><td class="nowrap">Exam 3</td><td>In-Class Exam (Class 13A)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 1 -- 8/24-8/28</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 1A</td><td colspan="4">Course Introduction</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">0.0</td><td>Course Policies Exploration</td><td class="nowrap">10</td><td>Individual Assignment</td><td>Class 1B</td></tr>
+        <tr class="assignment-body"><td class="nowrap">XL1.1</td><td>Spreadsheet Foundations</td><td class="nowrap">2</td><td>Pre-Class Activity</td><td>Class 1B</td></tr>
+        <tr class="assignment-body"><td class="nowrap">CAT0</td><td>CATME Team Formation Survey</td><td class="nowrap">5</td><td>Individual Assignment</td><td>Class 1B</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 1B</td><td colspan="4">XL1: Spreadsheet Foundations</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">XL2.1A</td><td>Descriptive Statistics and Logical Functions</td><td class="nowrap">2</td><td>Pre-Class Activity</td><td>Class 2A</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 2 -- 8/31-9/4</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 2A</td><td colspan="4">XL2: Descriptive Statistics and Logical Functions</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">XL2.1B</td><td>Distributions - Histograms and Outliers</td><td class="nowrap">2</td><td>Pre-Class Activity</td><td>Class 2B</td></tr>
+        <tr class="assignment-body"><td class="nowrap">XL2.2</td><td>Data Analysis in Excel</td><td class="nowrap">10</td><td>Individual Assignment</td><td>Class 3A</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 2B</td><td colspan="4">XL2: Distributions - Histograms and Outliers</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">XL3.1</td><td>Probability</td><td class="nowrap">2</td><td>Pre-Class Activity</td><td>Class 3A</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 3 -- 9/7-9/11</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 3A</td><td colspan="4">XL3: Probability</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">XL4.1</td><td>Linear Regression in Excel</td><td class="nowrap">2</td><td>Pre-Class Activity</td><td>Class 3B</td></tr>
+        <tr class="assignment-body"><td class="nowrap">XL3.2</td><td>Probability &amp; Regression</td><td class="nowrap">10</td><td>Individual Assignment</td><td>Class 4A</td></tr>
+        <tr class="assignment-body"><td class="nowrap">TM1</td><td>Teaming Fundamentals</td><td class="nowrap">5</td><td>Pre-Class Activity</td><td>Class 4A</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 3B</td><td colspan="4">XL4: Linear Regression</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">AI.1</td><td>AI Placeholders</td><td class="nowrap">2</td><td>Pre-Class Activity</td><td>Class 4A</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 4 -- 9/14-9/18</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 4A</td><td colspan="4">AI: AI Placeholder?</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">AI.2</td><td>AI Placeholders</td><td class="nowrap">10</td><td>Individual Assignment</td><td>Class 5A</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 4B</td><td colspan="4">AI: AI Placeholder? (cont.)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 5 -- 9/21-9/25</td></tr>
+        <tr class="exam-slot-row"><td class="nowrap">Class 5A</td><td colspan="4">Exam</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 5B</td><td colspan="4">PY1: Python Foundations</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">PY1.1</td><td>Python Foundations</td><td class="nowrap">2</td><td>Pre-Class Activity</td><td>Class 6A</td></tr>
+        <tr class="assignment-body"><td class="nowrap">PY1.2</td><td>Python Foundations</td><td class="nowrap">10</td><td>Individual Assignment</td><td>Class 6B</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 6 -- 9/28-10/2</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 6A</td><td colspan="4">PY1: Sequences/Strings/Modules</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">PY2.1A</td><td>Selections Structures</td><td class="nowrap">2</td><td>Pre-Class Activity</td><td>Class 6B</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 6B</td><td colspan="4">PY2: Selection Structures</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">PY2.1B</td><td>User-Defined Functions</td><td class="nowrap">2</td><td>Pre-Class Activity</td><td>Class 7A</td></tr>
+        <tr class="assignment-body"><td class="nowrap">PY2.2</td><td>Logic &amp; Modularity</td><td class="nowrap">10</td><td>Individual Assignment</td><td>Class 7B</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 7 -- 10/5-10/9</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 7A</td><td colspan="4">PY2: User-Defined Functions</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">PY3.1A</td><td>While Loops</td><td class="nowrap">2</td><td>Pre-Class Activity</td><td>Class 7B</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 7B</td><td colspan="4">PY3: While Loops</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">PY3.1B</td><td>For Loops</td><td class="nowrap">2</td><td>Pre-Class Activity</td><td>Class 8B</td></tr>
+        <tr class="assignment-body"><td class="nowrap">PY3.2</td><td>Looping Structures</td><td class="nowrap">10</td><td>Individual Assignment</td><td>Class 9A</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 8 -- 10/12-10/16</td></tr>
+        <tr class="break-row"><td class="nowrap">Class 8A</td><td colspan="4">Fall Break</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 8B</td><td colspan="4">PY3: For Loops</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 9 -- 10/19-10/23</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 9A</td><td colspan="4">PY4: Data Manipulation (pandas/numpy)</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 9B</td><td colspan="4">PY4: Data Visualization &amp; Statistics</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 10 -- 10/26-10/30</td></tr>
+        <tr class="exam-slot-row"><td class="nowrap">Class 10A</td><td colspan="4">Exam</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 10B</td><td colspan="4">PY5: Linear Regression in PY</td></tr>
+        <tr class="assignment-head">
+          <th>Assignment</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Type</th>
+          <th>Due Date</th>
+        </tr>
+        <tr class="assignment-body"><td class="nowrap">TP1</td><td>Design Project Proposal</td><td class="nowrap">20</td><td>Team Assignment</td><td>Class 11A</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 11 -- 11/2-11/6</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 11A</td><td colspan="4">PY5: Linear Regression in PY (cont.)</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 11B</td><td colspan="4">TP: Design Project</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 12 -- 11/9-11/13</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 12A</td><td colspan="4">TP: Design Project (cont.)</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 12B</td><td colspan="4">TP: Design Project (cont.)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 13 -- 11/16-11/20</td></tr>
+        <tr class="exam-slot-row"><td class="nowrap">Class 13A</td><td colspan="4">Exam</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 13B</td><td colspan="4">TP: Design Project (cont.)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 14 -- 11/23-11/27</td></tr>
+        <tr class="break-row"><td class="nowrap">Class 14A</td><td colspan="4">Thanksgiving Break</td></tr>
+        <tr class="break-row"><td class="nowrap">Class 14B</td><td colspan="4">Thanksgiving Break</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 15 -- 11/30-12/4</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 15A</td><td colspan="4">TP: Design Project (cont.)</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 15B</td><td colspan="4">TP: Design Project (cont.)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="week-block schedule-scroll">
+    <table class="schedule-table week-table">
+      <colgroup>
+        <col style="width: var(--sch-col-1)">
+        <col>
+        <col style="width: var(--sch-col-3)">
+        <col style="width: var(--sch-col-4)">
+        <col style="width: var(--sch-col-5)">
+      </colgroup>
+      <tbody>
+        <tr class="week-label"><td colspan="5">Week 16 -- 12/7-12/11</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 16A</td><td colspan="4">TP: Design Project (cont.)</td></tr>
+        <tr class="class-row"><td class="nowrap">Class 16B</td><td colspan="4">Course Wrap-up</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
