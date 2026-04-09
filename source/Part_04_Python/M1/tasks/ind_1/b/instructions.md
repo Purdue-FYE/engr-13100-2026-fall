@@ -14,10 +14,11 @@ deliverables:
 ```{include} /macros.md
 ```
 
-(Py:M1:py1_ind)=
-# Assignment #X: Python Foundations
+(mod:py1_assignment)=
+# Assignment: Python Foundations
 
-## In this assignment, you will:
+
+## In this assignment you will:
 
 - Collect and validate user input using variables and appropriate data types
 - Simulate medical device testing using randomly generated data
@@ -43,7 +44,7 @@ deliverables:
 
 You are a Biomedical Engineer working in a research and development lab. Your supervisor has asked you to create a Python program that simulates testing a new medical device prototype.
 
-### Files Needed
+### Deliverables
 
 Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:`. Use the sample output section below to verify that your program outputs correct values.
 
@@ -55,7 +56,7 @@ Remember to include comments in your python script to practice professional prog
 
 ### Program Requirements
 
-#### Part 1: User Input
+#### Step 1: User Input
 
 Your program must ask the user for:
 1. The medical device name
@@ -63,17 +64,17 @@ Your program must ask the user for:
 3. Researcher’s last name
 4. Researcher’s title
 
-#### Part 2: Professional Header
+#### Step 2: Professional Header
 
 Output a clear, professional header that includes:
 - The test information provided by the user
 - The date and time of the test (timestamp)
 
-#### Part 3: Simulated Test Data
+#### Step 3: Simulated Test Data
 
 Generate at least 5 random test values between 5 and 100. Store the values in a list.
 
-#### Part 4: Mathematical Analysis
+#### Step 4: Mathematical Analysis
 
 Using the list of test values, your program must:
 - Calculate and display the average test value
@@ -85,7 +86,7 @@ Using the list of test values, your program must:
 All values must be clearly labeled and formatted with two decimal places.
 ```
 
-#### Part 5: Pass/Fail Evaluation
+#### Step 5: Pass/Fail Evaluation
 
 You must determine whether the device passes or fails based on this rule:
 
@@ -97,7 +98,7 @@ If the average test value is greater than or equal to a defined passing threshol
 Because we have not covered {python}`if` statements yet in this course, you cannot use an {python}`if` statement for this part of the assignment.
 ```
 
-#### Part 6: String Processing & Data Organization
+#### Step 6: String Processing & Data Organization
 
 Your program must demonstrate:
 - String concatenation or repetition in at least one output line
@@ -114,10 +115,6 @@ Your program output must include:
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M1/tasks/ind_1/b/sample_output.md
 ```
-
-### Deliverables
-
-Submit your python file {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
 
 ## Q2 Medical Device Prototype Testing Report
 
