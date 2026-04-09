@@ -1,19 +1,18 @@
 # `instructions.md` Template
 
-This is the canonical starting point for a new task's `instructions.md`.  Copy this
-file into the task directory, rename it `instructions.md`, and fill in every
+This is the canonical starting point for a new assignment's `instructions.md`.  Copy this
+file into the assignment directory, rename it `instructions.md`, and fill in every
 `PLACEHOLDER` token.  Delete comment lines (starting with `<!--`) before committing.
 
-**Label conventions by task type:**
+**Label conventions by assignment type:**
 
-| Task type | Label format example |
+| assignment type | Label format example |
 |---|---|
-| Team project task | `(tp:m3:team:task_1)=` |
-| Python module pre-class| `(mod:py5_team_3)=` |
-| Python module assignment | `(mod:py5_ind_1)=` |
-| Python module pre-task | `(mod:py5_pre_0)=` |
+| Team project assignment | `(tp:m3:team:assignment_1)=` |
+| Python module assignment | `(mod:py5_assignment)=` |
+| Python module pre-class | `(mod:py5_pre_1)=` |
 
-See sibling tasks in the same module for the exact prefix used in that module.
+See sibling assignments in the same module for the exact prefix used in that module.
 
 **Deliverable naming conventions:**
 
@@ -25,6 +24,10 @@ Each list entry is a **token** of the form `label_ext` (split on the *last*
 underscore).  `ext` becomes the file extension; `label` is prepended to the
 assignment ID in the filename.  Omitting `deliverables:` entirely falls back to
 the default set: `pdf`, `py`, `xlsx`, `zip`.
+
+Anytime a deliverable is referenced in the body of `instructions.md`, the author
+should use the `label_ext` token. This token will be replaced by its corresponding
+glue key when the course website is published.
 
 ```yaml
 # Single deliverable — no label, just an extension
@@ -62,26 +65,32 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+<!-- Replace LABEL_EXT with the deliverable name (if needed) and extension
+for this assignment (see conventions above) -->
 deliverables:
-  - report_pdf
-  - py 
+  - LABEL_EXT
 ---
 ```{include} /macros.md
 ```
 
-<!-- Replace ASSIGNMENT_LABEL with the label for this task (see conventions above) -->
+<!-- Replace ASSIGNMENT_LABEL with the label for this assignment (see conventions above) -->
 (ASSIGNMENT_LABEL)=
-# Task N <!-- Replace N with the task number -->
+# assignment N <!-- Replace N with the assignment number -->
 
+
+## In this assignment you will:
+<!-- List concrete, student-facing learning outcomes for this assignment. -->
+- PLACEHOLDER
 
 ## Learning Objectives
 
-<!-- List 3-5 concrete, student-facing learning outcomes for this task. -->
+<!-- List course learning objectives connected to this assignment. -->
 - PLACEHOLDER
 - PLACEHOLDER
 
+## Q1: DESCRIPTIVE QUESTION TITLE
 
-## Introduction
+### Background
 
 <!-- Conceptual and motivational content: why this technique is used, how it compares
      to alternatives, background theory, and illustrative figures.  This section
@@ -91,22 +100,21 @@ deliverables:
 PLACEHOLDER
 
 
-## Task Instructions
+### Deliverables
+
+
+<!-- Replace the glue paths with the correct deliverable keys for this assignment. -->
+Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as LABEL_EXT. Use the sample output section below to verify that your program outputs correct values.
 
 ```{admonition} Deliverable Reminder
-:class: tip
+:class: note
 
-<!-- Replace the glue paths with the correct deliverable keys for this task. -->
-Create a flowchart of your algorithm and save it as
-{glue:text}`../../../1_team_assignments.md::DELIVERABLE_KEY_PDF:`.
-Start your program from a copy of the
-{download}`ENGR133_Python_Template.py<../../../../ENGR133_Python_Template.py>`
-template and name it
-{glue:text}`../../../1_team_assignments.md::DELIVERABLE_KEY_PY:`.
+Remember to include comments in your python script to practice professional programming standards.
 ```
 
-<!-- Brief framing sentence for the Task Instructions section if needed, e.g.:
-     "In this task, you will build a ..."  Keep this short; details belong in Steps. -->
+### Program Requirements
+<!-- Brief framing sentence for the assignment Instructions section if needed, e.g.:
+     "In this assignment, you will build a ..."  Keep this short; details belong in Steps. -->
 
 PLACEHOLDER
 
@@ -116,8 +124,8 @@ PLACEHOLDER
      Number steps from 1 upward.  The last step is always main().
      ---------------------------------------------------------------- -->
 
-<!-- Replace TASK_LABEL_step_1 with e.g. tp:m3:team:task_1_step_1 -->
-(TASK_LABEL_step_1)=
+<!-- Replace assignment_LABEL_step_1 with e.g. tp:m3:team:assignment_1_step_1 -->
+(assignment_LABEL_step_1)=
 ## Step 1: Function Name
 
 <!-- One sentence identifying the function. -->
@@ -148,17 +156,17 @@ Returns:
 PLACEHOLDER
 ```
 
-<!-- Optional: Note admonition when students must copy a function from a prior task.
-     Reference the prior task with a {numref} or {ref} directive. -->
+<!-- Optional: Note admonition when students must copy a function from a prior assignment.
+     Reference the prior assignment with a {numref} or {ref} directive. -->
 ```{admonition} Note
 :class: note
 
 You will need the {python}`helper_function` function developed in
-{numref}`PRIOR_TASK_LABEL`.  Copy it into your program.
+{numref}`PRIOR_assignment_LABEL`.  Copy it into your program.
 ```
 
 
-(TASK_LABEL_step_N)=
+(assignment_LABEL_step_N)=
 ## Step N: Main Function
 
 <!-- The main function description.  No Arguments: / Returns: block needed unless the
@@ -171,8 +179,8 @@ Create a {python}`main` function that PLACEHOLDER.
 ```{admonition} Note
 :class: note
 
-<!-- List any helper functions students must copy from prior tasks. -->
-You will need the following functions developed in {numref}`PRIOR_TASK_LABEL`.
+<!-- List any helper functions students must copy from prior assignments. -->
+You will need the following functions developed in {numref}`PRIOR_assignment_LABEL`.
 Copy them into your program.
 
 - {python}`function_a`: PLACEHOLDER.
