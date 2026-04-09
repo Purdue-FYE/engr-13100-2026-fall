@@ -17,9 +17,37 @@ See sibling tasks in the same module for the exact prefix used in that module.
 
 **Deliverable naming conventions:**
 
-Deliverables are defined in the frontmatter of an `instructions.md` file. You
-may define as many deliverables as you like. If multiple deliverables have the
-same file extension (e.g. pdf), each one will need a unique name. 
+Deliverables are defined in the YAML frontmatter of an `instructions.md` file
+under a `deliverables:` key.  `manage_deliverables.py` reads this list to
+generate student-facing filenames and the glue keys used to display them.
+
+Each list entry is a **token** of the form `label_ext` (split on the *last*
+underscore).  `ext` becomes the file extension; `label` is prepended to the
+assignment ID in the filename.  Omitting `deliverables:` entirely falls back to
+the default set: `pdf`, `py`, `xlsx`, `zip`.
+
+```yaml
+# Single deliverable — no label, just an extension
+deliverables:
+  - py                 # → {assignment_id}_username.py
+
+# Two deliverables of different types — labels are optional when extensions differ
+deliverables:
+  - report_pdf         # → {assignment_id}_report_username.pdf
+  - py                 # → {assignment_id}_username.py
+
+# Two PDFs — a unique label is required for each so their tokens differ
+deliverables:
+  - report_pdf         # → {assignment_id}_report_username.pdf
+  - appendix_pdf       # → {assignment_id}_appendix_username.pdf
+  - py                 # → {assignment_id}_username.py
+```
+
+To reference a deliverable in the body, use the **placeholder** pattern
+`deliverable_TOKEN` (e.g. `deliverable_report_pdf`).  The
+`audit_and_fix_references` pass in `manage_deliverables.py` (run via
+`make deliverables`) will expand it to the correct `{glue:text}` directive with
+the proper path and glue key automatically.
 ---
 
 <!-- ================================================================
@@ -34,12 +62,15 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+deliverables:
+  - report_pdf
+  - py 
 ---
 ```{include} /macros.md
 ```
 
-<!-- Replace TASK_LABEL with the label for this task (see conventions above) -->
-(TASK_LABEL)=
+<!-- Replace ASSIGNMENT_LABEL with the label for this task (see conventions above) -->
+(ASSIGNMENT_LABEL)=
 # Task N <!-- Replace N with the task number -->
 
 
