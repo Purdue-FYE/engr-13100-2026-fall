@@ -27,18 +27,16 @@ kernelspec:
 - PR07: Test cases & Tracking
 - PR08: Debugging
 
-## Q1 Medical Device Prototype Testing Program
+## Q1 Robot Workflow Optimization
 (XX Points)
 
 ### Background
 
-Industrial engineering - Optimize processes and workflows, improve workflows and efficiency
-- incorporate flowcharts to visualize processes/workflows
-- How can they be more efficient? Create a new flowchart that is more efficient than the current one; treat it as an algorithm
-- Robotics? What robots do we have in the purdue IE building that students are working on? (step-by-step instructions for the robot? be efficient!)
-- Each UDF will trigger a different robot action. If statements can be used for robot environment conditions - what does it have to overcome?
-- Print statements can be used as actions ("alarm - beep beep robot needs help" OR backing up; lights turning on and off)
-  - explain to students that the print statements are a replacement for the code that IEs will use in real life
+Industrial engineers design efficient workflows for systems such as manufacturing lines and robotic processes.
+
+In this assignment, you will first create a flowchart that models how a robot responds to different conditions in a workflow. You will then translate this flowchart into a Python program that executes the same process.
+
+Think of your flowchart as a visual representation of an algorithm, and your code as the step-by-step decision-making system that a robot would follow in a real-world environment.
 
 ## Files Needed
 
