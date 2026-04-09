@@ -13,8 +13,8 @@ deliverables:
 ---
 ```{include} /macros.md
 ```
-(Ex:M1:task0)=
-# PCA #1: Calculations and Charting in Excel
+(EX:M1:PCA1)=
+# PCA: Calculations and Charting in Excel
 
 ## Learning Objectives
 

@@ -11,7 +11,7 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Ex:M1:Excel_1)=
+(EX:M1:Excel_1)=
 # Spreadsheet Foundations
 This module introduces students to the structure and expectations of ENGR 131 while establishing foundational spreadsheet skills using Microsoft Excel. Students will learn how engineers organize data, perform structured calculations, and visually communicate results.
 

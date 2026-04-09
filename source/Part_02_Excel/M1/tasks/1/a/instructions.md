@@ -7,11 +7,11 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+deliverables:
+  - PowerDataValues_pdf
+  - PowerDataFormulas_pdf
 ---
 ```{include} /macros.md
 ```
-
-(Ex:M1:individual)=
-# Individual Assignments
-
-Content for this module is under development.
+(EX:M1:A1)=
+# EX: Assignment Title

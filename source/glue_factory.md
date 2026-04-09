@@ -42,15 +42,33 @@ import pathlib
 #   - label: analysis
 #     ext: py
 
-# ex1_pre_0
-glue('ex1_pre_0_powerdatavalues_pdf', 'ex1_pre_0_powerdatavalues_username.pdf', display=False)
-glue('ex1_pre_0_powerdataformulas_pdf', 'ex1_pre_0_powerdataformulas_username.pdf', display=False)
+# ex1_pre_1
+glue('ex1_pre_1_powerdatavalues_pdf', 'ex1_pre_1_powerdatavalues_username.pdf', display=False)
+glue('ex1_pre_1_powerdataformulas_pdf', 'ex1_pre_1_powerdataformulas_username.pdf', display=False)
+
+# ex1_ica_1
+glue('ex1_ica_1_powerdatavalues_pdf', 'ex1_ica_1_powerdatavalues_username.pdf', display=False)
+glue('ex1_ica_1_powerdataformulas_pdf', 'ex1_ica_1_powerdataformulas_username.pdf', display=False)
 
 # ex2_pre_1
 glue('ex2_pre_1_pdf', 'ex2_pre_1_username.pdf', display=False)
 glue('ex2_pre_1_py', 'ex2_pre_1_username.py', display=False)
 glue('ex2_pre_1_xlsx', 'ex2_pre_1_username.xlsx', display=False)
 glue('ex2_pre_1_zip', 'ex2_pre_1_username.zip', display=False)
+
+# ex2_pre_2
+glue('ex2_pre_2_pdf', 'ex2_pre_2_username.pdf', display=False)
+glue('ex2_pre_2_py', 'ex2_pre_2_username.py', display=False)
+glue('ex2_pre_2_xlsx', 'ex2_pre_2_username.xlsx', display=False)
+glue('ex2_pre_2_zip', 'ex2_pre_2_username.zip', display=False)
+
+# ex2_ica_1
+glue('ex2_ica_1_powerdatavalues_pdf', 'ex2_ica_1_powerdatavalues_username.pdf', display=False)
+glue('ex2_ica_1_powerdataformulas_pdf', 'ex2_ica_1_powerdataformulas_username.pdf', display=False)
+
+# ex2_1
+glue('ex2_1_powerdatavalues_pdf', 'ex2_1_powerdatavalues_username.pdf', display=False)
+glue('ex2_1_powerdataformulas_pdf', 'ex2_1_powerdataformulas_username.pdf', display=False)
 
 # py1_pre_1
 glue('py1_pre_1_pdf', 'py1_pre_1_username.pdf', display=False)
