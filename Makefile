@@ -72,6 +72,11 @@ pub: all
 	$$(wildcard $(@D)/*.py) $$(wildcard $(@D)/*.png) $$(wildcard $(@D)/*.txt) $$(wildcard $(@D)/*.xlsx) $(grader_files)
 	python3 source/generate_graders.py "$(@D)"
 
+# Make schedule document: 
+schedule:
+	python3 /workspaces/13100_content/source/Part_00_Course_Resources/generate_schedule.py
+	make pub
+
 # Clean up
 clean:
 	jupyter-book clean source/
