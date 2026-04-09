@@ -1,0 +1,22 @@
+class_slot,assignment_id,name,points,type,due_date
+1A,0.0,Course Policies Exploration,10,Individual Assignment,Class 1B
+1A,XL1.1,Spreadsheet Foundations,2,Pre-Class Activity,Class 1B
+1B,XL2.1A,Descriptive Statistics and Logical Functions,2,Pre-Class Activity,Class 2A
+2A,XL2.1B,Distributions - Histograms and Outliers,2,Pre-Class Activity,Class 2B
+2B,XL3.1,Probability,2,Pre-Class Activity,Class 3A
+3A,XL4.1,Linear Regression in Excel,2,Pre-Class Activity,Class 3B
+3B,AI.1,AI Placeholders,2,Pre-Class Activity,Class 4A
+2A,XL2.2,Data Analysis in Excel,10,Individual Assignment,Class 3A
+3A,XL3.2,Probability & Regression,10,Individual Assignment,Class 4A
+4A,AI.2,AI Placeholders,10,Individual Assignment,Class 5A
+5B,PY1.1,Python Foundations,2,Pre-Class Activity,Class 6A
+6A,PY2.1A,Selections Structures,2,Pre-Class Activity,Class 6B
+6B,PY2.1B,User-Defined Functions,2,Pre-Class Activity,Class 7A
+7A,PY3.1A,While Loops,2,Pre-Class Activity,Class 7B
+7B,PY3.1B,For Loops,2,Pre-Class Activity,Class 8B
+5B,PY1.2,Python Foundations,10,Individual Assignment,Class 6B
+6B,PY2.2,Logic & Modularity,10,Individual Assignment,Class 7B
+7B,PY3.2,Looping Structures,10,Individual Assignment,Class 9A
+3A,TM1,Teaming Fundamentals,5,Pre-Class Activity,Class 4A
+1A,CAT0,CATME Team Formation Survey,5,Individual Assignment,Class 1B
+10B,TP1,Design Project Proposal,20,Team Assignment,Class 11A
