@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (PD:M2:TM1)=
-# TM1: Teaming Fundamentals
+# PCA: Teaming Fundamentals
 This activity checks your understanding of the core teaming concepts introduced in the Teaming PCM. These concepts include the benefits of teamwork, stages of team development, common team roles, and tools that help teams work effectively.
 
 ## Instructions

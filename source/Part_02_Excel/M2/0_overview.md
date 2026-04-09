@@ -11,7 +11,7 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Ex:M2:Excel_2)=
+(EX:M2:Overview)=
 # Data Analysis in Excel
 This module builds on the spreadsheet skills introduced in Module 1 by focusing on how engineers analyze and interpret data using Microsoft Excel. Students will learn how to summarize datasets, compare groups, and identify meaningful patterns in experimental results.
 

@@ -12,8 +12,8 @@ deliverables:
 ---
 ```{include} /macros.md
 ```
-(Ex:M2:task0)=
-# PCA02: Descriptive Statistics & Logical Functions
+(EX:M2:PCA1)=
+# PCA: Descriptive Statistics & Logical Functions
 
 ## Learning Objectives
 
@@ -22,7 +22,7 @@ deliverables:
 {{PR05}}
 
 ## Files Needed
-Download and open the following file for this activity:{download}`PCA02_BatteryLife_login.xlsx<PCA02_BatteryLife_login.xlsx>`
+Download and open the following file for this activity:{download}`PCA_BatteryLife_login.xlsx<PCA_BatteryLife_login.xlsx>`
 
 ## Deliverables
 You will complete your work in the provided Excel file and submit:
