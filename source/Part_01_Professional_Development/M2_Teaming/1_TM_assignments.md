@@ -17,14 +17,15 @@ kernelspec:
 
 The Team Assignments in ENGR 131 are designed to help you build effective collaboration skills while applying course concepts in a team setting. These materials will support you as you learn how to communicate professionally, contribute to shared goals, and work productively with others.
 
-## What to Expect
-
+```{rubric} What to Expect
+```
 - Read the teaming materials to learn strategies for successful collaboration.
 - Review expectations for professional communication, team roles, and shared responsibilities.
 - Complete team assignments that help you practice planning, participation, and accountability.
 - Revisit these materials as needed throughout the semester to support your team’s success.
 
-## Materials and Activities for this Module
+```{rubric} Materials and Activities for this Module
+```
 
 ```{tableofcontents}
 ```
