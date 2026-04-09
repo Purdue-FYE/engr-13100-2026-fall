@@ -10,10 +10,12 @@ DEFAULT_DELIVERABLE_EXTENSIONS = ["pdf", "py", "xlsx", "zip"]
 TOKEN_SANITIZE_REGEX = re.compile(r"[^a-z0-9_]+")
 FRONT_MATTER_REGEX = re.compile(r"\A---\s*\n(.*?)\n---\s*(?:\n|$)", re.DOTALL)
 
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[2]
+SOURCE_DIR = PROJECT_ROOT / "source"
 # Assumes structure: project_root/source/_toc.yml
-TOC_FILE = "source/_toc.yml"
+TOC_FILE = SOURCE_DIR / "_toc.yml"
 # Must be inside source/ to be visible to Jupyter Book
-MASTER_NOTEBOOK = "source/glue_factory.md"
+MASTER_NOTEBOOK = SOURCE_DIR / "glue_factory.md"
 
 def load_toc(path):
     if not pathlib.Path(path).exists():
@@ -32,7 +34,15 @@ def sanitize_token(value):
     return token
 
 def compute_assignment_id(path):
-    dir_name_str = str(path.as_posix())
+    # Normalize to repo-relative path so ID parsing is stable even when
+    # absolute paths are discovered.
+    path_obj = pathlib.Path(path)
+    try:
+        rel_path = path_obj.resolve().relative_to(PROJECT_ROOT.resolve())
+    except ValueError:
+        rel_path = path_obj
+
+    dir_name_str = str(rel_path.as_posix())
     unique_id = clean_id(dir_name_str)
     path_parts = unique_id.split("/")
 
@@ -165,7 +175,7 @@ def get_assignment_deliverables(path, assignment_id):
 
     return deliverables
 
-def find_assignment_files(toc_data, base_path=pathlib.Path("./source")):
+def find_assignment_files(toc_data, base_path=SOURCE_DIR):
     found_files = []
     items = toc_data if isinstance(toc_data, list) else [toc_data]
     
@@ -384,18 +394,7 @@ def main():
     unique = []
     seen = {}
     for path in assignments:
-        dir_name_str = str(path.as_posix())
-        unique_id = clean_id(dir_name_str)
-        path_parts = unique_id.split("/")
-        try:
-            short_id = (
-                path_parts[1].split("_")[-1][0:2]
-                + path_parts[2].replace('m', '')
-                + "_"
-                + path_parts[4]
-            )
-        except IndexError:
-            short_id = unique_id.replace("/", "_")
+        short_id = compute_assignment_id(path)
 
         if short_id in seen:
             seen[short_id].append(path)

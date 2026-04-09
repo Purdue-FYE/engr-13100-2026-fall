@@ -1,18 +1,18 @@
 notes = " "
 
-labels = ["Velocity (v)"]
+labels = ["Character"]
 
 cases = {
     1: {
         "callable": "main",
-        "entries": [16],
+        "entries": ["o"],
     },
     2: {
         "callable": "main",
-        "entries": [21.5],
+        "entries": [3],
     },
     3: {
         "callable": "main",
-        "entries": [28.3],
+        "entries": ["@"],
     }
 }

@@ -24,7 +24,7 @@ This activity checks your understanding of the core teaming concepts introduced 
 ## Submission
 
 - This activity is completed **directly in Gradescope**.
-- Be sure to submit your answers before the deadline listed on the {doc}`Course Schedule<../../Part_00_Course_Resources/course_schedule/course_schedule>`.
+- Be sure to submit your answers before the deadline listed on the {doc}`Course Schedule<../../Part_00_Course_Resources/course_schedule>`.
 
 ## Learning Objectives
 

@@ -9,7 +9,7 @@ Assignment Information:
     Assignment:     7.1.2 pre_2
     Team ID:        LC0 - 00
     Author:         Holly Fortener, hforten@purdue.edu
-    Date:           03/05/2026
+    Date:           03/09/2026
 
 Contributors:
     Name, login@purdue [repeat for each]
@@ -33,21 +33,10 @@ Academic Integrity Statement:
 
 def main():
 
-    v = float(input("Enter initial velocity in m/s: "))
-    a = -9.8              # acceleration due to gravity (m/s^2)
-    time_steps = 5        # seconds
+    var = input("Enter a character: ")
 
-    for t in range(1, time_steps + 1):
-        x = v * t + 0.5 * a * t**2
-        if x <= 0:
-            print(f"At t = {t} s, the ball has hit the ground.")
-            break
-        elif x > 25:
-            print(f"At t = {t} s, projectile height is: {x:.2f} m")
-            print("I've lost the ball in the sun!")
-            break
-        else:
-            print(f"At t = {t} s, projectile height is: {x:.2f} m")
+    for i in range(10):
+        print(var * (i + 1))
 
 if __name__ == "__main__":
     main()

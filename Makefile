@@ -5,26 +5,24 @@ URL = https://purdue-fye.github.io/$(REPO)
 # scanning through the tasks directories in each module.
 modules = $(wildcard source/Part*/M*)
 instructions = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*instructions.md))
+solutions_Ex = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*solution.xlsx))
 solutions_Py = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*solution.py))
 solutions_MA = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*solution.m))
-solutions = $(solutions_Py) $(solutions_MA)
+solutions = $(solutions_Ex) $(solutions_Py) $(solutions_MA)
 test_cases = $(foreach dir,$(modules),$(wildcard $(dir)/tasks/*/*/*test_cases.py))
 grader_files = $(wildcard grader/*)
 quiz_files = $(wildcard source/quizzes/TTYK*.tex) $(wildcard source/quizzes/CQ*.tex)
 
-archives = $(foreach file,$(solutions_Py),\
-	$(subst source/,source/_build/graders/,\
-		$(subst solution.py,autograder.zip,$(file))\
-	)\
-)
+grader_task_dirs = $(sort $(dir $(solutions_Py) $(solutions_Ex) $(solutions_MA)))
+archives = $(addsuffix autograder.zip,$(subst source/,source/_build/graders/,$(grader_task_dirs)))
 
-# Create a list of all sample output files to be generated, by scanning through
-# the test_cases, changing source to source/_build/intermediate, and changing
-# the file extension from .py to .md.
+# Create a list of all sample output files to be generated for code-based tasks
+# (.py and .m). Excel tasks keep solution.xlsx files, but do not produce
+# sample_output artifacts.
 #
 # E.g. source/Part_3_Python/M1/tasks/ind_2/a/test_cases.py
 #   -> source/_build/intermediate/Part_3_Python/M1/tasks/ind_2/a/solution.md
-sample_output = $(foreach file,$(solutions),\
+sample_output = $(foreach file,$(solutions_Py) $(solutions_MA),\
 	$(subst source/,source/_build/intermediate/,\
 		$(subst solution.,sample_output.,\
 			$(subst .py,.md,\
@@ -36,14 +34,14 @@ sample_output = $(foreach file,$(solutions),\
 
 # Re-build only pages that are new/changed since last run.
 default: $(sample_output)
-	python3 source/manage_deliverables.py
+	python3 source/utils/manage_deliverables.py
 	jupyter-book build -W source
 	rm -f source/_build/html/glue_factory.html source/_build/html/_sources/glue_factory.md
 	touch source/_build/html/.nojekyll
 
 # Re-build all pages.
 all: $(sample_output)
-	python3 source/manage_deliverables.py
+	python3 source/utils/manage_deliverables.py
 	PYTHONPATH="$(PWD)/source/_extensions:$(PYTHONPATH)" jupyter-book build -W --all source
 	rm -f source/_build/html/glue_factory.html source/_build/html/_sources/glue_factory.md
 	echo "View this site [here]($(URL))." > source/_build/html/README.md
@@ -71,7 +69,7 @@ pub: all
 #  - % in the target matches the % in the prerequisites.
 #  - $(@D)  is the directory part of the filename.
 %autograder.zip : \
-	$$(wildcard $(@D)/*.py) $$(wildcard $(@D)/*.png) $$(wildcard $(@D)/*.txt) $(grader_files)
+	$$(wildcard $(@D)/*.py) $$(wildcard $(@D)/*.png) $$(wildcard $(@D)/*.txt) $$(wildcard $(@D)/*.xlsx) $(grader_files)
 	python3 source/generate_graders.py "$(@D)"
 
 # Clean up
@@ -84,8 +82,3 @@ clean-all:
 clean-graders:
 	# Remove all built grader files
 	rm -rf source/_build/graders
-
-# Schedule generating
-schedule:
-	python source/Part_00_Course_Resources/course_schedule/generate_schedule.py
-	make pub
