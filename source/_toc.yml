@@ -18,10 +18,10 @@ parts:
   - caption: Professional Engineering Skills
     numbered: False
     chapters:
-      # Professional Preperation Module
-    #- file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
+    # Professional Preperation Module
+      #- file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
 
-      # Teaming Module
+    # Teaming Module
     - file: Part_01_Professional_Development/M2_Teaming/0_overview
       sections: 
       - file: Part_01_Professional_Development/M2_Teaming/2_CATME_inst
@@ -77,9 +77,10 @@ parts:
       #   sections:
       #   - file: Part_02_Excel/M4/tasks/1/a/instructions
 
-  # - caption: Project 1
-  #   numbered: True
-  #   chapters:
+  - caption: Artificial Intelligence
+    numbered: 2
+    chapters:
+    - file: Part_03_AI/0_overview
   
   - caption: Python
     numbered: 3
@@ -120,8 +121,6 @@ parts:
       - file: Part_04_Python/M2/3_assignments
         sections:
         - file: Part_04_Python/M2/tasks/ind_1/a/instructions
-
-      
 
     # Python Module 3
     - file: Part_04_Python/M3/0_overview
