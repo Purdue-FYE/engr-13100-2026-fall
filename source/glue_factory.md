@@ -70,6 +70,34 @@ glue('ex2_ica_1_powerdataformulas_pdf', 'ex2_ica_1_powerdataformulas_username.pd
 glue('ex2_1_powerdatavalues_pdf', 'ex2_1_powerdatavalues_username.pdf', display=False)
 glue('ex2_1_powerdataformulas_pdf', 'ex2_1_powerdataformulas_username.pdf', display=False)
 
+# ex3_pre_1
+glue('ex3_pre_1_pdf', 'ex3_pre_1_username.pdf', display=False)
+glue('ex3_pre_1_py', 'ex3_pre_1_username.py', display=False)
+glue('ex3_pre_1_xlsx', 'ex3_pre_1_username.xlsx', display=False)
+glue('ex3_pre_1_zip', 'ex3_pre_1_username.zip', display=False)
+
+# ex3_ica_1
+glue('ex3_ica_1_powerdatavalues_pdf', 'ex3_ica_1_powerdatavalues_username.pdf', display=False)
+glue('ex3_ica_1_powerdataformulas_pdf', 'ex3_ica_1_powerdataformulas_username.pdf', display=False)
+
+# ex3_1
+glue('ex3_1_powerdatavalues_pdf', 'ex3_1_powerdatavalues_username.pdf', display=False)
+glue('ex3_1_powerdataformulas_pdf', 'ex3_1_powerdataformulas_username.pdf', display=False)
+
+# ex4_pre_1
+glue('ex4_pre_1_pdf', 'ex4_pre_1_username.pdf', display=False)
+glue('ex4_pre_1_py', 'ex4_pre_1_username.py', display=False)
+glue('ex4_pre_1_xlsx', 'ex4_pre_1_username.xlsx', display=False)
+glue('ex4_pre_1_zip', 'ex4_pre_1_username.zip', display=False)
+
+# ex4_ica_1
+glue('ex4_ica_1_powerdatavalues_pdf', 'ex4_ica_1_powerdatavalues_username.pdf', display=False)
+glue('ex4_ica_1_powerdataformulas_pdf', 'ex4_ica_1_powerdataformulas_username.pdf', display=False)
+
+# ex4_1
+glue('ex4_1_powerdatavalues_pdf', 'ex4_1_powerdatavalues_username.pdf', display=False)
+glue('ex4_1_powerdataformulas_pdf', 'ex4_1_powerdataformulas_username.pdf', display=False)
+
 # py1_pre_1
 glue('py1_pre_1_pdf', 'py1_pre_1_username.pdf', display=False)
 glue('py1_pre_1_py', 'py1_pre_1_username.py', display=False)

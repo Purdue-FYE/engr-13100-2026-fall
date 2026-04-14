@@ -7,11 +7,11 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+deliverables:
+  - PowerDataValues_pdf
+  - PowerDataFormulas_pdf
 ---
 ```{include} /macros.md
 ```
-
-(EX:M4:pre-class-mats)=
-# PCMs: Linear Regression in Excel
-
-These pre-class materials introduce...
+(EX:M3:ICA1)=
+# ICA: Title
