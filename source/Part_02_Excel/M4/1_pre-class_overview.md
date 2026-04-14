@@ -11,8 +11,9 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(EX:M2:pre-class)=
+(EX:M4:pre-class)=
 # Pre-Class Assignments
+
 The Pre-Class Materials (PCMs) and Pre-Class Activities (PCAs) are your **core learning materials** in ENGR 131. Completing them **before each class session** ensures you’re ready for in-class discussions, activities, and assignments.
 
 ```{rubric} What to Expect
