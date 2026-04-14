@@ -16,11 +16,20 @@ kernelspec:
 
 ## In this assignment, you will:
 
+- Design a flowchart that models a robot’s decision-making process in a conveyor belt system
+- Interpret a written process description and translate it into a visual algorithm
+- Use loops and conditional logic to represent how the robot evaluates different item types
+- Convert user input into a usable data structure (array/list) for processing
+- Write a Python program that implements the logic shown in your flowchart
+- Apply modular programming and coding standards to organize and document your code
+- Test your program using different inputs to verify correct behavior
+- Identify and fix errors through debugging and test case analysis
+- Reflect on how the algorithm could be improved for efficiency and real-world applications
+
 ## Learning Objectives
 
 - PR01: Programming Standards
 - PR02: Data Storage
-- PR03: Calculations
 - PR04: Modular Programming
 - PR05: Code Structures
 - PR06: Translate Program Descriptions
@@ -41,7 +50,7 @@ Think of your flowchart as a visual representation of an algorithm, and your cod
 ## Files Needed
 
 Download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save it as py2_ind_1_username.py. Use the sample output section below to verify that your program outputs correct values.
+</Part_04_Python/ENGR131_Python_Template.py>` and save it as py2_ind_1_username.py.
 
 ```{admonition} Note
    :class: note
@@ -87,7 +96,7 @@ Your flowchart should:
 
 ### Part 2
 
-Write a Python program that executes the alogorithm displayed in your flowchart. Remember to prompt the user for a list of items (```user_input```) separated by commas (no spaces). Then convert the user input into an array of strings called ```items```.
+Write a Python program that executes the algorithm displayed in your flowchart. Remember to prompt the user for a list of items (```user_input```) separated by commas (no spaces). Then convert the user input into an array of strings called ```items```.
 
 Use the sample output section below to verify that your program outputs correct values.
 

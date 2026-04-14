@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (Py:M3:py3_pre_2)=
-# PCA #X: Looping Structures
+# Python 3 PCA 2: Looping Structures
 
 ## Learning Objectives
 
@@ -47,4 +47,4 @@ Test your program using the sample input/output below.
 
 ## Deliverables
 
-Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::py3_pre_2_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
+Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::py3_pre_2_py:` to (INSERT ASSIGNMENT NAME) on Grade Scope.

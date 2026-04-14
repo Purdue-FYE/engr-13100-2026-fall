@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (Py:M2:py2_pre_1)=
-# PCA #X: Logic & Modularity
+# Python 2 PCA 1: Logic & Modularity
 
 ## Learning Objectives
 
@@ -50,4 +50,4 @@ Use the sample input/output below to test your code.
 
 ## Deliverables
 
-Submit your python file {glue:text}`../../../../../glue_factory.md::py2_pre_1_py:` to (INSERT ASSIGNMENT NAME) on GradeScope.
+Submit your python file {glue:text}`../../../../../glue_factory.md::py2_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Grade Scope.
