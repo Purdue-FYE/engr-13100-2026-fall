@@ -11,32 +11,23 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Ex:M4:Excel_4)=
+(EX:M4:Overview)=
 # Linear Regression
 
-**Write an overview here.**
+This module [summary or introduction to content...]
 
 ```{rubric} Topics Covered
 ```
-
-- Scatter plot with a model
-- Predictions (interpolation/extrapolation)
-- Goodness of fit ($R^2$, SSE, SST)
-- Model limitations
+- Topic
+- Topic
 
 ```{rubric} Skills and Learning Objectives
 ```
-
 At the end of this module, you will be able to:
 
-- Do thing 1
+- Skills
+- Skills
 
 These skills are directly connected to the following Learning Objectives:
 
 {{PR01}}
-{{PR02}}
-{{PR03}}
-{{PR08}}
-{{DV01}}
-{{DV04}}
-{{DV05}}

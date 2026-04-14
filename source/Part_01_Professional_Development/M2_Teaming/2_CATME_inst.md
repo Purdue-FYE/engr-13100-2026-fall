@@ -19,21 +19,26 @@ This is a project- and team-based course. You will collaborate with classmates o
 Late submissions of CATME assignments are not accepted.
 ```
 
-## Team Formation Survey
+
+```{rubric} Team Formation Survey
+```
 You will complete a brief survey to help us form balanced and effective teams. Be sure to:
 
 - Check your email for a message from CATME with your personalized survey link.
 - Or, visit the [CATME website](https://catme.org/login/index) to access the survey (log in with your Purdue email).
 - Read and follow all instructions carefully.
 
-## Peer & Team Evaluations
+
+```{rubric} Peer & Team Evaluations
+```
 You will complete three peer evaluations during the semester to reflect on your own and your teammates’ contributions.
 
 - Before completing the evaluation, you may be prompted to complete Rater Practice (a short calibration activity). If you’ve done this in another course within the past year, you can skip it.
 - On your CATME dashboard, click “Complete Activity” to access the evaluation form.
 - Follow the prompts and be as honest and specific as possible in your responses.
 
-### Evaluation Reminders
+```{rubric} Evaluation Reminders
+```
 - Complete the evaluation privately and do not discuss your answers with others unless directed by your instructor.
 - In the Team Member Comment section:
   - Clearly describe your contributions and those of each teammate.

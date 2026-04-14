@@ -62,25 +62,33 @@ parts:
         sections:
         - file: Part_02_Excel/M2/tasks/1/a/instructions
 
-    # Excel Module 3
+# Excel Module 3
     - file: Part_02_Excel/M3/0_overview
-      # sections:
-      # - file: Part_02_Excel/M3/1_pre-class_material
-      #  sections:
-      #   - file: Part_02_Excel/M3/tasks/pre_1/a/instructions
-      # - file: Part_02_Excel/M3/2_assignments
-      #   sections:
-      #   - file: Part_02_Excel/M3/tasks/1/a/instructions
+      sections:
+      - file: Part_02_Excel/M3/1_pre-class_overview
+        sections:
+        - file: Part_02_Excel/M3/1.1_materials
+        - file: Part_02_Excel/M3/tasks/pre_1/a/instructions
+      - file: Part_02_Excel/M3/2_in-class_overview
+        sections:
+        - file: Part_02_Excel/M3/in-class/ICA_1/instructions
+      - file: Part_02_Excel/M3/3_assignment_overview
+        sections:
+        - file: Part_02_Excel/M3/tasks/1/a/instructions
 
     # Excel Module 4
     - file: Part_02_Excel/M4/0_overview
-      # sections:
-      # - file: Part_02_Excel/M4/1_pre-class_material
-      #  sections:
-      #   - file: Part_02_Excel/M4/tasks/pre_1/a/instructions
-      # - file: Part_02_Excel/M4/2_assignments
-      #   sections:
-      #   - file: Part_02_Excel/M4/tasks/1/a/instructions
+      sections:
+      - file: Part_02_Excel/M4/1_pre-class_overview
+        sections:
+        - file: Part_02_Excel/M4/1.1_materials
+        - file: Part_02_Excel/M4/tasks/pre_1/a/instructions
+      - file: Part_02_Excel/M4/2_in-class_overview
+        sections:
+        - file: Part_02_Excel/M4/in-class/ICA_1/instructions
+      - file: Part_02_Excel/M4/3_assignment_overview
+        sections:
+        - file: Part_02_Excel/M4/tasks/1/a/instructions
 
   - caption: Artificial Intelligence
     numbered: 3
