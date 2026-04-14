@@ -46,7 +46,7 @@ Your task is to write a short Python program using `if‑elif‑else` to decide 
 
 ### Files Needed
 
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py2_ind_1_py:`. Use the sample output section below to verify that your program outputs correct values.
+Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py2_ind_1_py:`.
 
 ```{admonition} Note
    :class: note
@@ -82,6 +82,8 @@ Your program must follow this order of decisions:
 4. If the soil moisture is measured at less than 20%, print "RUN FULL" to indicate the irrigation system will output the normal amount needed.
 5. If soil moisture is greater than or equal to 20% AND less than or equal to 25%, print "RUN REDUCED" to indicate that system will output less water than normal.
 6. Otherwise, if the soil moisture is greater than 25%, then print "SKIP - soil moisture is adequate".
+
+Use the sample output section below to verify that your program outputs correct values.
 
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M2/tasks/ind_1/a/sample_output.md
