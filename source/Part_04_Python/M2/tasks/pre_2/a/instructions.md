@@ -65,4 +65,4 @@ Test your Python code using the sample input/output below.
 
 ## Deliverables
 
-Submit your python file {glue:text}`../../../../../glue_factory.md::py2_pre_2_py:` to (INSERT ASSIGNMENT NAME) on GradeScope.
+Submit your python file {glue:text}`../../../../../glue_factory.md::py2_pre_2_py:` to (INSERT ASSIGNMENT NAME) on Grade Scope.

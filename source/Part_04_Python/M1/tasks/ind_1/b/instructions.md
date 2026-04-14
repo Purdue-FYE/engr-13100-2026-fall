@@ -45,7 +45,7 @@ You are a Biomedical Engineer working in a research and development lab. Your su
 
 ### Deliverables
 
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:`. Use the sample output section below to verify that your program outputs correct values.
+Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:`.
 
 ```{admonition} Note
    :class: note
@@ -111,6 +111,8 @@ Your program output must include:
 3. Pass/fail result
 4. Clean formatting and spacing for readability
 
+Use the sample output section below to verify that your program outputs correct values.
+
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M1/tasks/ind_1/b/sample_output.md
 ```
@@ -146,10 +148,10 @@ Your memo must address the following:
 
 ### Deliverables
 
-Submit your report named {glue:text}`../../../../../glue_factory.md::py1_ind_1_report_pdf:` to (INSERT ASSIGNMENT NAME HERE) on Gradescope.
+Submit your report to (INSERT ASSIGNMENT NAME HERE) on Gradescope.
 
 ```{admonition} Note
    :class: note
 
-We recommend writing and saving your report in a .txt file or MS Word document and then copy-paste it into Gradescope. You can reference your report in the saved file for future assignments with similar tasks.
+We recommend writing and saving your report in a text file or MS Word document and then copy-paste it into the text box in Gradescope. You can reference your report in the saved file for future assignments with similar tasks.
 ```
