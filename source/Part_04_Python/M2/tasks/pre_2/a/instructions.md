@@ -11,8 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M2:py2_pre_2)=
-# PCA #X: Logic & Modularity
+(PY:M2:PCA2)=
+# PCA: User-Defined Functions
 
 ## Learning Objectives
 
@@ -45,7 +45,7 @@ This is useful for estimating heating in resistors and designing safe circuits.
 
 ## Files Needed
 
-For this assignment, download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save as {glue:text}`../../../../../glue_factory.md::py2_pre_2_py:`.
+For this assignment, download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save as {glue:text}`../../../../../glue_factory.md::py2_pre_2_py:`.
 
 ## Activity Instructions & Submission
 

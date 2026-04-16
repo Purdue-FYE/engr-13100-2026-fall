@@ -77,6 +77,11 @@ schedule:
 	python3 /workspaces/13100_content/source/Part_00_Course_Resources/generate_schedule.py
 	make pub
 
+# Generate teaching team list
+teaching_team:
+	python3 /workspaces/13100_content/source/Part_00_Course_Resources/generate_teachingteam.py
+	make pub
+
 # Clean up
 clean:
 	jupyter-book clean source/

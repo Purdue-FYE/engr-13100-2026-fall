@@ -11,7 +11,5 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M5:pre-class)=
-# Pre-Class Assignments
-
-Content for this module is under development.
+(PY:M5:A1)=
+# PY: Regression

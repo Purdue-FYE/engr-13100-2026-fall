@@ -1,23 +1,15 @@
-```{rubric} Guidelines
+The Pre-Class Materials (PCMs) and Pre-Class Activities (PCAs) are your **core learning materials** in ENGR 131. Completing them **before each class session** ensures you’re ready for in-class discussions, activities, and assignments.
+
+```{rubric} What to Expect
 ```
 
-This assignment has one task and is worth 2 points.
+- Watch short instructional videos to learn key concepts and prepare for class.
+- Read and review the accompanying notes, examples, or scripts provided in the materials.
+- Complete the associated pre-class activities (PCAs) to check your understanding and reinforce learning.
+- Materials are available anytime — revisit them as needed to deepen your understanding.
 
-`````{tab-set}
-
-````{tab-item} Successful Completion
-```{include} /guidelines/successful_completion.md
+```{rubric} Materials and Activities for this Module
 ```
-````
 
-````{tab-item} Using Gradescope
-```{include} /guidelines/using_gradescope.md
+```{tableofcontents}
 ```
-````
-
-````{tab-item} Guidelines for Individual Tasks
-```{include} /guidelines/individual_tasks.md
-```
-````
-
-`````

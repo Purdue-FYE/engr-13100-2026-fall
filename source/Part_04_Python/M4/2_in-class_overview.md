@@ -11,7 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M3:individual)=
-# Individual Assignments
+(PY:M4:in-class)=
+# In-Class Activities
 
-Content for this module is under development.
+```{include} ../../guidelines/inclass_activities.md
+```

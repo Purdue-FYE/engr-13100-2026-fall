@@ -11,8 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M3:py3_pre_1)=
-# PCA #X: Looping Structures
+(PY:M3:PCA1b)=
+# PCA: Nested Loops
 
 ## Learning Objectives
 

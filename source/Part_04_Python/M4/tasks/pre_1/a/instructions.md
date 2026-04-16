@@ -11,8 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M4:py4_pre_1)=
-# PCa #X: Data Manipulation
+(PY:M4:PCA1)=
+# PCA: Data Manipulation
 
 ## Learning Objectives
 
@@ -23,7 +23,7 @@ kernelspec:
 
 ## Files Needed
 
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py4_pre_1_py:`.
+Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py4_pre_1_py:`.
 
 Download the CSV file {download}`metal_mass_volume.csv <metal_mass_volume.csv>` for importing purposes.
 
@@ -86,4 +86,4 @@ While it is possible to calculate density directly using Pandas DataFrame operat
 
 ## Deliverables
 
-Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::py4_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
+Submit your Python file {glue:text}`../../../../../glue_factory.md::py4_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.

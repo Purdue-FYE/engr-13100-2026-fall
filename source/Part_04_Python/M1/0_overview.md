@@ -11,24 +11,22 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M1:Python_1)=
+(PY:M1:Overview)=
 # Python Foundations
 
-In this module students will be introduced to the {program}`Python` programming
-environment, learn to create, save and run script files, perform simple
-mathematical operations in the file, and manipulate strings.  The intent of this module is to get
-comfortable with the {program}`Python` environment and learn basic operations
+In this module students will be introduced to the Python programming environment, learn to create, save and run script files, perform simple
+mathematical operations in the file, and manipulate strings.  The intent of this module is to get comfortable with the Python environment and learn basic operations
 within script files.
 
 
 ```{rubric} Topics Covered
 ```
 
-- Introduction to {program}`Python`
-- Simple math in {program}`Python`
-- Data types in {program}`Python`
-- Input and output to the screen in {program}`Python`
-- Math library in {program}`Python`
+- Introduction to Python
+- Simple math in Python
+- Data types in Python
+- Input and output to the screen in Python
+- Math library in Python
 
 
 ```{rubric} Skills and Learning Objectives
@@ -36,12 +34,12 @@ within script files.
 
 At the end of this module, you will be able to:
 
-- Create a {program}`Python` script file
-- Save and run a {program}`Python` Script file
-- Perform simple mathematical operations in {program}`Python`
+- Create a Python script file
+- Save and run a Python Script file
+- Perform simple mathematical operations in Python
 - Use variables from at least three different data types
-- Use inputs from the screen in a {program}`Python` script
-- Output data to the screen in a {program}`Python` script
+- Use inputs from the screen in a Python script
+- Output data to the screen in a Python script
 
 These skills are directly connected to the following Learning Objectives:
 
