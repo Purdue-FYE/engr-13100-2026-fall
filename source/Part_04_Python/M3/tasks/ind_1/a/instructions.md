@@ -11,8 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M2:py2_ind_1)=
-# Individual Assignment #X: Looping Structures
+(PY:M3:A1)=
+# PY: Looping Structures
 
 ## In this assignment, you will:
 
@@ -52,3 +52,4 @@ Remember to include comments in your python script to practice professional prog
 ```
 
 ### Program Requirements
+

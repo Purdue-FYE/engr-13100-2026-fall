@@ -1,0 +1,338 @@
+
+<style>
+  :root {
+    --sch-text: #1f2937;
+    --sch-border: #d1d5db;
+    --sch-card-bg: #ffffff;
+    --sch-accent: #1a73e8;
+    --sch-label: #4b5563;
+    --sch-datetime: 
+  }
+
+  /* Dark mode scheme from the scheduling script */
+  html[data-theme="dark"] {
+    --sch-text: #f3f4f6;           /* Main text */
+    --sch-border: #374151;         /* Subtle borders */
+    --sch-card-bg: #1b2430;        /* Slightly lighter card surface */
+    --sch-accent: #8ab4f8;         /* High-contrast links */
+    --sch-label: #CACFD3;          /* Muted labels */
+  }
+
+  /* Optional: Also trigger on system settings for local testing */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --sch-text: #f3f4f6;
+      --sch-border: #374151;
+      --sch-card-bg: #1b2430;
+      --sch-accent: #8ab4f8;
+      --sch-label: #CACFD3;
+    }
+  }
+
+  body {
+    color: var(--sch-text);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 2rem;
+  }
+
+  .staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .staff-card {
+    background: var(--sch-card-bg);
+    border: 1px solid var(--sch-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .staff-card h3 {
+    margin: 0 0 0.75rem 0;
+    border-bottom: 2px solid var(--sch-accent);
+    padding-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600px;
+    color: var(--sch-text);
+  }
+
+  .staff-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--sch-label);
+    margin-top: 1rem;
+    display: block;
+  }
+
+  .staff-name {
+    font-weight: 600;
+    display: block;
+  }
+
+  .staff-email {
+    font-size: 0.85rem;
+    display: block;
+  }
+
+  .staff-email a {
+    color: var(--sch-accent);
+    text-decoration: none;
+  }
+
+  .staff-email a:hover {
+    text-decoration: underline;
+  }
+</style>
+<h2>ENGR 131: Fall 2026 Section Information</h2>
+<div class="staff-grid">
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 021</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>W/F 7:30-9:20 AM</strong><br>
+    LMBS 3285
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 022</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>W/F 9:30-11:20 AM</strong><br>
+    LMBS 3285
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 023</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>W/F 11:30 AM-1:20 PM</strong><br>
+    LMBS 3285
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 024</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>W/F 1:30-3:20 PM</strong><br>
+    LMBS 3285
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 025</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>W/F 3:30-5:20 PM</strong><br>
+    LMBS 3285
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 111</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>T/TH 7:30-9:20 AM</strong><br>
+    LMBS 3261
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 112</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>T/TH 9:30-11:20 AM</strong><br>
+    LMBS 3261
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 114</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>T/TH 1:30-3:20 PM</strong><br>
+    LMBS 3261
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 115</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>T/TH 3:30-5:20 PM</strong><br>
+    LMBS 3261
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 124</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>W/F 1:30-3:20 PM</strong><br>
+    LMBS 3261
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 125</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>W/F 3:30-5:20 PM</strong><br>
+    LMBS 3261
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 211</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>T/TH 7:30-9:20 AM</strong><br>
+    LMBS 3239
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 212</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>T/TH 9:30-11:20 AM</strong><br>
+    LMBS 3239
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 213</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>T/TH 11:30 AM-1:20 PM</strong><br>
+    LMBS 3239
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 214</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>T/TH 1:30-3:20 PM</strong><br>
+    LMBS 3239
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 215</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>T/TH 3:30-5:20 PM</strong><br>
+    LMBS 3239
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 221</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>W/F 7:30-0:20 AM</strong><br>
+    LMBS 3239
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 222</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>W/F 9:30-11:20 AM</strong><br>
+    LMBS 3239
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+<div class="staff-card">
+  <h3 style="font-weight: 700px;">Section 223</h3>
+  <div style="font-size: 1.1rem; color: --sch-label; margin-bottom: 1rem;">
+    <strong>W/F 11:30 AM-1:20 PM</strong><br>
+    LMBS 3239
+  </div>
+  <div class="staff-label">Instructor</div>
+  <span class="staff-name">Prof.</span>
+  <span class="staff-email"><a href="mailto:email@purdue.edu">email@purdue.edu</a></span>
+  <div class="staff-label">GTA</div>
+  <span class="staff-name">TBD</span>
+
+</div>
+</div>

@@ -14,8 +14,8 @@ deliverables:
 ```{include} /macros.md
 ```
 
-(Py:M1:py1_ind)=
-# Assignment #X: Python Foundations
+(PY:M1:A1)=
+# PY: Python Foundations
 
 ## In this assignment, you will:
 

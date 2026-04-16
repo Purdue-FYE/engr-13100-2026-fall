@@ -11,8 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M1:py1_pre_1)=
-# PCA #X: Python Foundations
+(PY:M1:PCA1)=
+# PCA: Python Foundations
 
 ## Learning Objectives
 
@@ -23,22 +23,19 @@ kernelspec:
 
 ## Introduction
 
-{program}`Python 3` is a powerful programming language for performing computations,
-scripting, and database management. As an engineering tool, it offers standard
-mathematical operations as part of its basic environment.  Therefore, you can design
-standard computational models, process data, and generate reports. The language must
-work within the limits of the machine it is running on. As a result, there may be
-differences between what you compute by hand and what {program}`Python` computes.
+Python is a powerful programming language for performing computations, scripting, and database management. As an engineering tool, it offers standard
+mathematical operations as part of its basic environment.  Therefore, you can design standard computational models, process data, and generate reports. The language must
+work within the limits of the machine it is running on. As a result, there may be differences between what you compute by hand and what Python computes.
 
 ## Files Needed
 
-Unless mentioned otherwise, for all {program}`Python` assignments you will be writing your scripts using the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>`.
-This template contains header information that must always be edited to reflect the task your {program}`Python` file is meant to solve, and you will always be prompted in the problem statement to rename the file.
+Unless mentioned otherwise, for all Python assignments you will be writing your scripts using the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>`.
+This template contains header information that must always be edited to reflect the task your Python file is meant to solve, and you will always be prompted in the problem statement to rename the file.
 
 The template contains a section for importing modules, and a function called
-{python}`main()` where you will be writing your code. While user-defined functions will be taught in more detail in the next {program}`Python` module, for now you will just need to remember to write all your code within {python}`main()`. Note that, when writing code inside a function, it must be indented 1 tab (or 4 spaces) relative to the indentation level of the function.
+{python}`main()` where you will be writing your code. While user-defined functions will be taught in more detail in the next Python module, for now you will just need to remember to write all your code within {python}`main()`. Note that, when writing code inside a function, it must be indented 1 tab (or 4 spaces) relative to the indentation level of the function.
 
-Download the {program}`Python` template (above) and save it as {glue:text}`../../../../../glue_factory.md::py1_pre_1_py:`. Use the sample output section below to verify that your program outputs correct values.
+Download the Python template (above) and save it as {glue:text}`../../../../../glue_factory.md::py1_pre_1_py:`. Use the sample output section below to verify that your program outputs correct values.
 
 ## Activity Instructions & Submission
 

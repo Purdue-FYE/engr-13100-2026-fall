@@ -11,8 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M4:py5_pre_1)=
-# PCA #X: Linear Regression Analysis
+(PY:M5:PCA1)=
+# PCA: Linear Regression Analysis
 
 ## Learning Objectives
 
@@ -23,7 +23,7 @@ kernelspec:
 
 ## Files Needed
 
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py5_pre_1_py:`.
+Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py5_pre_1_py:`.
 
 ## Activity Instructions & Submission
 

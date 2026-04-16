@@ -11,8 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M4:py4_pre_2)=
-# PCA #X: Plotting & Statistics
+(PY:M4:PCA2)=
+# PCA: Plotting & Statistics
 
 ## Learning Objectives
 
@@ -22,7 +22,7 @@ kernelspec:
 
 ## Files Needed
 
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py4_pre_2_py:`.
+Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py4_pre_2_py:`.
 
 Download the .csv file {download}`mild_steel_stress_strain.csv <mild_steel_stress_strain.csv>` for importing purposes.
 
@@ -63,5 +63,5 @@ Stress-strain curve for mild-steel
 
 ## Deliverables
 
-Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::py4_pre_2_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
+Submit your Python file {glue:text}`../../../../../glue_factory.md::py4_pre_2_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
 

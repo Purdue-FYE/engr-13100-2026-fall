@@ -11,9 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M1:Python_2)=
+(PU:M2:Overview)=
 # Logic & Modularity
-
 
 
 ```{rubric} Topics Covered

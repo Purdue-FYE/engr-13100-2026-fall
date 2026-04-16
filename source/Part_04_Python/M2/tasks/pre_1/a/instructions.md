@@ -11,8 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M2:py2_pre_1)=
-# PCA #X: Logic & Modularity
+(PY:M2:PCA1)=
+# PCA: Selection Structures
 
 ## Learning Objectives
 

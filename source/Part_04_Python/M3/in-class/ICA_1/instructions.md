@@ -7,12 +7,14 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+deliverables:
+  - PowerDataValues_pdf
+  - PowerDataFormulas_pdf
 ---
 ```{include} /macros.md
 ```
-
-(Py:M3:py3_ICA_1)=
-# ICA #X: Looping Structures
+(PY:M3:ICA1)=
+# ICA: Looping Structures
 
 ## Learning Objectives
 
@@ -47,7 +49,7 @@ You also know that when an object is in free fall, it experiences a constant acc
 
 ## Files Needed
 
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py3_ICA_1_py:`.
+Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` 
 
 ## Activity Instructions & Submission
 
@@ -71,7 +73,3 @@ For more information on program output and testing your Python code, see the sam
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M3/tasks/ICA_1/a/sample_output.md
 ```
-
-## Deliverables
-
-Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::py3_ICA_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.

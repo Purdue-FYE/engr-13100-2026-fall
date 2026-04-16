@@ -11,7 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M3:pre-class)=
-# Pre-Class Assignments
+(PY:M2:in-class)=
+# In-Class Activities
 
-Content for this module is under development.
+```{include} ../../guidelines/inclass_activities.md
+```

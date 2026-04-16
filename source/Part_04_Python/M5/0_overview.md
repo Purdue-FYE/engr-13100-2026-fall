@@ -11,17 +11,11 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M1:Python_5)=
+(PY:M5:Overview)=
 # Linear Regression
-
-
-
 
 ```{rubric} Topics Covered
 ```
-
-
-
 
 ```{rubric} Skills and Learning Objectives
 ```

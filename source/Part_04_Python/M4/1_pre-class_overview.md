@@ -11,7 +11,12 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M2:ICA)=
-# ICAs
+(Py:M4:pre-class)=
+# Pre-Class Assignments
 
-Content for this module is under development.
+```{include} ../../guidelines/pre-class.md
+```
+
+```{include} ../../guidelines/python_resources.md
+```
+
