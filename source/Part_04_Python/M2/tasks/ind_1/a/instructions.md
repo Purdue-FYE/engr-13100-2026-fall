@@ -11,8 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M2:py2_ind_1)=
-# Individual Assignment #X: Logic & Modularity
+(PY:M2:A1)=
+# PY: Logic & Modularity
 
 ## In this assignment, you will:
 

@@ -11,8 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M3:py3_pre_1)=
-# Python 3 PCA 1: Looping Structures
+(PY:M3:PCA1)=
+# PCA: While Loops
 
 ## Learning Objectives
 
@@ -27,7 +27,7 @@ kernelspec:
 
 ## Files Needed
 
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py3_pre_1_py:`.
+Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py3_pre_1_py:`.
 
 ## Activity Instructions & Submission
 
@@ -50,4 +50,4 @@ Test your program using the sample input/output below.
 
 ## Deliverables
 
-Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::py3_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Grade Scope.
+Submit your Python file {glue:text}`../../../../../glue_factory.md::py3_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.

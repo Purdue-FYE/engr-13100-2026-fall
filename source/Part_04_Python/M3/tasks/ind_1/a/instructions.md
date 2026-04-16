@@ -11,8 +11,8 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(Py:M3:py3_ind_1)=
-# Individual Assignment #X: Looping Structures
+(PY:M3:A1)=
+# PY: Looping Structures
 
 ## In this assignment, you will:
 

@@ -104,6 +104,10 @@ glue('py1_pre_1_py', 'py1_pre_1_username.py', display=False)
 glue('py1_pre_1_xlsx', 'py1_pre_1_username.xlsx', display=False)
 glue('py1_pre_1_zip', 'py1_pre_1_username.zip', display=False)
 
+# py1_ica_1
+glue('py1_ica_1_powerdatavalues_pdf', 'py1_ica_1_powerdatavalues_username.pdf', display=False)
+glue('py1_ica_1_powerdataformulas_pdf', 'py1_ica_1_powerdataformulas_username.pdf', display=False)
+
 # py1_ind_1
 glue('py1_ind_1_report_pdf', 'py1_ind_1_report_username.pdf', display=False)
 glue('py1_ind_1_py', 'py1_ind_1_username.py', display=False)
@@ -141,6 +145,10 @@ glue('py3_pre_2_py', 'py3_pre_2_username.py', display=False)
 glue('py3_pre_2_xlsx', 'py3_pre_2_username.xlsx', display=False)
 glue('py3_pre_2_zip', 'py3_pre_2_username.zip', display=False)
 
+# py3_ica_1
+glue('py3_ica_1_powerdatavalues_pdf', 'py3_ica_1_powerdatavalues_username.pdf', display=False)
+glue('py3_ica_1_powerdataformulas_pdf', 'py3_ica_1_powerdataformulas_username.pdf', display=False)
+
 # py3_ind_1
 glue('py3_ind_1_pdf', 'py3_ind_1_username.pdf', display=False)
 glue('py3_ind_1_py', 'py3_ind_1_username.py', display=False)
@@ -158,5 +166,37 @@ glue('py4_pre_2_pdf', 'py4_pre_2_username.pdf', display=False)
 glue('py4_pre_2_py', 'py4_pre_2_username.py', display=False)
 glue('py4_pre_2_xlsx', 'py4_pre_2_username.xlsx', display=False)
 glue('py4_pre_2_zip', 'py4_pre_2_username.zip', display=False)
+
+# py4_ica_1
+glue('py4_ica_1_powerdatavalues_pdf', 'py4_ica_1_powerdatavalues_username.pdf', display=False)
+glue('py4_ica_1_powerdataformulas_pdf', 'py4_ica_1_powerdataformulas_username.pdf', display=False)
+
+# py4_ind_1
+glue('py4_ind_1_pdf', 'py4_ind_1_username.pdf', display=False)
+glue('py4_ind_1_py', 'py4_ind_1_username.py', display=False)
+glue('py4_ind_1_xlsx', 'py4_ind_1_username.xlsx', display=False)
+glue('py4_ind_1_zip', 'py4_ind_1_username.zip', display=False)
+
+# py5_pre_1
+glue('py5_pre_1_pdf', 'py5_pre_1_username.pdf', display=False)
+glue('py5_pre_1_py', 'py5_pre_1_username.py', display=False)
+glue('py5_pre_1_xlsx', 'py5_pre_1_username.xlsx', display=False)
+glue('py5_pre_1_zip', 'py5_pre_1_username.zip', display=False)
+
+# py5_pre_2
+glue('py5_pre_2_pdf', 'py5_pre_2_username.pdf', display=False)
+glue('py5_pre_2_py', 'py5_pre_2_username.py', display=False)
+glue('py5_pre_2_xlsx', 'py5_pre_2_username.xlsx', display=False)
+glue('py5_pre_2_zip', 'py5_pre_2_username.zip', display=False)
+
+# py5_ica_1
+glue('py5_ica_1_powerdatavalues_pdf', 'py5_ica_1_powerdatavalues_username.pdf', display=False)
+glue('py5_ica_1_powerdataformulas_pdf', 'py5_ica_1_powerdataformulas_username.pdf', display=False)
+
+# py5_ind_1
+glue('py5_ind_1_pdf', 'py5_ind_1_username.pdf', display=False)
+glue('py5_ind_1_py', 'py5_ind_1_username.py', display=False)
+glue('py5_ind_1_xlsx', 'py5_ind_1_username.xlsx', display=False)
+glue('py5_ind_1_zip', 'py5_ind_1_username.zip', display=False)
 
 ```
