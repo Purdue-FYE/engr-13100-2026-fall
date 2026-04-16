@@ -50,4 +50,4 @@ Use the sample input/output below to test your code.
 
 ## Deliverables
 
-Submit your python file {glue:text}`../../../../../glue_factory.md::py2_pre_1_py:` to (INSERT ASSIGNMENT NAME) on GradeScope.
+Submit your python file {glue:text}`../../../../../glue_factory.md::py2_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Grade Scope.
