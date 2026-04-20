@@ -105,7 +105,7 @@ Use the sample output section below to verify that your program outputs correct 
 ```
 ### Part 3
 
-Respond to the following short answer questions:
+Create a MS Word document, copy-paste to following questions into the document, and answer the questions using 
 
 1. How would you improve the robot's algorithm to become more efficient?
 2. What might an Industrial Engineer change in a real robot system?
