@@ -58,10 +58,11 @@ Remember to include comments in your python script to practice professional prog
 #### Step 1: User Input
 
 Your program must ask the user for:
-1. The medical device name
-2. Prototype ID number
-3. Researcher’s last name
-4. Researcher’s title
+1. A random seed integer
+2. The medical device name
+3. Prototype ID number
+4. Researcher’s last name
+5. Researcher’s title
 
 #### Step 2: Professional Header
 
@@ -71,7 +72,7 @@ Output a clear, professional header that includes:
 
 #### Step 3: Simulated Test Data
 
-Generate at least 5 random test values between 5 and 100. Store the values in a list.
+Generate at 5 random test values between 5 and 100. Store the values in a list.
 
 #### Step 4: Mathematical Analysis
 
@@ -87,9 +88,9 @@ All values must be clearly labeled and formatted with two decimal places.
 
 #### Step 5: Pass/Fail Evaluation
 
-You must determine whether the device passes or fails based on this rule:
+Determine whether the device passes or fails based on this rule:
 
-If the average test value is greater than or equal to a defined passing threshold created by you (e.g., threshold = 6), the device passes. Otherwise, it fails.
+If the average test value is greater than or equal 50, the device passes. Otherwise, it fails.
 
 ```{admonition} Note
    :class: note
@@ -100,8 +101,10 @@ Because we have not covered {python}`if` statements yet in this course, you cann
 #### Step 6: String Processing & Data Organization
 
 Your program must demonstrate:
-- String concatenation or repetition in at least one output line
-- Splitting at least one piece of user input into a sequence and displaying the result
+- String concatenation in the following form: "lastname_lastname_". 
+- Splitting the researcher's title into a sequence and displaying the result.
+
+Both the researcher's last name and title should be capitalized when displayed.
 
 ### Output Requirements
 
@@ -109,9 +112,15 @@ Your program output must include:
 1. A professional header
 2. Clearly labeled test values and calculations
 3. Pass/fail result
-4. Clean formatting and spacing for readability
+4. Clean formatting and **spacing** for readability
 
 Use the sample output section below to verify that your program outputs correct values.
+
+```{admonition} Note
+   :class: note
+
+Use `\n` to help format your output spacing.
+```
 
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M1/tasks/ind_1/b/sample_output.md

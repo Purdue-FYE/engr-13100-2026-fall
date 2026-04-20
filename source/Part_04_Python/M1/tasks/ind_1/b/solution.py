@@ -48,6 +48,9 @@ def main():
     # Part 1 – User Input
     # ----------------------------------------
 
+    seed = int(input("Enter random seed (integer): "))
+    random.seed(seed)
+
     device_name = input("Enter medical device name: ").strip()
     prototype_id = int(input("Enter prototype ID number: "))
 
@@ -68,7 +71,7 @@ def main():
     print("=" * 50)
     print(f"Device Name     : {device_name}")
     print(f"Prototype ID    : {prototype_id}")
-    print(f"Researcher     : {researcher_title} {researcher_last}")
+    print(f"Researcher     : {researcher_title}, {researcher_last}")
     print(f"Test Timestamp : {timestamp}")
     print("=" * 50)
 
@@ -103,7 +106,7 @@ def main():
     # Part 5 – Pass/Fail Logic (No if, No loops)
     # ----------------------------------------
 
-    passing_threshold = 75
+    passing_threshold = 50
     status_options = ["FAIL", "PASS"]
 
     passed = average >= passing_threshold
