@@ -104,7 +104,7 @@ Submit your python file {glue:text}`../../../../../glue_factory.md::py2_ind_1_py
 
 ### Background
 
-You find yourself abandoned on an unknown planet! However, since you are an aspiring engineer, you plan to design a rocket cable of getting you back home. To do so, you need to write a python program that estimates the minimum velocity your rocket must achieve to escape the gravitational field of this mystery planet. This minimum required velocity is commonly known as the escape velocity. However, you are only aware of the average density of the planet and its radius.
+You find yourself abandoned on an unknown planet! However, since you are an aspiring engineer, you plan to design a rocket capable of getting you back home. To do so, you need to write a python program that estimates the minimum velocity your rocket must achieve to escape the gravitational field of this mystery planet. This minimum required velocity is commonly known as the escape velocity. However, you are only aware of the average density of the planet and its radius.
 
 ### Files Needed
 
@@ -114,17 +114,17 @@ Download the {program}`Python` template {download}`ENGR131_Python_Template.py </
 
 As the scripts and programs we write become more complex, we often do not want to put all of our code directly in the `main` function. Python allows users to easily write their own functions in order to modularize their programs; these are called user-defined functions (UDFs).
 
-For this assignment, a flowchart for your {program}`Python` program is shown in {numref}`fig:Py:M2:ind_1:flowchart`. Using the flowchart and the following initial conditions, develop a {program}`Python` program to determine the escape velocity.
+For this assignment, a flowchart for your {program}`Python` program is shown in {numref}`fig:Py:M2:ind_1:flowchart`. Using the flowchart and the following initial conditions, develop a {program}`Python` program to determine the escape velocity. *Your program output should format the value for escape velocity to two decimal places.*
 
 
 ```{table} 
 :class: cases
 :name: tab:M2:ind_2_cases
 
-| $\rho$ $({\kilo\gram}/{\meter^3})$ | $r$ $({\meter})$ | $G$ $({\meter^3}/{\kg*\s^2})$ |
-|:----------------------------------:|:---------------:|:------------------------------:|
-|                             5513.0 |         6371000 |         $6.6743\times10^{-11}$ |
-|                             1879.8 |         2574730 |         $6.6743\times10^{-11}$ |
+| $\rho$ $({\kilo\gram}/{\meter^3})$ | $r$ $({\meter})$ |
+|:----------------------------------:|:----------------:|
+|                             5513.0 |          6371000 |
+|                             1879.8 |          2574730 |
 ```
 
 The escape velocity of the projectile is given by:
@@ -137,7 +137,7 @@ v_e =  \sqrt(\frac{2Gm}{r})
 
 Where
 - $v_e$ is the escape velocity
-- $G$ is the gravitational constant
+- $G$ is the gravitational constant ($6.6743\times10^{-11}$)
 - $m$ is the mass of the planet
 - $r$ is the radius of the planet
 
@@ -166,10 +166,10 @@ Where
 ```{admonition} Note
    :class: note
 
-Convert the radius from m to km before printing to the terminal. This can be done using simple division in  {program}`Python`.
+Convert the radius from m to km before printing to the terminal. This can be done using simple division in {program}`Python`.
 ```
 
-```{figure} flowchart.jpg
+```{figure} py2_ind_1_flowchart.jpg
 :name: fig:Py:M2:ind_1:flowchart
 
 Flowchart for Individual Assignment
@@ -187,7 +187,7 @@ Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::p
 
 ## Q3 Analysis Questions
 
-Navigate to (INSERT ASSIGNMENT NAME) on GradeScope and answer the following:
+Navigate to (INSERT ASSIGNMENT NAME) on Gradescope and answer the following:
 
 1. How do you think the {program}`Python` program you wrote Q1 or Q2 could be more efficient?
 
