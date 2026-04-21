@@ -203,8 +203,8 @@ for exercise in EXERCISES:
                 # Render the reference solution.
                 reference = j2_env.get_template(str(path)).render(**parameters)
 
-                # Work out the correct file name
-                id = "teamnumber" if "team" in number else "username"
+                # Seeded local runtime files should use a reference suffix.
+                id = "reference"
                 if path.name.endswith("solution.py"):
                     prefix = path.name.removesuffix("solution.py")
                     if unit in prefix and number in prefix:
@@ -235,7 +235,7 @@ for exercise in EXERCISES:
                 with open(unzip_dir / file_name, "w") as f:
                     f.write(reference)
             elif path.name.endswith("solution.xlsx"):
-                id = "teamnumber" if "team" in number else "username"
+                id = "reference"
                 prefix = path.name.removesuffix("solution.xlsx")
                 if unit in prefix and number in prefix:
                     file_name = f"{prefix}{id}.xlsx"
