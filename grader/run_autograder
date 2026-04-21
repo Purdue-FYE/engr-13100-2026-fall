@@ -47,7 +47,9 @@ git checkout main
 # 5. Build the grader artifact layout for the selected assignment so tests have
 # generated reference modules in tests/. We avoid source/_build so this works
 # independently of any .gitignore patterns.
-export BUILD_DIR="${TARGET_DIR/source\//source/.grader_runtime/}"
+REL_TARGET_DIR="${TARGET_DIR#source/}"
+export BUILD_DIR="source/.grader_runtime/${REL_TARGET_DIR}"
+echo "Building runtime grader in: $BUILD_DIR"
 python3 source/generate_graders.py "$BUILD_DIR"
 
 # Locate the extracted grader runtime directory created by generate_graders.py.
