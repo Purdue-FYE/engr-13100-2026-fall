@@ -42,7 +42,7 @@ echo "Mapping successful. Target directory: $TARGET_DIR"
 git sparse-checkout add "$TARGET_DIR" "grader" "source/generate_graders.py"
 
 # Update the working tree with the newly requested folders
-git checkout kpritche
+git checkout main
 
 # 5. Build the grader artifact layout for the selected assignment so tests have
 # generated reference modules in tests/. We avoid source/_build so this works
