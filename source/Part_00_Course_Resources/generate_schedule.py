@@ -26,6 +26,8 @@ from __future__ import annotations
 
 import csv
 import html
+import subprocess
+import sys
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -51,6 +53,7 @@ DO NOT CHANGE ANYTHING BELOW THIS LINE
 # Input / output paths relative to repo root
 TOPICS_CSV = Path("source/Part_00_Course_Resources/course_schedule/schedule_topics.csv")
 ASSIGNMENTS_CSV = Path("source/Part_00_Course_Resources/course_schedule/schedule_assignments.csv")
+ASSIGNMENTS_GENERATOR = Path("source/Part_00_Course_Resources/course_schedule/generate_schedule_assignments.py")
 OUTPUT_HTML = Path("source/Part_00_Course_Resources/course_schedule/student_course_schedule.html")
 
 @dataclass
@@ -510,6 +513,12 @@ def read_assignments(path: Path) -> dict[str, list[dict[str, str]]]:
 
     return assignments_by_slot
 
+def sync_assignments_csv() -> None:
+    if not ASSIGNMENTS_GENERATOR.exists():
+        return
+
+    subprocess.run([sys.executable, str(ASSIGNMENTS_GENERATOR)], check=True)
+
 
 def main() -> None:
     start_monday = parse_iso_date(START_DATE)
@@ -519,6 +528,8 @@ def main() -> None:
     term_value = TERM.lower()
     if term_value not in {"fall", "spring"}:
         raise ValueError('TERM must be either "fall" or "spring".')
+
+    sync_assignments_csv()
 
     topics = read_topics(TOPICS_CSV)
     assignments_by_slot = read_assignments(ASSIGNMENTS_CSV)
