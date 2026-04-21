@@ -48,6 +48,23 @@ def build_shared_autograder_zip() -> None:
     print(f"built: {zip_file_path}")
 
 
+def resolve_exercise_dir(dst_dir: Path) -> Path:
+    """Resolve the source exercise directory from a build destination path.
+
+    Supports legacy destination roots like `source/_build/graders/...` and
+    custom roots such as `source/.grader_runtime/...`.
+    """
+
+    parts = dst_dir.parts
+
+    # Prefer a Part_* anchor because it is stable across build roots.
+    part_index = next((i for i, p in enumerate(parts) if p.startswith("Part_")), None)
+    if part_index is None:
+        raise ValueError(f"Could not resolve exercise path from destination: {dst_dir}")
+
+    return Path("source", *parts[part_index:])
+
+
 if not EXERCISES:
     build_shared_autograder_zip()
     raise SystemExit(0)
@@ -55,7 +72,9 @@ if not EXERCISES:
 for exercise in EXERCISES:
     dst_dir = Path(exercise)
     dst_dir.mkdir(parents=True, exist_ok=True)
-    part, unit, _, number, name = dst_dir.parts[-5:]
+
+    exercise_dir = resolve_exercise_dir(dst_dir)
+    part, unit, _, number, name = exercise_dir.parts[-5:]
     if "Excel" in part:
         unit = unit.replace("M", "ex")
     elif "Python" in part:
@@ -76,9 +95,6 @@ for exercise in EXERCISES:
     if zip_file_path.exists():
         print(f"no update: {zip_file_name}")
         continue
-
-    # Remove _build/graders from dst_dir
-    exercise_dir = dst_dir.parts[0] / Path(*dst_dir.parts[3:])
 
     # Skip if no tests.
     if not (exercise_dir / "test_config.py").exists():
