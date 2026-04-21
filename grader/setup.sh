@@ -41,7 +41,7 @@ python3.13 -m pip install --upgrade pip wheel
 python3.13 -m pip install git+https://github.com/pritchettk/generic-grader git+https://github.com/pritchettk/gradescope-utils-extended pandas faker opencv-python
 
 # Clone autograder files from GitHub
-git clone --no-checkout --depth 1 --sparse git@github.com:your-organization/your-repo.git /autograder/my_grader_repo
+git clone --no-checkout --depth 1 --sparse git@github.com:Purdue-FYE/13100_content /autograder/13100_content
 
 cd /autograder/my_grader_repo
 

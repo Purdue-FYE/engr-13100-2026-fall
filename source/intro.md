@@ -17,7 +17,7 @@ py-config:
 (home_page)=
 # **ENGR 13100**<br> *Transforming Ideas to Innovation I*
 
-```{py-repl}
+<!-- ```{py-repl}
 :output: replOutput
 
   from datetime import datetime
@@ -28,7 +28,7 @@ py-config:
 <div id="replOutput"></div>
 
 ```{py-terminal}
-```
+``` -->
 
 ENGR 131 covers the following topics during the semester:
 
