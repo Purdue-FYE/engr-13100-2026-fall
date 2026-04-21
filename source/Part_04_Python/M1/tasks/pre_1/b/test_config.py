@@ -7,7 +7,7 @@ from generic_grader.utils.options import Options
 DUE_DATE = None  # Unused because we don't accept late pre-class tasks.
 
 SUB_MODULE = "py1_pre_1"
-REF_MODULE = "tests.py1_pre_1_reference" # IMPORT PATH TO REFERENCE SOLUTION
+REF_MODULE = "py1_pre_1_reference" # IMPORT PATH TO REFERENCE SOLUTION
 REQUIRED_FILES = (SUB_MODULE + "*.py",)
 file_set_up_options = Options(required_files=REQUIRED_FILES) # FILES MUST EXIST BEFORE RUNNING TESTS
 
