@@ -50,4 +50,4 @@ Test your program using the sample input/output below.
 
 ## Deliverables
 
-Submit your Python file {glue:text}`../../../../../glue_factory.md::py3_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
+Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::py3_pre_1_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.

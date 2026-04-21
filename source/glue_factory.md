@@ -145,16 +145,6 @@ glue('py3_pre_2_py', 'py3_pre_2_username.py', display=False)
 glue('py3_pre_2_xlsx', 'py3_pre_2_username.xlsx', display=False)
 glue('py3_pre_2_zip', 'py3_pre_2_username.zip', display=False)
 
-# py3_ica_1
-glue('py3_ica_1_powerdatavalues_pdf', 'py3_ica_1_powerdatavalues_username.pdf', display=False)
-glue('py3_ica_1_powerdataformulas_pdf', 'py3_ica_1_powerdataformulas_username.pdf', display=False)
-
-# py3_ind_1
-glue('py3_ind_1_pdf', 'py3_ind_1_username.pdf', display=False)
-glue('py3_ind_1_py', 'py3_ind_1_username.py', display=False)
-glue('py3_ind_1_xlsx', 'py3_ind_1_username.xlsx', display=False)
-glue('py3_ind_1_zip', 'py3_ind_1_username.zip', display=False)
-
 # py4_pre_1
 glue('py4_pre_1_pdf', 'py4_pre_1_username.pdf', display=False)
 glue('py4_pre_1_py', 'py4_pre_1_username.py', display=False)

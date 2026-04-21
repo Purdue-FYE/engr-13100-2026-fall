@@ -25,6 +25,33 @@ j2_env = Environment(
     variable_end_string='"}}',
 )
 
+
+def build_shared_autograder_zip() -> None:
+    """Build a single shared autograder package named by commit id."""
+    dst_dir = Path("grader")
+    dst_dir.mkdir(parents=True, exist_ok=True)
+
+    for old_zip in dst_dir.glob("autograder*.zip"):
+        old_zip.unlink()
+
+    zip_file_name = f"autograder_{commit_id}.zip"
+    zip_file_path = dst_dir / zip_file_name
+
+    with ZipFile(zip_file_path, "w", compression=ZIP_DEFLATED) as fo:
+        for path in sorted(Path("grader").glob("**/*")):
+            if path.is_file():
+                if path.name.startswith("autograder_") and path.suffix == ".zip":
+                    continue
+                # Place grader files at archive root as expected by Gradescope.
+                fo.write(path, path.relative_to("grader"))
+
+    print(f"built: {zip_file_path}")
+
+
+if not EXERCISES:
+    build_shared_autograder_zip()
+    raise SystemExit(0)
+
 for exercise in EXERCISES:
     dst_dir = Path(exercise)
     dst_dir.mkdir(parents=True, exist_ok=True)

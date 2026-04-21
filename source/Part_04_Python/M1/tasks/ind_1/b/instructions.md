@@ -17,7 +17,6 @@ deliverables:
 (PY:M1:A1)=
 # PY: Python Foundations
 
-
 ## In this assignment you will:
 
 - Collect and validate user input using variables and appropriate data types
