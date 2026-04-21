@@ -231,8 +231,8 @@ for exercise in EXERCISES:
                     reference_lines[n] = line
                 reference = "\n".join(reference_lines)
 
-                # Write the reference solution to the unzipped directory.
-                with open(unzip_dir / file_name, "w") as f:
+                # Write the reference solution under tests/ with test_config.
+                with open(unzip_dir / "tests" / file_name, "w") as f:
                     f.write(reference)
             elif path.name.endswith("solution.xlsx"):
                 id = "reference"
@@ -244,7 +244,7 @@ for exercise in EXERCISES:
                 else:
                     file_name = f"{unit}_{number}_{prefix}{id}.xlsx"
 
-                with open(unzip_dir / file_name, "wb") as f:
+                with open(unzip_dir / "tests" / file_name, "wb") as f:
                     f.write(path.read_bytes())
             elif path.name.endswith("test_cases.py") or path.name.endswith(
                 "test_config.py"
