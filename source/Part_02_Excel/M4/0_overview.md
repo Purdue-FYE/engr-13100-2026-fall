@@ -14,7 +14,7 @@ kernelspec:
 (EX:M4:Overview)=
 # Linear Regression
 
-This module [summary or introduction to content...]
+In this module, you will learn how to identify the coefficients of a best-fit linear model, evaluate goodness-of-fit using mathematical and software tools, and understand the limits of data extrapolation.
 
 ```{rubric} Topics Covered
 ```
