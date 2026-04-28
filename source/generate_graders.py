@@ -2,6 +2,7 @@
 Gradescope.
 """
 
+import os
 import subprocess
 from io import BytesIO
 from pathlib import Path
@@ -12,6 +13,12 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 
 EXERCISES = argv[1:]
+
+# Grab the secret from the Codespace environment
+DEPLOY_KEY = os.environ.get("GRADESCOPE_DEPLOY_KEY")
+if not DEPLOY_KEY:
+    print("WARNING: GRADESCOPE_DEPLOY_KEY environment variable is not set. \
+          deploy_key will NOT be included in the zip!")
 
 commit_id = subprocess.check_output(
     ["git", "rev-parse", "--short", "HEAD"],
@@ -38,6 +45,9 @@ def build_shared_autograder_zip() -> None:
     zip_file_path = dst_dir / zip_file_name
 
     with ZipFile(zip_file_path, "w", compression=ZIP_DEFLATED) as fo:
+        #Write the deploy key directly to the root of the zip archive
+        if DEPLOY_KEY:
+            fo.writestr("deploy_key", f"{DEPLOY_KEY}\n")
         for path in sorted(Path("grader").glob("**/*")):
             if path.is_file():
                 if path.name.startswith("autograder_") and path.suffix == ".zip":
@@ -113,6 +123,11 @@ for exercise in EXERCISES:
             parameters = {}
 
     with ZipFile(zip_file_path, "w", compression=ZIP_DEFLATED) as fo:
+         # Write the deploy key directly to the root of the zip archive
+        if DEPLOY_KEY:
+            fo.writestr("deploy_key", f"{DEPLOY_KEY}\n")
+
+
         for path in Path("grader").iterdir():
             if path.is_file():
                 fo.write(path, path.name)
@@ -194,6 +209,7 @@ for exercise in EXERCISES:
     # Unzip the archive
     with ZipFile(zip_file_path, "r") as fo:
         fo.extractall(unzip_dir)
+        (unzip_dir / "deploy_key").unlink(missing_ok=True)
 
     # Copy the reference solution as the submitted solution.
     for path in exercise_dir.iterdir():
