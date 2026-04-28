@@ -20,6 +20,9 @@ __pycache__/
 !.vscode/ltex*
 !.vscode/settings.json
 
+#Grader
+deploy_key
+
 # macOS
 .DS_Store
 
