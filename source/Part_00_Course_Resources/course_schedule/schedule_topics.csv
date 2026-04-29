@@ -1,27 +1,27 @@
 topic
 Course Introduction
-XL1: Spreadsheet Foundations
-XL2: Descriptive Statistics and Logical Functions
-XL2: Distributions - Histograms and Outliers
-XL3: Probability
-XL4: Linear Regression
-AI: AI Placeholder? 
-AI: AI Placeholder? (cont.)
-PY1: Python Foundations
-PY1: Sequences/Strings/Modules
-PY2: Selection Structures
-PY2: User-Defined Functions
-PY3: While Loops
-PY3: For Loops
-PY4: Data Manipulation (pandas/numpy)
-PY4: Data Visualization & Statistics
-PY5: Linear Regression in PY
-PY5: Linear Regression in PY (cont.)
-TP: Design Project
-TP: Design Project (cont.)
-TP: Design Project (cont.)
-TP: Design Project (cont.)
-TP: Design Project (cont.)
-TP: Design Project (cont.)
-TP: Design Project (cont.)
+EX: Spreadsheet Foundations
+EX: Descriptive Statistics and Logical Functions
+EX: Distributions - Histograms and Outliers
+EX: Probability
+EX: Linear Regression
+AI: LLMs & Neural Networks
+AI: LLMs & Neural Networks (cont.)
+PY: Python Foundations
+PY: Sequences/Strings/Modules
+PY: Selection Structures
+PY: User-Defined Functions
+PY: While Loops
+PY: For Loops
+TP: Design Project - Milestone 1
+PY: Data Manipulation (pandas/numpy)
+PY: Data Visualization & Statistics
+TP: Design Project - Milestone 2
+PY: Linear Regression in PY
+PY: Linear Regression in PY (cont.)
+TP: Design Project - Milestone 3
+TP: Design Project - Milestone 3
+TP: Design Project - Milestone 4
+TP: Design Project - Milestone 4
+TP: Design Project - Milestone 5
 Course Wrap-up

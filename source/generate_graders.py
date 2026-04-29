@@ -2,6 +2,7 @@
 Gradescope.
 """
 
+import os
 import subprocess
 from io import BytesIO
 from pathlib import Path
@@ -12,6 +13,12 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 
 EXERCISES = argv[1:]
+
+# Grab the secret from the Codespace environment
+DEPLOY_KEY = os.environ.get("GRADESCOPE_DEPLOY_KEY")
+if not DEPLOY_KEY:
+    print("WARNING: GRADESCOPE_DEPLOY_KEY environment variable is not set. \
+          deploy_key will NOT be included in the zip!")
 
 commit_id = subprocess.check_output(
     ["git", "rev-parse", "--short", "HEAD"],
@@ -25,10 +32,59 @@ j2_env = Environment(
     variable_end_string='"}}',
 )
 
+
+def build_shared_autograder_zip() -> None:
+    """Build a single shared autograder package named by commit id."""
+    dst_dir = Path("grader")
+    dst_dir.mkdir(parents=True, exist_ok=True)
+
+    for old_zip in dst_dir.glob("autograder*.zip"):
+        old_zip.unlink()
+
+    zip_file_name = f"autograder_{commit_id}.zip"
+    zip_file_path = dst_dir / zip_file_name
+
+    with ZipFile(zip_file_path, "w", compression=ZIP_DEFLATED) as fo:
+        #Write the deploy key directly to the root of the zip archive
+        if DEPLOY_KEY:
+            fo.writestr("deploy_key", f"{DEPLOY_KEY}\n")
+        for path in sorted(Path("grader").glob("**/*")):
+            if path.is_file():
+                if path.name.startswith("autograder_") and path.suffix == ".zip":
+                    continue
+                # Place grader files at archive root as expected by Gradescope.
+                fo.write(path, path.relative_to("grader"))
+
+    print(f"built: {zip_file_path}")
+
+
+def resolve_exercise_dir(dst_dir: Path) -> Path:
+    """Resolve the source exercise directory from a build destination path.
+
+    Supports legacy destination roots like `source/_build/graders/...` and
+    custom roots such as `source/.grader_runtime/...`.
+    """
+
+    parts = dst_dir.parts
+
+    # Prefer a Part_* anchor because it is stable across build roots.
+    part_index = next((i for i, p in enumerate(parts) if p.startswith("Part_")), None)
+    if part_index is None:
+        raise ValueError(f"Could not resolve exercise path from destination: {dst_dir}")
+
+    return Path("source", *parts[part_index:])
+
+
+if not EXERCISES:
+    build_shared_autograder_zip()
+    raise SystemExit(0)
+
 for exercise in EXERCISES:
     dst_dir = Path(exercise)
     dst_dir.mkdir(parents=True, exist_ok=True)
-    part, unit, _, number, name = dst_dir.parts[-5:]
+
+    exercise_dir = resolve_exercise_dir(dst_dir)
+    part, unit, _, number, name = exercise_dir.parts[-5:]
     if "Excel" in part:
         unit = unit.replace("M", "ex")
     elif "Python" in part:
@@ -50,9 +106,6 @@ for exercise in EXERCISES:
         print(f"no update: {zip_file_name}")
         continue
 
-    # Remove _build/graders from dst_dir
-    exercise_dir = dst_dir.parts[0] / Path(*dst_dir.parts[3:])
-
     # Skip if no tests.
     if not (exercise_dir / "test_config.py").exists():
         print(f"no grader config: {zip_file_name}")
@@ -70,6 +123,11 @@ for exercise in EXERCISES:
             parameters = {}
 
     with ZipFile(zip_file_path, "w", compression=ZIP_DEFLATED) as fo:
+         # Write the deploy key directly to the root of the zip archive
+        if DEPLOY_KEY:
+            fo.writestr("deploy_key", f"{DEPLOY_KEY}\n")
+
+
         for path in Path("grader").iterdir():
             if path.is_file():
                 fo.write(path, path.name)
@@ -151,6 +209,7 @@ for exercise in EXERCISES:
     # Unzip the archive
     with ZipFile(zip_file_path, "r") as fo:
         fo.extractall(unzip_dir)
+        (unzip_dir / "deploy_key").unlink(missing_ok=True)
 
     # Copy the reference solution as the submitted solution.
     for path in exercise_dir.iterdir():
@@ -160,8 +219,8 @@ for exercise in EXERCISES:
                 # Render the reference solution.
                 reference = j2_env.get_template(str(path)).render(**parameters)
 
-                # Work out the correct file name
-                id = "teamnumber" if "team" in number else "username"
+                # Seeded local runtime files should use a reference suffix.
+                id = "reference"
                 if path.name.endswith("solution.py"):
                     prefix = path.name.removesuffix("solution.py")
                     if unit in prefix and number in prefix:
@@ -188,11 +247,11 @@ for exercise in EXERCISES:
                     reference_lines[n] = line
                 reference = "\n".join(reference_lines)
 
-                # Write the reference solution to the unzipped directory.
-                with open(unzip_dir / file_name, "w") as f:
+                # Write the reference solution under tests/ with test_config.
+                with open(unzip_dir / "tests" / file_name, "w") as f:
                     f.write(reference)
             elif path.name.endswith("solution.xlsx"):
-                id = "teamnumber" if "team" in number else "username"
+                id = "reference"
                 prefix = path.name.removesuffix("solution.xlsx")
                 if unit in prefix and number in prefix:
                     file_name = f"{prefix}{id}.xlsx"
@@ -201,7 +260,7 @@ for exercise in EXERCISES:
                 else:
                     file_name = f"{unit}_{number}_{prefix}{id}.xlsx"
 
-                with open(unzip_dir / file_name, "wb") as f:
+                with open(unzip_dir / "tests" / file_name, "wb") as f:
                     f.write(path.read_bytes())
             elif path.name.endswith("test_cases.py") or path.name.endswith(
                 "test_config.py"

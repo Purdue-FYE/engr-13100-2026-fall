@@ -144,10 +144,6 @@ parts:
         sections:
         - file: Part_04_Python/M3/tasks/ind_1/a/instructions
 
-      # - file: Part_04_Python/M3/2_assignments
-      #   sections:
-      #   - file: Part_04_Python/M3/tasks/ind_1/a/instructions
-
     # Python Module 4
     - file: Part_04_Python/M4/0_overview
       sections:

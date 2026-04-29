@@ -7,50 +7,45 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+deliverables:
+  - report_pdf
+  - py
 ---
 ```{include} /macros.md
 ```
 
-(PY:M3:A1)=
-# PY: Looping Structures
+(PY:M1:A1)=
+# PY: Python Foundations
 
-## In this assignment, you will:
+## In this assignment you will:
 
-- Design a flowchart that models a robot’s decision-making process in a conveyor belt system
-- Interpret a written process description and translate it into a visual algorithm
-- Use loops and conditional logic to represent how the robot evaluates different item types
-- Convert user input into a usable data structure (array/list) for processing
-- Write a Python program that implements the logic shown in your flowchart
-- Apply modular programming and coding standards to organize and document your code
-- Test your program using different inputs to verify correct behavior
-- Identify and fix errors through debugging and test case analysis
-- Reflect on how the algorithm could be improved for efficiency and real-world applications
+- Collect and validate user input using variables and appropriate data types
+- Simulate medical device testing using randomly generated data
+- Store, access, and analyze test results using lists and indexing
+- Apply mathematical operations to evaluate device performance
+- Use logical decision-making to determine pass/fail outcomes
+- Format and display professional, clearly labeled program output
+- Apply basic string manipulation to clean and organize input data
+- Identify and explain common Python errors encountered in programming
+- Communicate technical results clearly through a short, written report
 
 ## Learning Objectives
 
 - PR01: Programming Standards
 - PR02: Data Storage
-- PR04: Modular Programming
-- PR05: Code Structures
-- PR06: Translate Program Descriptions
-- PR07: Test cases & Tracking
+- PR03: Calculations
 - PR08: Debugging
 
-## Q1 Robot Workflow Optimization
+## Q1 Medical Device Prototype Testing Program
 (XX Points)
 
 ### Background
 
-Industrial engineers design efficient workflows for systems such as manufacturing lines and robotic processes.
+You are a Biomedical Engineer working in a research and development lab. Your supervisor has asked you to create a Python program that simulates testing a new medical device prototype.
 
-In this assignment, you will first create a flowchart that models how a robot responds to different conditions in a workflow. You will then translate this flowchart into a Python program that executes the same process.
+### Deliverables
 
-Think of your flowchart as a visual representation of an algorithm, and your code as the step-by-step decision-making system that a robot would follow in a real-world environment.
-
-## Files Needed
-
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save it as py2_ind_1_username.py.
+Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:`.
 
 ```{admonition} Note
    :class: note
@@ -58,58 +53,114 @@ Download the {program}`Python` template {download}`ENGR131_Python_Template.py
 Remember to include comments in your python script to practice professional programming standards.
 ```
 
-## Program Requirements
+### Program Requirements
 
-### Part 1
+#### Step 1: User Input
 
-Create a flowchart that represents your robot’s decision-making process. Use the description below to guide your design.
+Your program must ask the user for:
+1. A random seed integer
+2. The medical device name
+3. Prototype ID number
+4. Researcher’s last name
+5. Researcher’s title
 
-We recommend using https://app.diagrams.net/ to design and export your flowchart as a .pdf file. Save and name your flowchart **py3__ind_1_flowchart_username.pdf**.
+#### Step 2: Professional Header
 
-**Process Description:**
+Output a clear, professional header that includes:
+- The test information provided by the user
+- The date and time of the test (timestamp)
 
-A robot moves through a sequence of items on a conveyor belt. Each item may require a different action.
+#### Step 3: Simulated Test Data
 
-First, The robot receives an input from the user ("user_input") in the form of a list separated by commas with no spaces. The list is then converted to an array called "items." Each item in the list may be one of the following: "normal," "fragile," "heavy," "error."
+Generate at 5 random test values between 5 and 100. Store the values in a list.
 
-The robot will loop through the list one item at a time and decide what action to take based on the type of item.
+#### Step 4: Mathematical Analysis
 
-**Robot Actions**
+Using the list of test values, your program must:
+- Calculate and display the average test value
+- Perform one additional math calculation. Choose one: square root, sine of the average, a pi-based calculation.
 
-Your flowchart must display how the robot responds to each type of item:
+```{admonition} Note
+   :class: note
 
-- "normal" → "Moving item to standard bin"
-- "fragile" → "Handling fragile item with care"
-- "heavy" → "Activating lift assist for heavy item"
-- "error" → "ALERT: Item error detected – robot needs help!"
-- Any other value → "Sending item to inspection"
+All values must be clearly labeled and formatted with two decimal places.
+```
 
-Additionally, if the list contains at least 3 "error" items, then the robot should stop looking at items on the conveyor belt and display: "ALERT: Too many errors - sending robot to inspection".
+#### Step 5: Pass/Fail Evaluation
 
-**Requirements**
+Determine whether the device passes or fails based on this rule:
 
-Your flowchart should:
+If the average test value is greater than or equal 50, the device passes. Otherwise, it fails.
 
-- Clearly show a for loop that processes each item in the list
-- Include a conditional structure for item types
-- Display the robot action/output for each possible condition
+```{admonition} Note
+   :class: note
 
-### Part 2
+Because we have not covered {python}`if` statements yet in this course, you cannot use an {python}`if` statement for this part of the assignment.
+```
 
-Write a Python program that executes the algorithm displayed in your flowchart. Remember to prompt the user for a list of items (```user_input```) separated by commas (no spaces). Then convert the user input into an array of strings called ```items```.
+#### Step 6: String Processing & Data Organization
+
+Your program must demonstrate:
+- String concatenation in the following form: "lastname_lastname_". 
+- Splitting the researcher's title into a sequence and displaying the result.
+
+Both the researcher's last name and title should be capitalized when displayed.
+
+### Output Requirements
+
+Your program output must include:
+1. A professional header
+2. Clearly labeled test values and calculations
+3. Pass/fail result
+4. Clean formatting and **spacing** for readability
 
 Use the sample output section below to verify that your program outputs correct values.
 
-% Automatically generated Sample Output section.
-```{include} /_build/intermediate/Part_04_Python/M3/tasks/ind_1/a/sample_output.md
+```{admonition} Note
+   :class: note
+
+Use `\n` to help format your output spacing.
 ```
-### Part 3
 
-Create a MS Word document, copy-paste to following questions into the document, and answer the questions using 
+% Automatically generated Sample Output section.
+```{include} /_build/intermediate/Part_04_Python/M1/tasks/ind_1/b/sample_output.md
+```
 
-1. How would you improve the robot's algorithm to become more efficient?
-2. What might an Industrial Engineer change in a real robot system?
+## Q2 Medical Device Prototype Testing Report
+
+### Background
+
+Your supervisor has asked you to report back with testing results.
+
+Your written report should be written as a professional technical memo to your laboratory supervisor. Assume your supervisor is scientifically knowledgeable but did not run your program themselves. The report should be 1-2 well-structured paragraphs and have a clear, professional tone (no casual language). You may include bullet points to list items, but the entire report cannot be organized in bullet points.
+
+#### Content Requirements
+
+Your memo must address the following:
+
+**1.	Purpose of the Program**
+- What the medical device testing program is designed to simulate
+- What kind of data the program generates and why it is relevant to prototype evaluation
+
+**2. Testing & Analysis Process**
+- How test values were generated
+- How the data was stored and analyzed
+
+**3. Performance Evaluation**
+- Pass/fail criteria used in the program
+- How the program determines and report the final device status
+
+**4. Technical Challenges & Debugging**
+- One programming error you encountered
+- What caused the error
+- How you identified and corrected it
 
 ### Deliverables
 
-Submit your flowchart **py3_ind_1_flowchart_username.pdf**, python file {glue:text}`../../../../../glue_factory.md::py3_ind_1_py:`, and responses to the short answer questions to (INSERT ASSIGNMENT NAME) on Gradescope.
+Submit your report to (INSERT ASSIGNMENT NAME HERE) on Gradescope.
+
+```{admonition} Note
+   :class: note
+
+We recommend writing and saving your report in a text file or MS Word document and then copy-paste it into the text box in Gradescope. You can reference your report in the saved file for future assignments with similar tasks.
+```

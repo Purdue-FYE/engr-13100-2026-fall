@@ -1,5 +1,6 @@
 REPO = engr-13100-2026-fall
 URL = https://purdue-fye.github.io/$(REPO)
+PYTHON_BIN = $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
 
 # Create a list of all exercise solutions and corresponding test_cases files by
 # scanning through the tasks directories in each module.
@@ -46,7 +47,8 @@ all: $(sample_output)
 	rm -f source/_build/html/glue_factory.html source/_build/html/_sources/glue_factory.md
 	echo "View this site [here]($(URL))." > source/_build/html/README.md
 
-graders: clean-graders $(archives)
+graders: clean-graders grader/assignment_mapping.json
+	$(PYTHON_BIN) source/generate_graders.py
 
 # Publish to production site.
 pub: all
@@ -70,7 +72,10 @@ pub: all
 #  - $(@D)  is the directory part of the filename.
 %autograder.zip : \
 	$$(wildcard $(@D)/*.py) $$(wildcard $(@D)/*.png) $$(wildcard $(@D)/*.txt) $$(wildcard $(@D)/*.xlsx) $(grader_files)
-	python3 source/generate_graders.py "$(@D)"
+	$(PYTHON_BIN) source/generate_graders.py "$(@D)"
+
+grader/assignment_mapping.json: source/generate_assignment_mapping.py source/Part_00_Course_Resources/course_schedule/generate_schedule_assignments.py source/_toc.yml
+	$(PYTHON_BIN) source/generate_assignment_mapping.py
 
 # Make schedule document: 
 schedule:
