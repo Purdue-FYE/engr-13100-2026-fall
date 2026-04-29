@@ -41,6 +41,7 @@ WEEKS = 16
 
 # Placeholder exam slots for now
 EXAM_SLOTS = ["5A", "12A", "15A"]
+EXAM_TOPICS = ["Excel", "Python", "Design & AI"]
 
 # Fall Break is always Week 8 during class A; Spring Break is always 10A and 10B
 FALL_BREAK_SLOT = "8A"
@@ -95,6 +96,10 @@ def parse_iso_date(value: str) -> date:
 def format_month_day(d: date) -> str:
     return f"{d.month}/{d.day}"
 
+def get_exam_label(slot_id: str) -> str:
+    exam_num = EXAM_SLOTS.index(slot_id) + 1
+    exam_topic = EXAM_TOPICS[exam_num - 1]
+    return f"Exam {exam_num}: {exam_topic}"
 
 def get_thanksgiving(year: int) -> date:
     nov1 = date(year, 11, 1)
@@ -153,7 +158,7 @@ def build_slots(start_monday: date, weeks: int) -> List[ClassSlot]:
 
             if slot.slot_id in EXAM_SLOTS:
                 slot.row_kind = "exam"
-                slot.topic = "Exam"
+                slot.topic = get_exam_label(slot.slot_id)
             elif TERM.lower() == "fall" and slot.slot_id == FALL_BREAK_SLOT:
                 slot.row_kind = "fall_break"
                 slot.topic = "Fall Break"
@@ -419,8 +424,12 @@ html[data-theme="dark"] {
         '      <tr class="exam-header"><td colspan="2">Exam Schedule</td></tr>'
     )
     for idx, slot_id in enumerate(EXAM_SLOTS, start=1):
+        exam_topic = EXAM_TOPICS[idx - 1]
         parts.append(
-            f'      <tr class="exam-row"><td class="nowrap">Exam {idx}</td><td>In-Class Exam (Class {html.escape(slot_id)})</td></tr>'
+            f'      <tr class="exam-row">'
+            f'<td class="nowrap">Exam {idx}</td>'
+            f'<td>{html.escape(exam_topic)} (Class {html.escape(slot_id)})</td>'
+            f'</tr>'
         )
     parts.append("    </tbody>")
     parts.append("  </table>")
@@ -453,7 +462,7 @@ html[data-theme="dark"] {
         for slot in week_slots:
             if slot.row_kind == "exam":
                 row_class = "exam-slot-row"
-                topic = "Exam"
+                topic = slot.topic
             elif slot.row_kind == "fall_break":
                 row_class = "break-row"
                 topic = "Fall Break"
