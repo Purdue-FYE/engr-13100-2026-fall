@@ -14,7 +14,7 @@ kernelspec:
 (EX:M3:Overview)=
 # Probability & Uncertainty
 
-**Write an overview here.**
+In this module, you will learn how to calculate relative probability, identify the properties of normal distributions, and use z-scores to find probabilities.
 
 ```{rubric} Topics Covered
 ```

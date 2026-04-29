@@ -29,3 +29,6 @@ kernelspec:
 
 ```{tableofcontents}
 ```
+
+```{include} ../../guidelines/submit_task_GS.md
+```

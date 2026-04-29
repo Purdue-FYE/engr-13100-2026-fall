@@ -40,7 +40,7 @@ START_DATE = "2026-08-24"  # Monday of Week 1
 WEEKS = 16
 
 # Placeholder exam slots for now
-EXAM_SLOTS = ["5A", "10A", "13A"]
+EXAM_SLOTS = ["5A", "12A", "15A"]
 
 # Fall Break is always Week 8 during class A; Spring Break is always 10A and 10B
 FALL_BREAK_SLOT = "8A"

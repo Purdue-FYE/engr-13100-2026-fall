@@ -75,3 +75,51 @@ A03: Classes 4A-4B, release 4A due 5A *** AI assignment???
 Other notes: 
 - EYMs/CE
 - teamwork (scorm due by 3B currently); need to rewrite scorm, reorganize teaming page to create a CATME specific page
+
+
+# Meeting Notes 4.27
+## Proj Dev
+Ruth put milestone outline in the project materials page
+- wants a more modular approach to tech writing; not a huge fan of the current outline for the tech report
+- activities are a starting point but will rely on deliverables
+- pull PY assignment writing assignment (scaffolding for proj)
+
+Kory shared proj deliverables ideas; Ruth added to document
+Next steps: Holly & Kory will start writing instructions for this part of the project
+
+## Coordination
+### Overall Structure
+#### Projects 
+- No prototyping with physical materials for the project; ruth suggested some hardware suggestions but NT said not now
+
+#### Assessments
+- currently pencilled in 3; similar to current structure
+- paper pencil
+- topics: excel, python, ai and design
+    Kory is going to write for AI and design; pull together current design questions
+- versioning per time block
+- process
+    IST come up with a draft
+    Ruth will review
+    TA time testing
+- 45 min exams; grouping each time block
+- consider preparation materials
+
+#### Schedule
+- introduce project 2-3 weeks before they start milestone 2
+- dedicated class day for project for this; structured activity
+- each of 5 milestones; 4 of them have dedicated class days, not necessarily consecutive;
+- finish python by the end of milestone 2; 
+- teams start 4A; doing AI project
+- cat 1 before they start the main project; between milestone 2/3 cat 2
+
+#### Team Assignments
+- AI/excel and main project are team assignments
+- no reason for team plans or additional team assignments
+
+### ICA
+- for credit or not? not for the fall
+- hard to incentivize students
+- instructors would lose autonomy; "you have to do something" but you can do what you want
+- discuss and think about for the spring
+- make it dropable if they miss anything

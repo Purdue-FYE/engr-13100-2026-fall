@@ -37,7 +37,6 @@ deliverables:
 - PR08: Debugging
 
 ## Q1 Medical Device Prototype Testing Program
-(XX Points)
 
 ### Background
 
@@ -46,6 +45,7 @@ You are a Biomedical Engineer working in a research and development lab. Your su
 ### Deliverables
 
 Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py1_ind_1_py:`.
+
 
 ```{admonition} Note
    :class: note
