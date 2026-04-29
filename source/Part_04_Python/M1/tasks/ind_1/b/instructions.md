@@ -72,7 +72,7 @@ Output a clear, professional header that includes:
 
 #### Step 3: Simulated Test Data
 
-Generate at 5 random test values between 5 and 100. Store the values in a list.
+Generate five random test values between 5 and 100. *Be sure to generate these values using a seed integer*, then store the values in a list.
 
 #### Step 4: Mathematical Analysis
 
@@ -157,7 +157,7 @@ Your memo must address the following:
 
 ### Deliverables
 
-Submit your report to (INSERT ASSIGNMENT NAME HERE) on Gradescope.
+Submit your report as a .pdf file to (INSERT ASSIGNMENT NAME HERE) on Gradescope.
 
 ```{admonition} Note
    :class: note
