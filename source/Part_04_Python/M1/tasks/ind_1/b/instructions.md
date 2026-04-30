@@ -68,11 +68,17 @@ Your program must ask the user for:
 
 Output a clear, professional header that includes:
 - The test information provided by the user
-- The date and time of the test (timestamp)
+- The date and time of the test (time stamp)
+
+```{admonition} Hint
+   :class: note
+
+We recommend using [Python Documentation](https://docs.python.org/3/) to learn new things in Python, like how to print a time stamp.
+```
 
 #### Step 3: Simulated Test Data
 
-Generate five random test values between 5 and 100. *Be sure to generate these values using a seed integer*, then store the values in a list.
+Generate five random test values (*integers*) between 5 and 100. *Be sure to initialize a random seed before generating your test values*. Finally, store the test values in a list.
 
 #### Step 4: Mathematical Analysis
 
@@ -114,7 +120,7 @@ Your program output must include:
 3. Pass/fail result
 4. Clean formatting and **spacing** for readability
 
-Use the sample output section below to verify that your program outputs correct values.
+**Use the sample output section below to verify that your program outputs correct values.**
 
 ```{admonition} Note
    :class: note
@@ -158,9 +164,3 @@ Your memo must address the following:
 ### Deliverables
 
 Submit your report as a .pdf file to (INSERT ASSIGNMENT NAME HERE) on Gradescope.
-
-```{admonition} Note
-   :class: note
-
-We recommend writing and saving your report in a text file or MS Word document and then copy-paste it into the text box in Gradescope. You can reference your report in the saved file for future assignments with similar tasks.
-```
