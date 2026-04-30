@@ -114,8 +114,7 @@ Download the {program}`Python` template {download}`ENGR131_Python_Template.py </
 
 As the scripts and programs we write become more complex, we often do not want to put all of our code directly in the `main` function. Python allows users to easily write their own functions in order to modularize their programs; these are called user-defined functions (UDFs).
 
-For this assignment, a flowchart for your {program}`Python` program is shown in {numref}`fig:Py:M2:ind_1:flowchart`. Using the flowchart and the following initial conditions, develop a {program}`Python` program to determine the escape velocity. *Your program output should format the value for escape velocity to two decimal places.*
-
+For this assignment, a flowchart for your {program}`Python` program is shown in {numref}`fig:Py:M2:ind_1:flowchart`. Using the flowchart and the following initial conditions, develop a {program}`Python` program to determine the escape velocity.
 
 ```{table} 
 :class: cases
@@ -169,6 +168,16 @@ Where
 Convert the radius from m to km before printing to the terminal. This can be done using simple division in {program}`Python`.
 ```
 
+#### Program Output
+
+1. Use the following text to prompt the user for input:
+```
+"Enter the density of the planet (kg/m^3): "
+"Enter the radius of the planet (m): "
+```
+2. Your program output should format the value for escape velocity to two decimal places.
+
+
 ```{figure} py2_ind_1_flowchart.jpg
 :name: fig:Py:M2:ind_1:flowchart
 
@@ -189,6 +198,6 @@ Submit your {program}`Python` file {glue:text}`../../../../../glue_factory.md::p
 
 Navigate to (INSERT ASSIGNMENT NAME) on Gradescope and answer the following:
 
-1. How do you think the {program}`Python` program you wrote Q1 or Q2 could be more efficient?
+1. How do you think the {program}`Python` program you wrote for Q1 or Q2 could be more efficient?
 
 2. For Q1 and Q2, how is the context of each problem important?
