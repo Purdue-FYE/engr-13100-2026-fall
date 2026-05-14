@@ -4,7 +4,7 @@ Generate ENGR 131 schedule HTML from an ordered topic list CSV.
 
 What this script does:
 - reads a simple `schedule_topics.csv` file with one column: `topic`
-- auto-generates Weeks 1–16 with A/B class meetings
+- auto-generates Weeks 1 to 16 with A/B class meetings
 - auto-fills week date ranges from the Monday of Week 1
 - blocks exam slots
 - blocks Fall Break at 8A in fall
@@ -53,7 +53,8 @@ DO NOT CHANGE ANYTHING BELOW THIS LINE
 
 # Input / output paths relative to repo root
 TOPICS_CSV = Path("source/Part_00_Course_Resources/course_schedule/schedule_topics.csv")
-ASSIGNMENTS_CSV = Path("source/Part_00_Course_Resources/course_schedule/schedule_assignments.csv")
+ASSIGNMENTS_CSV = Path("source/_build/intermediate/course_schedule/schedule_assignments.merged.csv")
+MANUAL_ASSIGNMENTS_CSV = Path("source/Part_00_Course_Resources/course_schedule/schedule_assignments.csv")
 ASSIGNMENTS_GENERATOR = Path("source/Part_00_Course_Resources/course_schedule/generate_schedule_assignments.py")
 OUTPUT_HTML = Path("source/Part_00_Course_Resources/course_schedule/student_course_schedule.html")
 
@@ -541,7 +542,8 @@ def main() -> None:
     sync_assignments_csv()
 
     topics = read_topics(TOPICS_CSV)
-    assignments_by_slot = read_assignments(ASSIGNMENTS_CSV)
+    assignments_path = ASSIGNMENTS_CSV if ASSIGNMENTS_CSV.exists() else MANUAL_ASSIGNMENTS_CSV
+    assignments_by_slot = read_assignments(assignments_path)
     slots = build_slots(start_monday, WEEKS)
     fill_topics(slots, topics)
 

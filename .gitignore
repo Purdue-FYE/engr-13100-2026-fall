@@ -57,3 +57,5 @@ _intermediate/
 *.bak
 *.orig
 *.old
+
+plans/*
