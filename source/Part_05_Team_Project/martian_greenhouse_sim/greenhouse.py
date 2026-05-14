@@ -3,7 +3,7 @@ Thermodynamic and atmospheric state model for the cylindrical MLGH prototype.
 
 Greenhouse geometry (hard requirements)
 ---------------------------------------
-  Cylinder: 5.5 m long × 2.1 m diameter
+  Cylinder: 5.5 m long * 2.1 m diameter
   Total volume : 21 m³   Surface area SA : 43.2 m²
   Active mixing volume V_T : 14 m³  (≈ 65 % of total)
   Internal pressure : 100 kPa
@@ -11,11 +11,11 @@ Greenhouse geometry (hard requirements)
 Thermal dynamics (required equations)
 --------------------------------------
 Heat loss:
-    HL = SA × U × (T_in − T_out)              [Watts]
+    HL = SA * U * (T_in − T_out)              [Watts]
 
 Temperature update per time step Δt:
-    dT_in/dt = (−HL + Q_heater + S_i) / (ρ × V_T × Cp)
-    T_in ← T_in + dT_in/dt × Δt
+    dT_in/dt = (−HL + Q_heater + S_i) / (ρ * V_T * Cp)
+    T_in ← T_in + dT_in/dt * Δt
 
 where:
     U       = thermal transmittance of wall glazing  (W/(m²·K))
@@ -127,7 +127,7 @@ class Greenhouse:
     initial_rh_pct : float
         Initial relative humidity (%).
     initial_soil_vwc : float
-        Initial soil volumetric water content [0–1].
+        Initial soil volumetric water content [0 to 1].
     u_value : float
         Thermal transmittance of the wall (W/(m²·K)).  Lower values give
         better insulation.  Default 0.3 represents high-performance double-
@@ -165,8 +165,8 @@ class Greenhouse:
 
         Implements the required heat-loss and temperature ODE equations:
 
-            HL = SA × U × (T_in − T_out)
-            dT_in/dt = (−HL + Q_heater + S_i) / (ρ × V_T × Cp)
+            HL = SA * U * (T_in − T_out)
+            dT_in/dt = (−HL + Q_heater + S_i) / (ρ * V_T * Cp)
 
         Also updates CO₂, relative humidity, soil moisture, and PAR.
 

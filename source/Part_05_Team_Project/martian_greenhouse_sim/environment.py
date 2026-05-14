@@ -53,7 +53,7 @@ class MarsEnvironment:
     -----------------
     A sinusoidal diurnal cycle over one Martian sol (88 775 s):
 
-        T_out(t) = T_mean + T_amp × sin(2π·t/sol − π/2)
+        T_out(t) = T_mean + T_amp * sin(2π·t/sol − π/2)
 
     where T_mean = −37.5 °C and T_amp = 32.5 °C, yielding a maximum of
     −5 °C at local noon and a minimum of −70 °C at local midnight.

@@ -25,8 +25,9 @@ from .controllers import (
 )
 from .environment import MarsEnvironment
 from .greenhouse import Greenhouse, GreenhouseState
+from .plants import PlantCohort
 from .sensors import VirtualSensors
-from .simulation import SimulationResult, run_simulation
+from .simulation import SimulationResult, load_student_controller, run_simulation
 
 __all__ = [
     "MarsEnvironment",
@@ -38,6 +39,8 @@ __all__ = [
     "SensorReadings",
     "Setpoints",
     "ActuatorCommands",
+    "PlantCohort",
     "run_simulation",
+    "load_student_controller",
     "SimulationResult",
 ]

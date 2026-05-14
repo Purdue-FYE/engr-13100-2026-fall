@@ -185,3 +185,63 @@ CO2_TOXIC_DURATION_S: float = 1800.0   # 30 minutes
 
 #: Hard simulation cap on internal CO₂ concentration (ppm).
 CO2_BOUNDS_MAX_PPM: float = 20_000.0
+
+# ===========================================================================
+# Plant Cohort Health — Lethal Exposure Thresholds
+# ===========================================================================
+# Plants die when a stress accumulator exceeds its threshold (seconds of
+# sustained exposure).  Only three failure modes are tracked; all other
+# variables are assumed controlled adequately by the students.
+
+#: Temperature below which exposure is lethal (°C).
+PLANT_LETHAL_LOW_C: float = 5.0
+
+#: Temperature above which exposure is lethal (°C).
+PLANT_LETHAL_HIGH_C: float = 40.0
+
+#: Seconds at PLANT_LETHAL_LOW_C before the cohort dies (2 hours).
+PLANT_LETHAL_LOW_DURATION_S: float = 7_200.0
+
+#: Seconds at PLANT_LETHAL_HIGH_C before the cohort dies (1 hour).
+PLANT_LETHAL_HIGH_DURATION_S: float = 3_600.0
+
+#: Volumetric water content below which soil is drought-stressed.
+PLANT_DROUGHT_VWC: float = 0.10
+
+#: Volumetric water content above which soil is waterlogged.
+PLANT_WATERLOG_VWC: float = 0.70
+
+#: Seconds at PLANT_DROUGHT_VWC before the cohort dies (1 sol).
+PLANT_DROUGHT_DURATION_S: float = SOL_SECONDS
+
+#: Seconds at PLANT_WATERLOG_VWC before the cohort dies (0.5 sol).
+PLANT_WATERLOG_DURATION_S: float = SOL_SECONDS * 0.5
+
+#: PAR below which the light level is insufficient for plant survival.
+PLANT_LOW_PAR_UMOL: float = 150.0
+
+#: Cumulative seconds at PLANT_LOW_PAR_UMOL before the cohort dies (2 sols).
+PLANT_LOW_LIGHT_DURATION_S: float = SOL_SECONDS * 2.0
+
+# --- Stress recovery time constants (exponential decay, τ = 1/e recovery) ---
+# When conditions recover from a stressful band, the accumulated stress decays
+# as  s(t) = s₀ · exp(−Δt / τ).  A larger τ means slower recovery.
+#
+# Temperature recovers relatively quickly (0.25 sol ≈ 6 h): membrane and
+# enzyme damage is partially reversible once temperature is stabilised.
+PLANT_RECOVERY_TEMP_TAU_S: float = SOL_SECONDS * 0.25   # ≈ 22 194 s
+
+# Soil stress (drought or waterlog) recovers over ~0.5 sol (≈ 12 h): root
+# tissue and water potential normalise more slowly than air temperature.
+PLANT_RECOVERY_SOIL_TAU_S: float = SOL_SECONDS * 0.5    # ≈ 44 388 s
+
+# Photosynthetic capacity after a low-light period recovers over ~0.5 sol;
+# chloroplast re-orientation and enzyme re-synthesis are relatively slow.
+PLANT_RECOVERY_LIGHT_TAU_S: float = SOL_SECONDS * 0.5   # ≈ 44 388 s
+
+# --- Scoring ---
+#: Number of Martian sols considered a full-credit run.
+SCORING_TARGET_SOLS: float = 30.0
+
+#: Gradescope maximum points awarded to the plant survival test.
+SCORING_MAX_POINTS: float = 100.0

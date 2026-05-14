@@ -32,10 +32,15 @@ Or import and call programmatically::
 """
 
 import csv
+import importlib
+import importlib.util
 import io
+import json
 import random
+import sys
 from dataclasses import asdict, dataclass, field
-from typing import List, Optional, Type
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Type
 
 from .actuators import VirtualActuators
 from .constants import (
@@ -52,11 +57,14 @@ from .constants import (
     LETTUCE_TEMP_DAY_C,
     LETTUCE_TEMP_NIGHT_C,
     LETTUCE_VWC_SETPOINT,
+    SCORING_MAX_POINTS,
+    SCORING_TARGET_SOLS,
     SOL_SECONDS,
 )
 from .controllers import ActuatorCommands, Setpoints, SensorReadings, StudentPIDController
 from .environment import MarsEnvironment
 from .greenhouse import Greenhouse
+from .plants import PlantCohort
 from .sensors import VirtualSensors
 
 
@@ -120,6 +128,7 @@ class SimulationResult:
     dt_seconds: float
     seed: int
     total_steps: int
+    steps_run: int = 0
 
     mean_temp_error_c: float = 0.0
     co2_in_range_fraction: float = 0.0
@@ -127,7 +136,77 @@ class SimulationResult:
     co2_toxic_event: bool = False
     co2_toxic_duration_s: float = 0.0
 
+    # Plant cohort results
+    terminated_early: bool = False
+    failure_sol: Optional[float] = None
+    failure_cause: Optional[str] = None
+    failure_snapshot: Optional[Dict[str, Any]] = None
+    plant_health: float = 1.0
+    sols_survived: float = 0.0
+
     records: List[SimulationRecord] = field(default_factory=list)
+
+    def plant_survival_score(self, max_points: float = SCORING_MAX_POINTS) -> float:
+        """Return the Gradescope score based on sols survived (0 – max_points)."""
+        return round(max_points * min(self.sols_survived / SCORING_TARGET_SOLS, 1.0), 3)
+
+    def failure_report(self) -> str:
+        """Return a concise, student-readable failure report (fits in one screen)."""
+        if not self.terminated_early:
+            return (
+                f"Plants survived the full {self.days}-sol mission.\n"
+                f"Sols survived : {self.sols_survived:.2f} / {float(self.days):.2f}"
+            )
+        lines = [
+            "PLANT COHORT FAILURE",
+            f"  Survived      : {self.sols_survived:.2f} / {float(self.days):.2f} sols",
+            f"  Cause         : {self.failure_cause}",
+            f"  Failed at sol : {self.failure_sol:.3f}",
+        ]
+        if self.failure_snapshot:
+            snap = self.failure_snapshot
+            lines.append("  Last readings :"),
+            lines.append(f"    T_in={snap.get('t_in_c', 0):.1f} °C  "
+                         f"VWC={snap.get('soil_vwc', 0):.3f}  "
+                         f"PAR={snap.get('par_umol', 0):.0f} µmol/m²/s")
+            lines.append("  Last commands :")
+            lines.append(f"    heater={snap.get('heater_pct', 0):.0f}%  "
+                         f"LED={snap.get('led_pct', 0):.0f}%  "
+                         f"pump={snap.get('pump_pct', 0):.0f}%")
+        lines.append("")
+        cause_hint = {
+            "TEMP_LETHAL_LOW": "Hint: internal temperature dropped below 5 °C for over 2 hours.",
+            "TEMP_LETHAL_HIGH": "Hint: internal temperature exceeded 40 °C for over 1 hour.",
+            "SOIL_DROUGHT": "Hint: soil VWC stayed below 0.10 for over 1 sol.",
+            "SOIL_WATERLOG": "Hint: soil VWC stayed above 0.70 for over 0.5 sol.",
+            "LIGHT_INSUFFICIENT": (
+                "Hint: PAR accumulated below 150 µmol/m²/s for over 2 cumulative sols. "
+                "Check LED compensation during dust storms."
+            ),
+        }
+        lines.append(cause_hint.get(self.failure_cause, ""))
+        return "\n".join(lines)
+
+    def to_gradescope_json(self, output_path: Optional[str] = None) -> dict:
+        """
+        Return (and optionally write) a Gradescope-compatible summary dict.
+
+        The dict is suitable for ``plant_report.json`` which ``grader/post.py``
+        reads to inject a partial-credit plant-survival score.
+        """
+        data = {
+            "sols_survived": self.sols_survived,
+            "target_sols": float(self.days),
+            "terminated_early": self.terminated_early,
+            "failure_cause": self.failure_cause,
+            "failure_sol": self.failure_sol,
+            "plant_health": self.plant_health,
+            "failure_report": self.failure_report(),
+        }
+        if output_path is not None:
+            with open(output_path, "w", encoding="utf-8") as fh:
+                json.dump(data, fh, indent=2)
+        return data
 
     def summary(self) -> str:
         """Return a human-readable performance summary string."""
@@ -149,6 +228,8 @@ class SimulationResult:
             )
         else:
             lines.append("  CO₂ safety             : PASS")
+        lines.append("")
+        lines.append(self.failure_report())
         lines.append(f"{'=' * 60}")
         return "\n".join(lines)
 
@@ -257,6 +338,9 @@ def run_simulation(
         duration_s=storm_duration_sol * SOL_SECONDS,
     )
 
+    # --- Initialise plant cohort ---
+    plants = PlantCohort()
+
     # --- Evaluation accumulators ---
     total_steps = int(total_sim_s / dt_seconds)
     temp_error_sum = 0.0
@@ -264,8 +348,13 @@ def run_simulation(
     rh_in_range_count = 0
     co2_toxic_s = 0.0
     records: List[SimulationRecord] = []
+    steps_run = 0
+
+    # Snapshot of the last tick's conditions (used in failure report)
+    last_snapshot: Dict[str, Any] = {}
 
     for _step in range(total_steps):
+        steps_run += 1
         current_time_s = env.get_time_s()
 
         # 1. Advance fault state (must happen before reading sensors)
@@ -312,7 +401,25 @@ def run_simulation(
         if state.co2_ppm > CO2_TOXIC_PPM:
             co2_toxic_s += dt_seconds
 
-        # 8. Optional per-step logging
+        # 8. Update plant cohort
+        plants.update(
+            temp_c=state.temp_c,
+            soil_vwc=state.soil_vwc,
+            par_umol=state.par_umol_m2_s,
+            dt_seconds=dt_seconds,
+            current_time_s=current_time_s,
+        )
+        last_snapshot = {
+            "t_in_c": state.temp_c,
+            "soil_vwc": state.soil_vwc,
+            "par_umol": state.par_umol_m2_s,
+            "heater_pct": commands.heater_pct,
+            "led_pct": commands.led_pct,
+            "co2_valve_pct": commands.co2_valve_pct,
+            "pump_pct": commands.pump_pct,
+        }
+
+        # 9. Optional per-step logging (includes the death step when terminated)
         if log_records:
             dust_active = (
                 storm.start_time_s <= current_time_s < storm.end_time_s
@@ -337,18 +444,101 @@ def run_simulation(
                 dust_storm_active=dust_active,
             ))
 
-    denom = total_steps if total_steps > 0 else 1
+        # 10. Early-stop check (after logging so death step is included)
+        if not plants.alive:
+            break
+
+    denom = steps_run if steps_run > 0 else 1
+    sols_survived = (steps_run * dt_seconds) / SOL_SECONDS
+
     return SimulationResult(
         days=days,
         dt_seconds=dt_seconds,
         seed=seed,
         total_steps=total_steps,
+        steps_run=steps_run,
         mean_temp_error_c=temp_error_sum / denom,
         co2_in_range_fraction=co2_in_range_count / denom,
         rh_in_range_fraction=rh_in_range_count / denom,
         co2_toxic_event=co2_toxic_s >= CO2_TOXIC_DURATION_S,
         co2_toxic_duration_s=co2_toxic_s,
+        terminated_early=not plants.alive,
+        failure_sol=plants.failure_sol,
+        failure_cause=plants.failure_cause,
+        failure_snapshot=last_snapshot if not plants.alive else None,
+        plant_health=plants.health,
+        sols_survived=sols_survived,
         records=records,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Student submission loader
+# ---------------------------------------------------------------------------
+
+
+def load_student_controller(search_dirs: Optional[List[str]] = None) -> Type:
+    """
+    Locate and load the student's controller class from their submission.
+
+    The function searches for either:
+
+    * ``student_controller.py``   — a single-file submission, or
+    * ``student_controller/``     — a package directory containing
+      ``__init__.py`` (which must re-export ``GreenhouseController``).
+
+    In both cases the module must define a class named
+    ``GreenhouseController`` with an ``update(readings, setpoints, dt)``
+    method whose signature matches :class:`~.controllers.StudentPIDController`.
+
+    Parameters
+    ----------
+    search_dirs : list of str, optional
+        Directories to search (in order).  The current working directory is
+        always appended as a final fallback.
+
+    Returns
+    -------
+    type
+        The ``GreenhouseController`` class found in the student's module.
+
+    Raises
+    ------
+    FileNotFoundError
+        If no submission is found in any of the searched directories.
+    AttributeError
+        If the located module does not define ``GreenhouseController``.
+    """
+    dirs_to_try: List[Path] = []
+    if search_dirs:
+        dirs_to_try.extend(Path(d) for d in search_dirs)
+    dirs_to_try.append(Path.cwd())
+
+    for directory in dirs_to_try:
+        # Option A: single file
+        single_file = directory / "student_controller.py"
+        if single_file.is_file():
+            spec = importlib.util.spec_from_file_location(  # type: ignore[attr-defined]
+                "student_controller", single_file
+            )
+            if spec and spec.loader:
+                module = importlib.util.module_from_spec(spec)  # type: ignore[attr-defined]
+                sys.modules["student_controller"] = module
+                spec.loader.exec_module(module)
+                return getattr(module, "GreenhouseController")
+
+        # Option B: package directory
+        pkg_dir = directory / "student_controller"
+        if pkg_dir.is_dir() and (pkg_dir / "__init__.py").is_file():
+            if str(directory) not in sys.path:
+                sys.path.insert(0, str(directory))
+            module = importlib.import_module("student_controller")
+            return getattr(module, "GreenhouseController")
+
+    searched = ", ".join(str(d) for d in dirs_to_try)
+    raise FileNotFoundError(
+        "No student_controller.py or student_controller/ package found. "
+        f"Searched: {searched}"
     )
 
 

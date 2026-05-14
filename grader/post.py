@@ -1,10 +1,20 @@
 import json
+import os
 from datetime import datetime, timedelta
 
 import pytz
 from pytz import timezone
 
 from tests.test_config import DUE_DATE
+
+# ---------------------------------------------------------------------------
+# Plant survival scoring constants
+# ---------------------------------------------------------------------------
+#: Maximum points for the plant-survival test entry injected by post.py.
+PLANT_MAX_SCORE: float = 100.0
+
+#: Name of the JSON file written by the autograder simulation test.
+PLANT_REPORT_FILE: str = "plant_report.json"
 
 
 def format_timedelta(td):
@@ -29,8 +39,58 @@ def get_submission_time(json_data):
     return sub_dt
 
 
+def _inject_plant_survival_score(json_data: dict) -> None:
+    """
+    Read ``plant_report.json`` (if present) and inject a Gradescope test
+    entry with partial credit based on sols survived.
+
+    The test entry uses ``visibility: "visible"`` so students immediately see
+    their score and the failure report.
+    """
+    # Locate the report file relative to the grader's working directory or CWD.
+    search_paths = [
+        PLANT_REPORT_FILE,
+        os.path.join(os.path.dirname(__file__), PLANT_REPORT_FILE),
+    ]
+    report_path = None
+    for path in search_paths:
+        if os.path.isfile(path):
+            report_path = path
+            break
+
+    if report_path is None:
+        return  # No simulation test was run; skip silently.
+
+    try:
+        with open(report_path, encoding="utf-8") as fh:
+            report = json.load(fh)
+    except (OSError, json.JSONDecodeError):
+        return  # Corrupt or unreadable; skip gracefully.
+
+    sols_survived: float = float(report.get("sols_survived", 0.0))
+    target_sols: float = float(report.get("target_sols", 30.0))
+    failure_report: str = report.get("failure_report", "No failure report available.")
+
+    score = round(PLANT_MAX_SCORE * min(sols_survived / max(target_sols, 1.0), 1.0), 3)
+
+    plant_test = {
+        "name": "Martian Greenhouse — Plant Survival Score",
+        "score": score,
+        "max_score": PLANT_MAX_SCORE,
+        "output": failure_report,
+        "visibility": "visible",
+    }
+
+    # Prepend so it appears at the top of the Gradescope results.
+    json_data["tests"].insert(0, plant_test)
+    json_data["score"] = round(json_data.get("score", 0.0) + score, 3)
+
+
 def post_processor(json_data):
-    # Skip if no DUE_DATE
+    # Inject plant survival score first (runs unconditionally).
+    _inject_plant_survival_score(json_data)
+
+    # Skip late-penalty logic if no DUE_DATE configured.
     if not DUE_DATE:
         return
 
