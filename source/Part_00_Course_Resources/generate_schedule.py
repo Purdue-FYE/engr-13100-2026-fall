@@ -4,7 +4,7 @@ Generate ENGR 131 schedule HTML from an ordered topic list CSV.
 
 What this script does:
 - reads a simple `schedule_topics.csv` file with one column: `topic`
-- auto-generates Weeks 1–16 with A/B class meetings
+- auto-generates Weeks 1 to 16 with A/B class meetings
 - auto-fills week date ranges from the Monday of Week 1
 - blocks exam slots
 - blocks Fall Break at 8A in fall
@@ -562,7 +562,8 @@ def main() -> None:
     sync_assignments_csv()
 
     topics = read_topics(TOPICS_CSV)
-    assignments_by_slot = read_assignments(ASSIGNMENTS_CSV)
+    assignments_path = ASSIGNMENTS_CSV if ASSIGNMENTS_CSV.exists() else MANUAL_ASSIGNMENTS_CSV
+    assignments_by_slot = read_assignments(assignments_path)
     slots = build_slots(start_monday, WEEKS)
     fill_topics(slots, topics)
 
