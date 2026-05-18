@@ -347,6 +347,7 @@ class TestGreenhousePhysics:
     def test_co2_bounded_from_above(self):
         """CO₂ must be capped at CO2_BOUNDS_MAX_PPM."""
         from martian_greenhouse_sim.constants import CO2_BOUNDS_MAX_PPM
+
         gh = Greenhouse(initial_co2_ppm=CO2_BOUNDS_MAX_PPM - 10)
         env = MarsEnvironment(initial_time_s=0.0)
         act = ActuatorState(co2_valve_frac=1.0, co2_ppm_s=1.0)
@@ -434,12 +435,14 @@ class TestVirtualActuators:
 
     def test_heater_max_at_hundred_percent(self):
         from martian_greenhouse_sim.constants import HEATER_MAX_W
+
         act = VirtualActuators()
         act.set_heater(100.0)
         assert act.state.heater_watts == pytest.approx(HEATER_MAX_W)
 
     def test_heater_clamped_above_hundred(self):
         from martian_greenhouse_sim.constants import HEATER_MAX_W
+
         act = VirtualActuators()
         act.set_heater(200.0)
         assert act.state.heater_watts == pytest.approx(HEATER_MAX_W)
@@ -452,6 +455,7 @@ class TestVirtualActuators:
 
     def test_led_max_par_at_hundred_percent(self):
         from martian_greenhouse_sim.constants import LED_PAR_MAX_UMOL_M2_S
+
         act = VirtualActuators()
         act.set_LED_lights(100.0)
         assert act.state.led_par_umol == pytest.approx(LED_PAR_MAX_UMOL_M2_S)
@@ -463,6 +467,7 @@ class TestVirtualActuators:
 
     def test_co2_valve_max_at_hundred_percent(self):
         from martian_greenhouse_sim.constants import CO2_MAX_INJECTION_PPM_S
+
         act = VirtualActuators()
         act.inject_CO2(100.0)
         assert act.state.co2_ppm_s == pytest.approx(CO2_MAX_INJECTION_PPM_S)
@@ -474,6 +479,7 @@ class TestVirtualActuators:
 
     def test_pump_max_at_hundred_percent(self):
         from martian_greenhouse_sim.constants import PUMP_MAX_VWC_S
+
         act = VirtualActuators()
         act.run_irrigation_pump(100.0)
         assert act.state.vwc_s == pytest.approx(PUMP_MAX_VWC_S, rel=1e-6)
@@ -481,6 +487,7 @@ class TestVirtualActuators:
     def test_pump_scaling_linear(self):
         """50 % pump should produce exactly half of the maximum VWC rate."""
         from martian_greenhouse_sim.constants import PUMP_MAX_VWC_S
+
         act = VirtualActuators()
         act.run_irrigation_pump(50.0)
         assert act.state.vwc_s == pytest.approx(PUMP_MAX_VWC_S * 0.5, rel=1e-6)
