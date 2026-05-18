@@ -71,5 +71,5 @@ If neither condition occurs, the program should continue calculating and display
 For more information on program output and testing your Python code, see the sample input/output section.
 
 % Automatically generated Sample Output section.
-```{include} /_build/intermediate/Part_04_Python/M3/tasks/ICA_1/a/sample_output.md
-```
+ ```{include} /_build/intermediate/Part_04_Python/M3/tasks/ICA_1/a/sample_output.md
+ ```
