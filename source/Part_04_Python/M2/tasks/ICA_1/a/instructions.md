@@ -31,7 +31,7 @@ deliverables:
 
 ## Files Needed
 
-Download the Python template {download}`ENGR131_py2_ICA_username.py </Part_04_Python/ENGR131_py2_ICA_username.py>` and save it as {glue:text}`../../../../glue_factory.md::py2_ica_1_py:`. Use the sample output section below to verify that your program outputs correct values.
+Download the Python template {download}`ENGR131_py2_ICA_username.py </Part_04_Python/ENGR131_py2_ICA_username.py>` and save it as {glue:text}`../../../../../glue_factory.md::py2_ica_1_py:`. Use the sample output section below to verify that your program outputs correct values.
 
 ## Activity Instructions & Submission
 
@@ -56,4 +56,4 @@ The original code is intentionally written in a verbose and inefficient manner f
 
 ### Deliverables
 
-Submit your revised script named {glue:text}`../../../../glue_factory.md::py2_ica_1_py:` to (INSERT ASSIGNMENT NAME HERE) on Gradescope.
+Submit your revised script named {glue:text}`../../../../../glue_factory.md::py2_ica_1_py:` to (INSERT ASSIGNMENT NAME HERE) on Gradescope.

@@ -124,7 +124,7 @@ def _module_prefix(chapter_file: str) -> str:
     if chapter_file.startswith("Part_01_Professional_Development/M2_Teaming/"):
         return "TM"
     if chapter_file.startswith("Part_01_Professional_Development/"):
-        return "PD"
+        return "PP"
     return "AS"
 
 
