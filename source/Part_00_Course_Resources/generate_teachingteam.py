@@ -7,15 +7,16 @@ from __future__ import annotations
 
 import csv
 import html
+import textwrap
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List
-import textwrap
 
 # CONFIGURATION
 SEMESTER_NAME = "Fall 2026"
 CSV_INPUT = Path("source/Part_00_Course_Resources/teaching_team/sections.csv")
 OUTPUT_HTML = Path("source/Part_00_Course_Resources/teaching_team/sections.html")
+
 
 @dataclass
 class Section:
@@ -35,6 +36,7 @@ class Section:
         except ValueError:
             return (1, self.section_num)
 
+
 def read_sections(csv_path: Path) -> List[Section]:
     sections = []
     if not csv_path.exists():
@@ -44,17 +46,20 @@ def read_sections(csv_path: Path) -> List[Section]:
     with open(csv_path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            sections.append(Section(
-                section_num=(row.get("section_num") or "").strip(),
-                rm_location=(row.get("rm_location") or "TBD").strip(),
-                days=(row.get("days") or "TBD").strip(),
-                time=(row.get("time") or "TBD").strip(),
-                instructor_name=(row.get("instructor_name") or "TBD").strip(),
-                instructor_email=(row.get("instructor_email") or "").strip(),
-                gta_name=(row.get("gta_name") or "TBD").strip(),
-                gta_email=(row.get("gta_email") or "").strip(),
-            ))
+            sections.append(
+                Section(
+                    section_num=(row.get("section_num") or "").strip(),
+                    rm_location=(row.get("rm_location") or "TBD").strip(),
+                    days=(row.get("days") or "TBD").strip(),
+                    time=(row.get("time") or "TBD").strip(),
+                    instructor_name=(row.get("instructor_name") or "TBD").strip(),
+                    instructor_email=(row.get("instructor_email") or "").strip(),
+                    gta_name=(row.get("gta_name") or "TBD").strip(),
+                    gta_email=(row.get("gta_email") or "").strip(),
+                )
+            )
     return sorted(sections, key=lambda s: s.sort_key())
+
 
 def build_html(sections: List[Section]) -> str:
     # 1. Define the CSS - Simplified for better platform compatibility
@@ -66,7 +71,7 @@ def build_html(sections: List[Section]) -> str:
     --sch-card-bg: #ffffff;
     --sch-accent: #1a73e8;
     --sch-label: #4b5563;
-    --sch-datetime: 
+    --sch-datetime:
   }
 
   /* Dark mode scheme from the scheduling script */
@@ -150,6 +155,7 @@ def build_html(sections: List[Section]) -> str:
 
     cards_html = []
     for s in sections:
+
         def format_email(email):
             if not email or "@" not in email:
                 return ""
@@ -171,21 +177,29 @@ def build_html(sections: List[Section]) -> str:
           <span class="staff-name">{html.escape(s.gta_name)}</span>
           {format_email(s.gta_email)}
         </div>""").strip()
-        
+
         cards_html.append(card)
 
     header = f"<h2>ENGR 131: {html.escape(SEMESTER_NAME)} Section Information</h2>"
-    
+
     # Returning as a single block with NO leading spaces
-    return css + header + '\n<div class="staff-grid">\n' + "\n".join(cards_html) + '\n</div>'
+    return (
+        css
+        + header
+        + '\n<div class="staff-grid">\n'
+        + "\n".join(cards_html)
+        + "\n</div>"
+    )
+
 
 def main() -> None:
     sections = read_sections(CSV_INPUT)
     html_content = build_html(sections)
-    
+
     OUTPUT_HTML.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_HTML.write_text(html_content, encoding="utf-8")
     print(f"Successfully generated {OUTPUT_HTML} with {len(sections)} sections.")
+
 
 if __name__ == "__main__":
     main()

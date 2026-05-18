@@ -4,27 +4,27 @@
 
 ## General Instructions
 
-- Do not open the exam until instructed.  
-- Write your name and PUID clearly on every page.  
-- Read all directions carefully. You are responsible for following them.  
-- Use dark ink or pencil to ensure your work scans clearly.  
-- This is a closed book/notes exam. Calculators are not allowed.  
-- Return all exam materials before leaving the room.  
+- Do not open the exam until instructed.
+- Write your name and PUID clearly on every page.
+- Read all directions carefully. You are responsible for following them.
+- Use dark ink or pencil to ensure your work scans clearly.
+- This is a closed book/notes exam. Calculators are not allowed.
+- Return all exam materials before leaving the room.
 
 ## Academic Integrity
 
-It is imperative that you complete all components of the exam independently and honestly, upholding the highest standards of integrity. Suspected academic misconduct may lead to exam failure and/or course failure regardless of class standing and reporting to the Office of Student Rights and Responsibilities.  
+It is imperative that you complete all components of the exam independently and honestly, upholding the highest standards of integrity. Suspected academic misconduct may lead to exam failure and/or course failure regardless of class standing and reporting to the Office of Student Rights and Responsibilities.
 
 During the exam, you are prohibited from:
 
-1. Utilizing headphones or any electronic devices (such as laptops, tablets, phones, watches, etc.).  
-2. Accessing any additional written materials.  
+1. Utilizing headphones or any electronic devices (such as laptops, tablets, phones, watches, etc.).
+2. Accessing any additional written materials.
 
 To maintain integrity:
 
-1. Keep your work your own. Do not access or receive any information about the exam from any person, online platform, code-generating application, or other source. This includes solutions, question text, or notes outlining specific solutions or techniques.  
-2. Keep your exam confidential. Do not share questions, solutions, ideas, or hints with any person, online platform, code-generating application, or other source for any reason.  
-3. Do not discuss or collaborate with another individual on any aspect of the exam.  
+1. Keep your work your own. Do not access or receive any information about the exam from any person, online platform, code-generating application, or other source. This includes solutions, question text, or notes outlining specific solutions or techniques.
+2. Keep your exam confidential. Do not share questions, solutions, ideas, or hints with any person, online platform, code-generating application, or other source for any reason.
+3. Do not discuss or collaborate with another individual on any aspect of the exam.
 
 ---
 
@@ -125,7 +125,7 @@ You can use conditional logic to complete Table 2 in Excel to show the seconds o
 
 ## Question 3
 
-A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette. 
+A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette.
 
 $^1$ [Ordonez, R. A.; West, T. D.; Casteel, S. N.; Stevens, R.; Vyn, T. J. (2025). Soybean yield dataset for the Long-Term Rotation and Tillage study conducted by the Agronomy Department at Purdue University from 1975-2024.. Purdue University Research Repository. doi:10.4231/TH1A-M536](https://purr.purdue.edu/publications/4928/1)
 
@@ -161,11 +161,11 @@ One column of data is the plant heights at 8 weeks, measured in cm.
 
 ## Question 4
 
-A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette from 1975 to 2024. 
+A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette from 1975 to 2024.
 
 $^1$ [Ordonez, R. A.; West, T. D.; Casteel, S. N.; Stevens, R.; Vyn, T. J. (2025). Soybean yield dataset for the Long-Term Rotation and Tillage study conducted by the Agronomy Department at Purdue University from 1975-2024.. Purdue University Research Repository. doi:10.4231/TH1A-M536](https://purr.purdue.edu/publications/4928/1)
 
-Your teammate created a histogram of the soybean yield, measured in kg/ha (kilograms per hectare, a unit of surface mass density, as in mass per area) 
+Your teammate created a histogram of the soybean yield, measured in kg/ha (kilograms per hectare, a unit of surface mass density, as in mass per area)
 
 ![Soybean Yield Histogram](soybean-yield-img.png)
 
@@ -206,12 +206,12 @@ Your teammate created a histogram of the soybean yield, measured in kg/ha (kilog
 
 ## Question 5
 
-Your engineering team has been contracted by the French Alps 2030 Olympics Committee to perform some tests on the new ice hockey rink. You used 10 hockey sticks of different weights to shoot hockey pucks from one goal all the way into the other goal. Your teammate recorded the amount of time from when you hit the puck to when you scored a goal. Your data is recorded in Table 1. 
+Your engineering team has been contracted by the French Alps 2030 Olympics Committee to perform some tests on the new ice hockey rink. You used 10 hockey sticks of different weights to shoot hockey pucks from one goal all the way into the other goal. Your teammate recorded the amount of time from when you hit the puck to when you scored a goal. Your data is recorded in Table 1.
 
 ![Excel Tables](descriptive-statistics-1-img.png)
 
 ## Part a)
-Write the numerical values you would find in cells G6, G7, and G11. 
+Write the numerical values you would find in cells G6, G7, and G11.
 
 ## Part b)
 Write the formulas you would use in cells G8, G9, G10, and G12.
@@ -350,7 +350,7 @@ c) Your supervisor asks you how many hours in a 24-hour period the light is yell
 
 You are a biomedical engineer analyzing the recovery times of patients after a new type of minimally invasive surgery. You collected data from 300 patients and found that the average recovery time is 14.4 days, with a variance of 9 days² and a standard deviation of 3 days. A histogram of recovery times appears to follow a normal distribution.
 
-A new patient recovers in 18.2 days. You want to know what percentage of patients had a longer recovery time than this new patient, using the Z-score method. Write the fraction you would use to find the Z-score. Do not evaluate the mathematical expression. 
+A new patient recovers in 18.2 days. You want to know what percentage of patients had a longer recovery time than this new patient, using the Z-score method. Write the fraction you would use to find the Z-score. Do not evaluate the mathematical expression.
 
 <div style="width:100%; height:4cm; border:1px solid black;"></div>
 
@@ -403,7 +403,7 @@ Someone placed five hockey pucks of different sizes in a bucket. The puck with t
 ![Excel table](hockey-pucks-img.png)
 
 ### Question a)
-Complete Table 1 with the given information. Do not use any formulas in this table. 
+Complete Table 1 with the given information. Do not use any formulas in this table.
 
 ### Question b)
 Your teammate filled in cell E6 for you. Complete an appropriate number of rows in column E of Table 2 by writing formulas to display the normal force, $F_{N}$, on each puck. Don't forget to label the column in row 5!
@@ -416,4 +416,3 @@ After completing cell F6 in Question c, You used Excel to copy/drag the formula 
 <div style="width:100%; height:2cm; border:1px solid black;"></div>
 
 <div style="page-break-after: always;"></div>
-

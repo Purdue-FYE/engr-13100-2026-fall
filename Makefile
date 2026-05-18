@@ -77,7 +77,7 @@ pub: all
 grader/assignment_mapping.json: source/generate_assignment_mapping.py source/Part_00_Course_Resources/course_schedule/generate_schedule_assignments.py source/_toc.yml
 	$(PYTHON_BIN) source/generate_assignment_mapping.py
 
-# Make schedule document: 
+# Make schedule document:
 schedule:
 	python3 /workspaces/13100_content/source/Part_00_Course_Resources/generate_schedule.py
 	make pub
@@ -87,7 +87,7 @@ teaching_team:
 	python3 /workspaces/13100_content/source/Part_00_Course_Resources/generate_teachingteam.py
 	make pub
 
-# Make schedule document: 
+# Make schedule document:
 schedule:
 	python3 /workspaces/13100_content/source/Part_00_Course_Resources/generate_schedule.py
 	make pub

@@ -33,6 +33,7 @@ Multiple Plots:
     - You can create multiple plots in the same figure by calling the subplot() function multiple times.
     - The tight_layout() function is used to adjust the spacing between the plots.
 """
+
 """
 # Example: Basic Plotting - Line Plot
 import matplotlib.pyplot as plt

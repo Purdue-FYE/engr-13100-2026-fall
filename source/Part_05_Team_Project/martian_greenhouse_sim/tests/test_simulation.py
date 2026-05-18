@@ -30,32 +30,23 @@ from martian_greenhouse_sim.constants import (
     I_PEAK_MARS,
     PLANT_DROUGHT_DURATION_S,
     PLANT_DROUGHT_VWC,
-    PLANT_LETHAL_HIGH_C,
     PLANT_LETHAL_HIGH_DURATION_S,
     PLANT_LETHAL_LOW_C,
     PLANT_LETHAL_LOW_DURATION_S,
     PLANT_LOW_LIGHT_DURATION_S,
-    PLANT_LOW_PAR_UMOL,
     PLANT_RECOVERY_LIGHT_TAU_S,
     PLANT_RECOVERY_SOIL_TAU_S,
     PLANT_RECOVERY_TEMP_TAU_S,
     PLANT_WATERLOG_DURATION_S,
     PLANT_WATERLOG_VWC,
     SCORING_MAX_POINTS,
-    SCORING_TARGET_SOLS,
     SOL_SECONDS,
-    T_AMPLITUDE_C,
-    T_MEAN_C,
     TAU_CLEAR,
     TAU_STORM_MAX,
     TAU_STORM_MIN,
-    TAU_REDUCTION_MAX,
 )
 from martian_greenhouse_sim.controllers import (
     ActuatorCommands,
-    SensorReadings,
-    Setpoints,
-    StudentPIDController,
 )
 from martian_greenhouse_sim.environment import MarsEnvironment
 from martian_greenhouse_sim.greenhouse import ActuatorState, Greenhouse, GreenhouseState
@@ -73,7 +64,6 @@ from martian_greenhouse_sim.simulation import (
     load_student_controller,
     run_simulation,
 )
-
 
 # ===========================================================================
 # Phase 1 — package imports
@@ -183,7 +173,7 @@ class TestMarsEnvironment:
     def test_baseline_tau_is_clear(self):
         """With no storm scheduled, tau should equal TAU_CLEAR = 0.5."""
         env = MarsEnvironment()
-        env.update(SOL_SECONDS * 5)   # advance well past any ghost state
+        env.update(SOL_SECONDS * 5)  # advance well past any ghost state
         assert env.get_tau() == pytest.approx(TAU_CLEAR)
 
     def test_storm_peak_tau_in_valid_range(self):
@@ -240,7 +230,7 @@ class TestMarsEnvironment:
         """At peak tau (8.5), solar irradiance should be reduced by ~ 97 %."""
         # Step into the flat part of a storm at a midday solar angle
         # by choosing a start time offset such that the storm middle is at noon.
-        sol_half = SOL_SECONDS / 2.0      # noon of sol 1
+        sol_half = SOL_SECONDS / 2.0  # noon of sol 1
         storm_dur = 3.0 * SOL_SECONDS
         storm_start = sol_half - storm_dur * 0.5  # storm centred on first noon
 
@@ -290,13 +280,15 @@ class TestGreenhousePhysics:
     def test_heat_loss_positive_when_inside_warmer(self):
         """HL = SA × U × (T_in − T_out) must be positive when T_in > T_out."""
         gh = Greenhouse(initial_temp_c=22.0)
-        env = MarsEnvironment(initial_time_s=0.0)   # midnight → T_out ≈ -70 °C
+        env = MarsEnvironment(initial_time_s=0.0)  # midnight → T_out ≈ -70 °C
         state = gh.update_state(env, ActuatorState(), dt_seconds=60.0)
-        assert state.heat_loss_w > 0.0, "Heat loss must be positive when inside is warmer"
+        assert state.heat_loss_w > 0.0, (
+            "Heat loss must be positive when inside is warmer"
+        )
 
     def test_heat_loss_negative_when_outside_warmer(self):
         """HL must be negative (heat flows in) when T_out > T_in."""
-        gh = Greenhouse(initial_temp_c=-80.0)     # colder than any Mars ambient
+        gh = Greenhouse(initial_temp_c=-80.0)  # colder than any Mars ambient
         env = MarsEnvironment(initial_time_s=0.0)  # T_out ≈ -70 °C > -80 °C
         state = gh.update_state(env, ActuatorState(), dt_seconds=60.0)
         assert state.heat_loss_w < 0.0
@@ -306,19 +298,19 @@ class TestGreenhousePhysics:
     def test_temp_decreases_without_heater_at_night(self):
         """Without heater or solar, inside temp should fall toward outside."""
         gh = Greenhouse(initial_temp_c=22.0)
-        env = MarsEnvironment(initial_time_s=0.0)   # midnight → T_out ≈ -70, no solar
+        env = MarsEnvironment(initial_time_s=0.0)  # midnight → T_out ≈ -70, no solar
         t_before = gh.state.temp_c
         gh.update_state(env, ActuatorState(), dt_seconds=60.0)
         assert gh.state.temp_c < t_before, "Temperature should drop without heating"
 
     def test_heater_increases_temperature(self):
         """A fully-on heater should raise internal temperature each step."""
-        gh = Greenhouse(initial_temp_c=-60.0)       # near Mars ambient at night
+        gh = Greenhouse(initial_temp_c=-60.0)  # near Mars ambient at night
         env = MarsEnvironment(initial_time_s=0.0)
 
         actuators = ActuatorState(
             heater_frac=1.0,
-            heater_watts=3000.0,   # maximum heater
+            heater_watts=3000.0,  # maximum heater
         )
         t_before = gh.state.temp_c
         gh.update_state(env, actuators, dt_seconds=60.0)
@@ -336,7 +328,7 @@ class TestGreenhousePhysics:
     def test_co2_increases_with_injection(self):
         """Open CO₂ valve should raise internal CO₂ on each step."""
         gh = Greenhouse(initial_co2_ppm=400.0)
-        env = MarsEnvironment(initial_time_s=0.0)   # night → zero PAR → no uptake
+        env = MarsEnvironment(initial_time_s=0.0)  # night → zero PAR → no uptake
         act = ActuatorState(co2_valve_frac=1.0, co2_ppm_s=1.0)
         co2_before = gh.state.co2_ppm
         gh.update_state(env, act, dt_seconds=60.0)
@@ -355,6 +347,7 @@ class TestGreenhousePhysics:
     def test_co2_bounded_from_above(self):
         """CO₂ must be capped at CO2_BOUNDS_MAX_PPM."""
         from martian_greenhouse_sim.constants import CO2_BOUNDS_MAX_PPM
+
         gh = Greenhouse(initial_co2_ppm=CO2_BOUNDS_MAX_PPM - 10)
         env = MarsEnvironment(initial_time_s=0.0)
         act = ActuatorState(co2_valve_frac=1.0, co2_ppm_s=1.0)
@@ -369,8 +362,10 @@ class TestGreenhousePhysics:
         gh = Greenhouse(initial_rh_pct=50.0)
         env = MarsEnvironment(initial_time_s=0.0)
         act_max = ActuatorState(
-            pump_frac=1.0, vwc_s=5.56e-6,
-            heater_frac=1.0, heater_watts=3000.0,
+            pump_frac=1.0,
+            vwc_s=5.56e-6,
+            heater_frac=1.0,
+            heater_watts=3000.0,
         )
         for _ in range(300):
             gh.update_state(env, act_max, dt_seconds=60.0)
@@ -440,12 +435,14 @@ class TestVirtualActuators:
 
     def test_heater_max_at_hundred_percent(self):
         from martian_greenhouse_sim.constants import HEATER_MAX_W
+
         act = VirtualActuators()
         act.set_heater(100.0)
         assert act.state.heater_watts == pytest.approx(HEATER_MAX_W)
 
     def test_heater_clamped_above_hundred(self):
         from martian_greenhouse_sim.constants import HEATER_MAX_W
+
         act = VirtualActuators()
         act.set_heater(200.0)
         assert act.state.heater_watts == pytest.approx(HEATER_MAX_W)
@@ -458,6 +455,7 @@ class TestVirtualActuators:
 
     def test_led_max_par_at_hundred_percent(self):
         from martian_greenhouse_sim.constants import LED_PAR_MAX_UMOL_M2_S
+
         act = VirtualActuators()
         act.set_LED_lights(100.0)
         assert act.state.led_par_umol == pytest.approx(LED_PAR_MAX_UMOL_M2_S)
@@ -469,6 +467,7 @@ class TestVirtualActuators:
 
     def test_co2_valve_max_at_hundred_percent(self):
         from martian_greenhouse_sim.constants import CO2_MAX_INJECTION_PPM_S
+
         act = VirtualActuators()
         act.inject_CO2(100.0)
         assert act.state.co2_ppm_s == pytest.approx(CO2_MAX_INJECTION_PPM_S)
@@ -480,6 +479,7 @@ class TestVirtualActuators:
 
     def test_pump_max_at_hundred_percent(self):
         from martian_greenhouse_sim.constants import PUMP_MAX_VWC_S
+
         act = VirtualActuators()
         act.run_irrigation_pump(100.0)
         assert act.state.vwc_s == pytest.approx(PUMP_MAX_VWC_S, rel=1e-6)
@@ -487,6 +487,7 @@ class TestVirtualActuators:
     def test_pump_scaling_linear(self):
         """50 % pump should produce exactly half of the maximum VWC rate."""
         from martian_greenhouse_sim.constants import PUMP_MAX_VWC_S
+
         act = VirtualActuators()
         act.run_irrigation_pump(50.0)
         assert act.state.vwc_s == pytest.approx(PUMP_MAX_VWC_S * 0.5, rel=1e-6)
@@ -501,8 +502,12 @@ class TestVirtualSensors:
     """Tests for sensor noise and the K30 freeze fault mechanism."""
 
     def _make_sensors(self, freeze_prob=0.0):
-        gh = Greenhouse(initial_temp_c=23.0, initial_co2_ppm=900.0,
-                        initial_rh_pct=50.0, initial_soil_vwc=0.40)
+        gh = Greenhouse(
+            initial_temp_c=23.0,
+            initial_co2_ppm=900.0,
+            initial_rh_pct=50.0,
+            initial_soil_vwc=0.40,
+        )
         gh.state.par_umol_m2_s = 400.0
         rng = random.Random(0)
         return VirtualSensors(gh, rng=rng, freeze_prob_per_step=freeze_prob)
@@ -518,7 +523,9 @@ class TestVirtualSensors:
         # Average 1000 readings; mean must be close to true 23.0 °C
         temps = [s.read_DHT22()[0] for _ in range(1000)]
         mean_temp = sum(temps) / len(temps)
-        assert abs(mean_temp - 23.0) < 0.05, f"DHT22 mean temp {mean_temp:.2f} too far from 23.0"
+        assert abs(mean_temp - 23.0) < 0.05, (
+            f"DHT22 mean temp {mean_temp:.2f} too far from 23.0"
+        )
 
     def test_dht22_rh_near_true_value(self):
         s = self._make_sensors()
@@ -579,9 +586,10 @@ class TestVirtualSensors:
         gh = Greenhouse()
         rng = random.Random(0)
         s = VirtualSensors(
-            gh, rng=rng,
+            gh,
+            rng=rng,
             freeze_prob_per_step=1.0,
-            freeze_duration_range_s=(60.0, 60.0),   # exactly 60 s
+            freeze_duration_range_s=(60.0, 60.0),  # exactly 60 s
         )
         s.tick_faults(current_time_s=0.0, dt_seconds=60.0)
         assert s.co2_freeze_active is True
@@ -597,8 +605,8 @@ class TestVirtualSensors:
         """
         s = self._make_sensors(freeze_prob=1.0)
         s.tick_faults(0.0, 60.0)
-        primary = s.read_K30()    # 400 ppm (frozen)
-        backup = s.read_SCD41()   # ≈ 900 ppm (correct)
+        primary = s.read_K30()  # 400 ppm (frozen)
+        backup = s.read_SCD41()  # ≈ 900 ppm (correct)
         discrepancy = abs(primary - backup)
         assert discrepancy > 200.0, (
             f"Discrepancy {discrepancy:.0f} ppm — redundancy logic cannot detect fault"
@@ -778,8 +786,13 @@ class TestPlantCohort:
     def test_nominal_tick_stays_alive(self):
         """Tick inside safe band must keep plant alive."""
         p = self._fresh()
-        p.update(temp_c=22.0, soil_vwc=0.40, par_umol=300.0,
-                 dt_seconds=60.0, current_time_s=0.0)
+        p.update(
+            temp_c=22.0,
+            soil_vwc=0.40,
+            par_umol=300.0,
+            dt_seconds=60.0,
+            current_time_s=0.0,
+        )
         assert p.alive is True
         assert p.health == pytest.approx(1.0)
 
@@ -788,18 +801,33 @@ class TestPlantCohort:
     def test_cold_stress_accumulates(self):
         """Exposure below lethal-low temperature accumulates stress."""
         p = self._fresh()
-        p.update(temp_c=PLANT_LETHAL_LOW_C - 1, soil_vwc=0.40, par_umol=300.0,
-                 dt_seconds=60.0, current_time_s=0.0)
+        p.update(
+            temp_c=PLANT_LETHAL_LOW_C - 1,
+            soil_vwc=0.40,
+            par_umol=300.0,
+            dt_seconds=60.0,
+            current_time_s=0.0,
+        )
         assert p._temp_low_s == pytest.approx(60.0)
 
     def test_cold_recovery_decays_accumulator(self):
         """Recovery above lethal-low temperature must decay (not zero) the accumulator."""
         p = self._fresh()
-        p.update(temp_c=PLANT_LETHAL_LOW_C - 1, soil_vwc=0.40, par_umol=300.0,
-                 dt_seconds=60.0, current_time_s=0.0)
+        p.update(
+            temp_c=PLANT_LETHAL_LOW_C - 1,
+            soil_vwc=0.40,
+            par_umol=300.0,
+            dt_seconds=60.0,
+            current_time_s=0.0,
+        )
         stress_before = p._temp_low_s
-        p.update(temp_c=20.0, soil_vwc=0.40, par_umol=300.0,
-                 dt_seconds=60.0, current_time_s=60.0)
+        p.update(
+            temp_c=20.0,
+            soil_vwc=0.40,
+            par_umol=300.0,
+            dt_seconds=60.0,
+            current_time_s=60.0,
+        )
         # Must be strictly less than before recovery, but not yet zero
         assert 0.0 < p._temp_low_s < stress_before
 
@@ -808,8 +836,13 @@ class TestPlantCohort:
         p = self._fresh()
         steps = int(PLANT_LETHAL_LOW_DURATION_S / 60.0) + 1
         for i in range(steps):
-            p.update(temp_c=0.0, soil_vwc=0.40, par_umol=300.0,
-                     dt_seconds=60.0, current_time_s=float(i * 60))
+            p.update(
+                temp_c=0.0,
+                soil_vwc=0.40,
+                par_umol=300.0,
+                dt_seconds=60.0,
+                current_time_s=float(i * 60),
+            )
         assert p.alive is False
         assert p.failure_cause == CAUSE_TEMP_LOW
         assert p.health == pytest.approx(0.0)
@@ -820,8 +853,13 @@ class TestPlantCohort:
         p = self._fresh()
         steps = int(PLANT_LETHAL_LOW_DURATION_S / 60.0) + 1
         for i in range(steps):
-            p.update(temp_c=0.0, soil_vwc=0.40, par_umol=300.0,
-                     dt_seconds=60.0, current_time_s=float(i * 60))
+            p.update(
+                temp_c=0.0,
+                soil_vwc=0.40,
+                par_umol=300.0,
+                dt_seconds=60.0,
+                current_time_s=float(i * 60),
+            )
         assert p.failure_sol is not None
         assert p.failure_sol >= 0.0
 
@@ -832,8 +870,13 @@ class TestPlantCohort:
         p = self._fresh()
         steps = int(PLANT_LETHAL_HIGH_DURATION_S / 60.0) + 1
         for i in range(steps):
-            p.update(temp_c=50.0, soil_vwc=0.40, par_umol=300.0,
-                     dt_seconds=60.0, current_time_s=float(i * 60))
+            p.update(
+                temp_c=50.0,
+                soil_vwc=0.40,
+                par_umol=300.0,
+                dt_seconds=60.0,
+                current_time_s=float(i * 60),
+            )
         assert p.alive is False
         assert p.failure_cause == CAUSE_TEMP_HIGH
 
@@ -841,25 +884,45 @@ class TestPlantCohort:
 
     def test_drought_stress_accumulates(self):
         p = self._fresh()
-        p.update(temp_c=22.0, soil_vwc=PLANT_DROUGHT_VWC - 0.01, par_umol=300.0,
-                 dt_seconds=60.0, current_time_s=0.0)
+        p.update(
+            temp_c=22.0,
+            soil_vwc=PLANT_DROUGHT_VWC - 0.01,
+            par_umol=300.0,
+            dt_seconds=60.0,
+            current_time_s=0.0,
+        )
         assert p._drought_s == pytest.approx(60.0)
 
     def test_drought_recovery_decays_accumulator(self):
         p = self._fresh()
-        p.update(temp_c=22.0, soil_vwc=0.05, par_umol=300.0,
-                 dt_seconds=60.0, current_time_s=0.0)
+        p.update(
+            temp_c=22.0,
+            soil_vwc=0.05,
+            par_umol=300.0,
+            dt_seconds=60.0,
+            current_time_s=0.0,
+        )
         stress_before = p._drought_s
-        p.update(temp_c=22.0, soil_vwc=0.40, par_umol=300.0,
-                 dt_seconds=60.0, current_time_s=60.0)
+        p.update(
+            temp_c=22.0,
+            soil_vwc=0.40,
+            par_umol=300.0,
+            dt_seconds=60.0,
+            current_time_s=60.0,
+        )
         assert 0.0 < p._drought_s < stress_before
 
     def test_lethal_drought_kills_after_threshold(self):
         p = self._fresh()
         steps = int(PLANT_DROUGHT_DURATION_S / 60.0) + 1
         for i in range(steps):
-            p.update(temp_c=22.0, soil_vwc=0.05, par_umol=300.0,
-                     dt_seconds=60.0, current_time_s=float(i * 60))
+            p.update(
+                temp_c=22.0,
+                soil_vwc=0.05,
+                par_umol=300.0,
+                dt_seconds=60.0,
+                current_time_s=float(i * 60),
+            )
         assert p.alive is False
         assert p.failure_cause == CAUSE_DROUGHT
 
@@ -867,16 +930,26 @@ class TestPlantCohort:
 
     def test_waterlog_stress_accumulates(self):
         p = self._fresh()
-        p.update(temp_c=22.0, soil_vwc=PLANT_WATERLOG_VWC + 0.01, par_umol=300.0,
-                 dt_seconds=60.0, current_time_s=0.0)
+        p.update(
+            temp_c=22.0,
+            soil_vwc=PLANT_WATERLOG_VWC + 0.01,
+            par_umol=300.0,
+            dt_seconds=60.0,
+            current_time_s=0.0,
+        )
         assert p._waterlog_s == pytest.approx(60.0)
 
     def test_lethal_waterlog_kills_after_threshold(self):
         p = self._fresh()
         steps = int(PLANT_WATERLOG_DURATION_S / 60.0) + 1
         for i in range(steps):
-            p.update(temp_c=22.0, soil_vwc=0.80, par_umol=300.0,
-                     dt_seconds=60.0, current_time_s=float(i * 60))
+            p.update(
+                temp_c=22.0,
+                soil_vwc=0.80,
+                par_umol=300.0,
+                dt_seconds=60.0,
+                current_time_s=float(i * 60),
+            )
         assert p.alive is False
         assert p.failure_cause == CAUSE_WATERLOG
 
@@ -885,26 +958,46 @@ class TestPlantCohort:
     def test_low_light_accumulates_during_darkness(self):
         """Low-light stress accumulates when PAR is below threshold."""
         p = self._fresh()
-        p.update(temp_c=22.0, soil_vwc=0.40, par_umol=50.0,
-                 dt_seconds=60.0, current_time_s=0.0)
+        p.update(
+            temp_c=22.0,
+            soil_vwc=0.40,
+            par_umol=50.0,
+            dt_seconds=60.0,
+            current_time_s=0.0,
+        )
         assert p._low_light_s == pytest.approx(60.0)
 
     def test_low_light_decays_during_bright_conditions(self):
         """Low-light stress must decay (not hold) when PAR recovers."""
         p = self._fresh()
-        p.update(temp_c=22.0, soil_vwc=0.40, par_umol=50.0,
-                 dt_seconds=60.0, current_time_s=0.0)
+        p.update(
+            temp_c=22.0,
+            soil_vwc=0.40,
+            par_umol=50.0,
+            dt_seconds=60.0,
+            current_time_s=0.0,
+        )
         stress_before = p._low_light_s
-        p.update(temp_c=22.0, soil_vwc=0.40, par_umol=600.0,
-                 dt_seconds=60.0, current_time_s=60.0)
+        p.update(
+            temp_c=22.0,
+            soil_vwc=0.40,
+            par_umol=600.0,
+            dt_seconds=60.0,
+            current_time_s=60.0,
+        )
         assert 0.0 < p._low_light_s < stress_before
 
     def test_lethal_low_light_kills_after_threshold(self):
         p = self._fresh()
         steps = int(PLANT_LOW_LIGHT_DURATION_S / 60.0) + 1
         for i in range(steps):
-            p.update(temp_c=22.0, soil_vwc=0.40, par_umol=10.0,
-                     dt_seconds=60.0, current_time_s=float(i * 60))
+            p.update(
+                temp_c=22.0,
+                soil_vwc=0.40,
+                par_umol=10.0,
+                dt_seconds=60.0,
+                current_time_s=float(i * 60),
+            )
         assert p.alive is False
         assert p.failure_cause == CAUSE_LIGHT
 
@@ -915,8 +1008,13 @@ class TestPlantCohort:
         p = self._fresh()
         prev_health = 1.0
         for i in range(10):
-            p.update(temp_c=0.0, soil_vwc=0.40, par_umol=300.0,
-                     dt_seconds=600.0, current_time_s=float(i * 600))
+            p.update(
+                temp_c=0.0,
+                soil_vwc=0.40,
+                par_umol=300.0,
+                dt_seconds=600.0,
+                current_time_s=float(i * 600),
+            )
             if p.alive:
                 assert p.health <= prev_health
                 prev_health = p.health
@@ -926,13 +1024,23 @@ class TestPlantCohort:
         p = self._fresh()
         steps = int(PLANT_LETHAL_LOW_DURATION_S / 60.0) + 1
         for i in range(steps):
-            p.update(temp_c=0.0, soil_vwc=0.40, par_umol=300.0,
-                     dt_seconds=60.0, current_time_s=float(i * 60))
+            p.update(
+                temp_c=0.0,
+                soil_vwc=0.40,
+                par_umol=300.0,
+                dt_seconds=60.0,
+                current_time_s=float(i * 60),
+            )
         cause_at_death = p.failure_cause
         sol_at_death = p.failure_sol
         # Extra ticks should not change anything
-        p.update(temp_c=22.0, soil_vwc=0.40, par_umol=300.0,
-                 dt_seconds=60.0, current_time_s=float((steps + 1) * 60))
+        p.update(
+            temp_c=22.0,
+            soil_vwc=0.40,
+            par_umol=300.0,
+            dt_seconds=60.0,
+            current_time_s=float((steps + 1) * 60),
+        )
         assert p.failure_cause == cause_at_death
         assert p.failure_sol == sol_at_death
 
@@ -942,50 +1050,60 @@ class TestPlantCohort:
         p = self._fresh()
         s = p.stress
         assert set(s.keys()) == {
-            CAUSE_TEMP_LOW, CAUSE_TEMP_HIGH,
-            CAUSE_DROUGHT, CAUSE_WATERLOG, CAUSE_LIGHT,
+            CAUSE_TEMP_LOW,
+            CAUSE_TEMP_HIGH,
+            CAUSE_DROUGHT,
+            CAUSE_WATERLOG,
+            CAUSE_LIGHT,
         }
 
     # --- exponential decay rate ---
 
     def test_cold_stress_decay_rate_matches_tau(self):
         """One recovery tick must decay stress by exp(-dt/tau)."""
-        import math
         p = self._fresh()
         dt = 600.0  # 10 minutes
         # Seed stress with one bad tick
-        p.update(temp_c=0.0, soil_vwc=0.40, par_umol=300.0,
-                 dt_seconds=dt, current_time_s=0.0)
+        p.update(
+            temp_c=0.0, soil_vwc=0.40, par_umol=300.0, dt_seconds=dt, current_time_s=0.0
+        )
         stress_after_bad = p._temp_low_s  # == dt
         # One recovery tick
-        p.update(temp_c=20.0, soil_vwc=0.40, par_umol=300.0,
-                 dt_seconds=dt, current_time_s=dt)
+        p.update(
+            temp_c=20.0, soil_vwc=0.40, par_umol=300.0, dt_seconds=dt, current_time_s=dt
+        )
         expected = stress_after_bad * math.exp(-dt / PLANT_RECOVERY_TEMP_TAU_S)
         assert p._temp_low_s == pytest.approx(expected, rel=1e-6)
 
     def test_soil_stress_decay_rate_matches_tau(self):
         """Soil drought decay for one recovery tick must equal exp(-dt/tau)."""
-        import math
         p = self._fresh()
         dt = 600.0
-        p.update(temp_c=22.0, soil_vwc=0.05, par_umol=300.0,
-                 dt_seconds=dt, current_time_s=0.0)
+        p.update(
+            temp_c=22.0,
+            soil_vwc=0.05,
+            par_umol=300.0,
+            dt_seconds=dt,
+            current_time_s=0.0,
+        )
         stress_after_bad = p._drought_s
-        p.update(temp_c=22.0, soil_vwc=0.40, par_umol=300.0,
-                 dt_seconds=dt, current_time_s=dt)
+        p.update(
+            temp_c=22.0, soil_vwc=0.40, par_umol=300.0, dt_seconds=dt, current_time_s=dt
+        )
         expected = stress_after_bad * math.exp(-dt / PLANT_RECOVERY_SOIL_TAU_S)
         assert p._drought_s == pytest.approx(expected, rel=1e-6)
 
     def test_light_stress_decay_rate_matches_tau(self):
         """Light stress decay for one recovery tick must equal exp(-dt/tau)."""
-        import math
         p = self._fresh()
         dt = 600.0
-        p.update(temp_c=22.0, soil_vwc=0.40, par_umol=50.0,
-                 dt_seconds=dt, current_time_s=0.0)
+        p.update(
+            temp_c=22.0, soil_vwc=0.40, par_umol=50.0, dt_seconds=dt, current_time_s=0.0
+        )
         stress_after_bad = p._low_light_s
-        p.update(temp_c=22.0, soil_vwc=0.40, par_umol=600.0,
-                 dt_seconds=dt, current_time_s=dt)
+        p.update(
+            temp_c=22.0, soil_vwc=0.40, par_umol=600.0, dt_seconds=dt, current_time_s=dt
+        )
         expected = stress_after_bad * math.exp(-dt / PLANT_RECOVERY_LIGHT_TAU_S)
         assert p._low_light_s == pytest.approx(expected, rel=1e-6)
 
@@ -995,13 +1113,23 @@ class TestPlantCohort:
         dt = 60.0
         # Build up cold stress for 1 hour (short of the lethal threshold)
         for i in range(60):
-            p.update(temp_c=0.0, soil_vwc=0.40, par_umol=300.0,
-                     dt_seconds=dt, current_time_s=float(i * dt))
+            p.update(
+                temp_c=0.0,
+                soil_vwc=0.40,
+                par_umol=300.0,
+                dt_seconds=dt,
+                current_time_s=float(i * dt),
+            )
         # Recover for 3× the temperature tau
         recovery_steps = int(3 * PLANT_RECOVERY_TEMP_TAU_S / dt)
         for i in range(recovery_steps):
-            p.update(temp_c=20.0, soil_vwc=0.40, par_umol=300.0,
-                     dt_seconds=dt, current_time_s=float((60 + i) * dt))
+            p.update(
+                temp_c=20.0,
+                soil_vwc=0.40,
+                par_umol=300.0,
+                dt_seconds=dt,
+                current_time_s=float((60 + i) * dt),
+            )
         # After 3 tau, stress should be < 5% of peak
         assert p._temp_low_s < 0.05 * PLANT_LETHAL_LOW_DURATION_S
 
@@ -1011,14 +1139,24 @@ class TestPlantCohort:
         dt = 60.0
         # Build up some cold stress (one hour, well below lethal threshold)
         for i in range(60):
-            p.update(temp_c=0.0, soil_vwc=0.40, par_umol=300.0,
-                     dt_seconds=dt, current_time_s=float(i * dt))
+            p.update(
+                temp_c=0.0,
+                soil_vwc=0.40,
+                par_umol=300.0,
+                dt_seconds=dt,
+                current_time_s=float(i * dt),
+            )
         health_at_peak_stress = p.health
         # Recover for 2× tau
         recovery_steps = int(2 * PLANT_RECOVERY_TEMP_TAU_S / dt)
         for i in range(recovery_steps):
-            p.update(temp_c=20.0, soil_vwc=0.40, par_umol=300.0,
-                     dt_seconds=dt, current_time_s=float((60 + i) * dt))
+            p.update(
+                temp_c=20.0,
+                soil_vwc=0.40,
+                par_umol=300.0,
+                dt_seconds=dt,
+                current_time_s=float((60 + i) * dt),
+            )
         assert p.health > health_at_peak_stress
 
 
@@ -1070,8 +1208,10 @@ class TestSimulationResultPlantFields:
         Force an immediate low-temperature kill and check that the score
         is strictly less than max.
         """
+
         class IceController:
             """Sets heater to 0% to let temperature plummet."""
+
             def update(self, readings, setpoints, dt):
                 return ActuatorCommands(heater_pct=0.0)
 
@@ -1110,12 +1250,14 @@ class TestSimulationResultPlantFields:
             out = str(Path(tmpdir) / "plant_report.json")
             result.to_gradescope_json(output_path=out)
             import json
+
             with open(out) as fh:
                 data = json.load(fh)
             assert "sols_survived" in data
 
     def test_early_termination_failure_snapshot_set(self):
         """When terminated early the snapshot dict must be populated."""
+
         class IceController:
             def update(self, readings, setpoints, dt):
                 return ActuatorCommands(heater_pct=0.0)
@@ -1170,16 +1312,25 @@ class TestLoadStudentController:
             instance = cls()
             # Build a minimal readings object
             from martian_greenhouse_sim.controllers import (
-                ActuatorCommands, SensorReadings, Setpoints,
+                ActuatorCommands,
+                SensorReadings,
+                Setpoints,
             )
+
             readings = SensorReadings(
-                temperature_c=22.0, rh_pct=50.0,
-                co2_ppm_primary=900.0, co2_ppm_backup=900.0,
-                soil_vwc=0.40, par_umol_m2_s=300.0,
+                temperature_c=22.0,
+                rh_pct=50.0,
+                co2_ppm_primary=900.0,
+                co2_ppm_backup=900.0,
+                soil_vwc=0.40,
+                par_umol_m2_s=300.0,
             )
             setpoints = Setpoints(
-                temperature_c=23.0, co2_ppm=900.0,
-                rh_pct=50.0, soil_vwc=0.40, is_daytime=True,
+                temperature_c=23.0,
+                co2_ppm=900.0,
+                rh_pct=50.0,
+                soil_vwc=0.40,
+                is_daytime=True,
             )
             result = instance.update(readings, setpoints, 60.0)
             assert isinstance(result, ActuatorCommands)

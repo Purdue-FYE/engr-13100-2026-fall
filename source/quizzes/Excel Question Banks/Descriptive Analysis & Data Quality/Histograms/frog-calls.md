@@ -1,4 +1,4 @@
-A team of Purdue researchers collected data $^1$ on 24 species of frogs' mating calls in a forest. 
+A team of Purdue researchers collected data $^1$ on 24 species of frogs' mating calls in a forest.
 
 $^1$ [Gonzalez, K.; Ryan, M. J.; Mitre-Ramos, C.; Bernal, X. E. (2026). Data for: From understory to canopy: transmission of frog calls in a tropical wet forest. Purdue University Research Repository. doi:10.4231/3NX8-HP56](http://doi.org/10.4231/3NX8-HP56)
 
@@ -6,7 +6,7 @@ The histogram below shows the distribution of the wave amplitudes of each call.
 
 ![Histogram of the wave amplitudes of each frog call](frog-calls-img.png)
 
-### Question a) Which of the following statements can be determined directly from the histogram? 
+### Question a) Which of the following statements can be determined directly from the histogram?
 - [ ] The exact amplitude of a specific frog's call
 - [ ] The sequence in which the data were recorded
 - [ ] The number of data points within each interval

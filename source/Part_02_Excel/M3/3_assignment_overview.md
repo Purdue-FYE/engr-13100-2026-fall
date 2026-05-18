@@ -14,8 +14,8 @@ kernelspec:
 (EX:M3:assignments)=
 # Assignments
 
-```{rubric} In these assignments, you will: 
-``` 
+```{rubric} In these assignments, you will:
+```
 - Skill
 - Skill
 - Skill
@@ -25,7 +25,7 @@ kernelspec:
 {{PR01}}
 
 ```{rubric} Assignments for this Module
-``` 
+```
 
 ```{tableofcontents}
 ```

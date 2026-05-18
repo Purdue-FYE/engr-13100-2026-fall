@@ -29,7 +29,7 @@ parse:
     - tasklist
     - attrs_block
   myst_substitutions:
-    "PR": | 
+    "PR": |
       :PR: Programming - Write professional, well-organized, and error-free code. Store and access data appropriately; perform calculations using built-in functions and operators; and apply selection, repetition, and user-defined functions to solve problems. Translate written descriptions or flowcharts into working code. Students will demonstrate programming objectives using any appropriate programming or computational environment unless otherwise specified. For these objectives, “code” may include scripts, functions, formulas, or structured spreadsheet logic, depending on the tool used.
     "PR01": |
       :PR01: Programming Standards - Develop code that follows established programming standards and conventions.
@@ -47,7 +47,7 @@ parse:
       :PR07: Test Cases & Tracking - Test and track information through flowcharts and programs.
     "PR08": |
       :PR08: Debugging - Debug and refine code so that it achieves its objective without dynamic or semantic errors.
-    "DV": | 
+    "DV": |
       :DV: Data Visualization - Visually represent data and derive meaningful information from data. Demonstrate ability to accurately describe data sets through foundational descriptive statistics and then perform simple inferential statistics through understanding probability concepts and linear regression.
     "DV01": |
       :DV01: Table & Plot Formatting - Prepare tables and plots for technical presentation with proper formatting. Include descriptive titles, axis labels with units, appropriately scaled axes, and visible legends.
@@ -212,7 +212,7 @@ sphinx:
   # Hide the download button
   # https://github.com/executablebooks/jupyter-book/issues/1186#issuecomment-759857170
     html_theme_options:
-      repository_url: https://github.com/Purdue-ENGR-13300/spring-2025
+      repository_url: https://github.com/Purdue-FYE/13100_content
       use_issues_button: true
       use_download_button: false
       home_page_in_toc: true

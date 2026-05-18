@@ -1,6 +1,6 @@
 Your roommate has a 7:30 am chemistry class and doesn't like walking to class in the dark. It takes 20 minutes to walk from the dorm to the class.
 
-They made a spreadsheet in Excel showing the time they left for class, in "minutes after 7:00 am". and the time the sunrise was that day, with the same units. 
+They made a spreadsheet in Excel showing the time they left for class, in "minutes after 7:00 am". and the time the sunrise was that day, with the same units.
 
 ![Spreadsheet containing departure times and sunrise times](morning-walk-img.png)
 

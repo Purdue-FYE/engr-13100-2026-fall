@@ -4,7 +4,6 @@ from datetime import datetime, timedelta
 
 import pytz
 from pytz import timezone
-
 from tests.test_config import DUE_DATE
 
 # ---------------------------------------------------------------------------

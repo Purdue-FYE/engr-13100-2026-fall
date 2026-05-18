@@ -117,7 +117,7 @@ As the scripts and programs we write become more complex, we often do not want t
 For this assignment, a flowchart for your {program}`Python` program is shown in {numref}`fig:Py:M2:ind_1:flowchart`. Using the flowchart and the following initial conditions, develop a {program}`Python` program to determine the escape velocity. *Your program output should format the value for escape velocity to two decimal places.*
 
 
-```{table} 
+```{table}
 :class: cases
 :name: tab:M2:ind_2_cases
 

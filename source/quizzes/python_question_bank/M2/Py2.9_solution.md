@@ -5,4 +5,4 @@ You are writing code that should only be executed when visibility is 0.25 miles 
 ```python
 if visibility <= 0.25 and humidity > 90:
     print("High risk of Dense Fog Advisory.")
-end 
+end

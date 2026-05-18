@@ -19,7 +19,7 @@ Imagine you are designing a program that:
 #### 1. TypeError or ValueError
 
         Explanation:
-        
+
         The input() function always returns a string. If a student tries to perform math with that string (for example, adding a number to it), Python will raise a TypeError. If they try to convert text that isn’t numeric into an integer or float, Python will raise a ValueError.
 
         Prevention:
@@ -33,7 +33,7 @@ Imagine you are designing a program that:
 #### 2. NameError
 
         Explanation:
-        
+
         This happens when a variable is used before it is created, or when the variable name is typed differently than it was originally defined.
 
         Prevention:
@@ -47,7 +47,7 @@ Imagine you are designing a program that:
 #### 3. LogicError (not a built-in Python error, but a programming mistake)
 
         Explanation:
-        
+
         The program runs without crashing, but produces incorrect results due to a wrong formula, incorrect operator (such as using / instead of //), or an off-by-one error when using random numbers or indexing.
 
         Prevention:

@@ -40,9 +40,9 @@ from .constants import (
 class DustStorm:
     """Records the schedule and peak intensity of a single dust storm event."""
 
-    start_time_s: float   #: Simulation time (s) at which the storm begins.
-    end_time_s: float     #: Simulation time (s) at which the storm clears.
-    peak_tau: float       #: Maximum atmospheric opacity reached during the storm.
+    start_time_s: float  #: Simulation time (s) at which the storm begins.
+    end_time_s: float  #: Simulation time (s) at which the storm clears.
+    peak_tau: float  #: Maximum atmospheric opacity reached during the storm.
 
 
 class MarsEnvironment:

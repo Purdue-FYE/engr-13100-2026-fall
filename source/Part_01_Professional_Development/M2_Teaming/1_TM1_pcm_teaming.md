@@ -113,11 +113,11 @@ Team members may:
 
 Which stage of team development is most likely occurring when **team members begin arguing about roles and responsibilities and progress slows**?
 
-A. Forming  
-B. Storming  
-C. Norming  
-D. Performing  
-E. Adjourning  
+A. Forming
+B. Storming
+C. Norming
+D. Performing
+E. Adjourning
 
 :::{dropdown} Show Answer
 **Correct Answer: B — Storming**
@@ -263,11 +263,11 @@ A team member says:
 
 Which team role is this person demonstrating?
 
-A. Coordinator  
-B. Recorder  
-C. Timekeeper  
-D. Encourager/Gatekeeper  
-E. Devil’s Advocate  
+A. Coordinator
+B. Recorder
+C. Timekeeper
+D. Encourager/Gatekeeper
+E. Devil’s Advocate
 
 :::{dropdown} Show Answer
 **Correct Answer: D — Encourager/Gatekeeper**
@@ -332,9 +332,9 @@ Lucinda feels that she is doing more work than the rest of her teammates. Which 
 
 Select all that apply.
 
-A. Create a list of action items and assign responsibilities  
-B. Have an honest but respectful discussion with her teammates  
-C. Discuss the situation with her GTA or instructor  
+A. Create a list of action items and assign responsibilities
+B. Have an honest but respectful discussion with her teammates
+C. Discuss the situation with her GTA or instructor
 D. Refuse to do additional work until her teammates improve
 
 :::{dropdown} Show Answer

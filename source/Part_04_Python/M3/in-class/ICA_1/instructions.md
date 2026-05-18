@@ -49,7 +49,7 @@ You also know that when an object is in free fall, it experiences a constant acc
 
 ## Files Needed
 
-Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` 
+Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>`
 
 ## Activity Instructions & Submission
 

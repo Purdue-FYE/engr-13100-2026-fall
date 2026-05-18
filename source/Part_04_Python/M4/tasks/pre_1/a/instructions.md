@@ -36,9 +36,9 @@ $$
 $$
 
 where:
-- $ \rho $ is density  
-- $ m $ is mass  
-- $ V $ is volume 
+- $ \rho $ is density
+- $ m $ is mass
+- $ V $ is volume
 
 
 ### Follow these steps:

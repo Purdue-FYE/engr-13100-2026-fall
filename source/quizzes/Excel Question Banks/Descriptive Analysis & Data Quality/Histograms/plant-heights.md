@@ -1,4 +1,4 @@
-A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette. 
+A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette.
 
 $^1$ [Ordonez, R. A.; West, T. D.; Casteel, S. N.; Stevens, R.; Vyn, T. J. (2025). Soybean yield dataset for the Long-Term Rotation and Tillage study conducted by the Agronomy Department at Purdue University from 1975-2024.. Purdue University Research Repository. doi:10.4231/TH1A-M536](https://purr.purdue.edu/publications/4928/1)
 

@@ -28,7 +28,7 @@ I_PEAK_MARS: float = MARS_SOLAR_FACTOR * SOLAR_CONSTANT_W_M2  # ≈ 430 W/m²
 
 # --- Diurnal temperature model (°C) ---
 #: Mean of the diurnal temperature cycle.  = (high + low) / 2
-T_MEAN_C: float = (-5.0 + -70.0) / 2.0   # -37.5 °C
+T_MEAN_C: float = (-5.0 + -70.0) / 2.0  # -37.5 °C
 
 #: Amplitude of the diurnal temperature cycle.  = (high - low) / 2
 T_AMPLITUDE_C: float = (-5.0 - -70.0) / 2.0  # 32.5 °C
@@ -137,11 +137,11 @@ PUMP_MAX_VWC_S: float = 0.02 / 3600.0  # ≈ 5.56 × 10⁻⁶ VWC/s
 # Sensor Noise (1-sigma Gaussian)
 # ===========================================================================
 
-NOISE_TEMP_C: float = 0.2          # DHT22 temperature noise (°C)
-NOISE_RH_PCT: float = 1.0          # DHT22 humidity noise (%)
-NOISE_CO2_PPM: float = 20.0        # K30 / SCD41 CO₂ noise (ppm)
-NOISE_VWC: float = 0.01            # TEROS 12 soil moisture noise
-NOISE_PAR_UMOL: float = 10.0       # SQ-500 PAR noise (µmol/m²/s)
+NOISE_TEMP_C: float = 0.2  # DHT22 temperature noise (°C)
+NOISE_RH_PCT: float = 1.0  # DHT22 humidity noise (%)
+NOISE_CO2_PPM: float = 20.0  # K30 / SCD41 CO₂ noise (ppm)
+NOISE_VWC: float = 0.01  # TEROS 12 soil moisture noise
+NOISE_PAR_UMOL: float = 10.0  # SQ-500 PAR noise (µmol/m²/s)
 
 # ===========================================================================
 # Simulation Defaults
@@ -160,18 +160,18 @@ DEFAULT_SEED: int = 42
 # Lettuce (Lactuca sativa) Crop Setpoints
 # ===========================================================================
 
-LETTUCE_TEMP_DAY_C: float = 23.0     # Daytime target (°C)
-LETTUCE_TEMP_NIGHT_C: float = 18.0   # Nighttime target (°C)
+LETTUCE_TEMP_DAY_C: float = 23.0  # Daytime target (°C)
+LETTUCE_TEMP_NIGHT_C: float = 18.0  # Nighttime target (°C)
 
-LETTUCE_CO2_LOW_PPM: float = 800.0   # Lower CO₂ bound (ppm)
-LETTUCE_CO2_HIGH_PPM: float = 1000.0 # Upper CO₂ bound (ppm)
+LETTUCE_CO2_LOW_PPM: float = 800.0  # Lower CO₂ bound (ppm)
+LETTUCE_CO2_HIGH_PPM: float = 1000.0  # Upper CO₂ bound (ppm)
 LETTUCE_CO2_SETPOINT_PPM: float = 900.0  # PID setpoint (midpoint)
 
-LETTUCE_RH_LOW_PCT: float = 40.0     # Lower RH bound (%)
-LETTUCE_RH_HIGH_PCT: float = 60.0    # Upper RH bound (%)
-LETTUCE_RH_SETPOINT_PCT: float = 50.0    # PID setpoint (midpoint)
+LETTUCE_RH_LOW_PCT: float = 40.0  # Lower RH bound (%)
+LETTUCE_RH_HIGH_PCT: float = 60.0  # Upper RH bound (%)
+LETTUCE_RH_SETPOINT_PCT: float = 50.0  # PID setpoint (midpoint)
 
-LETTUCE_VWC_SETPOINT: float = 0.40   # Target soil moisture (VWC)
+LETTUCE_VWC_SETPOINT: float = 0.40  # Target soil moisture (VWC)
 
 # ===========================================================================
 # Safety Thresholds
@@ -181,7 +181,7 @@ LETTUCE_VWC_SETPOINT: float = 0.40   # Target soil moisture (VWC)
 CO2_TOXIC_PPM: float = 5000.0
 
 #: Sustained duration at or above CO2_TOXIC_PPM that constitutes a failure (s).
-CO2_TOXIC_DURATION_S: float = 1800.0   # 30 minutes
+CO2_TOXIC_DURATION_S: float = 1800.0  # 30 minutes
 
 #: Hard simulation cap on internal CO₂ concentration (ppm).
 CO2_BOUNDS_MAX_PPM: float = 20_000.0
@@ -229,15 +229,15 @@ PLANT_LOW_LIGHT_DURATION_S: float = SOL_SECONDS * 2.0
 #
 # Temperature recovers relatively quickly (0.25 sol ≈ 6 h): membrane and
 # enzyme damage is partially reversible once temperature is stabilised.
-PLANT_RECOVERY_TEMP_TAU_S: float = SOL_SECONDS * 0.25   # ≈ 22 194 s
+PLANT_RECOVERY_TEMP_TAU_S: float = SOL_SECONDS * 0.25  # ≈ 22 194 s
 
 # Soil stress (drought or waterlog) recovers over ~0.5 sol (≈ 12 h): root
 # tissue and water potential normalise more slowly than air temperature.
-PLANT_RECOVERY_SOIL_TAU_S: float = SOL_SECONDS * 0.5    # ≈ 44 388 s
+PLANT_RECOVERY_SOIL_TAU_S: float = SOL_SECONDS * 0.5  # ≈ 44 388 s
 
 # Photosynthetic capacity after a low-light period recovers over ~0.5 sol;
 # chloroplast re-orientation and enzyme re-synthesis are relatively slow.
-PLANT_RECOVERY_LIGHT_TAU_S: float = SOL_SECONDS * 0.5   # ≈ 44 388 s
+PLANT_RECOVERY_LIGHT_TAU_S: float = SOL_SECONDS * 0.5  # ≈ 44 388 s
 
 # --- Scoring ---
 #: Number of Martian sols considered a full-credit run.

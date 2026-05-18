@@ -35,7 +35,7 @@ from typing import List
 
 # MAKE ALL CHANGES STARTING HERE
 SEMESTER_NAME = "Fall 2026"
-TERM = "fall"   # "fall" or "spring"
+TERM = "fall"  # "fall" or "spring"
 START_DATE = "2026-08-24"  # Monday of Week 1
 WEEKS = 16
 
@@ -46,15 +46,22 @@ EXAM_SLOTS = ["5A", "10A", "13A"]
 FALL_BREAK_SLOT = "8A"
 SPRING_BREAK_SLOTS = ["10A", "10B"]
 
-""" 
+"""
 DO NOT CHANGE ANYTHING BELOW THIS LINE
 """
 
 # Input / output paths relative to repo root
 TOPICS_CSV = Path("source/Part_00_Course_Resources/course_schedule/schedule_topics.csv")
-ASSIGNMENTS_CSV = Path("source/Part_00_Course_Resources/course_schedule/schedule_assignments.csv")
-ASSIGNMENTS_GENERATOR = Path("source/Part_00_Course_Resources/course_schedule/generate_schedule_assignments.py")
-OUTPUT_HTML = Path("source/Part_00_Course_Resources/course_schedule/student_course_schedule.html")
+ASSIGNMENTS_CSV = Path(
+    "source/Part_00_Course_Resources/course_schedule/schedule_assignments.csv"
+)
+ASSIGNMENTS_GENERATOR = Path(
+    "source/Part_00_Course_Resources/course_schedule/generate_schedule_assignments.py"
+)
+OUTPUT_HTML = Path(
+    "source/Part_00_Course_Resources/course_schedule/student_course_schedule.html"
+)
+
 
 @dataclass
 class ClassSlot:
@@ -63,7 +70,9 @@ class ClassSlot:
     week_monday: date
     class_date: date
     topic: str = ""
-    row_kind: str = "instruction"  # instruction, exam, fall_break, thanksgiving_break, spring_break
+    row_kind: str = (
+        "instruction"  # instruction, exam, fall_break, thanksgiving_break, spring_break
+    )
 
     @property
     def slot_id(self) -> str:
@@ -305,7 +314,7 @@ html[data-theme="dark"] {
   background: var(--sch-week-bg);
   color: var(--sch-week-text);
   font-weight: 700;
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
   padding: 0.55rem 0.25rem 0.55rem 1rem;
   border-left: none;
   border-right: none;
@@ -394,24 +403,28 @@ html[data-theme="dark"] {
     parts.append(styles)
     parts.append("")
     parts.append('<div class="schedule-wrap">')
-    parts.append(f'  <div class="schedule-meta"><strong>Semester:</strong> {html.escape(SEMESTER_NAME)}</div>')
+    parts.append(
+        f'  <div class="schedule-meta"><strong>Semester:</strong> {html.escape(SEMESTER_NAME)}</div>'
+    )
 
     # Exam schedule table
     parts.append('  <div class="schedule-scroll">')
     parts.append('  <table class="schedule-table exam-table">')
-    parts.append('    <colgroup>')
+    parts.append("    <colgroup>")
     parts.append('      <col style="width: var(--sch-col-1)">')
-    parts.append('      <col>')
-    parts.append('    </colgroup>')
-    parts.append('    <tbody>')
-    parts.append('      <tr class="exam-header"><td colspan="2">Exam Schedule</td></tr>')
+    parts.append("      <col>")
+    parts.append("    </colgroup>")
+    parts.append("    <tbody>")
+    parts.append(
+        '      <tr class="exam-header"><td colspan="2">Exam Schedule</td></tr>'
+    )
     for idx, slot_id in enumerate(EXAM_SLOTS, start=1):
         parts.append(
             f'      <tr class="exam-row"><td class="nowrap">Exam {idx}</td><td>In-Class Exam (Class {html.escape(slot_id)})</td></tr>'
         )
-    parts.append('    </tbody>')
-    parts.append('  </table>')
-    parts.append('  </div>')
+    parts.append("    </tbody>")
+    parts.append("  </table>")
+    parts.append("  </div>")
 
     # Group slots by week
     slots_by_week: dict[int, list[ClassSlot]] = {}
@@ -425,15 +438,17 @@ html[data-theme="dark"] {
 
         parts.append('  <div class="week-block schedule-scroll">')
         parts.append('    <table class="schedule-table week-table">')
-        parts.append('      <colgroup>')
+        parts.append("      <colgroup>")
         parts.append('        <col style="width: var(--sch-col-1)">')
-        parts.append('        <col>')
+        parts.append("        <col>")
         parts.append('        <col style="width: var(--sch-col-3)">')
         parts.append('        <col style="width: var(--sch-col-4)">')
         parts.append('        <col style="width: var(--sch-col-5)">')
-        parts.append('      </colgroup>')
-        parts.append('      <tbody>')
-        parts.append(f'        <tr class="week-label"><td colspan="5">{html.escape(week_label)}</td></tr>')
+        parts.append("      </colgroup>")
+        parts.append("      <tbody>")
+        parts.append(
+            f'        <tr class="week-label"><td colspan="5">{html.escape(week_label)}</td></tr>'
+        )
 
         for slot in week_slots:
             if slot.row_kind == "exam":
@@ -460,31 +475,32 @@ html[data-theme="dark"] {
             assignments = assignments_by_slot.get(slot.slot_id, [])
             if assignments:
                 parts.append('        <tr class="assignment-head">')
-                parts.append('          <th>Assignment</th>')
-                parts.append('          <th>Name</th>')
-                parts.append('          <th>Points</th>')
-                parts.append('          <th>Type</th>')
-                parts.append('          <th>Due Date</th>')
-                parts.append('        </tr>')
+                parts.append("          <th>Assignment</th>")
+                parts.append("          <th>Name</th>")
+                parts.append("          <th>Points</th>")
+                parts.append("          <th>Type</th>")
+                parts.append("          <th>Due Date</th>")
+                parts.append("        </tr>")
 
                 for a in assignments:
                     parts.append(
                         f'        <tr class="assignment-body">'
                         f'<td class="nowrap">{html.escape(a["assignment_id"])}</td>'
-                        f'<td>{html.escape(a["name"])}</td>'
+                        f"<td>{html.escape(a['name'])}</td>"
                         f'<td class="nowrap">{html.escape(a["points"])}</td>'
-                        f'<td>{html.escape(a["type"])}</td>'
-                        f'<td>{html.escape(a["due_date"])}</td>'
-                        f'</tr>'
+                        f"<td>{html.escape(a['type'])}</td>"
+                        f"<td>{html.escape(a['due_date'])}</td>"
+                        f"</tr>"
                     )
 
-        parts.append('      </tbody>')
-        parts.append('    </table>')
-        parts.append('  </div>')
+        parts.append("      </tbody>")
+        parts.append("    </table>")
+        parts.append("  </div>")
 
-    parts.append('</div>')
+    parts.append("</div>")
 
     return "\n".join(parts)
+
 
 def read_assignments(path: Path) -> dict[str, list[dict[str, str]]]:
     if not path.exists():
@@ -495,7 +511,9 @@ def read_assignments(path: Path) -> dict[str, list[dict[str, str]]]:
         required = ["class_slot", "assignment_id", "name", "points", "type", "due_date"]
         for col in required:
             if col not in (reader.fieldnames or []):
-                raise ValueError(f'schedule_assignments.csv must contain a header named "{col}".')
+                raise ValueError(
+                    f'schedule_assignments.csv must contain a header named "{col}".'
+                )
 
         assignments_by_slot: dict[str, list[dict[str, str]]] = {}
         for row in reader:
@@ -503,15 +521,18 @@ def read_assignments(path: Path) -> dict[str, list[dict[str, str]]]:
             if not slot:
                 continue
 
-            assignments_by_slot.setdefault(slot, []).append({
-                "assignment_id": (row.get("assignment_id") or "").strip(),
-                "name": (row.get("name") or "").strip(),
-                "points": (row.get("points") or "").strip(),
-                "type": (row.get("type") or "").strip(),
-                "due_date": (row.get("due_date") or "").strip(),
-            })
+            assignments_by_slot.setdefault(slot, []).append(
+                {
+                    "assignment_id": (row.get("assignment_id") or "").strip(),
+                    "name": (row.get("name") or "").strip(),
+                    "points": (row.get("points") or "").strip(),
+                    "type": (row.get("type") or "").strip(),
+                    "due_date": (row.get("due_date") or "").strip(),
+                }
+            )
 
     return assignments_by_slot
+
 
 def sync_assignments_csv() -> None:
     if not ASSIGNMENTS_GENERATOR.exists():
@@ -544,7 +565,9 @@ def main() -> None:
     used_topics = sum(1 for s in slots if s.row_kind == "instruction" and s.topic)
 
     print(f"Wrote HTML schedule to: {OUTPUT_HTML}")
-    print(f"Topics placed: {used_topics} / {open_instructional} open instructional slots")
+    print(
+        f"Topics placed: {used_topics} / {open_instructional} open instructional slots"
+    )
 
 
 if __name__ == "__main__":

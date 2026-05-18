@@ -19,8 +19,8 @@ from martian_greenhouse_sim import (
 from .actuators import VirtualActuators
 from .controllers import (
     ActuatorCommands,
-    Setpoints,
     SensorReadings,
+    Setpoints,
     StudentPIDController,
 )
 from .environment import MarsEnvironment

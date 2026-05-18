@@ -14,8 +14,8 @@ kernelspec:
 (PY:M1:assignments)=
 # Assignments
 
-```{rubric} In these assignments, you will: 
-``` 
+```{rubric} In these assignments, you will:
+```
 - Perform arithmetic operations in Python
 - Create and execute simple scripts comprised of basic Python concepts
 - Modularize and comment code in Python
@@ -28,7 +28,7 @@ kernelspec:
 {{PC05}}
 
 ```{rubric} Assignments for this Module
-``` 
+```
 
 ```{tableofcontents}
 ```

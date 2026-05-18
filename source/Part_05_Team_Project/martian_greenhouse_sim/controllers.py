@@ -55,33 +55,33 @@ from dataclasses import dataclass
 class SensorReadings:
     """Bundle of all virtual sensor readings for one simulation tick."""
 
-    temperature_c: float       #: DHT22 temperature reading (°C)
-    rh_pct: float              #: DHT22 relative humidity reading (%)
-    co2_ppm_primary: float     #: K30  CO₂ reading — MAY BE FROZEN AT 400 ppm
-    co2_ppm_backup: float      #: SCD41 CO₂ reading — always reliable
-    soil_vwc: float            #: TEROS12 volumetric water content [0–1]
-    par_umol_m2_s: float       #: SQ-500 PAR reading (µmol/m²/s)
+    temperature_c: float  #: DHT22 temperature reading (°C)
+    rh_pct: float  #: DHT22 relative humidity reading (%)
+    co2_ppm_primary: float  #: K30  CO₂ reading — MAY BE FROZEN AT 400 ppm
+    co2_ppm_backup: float  #: SCD41 CO₂ reading — always reliable
+    soil_vwc: float  #: TEROS12 volumetric water content [0–1]
+    par_umol_m2_s: float  #: SQ-500 PAR reading (µmol/m²/s)
 
 
 @dataclass
 class Setpoints:
     """Target operating conditions for the current time step."""
 
-    temperature_c: float       #: Target temperature (23 °C day / 18 °C night)
-    co2_ppm: float             #: Target CO₂ concentration (ppm)
-    rh_pct: float              #: Target relative humidity (%)
-    soil_vwc: float            #: Target soil moisture (VWC)
-    is_daytime: bool           #: True when the sun is above the horizon
+    temperature_c: float  #: Target temperature (23 °C day / 18 °C night)
+    co2_ppm: float  #: Target CO₂ concentration (ppm)
+    rh_pct: float  #: Target relative humidity (%)
+    soil_vwc: float  #: Target soil moisture (VWC)
+    is_daytime: bool  #: True when the sun is above the horizon
 
 
 @dataclass
 class ActuatorCommands:
     """Control outputs from the student controller (percentages 0 – 100)."""
 
-    heater_pct: float = 0.0      #: Heater power %
-    led_pct: float = 0.0         #: LED intensity %
-    co2_valve_pct: float = 0.0   #: CO₂ valve opening %
-    pump_pct: float = 0.0        #: Irrigation pump speed %
+    heater_pct: float = 0.0  #: Heater power %
+    led_pct: float = 0.0  #: LED intensity %
+    co2_valve_pct: float = 0.0  #: CO₂ valve opening %
+    pump_pct: float = 0.0  #: Irrigation pump speed %
 
 
 class StudentPIDController:

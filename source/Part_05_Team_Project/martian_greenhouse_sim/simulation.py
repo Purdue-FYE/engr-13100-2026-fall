@@ -61,12 +61,16 @@ from .constants import (
     SCORING_TARGET_SOLS,
     SOL_SECONDS,
 )
-from .controllers import ActuatorCommands, Setpoints, SensorReadings, StudentPIDController
+from .controllers import (
+    ActuatorCommands,
+    SensorReadings,
+    Setpoints,
+    StudentPIDController,
+)
 from .environment import MarsEnvironment
 from .greenhouse import Greenhouse
 from .plants import PlantCohort
 from .sensors import VirtualSensors
-
 
 # ---------------------------------------------------------------------------
 # Per-step log record
@@ -165,14 +169,18 @@ class SimulationResult:
         ]
         if self.failure_snapshot:
             snap = self.failure_snapshot
-            lines.append("  Last readings :"),
-            lines.append(f"    T_in={snap.get('t_in_c', 0):.1f} °C  "
-                         f"VWC={snap.get('soil_vwc', 0):.3f}  "
-                         f"PAR={snap.get('par_umol', 0):.0f} µmol/m²/s")
+            (lines.append("  Last readings :"),)
+            lines.append(
+                f"    T_in={snap.get('t_in_c', 0):.1f} °C  "
+                f"VWC={snap.get('soil_vwc', 0):.3f}  "
+                f"PAR={snap.get('par_umol', 0):.0f} µmol/m²/s"
+            )
             lines.append("  Last commands :")
-            lines.append(f"    heater={snap.get('heater_pct', 0):.0f}%  "
-                         f"LED={snap.get('led_pct', 0):.0f}%  "
-                         f"pump={snap.get('pump_pct', 0):.0f}%")
+            lines.append(
+                f"    heater={snap.get('heater_pct', 0):.0f}%  "
+                f"LED={snap.get('led_pct', 0):.0f}%  "
+                f"pump={snap.get('pump_pct', 0):.0f}%"
+            )
         lines.append("")
         cause_hint = {
             "TEMP_LETHAL_LOW": "Hint: internal temperature dropped below 5 °C for over 2 hours.",
@@ -362,8 +370,8 @@ def run_simulation(
 
         # 2. Read sensors
         temp_reading, rh_reading = sensors.read_DHT22()
-        co2_k30 = sensors.read_K30()       # primary — may be frozen at 400 ppm
-        co2_scd41 = sensors.read_SCD41()   # backup  — always correct
+        co2_k30 = sensors.read_K30()  # primary — may be frozen at 400 ppm
+        co2_scd41 = sensors.read_SCD41()  # backup  — always correct
         vwc_reading = sensors.read_TEROS12()
         par_reading = sensors.read_SQ500()
 
@@ -421,28 +429,28 @@ def run_simulation(
 
         # 9. Optional per-step logging (includes the death step when terminated)
         if log_records:
-            dust_active = (
-                storm.start_time_s <= current_time_s < storm.end_time_s
+            dust_active = storm.start_time_s <= current_time_s < storm.end_time_s
+            records.append(
+                SimulationRecord(
+                    time_s=current_time_s,
+                    sol=env.get_sol(),
+                    t_out_c=env.get_temperature_c(),
+                    tau=env.get_tau(),
+                    t_in_c=state.temp_c,
+                    rh_pct=state.rh_pct,
+                    co2_ppm=state.co2_ppm,
+                    soil_vwc=state.soil_vwc,
+                    par_umol=state.par_umol_m2_s,
+                    heater_pct=commands.heater_pct,
+                    led_pct=commands.led_pct,
+                    co2_valve_pct=commands.co2_valve_pct,
+                    pump_pct=commands.pump_pct,
+                    co2_k30_reading=co2_k30,
+                    co2_scd41_reading=co2_scd41,
+                    co2_freeze_active=sensors.co2_freeze_active,
+                    dust_storm_active=dust_active,
+                )
             )
-            records.append(SimulationRecord(
-                time_s=current_time_s,
-                sol=env.get_sol(),
-                t_out_c=env.get_temperature_c(),
-                tau=env.get_tau(),
-                t_in_c=state.temp_c,
-                rh_pct=state.rh_pct,
-                co2_ppm=state.co2_ppm,
-                soil_vwc=state.soil_vwc,
-                par_umol=state.par_umol_m2_s,
-                heater_pct=commands.heater_pct,
-                led_pct=commands.led_pct,
-                co2_valve_pct=commands.co2_valve_pct,
-                pump_pct=commands.pump_pct,
-                co2_k30_reading=co2_k30,
-                co2_scd41_reading=co2_scd41,
-                co2_freeze_active=sensors.co2_freeze_active,
-                dust_storm_active=dust_active,
-            ))
 
         # 10. Early-stop check (after logging so death step is included)
         if not plants.alive:

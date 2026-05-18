@@ -26,11 +26,11 @@ Surface areas and volumes of simple shapes. $^2$
 ___
 Example:
 
-$$A=4\pi r^2$$ 
+$$A=4\pi r^2$$
 
-where 
+where
 - $A$ is the surface area of a sphere
-- $r$ is the radius 
+- $r$ is the radius
 
 _____
 Insert your answer below:

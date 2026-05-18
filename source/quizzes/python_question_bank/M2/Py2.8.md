@@ -29,12 +29,12 @@ elif num2 in unlucky_nums or num4 in unlucky_nums:
     if num2 == 13 or num4 == 13:
         print("You entered the unluckiest number!")
         penalty = -10
-    score = num2 + num4 + penalty   
+    score = num2 + num4 + penalty
 else:
     print("Your numbers are mid. Low score.")
     score = 5
 
-print(f"Your score is: {score}") 
+print(f"Your score is: {score}")
 ```
 
 ### Terminal (a)

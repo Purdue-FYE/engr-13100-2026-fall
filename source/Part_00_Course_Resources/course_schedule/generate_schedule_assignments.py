@@ -197,19 +197,23 @@ def _collect_rows_from_toc(toc_data: dict[str, Any]) -> list[dict[str, str]]:
                 continue
 
             # Restrict numbering to pedagogical module chapters.
-            if not chapter_file.startswith((
-                "Part_01_Professional_Development/",
-                "Part_02_Excel/",
-                "Part_03_AI/",
-                "Part_04_Python/",
-                "Part_05_Team_Project/",
-            )):
+            if not chapter_file.startswith(
+                (
+                    "Part_01_Professional_Development/",
+                    "Part_02_Excel/",
+                    "Part_03_AI/",
+                    "Part_04_Python/",
+                    "Part_05_Team_Project/",
+                )
+            ):
                 continue
 
             chapter_index += 1
             prefix = _module_prefix(chapter_file)
 
-            top_sections = [s for s in chapter.get("sections", []) if isinstance(s, dict)]
+            top_sections = [
+                s for s in chapter.get("sections", []) if isinstance(s, dict)
+            ]
             for section_idx, section in enumerate(top_sections, start=1):
                 section_file = section.get("file", "")
                 nested_sections = _walk_nested_sections(section)
@@ -233,7 +237,9 @@ def _collect_rows_from_toc(toc_data: dict[str, Any]) -> list[dict[str, str]]:
                         continue
 
                     nested_path = _to_md_path(nested_file)
-                    if not nested_path.exists() or not _is_assignment_candidate(nested_path):
+                    if not nested_path.exists() or not _is_assignment_candidate(
+                        nested_path
+                    ):
                         continue
 
                     rows.append(
@@ -307,16 +313,18 @@ def _apply_overrides(
 
         is_manual_only = _truthy(override.get("manual_only", ""))
         if is_manual_only:
-            manual_only_rows.append({
-                "class_slot": override.get("class_slot", ""),
-                "assignment_id": assignment_id,
-                "name": override.get("name", ""),
-                "points": override.get("points", ""),
-                "type": override.get("type", ""),
-                "due_date": override.get("due_date", ""),
-                "canonical_id": override.get("canonical_id", ""),
-                "source_path": override.get("source_path", ""),
-            })
+            manual_only_rows.append(
+                {
+                    "class_slot": override.get("class_slot", ""),
+                    "assignment_id": assignment_id,
+                    "name": override.get("name", ""),
+                    "points": override.get("points", ""),
+                    "type": override.get("type", ""),
+                    "due_date": override.get("due_date", ""),
+                    "canonical_id": override.get("canonical_id", ""),
+                    "source_path": override.get("source_path", ""),
+                }
+            )
             continue
 
         target = by_assignment_id.get(assignment_id)
@@ -374,9 +382,13 @@ def main() -> None:
 
     _write_output(OUTPUT_CSV, output_rows)
 
-    unresolved = [r for r in output_rows if not r.get("class_slot") or not r.get("due_date")]
+    unresolved = [
+        r for r in output_rows if not r.get("class_slot") or not r.get("due_date")
+    ]
     print(f"Wrote assignments CSV: {OUTPUT_CSV}")
-    print(f"Total rows: {len(output_rows)} (manual review needed for {len(unresolved)} rows)")
+    print(
+        f"Total rows: {len(output_rows)} (manual review needed for {len(unresolved)} rows)"
+    )
 
 
 if __name__ == "__main__":

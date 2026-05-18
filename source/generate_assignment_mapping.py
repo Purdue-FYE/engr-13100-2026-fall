@@ -12,7 +12,6 @@ import json
 import re
 from pathlib import Path
 
-
 REPO_ROOT = Path(__file__).resolve().parents[1]
 GSA_PATH = (
     REPO_ROOT
@@ -27,7 +26,9 @@ PREFIX_RE = re.compile(r"^[A-Z]{2,3}\s+")
 
 
 def load_gsa_module():
-    spec = importlib.util.spec_from_file_location("generate_schedule_assignments", GSA_PATH)
+    spec = importlib.util.spec_from_file_location(
+        "generate_schedule_assignments", GSA_PATH
+    )
     if spec is None or spec.loader is None:
         raise RuntimeError(f"Unable to load module from {GSA_PATH}")
 

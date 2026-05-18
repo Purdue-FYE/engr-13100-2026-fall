@@ -76,7 +76,6 @@ from .constants import (
     SOL_SECONDS,
 )
 
-
 # ---------------------------------------------------------------------------
 # Failure cause constants (importable by tests and grader)
 # ---------------------------------------------------------------------------
