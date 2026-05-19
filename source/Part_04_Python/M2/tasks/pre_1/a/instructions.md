@@ -36,9 +36,9 @@ You must code a single selection structure that will perform mathematical operat
 Conditions:
 1. If A is less than -22 or greater than 324, then reassign A to the value of A minus 16.
 2. If A is between 102 and 157, inclusive of neither value, reassign A to the value of A times -5
-3. If A is greater than or equal to 241 
+3. If A is greater than or equal to 241
     then reassign A to the value of A minus 98
-4. If A is between 51 and 87, inclusive of both values 
+4. If A is between 51 and 87, inclusive of both values
     then reassign A to the value of A minus 37
 5. For any other value of A, print "A is invalid" to the Command Window
 

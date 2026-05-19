@@ -1,7 +1,7 @@
 import random
 import shutil
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
 # This function creates exam versions by randomly selecting questions from
 # a structured question bank stored in folders. Each exam version is saved
@@ -15,13 +15,13 @@ from datetime import datetime
 
 # CONFIGURATION
 
-#QUESTION_BANK = Path("Excel Question Banks")  # Root folder for question banks
-#OUTPUT_DIR = Path("quizzes")                  # Folder for generated quizzes
-#OUTPUT_DIR.mkdir(exist_ok=True)               # Ensure output folder exists
+# QUESTION_BANK = Path("Excel Question Banks")  # Root folder for question banks
+# OUTPUT_DIR = Path("quizzes")                  # Folder for generated quizzes
+# OUTPUT_DIR.mkdir(exist_ok=True)               # Ensure output folder exists
 
 BASE_DIR = Path(__file__).resolve().parent
 QUESTION_BANK = BASE_DIR / "Excel Question Banks"
-#OUTPUT_DIR = BASE_DIR
+# OUTPUT_DIR = BASE_DIR
 
 OUTPUT_DIR = BASE_DIR / f"exam_output_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}"
 OUTPUT_DIR.mkdir()
@@ -31,20 +31,16 @@ OUTPUT_DIR.mkdir()
 # Values = number of questions to pull from that folder
 EXAM_STRUCTURE = {
     "Academic Integrity Q0": 1,
-
     "Descriptive Analysis & Data Quality/Comparison of Groups": 1,
     "Descriptive Analysis & Data Quality/Conditional Summaries": 1,
     "Descriptive Analysis & Data Quality/Histograms": 1,
     "Descriptive Analysis & Data Quality/Outliers": 1,
     "Descriptive Analysis & Data Quality/Summary Statistics": 1,
-
     "Linear Regression/Goodness of fit": 1,
     "Linear Regression/Predictions, interpolation, extrapolation": 1,
     "Linear Regression/Scatter plot with model": 1,
-
     "Probability & Uncertainty/Relative Probability": 1,
     "Probability & Uncertainty/Z-Score Probability": 1,
-
     "Spreadsheet Foundations/Basic Calculations": 1,
     "Spreadsheet Foundations/Charting": 1,
     "Spreadsheet Foundations/Organizing Data": 1,
@@ -63,15 +59,13 @@ IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".svg"}
 # HELPER FUNCTIONS
 # -----------------------------
 
+
 def load_questions(folder_path):
     """
     Return all Markdown question files in a folder,
     excluding solution files (*-solution.md).
     """
-    return [
-        f for f in folder_path.glob("*.md")
-        if not f.name.endswith("-solution.md")
-    ]
+    return [f for f in folder_path.glob("*.md") if not f.name.endswith("-solution.md")]
 
 
 def find_associated_images(question_file):
@@ -86,9 +80,9 @@ def find_associated_images(question_file):
     folder = question_file.parent
 
     return [
-        f for f in folder.iterdir()
-        if f.suffix.lower() in IMAGE_EXTENSIONS
-        and f.name.startswith(base_name)
+        f
+        for f in folder.iterdir()
+        if f.suffix.lower() in IMAGE_EXTENSIONS and f.name.startswith(base_name)
     ]
 
 
@@ -97,12 +91,10 @@ def find_associated_images(question_file):
 # -----------------------------
 
 for version in range(NUM_VERSIONS):
-
     exam_questions = []
     images_to_copy = set()  # Track images needed for this exam version
 
     for topic, num_questions in EXAM_STRUCTURE.items():
-
         # Build full path to the topic folder (supports nested folders)
         topic_folder = QUESTION_BANK / topic
 
@@ -120,7 +112,7 @@ for version in range(NUM_VERSIONS):
             images_to_copy.update(images)
 
     # Shuffle questions across topics
-    #random.shuffle(exam_questions)
+    # random.shuffle(exam_questions)
 
     # -----------------------------
     # BUILD EXAM MARKDOWN TEXT
@@ -129,7 +121,7 @@ for version in range(NUM_VERSIONS):
     version_letter = chr(65 + version)
     exam_text = f"# Exam Version {version_letter}\n\n"
 
-    for i, question_file in enumerate(exam_questions, start=0): #starts with q0
+    for i, question_file in enumerate(exam_questions, start=0):  # starts with q0
         exam_text += f"## Question {i}\n\n"
         exam_text += question_file.read_text() + "\n\n"
 
@@ -144,7 +136,4 @@ for version in range(NUM_VERSIONS):
         destination = OUTPUT_DIR / image_file.name
         shutil.copy(image_file, destination)
 
-    print(
-        f"Generated {output_file} "
-        f"with {len(images_to_copy)} associated images"
-    )
+    print(f"Generated {output_file} with {len(images_to_copy)} associated images")

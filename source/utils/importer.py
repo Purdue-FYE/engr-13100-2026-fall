@@ -4,8 +4,8 @@ import textwrap
 from unittest.mock import patch
 
 from utils.exceptions import (
-    handle_error,
     InputError,
+    handle_error,
 )
 
 
@@ -13,7 +13,6 @@ class Importer:
     """A class for object import handling."""
 
     wrapper = textwrap.TextWrapper(initial_indent="  ", subsequent_indent="  ")
-
 
     @classmethod
     def raise_input_error(cls):

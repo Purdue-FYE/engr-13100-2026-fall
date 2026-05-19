@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (AI:Overview)=
-# Artificial Intelligence 
+# Artificial Intelligence
 
 
 ```{rubric} Topics Covered

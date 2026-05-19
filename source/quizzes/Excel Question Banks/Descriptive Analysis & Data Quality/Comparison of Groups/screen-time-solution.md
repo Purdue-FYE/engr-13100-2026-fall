@@ -53,7 +53,7 @@ OR
 - [x] (4) Total Screen Time
 if justification in (h) is consistent with answer
 
-### Question h) In 1-2 sentences, explain your answer(s) in (e). 
+### Question h) In 1-2 sentences, explain your answer(s) in (e).
 Sample solution 1: Histogram (4) is appropriate to use the Z-Score method for because:
 - The distribution follows the bell-curve shape
 - The distribution is not heavily skewed left or right

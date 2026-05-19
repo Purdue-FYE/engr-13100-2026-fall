@@ -1,4 +1,4 @@
-To compute the Z-score, we use the formula  
+To compute the Z-score, we use the formula
 
 $Z = \dfrac{x - \mu}{\sigma}$,
 

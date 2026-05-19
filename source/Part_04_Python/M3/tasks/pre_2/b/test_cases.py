@@ -14,5 +14,5 @@ cases = {
     3: {
         "callable": "main",
         "entries": [16],
-    }
+    },
 }

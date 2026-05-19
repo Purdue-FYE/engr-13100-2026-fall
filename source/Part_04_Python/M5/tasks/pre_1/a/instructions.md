@@ -30,4 +30,3 @@ Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Pyt
 Write a Python program that
 
 ### Follow these steps:
-

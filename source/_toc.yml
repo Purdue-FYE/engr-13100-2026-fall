@@ -27,10 +27,10 @@ parts:
 
     # Teaming Module
     - file: Part_01_Professional_Development/M2_Teaming/0_overview
-      sections: 
+      sections:
       - file: Part_01_Professional_Development/M2_Teaming/2_CATME_inst
       - file: Part_01_Professional_Development/M2_Teaming/1_TM_assignments
-        sections: 
+        sections:
         - file: Part_01_Professional_Development/M2_Teaming/1_TM1_pcm_teaming
         - file: Part_01_Professional_Development/M2_Teaming/1_TM1_inst
 
@@ -98,11 +98,11 @@ parts:
     numbered: 3
     chapters:
     - file: Part_03_AI/0_overview
-  
+
   - caption: Python
     numbered: 3
     chapters:
-    
+
     # Python Module 1
     - file: Part_04_Python/M1/0_overview
       sections:
@@ -177,7 +177,7 @@ parts:
       - file: Part_04_Python/M5/3_assignment_overview
         sections:
         - file: Part_04_Python/M5/tasks/ind_1/a/instructions
-   
+
   # - caption: Team Project
   #   numbered: True
   #   chapters:

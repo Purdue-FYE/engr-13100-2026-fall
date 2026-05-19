@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Generate temporary assignment CSVs from TOC structure and assignment pages.
+"""Generate temporary assignment CSVs from TOC structure and assignment pages.
 
 Auto-generated fields:
 - assignment_id (public format, e.g. EX 4.1.2)
@@ -17,12 +18,23 @@ Deprecated input (ignored by default):
 Outputs are temporary build artifacts under source/_build/intermediate/course_schedule/:
 - schedule_assignments.generated.csv (from TOC/task pages)
 - schedule_assignments.merged.csv (generated rows merged with manual schedule_assignments.csv)
+Manual source of truth:
+- source/Part_00_Course_Resources/course_schedule/schedule_assignments.csv
+    (user-maintained rows)
+
+Deprecated input (ignored by default):
+- assignment_overrides.csv in the same directory
+
+Outputs are temporary build artifacts under source/_build/intermediate/course_schedule/:
+- schedule_assignments.generated.csv (from TOC/task pages)
+- schedule_assignments.merged.csv (generated rows merged with manual schedule_assignments.csv)
 """
 
 from __future__ import annotations
 
 import csv
 import re
+import sys
 import sys
 from pathlib import Path
 from typing import Any
@@ -33,7 +45,11 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 SOURCE_DIR = REPO_ROOT / "source"
 TOC_PATH = SOURCE_DIR / "_toc.yml"
 MANUAL_CSV = Path(__file__).resolve().parent / "schedule_assignments.csv"
+MANUAL_CSV = Path(__file__).resolve().parent / "schedule_assignments.csv"
 OVERRIDES_CSV = Path(__file__).resolve().parent / "assignment_overrides.csv"
+BUILD_DIR = SOURCE_DIR / "_build" / "intermediate" / "course_schedule"
+GENERATED_CSV = BUILD_DIR / "schedule_assignments.generated.csv"
+MERGED_CSV = BUILD_DIR / "schedule_assignments.merged.csv"
 BUILD_DIR = SOURCE_DIR / "_build" / "intermediate" / "course_schedule"
 GENERATED_CSV = BUILD_DIR / "schedule_assignments.generated.csv"
 MERGED_CSV = BUILD_DIR / "schedule_assignments.merged.csv"
@@ -125,6 +141,7 @@ def _module_prefix(chapter_file: str) -> str:
         return "TM"
     if chapter_file.startswith("Part_01_Professional_Development/"):
         return "PP"
+        return "PP"
     return "AS"
 
 
@@ -201,19 +218,23 @@ def _collect_rows_from_toc(toc_data: dict[str, Any]) -> list[dict[str, str]]:
                 continue
 
             # Restrict numbering to pedagogical module chapters.
-            if not chapter_file.startswith((
-                "Part_01_Professional_Development/",
-                "Part_02_Excel/",
-                "Part_03_AI/",
-                "Part_04_Python/",
-                "Part_05_Team_Project/",
-            )):
+            if not chapter_file.startswith(
+                (
+                    "Part_01_Professional_Development/",
+                    "Part_02_Excel/",
+                    "Part_03_AI/",
+                    "Part_04_Python/",
+                    "Part_05_Team_Project/",
+                )
+            ):
                 continue
 
             chapter_index += 1
             prefix = _module_prefix(chapter_file)
 
-            top_sections = [s for s in chapter.get("sections", []) if isinstance(s, dict)]
+            top_sections = [
+                s for s in chapter.get("sections", []) if isinstance(s, dict)
+            ]
             for section_idx, section in enumerate(top_sections, start=1):
                 section_file = section.get("file", "")
                 nested_sections = _walk_nested_sections(section)
@@ -237,7 +258,9 @@ def _collect_rows_from_toc(toc_data: dict[str, Any]) -> list[dict[str, str]]:
                         continue
 
                     nested_path = _to_md_path(nested_file)
-                    if not nested_path.exists() or not _is_assignment_candidate(nested_path):
+                    if not nested_path.exists() or not _is_assignment_candidate(
+                        nested_path
+                    ):
                         continue
 
                     rows.append(
@@ -305,6 +328,23 @@ def _warn_if_deprecated_overrides_present(path: Path) -> None:
 
 
 def _load_manual_schedule(path: Path) -> list[dict[str, str]]:
+def _warn_if_deprecated_overrides_present(path: Path) -> None:
+    if not path.exists():
+        return
+
+    with path.open("r", encoding="utf-8-sig", newline="") as f:
+        reader = csv.DictReader(f)
+        has_data_rows = any(any((value or "").strip() for value in row.values()) for row in reader)
+
+    if has_data_rows:
+        print(
+            "Warning: assignment_overrides.csv is deprecated and ignored. "
+            "Move any remaining values into schedule_assignments.csv.",
+            file=sys.stderr,
+        )
+
+
+def _load_manual_schedule(path: Path) -> list[dict[str, str]]:
     if not path.exists():
         return []
 
@@ -319,19 +359,51 @@ def _load_manual_schedule(path: Path) -> list[dict[str, str]]:
                 continue
             rows.append(cleaned)
     return rows
+        rows: list[dict[str, str]] = []
+        for row in reader:
+            cleaned = {k: (v or "").strip() for k, v in row.items()}
+            if not any(cleaned.values()):
+                continue
+            if not cleaned.get("assignment_id"):
+                continue
+            rows.append(cleaned)
+    return rows
 
 
 def _apply_manual_schedule(
+def _apply_manual_schedule(
     generated_rows: list[dict[str, str]],
     manual_rows: list[dict[str, str]],
+    manual_rows: list[dict[str, str]],
 ) -> list[dict[str, str]]:
+    merged_rows = [dict(row) for row in generated_rows]
+    by_assignment_id = {row["assignment_id"]: row for row in merged_rows}
     merged_rows = [dict(row) for row in generated_rows]
     by_assignment_id = {row["assignment_id"]: row for row in merged_rows}
 
     # Manual schedule rows have highest precedence and can add manual-only entries.
     for manual in manual_rows:
         assignment_id = manual.get("assignment_id", "")
+    # Manual schedule rows have highest precedence and can add manual-only entries.
+    for manual in manual_rows:
+        assignment_id = manual.get("assignment_id", "")
         if not assignment_id:
+            continue
+
+        is_manual_only = _truthy(override.get("manual_only", ""))
+        if is_manual_only:
+            manual_only_rows.append(
+                {
+                    "class_slot": override.get("class_slot", ""),
+                    "assignment_id": assignment_id,
+                    "name": override.get("name", ""),
+                    "points": override.get("points", ""),
+                    "type": override.get("type", ""),
+                    "due_date": override.get("due_date", ""),
+                    "canonical_id": override.get("canonical_id", ""),
+                    "source_path": override.get("source_path", ""),
+                }
+            )
             continue
 
         target = by_assignment_id.get(assignment_id)
@@ -349,13 +421,28 @@ def _apply_manual_schedule(
             }
             merged_rows.append(appended)
             by_assignment_id[assignment_id] = appended
+            appended = {
+                "canonical_id": manual.get("canonical_id", ""),
+                "assignment_id": assignment_id,
+                "name": manual.get("name", ""),
+                "points": manual.get("points", ""),
+                "type": manual.get("type", ""),
+                "class_slot": manual.get("class_slot", ""),
+                "due_date": manual.get("due_date", ""),
+                "source_path": manual.get("source_path", ""),
+                "manual_only": "true",
+            }
+            merged_rows.append(appended)
+            by_assignment_id[assignment_id] = appended
             continue
 
         for key in ["name", "points", "type", "class_slot", "due_date"]:
             value = manual.get(key, "")
+            value = manual.get(key, "")
             if value:
                 target[key] = value
 
+    return merged_rows
     return merged_rows
 
 
@@ -401,6 +488,17 @@ def build_merged_rows() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
     return generated_rows, merged_rows
 
 
+def build_merged_rows() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    toc_data = _read_yaml(TOC_PATH)
+    generated_rows = _collect_rows_from_toc(toc_data)
+    _warn_if_deprecated_overrides_present(OVERRIDES_CSV)
+
+    manual_rows = _load_manual_schedule(MANUAL_CSV)
+    merged_rows = _apply_manual_schedule(generated_rows, manual_rows)
+
+    return generated_rows, merged_rows
+
+
 def main() -> None:
     if not TOC_PATH.exists():
         raise FileNotFoundError(f"Missing TOC file: {TOC_PATH}")
@@ -408,14 +506,22 @@ def main() -> None:
     generated_rows, merged_rows = build_merged_rows()
     generated_output_rows = _sort_rows(generated_rows)
     merged_output_rows = _sort_rows(merged_rows)
+    generated_rows, merged_rows = build_merged_rows()
+    generated_output_rows = _sort_rows(generated_rows)
+    merged_output_rows = _sort_rows(merged_rows)
 
     _write_output(GENERATED_CSV, generated_output_rows)
     _write_output(MERGED_CSV, merged_output_rows)
+    _write_output(GENERATED_CSV, generated_output_rows)
+    _write_output(MERGED_CSV, merged_output_rows)
 
-    unresolved = [r for r in merged_output_rows if not r.get("class_slot") or not r.get("due_date")]
-    print(f"Wrote generated assignments CSV: {GENERATED_CSV}")
-    print(f"Wrote merged assignments CSV: {MERGED_CSV}")
-    print(f"Total merged rows: {len(merged_output_rows)} (manual review needed for {len(unresolved)} rows)")
+    unresolved = [
+        r for r in output_rows if not r.get("class_slot") or not r.get("due_date")
+    ]
+    print(f"Wrote assignments CSV: {OUTPUT_CSV}")
+    print(
+        f"Total rows: {len(output_rows)} (manual review needed for {len(unresolved)} rows)"
+    )
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-### Question a) Which of the following statements can be determined directly from the histogram? 
+### Question a) Which of the following statements can be determined directly from the histogram?
 - [ ] The exact amplitude of a specific frog's call
 - [ ] The sequence in which the data were recorded
 - [x] The number of data points within each interval

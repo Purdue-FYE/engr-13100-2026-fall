@@ -11,6 +11,7 @@ Syntax:
     - update the control variable inside the loop such that the condition will
       eventually become false
 """
+
 # Write a program that prints the numbers from 1 to 5 using a while loop.
 # count = 1
 # while count <= 5:

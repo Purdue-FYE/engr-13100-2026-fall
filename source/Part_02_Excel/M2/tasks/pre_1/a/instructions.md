@@ -51,29 +51,29 @@ Place your results in the designated summary cells using appropriate Excel built
 ### Part B - Logical Functions
 Engineers must determine whether the sensor meets the minimum performance requirement. The sensor must operate for at least 80 minutes during a test.
 
-In the column labeled **Requirement Met**, use an `IF` function that returns: 
-- `PASS` if the battery life is greater than or equal to 80 minutes. 
-- `FAIL` if the battery life is less than 80 minutes. 
+In the column labeled **Requirement Met**, use an `IF` function that returns:
+- `PASS` if the battery life is greater than or equal to 80 minutes.
+- `FAIL` if the battery life is less than 80 minutes.
 
 Your formula should reference the appropriate cell containing the battery life value. Copy the formula down the column so that every trial is evaluated.
 
 ### Part C - Counting Results
-Using Excel built-in functions, determine: 
+Using Excel built-in functions, determine:
 - The number of trials that passed the requirement
 - The number of trials that failed the requirement
 
 ```{admonition} Hint
 :class: tip
-Use the `=COUNTIF` function. Do not count these values manually.  
+Use the `=COUNTIF` function. Do not count these values manually.
 ```
 
 ### Expected Value Check
-After completing your calculations: 
+After completing your calculations:
 - The mean battery life should be approximately 81-83 minutes.
 - The standard deviation should be approximately 7-9 minutes.
-- The number of trials that pass should be double the number of trials that fail. 
+- The number of trials that pass should be double the number of trials that fail.
 
-If your results differ significantly, review your formulas and references. 
+If your results differ significantly, review your formulas and references.
 
 ### Gradescope Submission Instructions - NEEDS UPDATING
 Follow these steps carefully.

@@ -18,7 +18,7 @@ kernelspec:
 
 Course Number
 : ENGR 13100
- 
+
 Course Title
 : Transforming Ideas to Innovation I 
 
@@ -35,17 +35,17 @@ Section Schedule
 : Review {doc}`Meet the Team<meet_the_team>` for section information
 
 ## Course Description
-A partnership between Schools and Programs within the College of Engineering, 
-this course introduces students to the engineering professions using 
-multidisciplinary, societally relevant content. Students will be developing 
-engineering approaches to systems, generating and exploring creative ideas, 
-and using quantitative methods to support design decisions. Explicit 
-model-development activities (engineering eliciting activities, EEAs) engage 
-students in innovative thinking across the engineering disciplines at Purdue. 
-Students will experience the process of design and analysis in engineering 
-including how to work effectively in teams. Students will develop skills in 
-project management, engineering fundamentals, oral and graphical communication, 
-logical thinking, and modern engineering tools. 
+A partnership between Schools and Programs within the College of Engineering,
+this course introduces students to the engineering professions using
+multidisciplinary, societally relevant content. Students will be developing
+engineering approaches to systems, generating and exploring creative ideas,
+and using quantitative methods to support design decisions. Explicit
+model-development activities (engineering eliciting activities, EEAs) engage
+students in innovative thinking across the engineering disciplines at Purdue.
+Students will experience the process of design and analysis in engineering
+including how to work effectively in teams. Students will develop skills in
+project management, engineering fundamentals, oral and graphical communication,
+logical thinking, and modern engineering tools.
 
 ## Learning Outcomes
 In ENGR 131, you will learn to: 

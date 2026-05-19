@@ -26,7 +26,7 @@
 	// "customizations": {},
 	"customizations": {
 		// Configure codespace repository access.
-		// This codespace will have access to all repositories in the 
+		// This codespace will have access to all repositories in the
 		// Purdue-FYE organization with write permissions.
 		"codespaces": {
 			"repositories": {

@@ -7,12 +7,12 @@
 (TOPIC:MOD_NUM:Overview)=
 # Page Name Here
 ```
-So an example would be: 
+So an example would be:
 ```
 (EX:M1:Overview)=
 # Spreadsheet Foundations
 ```
-Use the following topic abbreviations: 
+Use the following topic abbreviations:
 - EX for Excel
 - PY for Python
 - MA for MATLAB
@@ -58,13 +58,13 @@ The Pre-Class Materials (PCMs) and Pre-Class Activities (PCAs) are your **core l
 - Materials are available anytime — revisit them as needed to deepen your understanding.
 
 ```{rubric} Materials and Activities for this Module
-``` 
+```
 
 ```{tableofcontents}
 ```
 
 ```{rubric} Helpful [TOPIC] Resources
-```  
+```
 - resource
 - resource
 
@@ -76,24 +76,24 @@ The Pre-Class Materials (PCMs) and Pre-Class Activities (PCAs) are your **core l
 ```
 The
 ### Content Guidelines
-Each page should start with "These pre-class materials introduce..." and a quick summary of the skills on this page. 
+Each page should start with "These pre-class materials introduce..." and a quick summary of the skills on this page.
 
-Then start at H2 and organize the topics appropriately. 
+Then start at H2 and organize the topics appropriately.
 
 #### Admonitions
 
-Example: 
+Example:
 
 ```{admonition} TITLE
 :class: note
 Content goes here
 ```
 
-|Class | Symbol | Color | Use Case | 
-| ------- | ------- | ------- | ------ | 
-| note | "i" in a circle | blue | providing additional information, shortcuts, or resources | 
-| tip | lightbulb | green | downloading practice files <br>CFU questions <br>Hints | 
-| important | "!" in a circle | orange | highlight important/key information | 
+|Class | Symbol | Color | Use Case |
+| ------- | ------- | ------- | ------ |
+| note | "i" in a circle | blue | providing additional information, shortcuts, or resources |
+| tip | lightbulb | green | downloading practice files <br>CFU questions <br>Hints |
+| important | "!" in a circle | orange | highlight important/key information |
 
 ##### CFU Formatting
 ```
@@ -128,7 +128,7 @@ Content goes here
 **In-Class Activities (ICAs)** are where you apply what you’ve learned in the Pre-Class Materials (PCMs) and Pre-Class Activities (PCAs). During class, you’ll work through problems, collaborate with your team, and practice key skills to help you prepare for assignments and exams.
 
 ```{rubric} Activities for this Module
-``` 
+```
 
 ```{tableofcontents}
 ```
@@ -136,7 +136,7 @@ Content goes here
 ## /in-class/ICA_1/instructions.md - ICA instructions page
 
 ### How to Anchor
-To anchor the lower level pages, use: 
+To anchor the lower level pages, use:
 ```
 (TOPIC:MOD_NUM:ICA#)=
 # ICA: Title
@@ -154,8 +154,8 @@ Replace # with the ICA number in the file structure
 
 ### Headers and Content
 
-```{rubric} In these assignments, you will: 
-``` 
+```{rubric} In these assignments, you will:
+```
 - Skill
 - Skill
 - Skill
@@ -165,21 +165,21 @@ Replace # with the ICA number in the file structure
 {{PR01}}
 
 ```{rubric} Assignments for this Module
-``` 
+```
 
 ```{tableofcontents}
 ```
 
 ## /tasks/1/a/instructions.md - Assignment instructions page
 ### How to Anchor
-To anchor the lower level pages, use: 
+To anchor the lower level pages, use:
 ```
 (TOPIC:MOD_NUM:A#)=
 # TOPIC: Title
 ```
 Replace # with the TOPIC with the corresponding abbreviation and # with the number in the file structure
 
-Use the following topic abbreviations: 
+Use the following topic abbreviations:
 - EX for Excel
 - PY for Python
 - MA for MATLAB

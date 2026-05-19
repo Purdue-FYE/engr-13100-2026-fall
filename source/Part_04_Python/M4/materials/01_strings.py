@@ -43,6 +43,7 @@ For strings x and y, the following methods are supported:
     - x.isspace()    - checks if all characters are whitespace, returns Boolean
 
 """
+
 """
 # Strings as sequences of characters
 s = "Purdue"

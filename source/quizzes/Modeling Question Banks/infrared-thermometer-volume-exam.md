@@ -27,11 +27,11 @@ Surface areas and volumes of simple shapes. $^2$
 ___
 Example:
 
-$$V=\frac{4}{3}\pi r^3$$ 
+$$V=\frac{4}{3}\pi r^3$$
 
-where 
-- $V$ is the volume of a solid sphere, 
-- $r$ is the radius 
+where
+- $V$ is the volume of a solid sphere,
+- $r$ is the radius
 
 _____
 Insert your answer below:
