@@ -7,7 +7,7 @@ This folder contains source inputs for the course schedule plus helper scripts.
 - Edit `schedule_assignments.csv` for assignment dates, points, names, and manual rows.
 - Edit `schedule_topics.csv` for class-topic order.
 - Do not edit files under `source/_build/...`; those are generated temporary artifacts.
-- You can run schedule generation safely without losing manual schedule edits.
+- You can run schedule generation safely without losing manual schedule edits. 
 
 ## File Guide
 
@@ -59,11 +59,14 @@ Current generated artifacts are written to `source/_build/intermediate/course_sc
 ## Typical Workflow
 
 1. Edit `schedule_topics.csv` and/or `schedule_assignments.csv`.
-2. Run:
+2. Run: `make schedule` to run the generator and publish the schedule to the site
+
+OR
 
 ```bash
 python3 source/Part_00_Course_Resources/generate_schedule.py
 ```
+to generate the schedule. 
 
 3. Verify updated HTML in `student_course_schedule.html`.
 
