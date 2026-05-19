@@ -80,10 +80,6 @@ glue('ex3_pre_1_zip', 'ex3_pre_1_username.zip', display=False)
 glue('ex3_ica_1_powerdatavalues_pdf', 'ex3_ica_1_powerdatavalues_username.pdf', display=False)
 glue('ex3_ica_1_powerdataformulas_pdf', 'ex3_ica_1_powerdataformulas_username.pdf', display=False)
 
-# ex3_1
-glue('ex3_1_powerdatavalues_pdf', 'ex3_1_powerdatavalues_username.pdf', display=False)
-glue('ex3_1_powerdataformulas_pdf', 'ex3_1_powerdataformulas_username.pdf', display=False)
-
 # ex4_pre_1
 glue('ex4_pre_1_pdf', 'ex4_pre_1_username.pdf', display=False)
 glue('ex4_pre_1_py', 'ex4_pre_1_username.py', display=False)
@@ -182,12 +178,6 @@ glue('py5_pre_1_pdf', 'py5_pre_1_username.pdf', display=False)
 glue('py5_pre_1_py', 'py5_pre_1_username.py', display=False)
 glue('py5_pre_1_xlsx', 'py5_pre_1_username.xlsx', display=False)
 glue('py5_pre_1_zip', 'py5_pre_1_username.zip', display=False)
-
-# py5_pre_2
-glue('py5_pre_2_pdf', 'py5_pre_2_username.pdf', display=False)
-glue('py5_pre_2_py', 'py5_pre_2_username.py', display=False)
-glue('py5_pre_2_xlsx', 'py5_pre_2_username.xlsx', display=False)
-glue('py5_pre_2_zip', 'py5_pre_2_username.zip', display=False)
 
 # py5_ica_1
 glue('py5_ica_1_powerdatavalues_pdf', 'py5_ica_1_powerdatavalues_username.pdf', display=False)
