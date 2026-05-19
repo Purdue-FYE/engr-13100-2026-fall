@@ -375,8 +375,8 @@ Fire Alarm or Evacuation
 
 Shelter in Place
 : Could occur due to various situations such as a tornado, accidental release of toxic chemicals, an active threat (e.g., shots fired on campus).
-- **Tornado:** Proceed down the stairs to the basement of Lambertus Halls (LMBS) Be prepared to sit (or kneel) on the floor, face a wall, and cover your head. 
-- **Other Situations:** The course of action would depend on the situation. It is recommended that students remain in the classroom and wait for further instructions. 
+  - **Tornado:** Proceed down the stairs to the basement of Lambertus Halls (LMBS) Be prepared to sit (or kneel) on the floor, face a wall, and cover your head. 
+  - **Other Situations:** The course of action would depend on the situation. It is recommended that students remain in the classroom and wait for further instructions. 
 
 ### Course Adjustments
 In the event of a major campus emergency, course requirements, deadlines and grading percentages are subject to changes that may be necessitated by a revised semester calendar or other circumstances beyond the instructor’s control. Relevant changes to this course will be posted onto the course website or can be obtained by contacting the instructor or GTA via email or phone. You are expected to read your @purdue.edu email on a frequent basis.
