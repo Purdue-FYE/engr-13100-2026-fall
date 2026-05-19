@@ -14,8 +14,8 @@ kernelspec:
 (PY:M5:assignments)=
 # Assignments
 
-```{rubric} In these assignments, you will: 
-``` 
+```{rubric} In these assignments, you will:
+```
 - Skill
 
 ```{rubric} Learning Objectives
@@ -26,7 +26,7 @@ kernelspec:
 {{PC05}}
 
 ```{rubric} Assignments for this Module
-``` 
+```
 
 ```{tableofcontents}
 ```

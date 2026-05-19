@@ -26,11 +26,11 @@ They want you to analyze the relationship between Winter Severity Index (x-axis,
 
 ## Question 2
 
-A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette from 1975 to 2024. 
+A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette from 1975 to 2024.
 
 $^1$ [Ordonez, R. A.; West, T. D.; Casteel, S. N.; Stevens, R.; Vyn, T. J. (2025). Soybean yield dataset for the Long-Term Rotation and Tillage study conducted by the Agronomy Department at Purdue University from 1975-2024.. Purdue University Research Repository. doi:10.4231/TH1A-M536](https://purr.purdue.edu/publications/4928/1)
 
-Your teammate created a histogram of the soybean yield, measured in kg/ha (kilograms per hectare, a unit of surface mass density, as in mass per area) 
+Your teammate created a histogram of the soybean yield, measured in kg/ha (kilograms per hectare, a unit of surface mass density, as in mass per area)
 
 [Soybean Yield Histogram](soybean-yield-img.png)
 
@@ -71,7 +71,7 @@ Your teammate created a histogram of the soybean yield, measured in kg/ha (kilog
 
 ## Question 3
 
-A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette. 
+A team of researchers compiled historic data $^1$ on soybean yield in West Lafayette.
 
 $^1$ [Ordonez, R. A.; West, T. D.; Casteel, S. N.; Stevens, R.; Vyn, T. J. (2025). Soybean yield dataset for the Long-Term Rotation and Tillage study conducted by the Agronomy Department at Purdue University from 1975-2024.. Purdue University Research Repository. doi:10.4231/TH1A-M536](https://purr.purdue.edu/publications/4928/1)
 
@@ -121,7 +121,7 @@ Someone placed five hockey pucks of different sizes in a bucket. The puck with t
 ![Excel table](hockey-pucks-img.png)
 
 ## Part a)
-Complete Table 1 with the given information. Do not use any formulas in this table. 
+Complete Table 1 with the given information. Do not use any formulas in this table.
 
 ## Part b)
 Your teammate filled in cell E6 for you. Complete an appropriate number of rows in column E of Table 2 by writing formulas to display the normal force, $F_{N}$, on each puck. Don't forget to label the column in row 5!
@@ -192,17 +192,17 @@ Your teammate made four histograms to show the distributions of (1) Social Media
 - [ ] (3) Productivity App Usage
 - [ ] (4) Total Screen Time
 
-### Question h) In 1-2 sentences, explain your answer(s) in (e). 
+### Question h) In 1-2 sentences, explain your answer(s) in (e).
 
 
 ## Question 6
 
-Your engineering team has been contracted by the French Alps 2030 Olympics Committee to perform some tests on the new ice hockey rink. You used 10 hockey sticks of different weights to shoot hockey pucks from one goal all the way into the other goal. Your teammate recorded the amount of time from when you hit the puck to when you scored a goal. Your data is recorded in Table 1. 
+Your engineering team has been contracted by the French Alps 2030 Olympics Committee to perform some tests on the new ice hockey rink. You used 10 hockey sticks of different weights to shoot hockey pucks from one goal all the way into the other goal. Your teammate recorded the amount of time from when you hit the puck to when you scored a goal. Your data is recorded in Table 1.
 
 ![Excel Tables](descriptive-statistics-1-img.png)
 
 ## Part a)
-Write the numerical values you would find in cells G6, G7, and G11. 
+Write the numerical values you would find in cells G6, G7, and G11.
 
 ## Part b)
 Write the formulas you would use in cells G8, G9, G10, and G12.
@@ -218,7 +218,7 @@ Complete column H.
 
 You are a biomedical engineer analyzing the recovery times of patients after a new type of minimally invasive surgery. You collected data from 300 patients and found that the average recovery time is 14.4 days, with a variance of 9 days² and a standard deviation of 3 days. A histogram of recovery times appears to follow a normal distribution.
 
-A new patient recovers in 18.2 days. You want to know what percentage of patients had a longer recovery time than this new patient, using the Z-score method. Write the fraction you would use to find the Z-score. Do not evaluate the mathematical expression. 
+A new patient recovers in 18.2 days. You want to know what percentage of patients had a longer recovery time than this new patient, using the Z-score method. Write the fraction you would use to find the Z-score. Do not evaluate the mathematical expression.
 
 
 ## Question 8
@@ -244,7 +244,7 @@ $^1$ [Rahman, S.; Bowling, L. C. (2024). Long-term naturalized streamflow for si
 
 Your roommate has a 7:30 am chemistry class and doesn't like walking to class in the dark. It takes 20 minutes to walk from the dorm to the class.
 
-They made a spreadsheet in Excel showing the time they left for class, in "minutes after 7:00 am". and the time the sunrise was that day, with the same units. 
+They made a spreadsheet in Excel showing the time they left for class, in "minutes after 7:00 am". and the time the sunrise was that day, with the same units.
 
 ![Spreadsheet containing departure times and sunrise times](morning-walk-img.png)
 
@@ -291,7 +291,7 @@ You downloaded the data $^1$ in Excel. Your teammate started a chart with the da
 
 ## Question b) Rewrite the regression equation, replacing the generic variables y and x with descriptive variables.
 
-## Question c) One of your teammates tells you that the mean monthly temperature around the world is 22 degrees Celsius at sea level (0 m elevation). He suggests fixing the intercept to 22. 
+## Question c) One of your teammates tells you that the mean monthly temperature around the world is 22 degrees Celsius at sea level (0 m elevation). He suggests fixing the intercept to 22.
 
 ### Question c.1) What will happen to the slope of your trendline if you fix the intercept to 22?
 - [ ] It will increase
@@ -369,5 +369,3 @@ a) Using relative probability, what proportion of the measurements was the light
 b) Using relative probability, what proportion of the measurements was the light yellow? Write your answer as a fraction or decimal.
 
 c) Your supervisor asks you how many hours in a 24-hour period the light is yellow. In one to two sentences, briefly explain how you would answer?
-
-

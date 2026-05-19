@@ -34,7 +34,7 @@ def make_call_str(func_name="main", args=[], kwargs={}):
     args_lst.extend(f"{k}={repr(v)}" for k, v in kwargs.items())
 
     # Construct the function call with a comma separated list of arguments.
-    call_str = f'{func_name}({", ".join(args_lst)})'
+    call_str = f"{func_name}({', '.join(args_lst)})"
 
     return call_str
 
@@ -91,7 +91,7 @@ def main_output_doc(func, num, param):
 
     call_str = make_call_str()
     docstring = (
-        "Check number of lines of output " f"from `{call_str}` with entries={entries}."
+        f"Check number of lines of output from `{call_str}` with entries={entries}."
     )
 
     return docstring
@@ -130,9 +130,8 @@ def main_formatting_doc(func, num, param):
 
     line_n, entries = fill_param(*param.args)
     call_str = make_call_str()
-    docstring = (
-        f"Check the formatting of output line {line_n} "
-        f"from `{call_str}`" + (entries and f" with entries={entries}." or ".")
+    docstring = f"Check the formatting of output line {line_n} from `{call_str}`" + (
+        entries and f" with entries={entries}." or "."
     )
 
     return docstring
@@ -192,9 +191,7 @@ def turtle_path_doc(func, num, param):
     region_a, region_b, mode, threshold = fill_param(*param.args, **param.kwargs)
 
     docstring = (
-        f"Check that the {region_a} "
-        f"has {mode} {threshold} pixels "
-        f"in the {region_b}."
+        f"Check that the {region_a} has {mode} {threshold} pixels in the {region_b}."
     )
 
     return docstring
@@ -206,9 +203,7 @@ def turtle_path_doc_2(func, num, param):
     region_a, region_b, mode, threshold, _, _, _, _ = param.args
 
     docstring = (
-        f"Check that the {region_a} "
-        f"has {mode} {threshold} pixels "
-        f"in the {region_b}."
+        f"Check that the {region_a} has {mode} {threshold} pixels in the {region_b}."
     )
 
     return docstring

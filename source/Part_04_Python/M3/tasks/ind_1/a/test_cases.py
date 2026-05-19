@@ -15,5 +15,5 @@ cases = {
     3: {
         "callable": "main",
         "entries": ["error,normal,error,error,fragile,normal"],
-    }
+    },
 }

@@ -15,7 +15,7 @@ For each error type listed below:
     user_input = "5"
     result = user_input + 2
     print(result)
-    
+
     The variable user_input is a string, and 2 is an integer. Python does not know how to add a string and a number together, so it raises a TypeError.
 
 #### IndexError
@@ -45,4 +45,3 @@ For each error type listed below:
     print(totall)
 
     The variable totall is misspelled and was never defined. Python cannot find a variable with that name, so it raises a NameError.
-

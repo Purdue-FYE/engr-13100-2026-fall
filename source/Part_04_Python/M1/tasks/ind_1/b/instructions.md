@@ -107,7 +107,7 @@ Because we have not covered {python}`if` statements yet in this course, you cann
 #### Step 6: String Processing & Data Organization
 
 Your program must demonstrate:
-- String concatenation in the following form: "lastname_lastname_". 
+- String concatenation in the following form: "lastname_lastname_".
 - Splitting the researcher's title into a sequence and displaying the result.
 
 Both the researcher's last name and title should be capitalized when displayed.

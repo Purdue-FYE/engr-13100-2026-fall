@@ -29,4 +29,3 @@ The Team Assignments in ENGR 131 are designed to help you build effective collab
 
 ```{tableofcontents}
 ```
-

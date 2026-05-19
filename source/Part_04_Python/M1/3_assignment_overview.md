@@ -35,7 +35,7 @@ kernelspec:
 {{PC05}}
 
 ```{rubric} Assignments for this Module
-``` 
+```
 
 ```{tableofcontents}
 ```
