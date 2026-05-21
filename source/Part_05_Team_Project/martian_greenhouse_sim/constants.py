@@ -82,9 +82,10 @@ INTERNAL_PRESSURE_KPA: float = 100.0
 # ===========================================================================
 
 #: Thermal transmittance of the double-walled insulated glazing (W/(m²·K)).
-#: [TUNABLE] A lower U-value reduces heat loss.  0.3 represents high-
-#: performance vacuum-insulated double glazing.
-U_VALUE_W_M2_K: float = 0.3
+#: [TUNABLE] A lower U-value reduces heat loss. 0.6 represents a realistic
+#: insulated polycarbonate envelope — balances daytime solar gain against a
+#: heater that can keep up at the Martian -70 °C night ambient.
+U_VALUE_W_M2_K: float = 0.6
 
 #: Internal air density (kg/m³).
 RHO_AIR_KG_M3: float = 1.2
@@ -97,8 +98,10 @@ CP_AIR_J_KG_K: float = 1006.0
 A_PROJ_M2: float = math.pi * CYLINDER_RADIUS_M**2  # ≈ 3.46 m²
 
 #: Fraction of incident solar radiation absorbed by the glazing and air mass.
-#: [TUNABLE]
-ABSORPTION_EFFICIENCY: float = 0.70
+#: [TUNABLE] At Mars noon (≈ 585 W/m²) with A_PROJ = 3.46 m², 0.20 yields a
+#: passive equilibrium near 10 °C — giving the heater real work while keeping
+#: midday temperatures inside the crop's lethal-high envelope.
+ABSORPTION_EFFICIENCY: float = 0.20
 
 # ===========================================================================
 # PAR (Photosynthetically Active Radiation)
