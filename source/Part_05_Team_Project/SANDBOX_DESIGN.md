@@ -360,5 +360,3 @@ This runs against any `DISPLAY` (real or `xvfb-run`-supplied). A CI smoke test w
 - Audit ISA: `~/.claude/PAI/MEMORY/WORK/20260518_engr131-audit/ISA.md`
 
 ---
-
-*Open this file in any markdown viewer. Edit Sections 5–9 freely; commit changes to `kpritche` (or a sub-branch off it) and reference them in PR description.*
