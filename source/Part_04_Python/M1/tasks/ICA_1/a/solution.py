@@ -6,7 +6,7 @@ Description:
     Replace this line with a description of your program.
 
 Assignment Information:
-    Assignment:     7.X.X ICA_1
+    Assignment:     8.2.1 ICA_1
     Team ID:        LC0 - 00
     Author:         Holly Fortener, hforten@purdue.edu
     Date:           03/05/2026
@@ -32,22 +32,14 @@ Academic Integrity Statement:
 """
 
 def main():
+    # Prompt the user (you!) for input and store it in a variable called name
+    name = input("What is your name? ")
 
-    v = float(input("Enter initial velocity in m/s: "))
-    a = -9.8              # acceleration due to gravity (m/s^2)
-    time_steps = 5        # seconds
+    # Print a new line for better formatting
+    print()
 
-    for t in range(1, time_steps + 1):
-        x = v * t + 0.5 * a * t**2
-        if x <= 0:
-            print(f"At t = {t} s, the ball has hit the ground.")
-            break
-        elif x > 25:
-            print(f"At t = {t} s, projectile height is: {x:.2f} m")
-            print("I've lost the ball in the sun!")
-            break
-        else:
-            print(f"At t = {t} s, projectile height is: {x:.2f} m")
+    # Print "Hello, " followed by your name, and then an exclamation mark
+    print("Hello, " + name + "!")
 
 if __name__ == "__main__":
     main()
