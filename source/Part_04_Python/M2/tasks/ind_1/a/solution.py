@@ -41,7 +41,7 @@ def main():
     else:
         print("Warning: Soil moisture seems out of expected range.")
         return
-    
+
     # --- Validate rain input ---
     rain = input("Rain forecast (mm) [0–50]: ")
     if rain.strip() >= "0" and rain.strip() <= "50":
@@ -60,7 +60,7 @@ def main():
     else:
         print("Warning: expected 'yes' or 'no'. Using 'no'.")
         maintenance_needed = "no"
-    
+
     # --- Validate low_pressure input ---
     low_pressure = input("Low pressure detected? (yes/no): ")
     low_pressure = str(low_pressure).strip().lower()

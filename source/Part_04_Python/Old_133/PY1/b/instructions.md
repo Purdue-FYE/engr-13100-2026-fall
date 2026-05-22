@@ -89,7 +89,7 @@ Choose one team member's pre-class activity working code file to turn in as a pa
 
 1. What similarities did you notice between the team's codes? What differences?
 2. Did you use `.3f` or `format()`? What are the benefits of each method?
-3. How would your output change if you used `.,3f` instead? What about `._3f`? Why would you want to use these? 
+3. How would your output change if you used `.,3f` instead? What about `._3f`? Why would you want to use these?
 4. For each team member, rank your comfort level in the following skills from 1 (not comfortable) to 5 (most comfortable).
 
     a. Using {program}`Python` IDE

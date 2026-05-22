@@ -1,12 +1,12 @@
 Given: the indicator response times are approximately normally distributed with:
-- Mean: $\mu = 10$ seconds  
+- Mean: $\mu = 10$ seconds
 - Variance: 4 seconds $^2$
 - Critical points: 7 and 12 (between)
 
 We know that standard deviation is the square root of variance, so
 - Standard Deviation $\sigma$ = 2 seconds
 
-To compute the Z-score, we use the formula  
+To compute the Z-score, we use the formula
 
 $Z = \dfrac{x - \mu}{\sigma}$,
 

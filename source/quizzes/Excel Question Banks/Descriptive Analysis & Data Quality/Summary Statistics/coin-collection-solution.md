@@ -1,6 +1,6 @@
-Your friend is sorting their collection of antique coins. You are recording data for each coin: coins have a *denomination*, which is the value of the coin (1 for penny, 5 for nickel, 100 for dollar, etc.). The coins also have a *date*, which is the four-digit year that the coin was minted (produced). 
+Your friend is sorting their collection of antique coins. You are recording data for each coin: coins have a *denomination*, which is the value of the coin (1 for penny, 5 for nickel, 100 for dollar, etc.). The coins also have a *date*, which is the four-digit year that the coin was minted (produced).
 
-You recorded the denominaton and date for the first 100 coins in the collection in two Excel columns. In cell A1, you wrote "Denomination" and in cell B1, "date". 
+You recorded the denominaton and date for the first 100 coins in the collection in two Excel columns. In cell A1, you wrote "Denomination" and in cell B1, "date".
 
 ### Question a) Write the Excel formula that tells you the average denomination.
 =AVERAGE(A2:A101)

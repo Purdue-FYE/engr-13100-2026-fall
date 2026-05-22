@@ -8,6 +8,7 @@ Syntax:
     if condition:
         statement(s)
 """
+
 # Write a program that prints a warning message if the temperature is greater
 # than 30 degrees Celsius.
 temperature = int(input("Enter the temperature: "))

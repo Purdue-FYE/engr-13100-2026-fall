@@ -27,7 +27,7 @@ Sample rubric:
 
 ## c) Your supervisor asks you how many hours in a 24-hour period the light is yellow. In one to two sentences, briefly explain how you would answer?
 
-### sample solution: 
+### sample solution:
 $$
 \frac{3}{20} = \frac{x}{24}
 $$

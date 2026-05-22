@@ -37,7 +37,7 @@ The `while` loop below contains an `if` statement. Review the code and determine
 
 2. How many times will the `while` loop iterate?
 
-```python 
+```python
 x = 1
 i = 1
 

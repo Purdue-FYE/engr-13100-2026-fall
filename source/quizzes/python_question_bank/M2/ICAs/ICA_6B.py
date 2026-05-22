@@ -1,15 +1,15 @@
 ## ICA 6B: UDFs & Code Efficiency
 
-'''
-The following Python code estimates the mass of a few simple parts—rectangular blocks 
-and solid cylinders—made from basic materials (aluminum, steel, wood). It uses the idea 
-that mass = density * volume, where block volume = length * width * height and 
+"""
+The following Python code estimates the mass of a few simple parts—rectangular blocks
+and solid cylinders—made from basic materials (aluminum, steel, wood). It uses the idea
+that mass = density * volume, where block volume = length * width * height and
 cylinder volume = pi * radius^2 * height.
 
 Part A: Code analysis
 
-In what way(s) is the following Python code inefficient? Identitfy ad list the 
-inefficiencies you find in the code. You can also include any other observations 
+In what way(s) is the following Python code inefficient? Identitfy ad list the
+inefficiencies you find in the code. You can also include any other observations
 you have about the code that may be relevant to its efficiency or readability.
 
 Part B: Code Revision & Debugging
@@ -19,16 +19,15 @@ the code to improve efficiency and organization. Add clear comments explaining t
 changes you make and why they improve the code. Rename the file by replacing "username"
 with your actual username, then submit your revised script.
 
-Note: The original code is intentionally written in a verbose and inefficient manner 
-for instructional purposes. Your task is to identify and improve inefficiencies—not to 
+Note: The original code is intentionally written in a verbose and inefficient manner
+for instructional purposes. Your task is to identify and improve inefficiencies—not to
 critique the correctness of the calculations or the numerical results.
 
-'''
+"""
 
 # Calculate masses of simple parts (blocks and cylinders)
 
 # Part 1: Aluminum block (0.20 m × 0.10 m × 0.02 m)
-import math
 
 pi_local = 3.1415926535
 g = 9.80665
@@ -64,7 +63,6 @@ print(f"Part 1 mass: {m1:.3f} kg — {note1}")
 
 # Part 2: Steel block (0.15 m × 0.08 m × 0.03 m)
 
-import math
 
 pi_local = 3.141592653
 g = 9.80665
@@ -100,7 +98,6 @@ print(f"Part 2 mass: {m2:.3f} kg — {note2}")
 
 # Part 3: Wooden cylinder (diameter 0.10 m, height 0.30 m)
 
-import math
 
 pi_local = 3.1415926535
 g = 9.80665
@@ -121,7 +118,7 @@ H3 = 0.30
 r3 = D3 / 2.0
 
 # Calculate volume of cylinder
-V3 = pi_local * (r3 ** 2) * H3
+V3 = pi_local * (r3**2) * H3
 m3 = rho3 * V3
 
 # Mass classification
@@ -136,7 +133,6 @@ print(f"Part 3 mass: {m3:.3f} kg — {note3}")
 
 # Part 4: Aluminum cylinder (diameter 0.05 m, height 0.25 m)
 
-import math
 
 pi_local = 3.1415926535
 g = 9.80665
@@ -157,7 +153,7 @@ H4 = 0.25
 r4 = D4 / 2.0
 
 # Calculate Volume of Cylinder
-V4 = pi_local * (r4 ** 2) * H4
+V4 = pi_local * (r4**2) * H4
 m4 = rho4 * V4
 
 # Mass Classification

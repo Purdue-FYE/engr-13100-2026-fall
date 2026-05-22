@@ -13,9 +13,21 @@ kernelspec:
 
 (PY:M3:A1)=
 # PY: Looping Structures
+(PY:M3:A1)=
+# PY: Looping Structures
 
 ## In this assignment, you will:
+## In this assignment, you will:
 
+- Design a flowchart that models a robot's decision-making process in a conveyor belt system
+- Interpret a written process description and translate it into a visual algorithm
+- Use loops and conditional logic to represent how the robot evaluates different item types
+- Convert user input into a usable data structure (array/list) for processing
+- Write a Python program that implements the logic shown in your flowchart
+- Apply modular programming and coding standards to organize and document your code
+- Test your program using different inputs to verify correct behavior
+- Identify and fix errors through debugging and test case analysis
+- Reflect on how the algorithm could be improved for efficiency and real-world applications
 - Design a flowchart that models a robot's decision-making process in a conveyor belt system
 - Interpret a written process description and translate it into a visual algorithm
 - Use loops and conditional logic to represent how the robot evaluates different item types
@@ -34,8 +46,13 @@ kernelspec:
 - PR05: Code Structures
 - PR06: Translate Program Descriptions
 - PR07: Test cases & Tracking
+- PR04: Modular Programming
+- PR05: Code Structures
+- PR06: Translate Program Descriptions
+- PR07: Test cases & Tracking
 - PR08: Debugging
 
+## Q1 Robot Workflow Optimization
 ## Q1 Robot Workflow Optimization
 (XX Points)
 
@@ -63,7 +80,7 @@ Remember to include comments in your python script to practice professional prog
 
 Create a flowchart that represents your robot's decision-making process. Use the description below to guide your design.
 
-We recommend using https://app.diagrams.net/ to design and export your flowchart as a .pdf file. Save and name your flowchart **py3__ind_1_flowchart_username.pdf**.
+We recommend using https://app.diagrams.net/ to design and export your flowchart as a .pdf file. Save and name your flowchart **py3_ind_1_flowchart_username.pdf**.
 
 **Process Description:**
 
@@ -101,8 +118,15 @@ Use the sample output section below to verify that your program outputs correct 
 
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M3/tasks/ind_1/a/sample_output.md
+```{include} /_build/intermediate/Part_04_Python/M3/tasks/ind_1/a/sample_output.md
 ```
 #### Part 3
+
+Create a MS Word document, copy-paste to following questions into the document, and answer the questions using
+
+1. How would you improve the robot's algorithm to become more efficient?
+2. What might an Industrial Engineer change in a real robot system?
+### Part 3
 
 Create a MS Word document, copy-paste to following questions into the document, and answer the questions using
 
@@ -111,4 +135,5 @@ Create a MS Word document, copy-paste to following questions into the document, 
 
 ### Deliverables
 
+Submit your flowchart **py3_ind_1_flowchart_username.pdf**, python file {glue:text}`../../../../../glue_factory.md::py3_ind_1_py:`, and responses to the short answer questions to (INSERT ASSIGNMENT NAME) on Gradescope.
 Submit your flowchart **py3_ind_1_flowchart_username.pdf**, python file {glue:text}`../../../../../glue_factory.md::py3_ind_1_py:`, and responses to the short answer questions to (INSERT ASSIGNMENT NAME) on Gradescope.

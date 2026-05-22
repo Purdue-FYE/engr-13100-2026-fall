@@ -1,14 +1,14 @@
 ## Py2.10 Loop Debugging (Solution)
 
-### Part A – While Loop 
+### Part A – While Loop
 
-You are given this piece of MATLAB code, which is meant to display numbers counting down from 10 to 1. As written, the loop will run indefinitely. 
+You are given this piece of MATLAB code, which is meant to display numbers counting down from 10 to 1. As written, the loop will run indefinitely.
 
 ```python
 n = 10
 
 while n > 0:
-    print(n) 
+    print(n)
 end
 ```
 
@@ -22,9 +22,9 @@ end
     n = n - 1
     ```
 
-### Part B – For Loop 
+### Part B – For Loop
 
-You are given the following MATLAB code, which produces an error when executed. The intended result of the program is 100, produced by iteratively adding each element of nums to result. 
+You are given the following MATLAB code, which produces an error when executed. The intended result of the program is 100, produced by iteratively adding each element of nums to result.
 
 ```python
 nums = [10, 20, 30, 40]

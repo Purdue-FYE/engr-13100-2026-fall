@@ -30,6 +30,7 @@ access to my code to another. The project I am submitting
 is my own original work.
 ===============================================================================
 """
+
 """
 # The "strip()" function removes indicated
 # characters from either side of a string

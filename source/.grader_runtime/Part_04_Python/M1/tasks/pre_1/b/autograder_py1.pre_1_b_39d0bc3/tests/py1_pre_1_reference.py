@@ -33,18 +33,18 @@ Academic Integrity Statement:
 
 import math
 
-def main():
 
+def main():
     # 1–3. Generate random numbers and cast to float
-    a = float(input(f"Enter a number between 1 and 10: "))
-    b = float(input(f"Enter a number between 3 and 8: "))
+    a = float(input("Enter a number between 1 and 10: "))
+    b = float(input("Enter a number between 3 and 8: "))
 
     # 4. Calculate values
     sum_val = a + b
     diff_val = a - b
     prod_val = a * b
     quot_val = a / b
-    power_val = a ** b
+    power_val = a**b
 
     # 5. Square root of absolute values
     sqrt_a = math.sqrt(abs(a))
@@ -61,7 +61,6 @@ def main():
     print(f"Power: {power_val:.2f}")
     print(f"Sqrt(|Number 1|): {sqrt_a:.2f}")
     print(f"Sqrt(|Number 2|): {sqrt_b:.2f}")
-
 
 
 if __name__ == "__main__":

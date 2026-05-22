@@ -34,7 +34,7 @@ Write a Python program that imports data from an Excel file, stores the data in 
 
 1. Load data from mild_steel_stress_strain.csv into a Pandas data frame called 'data'.
 2. Plot the x (strain) and y-values (stress) using the matplotlib library:
-  
+
 ```python
 import matplotlib.pyplot as plt
 ```
@@ -64,4 +64,3 @@ Stress-strain curve for mild-steel
 ## Deliverables
 
 Submit your Python file {glue:text}`../../../../../glue_factory.md::py4_pre_2_py:` to (INSERT ASSIGNMENT NAME) on Gradescope.
-

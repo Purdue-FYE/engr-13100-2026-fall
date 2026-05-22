@@ -1,7 +1,6 @@
-from os import path
-import traceback
 import textwrap
-
+import traceback
+from os import path
 
 inf_loop_hint = "Make sure your program isn't stuck in an infinite loop."
 return_hint = "Try using a `return` statement instead."
@@ -58,6 +57,7 @@ def handle_error(e, error_msg):
 
     return indent(error_msg + "\n\n" + formatted_traceback)
 
+
 class InputError(Exception):
     """Custom Exception type."""
 
@@ -65,8 +65,9 @@ class InputError(Exception):
         error_msg = "Encountered call to `input` during import."
         hint = (
             "Avoid calling `input` in the global scope "
-            "(i.e. outside of any function or other code block)."
-            + hint if hint else ""
+            "(i.e. outside of any function or other code block)." + hint
+            if hint
+            else ""
         )
         self.msg = format_error_msg(error_msg, hint)
 
@@ -98,7 +99,6 @@ class LogLimitExceededError(Exception):
         return self.msg
 
 
-
 class ExcessFunctionCallError(Exception):
     """Custom Exception to raise when submitted code calls a function more
     times than expected.
@@ -106,14 +106,14 @@ class ExcessFunctionCallError(Exception):
 
     def __init__(self, func_name, hint=None):
         error_msg = (
-            f"Your program called the `{func_name}` function"
-            " more times than expected."
+            f"Your program called the `{func_name}` function more times than expected."
         )
         hint = f"{hint}  {inf_loop_hint}" if hint else inf_loop_hint
         self.msg = format_error_msg(error_msg, hint)
 
     def __str__(self):
         return self.msg
+
 
 class ExitError(Exception):
     """Custom Exception to raise when submitted code calls `exit()`."""
@@ -137,4 +137,3 @@ class QuitError(Exception):
 
     def __str__(self):
         return self.msg
-

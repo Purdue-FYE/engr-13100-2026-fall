@@ -12,7 +12,6 @@ import json
 import re
 from pathlib import Path
 
-
 REPO_ROOT = Path(__file__).resolve().parents[1]
 GSA_PATH = (
     REPO_ROOT
@@ -27,7 +26,9 @@ PREFIX_RE = re.compile(r"^[A-Z]{2,3}\s+")
 
 
 def load_gsa_module():
-    spec = importlib.util.spec_from_file_location("generate_schedule_assignments", GSA_PATH)
+    spec = importlib.util.spec_from_file_location(
+        "generate_schedule_assignments", GSA_PATH
+    )
     if spec is None or spec.loader is None:
         raise RuntimeError(f"Unable to load module from {GSA_PATH}")
 
@@ -44,10 +45,7 @@ def strip_subject_prefix(assignment_id: str) -> str:
 def main() -> None:
     gsa = load_gsa_module()
 
-    toc_data = gsa._read_yaml(gsa.TOC_PATH)
-    generated_rows = gsa._collect_rows_from_toc(toc_data)
-    overrides = gsa._load_overrides(gsa.OVERRIDES_CSV)
-    merged_rows = gsa._apply_overrides(generated_rows, overrides)
+    _, merged_rows = gsa.build_merged_rows()
 
     mapping: dict[str, str] = {}
     for row in merged_rows:
