@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Status** | v1 shipped (commit `430651c` on `kpritche`); v2 design open |
-| **Owners** | Kory Pritchett · Ruth (curriculum) · ENGR 131 instructional team |
+| **Owners** | Kory Pritchett · Holly Fortner · ENGR 131 instructional team |
 | **Last updated** | 2026-05-22 |
 | **Scope** | The interactive sandbox at `source/Part_05_Team_Project/martian_greenhouse_sim/gui.py` and the Milestone 2 student experience that uses it |
 | **Related** | [`Design Project Evaluation`](../../../Obsidian%20Vault/Purdue/ENGR%20131/Design%20Project%20Evaluation.md) (Obsidian) · [`plans/martian-greenhouse-simulation-plan.md`](../../plans/martian-greenhouse-simulation-plan.md) (original sim plan) · `martian_greenhouse_sim/0_overview.md` |
