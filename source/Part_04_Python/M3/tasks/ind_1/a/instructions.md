@@ -64,19 +64,9 @@ In this assignment, you will first create a flowchart that models how a robot re
 
 Think of your flowchart as a visual representation of an algorithm, and your code as the step-by-step decision-making system that a robot would follow in a real-world environment.
 
-## Files Needed
-Industrial engineers design efficient workflows for systems such as manufacturing lines and robotic processes.
+### Files Needed
 
-In this assignment, you will first create a flowchart that models how a robot responds to different conditions in a workflow. You will then translate this flowchart into a Python program that executes the same process.
-
-Think of your flowchart as a visual representation of an algorithm, and your code as the step-by-step decision-making system that a robot would follow in a real-world environment.
-
-## Files Needed
-
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save it as py2_ind_1_username.py.
-Download the {program}`Python` template {download}`ENGR131_Python_Template.py
-</Part_04_Python/ENGR131_Python_Template.py>` and save it as py2_ind_1_username.py.
+Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py3_ind_1_py:`.
 
 ```{admonition} Note
    :class: note
@@ -84,10 +74,9 @@ Download the {program}`Python` template {download}`ENGR131_Python_Template.py
 Remember to include comments in your python script to practice professional programming standards.
 ```
 
-## Program Requirements
-## Program Requirements
+### Program Requirements
 
-### Part 1
+#### Part 1
 
 Create a flowchart that represents your robot's decision-making process. Use the description below to guide your design.
 
@@ -121,7 +110,7 @@ Your flowchart should:
 - Include a conditional structure for item types
 - Display the robot action/output for each possible condition
 
-### Part 2
+#### Part 2
 
 Write a Python program that executes the algorithm displayed in your flowchart. Remember to prompt the user for a list of items (```user_input```) separated by commas (no spaces). Then convert the user input into an array of strings called ```items```.
 
@@ -131,7 +120,7 @@ Use the sample output section below to verify that your program outputs correct 
 ```{include} /_build/intermediate/Part_04_Python/M3/tasks/ind_1/a/sample_output.md
 ```{include} /_build/intermediate/Part_04_Python/M3/tasks/ind_1/a/sample_output.md
 ```
-### Part 3
+#### Part 3
 
 Create a MS Word document, copy-paste to following questions into the document, and answer the questions using
 
