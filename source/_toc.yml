@@ -42,7 +42,7 @@ parts:
         - file: Part_02_Excel/M1/tasks/pre_1/a/instructions
       - file: Part_02_Excel/M1/2_in-class_overview
         sections:
-        - file: Part_02_Excel/M1/in-class/ICA_1/instructions
+        - file: Part_02_Excel/M1/tasks/ICA_1/instructions
      # - file: Part_02_Excel/M1/3_assignment_overview
       #  sections:
        # - file: Part_02_Excel/M1/tasks/1/a/instructions
@@ -57,7 +57,7 @@ parts:
          - file: Part_02_Excel/M2/tasks/pre_2/a/instructions
       - file: Part_02_Excel/M2/2_in-class_overview
         sections:
-        - file: Part_02_Excel/M2/in-class/ICA_1/instructions
+        - file: Part_02_Excel/M2/tasks/ICA_1/instructions
       - file: Part_02_Excel/M2/3_assignment_overview
         sections:
         - file: Part_02_Excel/M2/tasks/1/a/instructions
@@ -71,7 +71,7 @@ parts:
         - file: Part_02_Excel/M3/tasks/pre_1/a/instructions
       - file: Part_02_Excel/M3/2_in-class_overview
         sections:
-        - file: Part_02_Excel/M3/in-class/ICA_1/instructions
+        - file: Part_02_Excel/M3/tasks/ICA_1/instructions
       - file: Part_02_Excel/M3/3_assignment_overview
         sections:
         - file: Part_02_Excel/M3/tasks/1/a/instructions
@@ -85,7 +85,7 @@ parts:
         - file: Part_02_Excel/M4/tasks/pre_1/a/instructions
       - file: Part_02_Excel/M4/2_in-class_overview
         sections:
-        - file: Part_02_Excel/M4/in-class/ICA_1/instructions
+        - file: Part_02_Excel/M4/tasks/ICA_1/instructions
       - file: Part_02_Excel/M4/3_assignment_overview
         sections:
         - file: Part_02_Excel/M4/tasks/1/a/instructions
@@ -108,7 +108,7 @@ parts:
         - file: Part_04_Python/M1/tasks/pre_1/b/instructions
       # - file: Part_04_Python/M1/2_in-class_overview
       #   sections:
-        #  - file: Part_04_Python/M1/in-class/ICA_1/a/instructions
+        #  - file: Part_04_Python/M1/tasks/ICA_1/a/instructions
       - file: Part_04_Python/M1/3_assignment_overview
         sections:
         - file: Part_04_Python/M1/tasks/ind_1/b/instructions
@@ -124,7 +124,7 @@ parts:
         - file: Part_04_Python/M2/tasks/pre_2/a/instructions
       - file: Part_04_Python/M2/2_in-class_overview
         sections:
-        - file: Part_04_Python/M2/in-class/ICA_1/a/instructions
+        - file: Part_04_Python/M2/tasks/ICA_1/a/instructions
       - file: Part_04_Python/M2/3_assignment_overview
         sections:
         - file: Part_04_Python/M2/tasks/ind_1/a/instructions
@@ -139,7 +139,7 @@ parts:
         - file: Part_04_Python/M3/tasks/pre_2/a/instructions
       - file: Part_04_Python/M3/2_in-class_overview
         sections:
-        - file: Part_04_Python/M3/in-class/ICA_1/a/instructions
+        - file: Part_04_Python/M3/tasks/ICA_1/a/instructions
       - file: Part_04_Python/M3/3_assignment_overview
         sections:
         - file: Part_04_Python/M3/tasks/ind_1/a/instructions
@@ -154,7 +154,7 @@ parts:
         - file: Part_04_Python/M4/tasks/pre_2/a/instructions
       - file: Part_04_Python/M4/2_in-class_overview
         sections:
-        - file: Part_04_Python/M4/in-class/ICA_1/instructions
+        - file: Part_04_Python/M4/tasks/ICA_1/instructions
       - file: Part_04_Python/M4/3_assignment_overview
         sections:
         - file: Part_04_Python/M4/tasks/ind_1/a/instructions
@@ -169,7 +169,7 @@ parts:
         - file: Part_04_Python/M5/tasks/pre_2/a/instructions
       - file: Part_04_Python/M5/2_in-class_overview
         sections:
-        - file: Part_04_Python/M5/in-class/ICA_1/instructions
+        - file: Part_04_Python/M5/tasks/ICA_1/instructions
       - file: Part_04_Python/M5/3_assignment_overview
         sections:
         - file: Part_04_Python/M5/tasks/ind_1/a/instructions
