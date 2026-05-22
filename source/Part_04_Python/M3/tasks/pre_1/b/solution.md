@@ -1,6 +1,6 @@
 # Python 3, PCA 1: Solutions
 
-```python 
+```python
 x = 1
 i = 1
 print(f"Starting while loop iteration: i = {i}, x = {x}")

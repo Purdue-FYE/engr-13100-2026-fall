@@ -20,13 +20,17 @@ parts:
     chapters:
     # Professional Preperation Module
     - file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
+      sections:
+      - file: Part_01_Professional_Development/M1_Professional_Preparation/1_PP_assignments
+        sections: 
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.1.1_instructions
 
     # Teaming Module
     - file: Part_01_Professional_Development/M2_Teaming/0_overview
-      sections: 
+      sections:
       - file: Part_01_Professional_Development/M2_Teaming/2_CATME_inst
       - file: Part_01_Professional_Development/M2_Teaming/1_TM_assignments
-        sections: 
+        sections:
         - file: Part_01_Professional_Development/M2_Teaming/1_TM1_pcm_teaming
         - file: Part_01_Professional_Development/M2_Teaming/1_TM1_inst
 
@@ -42,7 +46,7 @@ parts:
         - file: Part_02_Excel/M1/tasks/pre_1/a/instructions
       - file: Part_02_Excel/M1/2_in-class_overview
         sections:
-        - file: Part_02_Excel/M1/tasks/ICA_1/instructions
+        - file: Part_02_Excel/M1/tasks/ICA_1/a/instructions
      # - file: Part_02_Excel/M1/3_assignment_overview
       #  sections:
        # - file: Part_02_Excel/M1/tasks/1/a/instructions
@@ -57,7 +61,7 @@ parts:
          - file: Part_02_Excel/M2/tasks/pre_2/a/instructions
       - file: Part_02_Excel/M2/2_in-class_overview
         sections:
-        - file: Part_02_Excel/M2/tasks/ICA_1/instructions
+        - file: Part_02_Excel/M2/tasks/ICA_1/a/instructions
       - file: Part_02_Excel/M2/3_assignment_overview
         sections:
         - file: Part_02_Excel/M2/tasks/1/a/instructions
@@ -71,10 +75,10 @@ parts:
         - file: Part_02_Excel/M3/tasks/pre_1/a/instructions
       - file: Part_02_Excel/M3/2_in-class_overview
         sections:
-        - file: Part_02_Excel/M3/tasks/ICA_1/instructions
-      - file: Part_02_Excel/M3/3_assignment_overview
-        sections:
-        - file: Part_02_Excel/M3/tasks/1/a/instructions
+        - file: Part_02_Excel/M3/tasks/ICA_1/a/instructions
+      #- file: Part_02_Excel/M3/3_assignment_overview
+       # sections:
+      #  - file: Part_02_Excel/M3/tasks/1/a/instructions
 
     # Excel Module 4
     - file: Part_02_Excel/M4/0_overview
@@ -85,7 +89,7 @@ parts:
         - file: Part_02_Excel/M4/tasks/pre_1/a/instructions
       - file: Part_02_Excel/M4/2_in-class_overview
         sections:
-        - file: Part_02_Excel/M4/tasks/ICA_1/instructions
+        - file: Part_02_Excel/M4/tasks/ICA_1/a/instructions
       - file: Part_02_Excel/M4/3_assignment_overview
         sections:
         - file: Part_02_Excel/M4/tasks/1/a/instructions
@@ -94,11 +98,11 @@ parts:
     numbered: 3
     chapters:
     - file: Part_03_AI/0_overview
-  
+
   - caption: Python
     numbered: 3
     chapters:
-    
+
     # Python Module 1
     - file: Part_04_Python/M1/0_overview
       sections:
@@ -154,7 +158,7 @@ parts:
         - file: Part_04_Python/M4/tasks/pre_2/a/instructions
       - file: Part_04_Python/M4/2_in-class_overview
         sections:
-        - file: Part_04_Python/M4/tasks/ICA_1/instructions
+        - file: Part_04_Python/M4/tasks/ICA_1/a/instructions
       - file: Part_04_Python/M4/3_assignment_overview
         sections:
         - file: Part_04_Python/M4/tasks/ind_1/a/instructions
@@ -166,14 +170,14 @@ parts:
         sections:
         - file: Part_04_Python/M5/1.1_materials
         - file: Part_04_Python/M5/tasks/pre_1/a/instructions
-        - file: Part_04_Python/M5/tasks/pre_2/a/instructions
+        #- file: Part_04_Python/M5/tasks/pre_2/a/instructions
       - file: Part_04_Python/M5/2_in-class_overview
         sections:
-        - file: Part_04_Python/M5/tasks/ICA_1/instructions
+        - file: Part_04_Python/M5/tasks/ICA_1/a/instructions
       - file: Part_04_Python/M5/3_assignment_overview
         sections:
         - file: Part_04_Python/M5/tasks/ind_1/a/instructions
-   
+
   # - caption: Team Project
   #   numbered: True
   #   chapters:

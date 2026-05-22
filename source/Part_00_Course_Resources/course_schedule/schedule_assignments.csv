@@ -1,40 +1,38 @@
 class_slot,assignment_id,name,points,type,due_date
 1A,EX 3.1.1,PCMs: Spreadsheet Foundations,0,Pre-Class Assignment,Class 1B
 1A,EX 3.1.2,PCA: Calculations and Charting in Excel,2,Pre-Class Assignment,Class 1B
-1A,PD 1.1.0,Course Policies Exploration,10,Individual Assignment,Class 1B
+1A,PP 1.1.1,Course Policies Exploration,10,Individual Assignment,Class 1B
 1A,TM 2.1.0,CAT0 - CATME Team Formation Survey,5,Individual Assignment,9/2/26 @ 11:59 PM
 1B,EX 4.1.1,PCMs: Data Analysis and Histograms in Excel,0,Pre-Class Assignment,Class 2A
 1B,EX 4.1.2,PCA: Descriptive Statistics and Logical Functions,2,Pre-Class Assignment,Class 2A
 2A,EX 4.1.3,PCA: Distributions - Histograms and Outliers,2,Pre-Class Assignment,Class 2B
 2A,EX 4.3.1,EX: Data Analysis,10,Individual Assignment,Class 3A
-3A,TM 2.2.1,PCMs: Working in an Engineering Team,0,Pre-Class Assignment,Class 4A
-3A,TM 2.2.2,PCA: Teaming Fundamentals,5,Pre-Class Assignment,Class 4A
-6A,TM 2.1.1,CAT1 - CATME Peer & Team Evaluation #1,10,Individual Assignment,10/4/26 @ 11:59 PM
-10A,TM 2.1.2,CAT2 - CATME Peer & Team Evaluation #2,10,Individual Assignment,11/1/26 @ 11:59 PM
-10B,TP1,Design Project Proposal,20,Team Assignment,Class 11A
+3B,TM 2.2.1,PCMs: Working in an Engineering Team,0,Pre-Class Assignment,Class 4A
+3B,TM 2.2.2,PCA: Teaming Fundamentals,5,Pre-Class Assignment,Class 4A
+5A,TM 2.1.1,CAT1 - CATME Peer & Team Evaluation #1,10,Individual Assignment,09/27/26 @ 11:59 PM
+11A,TM 2.1.2,CAT2 - CATME Peer & Team Evaluation #2,10,Individual Assignment,11/8/26 @ 11:59 PM
 16A,TM 2.1.3,CAT3 - CATME Peer & Team Evaluation #3,10,Individual Assignment,12/11/26 @ 11:59 PM
-,EX 5.1.1,PCMs: Probability & Normal Distributions,0,Pre-Class Assignment,
-,EX 5.1.2,PCA: Title,0,Pre-Class Assignment,
-,EX 5.3.1,EX: Assignment Title,10,Individual Assignment,
-,EX 6.1.1,PCMs: Linear Regression in Excel,0,Pre-Class Assignment,
-,EX 6.1.2,PCA: Title,0,Pre-Class Assignment,
-,EX 6.3.1,EX: Assignment Title,10,Individual Assignment,
-,PY 10.1.1,Materials,0,Pre-Class Assignment,
-,PY 10.1.2,PCA: While Loops,0,Pre-Class Assignment,
-,PY 10.1.3,PCA: For Loops,0,Pre-Class Assignment,
-,PY 10.3.1,PY: Looping Structures,10,Individual Assignment,
-,PY 11.1.1,Pre-Class Materials,0,Pre-Class Assignment,
-,PY 11.1.2,PCA: Data Manipulation,0,Pre-Class Assignment,
-,PY 11.1.3,PCA: Plotting & Statistics,0,Pre-Class Assignment,
-,PY 11.3.1,PY: Data,10,Individual Assignment,
-,PY 12.1.1,Pre-Class Videos,0,Pre-Class Assignment,
-,PY 12.1.2,PCA: Linear Regression Analysis,0,Pre-Class Assignment,
-,PY 12.1.3,PCA: Title,0,Pre-Class Assignment,
-,PY 12.3.1,PY: Regression,10,Individual Assignment,
-,PY 8.1.1,PCMs: Python Foundations,0,Pre-Class Assignment,
-,PY 8.1.2,PCA: Python Foundations,0,Pre-Class Assignment,
-,PY 8.3.1,PY: Python Foundations,10,Individual Assignment,
-,PY 9.1.1,PCMs: Logic & Modularity,0,Pre-Class Assignment,
-,PY 9.1.2,PCA: Selection Structures,0,Pre-Class Assignment,
-,PY 9.1.3,PCA: User-Defined Functions,0,Pre-Class Assignment,
-,PY 9.3.1,PY: Logic & Modularity,10,Individual Assignment,
+2B,EX 5.1.1,PCMs: Probability & Normal Distributions,0,Pre-Class Assignment,Class 3A
+2B,EX 5.1.2,PCA: Title,0,Pre-Class Assignment,
+3A,EX 6.1.1,PCMs: Linear Regression in Excel,0,Pre-Class Assignment,Class 3B
+3A,EX 6.1.2,PCA: Title,0,Pre-Class Assignment,Class 3B
+3A,EX 6.3.1,EX: Distributions & Regression,10,Individual Assignment,Class 4A
+4A,AI 7.1.1,AI: Neural Networks Placeholder,10, Individual Assignment, Class 5B
+7A,PY 10.1.1,PCMs: Materials,0,Pre-Class Assignment,Class 7B
+7A,PY 10.1.2,PCA: While Loops,0,Pre-Class Assignment,Class 7B
+7A,PY 10.1.3,PCA: For Loops,0,Pre-Class Assignment,Class 8B
+7B,PY 10.3.1,PY: Looping Structures,10,Individual Assignment,Class 9A
+9A,PY 11.1.1,Pre-Class Materials,0,Pre-Class Assignment,Class 9B
+9A,PY 11.1.2,PCA: Data Manipulation,0,Pre-Class Assignment,Class 9B
+9A,PY 11.1.3,PCA: Plotting & Statistics,0,Pre-Class Assignment,Class 10A
+9B,PY 11.3.1,PY: Data,10,Individual Assignment,Class 11A
+10B,PY 12.1.1,Pre-Class Videos,0,Pre-Class Assignment,Class 11A
+10B,PY 12.1.2,PCA: Linear Regression Analysis,0,Pre-Class Assignment,Class 11A
+11A,PY 12.3.1,PY: Regression,10,Individual Assignment,Class 12B
+4B,PY 8.1.1,PCMs: Python Foundations,0,Pre-Class Assignment,Class 5B
+4B,PY 8.1.2,PCA: Python Foundations,2,Pre-Class Assignment,Class 6A
+5B,PY 8.3.1,PY: Python Foundations,10,Individual Assignment,Class 6B
+6A,PY 9.1.1,PCMs: Logic & Modularity,0,Pre-Class Assignment,Class 6B
+6A,PY 9.1.2,PCA: Selection Structures,0,Pre-Class Assignment,Class 6B
+6A,PY 9.1.3,PCA: User-Defined Functions,0,Pre-Class Assignment,Class 7A
+6B,PY 9.3.1,PY: Logic & Modularity,10,Individual Assignment,Class 7B

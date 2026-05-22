@@ -17,21 +17,25 @@ TOC_FILE = SOURCE_DIR / "_toc.yml"
 # Must be inside source/ to be visible to Jupyter Book
 MASTER_NOTEBOOK = SOURCE_DIR / "glue_factory.md"
 
+
 def load_toc(path):
     if not pathlib.Path(path).exists():
         print(f"Error: {path} not found.")
         return {}
-    with open(path, 'r') as f:
+    with open(path, "r") as f:
         return yaml.safe_load(f)
+
 
 def clean_id(directory_name):
     return directory_name.replace("-", "_").replace(" ", "_").lower()
+
 
 def sanitize_token(value):
     token = str(value).strip().lower().replace("-", "_").replace(" ", "_")
     token = TOKEN_SANITIZE_REGEX.sub("_", token)
     token = re.sub(r"_+", "_", token).strip("_")
     return token
+
 
 def compute_assignment_id(path):
     # Normalize to repo-relative path so ID parsing is stable even when
@@ -49,13 +53,14 @@ def compute_assignment_id(path):
     try:
         return (
             path_parts[1].split("_")[-1][0:2]
-            + path_parts[2].replace('m', '')
+            + path_parts[2].replace("m", "")
             + "_"
             + path_parts[4]
         )
     except IndexError:
         print(f"⚠️ Warning: Fallback ID for {path}")
         return unique_id.replace("/", "_")
+
 
 def select_canonical_assignments(assignments):
     canonical_by_id = {}
@@ -74,8 +79,9 @@ def select_canonical_assignments(assignments):
 
     return canonical_by_id
 
+
 def load_front_matter(path):
-    with open(path, 'r', encoding='utf-8') as f:
+    with open(path, "r", encoding="utf-8") as f:
         content = f.read()
 
     match = FRONT_MATTER_REGEX.match(content)
@@ -86,6 +92,7 @@ def load_front_matter(path):
     if not isinstance(data, dict):
         return {}
     return data
+
 
 def parse_deliverable_definition(raw_item, path):
     if isinstance(raw_item, str):
@@ -122,6 +129,7 @@ def parse_deliverable_definition(raw_item, path):
         "ext": ext,
     }
 
+
 def get_assignment_deliverables(path, assignment_id):
     front_matter = load_front_matter(path)
     raw_deliverables = front_matter.get("deliverables")
@@ -130,8 +138,7 @@ def get_assignment_deliverables(path, assignment_id):
         raw_deliverables = list(DEFAULT_DELIVERABLE_EXTENSIONS)
     elif not isinstance(raw_deliverables, list):
         print(
-            f"⚠️ Warning: 'deliverables' is not a list "
-            f"in {path.name}; using defaults."
+            f"⚠️ Warning: 'deliverables' is not a list in {path.name}; using defaults."
         )
         raw_deliverables = list(DEFAULT_DELIVERABLE_EXTENSIONS)
 
@@ -155,44 +162,50 @@ def get_assignment_deliverables(path, assignment_id):
         ext = parsed["ext"]
         stem = f"{assignment_id}_{label}" if label else assignment_id
 
-        deliverables.append({
-            "token": token,
-            "placeholder": f"deliverable_{token}",
-            "glue_key": f"{assignment_id}_{token}",
-            "filename": f"{stem}_username.{ext}",
-        })
+        deliverables.append(
+            {
+                "token": token,
+                "placeholder": f"deliverable_{token}",
+                "glue_key": f"{assignment_id}_{token}",
+                "filename": f"{stem}_username.{ext}",
+            }
+        )
         seen_tokens.add(token)
 
     if not deliverables:
         print(f"⚠️ Warning: No valid deliverables for {path.name}; using defaults.")
         for ext in DEFAULT_DELIVERABLE_EXTENSIONS:
-            deliverables.append({
-                "token": ext,
-                "placeholder": f"deliverable_{ext}",
-                "glue_key": f"{assignment_id}_{ext}",
-                "filename": f"{assignment_id}_username.{ext}",
-            })
+            deliverables.append(
+                {
+                    "token": ext,
+                    "placeholder": f"deliverable_{ext}",
+                    "glue_key": f"{assignment_id}_{ext}",
+                    "filename": f"{assignment_id}_username.{ext}",
+                }
+            )
 
     return deliverables
+
 
 def find_assignment_files(toc_data, base_path=SOURCE_DIR):
     found_files = []
     items = toc_data if isinstance(toc_data, list) else [toc_data]
-    
+
     for item in items:
-        target = item.get('file') or item.get('root')
+        target = item.get("file") or item.get("root")
         if target:
             target_path = base_path / f"{target}"
             if not target_path.suffix:
                 target_path = target_path.with_suffix(".md")
-            
+
             if target_path.exists() and "instructions" in target_path.name:
                 found_files.append(target_path)
 
-        for key in ['chapters', 'sections', 'parts']:
+        for key in ["chapters", "sections", "parts"]:
             if key in item:
                 found_files.extend(find_assignment_files(item[key], base_path))
     return found_files
+
 
 def generate_master_notebook(assignments):
     # Added 'orphan: true' so it builds even if not in TOC
@@ -259,17 +272,16 @@ import pathlib
                 continue
 
             content += (
-                f"glue('{glue_key}', "
-                f"'{deliverable['filename']}', "
-                "display=False)\n"
+                f"glue('{glue_key}', '{deliverable['filename']}', display=False)\n"
             )
             seen_glue_keys.add(glue_key)
         content += "\n"
 
     content += "```\n"
-    with open(MASTER_NOTEBOOK, 'w') as f:
+    with open(MASTER_NOTEBOOK, "w") as f:
         f.write(content)
     print(f"✅ Generated Glue Factory: {MASTER_NOTEBOOK}")
+
 
 def audit_and_fix_references(assignments):
     placeholder_regex = re.compile(r"\bdeliverable_([a-z0-9_]+)\b")
@@ -285,8 +297,7 @@ def audit_and_fix_references(assignments):
     for path in assignments:
         assignment_id = compute_assignment_id(path)
         deliverables = canonical_deliverables.get(
-            assignment_id,
-            get_assignment_deliverables(path, assignment_id)
+            assignment_id, get_assignment_deliverables(path, assignment_id)
         )
         token_lookup = {item["token"]: item for item in deliverables}
         ordered_tokens = sorted(token_lookup.keys(), key=len, reverse=True)
@@ -305,7 +316,7 @@ def audit_and_fix_references(assignments):
             doc_ref = pathlib.Path(rel_dir) / "glue_factory.md"
             doc_ref = doc_ref.as_posix()
 
-        with open(path, 'r', encoding='utf-8') as f:
+        with open(path, "r", encoding="utf-8") as f:
             content = f.read()
 
         original_content = content
@@ -335,7 +346,7 @@ def audit_and_fix_references(assignments):
                 return normalized_id
 
             if normalized_id.startswith(f"{assignment_id}_"):
-                normalized_id = normalized_id[len(assignment_id) + 1:]
+                normalized_id = normalized_id[len(assignment_id) + 1 :]
                 if normalized_id in token_lookup:
                     return normalized_id
 
@@ -346,7 +357,7 @@ def audit_and_fix_references(assignments):
             return None
 
         def fix_reference(match):
-            role = match.group(1)       # {glue:text}
+            role = match.group(1)  # {glue:text}
             full_ref = match.group(2)
 
             if "::" in full_ref:
@@ -359,7 +370,7 @@ def audit_and_fix_references(assignments):
                 return match.group(0)
 
             new_tag = f"{role}`{doc_ref}::{token_lookup[token]['glue_key']}:`"
-            
+
             # Check for changes
             if new_tag != match.group(0):
                 normalized_id = sanitize_token(existing_id.rstrip(":"))
@@ -370,26 +381,26 @@ def audit_and_fix_references(assignments):
                     )
                 else:
                     print(
-                        f"   [FIX]    {path.name}: Updated path/format -> "
-                        f"'{doc_ref}'"
+                        f"   [FIX]    {path.name}: Updated path/format -> '{doc_ref}'"
                     )
-            
+
             return new_tag
 
         content = glue_regex.sub(fix_reference, content)
 
         if content != original_content:
-            with open(path, 'w', encoding='utf-8') as f:
+            with open(path, "w", encoding="utf-8") as f:
                 f.write(content)
         else:
-             print(f"   [OK]     {path.as_posix()}")
+            print(f"   [OK]     {path.as_posix()}")
+
 
 def main():
     print("--- Starting Deliverable Manager ---")
     toc = load_toc(TOC_FILE)
-    assignments = find_assignment_files(toc['parts'] if 'parts' in toc else toc)
+    assignments = find_assignment_files(toc["parts"] if "parts" in toc else toc)
     print(f"Found {len(assignments)} instruction files.")
-    
+
     # detect duplicate short_ids and optionally eliminate extras
     unique = []
     seen = {}
@@ -405,16 +416,21 @@ def main():
     # warn about duplicates
     for sid, paths in seen.items():
         if len(paths) > 1:
-            print(f"⚠️ Duplicate deliverable id '{sid}' found in: {', '.join(str(p) for p in paths)}")
+            print(
+                f"⚠️ Duplicate deliverable id '{sid}' found in: {', '.join(str(p) for p in paths)}"
+            )
 
     assignments = unique
-    print(f"Processing {len(assignments)} unique instruction files after deduplication.")
+    print(
+        f"Processing {len(assignments)} unique instruction files after deduplication."
+    )
 
     generate_master_notebook(assignments)
-    
+
     print("Auditing Markdown files...")
     audit_and_fix_references(assignments)
     print("--- Done ---")
+
 
 if __name__ == "__main__":
     main()

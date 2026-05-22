@@ -14,5 +14,10 @@ cases = {
     3: {
         "callable": "main",
         "entries": [28.3],
+<<<<<<< HEAD
     }
 }
+=======
+    },
+}
+>>>>>>> 1079af7efff7bb6b24fb3a6cba2a9b586ec08884

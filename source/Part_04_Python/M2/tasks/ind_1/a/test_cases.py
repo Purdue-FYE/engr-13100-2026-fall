@@ -37,5 +37,5 @@ cases = {
     6: {
         "callable": "main",
         "entries": [36, 10, "no", "no"],
-    }
+    },
 }

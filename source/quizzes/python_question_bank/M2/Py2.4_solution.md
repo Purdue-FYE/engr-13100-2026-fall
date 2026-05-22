@@ -53,7 +53,7 @@ This script simulates checkout logic for a membership warehouse club by asking t
     Number of items (e.g., 3): 3
     Member checkout.
     Standard shipping; member discount applied.
-    
+
     # Sample input/ouput 3
     $ python checkout.py
     Membership (Gold, Silver, Guest): Guest
@@ -61,7 +61,7 @@ This script simulates checkout logic for a membership warehouse club by asking t
     Number of items (e.g., 3): 2
     Guest checkout.
     Free standard shipping for large guest order.
-    
+
     # Sample input/ouput 4
     $ python checkout.py
     Membership (Gold, Silver, Guest): Platinum

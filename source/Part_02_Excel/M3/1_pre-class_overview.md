@@ -19,4 +19,3 @@ kernelspec:
 
 ```{include} ../../guidelines/excel_resources.md
 ```
-

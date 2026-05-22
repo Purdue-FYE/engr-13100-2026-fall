@@ -5,7 +5,7 @@ Description:
     Replace this line with a description of your program.
 
 Assignment Information:
-    Assignment:     A##, Problem # 
+    Assignment:     A##, Problem #
     Author:         Name, login@purdue.edu
 
 """

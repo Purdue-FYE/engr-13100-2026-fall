@@ -18,13 +18,14 @@ This activity checks your understanding of the core teaming concepts introduced 
 ## Instructions
 
 1. Review {doc}`PCM: Working in an Engineering Team<1_TM1_pcm_teaming>` before beginning this activity.
-2. Complete the **TM1 – Teaming Fundamentals** questions in Gradescope.
+2. Complete the **2.2.2 PCA: Teaming Fundamentals** questions in **Gradescope**.
 3. Answer all questions based on the concepts discussed in the PCM.
 
 ## Submission
 
 - This activity is completed **directly in Gradescope**.
 - Be sure to submit your answers before the deadline listed on the {doc}`Course Schedule<../../Part_00_Course_Resources/course_schedule>`.
+- You may submit as many times as needed before the due date for full credit. 
 
 ## Learning Objectives
 

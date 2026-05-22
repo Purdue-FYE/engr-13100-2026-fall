@@ -4,7 +4,7 @@ No, the data does not appear to follow a linear trend.
 ## Question b) Rewrite the regression equation, replacing the generic variables y and x with descriptive variables.
 Mean Monthly Temperature = -0.0032 * Elevation + 18.022
 
-## Question c) One of your teammates tells you that the mean monthly temperature around the world is 22 degrees Celsius at sea level (0 m elevation). He suggests fixing the intercept to 22. 
+## Question c) One of your teammates tells you that the mean monthly temperature around the world is 22 degrees Celsius at sea level (0 m elevation). He suggests fixing the intercept to 22.
 
 ### Question c.1) What will happen to the slope of your trendline if you fix the intercept to 22?
 - [ ] It will increase

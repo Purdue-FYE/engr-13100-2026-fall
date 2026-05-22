@@ -19,4 +19,3 @@ kernelspec:
 
 ```{include} ../../guidelines/python_resources.md
 ```
-

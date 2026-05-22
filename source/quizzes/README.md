@@ -1,6 +1,6 @@
 # Quizzes
 
-Quiz questions are organized by concept (Excel, Modeling, Python etc.).  
+Quiz questions are organized by concept (Excel, Modeling, Python etc.).
 
 For this directory to be used as a question bank, questions need to be written with a consideration towards page space. Questions should be written in multiples of half-pages.
 
@@ -12,11 +12,11 @@ Outermost folder: Question banks based on skill,(i.e. Excel, Modeling, Python)
 Within there, folders indicate a topic, (i.e. Linear Regression, Spreadsheet Foundations)
 Subfolders indicate detailed topics more closely aligned with learning objectives (i.e. Goodness of fit, Predictions, Scatter Plots)
 
-Each question has its own markdown file. One question per file. Some questions have multiple parts. 
+Each question has its own markdown file. One question per file. Some questions have multiple parts.
 
-Question markdown files have descriptive names. 
+Question markdown files have descriptive names.
 
-When creating an exam, no more than one markdown file should be pulled from each sub-folder. 
+When creating an exam, no more than one markdown file should be pulled from each sub-folder.
 
 All associated files linked within that markdown file should also be pulled. Associated files start with the same name as the markdown file, ending with a descriptor (ie, "img") and an appropriate extension.
 

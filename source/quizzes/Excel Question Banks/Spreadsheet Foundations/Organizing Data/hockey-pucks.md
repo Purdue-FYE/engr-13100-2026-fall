@@ -5,7 +5,7 @@ Someone placed five hockey pucks of different sizes in a bucket. The puck with t
 ![Excel table](hockey-pucks-img.png)
 
 ### Question a)
-Complete Table 1 with the given information. Do not use any formulas in this table. 
+Complete Table 1 with the given information. Do not use any formulas in this table.
 
 ### Question b)
 Your teammate filled in cell E6 for you. Complete an appropriate number of rows in column E of Table 2 by writing formulas to display the normal force, $F_{N}$, on each puck. Don't forget to label the column in row 5!

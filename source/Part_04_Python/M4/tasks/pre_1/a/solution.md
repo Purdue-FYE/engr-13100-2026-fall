@@ -31,7 +31,7 @@ submitting is my own original work. -->
 
 ```python
 import numpy as np
-import pandas as pd  
+import pandas as pd
 
 # Step 1: Import data from Excel into a Pandas DataFrame
 file_path = "source/Part_04_Python/M4/tasks/pre_1/a/metal_mass_volume.csv"

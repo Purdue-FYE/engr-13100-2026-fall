@@ -19,4 +19,3 @@ else:
 print(f"Weekly Pay: ${pay:.2f}")
 
 ```
-

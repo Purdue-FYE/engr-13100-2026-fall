@@ -31,6 +31,7 @@ Some of the commonly used functions in the random module are:
 9. shuffle() - shuffles the elements of a sequence.
 
 """
+
 # import the random module
 import random
 
