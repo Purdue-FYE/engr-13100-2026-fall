@@ -33,6 +33,7 @@ parts:
         sections:
         - file: Part_01_Professional_Development/M2_Teaming/1_TM1_pcm_teaming
         - file: Part_01_Professional_Development/M2_Teaming/1_TM1_inst
+        - file: Part_01_Professional_Development/M2_Teaming/1_COC_inst
 
   - caption: Excel
     numbered: 3
