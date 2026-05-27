@@ -100,6 +100,10 @@ glue('py1_pre_1_py', 'py1_pre_1_username.py', display=False)
 glue('py1_pre_1_xlsx', 'py1_pre_1_username.xlsx', display=False)
 glue('py1_pre_1_zip', 'py1_pre_1_username.zip', display=False)
 
+# py1_ica_1
+glue('py1_ica_1_powerdatavalues_pdf', 'py1_ica_1_powerdatavalues_username.pdf', display=False)
+glue('py1_ica_1_powerdataformulas_pdf', 'py1_ica_1_powerdataformulas_username.pdf', display=False)
+
 # py1_ind_1
 glue('py1_ind_1_report_pdf', 'py1_ind_1_report_username.pdf', display=False)
 glue('py1_ind_1_py', 'py1_ind_1_username.py', display=False)
