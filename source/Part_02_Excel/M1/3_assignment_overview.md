@@ -17,8 +17,6 @@ kernelspec:
 ```{rubric} In these assignments, you will:
 ```
 - Skill
-- Skill
-- Skill
 
 ```{rubric} Learning Objectives
 ```
