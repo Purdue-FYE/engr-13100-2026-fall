@@ -164,7 +164,6 @@ def build_slots(start_monday: date, weeks: int) -> List[ClassSlot]:
             if slot.slot_id in EXAM_SLOTS:
                 slot.row_kind = "exam"
                 slot.topic = get_exam_label(slot.slot_id)
-                slot.topic = get_exam_label(slot.slot_id)
             elif TERM.lower() == "fall" and slot.slot_id == FALL_BREAK_SLOT:
                 slot.row_kind = "fall_break"
                 slot.topic = "Fall Break"
@@ -474,7 +473,6 @@ html[data-theme="dark"] {
             if slot.row_kind == "exam":
                 row_class = "exam-slot-row"
                 topic = slot.topic
-                topic = slot.topic
             elif slot.row_kind == "fall_break":
                 row_class = "break-row"
                 topic = "Fall Break"
@@ -574,8 +572,6 @@ def main() -> None:
     sync_assignments_csv()
 
     topics = read_topics(TOPICS_CSV)
-    assignments_path = ASSIGNMENTS_CSV if ASSIGNMENTS_CSV.exists() else MANUAL_ASSIGNMENTS_CSV
-    assignments_by_slot = read_assignments(assignments_path)
     assignments_path = ASSIGNMENTS_CSV if ASSIGNMENTS_CSV.exists() else MANUAL_ASSIGNMENTS_CSV
     assignments_by_slot = read_assignments(assignments_path)
     slots = build_slots(start_monday, WEEKS)

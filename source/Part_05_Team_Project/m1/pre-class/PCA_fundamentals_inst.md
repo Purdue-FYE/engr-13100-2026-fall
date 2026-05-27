@@ -11,14 +11,14 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(PD:M2:TM1)=
-# PCA: Teaming Fundamentals
+(TP:M1:PCA)=
+# PCA: Engineering Design
 This activity checks your understanding of the core teaming concepts introduced in the Teaming PCM. These concepts include the benefits of teamwork, stages of team development, common team roles, and tools that help teams work effectively.
 
 ## Instructions
 
 1. Review {doc}`PCM: Working in an Engineering Team<PCM_fundamentals>` before beginning this activity.
-2. Complete **2.2.2 PCA: Teaming Fundamentals** in **Gradescope**.
+2. Complete  **2.2.2 PCA: Teaming Fundamentals** in **Gradescope**.
 3. Answer all questions based on the concepts discussed in the PCM.
 
 ## Submission

@@ -1,7 +1,7 @@
 class_slot,assignment_id,name,points,type,due_date
 1A,EX 3.1.1,PCMs: Spreadsheet Foundations,0,Pre-Class Assignment,Class 1B
 1A,EX 3.1.2,PCA: Calculations and Charting in Excel,2,Pre-Class Assignment,Class 1B
-1A,PP 1.1.1,Course Policies Exploration,10,Individual Assignment,Class 1B
+1A,PP 1.1.1,PP: Course Policies Exploration,10,Individual Assignment,Class 1B
 1A,TM 2.1.0,CAT0 - CATME Team Formation Survey,5,Individual Assignment,9/2/26 @ 11:59 PM
 1B,EX 4.1.1,PCMs: Data Analysis and Histograms in Excel,0,Pre-Class Assignment,Class 2A
 1B,EX 4.1.2,PCA: Descriptive Statistics and Logical Functions,2,Pre-Class Assignment,Class 2A
@@ -9,7 +9,7 @@ class_slot,assignment_id,name,points,type,due_date
 2A,EX 4.3.1,EX: Data Analysis,10,Individual Assignment,Class 3A
 3B,TM 2.2.1,PCMs: Working in an Engineering Team,0,Pre-Class Assignment,Class 4A
 3B,TM 2.2.2,PCA: Teaming Fundamentals,5,Pre-Class Assignment,Class 4A
-5A,TM 2.1.1,CAT1 - CATME Peer & Team Evaluation #1,10,Individual Assignment,09/27/26 @ 11:59 PM
+5B,TM 2.1.1,CAT1 - CATME Peer & Team Evaluation #1,10,Individual Assignment,10/04/26 @ 11:59 PM
 11A,TM 2.1.2,CAT2 - CATME Peer & Team Evaluation #2,10,Individual Assignment,11/8/26 @ 11:59 PM
 16A,TM 2.1.3,CAT3 - CATME Peer & Team Evaluation #3,10,Individual Assignment,12/11/26 @ 11:59 PM
 2B,EX 5.1.1,PCMs: Probability & Normal Distributions,0,Pre-Class Assignment,Class 3A
@@ -18,6 +18,9 @@ class_slot,assignment_id,name,points,type,due_date
 3A,EX 6.1.2,PCA: Title,0,Pre-Class Assignment,Class 3B
 3A,EX 6.3.1,EX: Distributions & Regression,10,Individual Assignment,Class 4A
 4A,AI 7.1.1,AI: Neural Networks Placeholder,10, Individual Assignment, Class 5B
+4A,TM 2.2.3,TM: Code of Cooperation,10, Team Assignment, Class 5B
+4B,TM 2.2.4, PCMs: The 5 CATME Teamwork Dimensions, 0, Pre-Class Assignment, Class 5B
+4B,TM 2.2.5, PCA: CATME Teamwork Dimensions, 5, Pre-Class Assignment, Class 5B
 7A,PY 10.1.1,PCMs: Materials,0,Pre-Class Assignment,Class 7B
 7A,PY 10.1.2,PCA: While Loops,0,Pre-Class Assignment,Class 7B
 7A,PY 10.1.3,PCA: For Loops,0,Pre-Class Assignment,Class 8B
@@ -36,3 +39,4 @@ class_slot,assignment_id,name,points,type,due_date
 6A,PY 9.1.2,PCA: Selection Structures,0,Pre-Class Assignment,Class 6B
 6A,PY 9.1.3,PCA: User-Defined Functions,0,Pre-Class Assignment,Class 7A
 6B,PY 9.3.1,PY: Logic & Modularity,10,Individual Assignment,Class 7B
+10A, TM 2.2.6, TM: Code of Cooperation Revisit, 5, Team Assignment, Class 10B

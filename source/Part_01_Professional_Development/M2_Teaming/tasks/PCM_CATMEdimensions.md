@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (PD:M2:catme-dimensions)=
-# PCMs: The 5 CATME Teaming Dimensions
+# PCMs: The 5 CATME Teamwork Dimensions
 There are five CATME teamwork dimensions that contribute to the effectiveness of teams. Watch the videos below to learn more about each of the teamwork dimensions. For more information, visit the [CATME Five Teamwork Dimensions site](https://info.catme.org/features/catme-five-dimensions/). 
 
 ## Contributing to the Team's Work

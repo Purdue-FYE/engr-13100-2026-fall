@@ -182,9 +182,10 @@ parts:
         sections:
         - file: Part_04_Python/M5/tasks/ind_1/a/instructions
 
-  # - caption: Team Project
-  #   numbered: True
-  #   chapters:
+  - caption: Team Project
+    numbered: True
+    chapters:
+    - file: Part_05_Team_Project/0_overview
 
   - caption: Appendices
     numbered: False
