@@ -564,8 +564,6 @@ def main() -> None:
     topics = read_topics(TOPICS_CSV)
     assignments_path = ASSIGNMENTS_CSV if ASSIGNMENTS_CSV.exists() else MANUAL_ASSIGNMENTS_CSV
     assignments_by_slot = read_assignments(assignments_path)
-    assignments_path = ASSIGNMENTS_CSV if ASSIGNMENTS_CSV.exists() else MANUAL_ASSIGNMENTS_CSV
-    assignments_by_slot = read_assignments(assignments_path)
     slots = build_slots(start_monday, WEEKS)
     fill_topics(slots, topics)
 

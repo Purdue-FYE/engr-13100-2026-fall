@@ -14,7 +14,6 @@ deliverables:
 ```{include} /macros.md
 ```
 (PY:M1:ICA1)=
-<<<<<<< HEAD
 # ICA: Python Foundations (8A)
 
 ## Learning Objectives
@@ -28,7 +27,7 @@ The purpose of this in-class activity is to teach students about common auto gra
 
 ## Files Needed
 
-Download the Python file {download}`hello_user.py </Part_04_Python/M1/in-class/ICA_1/hello_user.py>`.
+Download the Python file {download}`hello_user.py </Part_04_Python/M1/tasks/ICA_1/a/hello_user.py>`.
 
 ## Activity Instructions & Submission
 
@@ -45,8 +44,5 @@ Download the Python file {download}`hello_user.py </Part_04_Python/M1/in-class/I
 *If submission errors persist, repeat steps 4 and 5 until all errors are resolved.*
 
 % Automatically generated Sample Output section.
-```{include} /_build/intermediate/Part_04_Python/M1/in-class/ICA_1/a/sample_output.md
+```{include} /_build/intermediate/Part_04_Python/M1/tasks/ICA_1/a/sample_output.md
 ```
-=======
-# ICA: Title
->>>>>>> 1079af7efff7bb6b24fb3a6cba2a9b586ec08884

@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (PD:M2:pre-class-mats)=
-# PCM: Working in an Engineering Team
+# PCMs: Working in an Engineering Team
 Engineering problems are often complex and require multiple perspectives. Because of this, engineers frequently work in **teams** to combine knowledge, skills, and ideas in order to achieve a shared goal.
 
 ## What is a Team?
