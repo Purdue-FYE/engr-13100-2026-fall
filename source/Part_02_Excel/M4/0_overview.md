@@ -19,13 +19,11 @@ In this module, you will learn how to identify the coefficients of a best-fit li
 ```{rubric} Topics Covered
 ```
 - Topic
-- Topic
 
 ```{rubric} Skills and Learning Objectives
 ```
 At the end of this module, you will be able to:
 
-- Skills
 - Skills
 
 These skills are directly connected to the following Learning Objectives:

@@ -5,7 +5,6 @@ Generate ENGR 131 schedule HTML from an ordered topic list CSV.
 What this script does:
 - reads a simple `schedule_topics.csv` file with one column: `topic`
 - auto-generates Weeks 1 to 16 with A/B class meetings
-- auto-generates Weeks 1 to 16 with A/B class meetings
 - auto-fills week date ranges from the Monday of Week 1
 - blocks exam slots
 - blocks Fall Break at 8A in fall
@@ -97,10 +96,6 @@ def parse_iso_date(value: str) -> date:
 def format_month_day(d: date) -> str:
     return f"{d.month}/{d.day}"
 
-def get_exam_label(slot_id: str) -> str:
-    exam_num = EXAM_SLOTS.index(slot_id) + 1
-    exam_topic = EXAM_TOPICS[exam_num - 1]
-    return f"Exam {exam_num}: {exam_topic}"
 def get_exam_label(slot_id: str) -> str:
     exam_num = EXAM_SLOTS.index(slot_id) + 1
     exam_topic = EXAM_TOPICS[exam_num - 1]
@@ -430,12 +425,7 @@ html[data-theme="dark"] {
     )
     for idx, slot_id in enumerate(EXAM_SLOTS, start=1):
         exam_topic = EXAM_TOPICS[idx - 1]
-        exam_topic = EXAM_TOPICS[idx - 1]
         parts.append(
-            f'      <tr class="exam-row">'
-            f'<td class="nowrap">Exam {idx}</td>'
-            f'<td>{html.escape(exam_topic)} (Class {html.escape(slot_id)})</td>'
-            f'</tr>'
             f'      <tr class="exam-row">'
             f'<td class="nowrap">Exam {idx}</td>'
             f'<td>{html.escape(exam_topic)} (Class {html.escape(slot_id)})</td>'
