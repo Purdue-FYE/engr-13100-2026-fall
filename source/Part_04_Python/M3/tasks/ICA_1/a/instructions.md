@@ -87,6 +87,4 @@ For more information on program output and testing your Python code, see the sam
 ```{include} /_build/intermediate/Part_04_Python/M3/tasks/ICA_1/a/sample_output.md
 ```
 =======
- ```{include} /_build/intermediate/Part_04_Python/M3/tasks/ICA_1/a/sample_output.md
- ```
 >>>>>>> 1079af7efff7bb6b24fb3a6cba2a9b586ec08884
