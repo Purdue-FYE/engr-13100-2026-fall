@@ -11,19 +11,14 @@ kernelspec:
 ```{include} /macros.md
 ```
 
-(EX:M4:assignments)=
-# Assignments
+(TP:M1:pre-class)=
+# Pre-Class Assignments
 
-```{rubric} In these assignments, you will:
-```
-- Skill
-
-```{rubric} Learning Objectives
-```
-{{PR01}}
-
-```{rubric} Assignments for this Module
+```{include} ../../guidelines/pre-class.md
 ```
 
-```{tableofcontents}
+```{include} ../../guidelines/excel_resources.md
+```
+
+```{include} ../../guidelines/python_resources.md
 ```

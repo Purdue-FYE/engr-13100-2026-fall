@@ -48,17 +48,20 @@ In this assignment, you will first create a flowchart that models how a robot re
 Think of your flowchart as a visual representation of an algorithm, and your code as the step-by-step decision-making system that a robot would follow in a real-world environment.
 
 ### Files Needed
+### Files Needed
 
+Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py3_ind_1_py:`.
 Download the {program}`Python` template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py3_ind_1_py:`.
 
 ```{admonition} Note
    :class: note
-
 Remember to include comments in your python script to practice professional programming standards.
 ```
 
 ### Program Requirements
+### Program Requirements
 
+#### Part 1
 #### Part 1
 
 Create a flowchart that represents your robot's decision-making process. Use the description below to guide your design.
@@ -94,6 +97,7 @@ Your flowchart should:
 - Display the robot action/output for each possible condition
 
 #### Part 2
+#### Part 2
 
 Write a Python program that executes the algorithm displayed in your flowchart. Remember to prompt the user for a list of items (```user_input```) separated by commas (no spaces). Then convert the user input into an array of strings called ```items```.
 
@@ -102,6 +106,7 @@ Use the sample output section below to verify that your program outputs correct 
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M3/tasks/ind_1/a/sample_output.md
 ```
+#### Part 3
 #### Part 3
 
 Create a MS Word document, copy-paste to following questions into the document, and answer the questions using

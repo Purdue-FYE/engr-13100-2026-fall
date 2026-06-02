@@ -3,7 +3,6 @@ Gradescope.
 """
 
 import os
-import os
 import subprocess
 from io import BytesIO
 from pathlib import Path
@@ -210,7 +209,6 @@ for exercise in EXERCISES:
     # Unzip the archive
     with ZipFile(zip_file_path, "r") as fo:
         fo.extractall(unzip_dir)
-        (unzip_dir / "deploy_key").unlink(missing_ok=True)
         (unzip_dir / "deploy_key").unlink(missing_ok=True)
 
     # Copy the reference solution as the submitted solution.

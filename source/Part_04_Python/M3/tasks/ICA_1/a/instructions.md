@@ -31,7 +31,7 @@ deliverables:
 
 You are at the park with your dog testing a new gadget: a super tennis ball launcher. As an aspiring engineer, you want to calculate how high the machine can throw a tennis ball.
 
-One of Newton’s kinematic equations for motion with constant acceleration is:
+One of Newton’s kinematic equations is:
 
 ```{math}
 :label: eq:py3:P
@@ -45,7 +45,7 @@ Where:
 - $a$ is acceleration ($\frac{m}{s^2}$)
 - $t$ is time ($s$)
 
-You also know that when an object is in free fall, it experiences a constant acceleration due to gravity of 9.81 $\frac{m}{s^2}$.
+You also know that when an object is in free fall, it experiences a constant acceleration due to gravity (9.81 $\frac{m}{s^2}$).
 
 ## Files Needed
 

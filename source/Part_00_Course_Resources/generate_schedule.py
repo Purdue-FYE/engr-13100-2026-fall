@@ -5,7 +5,6 @@ Generate ENGR 131 schedule HTML from an ordered topic list CSV.
 What this script does:
 - reads a simple `schedule_topics.csv` file with one column: `topic`
 - auto-generates Weeks 1 to 16 with A/B class meetings
-- auto-generates Weeks 1 to 16 with A/B class meetings
 - auto-fills week date ranges from the Monday of Week 1
 - blocks exam slots
 - blocks Fall Break at 8A in fall
@@ -41,8 +40,6 @@ START_DATE = "2026-08-24"  # Monday of Week 1
 WEEKS = 16
 
 # Placeholder exam slots for now
-EXAM_SLOTS = ["5A", "12A", "15A"]
-EXAM_TOPICS = ["Excel", "Python", "Design & AI"]
 EXAM_SLOTS = ["5A", "12A", "15A"]
 EXAM_TOPICS = ["Excel", "Python", "Design & AI"]
 
@@ -99,10 +96,6 @@ def parse_iso_date(value: str) -> date:
 def format_month_day(d: date) -> str:
     return f"{d.month}/{d.day}"
 
-def get_exam_label(slot_id: str) -> str:
-    exam_num = EXAM_SLOTS.index(slot_id) + 1
-    exam_topic = EXAM_TOPICS[exam_num - 1]
-    return f"Exam {exam_num}: {exam_topic}"
 def get_exam_label(slot_id: str) -> str:
     exam_num = EXAM_SLOTS.index(slot_id) + 1
     exam_topic = EXAM_TOPICS[exam_num - 1]
@@ -165,7 +158,6 @@ def build_slots(start_monday: date, weeks: int) -> List[ClassSlot]:
 
             if slot.slot_id in EXAM_SLOTS:
                 slot.row_kind = "exam"
-                slot.topic = get_exam_label(slot.slot_id)
                 slot.topic = get_exam_label(slot.slot_id)
             elif TERM.lower() == "fall" and slot.slot_id == FALL_BREAK_SLOT:
                 slot.row_kind = "fall_break"
@@ -433,12 +425,7 @@ html[data-theme="dark"] {
     )
     for idx, slot_id in enumerate(EXAM_SLOTS, start=1):
         exam_topic = EXAM_TOPICS[idx - 1]
-        exam_topic = EXAM_TOPICS[idx - 1]
         parts.append(
-            f'      <tr class="exam-row">'
-            f'<td class="nowrap">Exam {idx}</td>'
-            f'<td>{html.escape(exam_topic)} (Class {html.escape(slot_id)})</td>'
-            f'</tr>'
             f'      <tr class="exam-row">'
             f'<td class="nowrap">Exam {idx}</td>'
             f'<td>{html.escape(exam_topic)} (Class {html.escape(slot_id)})</td>'
@@ -475,7 +462,6 @@ html[data-theme="dark"] {
         for slot in week_slots:
             if slot.row_kind == "exam":
                 row_class = "exam-slot-row"
-                topic = slot.topic
                 topic = slot.topic
             elif slot.row_kind == "fall_break":
                 row_class = "break-row"
@@ -576,8 +562,6 @@ def main() -> None:
     sync_assignments_csv()
 
     topics = read_topics(TOPICS_CSV)
-    assignments_path = ASSIGNMENTS_CSV if ASSIGNMENTS_CSV.exists() else MANUAL_ASSIGNMENTS_CSV
-    assignments_by_slot = read_assignments(assignments_path)
     assignments_path = ASSIGNMENTS_CSV if ASSIGNMENTS_CSV.exists() else MANUAL_ASSIGNMENTS_CSV
     assignments_by_slot = read_assignments(assignments_path)
     slots = build_slots(start_monday, WEEKS)

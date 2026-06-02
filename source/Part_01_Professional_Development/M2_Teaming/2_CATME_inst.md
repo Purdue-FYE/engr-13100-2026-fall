@@ -16,7 +16,7 @@ This is a project- and team-based course. You will collaborate with classmates o
 
 ```{admonition} Note
    :class: warning
-Late submissions of CATME assignments are not accepted.
+Late submissions of CATME assignments are not accepted. Be sure to submit all assignments before the deadline listed on the {doc}`Course Schedule<../../Part_00_Course_Resources/course_schedule>`.
 ```
 
 
