@@ -31,11 +31,7 @@ deliverables:
 
 You are at the park with your dog testing a new gadget: a super tennis ball launcher. As an aspiring engineer, you want to calculate how high the machine can throw a tennis ball.
 
-<<<<<<< HEAD
-One of Newton’s kinematic equations is:
-=======
 One of Newton’s kinematic equations for motion with constant acceleration is:
->>>>>>> 1079af7efff7bb6b24fb3a6cba2a9b586ec08884
 
 ```{math}
 :label: eq:py3:P
@@ -49,19 +45,11 @@ Where:
 - $a$ is acceleration ($\frac{m}{s^2}$)
 - $t$ is time ($s$)
 
-<<<<<<< HEAD
-You also know that when an object is in free fall, it experiences a constant acceleration due to gravity (9.81 $\frac{m}{s^2}$).
-
-## Files Needed
-
-Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` 
-=======
 You also know that when an object is in free fall, it experiences a constant acceleration due to gravity of 9.81 $\frac{m}{s^2}$.
 
 ## Files Needed
 
 Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>`
->>>>>>> 1079af7efff7bb6b24fb3a6cba2a9b586ec08884
 
 ## Activity Instructions & Submission
 
@@ -83,10 +71,5 @@ If neither condition occurs, the program should continue calculating and display
 For more information on program output and testing your Python code, see the sample input/output section.
 
 % Automatically generated Sample Output section.
-<<<<<<< HEAD
 ```{include} /_build/intermediate/Part_04_Python/M3/tasks/ICA_1/a/sample_output.md
 ```
-=======
- ```{include} /_build/intermediate/Part_04_Python/M3/tasks/ICA_1/a/sample_output.md
- ```
->>>>>>> 1079af7efff7bb6b24fb3a6cba2a9b586ec08884
