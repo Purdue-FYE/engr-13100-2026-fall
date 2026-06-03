@@ -32,10 +32,14 @@ deliverables:
 You are at the park with your dog testing a new gadget: a super tennis ball launcher. As an aspiring engineer, you want to calculate how high the machine can throw a tennis ball.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 One of Newton’s kinematic equations is:
 =======
 One of Newton’s kinematic equations for motion with constant acceleration is:
 >>>>>>> 1079af7efff7bb6b24fb3a6cba2a9b586ec08884
+=======
+One of Newton’s kinematic equations is:
+>>>>>>> b115453b413f6451f4c120f858b8ca0ede38ccd8
 
 ```{math}
 :label: eq:py3:P
@@ -50,6 +54,7 @@ Where:
 - $t$ is time ($s$)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 You also know that when an object is in free fall, it experiences a constant acceleration due to gravity (9.81 $\frac{m}{s^2}$).
 
 ## Files Needed
@@ -57,6 +62,9 @@ You also know that when an object is in free fall, it experiences a constant acc
 Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` 
 =======
 You also know that when an object is in free fall, it experiences a constant acceleration due to gravity of 9.81 $\frac{m}{s^2}$.
+=======
+You also know that when an object is in free fall, it experiences a constant acceleration due to gravity (9.81 $\frac{m}{s^2}$).
+>>>>>>> b115453b413f6451f4c120f858b8ca0ede38ccd8
 
 ## Files Needed
 

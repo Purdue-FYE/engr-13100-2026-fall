@@ -2,7 +2,7 @@
 
 ## Overview
 
-This module contains a physics-based simulation of a deployable **Mars-Lunar Greenhouse (MLGH)** cylindrical prototype.  It is used as the stress-test harness for the **ENGR 13100 Team Project** — students implement a PID environmental controller and the simulation evaluates it over a 30-sol Martian mission.
+This module contains a physics-based simulation of a deployable **Mars-Lunar Greenhouse (MLGH)** cylindrical prototype. It is used as the stress-test harness for the **ENGR 13100 Team Project** — students implement a PID environmental controller and the simulation evaluates it over a 30-sol Martian mission.
 
 ## Learning Objectives
 

@@ -31,8 +31,12 @@ parts:
       - file: Part_01_Professional_Development/M2_Teaming/2_CATME_inst
       - file: Part_01_Professional_Development/M2_Teaming/1_TM_assignments
         sections:
-        - file: Part_01_Professional_Development/M2_Teaming/1_TM1_pcm_teaming
-        - file: Part_01_Professional_Development/M2_Teaming/1_TM1_inst
+        - file: Part_01_Professional_Development/M2_Teaming/tasks/PCM_fundamentals
+        - file: Part_01_Professional_Development/M2_Teaming/tasks/PCA_fundamentals_inst
+        - file: Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_inst
+        - file: Part_01_Professional_Development/M2_Teaming/tasks/PCM_CATMEdimensions
+        - file: Part_01_Professional_Development/M2_Teaming/tasks/PCA_CATMEdimensions_inst
+        - file: Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_revisit_inst
 
   - caption: Excel
     numbered: 3
@@ -178,9 +182,10 @@ parts:
         sections:
         - file: Part_04_Python/M5/tasks/ind_1/a/instructions
 
-  # - caption: Team Project
-  #   numbered: True
-  #   chapters:
+  - caption: Team Project
+    numbered: True
+    chapters:
+    - file: Part_05_Team_Project/0_overview
 
   # - caption: Appendices
   #   numbered: False
