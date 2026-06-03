@@ -9,7 +9,7 @@ Assignment Information:
     Assignment:     6.2.1 ind_1
     Team ID:        LC0 - 00
     Author:         Holly Fortener, hforten@purdue.edu
-    Date:           02/18/2026
+    Date:           05/20/2026
 
 Contributors:
     Name, login@purdue [repeat for each]

@@ -70,7 +70,7 @@ parts:
         sections:
         - file: Part_02_Excel/M2/tasks/1/a/instructions
 
-# Excel Module 3
+    # Excel Module 3
     - file: Part_02_Excel/M3/0_overview
       sections:
       - file: Part_02_Excel/M3/1_pre-class_overview
@@ -173,8 +173,8 @@ parts:
       - file: Part_04_Python/M5/1_pre-class_overview
         sections:
         - file: Part_04_Python/M5/1.1_materials
-        - file: Part_04_Python/M5/tasks/pre_1/a/instructions
-        #- file: Part_04_Python/M5/tasks/pre_2/a/instructions
+        # - file: Part_04_Python/M5/tasks/pre_1/a/instructions
+        # - file: Part_04_Python/M5/tasks/pre_2/a/instructions
       - file: Part_04_Python/M5/2_in-class_overview
         sections:
         - file: Part_04_Python/M5/tasks/ICA_1/a/instructions
@@ -187,7 +187,7 @@ parts:
     chapters:
     - file: Part_05_Team_Project/0_overview
 
-  - caption: Appendices
-    numbered: False
-    chapters:
-    - file: Appendices/contributors
+  # - caption: Appendices
+  #   numbered: False
+  #   chapters:
+  #   - file: Appendices/contributors

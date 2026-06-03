@@ -24,11 +24,11 @@ kernelspec:
 
 Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py4_pre_2_py:`.
 
-Download the .csv file {download}`mild_steel_stress_strain.csv <mild_steel_stress_strain.csv>` for importing purposes.
+Download the CSV file {download}`mild_steel_stress_strain.csv <mild_steel_stress_strain.csv>` for importing purposes.
 
 ## Activity Instructions & Submission
 
-Write a Python program that imports data from an Excel file, stores the data in a Pandas data frame for cleaning and analysis, and plots the data in a scatter plot with a clear plot title, axis titles, and axis labels.
+Write a Python program that imports data from a CSV file, stores the data in a Pandas DataFrame for cleaning and analysis, and plots the data in a scatter plot with a clear plot title, axis titles, and axis labels.
 
 ### Follow these steps:
 

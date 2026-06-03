@@ -34,6 +34,10 @@ kernelspec:
 - PR05: Code Structures
 - PR06: Translate Program Descriptions
 - PR07: Test cases & Tracking
+- PR04: Modular Programming
+- PR05: Code Structures
+- PR06: Translate Program Descriptions
+- PR07: Test cases & Tracking
 - PR08: Debugging
 
 ## Q1 Robot Workflow Optimization
@@ -106,10 +110,11 @@ Use the sample output section below to verify that your program outputs correct 
 % Automatically generated Sample Output section.
 ```{include} /_build/intermediate/Part_04_Python/M3/tasks/ind_1/a/sample_output.md
 ```
+
 #### Part 3
 #### Part 3
 
-Create a MS Word document, copy-paste to following questions into the document, and answer the questions using
+Create a MS Word document, copy-paste to following questions into the document and answer them:
 
 1. How would you improve the robot's algorithm to become more efficient?
 2. What might an Industrial Engineer change in a real robot system?
