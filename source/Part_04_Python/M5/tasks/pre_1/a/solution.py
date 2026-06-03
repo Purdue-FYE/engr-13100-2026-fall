@@ -31,10 +31,11 @@ def main():
     # Part 1: Import Required Libraries
     # ========================================
 
+    import os
     import pandas as pd
     import matplotlib.pyplot as plt
-    import os
     from sklearn.linear_model import LinearRegression
+
 
     # ========================================
     # Part 2: Load and Inspect Data
@@ -66,8 +67,11 @@ def main():
     plt.title("Radioactive Decay", fontsize=14, pad=15)
     plt.tick_params(axis='both', which='major', labelsize=11)
     plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+
     plt.tight_layout()
-    plt.show()
+    # plt.show()
+    # plt.savefig(".../radioactive_decay_plot.png")
+    # plt.close()
 
     # ========================================
     # Part 4: Compute Linear Regression
@@ -114,8 +118,11 @@ def main():
     plt.tick_params(axis='both', which='major', labelsize=11)
     plt.grid(True, which='both', linestyle='--', linewidth=0.5)
     plt.legend(fontsize=11)
+
     plt.tight_layout()
-    plt.show()
+    # plt.show()
+    # plt.savefig(".../radioactive_decay_regression_plot.png")
+    # plt.close()
 
 if __name__ == "__main__":
     main()
