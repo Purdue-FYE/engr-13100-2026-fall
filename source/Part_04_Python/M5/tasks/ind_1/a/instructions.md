@@ -129,7 +129,7 @@ Refer back to the "Linear Regression" materials from our Excel unit to refresh y
     - Regression equation
     - Slope
     - Intercept
-    - r²
+    - R²
     - SSE
     - SST
 
@@ -141,7 +141,7 @@ Create another plot showing the original scatter plot and the fitted regression 
 
 2. Overlay the original scatter data points and the regression model.
 
-3. Add the regression model equation and r² to the plot legend.
+3. Add the regression model equation and R² to the plot legend.
 
 4. Save the figure as: "DO_temp_regression_plot.png".
 
