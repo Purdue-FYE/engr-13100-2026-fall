@@ -20,6 +20,7 @@ dependencies = [
     "python-multipart>=0.0.20",
     "pyyaml>=6.0.3",
     "requests>=2.32.3",
+    "scikit-learn>=1.9.0",
     "sphinx-pyscript>=0.1.0",
     "sphinxcontrib-mermaid",
     "sphinxcontrib-youtube",
