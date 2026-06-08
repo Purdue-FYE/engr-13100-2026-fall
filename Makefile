@@ -1,6 +1,7 @@
 REPO = engr-13100-2026-fall
 URL = https://purdue-fye.github.io/$(REPO)
 PYTHON_BIN = $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
+JUPYTER_BOOK_BIN = $(if $(wildcard .venv/bin/jupyter-book),.venv/bin/jupyter-book,jupyter-book)
 
 # Create a list of all exercise solutions and corresponding test_cases files by
 # scanning through the tasks directories in each module.
@@ -35,15 +36,15 @@ sample_output = $(foreach file,$(solutions_Py) $(solutions_MA),\
 
 # Re-build only pages that are new/changed since last run.
 default: $(sample_output)
-	python3 source/utils/manage_deliverables.py
-	jupyter-book build -W source
+	$(PYTHON_BIN) source/utils/manage_deliverables.py
+	$(JUPYTER_BOOK_BIN) build -W source
 	rm -f source/_build/html/glue_factory.html source/_build/html/_sources/glue_factory.md
 	touch source/_build/html/.nojekyll
 
 # Re-build all pages.
 all: $(sample_output)
-	python3 source/utils/manage_deliverables.py
-	PYTHONPATH="$(PWD)/source/_extensions:$(PYTHONPATH)" jupyter-book build -W --all source
+	$(PYTHON_BIN) source/utils/manage_deliverables.py
+	PYTHONPATH="$(PWD)/source/_extensions:$(PYTHONPATH)" $(JUPYTER_BOOK_BIN) build -W --all source
 	rm -f source/_build/html/glue_factory.html source/_build/html/_sources/glue_factory.md
 	echo "View this site [here]($(URL))." > source/_build/html/README.md
 
@@ -63,7 +64,7 @@ pub: all
 	$$(filter $$(subst _build/intermediate/,,$$(subst sample_output.md,solution.m,$$@)), $(solutions_MA)) \
 	$$(filter $$(subst _build/intermediate/,,$$(subst sample_output.md,instructions.md,$$@)), $(instructions)) \
 	source/generate.py
-	python3 source/generate.py $@
+	$(PYTHON_BIN) source/generate.py $@
 
 # All python3 files in exercise's test subdirectory are prerequisite.  Also include .png
 # and .txt files, and all the grader specific files.
@@ -79,20 +80,20 @@ grader/assignment_mapping.json: source/generate_assignment_mapping.py source/Par
 
 # Make schedule document: 
 schedule:
-	python3 /workspaces/13100_content/source/Part_00_Course_Resources/generate_schedule.py
+	$(PYTHON_BIN) /workspaces/13100_content/source/Part_00_Course_Resources/generate_schedule.py
 	make pub
 
 # Generate teaching team list
 teaching_team:
-	python3 /workspaces/13100_content/source/Part_00_Course_Resources/generate_teachingteam.py
+	$(PYTHON_BIN) /workspaces/13100_content/source/Part_00_Course_Resources/generate_teachingteam.py
 	make pub
 
 # Clean up
 clean:
-	jupyter-book clean source/
+	$(JUPYTER_BOOK_BIN) clean source/
 
 clean-all:
-	jupyter-book clean source/ --all
+	$(JUPYTER_BOOK_BIN) clean source/ --all
 
 clean-graders:
 	# Remove all built grader files
