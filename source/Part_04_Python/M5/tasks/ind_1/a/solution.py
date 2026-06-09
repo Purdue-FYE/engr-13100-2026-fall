@@ -71,8 +71,7 @@ def main():
     print("=" * 50)
     # print(df.to_string(index=False))
     print()
-    print("--- First 5 Rows of the Dataset ---")
-    print(df.head())
+    print(df)
     print()
     print("--- Summary Statistics ---")
     print(df[["temp_c", "do_mg_l", "ph"]].describe())
@@ -124,7 +123,7 @@ def main():
     plt.tight_layout()
     # plt.savefig("DO_temp_plot.png", dpi=150)
     # plt.show()
-    print("✔  Saved DO_temp_plot.png")
+    # print("✔  Saved DO_temp_plot.png")
 
     # =============================================================================
     #  SECTION 4 — LINEAR REGRESSION WITH SCIKIT-LEARN
@@ -234,7 +233,7 @@ def main():
     plt.tight_layout()
     # plt.savefig("DO_temp_regression_plot.png", dpi=150)
     # plt.show()
-    print("✔  Saved DO_temp_regression_plot.png")
+    # print("✔  Saved DO_temp_regression_plot.png")
 
     # =============================================================================
     #  SECTION 8 — REFLECTION QUESTIONS  (answer as comments below each question)

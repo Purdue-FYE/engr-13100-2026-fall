@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (PY:M5:A1)=
-# PY: Regression
+# PY: Linear Regression
 
 ## In this assignment, you will:
 
@@ -75,7 +75,7 @@ You are provided with a CSV file named: river_data.csv. The dataset contains wat
 
 2. Load the CSV file into a pandas DataFrame
 
-3. Print the first five rows of the DataFrame
+3. Print all rows in the DataFrame/.
 
 3. Print:
     - A formatted assignment header
@@ -84,7 +84,7 @@ You are provided with a CSV file named: river_data.csv. The dataset contains wat
       - dissolved oxygen
       - pH
 
-See the sample output below to review formatting for print statements.
+See the sample output below to review formatting for print statements. *For asignment headers, the "===" lines are 50 long.*
 
 ```{admonition} Hint
    :class: hint
@@ -132,6 +132,12 @@ Refer back to the "Linear Regression" materials from our Excel unit to refresh y
     - R²
     - SSE
     - SST
+
+```{admonition} Hint
+   :class: hint
+
+Rememeber: scikit-learn requires a 2D feature array.
+```
 
 #### Part 4: Regression Line Plot
 
