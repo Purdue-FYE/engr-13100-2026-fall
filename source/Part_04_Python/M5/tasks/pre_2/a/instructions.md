@@ -20,18 +20,13 @@ kernelspec:
 
 ## Files Needed
 
-Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py5_pre_1_py:`.
+Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py5_pre_2_py:`.
 
-Download the CSV file {download}`thermal_expansion_data.csv </Part_04_Python/M5/tasks/pre_1/a/thermal_expansion_data.csv>` for analyzing thermal expansion along an aluminum beam.
+Download the CSV file {download}`thermal_expansion_data.csv </Part_04_Python/M5/tasks/pre_2/a/thermal_expansion_data.csv>` for analyzing thermal expansion along an aluminum beam.
 
 ## Activity Instructions & Submission
 
-You are analyzing thermal expansion of a long aluminum beam used in an engineering structure (e.g., bridge, rail, or turbine casing).
-Measurements were taken at three different locations along the beam:
-
-Site 1: Near a fixed support
-Site 2: Mid-span
-Site 3: Near a free end
+You are analyzing thermal expansion of a long aluminum beam used in an engineering structure (e.g., bridge, rail, or turbine casing). Measurements were taken at three different locations along the beam (Site A, B, and C).
 
 Because of constraints, material inconsistencies, or temperature gradients, each location shows slightly different expansion behavior.
 
@@ -77,7 +72,7 @@ See the sample output below for understanding how to format your program output.
 
 Plot the thermal expansion data for all three sites against the measured temperature range. The plot type should be a scatter plot with different colors and shapes for each site's data points. The legend should include clear labels for each site dataset. Set the figure size to 10 x 6.
 
-Remember to following the recommended guidelines [INSERT LINK TO PLOT GUIDANCE HERE] for creating professional and comprehensive plots. Save the figure as "exp_temp_plot.png".
+Remember to follow the recommended guidelines [INSERT LINK TO PLOT GUIDANCE HERE] for creating professional and comprehensive plots. Save the figure as "exp_temp_plot.png".
 
 <!-- Once the figure is formatted and generated, save the figure as "exp_temp_plot.png" and close it using `plt.close()`. -->
 
@@ -91,14 +86,14 @@ Review the pre-class materials [INSERT LINK HERE] from the Linear Regression Exc
 
 #### Part 5
 
-Generate predicted y-values for the regression line, then add the regression line to your existing scatter plot. The regression line should appear black on the plot.
+Generate predicted y-values for the regression line, then add the regression line to your existing scatter plot. The regression line should appear as a solid black line on the plot.
 
-Add the regression model equation and r² to the plot legend along with data collected from the three sites along the aluminum beam. Save the figure as "exp_temp_regression_plot.png".
+Add the regression model equation and R² to the plot legend along with data collected from the three sites along the aluminum beam. Save the figure as "exp_temp_regression_plot.png".
 
 <!-- Once the figure is formatted and generated, save the figure as "exp_temp_regression_plot.png" and close it. -->
 
 % Automatically generated Sample Output section.
-```{include} /_build/intermediate/Part_04_Python/M5/tasks/pre_1/a/sample_output.md
+```{include} /_build/intermediate/Part_04_Python/M5/tasks/pre_2/a/sample_output.md
 ```
 
 ### Deliverables

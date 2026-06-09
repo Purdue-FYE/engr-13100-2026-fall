@@ -173,8 +173,8 @@ parts:
       - file: Part_04_Python/M5/1_pre-class_overview
         sections:
         - file: Part_04_Python/M5/1.1_materials
-        # - file: Part_04_Python/M5/tasks/pre_1/a/instructions
-        # - file: Part_04_Python/M5/tasks/pre_2/a/instructions
+        - file: Part_04_Python/M5/tasks/pre_1/a/instructions
+        - file: Part_04_Python/M5/tasks/pre_2/a/instructions
       - file: Part_04_Python/M5/2_in-class_overview
         sections:
         - file: Part_04_Python/M5/tasks/ICA_1/a/instructions

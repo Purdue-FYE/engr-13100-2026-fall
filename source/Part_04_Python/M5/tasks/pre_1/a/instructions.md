@@ -22,7 +22,7 @@ kernelspec:
 
 Download the Python template {download}`ENGR131_Python_Template.py </Part_04_Python/ENGR131_Python_Template.py>` and save it as {glue:text}`../../../../../glue_factory.md::py5_pre_1_py:`.
 
-Download the CSV file {download}`radioactive_decay.csv </Part_04_Python/M5/tasks/pre_2/a/radioactive_decay.csv>` for analyzing thermal expansion along an aluminum beam.
+Download the CSV file {download}`radioactive_decay.csv </Part_04_Python/M5/tasks/pre_1/a/radioactive_decay.csv>` for analyzing thermal expansion along an aluminum beam.
 
 ## Activity Instructions & Submission
 
