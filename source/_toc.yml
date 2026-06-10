@@ -21,9 +21,10 @@ parts:
     # Professional Preperation Module
     - file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
       sections:
-      - file: Part_01_Professional_Development/M1_Professional_Preparation/1_PP_assignments
+      - file: Part_01_Professional_Development/M1_Professional_Preparation/1.1_instructions
+      - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2_eyms
         sections: 
-        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.1.1_instructions
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE
 
     # Teaming Module
     - file: Part_01_Professional_Development/M2_Teaming/0_overview
