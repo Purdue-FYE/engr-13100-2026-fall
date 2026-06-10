@@ -21,9 +21,24 @@ parts:
     # Professional Preperation Module
     - file: Part_01_Professional_Development/M1_Professional_Preparation/0_overview
       sections:
-      - file: Part_01_Professional_Development/M1_Professional_Preparation/1_PP_assignments
+      - file: Part_01_Professional_Development/M1_Professional_Preparation/1.1_instructions
+      - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2_eyms
         sections: 
-        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.1.1_instructions
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.2_CEM
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.3_BioE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.4_NE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.5_SEE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.6_MSE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.7_CE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.8_CHE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.9_ME
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.10_AAE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.11_IE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.12_BME
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.13_MDE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.14_ECE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.15_ENRE
 
     # Teaming Module
     - file: Part_01_Professional_Development/M2_Teaming/0_overview

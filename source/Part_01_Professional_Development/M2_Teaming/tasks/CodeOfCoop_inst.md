@@ -18,7 +18,7 @@ In ENGR 131, you will work on many tasks and assignments as part of a team. A Co
 
 ```{admonition} Note
    :class: warning
-Late submissions of CATME assignments are not accepted. Be sure to submit all assignments before the deadline listed on the {doc}`Course Schedule<../../../Part_00_Course_Resources/course_schedule>`.
+Late submissions of team assignments are not accepted. Be sure to submit all assignments before the deadline listed on the {doc}`Course Schedule<../../../Part_00_Course_Resources/course_schedule>`.
 ```
 
 ## Instructions
