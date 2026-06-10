@@ -25,6 +25,7 @@ parts:
       - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2_eyms
         sections: 
         - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE
+        - file: Part_01_Professional_Development/M1_Professional_Preparation/1.2.2_CEM
 
     # Teaming Module
     - file: Part_01_Professional_Development/M2_Teaming/0_overview
