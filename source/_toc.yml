@@ -117,6 +117,9 @@ parts:
     numbered: 3
     chapters:
     - file: Part_03_AI/0_overview
+      sections: 
+      - file: Part_03_AI/1_pre-class_overview
+        sections: Part_03_AI/1.1_materials
 
   - caption: Python
     numbered: 3
