@@ -1,0 +1,28 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+```{include} /macros.md
+```
+
+(AI:M1:pre1)=
+# PCA: Computer Operations
+
+## Instructions
+
+1. Review {doc}`PCMs: Computer Operations and Logic<../../../1.1_materials>` before beginning this activity.
+2. Complete **7.1.2 PCA: Computer Operations** in Gradescope. 
+3. Answer all questions based on the concepts discussed in the PCM.
+
+## Submission
+
+- This activity is completed **directly in Gradescope**.
+- Be sure to submit your answers before the deadline listed on the {doc}`Course Schedule<../../../../Part_00_Course_Resources/course_schedule>`.
+- You may submit as many times as needed before the due date for full credit. 
+

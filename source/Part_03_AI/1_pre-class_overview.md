@@ -14,8 +14,8 @@ kernelspec:
 (AI:M1:pre-class)=
 # Pre-Class Assignments
 
-```{include} ../../guidelines/pre-class.md
+```{include} ../guidelines/pre-class.md
 ```
 
-```{include} ../../guidelines/excel_resources.md
+```{include} ../guidelines/excel_resources.md
 ```

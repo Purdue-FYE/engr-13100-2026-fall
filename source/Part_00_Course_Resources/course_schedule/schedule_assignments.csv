@@ -1,4 +1,4 @@
-class_slot, assignment_id, name                                               , points, type                 , due_date
+class_slot,assignment_id,name,points,type,due_date
 1B        , AI 7.1.1     , PCMs: Introduction to Computers                    , --    , Pre-Class Assignment , Class 2B
 1B        , AI 7.1.2     , PCA: Computer Operations                           , 5     , Pre-Class Assignment , Class 2B
 2A        , AI 7.1.3     , PCMs: What is AI?                                  , --    , Pre-Class Assignment , Class 2B
@@ -34,7 +34,7 @@ class_slot, assignment_id, name                                               , 
 7A        , PP 1.2.12    , CE: Biomedical Engineering                         , 1     , Individual Assignment, 10/11/26 @ 11:59 PM
 9A        , PP 1.2.13    , CE: Multidisciplinary Engineering                  , 1     , Individual Assignment, 10/25/26 @ 11:59 PM
 9A        , PP 1.2.14    , CE: Electrical and Computer Engineering            , 1     , Individual Assignment, 10/25/26 @ 11:59 PM
-9A        , PP 1.2.15    , CE: Environmental and Natural Resources Engineering, 1     , Individual Assignment, 10/25/26 @ 11:59 PM
+9A        , PP 1.2.15    , CE: Environmental and Natural Resources Engineering , 1     , Individual Assignment, 10/25/26 @ 11:59 PM
 3A        , PP 1.2.2     , CE: Construction Engineering and Management        , 1     , Individual Assignment, 9/13/26 @ 11:59 PM
 3A        , PP 1.2.3     , CE: Biological Engineering                         , 1     , Individual Assignment, 9/13/26 @ 11:59 PM
 4A        , PP 1.2.4     , CE: Nuclear Engineering                            , 1     , Individual Assignment, 9/20/26 @ 11:59 PM
