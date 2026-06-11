@@ -62,6 +62,7 @@ ASSIGNMENTS_GENERATOR = Path(
 OUTPUT_HTML = Path(
     "source/Part_00_Course_Resources/course_schedule/student_course_schedule.html"
 )
+SLIDES_CSV = Path("source/Part_00_Course_Resources/course_schedule/schedule_slides.csv")
 
 
 @dataclass
@@ -141,6 +142,28 @@ def read_topics(path: Path) -> List[str]:
 
     return topics
 
+def read_slides(path: Path) -> dict[str, str]:
+    if not path.exists():
+        return {}
+
+    with path.open("r", encoding="utf-8-sig", newline="") as f:
+        reader = csv.DictReader(f)
+
+        required = ["class_slot", "slides_url"]
+        for col in required:
+            if col not in (reader.fieldnames or []):
+                raise ValueError(f'schedule_slides.csv must contain a header named "{col}".')
+
+        slides_by_slot: dict[str, str] = {}
+        for row in reader:
+            slot = (row.get("class_slot") or "").strip()
+            url = (row.get("slides_url") or "").strip()
+
+            if slot and url:
+                slides_by_slot[slot] = url
+
+    return slides_by_slot
+
 
 def build_slots(start_monday: date, weeks: int) -> List[ClassSlot]:
     slots: List[ClassSlot] = []
@@ -187,7 +210,7 @@ def fill_topics(slots: List[ClassSlot], topics: List[str]) -> None:
         slot.topic = topic
 
 
-def build_html(slots: List[ClassSlot], assignments_by_slot) -> str:
+def build_html(slots: List[ClassSlot], assignments_by_slot, slides_by_slot) -> str:
     parts: List[str] = []
 
     styles = """
@@ -390,6 +413,10 @@ html[data-theme="dark"] {
   .nowrap {
     white-space: normal;
   }
+
+  .class-slides-cell {
+    text-align: center;
+  }
 }
 
 .schedule-scroll {
@@ -476,9 +503,19 @@ html[data-theme="dark"] {
                 row_class = "class-row"
                 topic = slot.topic
 
-            # Class row spans cols 2-5
+            # Class row spans cols 2-4
+            slides_url = slides_by_slot.get(slot.slot_id, "")
+            slides_link = (
+                f'<a href="{html.escape(slides_url)}">Download {html.escape(slot.class_label)} Slides</a>'
+                if slides_url else ""
+            )
+
             parts.append(
-                f'        <tr class="{row_class}"><td class="nowrap">{html.escape(slot.class_label)}</td><td colspan="4">{html.escape(topic)}</td></tr>'
+                f'        <tr class="{row_class}">'
+                f'<td class="nowrap">{html.escape(slot.class_label)}</td>'
+                f'<td colspan="2">{html.escape(topic)}</td>'
+                f'<td colspan="2" class="class-slides-cell">{slides_link}</td>'
+                f'</tr>'
             )
 
             assignments = assignments_by_slot.get(slot.slot_id, [])
@@ -562,12 +599,13 @@ def main() -> None:
     sync_assignments_csv()
 
     topics = read_topics(TOPICS_CSV)
+    slides_by_slot = read_slides(SLIDES_CSV)
     assignments_path = ASSIGNMENTS_CSV if ASSIGNMENTS_CSV.exists() else MANUAL_ASSIGNMENTS_CSV
     assignments_by_slot = read_assignments(assignments_path)
     slots = build_slots(start_monday, WEEKS)
     fill_topics(slots, topics)
 
-    html_output = build_html(slots, assignments_by_slot)
+    html_output = build_html(slots, assignments_by_slot, slides_by_slot)
     OUTPUT_HTML.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_HTML.write_text(html_output, encoding="utf-8")
 
