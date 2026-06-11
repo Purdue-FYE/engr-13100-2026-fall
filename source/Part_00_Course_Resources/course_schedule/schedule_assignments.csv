@@ -4,9 +4,9 @@ class_slot,assignment_id,name,points,type,due_date
 2A        , AI 7.1.3     , PCMs: What is AI?                                  , --    , Pre-Class Assignment , Class 2B
 2A        , AI 7.1.4     , PCA: What is AI?                                   , 5     , Pre-Class Assignment , Class 2B
 2B        , AI 7.1.5     , PCMs: Decision Trees                               , --    , Pre-Class Assignment , Class 3A
-2B        , AI 7.1.6     , PCA: AI Quiz 2                                     , 5     , Pre-Class Assignment , Class 3A
+2B        , AI 7.1.6     , PCA: Decision Trees                                , 5     , Pre-Class Assignment , Class 3A
 3B        , AI 7.1.7     , PCMs: Neural Networks                              , --    , Pre-Class Assignment , Class 4A
-3B        , AI 7.1.8     , PCA: AI Quiz 3                                     , 5     , Pre-Class Assignment , Class 4A
+3B        , AI 7.1.8     , PCA: Neural Networks                               , 5     , Pre-Class Assignment , Class 4A
 4A        , AI 7.3.1     , Neural Networks                                    , 20    , Team Assignment      , Class 5B
 16A       , EC1          , End of Semester Survey                             , 3     , Extra Credit         , 12/11/26 @ 11:59 PM
 16A       , EC2          , CIE Survey                                         , 1     , Extra Credit         , 12/11/26 @ 11:59 PM

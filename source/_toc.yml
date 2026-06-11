@@ -120,8 +120,8 @@ parts:
       sections: 
       - file: Part_03_AI/1_pre-class_overview
         sections: 
-        - file: Part_03_AI/1.1_materials
-        - file: Part_03_AI/tasks/pre_1/a/computer_ops
+        - file: Part_03_AI/7.1.1_materials
+        - file: Part_03_AI/tasks/7.1.2_computer_ops
 
   - caption: Python
     numbered: 3
