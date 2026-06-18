@@ -123,3 +123,36 @@ Next steps: Holly & Kory will start writing instructions for this part of the pr
 - instructors would lose autonomy; "you have to do something" but you can do what you want
 - discuss and think about for the spring
 - make it dropable if they miss anything
+
+
+# Project Meeting - 6.18.26
+## Lauren's Tasks: 
+- review learning objectives that claude made (kory's version)
+- keep PCQs with their PCVs
+- review/rewrite templates
+
+## General Notes
+- is there enough design? do the milestones line up with the current design project? 
+    - ruth wrote them, so fingers crossed? 
+    - would putting tinkercad in there be helpful? 
+        * meant for middle school students, so not particularly helpful for setting them up
+    - what choices to students have? 
+        material choice
+        WDM analysis
+        how to implement the algorithm
+        could have them choose greenhouse dimensions, but it could add complexity on our end
+        potential: build a model; technical reference image? 
+        * could use tinkercad, draw.io, choices of software; up to the student to learn
+        
+    - what's the software engineering design process? 
+
+## M1
+- chatbot will need removed
+- all stuff that's pre-class should be in-class
+
+## M2
+- getting full; probably the heftiest point of the projet
+- could be split into two milestones
+
+# M4
+- weighted decision matrix in M3 or M4?
