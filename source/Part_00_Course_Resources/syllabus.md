@@ -81,7 +81,7 @@ Zoom
 Your instructor may use additional technologies and software to facilitate interaction.
 
 ## Course Structure
-Each section of ENGR 131 is taught by a teaching team that includes an instructor, a graduate teaching assistance (GTA), undergraduate teaching assistants called Peer Teachers, and undergraduate graders. Course meetings are 110 minutes long and the course meets two days a week. All sections meet face-to-face.  You are required to attend the lectured during the scheduled class time. 
+Each section of ENGR 131 is taught by a teaching team that includes an instructor, a graduate teaching assistance (GTA), undergraduate teaching assistants called Peer Teachers, and undergraduate graders. Course meetings are 110 minutes long and the course meets two days a week. All sections meet face-to-face. You are required to attend the lecture during the scheduled class time. 
 
 ### Course Schedule
 The course schedule is provided on this site. Schedule and assignments are subject to change throughout the semester. Any changes will be updated on the {doc}`Course Schedule<course_schedule>` page.
