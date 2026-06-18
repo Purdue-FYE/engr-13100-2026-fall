@@ -1,0 +1,36 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+```{include} /macros.md
+```
+
+(AI:M1:assignments)=
+# Assignments
+
+```{rubric} In these assignments, you will:
+```
+- Skill
+
+```{rubric} Learning Objectives
+```
+{{PR01}}
+{{PR03}} 
+{{PC05}} 
+{{UC04}} 
+{{EC02}}
+
+```{rubric} Assignments for this Module
+```
+
+```{tableofcontents}
+```
+
+```{include} ../../guidelines/submit_task_GS.md
+```

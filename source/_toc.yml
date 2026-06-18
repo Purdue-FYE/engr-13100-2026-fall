@@ -121,7 +121,16 @@ parts:
       - file: Part_03_AI/1_pre-class_overview
         sections: 
         - file: Part_03_AI/7.1.1_materials
-        - file: Part_03_AI/tasks/7.1.2_computer_ops
+        - file: Part_03_AI/7.1.2_computer_ops
+        - file: Part_03_AI/7.1.3_materials
+        - file: Part_03_AI/7.1.4_AI
+        - file: Part_03_AI/7.1.5_materials
+        - file: Part_03_AI/7.1.6_decisiontrees
+        - file: Part_03_AI/7.1.7_materials
+        - file: Part_03_AI/7.1.8_neuralnetworks
+      - file: Part_03_AI/3_assignment_overview
+        sections: 
+        - file: Part_03_AI/tasks/ind_1/a/instructions
 
   - caption: Python
     numbered: 3
@@ -202,7 +211,7 @@ parts:
         sections:
         - file: Part_04_Python/M5/tasks/ind_1/a/instructions
 
-  - caption: Team Project
+  - caption: Engineering Design - Team Project
     numbered: True
     chapters:
     - file: Part_05_Team_Project/0_overview

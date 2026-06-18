@@ -1,8 +1,8 @@
 class_slot,assignment_id,name,points,type,due_date
-1B        , AI 7.1.1     , PCMs: Introduction to Computers                    , --    , Pre-Class Assignment , Class 2B
-1B        , AI 7.1.2     , PCA: Computer Operations                           , 5     , Pre-Class Assignment , Class 2B
-2A        , AI 7.1.3     , PCMs: What is AI?                                  , --    , Pre-Class Assignment , Class 2B
-2A        , AI 7.1.4     , PCA: What is AI?                                   , 5     , Pre-Class Assignment , Class 2B
+1B        , AI 7.1.1     , PCMs: Introduction to Computers                    , --    , Pre-Class Assignment , Class 2A
+1B        , AI 7.1.2     , PCA: Computer Operations                           , 5     , Pre-Class Assignment , Class 2A
+2A        , AI 7.1.3     , PCMs: What is Artificial Intelligence?             , --    , Pre-Class Assignment , Class 2B
+2A        , AI 7.1.4     , PCA: What is AI                                    , 5     , Pre-Class Assignment , Class 2B
 2B        , AI 7.1.5     , PCMs: Decision Trees                               , --    , Pre-Class Assignment , Class 3A
 2B        , AI 7.1.6     , PCA: Decision Trees                                , 5     , Pre-Class Assignment , Class 3A
 3B        , AI 7.1.7     , PCMs: Neural Networks                              , --    , Pre-Class Assignment , Class 4A
