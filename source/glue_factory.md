@@ -94,6 +94,12 @@ glue('ex4_ica_1_powerdataformulas_pdf', 'ex4_ica_1_powerdataformulas_username.pd
 glue('ex4_1_powerdatavalues_pdf', 'ex4_1_powerdatavalues_username.pdf', display=False)
 glue('ex4_1_powerdataformulas_pdf', 'ex4_1_powerdataformulas_username.pdf', display=False)
 
+# aitasks_a
+glue('aitasks_a_pdf', 'aitasks_a_username.pdf', display=False)
+glue('aitasks_a_py', 'aitasks_a_username.py', display=False)
+glue('aitasks_a_xlsx', 'aitasks_a_username.xlsx', display=False)
+glue('aitasks_a_zip', 'aitasks_a_username.zip', display=False)
+
 # py1_pre_1
 glue('py1_pre_1_pdf', 'py1_pre_1_username.pdf', display=False)
 glue('py1_pre_1_py', 'py1_pre_1_username.py', display=False)

@@ -32,5 +32,5 @@ kernelspec:
 ```{tableofcontents}
 ```
 
-```{include} ../../guidelines/submit_task_GS.md
+```{include} ../guidelines/submit_task_GS.md
 ```

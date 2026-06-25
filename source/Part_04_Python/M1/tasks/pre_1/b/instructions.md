@@ -12,7 +12,7 @@ kernelspec:
 ```
 
 (PY:M1:PCA1)=
-# PCA: Python Foundations
+# PCA: Data Types and Calculations
 
 ## Learning Objectives
 
