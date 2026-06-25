@@ -14,5 +14,3 @@ kernelspec:
 (AI:M1:in-class)=
 # In-Class Activities
 
-```{include} ../guidelines/inclass_activities.md
-```

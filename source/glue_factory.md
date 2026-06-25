@@ -95,10 +95,7 @@ glue('ex4_1_powerdatavalues_pdf', 'ex4_1_powerdatavalues_username.pdf', display=
 glue('ex4_1_powerdataformulas_pdf', 'ex4_1_powerdataformulas_username.pdf', display=False)
 
 # aitasks_a
-glue('aitasks_a_pdf', 'aitasks_a_username.pdf', display=False)
-glue('aitasks_a_py', 'aitasks_a_username.py', display=False)
-glue('aitasks_a_xlsx', 'aitasks_a_username.xlsx', display=False)
-glue('aitasks_a_zip', 'aitasks_a_username.zip', display=False)
+glue('aitasks_a_decision_tree_template', 'aitasks_a_decision_tree_username.template', display=False)
 
 # py1_pre_1
 glue('py1_pre_1_pdf', 'py1_pre_1_username.pdf', display=False)
