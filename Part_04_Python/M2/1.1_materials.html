@@ -1,0 +1,1606 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>9.1.1. PCMs: Logic and Modularity &#8212; Purdue University ENGR 13100</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=07d23ebc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=a8e58a58"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Part_04_Python/M2/1.1_materials';</script>
+    <link rel="icon" href="../../_static/avatar.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="9.1.2. PCA: Selection Structures" href="tasks/pre_1/a/instructions.html" />
+    <link rel="prev" title="9.1. Pre-Class Assignments" href="1_pre-class_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Purdue University ENGR 13100 - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Purdue University ENGR 13100 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ENGR 13100<br> Transforming Ideas to Innovation I
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome to ENGR 131</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/meet_the_team.html">Meet Your Instructional Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/help_sessions.html">Help Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/course_schedule.html">Course Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/comp_basics.html">Computer Basics and File Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/course_software/course_software.html">Course Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glue_factory.html">Glue Factory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Professional Engineering Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/0_overview.html">1. Professional Preparation and Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.1_instructions.html">1.1. Course Policies Exploration</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2_ce.html">1.2. Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE.html">1.2.1. CE: Agricultural Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.2_CEM.html">1.2.2. CE: Construction Engineering and Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.3_BioE.html">1.2.3. CE: Biological Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.4_NE.html">1.2.4. CE: Nuclear Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.5_SEE.html">1.2.5. CE: Sustainability and Environmental Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.6_MSE.html">1.2.6. CE: Materials Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.7_CE.html">1.2.7. CE: Civil Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.8_CHE.html">1.2.8. CE: Chemical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.9_ME.html">1.2.9. CE: Mechanical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.10_AAE.html">1.2.10. CE: Aeronautical and Astronautical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.11_IE.html">1.2.11. CE: Industrial Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.12_BME.html">1.2.12. CE: Biomedical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.13_MDE.html">1.2.13. CE: Multidisciplinary Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.14_ECE.html">1.2.14. CE: Electrical and Computer Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.15_ENRE.html">1.2.15. CE: Environmental and Natural Resources Engineering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.3_eym.html">1.3. Engineering Your Major</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/0_overview.html">2. Teaming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/2_CATME_inst.html">2.1. CATME Teaming</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/1_TM_assignments.html">2.2. Teaming Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_fundamentals.html">2.2.1. PCMs: Working in an Engineering Team</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_fundamentals_inst.html">2.2.2. PCA: Teaming Fundamentals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_inst.html">2.2.3. TM: Code of Cooperation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_CATMEdimensions.html">2.2.4. PCMs: The 5 CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_CATMEdimensions_inst.html">2.2.5. PCA: CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_revisit_inst.html">2.2.6. TM: Code of Cooperation Revisit</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Excel</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/0_overview.html">3. Spreadsheet Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/1_pre-class_overview.html">3.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/1.1_materials.html">3.1.1. PCMs: Spreadsheet Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/tasks/pre_1/a/instructions.html">3.1.2. PCA: Calculations and Charting in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/2_in-class_overview.html">3.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/tasks/ICA_1/a/instructions.html">3.2.1. ICA: Tennis Ball Launcher Performance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/3_assignment_overview.html">3.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/tasks/1/a/instructions.html">3.3.1. EX: Spreadsheet Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/0_overview.html">4. Data Analysis in Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/1_pre-class_overview.html">4.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/1.1_materials.html">4.1.1. PCMs: Data Analysis and Histograms in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/pre_1/a/instructions.html">4.1.2. PCA: Descriptive Statistics and Logical Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/pre_2/a/instructions.html">4.1.3. PCA: Histograms and Outliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/2_in-class_overview.html">4.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/ICA_1/a/instructions.html">4.2.1. ICA: Coffee Cooling Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/ICA_2/a/instructions.html">4.2.2. ICA: COGO Bike Share</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/3_assignment_overview.html">4.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/1/a/instructions.html">4.3.1. EX - Data Analysis &amp; Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/0_overview.html">5. Probability and Uncertainty</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/1_pre-class_overview.html">5.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/1.1_materials.html">5.1.1. PCMs: Probability and Normal Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/tasks/pre_1/a/instructions.html">5.1.2. PCA: Probability and Z-Scores in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/2_in-class_overview.html">5.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/tasks/ICA_1/a/instructions.html">5.2.1. ICA: Semiconductor Quality Control</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/3_assignment_overview.html">5.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/tasks/1/a/instructions.html">5.3.1. EX: Probability and Normal Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/0_overview.html">6. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/1_pre-class_overview.html">6.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/1.1_materials.html">6.1.1. PCMs: Linear Regression in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/tasks/pre_1/a/instructions.html">6.1.2. PCA: Linear Regression in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/2_in-class_overview.html">6.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/tasks/ICA_1/a/instructions.html">6.2.1. ICA: Speaker Wire Resistance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/3_assignment_overview.html">6.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/tasks/1/a/instructions.html">6.3.1. EX: Linear Data and Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_03_AI/0_overview.html">7. AI in Engineering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_03_AI/1_pre-class_overview.html">7.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.1_materials.html">7.1.1. PCMs: Computer Operations and Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.2_computer_ops.html">7.1.2. PCA: Computer Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.3_materials.html">7.1.3. PCMs: What is Artificial Intelligence?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.4_AI.html">7.1.4. PCA: What is AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.5_materials.html">7.1.5. PCMs: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.6_decisiontrees.html">7.1.6. PCA: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.7_materials.html">7.1.7. PCMs: Neural Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.8_neuralnetworks.html">7.1.8. PCA: Neural Networks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_03_AI/2_in-class_overview.html">7.2. In-Class Activities</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_03_AI/3_assignment_overview.html">7.3. AI Design Challenge: Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/tasks/ind_1/a/DT_instructions.html">7.3.1. Software Logic - Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/tasks/ind_1/a/NN_instructions.html">7.3.2. Hardware System - Neural Networks</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M1/0_overview.html">8. Python Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M1/1_pre-class_overview.html">8.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M1/1.1_materials.html">8.1.1. PCMs: Python Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M1/tasks/pre_1/b/instructions.html">8.1.2. PCA: Data Types and Calculations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M1/2_in-class_overview.html">8.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M1/tasks/ICA_1/a/instructions.html">8.2.1. ICA: Debugging and Auto Grader Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M1/3_assignment_overview.html">8.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M1/tasks/ind_1/b/instructions.html">8.3.1. PY: Python Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_overview.html">9. Logic and Modularity</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="1_pre-class_overview.html">9.1. Pre-Class Assignments</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">9.1.1. PCMs: Logic and Modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks/pre_1/a/instructions.html">9.1.2. PCA: Selection Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks/pre_2/a/instructions.html">9.1.3. PCA: User-Defined Functions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="2_in-class_overview.html">9.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tasks/ICA_1/a/instructions.html">9.2.1. ICA: Factory Alarm System</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="3_assignment_overview.html">9.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tasks/ind_1/b/instructions.html">9.3.1. PY: Logic and Modularity</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M3/0_overview.html">10. Looping Structures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M3/1_pre-class_overview.html">10.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M3/1.1_materials.html">10.1.1. PCMs: Loops in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M3/tasks/pre_1/a/instructions.html">10.1.2. PCA: While Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M3/tasks/pre_2/a/instructions.html">10.1.3. PCA: For Loops</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M3/2_in-class_overview.html">10.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M3/tasks/ICA_1/a/instructions.html">10.2.1. ICA: Dog Park Tennis Ball Launcher</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M3/3_assignment_overview.html">10.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M3/tasks/ind_1/a/instructions.html">10.3.1. PY: Looping Structures</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M4/0_overview.html">11. Data Analysis and Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/1_pre-class_overview.html">11.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/1.1_materials.html">11.1.1. PCMs: Data Analysis and Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/pre_1/a/instructions.html">11.1.2. PCA: Data Manipulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/pre_2/a/instructions.html">11.1.3. PCA: Plotting and Statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/2_in-class_overview.html">11.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/ICA_1/a/instructions.html">11.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/3_assignment_overview.html">11.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/ind_1/a/instructions.html">11.3.1. PY: Data Analysis and Visualization</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M5/0_overview.html">12. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M5/1_pre-class_overview.html">12.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M5/1.1_materials.html">12.1.1. PCMs: Linear Regression in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M5/tasks/pre_1/b/instructions.html">12.1.2. PCA: Linear Regression Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M5/2_in-class_overview.html">12.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M5/tasks/ICA_1/a/instructions.html">12.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M5/3_assignment_overview.html">12.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M5/tasks/ind_1/a/instructions.html">12.3.1. PY: Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Purdue-FYE/engr-13100-2026-fall/issues/new?title=Issue%20on%20page%20%2FPart_04_Python/M2/1.1_materials.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PCMs: Logic and Modularity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-structures">CONTROL STRUCTURES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-execution">Sequential Execution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional Statements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-statements">Looping Statements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-statements">Control Statements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-structures">CONDITIONAL STRUCTURES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-alternative-example">Single alternative example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dual-alternative-example">Dual alternative example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-alternative-example">Multiple alternative example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-example">Nested example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-functions">USER DEFINED FUNCTIONS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">Built-in functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">User defined functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-arguments-and-parameters">Function Arguments and Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#return-statement">Return statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-functions">Benefits of using functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-recursion-not-covered-in-this-course">Function recursion: (not covered in this course)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-scope">VARIABLE SCOPE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flowcharts-for-coding">FLOWCHARTS FOR CODING</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart-example">Flowchart example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-flowchart-shapes-and-when-to-use-them">Common flowchart shapes and when to use them</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-creating-coding-flowcharts">Tips for creating coding flowcharts</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="raw-html"><div class="d-none"></span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand\blank{~\underline{\hspace{1.2cm}}~}\\% Bold symbols (vectors)
+\newcommand\bs[1]{\mathbf{#1}}\\% Differential
+\newcommand\dd[2][]{\mathrm{d}^{#1}{#2}}  % use as \dd, \dd{x}, or \dd[2]{x}\\% Poor man's siunitx
+\newcommand\unit[1]{\mathrm{#1}}
+\newcommand\num[1]{#1}
+\newcommand\qty[2]{#1~\unit{#2}}\\\newcommand\per{/}
+\newcommand\squared{{}^2}
+\newcommand\cubed{{}^3}
+%
+% Scale
+\newcommand\milli{\unit{m}}
+\newcommand\centi{\unit{c}}
+\newcommand\kilo{\unit{k}}
+\newcommand\mega{\unit{M}}
+%
+% Percent
+\newcommand\percent{\unit{{\kern-4mu}\%}}
+%
+% Angle
+\newcommand\radian{\unit{rad}}
+\newcommand\degree{\unit{{\kern-4mu}^\circ}}
+%
+% Time
+\newcommand\second{\unit{s}}
+\newcommand\s{\second}
+\newcommand\minute{\unit{min}}
+\newcommand\hour{\unit{h}}
+%
+% Distance
+\newcommand\meter{\unit{m}}
+\newcommand\m{\meter}
+\newcommand\inch{\unit{in}}
+\newcommand\foot{\unit{ft}}
+%
+% Force
+\newcommand\newton{\unit{N}}
+\newcommand\kip{\unit{kip}} % kilopound in &quot;freedom&quot; units - edit made by Sri
+%
+% Mass
+\newcommand\gram{\unit{g}}
+\newcommand\g{\gram}
+\newcommand\kilogram{\unit{kg}}
+\newcommand\kg{\kilogram}
+\newcommand\grain{\unit{grain}}
+\newcommand\ounce{\unit{oz}}
+%
+% Temperature
+\newcommand\kelvin{\unit{K}}
+\newcommand\K{\kelvin}
+\newcommand\celsius{\unit{{}^\circ C}}
+\newcommand\C{\celsius}
+\newcommand\fahrenheit{\unit{{}^\circ F}}
+\newcommand\F{\fahrenheit}
+%
+% Area
+\newcommand\sqft{\unit{sq\,\foot}}  % square foot
+%
+% Volume
+\newcommand\liter{\unit{L}}
+\newcommand\gallon{\unit{gal}}
+%
+% Frequency
+\newcommand\hertz{\unit{Hz}}
+\newcommand\rpm{\unit{rpm}}
+%
+% Voltage
+\newcommand\volt{\unit{V}}
+\newcommand\V{\volt}
+\newcommand\millivolt{\milli\volt}
+\newcommand\mV{\milli\volt}
+\newcommand\kilovolt{\kilo\volt}
+\newcommand\kV{\kilo\volt}
+%
+% Current
+\newcommand\ampere{\unit{A}}
+\newcommand\A{\ampere}
+\newcommand\milliampereA{\milli\ampere}
+\newcommand\mA{\milli\ampere}
+\newcommand\kiloampereA{\kilo\ampere}
+\newcommand\kA{\kilo\ampere}
+%
+% Resistance
+\newcommand\ohm{\Omega}
+\newcommand\milliohm{\milli\ohm}
+\newcommand\kiloohm{\kilo\ohm} % correct SI spelling
+\newcommand\kilohm{\kilo\ohm} % &quot;American&quot; spelling used in siunitx
+\newcommand\megaohm{\mega\ohm} % correct SI spelling
+\newcommand\megohm{\mega\ohm} % &quot;American&quot; spelling used in siunitx
+%
+% Capacitance
+\newcommand\farad{\unit{F}}
+\newcommand\F{\farad}
+\newcommand\microfarad{\micro\farad}
+\newcommand\muF{\micro\farad}
+%
+% Inductance
+\newcommand\henry{\unit{H}}
+\newcommand\H{\henry}
+\newcommand\millihenry{\milli\henry}
+\newcommand\mH{\milli\henry}
+%
+% Power
+\newcommand\watt{\unit{W}}
+\newcommand\W{\watt}
+\newcommand\milliwatt{\milli\watt}
+\newcommand\mW{\milli\watt}
+\newcommand\kilowatt{\kilo\watt}
+\newcommand\kW{\kilo\watt}
+%
+% Energy
+\newcommand\joule{\unit{J}}
+\newcommand\J{\joule}
+%
+% Composite units
+%
+% Torque
+\newcommand\ozin{\unit{\ounce}\,\unit{in}}
+\newcommand\newtonmeter{\unit{\newton\,\meter}}
+%
+% Pressure
+\newcommand\psf{\unit{psf}}  % pounds per square foot
+\newcommand\pcf{\unit{pcf}}  % pounds per cubic foot
+\newcommand\pascal{\unit{Pa}}
+\newcommand\Pa{\pascal}
+\newcommand\ksi{\unit{ksi}} % kilopound per square inch
+\newcommand\bar{\unit{bar}}
+\end{aligned}\end{align} \]</div>
+<p><span class="raw-html"></div></span></p>
+<p>Sep 09, 2026 | 1002 words | 10 min
+read</p>
+<section class="tex2jax_ignore mathjax_ignore" id="pcms-logic-and-modularity">
+<span id="py-m2-pre-class-mats"></span><h1><span class="section-number">9.1.1. </span>PCMs: Logic and Modularity<a class="headerlink" href="#pcms-logic-and-modularity" title="Link to this heading">#</a></h1>
+<section id="control-structures">
+<h2>CONTROL STRUCTURES<a class="headerlink" href="#control-structures" title="Link to this heading">#</a></h2>
+<p>Here is the link to the Python’s Official Documentation on
+<a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html">Control Flow</a> constructs.</p>
+<p>Control structures determine the flow of execution in a program.</p>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_ztr8i4fk&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_4c1q8sfn%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Control Structures"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/d933f3f145dea14cc4f57640bc69669b/01_control_structures.py"><code class="xref download docutils literal notranslate"><span class="pre">01_control_structures.py</span></code></a>
+<a class="reference download internal" download="" href="../../_downloads/c357e76b8b98b041c00b03764b0ba8d2/02_conditional_structures.py"><code class="xref download docutils literal notranslate"><span class="pre">02_conditional_structures.py</span></code></a></p>
+<section id="sequential-execution">
+<h3>Sequential Execution<a class="headerlink" href="#sequential-execution" title="Link to this heading">#</a></h3>
+<p>This is the default mode of execution where statements are executed line by line.</p>
+</section>
+<section id="conditional-statements">
+<h3>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Link to this heading">#</a></h3>
+<p>These are used to execute a block of code based on a condition.</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">if</span></code> - executes a block of code if the condition is <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code></p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">if</span><span class="o">-</span><span class="k">else</span></code> - executes a block of code if the condition is <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code>,
+otherwise executes another block of code</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">if</span><span class="o">-</span><span class="k">elif</span><span class="o">-</span><span class="k">else</span></code> - executes a block of code if the condition is
+<code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code>, otherwise checks another condition</p></li>
+<li><p>nested <code class="code highlight python docutils literal highlight-python"><span class="k">if</span></code> - <code class="code highlight python docutils literal highlight-python"><span class="k">if</span></code> statement inside another <code class="code highlight python docutils literal highlight-python"><span class="k">if</span></code> statement</p></li>
+</ul>
+</section>
+<section id="looping-statements">
+<h3>Looping Statements<a class="headerlink" href="#looping-statements" title="Link to this heading">#</a></h3>
+<p>These are used to execute a block of code repeatedly.</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> - iterates over a sequence of items</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> - executes a block of code as long as the condition is
+<code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code></p></li>
+</ul>
+</section>
+<section id="control-statements">
+<h3>Control Statements<a class="headerlink" href="#control-statements" title="Link to this heading">#</a></h3>
+<p>These are used to control the flow of execution in a program.</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">break</span></code> - exits the loop</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">continue</span></code> - skips the current iteration</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">pass</span></code> - does nothing</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">return</span></code> - exits the function</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">assert</span></code> - raises an exception if a condition is <code class="code highlight python docutils literal highlight-python"><span class="kc">False</span></code></p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">raise</span></code> - raises an exception</p></li>
+</ul>
+</section>
+</section>
+<section id="conditional-structures">
+<h2>CONDITIONAL STRUCTURES<a class="headerlink" href="#conditional-structures" title="Link to this heading">#</a></h2>
+<p>Conditional Structures, also known as selection structures or decision structures.</p>
+<p><strong>Keywords</strong> : <code class="code highlight python docutils literal highlight-python"><span class="k">if</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="k">elif</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="k">else</span></code></p>
+<section id="single-alternative-example">
+<h3>Single alternative example<a class="headerlink" href="#single-alternative-example" title="Link to this heading">#</a></h3>
+<p>Write a program that prints a warning message if the temperature is greater than 30
+degrees Celsius.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the temperature: &quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">temperature</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s hot outside&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End of program&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="dual-alternative-example">
+<h3>Dual alternative example<a class="headerlink" href="#dual-alternative-example" title="Link to this heading">#</a></h3>
+<p>Write a program that prints a warning message if the temperature is greater than 30
+degrees Celsius, otherwise print a message that it’s a nice day.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the temperature: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">temperature</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s hot outside&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s a nice day&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End of program&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="multiple-alternative-example">
+<h3>Multiple alternative example<a class="headerlink" href="#multiple-alternative-example" title="Link to this heading">#</a></h3>
+<p>Write a program that prints a warning message if the temperature is greater than
+30 degrees Celsius, a message that it’s a nice day if the temperature is between
+20 and 30 degrees Celsius, and a message that it’s cold outside if the
+temperature is less than 20 degrees Celsius.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the temperature: &quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">temperature</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s hot outside&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temperature</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s a nice day&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s cold outside&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End of program&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="nested-example">
+<h3>Nested example<a class="headerlink" href="#nested-example" title="Link to this heading">#</a></h3>
+<p>Write a program that prints a warning message if the temperature is greater than
+30 degrees Celsius and the humidity is greater than 50%, otherwise print a
+message that it’s a nice day.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the temperature: &quot;</span><span class="p">))</span>
+<span class="n">humidity</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the humidity: &quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">temperature</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">humidity</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s hot and humid&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s hot but not humid&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s a nice day&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End of program&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="user-defined-functions">
+<h2>USER DEFINED FUNCTIONS<a class="headerlink" href="#user-defined-functions" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_49nqh9rh&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_5tinq5sk%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="User Defined Functions"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/6e40f194b28865037f8e0e03e1238461/03_user_defined_functions.py"><code class="xref download docutils literal notranslate"><span class="pre">03_user_defined_functions.py</span></code></a>
+<a class="reference download internal" download="" href="../../_downloads/a4a63a1aae3a07688e0450c1ee4d7208/04_user_defined_functions_execute.py"><code class="xref download docutils literal notranslate"><span class="pre">04_user_defined_functions_execute.py</span></code></a></p>
+<p>Functions are reusable code blocks that perform a specific task.</p>
+<p>Types of functions:</p>
+<ul class="simple">
+<li><p>Built-in functions - functions that are built into Python</p></li>
+<li><p>User-defined functions - functions defined by the user</p></li>
+</ul>
+<section id="built-in-functions">
+<h3>Built-in functions<a class="headerlink" href="#built-in-functions" title="Link to this heading">#</a></h3>
+<p>Examples: <code class="code highlight python docutils literal highlight-python"><span class="nb">print</span><span class="p">()</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="nb">range</span><span class="p">()</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="nb">input</span><span class="p">()</span></code> etc</p>
+</section>
+<section id="id1">
+<h3>User defined functions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="k">def</span></code> keyword is used to define a function</p></li>
+<li><p>Function names should be descriptive and meaningful
+(follows the same rules as variable names)</p></li>
+<li><p>A function call is required to execute the function</p></li>
+<li><p>Functions can be called multiple times</p></li>
+<li><p>Functions can be defined inside another function</p></li>
+</ul>
+</section>
+<section id="function-arguments-and-parameters">
+<h3>Function Arguments and Parameters<a class="headerlink" href="#function-arguments-and-parameters" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Arguments are values passed to a function</p></li>
+<li><p>Parameters are variables used to define a function and are optional</p></li>
+<li><p>Arguments are assigned to parameters based on their position</p></li>
+<li><p>Arguments can be passed as positional arguments or keyword arguments</p></li>
+<li><p>Default parameters are used when no argument is passed</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-py-m2-pre-class-materials-arguments">
+<caption><span class="caption-number">Table 9.1 </span><span class="caption-text">Positional and Keyword Arguments</span><a class="headerlink" href="#tab-py-m2-pre-class-materials-arguments" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Positional arguments</strong></p></th>
+<th class="head text-left"><p><strong>Keyword arguments</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Arguments passed to a function based on their position</p></td>
+<td class="text-left"><p>Arguments passed to a function based on their name</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Order of arguments is important</p></td>
+<td class="text-left"><p>Order of arguments is not important</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Number of arguments should match the number of parameters</p></td>
+<td class="text-left"><p>Number of arguments should match the number of parameters</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>All positional arguments must be placed before keyword arguments</p></li>
+<li><p>The argument variable name and the parameter variable name do not have to match, just
+the positional order matters</p></li>
+</ul>
+</div>
+<p><strong>Default parameters</strong></p>
+<ul class="simple">
+<li><p>Default parameters are used when no argument is passed</p></li>
+<li><p>Default parameters should be at the end</p></li>
+</ul>
+</section>
+<section id="return-statement">
+<h3>Return statement<a class="headerlink" href="#return-statement" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The <code class="code highlight python docutils literal highlight-python"><span class="k">return</span></code> statement is used to return a value from a function</p></li>
+<li><p>The <code class="code highlight python docutils literal highlight-python"><span class="k">return</span></code> statement is optional</p></li>
+<li><p>The <code class="code highlight python docutils literal highlight-python"><span class="k">return</span></code> statement can return multiple values</p></li>
+<li><p>The <code class="code highlight python docutils literal highlight-python"><span class="k">return</span></code> statement can be used to exit a function</p></li>
+<li><p>No other statement is executed after the return statement in a function</p></li>
+</ul>
+</section>
+<section id="benefits-of-using-functions">
+<h3>Benefits of using functions<a class="headerlink" href="#benefits-of-using-functions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Code reusability</p></li>
+<li><p>Modularity</p></li>
+<li><p>Easy debugging and maintenance</p></li>
+<li><p>Better readability, organization, and efficiency</p></li>
+</ul>
+</section>
+<section id="function-recursion-not-covered-in-this-course">
+<h3>Function recursion: (not covered in this course)<a class="headerlink" href="#function-recursion-not-covered-in-this-course" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Recursion is a technique in which a function calls itself</p></li>
+<li><p>Base case is required to prevent infinite recursion</p></li>
+<li><p>Recursion is used to solve complex problems and simplify code</p></li>
+</ul>
+</section>
+</section>
+<section id="variable-scope">
+<h2>VARIABLE SCOPE<a class="headerlink" href="#variable-scope" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_xnsn1zuy&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_a0btwdk1%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Variable Scope"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/5320b6263f77732f92474f660a0d3e79/05_variable_scope.py"><code class="xref download docutils literal notranslate"><span class="pre">05_variable_scope.py</span></code></a></p>
+<ul class="simple">
+<li><p>Scope is the region of the program where a variable is recognized</p></li>
+<li><p>Scope determines the visibility of a variable</p></li>
+<li><p>Scope can be local or global</p>
+<ul>
+<li><p>Local scope - variables declared inside a function are local variables and can
+only be accessed inside that function</p></li>
+<li><p>Global scope - variables declared outside a function are global variables and can
+be accessed throughout the program</p></li>
+</ul>
+</li>
+<li><p>Avoid using global variables as they can be modified from anywhere in the program and
+can lead to bugs</p></li>
+<li><p>Use local variables instead to avoid conflicts and bugs in the program</p></li>
+<li><p>Use the global keyword to modify a global variable inside a function</p></li>
+<li><p>Known constants are acceptable to use as global variables such as gravity (g = 9.81)
+in physics calculations.</p></li>
+</ul>
+</section>
+<section id="flowcharts-for-coding">
+<h2>FLOWCHARTS FOR CODING<a class="headerlink" href="#flowcharts-for-coding" title="Link to this heading">#</a></h2>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_y24vutav&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_k03de6lt%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Basic Flowcharts"></iframe>
+<p>Flowcharts are visual planning tools that help you map the logic of a program before
+writing code.</p>
+<p>They are useful for:</p>
+<ul class="simple">
+<li><p>Breaking a problem into clear, logical steps</p></li>
+<li><p>Identifying decision points (<code class="code highlight python docutils literal highlight-python"><span class="k">if</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="k">elif</span></code>, <code class="code highlight python docutils literal highlight-python"><span class="k">else</span></code>)</p></li>
+<li><p>Tracing repeated actions (<code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> loops)</p></li>
+<li><p>Communicating program logic with teammates</p></li>
+</ul>
+<section id="flowchart-example">
+<h3>Flowchart example<a class="headerlink" href="#flowchart-example" title="Link to this heading">#</a></h3>
+<p>Example problem: Ask the user for a number and print whether it is even or odd.</p>
+<pre  class="mermaid">
+        flowchart TD
+    A([Start]) --&gt; B[/Input number n/]
+  B --&gt; C{Is n even?}
+  C --&gt;|Yes| D[Print Even]
+  C --&gt;|No| E[Print Odd]
+    D --&gt; F([End])
+    E --&gt; F
+    </pre></section>
+<section id="common-flowchart-shapes-and-when-to-use-them">
+<h3>Common flowchart shapes and when to use them<a class="headerlink" href="#common-flowchart-shapes-and-when-to-use-them" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-py-m2-flowchart-shapes">
+<caption><span class="caption-number">Table 9.2 </span><span class="caption-text">Common flowchart symbols</span><a class="headerlink" href="#tab-py-m2-flowchart-shapes" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Shape</strong></p></th>
+<th class="head"><p><strong>Name</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><a class="reference internal image-reference" href="../../_images/arrow.png"><img alt="Solid black arrow pointing right." src="../../_images/arrow.png" style="width: 150px;" />
+</a>
+</td>
+<td><p>Flowline or Arrowhead</p></td>
+<td><p>Indicates process flow direction</p></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="../../_images/oval.png"><img alt="Stadium-shaped rounded rectangle labeled Terminal." src="../../_images/oval.png" style="width: 150px;" />
+</a>
+</td>
+<td><p>Terminator (Start/End)</p></td>
+<td><p>Filled with words “start” or “stop” and indicates the beginning or end of a script or function</p></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal image-reference" href="../../_images/rectangle.png"><img alt="Plain rectangle labeled Process." src="../../_images/rectangle.png" style="width: 150px;" />
+</a>
+</td>
+<td><p>Process</p></td>
+<td><p>Process or action carried out by the code; set of operations that change the value
+or form of data or the location of information</p></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="../../_images/diamond.png"><img alt="Diamond labeled Decision." src="../../_images/diamond.png" style="width: 150px;" />
+</a>
+</td>
+<td><p>Decision</p></td>
+<td><p>Conditional test (selection or loop) that determines the path the computer program will take; answers a yes/no or true/false question</p></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal image-reference" href="../../_images/parallelogram.png"><img alt="Slanted parallelogram labeled Input." src="../../_images/parallelogram.png" style="width: 150px;" />
+</a>
+</td>
+<td><p>Input/Output</p></td>
+<td><p>Input or ouput of data, including entering data or displaying results; e.g.,
+hardcoding of data, plotting, display to command window</p></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="../../_images/rectangle_with_lines.png"><img alt="Rectangle with vertical bars on both sides, labeled Predefined Process." src="../../_images/rectangle_with_lines.png" style="width: 150px;" />
+</a>
+</td>
+<td><p>Predfined Process</p></td>
+<td><p>Indicates a process that has been defined elsewhere; can be used for calling functions (built-in or user-defined)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="tips-for-creating-coding-flowcharts">
+<h3>Tips for creating coding flowcharts<a class="headerlink" href="#tips-for-creating-coding-flowcharts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Start with the main goal of the program, then add major steps first.</p></li>
+<li><p>Write decision questions so they can be answered clearly with Yes/No.</p></li>
+<li><p>Label decision branches consistently (for example, Yes on the left and No on the
+right).</p></li>
+<li><p>Keep each process box to one action to make conversion to code easier.</p></li>
+<li><p>After finishing the flowchart, trace one sample input through it before coding.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Part_04_Python/M2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1_pre-class_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9.1. </span>Pre-Class Assignments</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tasks/pre_1/a/instructions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9.1.2. </span>PCA: Selection Structures</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-structures">CONTROL STRUCTURES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-execution">Sequential Execution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional Statements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-statements">Looping Statements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-statements">Control Statements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-structures">CONDITIONAL STRUCTURES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-alternative-example">Single alternative example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dual-alternative-example">Dual alternative example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-alternative-example">Multiple alternative example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-example">Nested example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-functions">USER DEFINED FUNCTIONS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">Built-in functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">User defined functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-arguments-and-parameters">Function Arguments and Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#return-statement">Return statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-functions">Benefits of using functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-recursion-not-covered-in-this-course">Function recursion: (not covered in this course)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-scope">VARIABLE SCOPE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flowcharts-for-coding">FLOWCHARTS FOR CODING</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart-example">Flowchart example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-flowchart-shapes-and-when-to-use-them">Common flowchart shapes and when to use them</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-creating-coding-flowcharts">Tips for creating coding flowcharts</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="/engr-13100-2026-fall/Appendices/contributors.html">Contributors</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

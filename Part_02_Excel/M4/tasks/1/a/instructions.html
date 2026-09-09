@@ -1,0 +1,983 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6.3.1. EX: Linear Data and Regression &#8212; Purdue University ENGR 13100</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css?v=07d23ebc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../../_static/documentation_options.js?v=a8e58a58"></script>
+    <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Part_02_Excel/M4/tasks/1/a/instructions';</script>
+    <link rel="icon" href="../../../../../_static/avatar.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="7. AI in Engineering" href="../../../../../Part_03_AI/0_overview.html" />
+    <link rel="prev" title="6.3. Assignments" href="../../../3_assignment_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.png" class="logo__image only-light" alt="Purdue University ENGR 13100 - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo.png" class="logo__image only-dark" alt="Purdue University ENGR 13100 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../../intro.html">
+                    ENGR 13100<br> Transforming Ideas to Innovation I
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome to ENGR 131</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/meet_the_team.html">Meet Your Instructional Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/help_sessions.html">Help Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/course_schedule.html">Course Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/comp_basics.html">Computer Basics and File Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/course_software/course_software.html">Course Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../glue_factory.html">Glue Factory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Professional Engineering Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/0_overview.html">1. Professional Preparation and Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.1_instructions.html">1.1. Course Policies Exploration</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2_ce.html">1.2. Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE.html">1.2.1. CE: Agricultural Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.2_CEM.html">1.2.2. CE: Construction Engineering and Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.3_BioE.html">1.2.3. CE: Biological Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.4_NE.html">1.2.4. CE: Nuclear Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.5_SEE.html">1.2.5. CE: Sustainability and Environmental Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.6_MSE.html">1.2.6. CE: Materials Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.7_CE.html">1.2.7. CE: Civil Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.8_CHE.html">1.2.8. CE: Chemical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.9_ME.html">1.2.9. CE: Mechanical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.10_AAE.html">1.2.10. CE: Aeronautical and Astronautical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.11_IE.html">1.2.11. CE: Industrial Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.12_BME.html">1.2.12. CE: Biomedical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.13_MDE.html">1.2.13. CE: Multidisciplinary Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.14_ECE.html">1.2.14. CE: Electrical and Computer Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.15_ENRE.html">1.2.15. CE: Environmental and Natural Resources Engineering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.3_eym.html">1.3. Engineering Your Major</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/0_overview.html">2. Teaming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/2_CATME_inst.html">2.1. CATME Teaming</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/1_TM_assignments.html">2.2. Teaming Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_fundamentals.html">2.2.1. PCMs: Working in an Engineering Team</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_fundamentals_inst.html">2.2.2. PCA: Teaming Fundamentals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_inst.html">2.2.3. TM: Code of Cooperation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_CATMEdimensions.html">2.2.4. PCMs: The 5 CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_CATMEdimensions_inst.html">2.2.5. PCA: CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_revisit_inst.html">2.2.6. TM: Code of Cooperation Revisit</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Excel</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../M1/0_overview.html">3. Spreadsheet Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M1/1_pre-class_overview.html">3.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M1/1.1_materials.html">3.1.1. PCMs: Spreadsheet Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M1/tasks/pre_1/a/instructions.html">3.1.2. PCA: Calculations and Charting in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M1/2_in-class_overview.html">3.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M1/tasks/ICA_1/a/instructions.html">3.2.1. ICA: Tennis Ball Launcher Performance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M1/3_assignment_overview.html">3.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M1/tasks/1/a/instructions.html">3.3.1. EX: Spreadsheet Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../M2/0_overview.html">4. Data Analysis in Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M2/1_pre-class_overview.html">4.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M2/1.1_materials.html">4.1.1. PCMs: Data Analysis and Histograms in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M2/tasks/pre_1/a/instructions.html">4.1.2. PCA: Descriptive Statistics and Logical Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M2/tasks/pre_2/a/instructions.html">4.1.3. PCA: Histograms and Outliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M2/2_in-class_overview.html">4.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M2/tasks/ICA_1/a/instructions.html">4.2.1. ICA: Coffee Cooling Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M2/tasks/ICA_2/a/instructions.html">4.2.2. ICA: COGO Bike Share</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M2/3_assignment_overview.html">4.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M2/tasks/1/a/instructions.html">4.3.1. EX - Data Analysis &amp; Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../M3/0_overview.html">5. Probability and Uncertainty</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M3/1_pre-class_overview.html">5.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M3/1.1_materials.html">5.1.1. PCMs: Probability and Normal Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M3/tasks/pre_1/a/instructions.html">5.1.2. PCA: Probability and Z-Scores in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M3/2_in-class_overview.html">5.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M3/tasks/ICA_1/a/instructions.html">5.2.1. ICA: Semiconductor Quality Control</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M3/3_assignment_overview.html">5.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M3/tasks/1/a/instructions.html">5.3.1. EX: Probability and Normal Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../0_overview.html">6. Linear Regression</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../1_pre-class_overview.html">6.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../1.1_materials.html">6.1.1. PCMs: Linear Regression in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../pre_1/a/instructions.html">6.1.2. PCA: Linear Regression in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../2_in-class_overview.html">6.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ICA_1/a/instructions.html">6.2.1. ICA: Speaker Wire Resistance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../../3_assignment_overview.html">6.3. Assignments</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">6.3.1. EX: Linear Data and Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_03_AI/0_overview.html">7. AI in Engineering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_03_AI/1_pre-class_overview.html">7.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/7.1.1_materials.html">7.1.1. PCMs: Computer Operations and Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/7.1.2_computer_ops.html">7.1.2. PCA: Computer Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/7.1.3_materials.html">7.1.3. PCMs: What is Artificial Intelligence?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/7.1.4_AI.html">7.1.4. PCA: What is AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/7.1.5_materials.html">7.1.5. PCMs: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/7.1.6_decisiontrees.html">7.1.6. PCA: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/7.1.7_materials.html">7.1.7. PCMs: Neural Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/7.1.8_neuralnetworks.html">7.1.8. PCA: Neural Networks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_03_AI/2_in-class_overview.html">7.2. In-Class Activities</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_03_AI/3_assignment_overview.html">7.3. AI Design Challenge: Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/tasks/ind_1/a/DT_instructions.html">7.3.1. Software Logic - Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/tasks/ind_1/a/NN_instructions.html">7.3.2. Hardware System - Neural Networks</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M1/0_overview.html">8. Python Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M1/1_pre-class_overview.html">8.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M1/1.1_materials.html">8.1.1. PCMs: Python Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M1/tasks/pre_1/b/instructions.html">8.1.2. PCA: Data Types and Calculations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M1/2_in-class_overview.html">8.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M1/tasks/ICA_1/a/instructions.html">8.2.1. ICA: Debugging and Auto Grader Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M1/3_assignment_overview.html">8.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M1/tasks/ind_1/b/instructions.html">8.3.1. PY: Python Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M2/0_overview.html">9. Logic and Modularity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M2/1_pre-class_overview.html">9.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M2/1.1_materials.html">9.1.1. PCMs: Logic and Modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M2/tasks/pre_1/a/instructions.html">9.1.2. PCA: Selection Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M2/tasks/pre_2/a/instructions.html">9.1.3. PCA: User-Defined Functions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M2/2_in-class_overview.html">9.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M2/tasks/ICA_1/a/instructions.html">9.2.1. ICA: Factory Alarm System</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M2/3_assignment_overview.html">9.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M2/tasks/ind_1/b/instructions.html">9.3.1. PY: Logic and Modularity</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M3/0_overview.html">10. Looping Structures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M3/1_pre-class_overview.html">10.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M3/1.1_materials.html">10.1.1. PCMs: Loops in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M3/tasks/pre_1/a/instructions.html">10.1.2. PCA: While Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M3/tasks/pre_2/a/instructions.html">10.1.3. PCA: For Loops</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M3/2_in-class_overview.html">10.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M3/tasks/ICA_1/a/instructions.html">10.2.1. ICA: Dog Park Tennis Ball Launcher</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M3/3_assignment_overview.html">10.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M3/tasks/ind_1/a/instructions.html">10.3.1. PY: Looping Structures</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M4/0_overview.html">11. Data Analysis and Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M4/1_pre-class_overview.html">11.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M4/1.1_materials.html">11.1.1. PCMs: Data Analysis and Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M4/tasks/pre_1/a/instructions.html">11.1.2. PCA: Data Manipulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M4/tasks/pre_2/a/instructions.html">11.1.3. PCA: Plotting and Statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M4/2_in-class_overview.html">11.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M4/tasks/ICA_1/a/instructions.html">11.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M4/3_assignment_overview.html">11.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M4/tasks/ind_1/a/instructions.html">11.3.1. PY: Data Analysis and Visualization</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M5/0_overview.html">12. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M5/1_pre-class_overview.html">12.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M5/1.1_materials.html">12.1.1. PCMs: Linear Regression in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M5/tasks/pre_1/b/instructions.html">12.1.2. PCA: Linear Regression Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M5/2_in-class_overview.html">12.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M5/tasks/ICA_1/a/instructions.html">12.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M5/3_assignment_overview.html">12.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M5/tasks/ind_1/a/instructions.html">12.3.1. PY: Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Purdue-FYE/engr-13100-2026-fall/issues/new?title=Issue%20on%20page%20%2FPart_02_Excel/M4/tasks/1/a/instructions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>EX: Linear Data and Regression</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-use-and-water-consumption">Water Use and Water Consumption</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-files">Required Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-a-power-and-water-use-in-data-centers">Part A: Power and Water Use in Data Centers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">Tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-b-water-consumption-in-cooling-data-centers">Part B: Water Consumption in Cooling Data Centers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Background</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradescope-submission">Gradescope Submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="raw-html"><div class="d-none"></span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand\blank{~\underline{\hspace{1.2cm}}~}\\% Bold symbols (vectors)
+\newcommand\bs[1]{\mathbf{#1}}\\% Differential
+\newcommand\dd[2][]{\mathrm{d}^{#1}{#2}}  % use as \dd, \dd{x}, or \dd[2]{x}\\% Poor man's siunitx
+\newcommand\unit[1]{\mathrm{#1}}
+\newcommand\num[1]{#1}
+\newcommand\qty[2]{#1~\unit{#2}}\\\newcommand\per{/}
+\newcommand\squared{{}^2}
+\newcommand\cubed{{}^3}
+%
+% Scale
+\newcommand\milli{\unit{m}}
+\newcommand\centi{\unit{c}}
+\newcommand\kilo{\unit{k}}
+\newcommand\mega{\unit{M}}
+%
+% Percent
+\newcommand\percent{\unit{{\kern-4mu}\%}}
+%
+% Angle
+\newcommand\radian{\unit{rad}}
+\newcommand\degree{\unit{{\kern-4mu}^\circ}}
+%
+% Time
+\newcommand\second{\unit{s}}
+\newcommand\s{\second}
+\newcommand\minute{\unit{min}}
+\newcommand\hour{\unit{h}}
+%
+% Distance
+\newcommand\meter{\unit{m}}
+\newcommand\m{\meter}
+\newcommand\inch{\unit{in}}
+\newcommand\foot{\unit{ft}}
+%
+% Force
+\newcommand\newton{\unit{N}}
+\newcommand\kip{\unit{kip}} % kilopound in &quot;freedom&quot; units - edit made by Sri
+%
+% Mass
+\newcommand\gram{\unit{g}}
+\newcommand\g{\gram}
+\newcommand\kilogram{\unit{kg}}
+\newcommand\kg{\kilogram}
+\newcommand\grain{\unit{grain}}
+\newcommand\ounce{\unit{oz}}
+%
+% Temperature
+\newcommand\kelvin{\unit{K}}
+\newcommand\K{\kelvin}
+\newcommand\celsius{\unit{{}^\circ C}}
+\newcommand\C{\celsius}
+\newcommand\fahrenheit{\unit{{}^\circ F}}
+\newcommand\F{\fahrenheit}
+%
+% Area
+\newcommand\sqft{\unit{sq\,\foot}}  % square foot
+%
+% Volume
+\newcommand\liter{\unit{L}}
+\newcommand\gallon{\unit{gal}}
+%
+% Frequency
+\newcommand\hertz{\unit{Hz}}
+\newcommand\rpm{\unit{rpm}}
+%
+% Voltage
+\newcommand\volt{\unit{V}}
+\newcommand\V{\volt}
+\newcommand\millivolt{\milli\volt}
+\newcommand\mV{\milli\volt}
+\newcommand\kilovolt{\kilo\volt}
+\newcommand\kV{\kilo\volt}
+%
+% Current
+\newcommand\ampere{\unit{A}}
+\newcommand\A{\ampere}
+\newcommand\milliampereA{\milli\ampere}
+\newcommand\mA{\milli\ampere}
+\newcommand\kiloampereA{\kilo\ampere}
+\newcommand\kA{\kilo\ampere}
+%
+% Resistance
+\newcommand\ohm{\Omega}
+\newcommand\milliohm{\milli\ohm}
+\newcommand\kiloohm{\kilo\ohm} % correct SI spelling
+\newcommand\kilohm{\kilo\ohm} % &quot;American&quot; spelling used in siunitx
+\newcommand\megaohm{\mega\ohm} % correct SI spelling
+\newcommand\megohm{\mega\ohm} % &quot;American&quot; spelling used in siunitx
+%
+% Capacitance
+\newcommand\farad{\unit{F}}
+\newcommand\F{\farad}
+\newcommand\microfarad{\micro\farad}
+\newcommand\muF{\micro\farad}
+%
+% Inductance
+\newcommand\henry{\unit{H}}
+\newcommand\H{\henry}
+\newcommand\millihenry{\milli\henry}
+\newcommand\mH{\milli\henry}
+%
+% Power
+\newcommand\watt{\unit{W}}
+\newcommand\W{\watt}
+\newcommand\milliwatt{\milli\watt}
+\newcommand\mW{\milli\watt}
+\newcommand\kilowatt{\kilo\watt}
+\newcommand\kW{\kilo\watt}
+%
+% Energy
+\newcommand\joule{\unit{J}}
+\newcommand\J{\joule}
+%
+% Composite units
+%
+% Torque
+\newcommand\ozin{\unit{\ounce}\,\unit{in}}
+\newcommand\newtonmeter{\unit{\newton\,\meter}}
+%
+% Pressure
+\newcommand\psf{\unit{psf}}  % pounds per square foot
+\newcommand\pcf{\unit{pcf}}  % pounds per cubic foot
+\newcommand\pascal{\unit{Pa}}
+\newcommand\Pa{\pascal}
+\newcommand\ksi{\unit{ksi}} % kilopound per square inch
+\newcommand\bar{\unit{bar}}
+\end{aligned}\end{align} \]</div>
+<p><span class="raw-html"></div></span></p>
+<p>Sep 09, 2026 | 1410 words | 14 min
+read</p>
+<section class="tex2jax_ignore mathjax_ignore" id="ex-linear-data-and-regression">
+<span id="ex-m4-a1"></span><h1><span class="section-number">6.3.1. </span>EX: Linear Data and Regression<a class="headerlink" href="#ex-linear-data-and-regression" title="Link to this heading">#</a></h1>
+<p>Cooling buildings and high-performance electronic systems is important for protecting
+equipment and maintaining reliable operation. Modern data centers generate concentrated
+waste heat because of continuous, high-density workloads (Mihelcic &amp; Zimmermann, 2021;
+Lei et al., 2025).</p>
+<p>Engineers must choose how to remove this heat. Air-cooled systems use more electricity
+but do not consume local water resources. Water-cooled systems use less electricity but
+require local water withdrawals for evaporative cooling (Lei et al., 2025).</p>
+<p>In this assignment, you will use linear regression to examine the relationships between data center power demand, cooling energy consumption, and water consumption for different cooling technologies.</p>
+<section id="water-use-and-water-consumption">
+<h2>Water Use and Water Consumption<a class="headerlink" href="#water-use-and-water-consumption" title="Link to this heading">#</a></h2>
+<p>Water use is the total amount of water withdrawn from a source. Water consumption is the
+portion of that water that is not returned to the original source. Evaporation and water
+incorporated into products or plants are examples of water consumption (World Resources
+Institute, 2026).</p>
+<p>Water Use Effectiveness (WUE) is a performance indicator used to track water consumption
+at data centers (International Organization for Standardization, 2026).</p>
+</section>
+<section id="required-files">
+<h2>Required Files<a class="headerlink" href="#required-files" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Download the <a class="reference download internal" download="" href="../../../../../_downloads/522c3048479d5496bed3db7f77b67f8b/6.3.1_datacenters_template.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">assignment</span> <span class="pre">template</span></code></a>.
+Save the file as
+<span class="pasted-text">6.3.1_datacenters_username.xlsx</span>. The
+template contains the data table and calculation tables.</p></li>
+<li><p>Download the <a class="reference download internal" download="" href="../../../../../_downloads/f1d78571923fa83425768e8ac5a08b5f/6.3.1_report_template.docx"><code class="xref download docutils literal notranslate"><span class="pre">report</span> <span class="pre">template</span></code></a> and save it as
+<span class="pasted-text">6.3.1_report_username.pdf</span>. Use this report for
+your charts and answers to the analysis questions.</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Quick Guide: Completing &amp; Submitting Your Report</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">To complete your technical report, you must edit the provided <strong>Word template (<code class="docutils literal notranslate"><span class="pre">.docx</span></code>)</strong> and convert it to a <strong>PDF</strong> for final grading. Follow this simplified workflow:</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><strong>Edit in Word:</strong> Download and open the <code class="docutils literal notranslate"><span class="pre">.docx</span></code> template in Microsoft Word. Avoid editing in web previewers or Google Docs, as they will corrupt your formulas and chart formatting.</p></li>
+<li><p class="sd-card-text"><strong>Save as PDF Only When Finished:</strong> Type your answers and copy any charts or images directly into the Word document, saving your progress frequently. Once your report is 100% complete, save or export the document as a PDF. <em>(Do not convert to PDF early, as PDFs are static and cannot be edited!)</em>
+Copy charts or images into the report and keep the originals in the workbook, since
+Gradescope grades the workbook.</p></li>
+<li><p class="sd-card-text"><strong>Submit to Gradescope:</strong> Upload your finalized PDF and any other required deliverables to the corresponding assignment in Gradescope. Always review your uploaded files from the Gradescope confirmation screen to verify your work is complete.</p></li>
+</ol>
+</div>
+</details><div class="warning admonition">
+<p class="admonition-title">Reminder</p>
+<p>Rename your files with your Purdue username, replacing “template” in each filename.
+Complete all required fields in the templates. Include your name and email address.</p>
+</div>
+</section>
+<section id="part-a-power-and-water-use-in-data-centers">
+<h2>Part A: Power and Water Use in Data Centers<a class="headerlink" href="#part-a-power-and-water-use-in-data-centers" title="Link to this heading">#</a></h2>
+<section id="background">
+<h3>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h3>
+<p>Data centers use cooling systems to remove heat from high-performance electronic equipment.
+Air-cooled and water-cooled systems make different demands on electricity and local water
+resources.</p>
+<figure class="align-default" id="fig-ex-m4-a1-cooling-tradeoffs">
+<img alt="Scatter plot comparing power and water use effectiveness for data center cooling." src="../../../../../_images/LinRegBackground.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">This figure shows the tradeoff between Power Usage Effectiveness (PUE) and Water Usage
+Effectiveness (WUE) for data center cooling technologies (Lei et al., 2025).</span><a class="headerlink" href="#fig-ex-m4-a1-cooling-tradeoffs" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Your engineering team has compiled data for air-cooled and water-cooled data centers in
+the <code class="docutils literal notranslate"><span class="pre">Energy_vs_Water_Tradeoffs</span></code> tab of the Excel template.</p>
+<p>The raw data table in Columns A to D contains the following headers:</p>
+<ul class="simple">
+<li><p>Data Center Location</p></li>
+<li><p>Cooling Technology Type (Air-Cooled or Water-Cooled)</p></li>
+<li><p>Total Power Demand [MW] (the independent variable, <span class="math notranslate nohighlight">\(X\)</span>)</p></li>
+<li><p>Daily Cooling Energy Consumption [kWh] (the dependent variable, <span class="math notranslate nohighlight">\(Y\)</span>)</p></li>
+</ul>
+</section>
+<section id="tasks">
+<h3>Tasks<a class="headerlink" href="#tasks" title="Link to this heading">#</a></h3>
+<p>Perform the following steps on the <code class="docutils literal notranslate"><span class="pre">Energy_vs_Water_Tradeoffs</span></code> worksheet.</p>
+<ol class="arabic simple">
+<li><p>Sort the data by <code class="docutils literal notranslate"><span class="pre">Cooling</span> <span class="pre">Technology</span> <span class="pre">Type</span></code>. Set the order to <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">to</span> <span class="pre">Z</span></code> so that
+Air-Cooled appears before Water-Cooled.</p></li>
+<li><p>Use Excel built-in functions <code class="docutils literal notranslate"><span class="pre">=SLOPE()</span></code> and <code class="docutils literal notranslate"><span class="pre">=INTERCEPT()</span></code> to calculate the slope and y-intercept for both data series.</p></li>
+<li><p>Create a single scatter plot with Air-Cooled and Water-Cooled as separate data
+series. Use a different marker shape and color for each series.</p></li>
+<li><p>Add a linear regression trendline to each data series. Display the regression
+equation and the <span class="math notranslate nohighlight">\(R^2\)</span> value for each trendline on the plot. Compare the
+displayed values for slope and y-intercept with the values in Table 1.</p></li>
+<li><p>Format the chart for professional engineering communication. Add a descriptive
+title, label both axes with units in square brackets, and include a clear legend.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">=IF()</span></code> in Column E, Predicted Daily Cooling Energy [kWh], to apply the
+appropriate regression equation for each row. If the row is Air-Cooled, use the Air-Cooled slope and intercept from Table 1; otherwise, use the Water-Cooled parameters. Use cell references so that you can copy the formula down
+the data table.</p></li>
+<li><p>Calculate the squared residual in the <code class="docutils literal notranslate"><span class="pre">Squared</span> <span class="pre">Residual</span></code> column. Use cell references
+and copy the formula down the data table.</p></li>
+<li><p>In Table 1, use Excel functions and cell references to calculate these metrics for
+each cooling technology:</p>
+<ul class="simple">
+<li><p>Mean <span class="math notranslate nohighlight">\(\overline{y}\)</span>, the average observed energy</p></li>
+<li><p><span class="math notranslate nohighlight">\(SST\)</span>, the total sum of squares, using <code class="docutils literal notranslate"><span class="pre">=DEVSQ()</span></code></p></li>
+<li><p><span class="math notranslate nohighlight">\(SSE\)</span>, the sum of the squared residuals, using <code class="docutils literal notranslate"><span class="pre">=SUM()</span></code> and the relevant cells in the <code class="docutils literal notranslate"><span class="pre">Squared</span> <span class="pre">Residual</span></code> column</p></li>
+<li><p><span class="math notranslate nohighlight">\(R^2\)</span>, using <span class="math notranslate nohighlight">\(R^2 = 1 - \frac{SSE}{SST}\)</span></p></li>
+</ul>
+</li>
+<li><p>Confirm that the calculated <span class="math notranslate nohighlight">\(R^2\)</span> values match the values displayed on the
+scatter plot to the displayed precision.</p></li>
+<li><p>Answer all analysis questions in the <strong>Part A</strong> section of the report. Use complete
+sentences and reference specific data in your answers.</p></li>
+</ol>
+</section>
+</section>
+<section id="part-b-water-consumption-in-cooling-data-centers">
+<h2>Part B: Water Consumption in Cooling Data Centers<a class="headerlink" href="#part-b-water-consumption-in-cooling-data-centers" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Background<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Water is commonly used to remove excess heat from buildings and industrial systems because it has a much higher heat capacity than air:</p>
+<ul class="simple">
+<li><p>Specific Heat Capacity (<span class="math notranslate nohighlight">\(c\)</span>) of Water: <span class="math notranslate nohighlight">\(4,184\text{ J/kg-}^\circ\text{C}\)</span></p></li>
+<li><p>Specific Heat Capacity (<span class="math notranslate nohighlight">\(c_p\)</span>) of Dry Air: <span class="math notranslate nohighlight">\(1,005\text{ J/kg-}^\circ\text{C}\)</span> (at constant pressure)</p></li>
+</ul>
+<p>In cooling systems, water at ambient temperature is circulated through heat exchangers of various designs. Heat transfers to the water and is carried away, often to cooling towers where much of the water is evaporated as the heat is transferred to the environment. In open-loop cooling, the water is discharged back to the environment along with the heat it is conveying.</p>
+<p>If we know the temperature change (<span class="math notranslate nohighlight">\(\Delta T\)</span>) of a mass of water due to heat transfer, we can calculate the amount of thermal energy transferred to the water: $<span class="math notranslate nohighlight">\(\Delta E = \text{mass} \cdot c \cdot \Delta T\)</span>$</p>
+<p>In engineered systems, heat loss is an indicator of energy use efficiency. Water Use Effectiveness (WUE, units: L/kWh) is a measure of water-cooling efficiency. By definition, WUE tracks consumed (evaporated) water, not just used (withdrawn) water.</p>
+<p>Traditional cooling technology will have a cooling water temperature change of <span class="math notranslate nohighlight">\(\Delta T \approx 6.5\text{ }^\circ\text{C}\)</span>. One approach to reducing cooling-water requirements is to allow a larger temperature rise in the cooling water, enabling the same amount of heat to be removed with a lower water flow rate. High-efficiency direct-to-chip cooling will have a water temperature change of <span class="math notranslate nohighlight">\(\Delta T \approx 20.0\text{ }^\circ\text{C}\)</span>.</p>
+<p>Your team has compiled data on the <code class="docutils literal notranslate"><span class="pre">Water_Consumption</span></code> tab of the template. A scatter plot is provided in the template. The plot shows Water Consumption <span class="math notranslate nohighlight">\([m^3/d]\)</span> versus Total Power Demand <span class="math notranslate nohighlight">\([MW]\)</span> for Traditional and Direct-to-Chip cooling systems. Each cooling technology is displayed as a separate data series. The trendlines use simplified linear regression models of the form <span class="math notranslate nohighlight">\(y=mx\)</span>, with the y-intercept constrained to zero (<span class="math notranslate nohighlight">\(b=0\)</span>).</p>
+</section>
+<section id="id2">
+<h3>Tasks<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Use the information provided on the tab <code class="docutils literal notranslate"><span class="pre">Water_Consumption</span></code> of the template to answer the analysis questions in the <strong>Part B</strong> section of the report. No additional Excel calculations are required for Part B unless specified in the report. Use complete sentences and reference specific data or models in your answers.</p>
+</section>
+</section>
+<section id="gradescope-submission">
+<h2>Gradescope Submission<a class="headerlink" href="#gradescope-submission" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Save Deliverables:</strong> Ensure all required assignment files are saved and named
+exactly as specified in the assignment instructions. If a template file name
+contains the word <code class="docutils literal notranslate"><span class="pre">template</span></code>, replace only that word with your Purdue username.
+For example, <code class="docutils literal notranslate"><span class="pre">3.1.2_powerdata_template.xlsx</span></code> becomes <code class="docutils literal notranslate"><span class="pre">3.1.2_powerdata_jdoe.xlsx</span></code>.
+When a task lists more than one deliverable, such as a workbook and a report,
+submit each deliverable to its own matching Gradescope assignment instead of
+combining them into one upload.</p></li>
+<li><p><strong>Navigate to Gradescope:</strong> Log in to Gradescope. From your Dashboard, open the
+assignment.</p></li>
+<li><p><strong>Upload your work:</strong> Select the <strong>Upload</strong> submission method. Drag and drop <strong>all</strong>
+required files (or a compressed <code class="docutils literal notranslate"><span class="pre">.zip</span></code> folder) into Gradescope, and select
+<strong>Upload</strong>.</p></li>
+<li><p><strong>Confirm Submission:</strong> When your upload is successful, you will see a confirmation
+message on your screen and receive an automated email receipt.</p></li>
+<li><p><strong>Add Team Members (if applicable):</strong> If this is a team assignment, add all team
+members to the submission. Each teammate should confirm they can see the submission
+in their own Gradescope account. For help, visit
+<a class="reference external" href="https://help.gradescope.com/article/m5qz2xsnjy-student-add-group-members">Gradescope’s documentation on adding team members</a>.</p></li>
+<li><p><strong>Review Autograder Results:</strong> Wait a few minutes for the autograder to evaluate the
+relevant files. Scroll down to view any failed test cases. If you need assistance
+interpreting the output or errors, ask your teaching team.</p></li>
+<li><p><strong>Resubmit if Necessary:</strong> You can edit your files and select <strong>Resubmit</strong> as many
+times as you need before the assignment deadline. Only your final, active submission
+is graded. <em>(Note: If you need to resubmit, you must upload <strong>all required files</strong>
+for the assignment again).</em></p></li>
+</ol>
+<p>For a detailed walkthrough, review the official
+<a class="reference external" href="https://guides.gradescope.com/hc/en-us/articles/21865616724749-Submitting-a-Code-assignment">Gradescope Submission Guide</a>.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<p>International Organization for Standardization. (2026). Information technology: Data centres: Key performance indicators: Part 9: Water Usage Effectiveness (WUE) (ISO/IEC Standard No. 30134-9:2026). <a class="reference external" href="https://www.iso.org">https://www.iso.org</a></p>
+<p>Lei, N., Lu, J., Shehabi, A., &amp; Masanet, E. (2025). The water use of data center workloads: A review and assessment of key determinants. Resources, Conservation and Recycling, 219, Article 108310. <a class="reference external" href="https://doi.org/10.1016/j.resconrec.2025.108310">https://doi.org/10.1016/j.resconrec.2025.108310</a></p>
+<p>Mihelcic, J. R., &amp; Zimmermann, J. B. (2021). Environmental engineering: Fundamentals, sustainability, design (3rd ed.). John Wiley &amp; Sons.</p>
+<p>World Resources Institute. (2026). Water use and water consumption definitions. <a class="reference external" href="https://www.wri.org">https://www.wri.org</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Part_02_Excel/M4/tasks/1/a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../../3_assignment_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>Assignments</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../../../Part_03_AI/0_overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>AI in Engineering</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-use-and-water-consumption">Water Use and Water Consumption</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-files">Required Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-a-power-and-water-use-in-data-centers">Part A: Power and Water Use in Data Centers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">Tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-b-water-consumption-in-cooling-data-centers">Part B: Water Consumption in Cooling Data Centers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Background</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradescope-submission">Gradescope Submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="/engr-13100-2026-fall/Appendices/contributors.html">Contributors</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1121 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Computer Basics and File Management &#8212; Purdue University ENGR 13100</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=07d23ebc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=a8e58a58"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Part_00_Course_Resources/comp_basics';</script>
+    <link rel="icon" href="../_static/avatar.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Course Software" href="course_software/course_software.html" />
+    <link rel="prev" title="Course Schedule" href="course_schedule.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Purdue University ENGR 13100 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Purdue University ENGR 13100 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    ENGR 13100<br> Transforming Ideas to Innovation I
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome to ENGR 131</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="meet_the_team.html">Meet Your Instructional Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help_sessions.html">Help Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="course_schedule.html">Course Schedule</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computer Basics and File Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="course_software/course_software.html">Course Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue_factory.html">Glue Factory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Professional Engineering Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/0_overview.html">1. Professional Preparation and Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.1_instructions.html">1.1. Course Policies Exploration</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2_ce.html">1.2. Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE.html">1.2.1. CE: Agricultural Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.2_CEM.html">1.2.2. CE: Construction Engineering and Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.3_BioE.html">1.2.3. CE: Biological Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.4_NE.html">1.2.4. CE: Nuclear Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.5_SEE.html">1.2.5. CE: Sustainability and Environmental Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.6_MSE.html">1.2.6. CE: Materials Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.7_CE.html">1.2.7. CE: Civil Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.8_CHE.html">1.2.8. CE: Chemical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.9_ME.html">1.2.9. CE: Mechanical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.10_AAE.html">1.2.10. CE: Aeronautical and Astronautical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.11_IE.html">1.2.11. CE: Industrial Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.12_BME.html">1.2.12. CE: Biomedical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.13_MDE.html">1.2.13. CE: Multidisciplinary Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.14_ECE.html">1.2.14. CE: Electrical and Computer Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.2.15_ENRE.html">1.2.15. CE: Environmental and Natural Resources Engineering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Part_01_Professional_Development/M1_Professional_Preparation/1.3_eym.html">1.3. Engineering Your Major</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_01_Professional_Development/M2_Teaming/0_overview.html">2. Teaming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Part_01_Professional_Development/M2_Teaming/2_CATME_inst.html">2.1. CATME Teaming</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_01_Professional_Development/M2_Teaming/1_TM_assignments.html">2.2. Teaming Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M2_Teaming/tasks/PCM_fundamentals.html">2.2.1. PCMs: Working in an Engineering Team</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M2_Teaming/tasks/PCA_fundamentals_inst.html">2.2.2. PCA: Teaming Fundamentals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_inst.html">2.2.3. TM: Code of Cooperation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M2_Teaming/tasks/PCM_CATMEdimensions.html">2.2.4. PCMs: The 5 CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M2_Teaming/tasks/PCA_CATMEdimensions_inst.html">2.2.5. PCA: CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_revisit_inst.html">2.2.6. TM: Code of Cooperation Revisit</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Excel</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_02_Excel/M1/0_overview.html">3. Spreadsheet Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M1/1_pre-class_overview.html">3.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M1/1.1_materials.html">3.1.1. PCMs: Spreadsheet Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M1/tasks/pre_1/a/instructions.html">3.1.2. PCA: Calculations and Charting in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M1/2_in-class_overview.html">3.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M1/tasks/ICA_1/a/instructions.html">3.2.1. ICA: Tennis Ball Launcher Performance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M1/3_assignment_overview.html">3.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M1/tasks/1/a/instructions.html">3.3.1. EX: Spreadsheet Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_02_Excel/M2/0_overview.html">4. Data Analysis in Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M2/1_pre-class_overview.html">4.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M2/1.1_materials.html">4.1.1. PCMs: Data Analysis and Histograms in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M2/tasks/pre_1/a/instructions.html">4.1.2. PCA: Descriptive Statistics and Logical Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M2/tasks/pre_2/a/instructions.html">4.1.3. PCA: Histograms and Outliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M2/2_in-class_overview.html">4.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M2/tasks/ICA_1/a/instructions.html">4.2.1. ICA: Coffee Cooling Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M2/tasks/ICA_2/a/instructions.html">4.2.2. ICA: COGO Bike Share</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M2/3_assignment_overview.html">4.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M2/tasks/1/a/instructions.html">4.3.1. EX - Data Analysis &amp; Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_02_Excel/M3/0_overview.html">5. Probability and Uncertainty</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M3/1_pre-class_overview.html">5.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M3/1.1_materials.html">5.1.1. PCMs: Probability and Normal Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M3/tasks/pre_1/a/instructions.html">5.1.2. PCA: Probability and Z-Scores in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M3/2_in-class_overview.html">5.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M3/tasks/ICA_1/a/instructions.html">5.2.1. ICA: Semiconductor Quality Control</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M3/3_assignment_overview.html">5.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M3/tasks/1/a/instructions.html">5.3.1. EX: Probability and Normal Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_02_Excel/M4/0_overview.html">6. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M4/1_pre-class_overview.html">6.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M4/1.1_materials.html">6.1.1. PCMs: Linear Regression in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M4/tasks/pre_1/a/instructions.html">6.1.2. PCA: Linear Regression in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M4/2_in-class_overview.html">6.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M4/tasks/ICA_1/a/instructions.html">6.2.1. ICA: Speaker Wire Resistance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_02_Excel/M4/3_assignment_overview.html">6.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_02_Excel/M4/tasks/1/a/instructions.html">6.3.1. EX: Linear Data and Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_03_AI/0_overview.html">7. AI in Engineering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_03_AI/1_pre-class_overview.html">7.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_03_AI/7.1.1_materials.html">7.1.1. PCMs: Computer Operations and Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_03_AI/7.1.2_computer_ops.html">7.1.2. PCA: Computer Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_03_AI/7.1.3_materials.html">7.1.3. PCMs: What is Artificial Intelligence?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_03_AI/7.1.4_AI.html">7.1.4. PCA: What is AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_03_AI/7.1.5_materials.html">7.1.5. PCMs: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_03_AI/7.1.6_decisiontrees.html">7.1.6. PCA: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_03_AI/7.1.7_materials.html">7.1.7. PCMs: Neural Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_03_AI/7.1.8_neuralnetworks.html">7.1.8. PCA: Neural Networks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Part_03_AI/2_in-class_overview.html">7.2. In-Class Activities</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_03_AI/3_assignment_overview.html">7.3. AI Design Challenge: Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_03_AI/tasks/ind_1/a/DT_instructions.html">7.3.1. Software Logic - Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_03_AI/tasks/ind_1/a/NN_instructions.html">7.3.2. Hardware System - Neural Networks</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_04_Python/M1/0_overview.html">8. Python Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M1/1_pre-class_overview.html">8.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M1/1.1_materials.html">8.1.1. PCMs: Python Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M1/tasks/pre_1/b/instructions.html">8.1.2. PCA: Data Types and Calculations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M1/2_in-class_overview.html">8.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M1/tasks/ICA_1/a/instructions.html">8.2.1. ICA: Debugging and Auto Grader Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M1/3_assignment_overview.html">8.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M1/tasks/ind_1/b/instructions.html">8.3.1. PY: Python Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_04_Python/M2/0_overview.html">9. Logic and Modularity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M2/1_pre-class_overview.html">9.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M2/1.1_materials.html">9.1.1. PCMs: Logic and Modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M2/tasks/pre_1/a/instructions.html">9.1.2. PCA: Selection Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M2/tasks/pre_2/a/instructions.html">9.1.3. PCA: User-Defined Functions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M2/2_in-class_overview.html">9.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M2/tasks/ICA_1/a/instructions.html">9.2.1. ICA: Factory Alarm System</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M2/3_assignment_overview.html">9.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M2/tasks/ind_1/b/instructions.html">9.3.1. PY: Logic and Modularity</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_04_Python/M3/0_overview.html">10. Looping Structures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M3/1_pre-class_overview.html">10.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M3/1.1_materials.html">10.1.1. PCMs: Loops in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M3/tasks/pre_1/a/instructions.html">10.1.2. PCA: While Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M3/tasks/pre_2/a/instructions.html">10.1.3. PCA: For Loops</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M3/2_in-class_overview.html">10.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M3/tasks/ICA_1/a/instructions.html">10.2.1. ICA: Dog Park Tennis Ball Launcher</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M3/3_assignment_overview.html">10.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M3/tasks/ind_1/a/instructions.html">10.3.1. PY: Looping Structures</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_04_Python/M4/0_overview.html">11. Data Analysis and Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M4/1_pre-class_overview.html">11.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M4/1.1_materials.html">11.1.1. PCMs: Data Analysis and Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M4/tasks/pre_1/a/instructions.html">11.1.2. PCA: Data Manipulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M4/tasks/pre_2/a/instructions.html">11.1.3. PCA: Plotting and Statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M4/2_in-class_overview.html">11.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M4/tasks/ICA_1/a/instructions.html">11.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M4/3_assignment_overview.html">11.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M4/tasks/ind_1/a/instructions.html">11.3.1. PY: Data Analysis and Visualization</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Part_04_Python/M5/0_overview.html">12. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M5/1_pre-class_overview.html">12.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M5/1.1_materials.html">12.1.1. PCMs: Linear Regression in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M5/tasks/pre_1/b/instructions.html">12.1.2. PCA: Linear Regression Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M5/2_in-class_overview.html">12.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M5/tasks/ICA_1/a/instructions.html">12.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Part_04_Python/M5/3_assignment_overview.html">12.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Part_04_Python/M5/tasks/ind_1/a/instructions.html">12.3.1. PY: Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Purdue-FYE/engr-13100-2026-fall/issues/new?title=Issue%20on%20page%20%2FPart_00_Course_Resources/comp_basics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Computer Basics and File Management</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drives-and-storage-high-level-concepts">Drives and Storage: High-Level Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-file-management-and-submission">Course File Management and Submission</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-navigation-with-the-graphical-user-interface">Folder Navigation with the Graphical User Interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-organization-best-practices">Folder Organization Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#engr-131-submission-standards">ENGR 131 Submission Standards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-applications">Managing Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-applications">Installing Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-exe-or-msi">Windows (<code class="docutils literal notranslate"><span class="pre">.exe</span></code> or <code class="docutils literal notranslate"><span class="pre">.msi</span></code>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-dmg-or-pkg">macOS (<code class="docutils literal notranslate"><span class="pre">.dmg</span></code> or <code class="docutils literal notranslate"><span class="pre">.pkg</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uninstalling-applications-correctly">Uninstalling Applications Correctly</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-command-terminal">The Command Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-command-terminal">Accessing the Command Terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-the-terminal">Pros and Cons of the Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-terminal-syntax-and-commands">Basic Terminal Syntax and Commands</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-vs-code-terminal-effectively">Using the VS Code Terminal Effectively</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="raw-html"><div class="d-none"></span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand\blank{~\underline{\hspace{1.2cm}}~}\\% Bold symbols (vectors)
+\newcommand\bs[1]{\mathbf{#1}}\\% Differential
+\newcommand\dd[2][]{\mathrm{d}^{#1}{#2}}  % use as \dd, \dd{x}, or \dd[2]{x}\\% Poor man's siunitx
+\newcommand\unit[1]{\mathrm{#1}}
+\newcommand\num[1]{#1}
+\newcommand\qty[2]{#1~\unit{#2}}\\\newcommand\per{/}
+\newcommand\squared{{}^2}
+\newcommand\cubed{{}^3}
+%
+% Scale
+\newcommand\milli{\unit{m}}
+\newcommand\centi{\unit{c}}
+\newcommand\kilo{\unit{k}}
+\newcommand\mega{\unit{M}}
+%
+% Percent
+\newcommand\percent{\unit{{\kern-4mu}\%}}
+%
+% Angle
+\newcommand\radian{\unit{rad}}
+\newcommand\degree{\unit{{\kern-4mu}^\circ}}
+%
+% Time
+\newcommand\second{\unit{s}}
+\newcommand\s{\second}
+\newcommand\minute{\unit{min}}
+\newcommand\hour{\unit{h}}
+%
+% Distance
+\newcommand\meter{\unit{m}}
+\newcommand\m{\meter}
+\newcommand\inch{\unit{in}}
+\newcommand\foot{\unit{ft}}
+%
+% Force
+\newcommand\newton{\unit{N}}
+\newcommand\kip{\unit{kip}} % kilopound in &quot;freedom&quot; units - edit made by Sri
+%
+% Mass
+\newcommand\gram{\unit{g}}
+\newcommand\g{\gram}
+\newcommand\kilogram{\unit{kg}}
+\newcommand\kg{\kilogram}
+\newcommand\grain{\unit{grain}}
+\newcommand\ounce{\unit{oz}}
+%
+% Temperature
+\newcommand\kelvin{\unit{K}}
+\newcommand\K{\kelvin}
+\newcommand\celsius{\unit{{}^\circ C}}
+\newcommand\C{\celsius}
+\newcommand\fahrenheit{\unit{{}^\circ F}}
+\newcommand\F{\fahrenheit}
+%
+% Area
+\newcommand\sqft{\unit{sq\,\foot}}  % square foot
+%
+% Volume
+\newcommand\liter{\unit{L}}
+\newcommand\gallon{\unit{gal}}
+%
+% Frequency
+\newcommand\hertz{\unit{Hz}}
+\newcommand\rpm{\unit{rpm}}
+%
+% Voltage
+\newcommand\volt{\unit{V}}
+\newcommand\V{\volt}
+\newcommand\millivolt{\milli\volt}
+\newcommand\mV{\milli\volt}
+\newcommand\kilovolt{\kilo\volt}
+\newcommand\kV{\kilo\volt}
+%
+% Current
+\newcommand\ampere{\unit{A}}
+\newcommand\A{\ampere}
+\newcommand\milliampereA{\milli\ampere}
+\newcommand\mA{\milli\ampere}
+\newcommand\kiloampereA{\kilo\ampere}
+\newcommand\kA{\kilo\ampere}
+%
+% Resistance
+\newcommand\ohm{\Omega}
+\newcommand\milliohm{\milli\ohm}
+\newcommand\kiloohm{\kilo\ohm} % correct SI spelling
+\newcommand\kilohm{\kilo\ohm} % &quot;American&quot; spelling used in siunitx
+\newcommand\megaohm{\mega\ohm} % correct SI spelling
+\newcommand\megohm{\mega\ohm} % &quot;American&quot; spelling used in siunitx
+%
+% Capacitance
+\newcommand\farad{\unit{F}}
+\newcommand\F{\farad}
+\newcommand\microfarad{\micro\farad}
+\newcommand\muF{\micro\farad}
+%
+% Inductance
+\newcommand\henry{\unit{H}}
+\newcommand\H{\henry}
+\newcommand\millihenry{\milli\henry}
+\newcommand\mH{\milli\henry}
+%
+% Power
+\newcommand\watt{\unit{W}}
+\newcommand\W{\watt}
+\newcommand\milliwatt{\milli\watt}
+\newcommand\mW{\milli\watt}
+\newcommand\kilowatt{\kilo\watt}
+\newcommand\kW{\kilo\watt}
+%
+% Energy
+\newcommand\joule{\unit{J}}
+\newcommand\J{\joule}
+%
+% Composite units
+%
+% Torque
+\newcommand\ozin{\unit{\ounce}\,\unit{in}}
+\newcommand\newtonmeter{\unit{\newton\,\meter}}
+%
+% Pressure
+\newcommand\psf{\unit{psf}}  % pounds per square foot
+\newcommand\pcf{\unit{pcf}}  % pounds per cubic foot
+\newcommand\pascal{\unit{Pa}}
+\newcommand\Pa{\pascal}
+\newcommand\ksi{\unit{ksi}} % kilopound per square inch
+\newcommand\bar{\unit{bar}}
+\end{aligned}\end{align} \]</div>
+<p><span class="raw-html"></div></span></p>
+<p>Sep 09, 2026 | 1211 words | 12 min
+read</p>
+<section class="tex2jax_ignore mathjax_ignore" id="computer-basics-and-file-management">
+<h1>Computer Basics and File Management<a class="headerlink" href="#computer-basics-and-file-management" title="Link to this heading">#</a></h1>
+<p>This section introduces some basic computer literacy skills you will use in ENGR 131 and
+beyond. The focus is on how files are stored, how to keep your work organized, and how
+to use the graphical interface and the command terminal to move through your folders
+efficiently.</p>
+<p class="rubric">In this module, you will learn how to:</p>
+<ul class="simple">
+<li><p>Explain the difference between folders, files, drives, and cloud storage</p></li>
+<li><p>Create and maintain an organized folder structure for your coursework</p></li>
+<li><p>Install and uninstall common applications responsibly</p></li>
+<li><p>Open and use a terminal on Windows and macOS</p></li>
+<li><p>Navigate folders in the terminal using core commands</p></li>
+<li><p>Run terminal commands in VS Code by first moving to the correct directory</p></li>
+</ul>
+<section id="drives-and-storage-high-level-concepts">
+<h2>Drives and Storage: High-Level Concepts<a class="headerlink" href="#drives-and-storage-high-level-concepts" title="Link to this heading">#</a></h2>
+<p>A drive is a storage location.  Common examples are your local disk (for example <code class="docutils literal notranslate"><span class="pre">C:</span></code> on
+Windows), an external drive, and cloud storage such as OneDrive.</p>
+<ul class="simple">
+<li><p><strong>Local storage</strong>: fast and available offline on your machine</p></li>
+<li><p><strong>External storage</strong>: portable but easy to disconnect or misplace</p></li>
+<li><p><strong>Cloud storage</strong>: accessible across devices but depends on internet and sync</p></li>
+</ul>
+<figure class="align-default" id="id1">
+<img alt="Windows explorer window showing local drive, external drive, and OneDrive locations." src="../_images/Windows_Storage_Types.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">A screenshot pointing out the different types of storage seen in an explorer window in
+Windows.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="Mac finder window showing local drive, external drive, and OneDrive locations." src="../_images/Mac_Storage_Types.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">A screenshot pointing out the different types of storage seen in a finder window on a
+Mac.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For coursework, keep one primary working folder on local storage and back it up to cloud
+storage regularly. This can be done effectively using the OneDrive account that comes
+with your Purdue Microsoft account.</p>
+<section id="course-file-management-and-submission">
+<h3>Course File Management and Submission<a class="headerlink" href="#course-file-management-and-submission" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="folder-navigation-with-the-graphical-user-interface">
+<h2>Folder Navigation with the Graphical User Interface<a class="headerlink" href="#folder-navigation-with-the-graphical-user-interface" title="Link to this heading">#</a></h2>
+<p>Your computer stores files in folders that are arranged like a tree.  A drive contains
+top-level folders, each folder can contain more folders, and files are saved inside
+these folders.</p>
+<p>When you open your file browser (File Explorer on Windows, Finder on macOS), practice
+these core actions:</p>
+<ul class="simple">
+<li><p>open a folder (click or double-click) and return to the previous folder (use the
+breadcrumb bar or back button)</p></li>
+<li><p>use the path or breadcrumb bar (at the top of the window) to see where you are</p></li>
+<li><p>create a new folder with a clear name</p></li>
+<li><p>move or copy files (click-drag) into the correct folder</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>If you cannot find a file, check the folder path first before searching the entire
+computer.</p>
+</div>
+</section>
+<section id="folder-organization-best-practices">
+<h2>Folder Organization Best Practices<a class="headerlink" href="#folder-organization-best-practices" title="Link to this heading">#</a></h2>
+<p>Use one consistent structure for the full semester so assignments are easy to find.</p>
+<p>A practical example (only some samples of substructure shown):</p>
+<p><strong>Path:</strong> <code class="docutils literal notranslate"><span class="pre">C:\Users\username\ENGR131\</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>C:\
+`-- Users\
+    `-- username\
+        `-- ENGR131\
+            |-- Excel\
+            |   |-- Excel 1\
+            |   |   |-- Pre-class\
+            |   |   |-- In-class\
+            |   |   `-- Assignments\
+            |   `-- Excel 2\
+            |       |-- Pre-class\
+            |       |-- In-class\
+            |       `-- Assignments\
+            |
+            |-- Python\
+            |   `-- Python 1\
+            |       |-- Pre-class\
+            |       |-- In-class\
+            |       `-- Assignments\
+            |
+            |-- projects\
+            `-- references\
+</pre></div>
+</div>
+<p>Inside each module folder (ex: Excel 1), separate the files by what makes sense to you.
+One way to organize the module folder is by the types of assignments. Avoid naming files
+as <code class="docutils literal notranslate"><span class="pre">new</span></code>, <code class="docutils literal notranslate"><span class="pre">final_final</span></code>, or <code class="docutils literal notranslate"><span class="pre">stuff</span></code>; use descriptive names with dates or versions when
+needed.</p>
+</section>
+<section id="engr-131-submission-standards">
+<h2>ENGR 131 Submission Standards<a class="headerlink" href="#engr-131-submission-standards" title="Link to this heading">#</a></h2>
+<p>When completing assignments for ENGR 131, you must follow strict file submission
+standards:</p>
+<ul class="simple">
+<li><p><strong>Save Locally:</strong> You should save your work to a specific folder on your local hard
+drive (such as an “ENGR 131” folder on your Desktop).</p></li>
+<li><p><strong>No Cloud Links:</strong> Do not submit links to online folders or cloud-hosted files (like
+OneDrive or Google Docs).</p></li>
+<li><p><strong>Submit the Exact File:</strong> You must upload the actual file directly to Gradescope.</p></li>
+<li><p><strong>Verify Submission:</strong> Always download and open your submitted file from the
+Gradescope confirmation screen to verify you uploaded the correct document.</p></li>
+</ul>
+</section>
+<section id="managing-applications">
+<h2>Managing Applications<a class="headerlink" href="#managing-applications" title="Link to this heading">#</a></h2>
+<section id="installing-applications">
+<h3>Installing Applications<a class="headerlink" href="#installing-applications" title="Link to this heading">#</a></h3>
+<p>Many apps are installed by opening a downloaded installer and following prompts.</p>
+<section id="windows-exe-or-msi">
+<h4>Windows (<code class="docutils literal notranslate"><span class="pre">.exe</span></code> or <code class="docutils literal notranslate"><span class="pre">.msi</span></code>)<a class="headerlink" href="#windows-exe-or-msi" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Download only from an official source.</p></li>
+<li><p>Double-click the installer file.</p></li>
+<li><p>Follow prompts and keep default options unless you understand the change.</p></li>
+<li><p>Verify the app opens from the Start menu.</p></li>
+</ol>
+</section>
+<section id="macos-dmg-or-pkg">
+<h4>macOS (<code class="docutils literal notranslate"><span class="pre">.dmg</span></code> or <code class="docutils literal notranslate"><span class="pre">.pkg</span></code>)<a class="headerlink" href="#macos-dmg-or-pkg" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Download from an official source.</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">.dmg</span></code> or <code class="docutils literal notranslate"><span class="pre">.pkg</span></code> file.</p></li>
+<li><p>If needed, drag the app into the <code class="docutils literal notranslate"><span class="pre">Applications</span></code> folder.</p></li>
+<li><p>Open the app once to confirm installation.</p></li>
+</ol>
+<div class="warning admonition">
+<p class="admonition-title">Warning!</p>
+<p>Do not install unknown software from unknown links. Verify the publisher and file
+source before running installers. Do not trust files that are available from unknown
+third party content holders. Install software from reputable and known companies or
+open source software that has been reviewed extensively.</p>
+</div>
+</section>
+</section>
+<section id="uninstalling-applications-correctly">
+<h3>Uninstalling Applications Correctly<a class="headerlink" href="#uninstalling-applications-correctly" title="Link to this heading">#</a></h3>
+<p>Removing a desktop shortcut does <strong>not</strong> uninstall an application.</p>
+<ul class="simple">
+<li><p><strong>Windows</strong>: use <span class="menuselection">Settings ‣ Apps ‣ Installed apps</span> (or
+<span class="menuselection">Control Panel ‣ Programs</span>) and choose <span class="guilabel">Uninstall</span>.</p></li>
+<li><p><strong>macOS</strong>: remove the app from <span class="guilabel">Applications</span> (or use the vendor’s uninstall
+tool if provided), then empty <span class="guilabel">Trash</span>.</p></li>
+</ul>
+<p>This helps reclaim storage and prevents old software from interfering with course tools.</p>
+</section>
+</section>
+<section id="the-command-terminal">
+<h2>The Command Terminal<a class="headerlink" href="#the-command-terminal" title="Link to this heading">#</a></h2>
+<p>The command terminal is a command line interface (CLI), a text-based way to interact
+directly with the operating system.  You type commands into the terminal, and a
+program called a shell interprets and runs them.</p>
+<section id="accessing-the-command-terminal">
+<h3>Accessing the Command Terminal<a class="headerlink" href="#accessing-the-command-terminal" title="Link to this heading">#</a></h3>
+<p>To access the command terminal on Windows or macOS, you can find the application
+visually (as illustrated in the figures below) or use the keyboard shortcut for your
+operating system’s search feature (<kbd class="kbd docutils literal notranslate">Windows</kbd> on Windows or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Command</kbd>+<kbd class="kbd docutils literal notranslate">Space</kbd></kbd>
+on macOS) and type <code class="docutils literal notranslate"><span class="pre">terminal</span></code>.</p>
+<ul>
+<li><p><strong>Windows</strong>: <strong class="program">Command Prompt</strong>, <strong class="program">PowerShell</strong>, or
+<strong class="program">Windows Terminal</strong></p>
+<figure class="align-default" id="id3">
+<img alt="Start Menu with 'terminal' searched, pointing to Command Prompt on Windows." src="../_images/Windows_Application_Terminal.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">A screenshot showing the key components of accessing a terminal window on a Windows
+machine.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>macOS</strong>: Terminal app</p>
+<figure class="align-default" id="id4">
+<img alt="Applications View on macOS with arrow pointing to the &quot;Other&quot; section." src="../_images/Mac_Applications_Other.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">A screenshot showing the Applications view (<span class="guilabel">Launchpad</span>) on a macOS machine.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="Mac Applications view showing the Terminal app in the &quot;Other&quot; group." src="../_images/Mac_Applications_Terminal.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">A screenshot showing the ‘Other’ subfolder within <span class="guilabel">Launchpad</span> to access the
+<strong class="program">Terminal</strong> app on a macOS machine.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>VS Code</strong>: <span class="menuselection">Terminal ‣ New Terminal</span></p></li>
+</ul>
+</section>
+<section id="pros-and-cons-of-the-terminal">
+<h3>Pros and Cons of the Terminal<a class="headerlink" href="#pros-and-cons-of-the-terminal" title="Link to this heading">#</a></h3>
+<section id="advantages">
+<h4>Advantages<a class="headerlink" href="#advantages" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Fast for repetitive tasks</p></li>
+<li><p>Precise control over files and commands</p></li>
+<li><p>Required by many coding and data tools</p></li>
+</ul>
+</section>
+<section id="challenges">
+<h4>Challenges<a class="headerlink" href="#challenges" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Commands must be typed accurately</p></li>
+<li><p>Mistakes can affect files quickly</p></li>
+<li><p>The interface is less visual for beginners</p></li>
+</ul>
+<p>Use the terminal carefully and confirm your current folder before running commands that
+create, move, or delete files.</p>
+</section>
+</section>
+<section id="basic-terminal-syntax-and-commands">
+<h3>Basic Terminal Syntax and Commands<a class="headerlink" href="#basic-terminal-syntax-and-commands" title="Link to this heading">#</a></h3>
+<p>Terminal commands generally follow this pattern:</p>
+<p><code class="docutils literal notranslate"><span class="pre">program</span> <span class="pre">[options]</span> <span class="pre">[target]</span></code></p>
+<p>where <code class="docutils literal notranslate"><span class="pre">program</span></code> is the name of an executable program you want to run (for example <code class="docutils literal notranslate"><span class="pre">ls</span></code>),
+<code class="docutils literal notranslate"><span class="pre">options</span></code> are modifiers that affect how the program runs, and <code class="docutils literal notranslate"><span class="pre">target</span></code> is the file or
+folder the program acts on.  The square brackets in documentation, like <code class="docutils literal notranslate"><span class="pre">[target]</span></code>,
+indicate that part of the command is optional.  Many programs accept one or more options
+(also called flags), which often consist of a dash followed by a letter, such as <code class="docutils literal notranslate"><span class="pre">-l</span></code> in
+<code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Example</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span> <span class="pre">Documents</span></code> lists the files in the <code class="docutils literal notranslate"><span class="pre">Documents</span></code> folder in long
+format.  Here, <code class="docutils literal notranslate"><span class="pre">ls</span></code> is the program, <code class="docutils literal notranslate"><span class="pre">-l</span></code> is an option that changes how results are
+shown, and <code class="docutils literal notranslate"><span class="pre">Documents</span></code> is the target.</p>
+</div>
+<p>Useful navigation commands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> to display the ‘Present Working Directory’ / current location in Terminal
+(macOS/Linux) and PowerShell</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> (with no arguments) to display the full current path in Windows Command Prompt</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code> (macOS/Linux) or <code class="docutils literal notranslate"><span class="pre">dir</span></code> (Windows) to list files and folders</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">folder_name</span></code> to ‘Change Directory’ / move into a folder</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> to move up one folder</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">new_folder</span></code> to create a folder (MaKe DIRectory)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">[source]</span> <span class="pre">[destination]</span></code> MoVes or renames a file or folder</p></li>
+</ul>
+<div class="warning admonition">
+<p class="admonition-title">Warning!</p>
+<p>Commands using the terminal can be powerful and can cause permanent unintentional
+changes without warning.  Make sure you know what a command does and what the modifiers
+actually do before executing any command in the terminal.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>Commands can differ slightly by operating system. Read error messages closely; they
+usually tell you what path or command is incorrect.</p>
+</div>
+</section>
+</section>
+<section id="using-the-vs-code-terminal-effectively">
+<h2>Using the VS Code Terminal Effectively<a class="headerlink" href="#using-the-vs-code-terminal-effectively" title="Link to this heading">#</a></h2>
+<p>When you run commands in <strong class="program">VS Code</strong> (for example, running <strong class="program">Python</strong>),
+the terminal uses its current folder as the starting point.</p>
+<p>If your script is in a different folder, either:</p>
+<ol class="arabic simple">
+<li><p>find out where you are in the directory structure using the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command,</p></li>
+<li><p>navigate with <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the folder containing the script, or</p></li>
+<li><p>provide the full path in the command.</p></li>
+</ol>
+<p>Example workflow:</p>
+<ol class="arabic simple">
+<li><p>Open the terminal in <strong class="program">VS Code</strong>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> in <strong class="program">Terminal</strong> (macOS/Linux) or <strong class="program">PowerShell</strong>, or run <code class="docutils literal notranslate"><span class="pre">cd</span></code>
+with no arguments in <strong class="program">Windows Command Prompt</strong>, to confirm your location.</p></li>
+<li><p>Move to your script folder with <code class="docutils literal notranslate"><span class="pre">cd</span></code>.</p></li>
+<li><p>Run your command, such as <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">my_script.py</span></code>.</p></li>
+</ol>
+<p>If you skip navigation, commands may fail with <code class="docutils literal notranslate"><span class="pre">&quot;file</span> <span class="pre">not</span> <span class="pre">found&quot;</span></code> even when your code is
+correct.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Part_00_Course_Resources"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="course_schedule.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Course Schedule</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="course_software/course_software.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Course Software</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drives-and-storage-high-level-concepts">Drives and Storage: High-Level Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-file-management-and-submission">Course File Management and Submission</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-navigation-with-the-graphical-user-interface">Folder Navigation with the Graphical User Interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-organization-best-practices">Folder Organization Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#engr-131-submission-standards">ENGR 131 Submission Standards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-applications">Managing Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-applications">Installing Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-exe-or-msi">Windows (<code class="docutils literal notranslate"><span class="pre">.exe</span></code> or <code class="docutils literal notranslate"><span class="pre">.msi</span></code>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-dmg-or-pkg">macOS (<code class="docutils literal notranslate"><span class="pre">.dmg</span></code> or <code class="docutils literal notranslate"><span class="pre">.pkg</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uninstalling-applications-correctly">Uninstalling Applications Correctly</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-command-terminal">The Command Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-command-terminal">Accessing the Command Terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-the-terminal">Pros and Cons of the Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-terminal-syntax-and-commands">Basic Terminal Syntax and Commands</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-vs-code-terminal-effectively">Using the VS Code Terminal Effectively</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="/engr-13100-2026-fall/Appendices/contributors.html">Contributors</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1783 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.1.1. PCMs: Spreadsheet Foundations &#8212; Purdue University ENGR 13100</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=07d23ebc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=a8e58a58"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Part_02_Excel/M1/1.1_materials';</script>
+    <link rel="icon" href="../../_static/avatar.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.1.2. PCA: Calculations and Charting in Excel" href="tasks/pre_1/a/instructions.html" />
+    <link rel="prev" title="3.1. Pre-Class Assignments" href="1_pre-class_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Purdue University ENGR 13100 - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Purdue University ENGR 13100 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ENGR 13100<br> Transforming Ideas to Innovation I
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome to ENGR 131</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/meet_the_team.html">Meet Your Instructional Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/help_sessions.html">Help Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/course_schedule.html">Course Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/comp_basics.html">Computer Basics and File Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/course_software/course_software.html">Course Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glue_factory.html">Glue Factory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Professional Engineering Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/0_overview.html">1. Professional Preparation and Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.1_instructions.html">1.1. Course Policies Exploration</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2_ce.html">1.2. Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE.html">1.2.1. CE: Agricultural Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.2_CEM.html">1.2.2. CE: Construction Engineering and Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.3_BioE.html">1.2.3. CE: Biological Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.4_NE.html">1.2.4. CE: Nuclear Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.5_SEE.html">1.2.5. CE: Sustainability and Environmental Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.6_MSE.html">1.2.6. CE: Materials Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.7_CE.html">1.2.7. CE: Civil Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.8_CHE.html">1.2.8. CE: Chemical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.9_ME.html">1.2.9. CE: Mechanical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.10_AAE.html">1.2.10. CE: Aeronautical and Astronautical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.11_IE.html">1.2.11. CE: Industrial Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.12_BME.html">1.2.12. CE: Biomedical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.13_MDE.html">1.2.13. CE: Multidisciplinary Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.14_ECE.html">1.2.14. CE: Electrical and Computer Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.15_ENRE.html">1.2.15. CE: Environmental and Natural Resources Engineering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.3_eym.html">1.3. Engineering Your Major</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/0_overview.html">2. Teaming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/2_CATME_inst.html">2.1. CATME Teaming</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/1_TM_assignments.html">2.2. Teaming Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_fundamentals.html">2.2.1. PCMs: Working in an Engineering Team</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_fundamentals_inst.html">2.2.2. PCA: Teaming Fundamentals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_inst.html">2.2.3. TM: Code of Cooperation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_CATMEdimensions.html">2.2.4. PCMs: The 5 CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_CATMEdimensions_inst.html">2.2.5. PCA: CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_revisit_inst.html">2.2.6. TM: Code of Cooperation Revisit</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Excel</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_overview.html">3. Spreadsheet Foundations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="1_pre-class_overview.html">3.1. Pre-Class Assignments</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">3.1.1. PCMs: Spreadsheet Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks/pre_1/a/instructions.html">3.1.2. PCA: Calculations and Charting in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="2_in-class_overview.html">3.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tasks/ICA_1/a/instructions.html">3.2.1. ICA: Tennis Ball Launcher Performance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="3_assignment_overview.html">3.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tasks/1/a/instructions.html">3.3.1. EX: Spreadsheet Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M2/0_overview.html">4. Data Analysis in Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M2/1_pre-class_overview.html">4.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M2/1.1_materials.html">4.1.1. PCMs: Data Analysis and Histograms in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M2/tasks/pre_1/a/instructions.html">4.1.2. PCA: Descriptive Statistics and Logical Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M2/tasks/pre_2/a/instructions.html">4.1.3. PCA: Histograms and Outliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M2/2_in-class_overview.html">4.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M2/tasks/ICA_1/a/instructions.html">4.2.1. ICA: Coffee Cooling Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M2/tasks/ICA_2/a/instructions.html">4.2.2. ICA: COGO Bike Share</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M2/3_assignment_overview.html">4.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M2/tasks/1/a/instructions.html">4.3.1. EX - Data Analysis &amp; Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M3/0_overview.html">5. Probability and Uncertainty</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M3/1_pre-class_overview.html">5.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M3/1.1_materials.html">5.1.1. PCMs: Probability and Normal Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M3/tasks/pre_1/a/instructions.html">5.1.2. PCA: Probability and Z-Scores in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M3/2_in-class_overview.html">5.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M3/tasks/ICA_1/a/instructions.html">5.2.1. ICA: Semiconductor Quality Control</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M3/3_assignment_overview.html">5.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M3/tasks/1/a/instructions.html">5.3.1. EX: Probability and Normal Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M4/0_overview.html">6. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/1_pre-class_overview.html">6.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/1.1_materials.html">6.1.1. PCMs: Linear Regression in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/pre_1/a/instructions.html">6.1.2. PCA: Linear Regression in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/2_in-class_overview.html">6.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/ICA_1/a/instructions.html">6.2.1. ICA: Speaker Wire Resistance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/3_assignment_overview.html">6.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/1/a/instructions.html">6.3.1. EX: Linear Data and Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_03_AI/0_overview.html">7. AI in Engineering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_03_AI/1_pre-class_overview.html">7.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.1_materials.html">7.1.1. PCMs: Computer Operations and Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.2_computer_ops.html">7.1.2. PCA: Computer Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.3_materials.html">7.1.3. PCMs: What is Artificial Intelligence?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.4_AI.html">7.1.4. PCA: What is AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.5_materials.html">7.1.5. PCMs: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.6_decisiontrees.html">7.1.6. PCA: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.7_materials.html">7.1.7. PCMs: Neural Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.8_neuralnetworks.html">7.1.8. PCA: Neural Networks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_03_AI/2_in-class_overview.html">7.2. In-Class Activities</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_03_AI/3_assignment_overview.html">7.3. AI Design Challenge: Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/tasks/ind_1/a/DT_instructions.html">7.3.1. Software Logic - Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/tasks/ind_1/a/NN_instructions.html">7.3.2. Hardware System - Neural Networks</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M1/0_overview.html">8. Python Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M1/1_pre-class_overview.html">8.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/1.1_materials.html">8.1.1. PCMs: Python Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/tasks/pre_1/b/instructions.html">8.1.2. PCA: Data Types and Calculations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M1/2_in-class_overview.html">8.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/tasks/ICA_1/a/instructions.html">8.2.1. ICA: Debugging and Auto Grader Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M1/3_assignment_overview.html">8.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/tasks/ind_1/b/instructions.html">8.3.1. PY: Python Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M2/0_overview.html">9. Logic and Modularity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M2/1_pre-class_overview.html">9.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/1.1_materials.html">9.1.1. PCMs: Logic and Modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/pre_1/a/instructions.html">9.1.2. PCA: Selection Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/pre_2/a/instructions.html">9.1.3. PCA: User-Defined Functions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M2/2_in-class_overview.html">9.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/ICA_1/a/instructions.html">9.2.1. ICA: Factory Alarm System</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M2/3_assignment_overview.html">9.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/ind_1/b/instructions.html">9.3.1. PY: Logic and Modularity</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M3/0_overview.html">10. Looping Structures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M3/1_pre-class_overview.html">10.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/1.1_materials.html">10.1.1. PCMs: Loops in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/pre_1/a/instructions.html">10.1.2. PCA: While Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/pre_2/a/instructions.html">10.1.3. PCA: For Loops</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M3/2_in-class_overview.html">10.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/ICA_1/a/instructions.html">10.2.1. ICA: Dog Park Tennis Ball Launcher</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M3/3_assignment_overview.html">10.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/ind_1/a/instructions.html">10.3.1. PY: Looping Structures</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M4/0_overview.html">11. Data Analysis and Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M4/1_pre-class_overview.html">11.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/1.1_materials.html">11.1.1. PCMs: Data Analysis and Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/pre_1/a/instructions.html">11.1.2. PCA: Data Manipulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/pre_2/a/instructions.html">11.1.3. PCA: Plotting and Statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M4/2_in-class_overview.html">11.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/ICA_1/a/instructions.html">11.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M4/3_assignment_overview.html">11.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/ind_1/a/instructions.html">11.3.1. PY: Data Analysis and Visualization</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M5/0_overview.html">12. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M5/1_pre-class_overview.html">12.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/1.1_materials.html">12.1.1. PCMs: Linear Regression in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/tasks/pre_1/b/instructions.html">12.1.2. PCA: Linear Regression Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M5/2_in-class_overview.html">12.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/tasks/ICA_1/a/instructions.html">12.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M5/3_assignment_overview.html">12.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/tasks/ind_1/a/instructions.html">12.3.1. PY: Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Purdue-FYE/engr-13100-2026-fall/issues/new?title=Issue%20on%20page%20%2FPart_02_Excel/M1/1.1_materials.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PCMs: Spreadsheet Foundations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-excel">Getting Started with Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-excel">Introduction to Excel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-data-for-engineering-work">Organizing Data for Engineering Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-and-formatting-your-data">Cleaning and Formatting Your Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-formulas-in-excel">Writing Formulas in Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-in-excel">Operators in Excel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-operations">Order of Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-in-excel">Calculations in Excel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-references">Cell References</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-reference">Relative Reference</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-references">Absolute References</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-references">Mixed References</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions-in-excel">Built-in Functions in Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#common-functions-to-know">Common Functions to Know</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-built-in-functions">Additional Built-In Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-figures-and-rounding-in-excel">Significant Figures and Rounding in Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-significant-figures">Identifying Significant Figures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-figures-in-calculations">Significant Figures in Calculations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-calculations">Rules for Calculations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rounding-values-in-excel">Rounding Values in Excel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-convention-for-this-course">Statistics Convention for This Course</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization">Data Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-visualize-data">Why Do We Visualize Data?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-data">Types of Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data">Categorical Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data">Numerical Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-numbers-do-not-always-mean-numerical-data">Be Careful: Numbers Do Not Always Mean Numerical Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-data-type-matters">Why Data Type Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asking-the-right-question">Asking the Right Question</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#your-data-is-only-as-good-as-the-questions-you-ask">Your Data is Only as Good as the Questions You Ask</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-questions-in-data-analysis">Types of Questions in Data Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-insert-a-chart-in-excel">How to Insert a Chart in Excel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-charts-in-excel">Formatting Charts in Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-chart-formatting-guidelines">Basic Chart Formatting Guidelines</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-titles">Chart Titles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels">Axis Labels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-the-axis">Scaling the Axis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ordering-data-in-bar-charts">Ordering Data in Bar Charts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-markers-and-lines">Modifying Markers and Lines</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#making-charts-accessible">Making Charts Accessible</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-chart-junk">Avoiding Chart Junk</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-across-charts">Consistency Across Charts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="raw-html"><div class="d-none"></span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand\blank{~\underline{\hspace{1.2cm}}~}\\% Bold symbols (vectors)
+\newcommand\bs[1]{\mathbf{#1}}\\% Differential
+\newcommand\dd[2][]{\mathrm{d}^{#1}{#2}}  % use as \dd, \dd{x}, or \dd[2]{x}\\% Poor man's siunitx
+\newcommand\unit[1]{\mathrm{#1}}
+\newcommand\num[1]{#1}
+\newcommand\qty[2]{#1~\unit{#2}}\\\newcommand\per{/}
+\newcommand\squared{{}^2}
+\newcommand\cubed{{}^3}
+%
+% Scale
+\newcommand\milli{\unit{m}}
+\newcommand\centi{\unit{c}}
+\newcommand\kilo{\unit{k}}
+\newcommand\mega{\unit{M}}
+%
+% Percent
+\newcommand\percent{\unit{{\kern-4mu}\%}}
+%
+% Angle
+\newcommand\radian{\unit{rad}}
+\newcommand\degree{\unit{{\kern-4mu}^\circ}}
+%
+% Time
+\newcommand\second{\unit{s}}
+\newcommand\s{\second}
+\newcommand\minute{\unit{min}}
+\newcommand\hour{\unit{h}}
+%
+% Distance
+\newcommand\meter{\unit{m}}
+\newcommand\m{\meter}
+\newcommand\inch{\unit{in}}
+\newcommand\foot{\unit{ft}}
+%
+% Force
+\newcommand\newton{\unit{N}}
+\newcommand\kip{\unit{kip}} % kilopound in &quot;freedom&quot; units - edit made by Sri
+%
+% Mass
+\newcommand\gram{\unit{g}}
+\newcommand\g{\gram}
+\newcommand\kilogram{\unit{kg}}
+\newcommand\kg{\kilogram}
+\newcommand\grain{\unit{grain}}
+\newcommand\ounce{\unit{oz}}
+%
+% Temperature
+\newcommand\kelvin{\unit{K}}
+\newcommand\K{\kelvin}
+\newcommand\celsius{\unit{{}^\circ C}}
+\newcommand\C{\celsius}
+\newcommand\fahrenheit{\unit{{}^\circ F}}
+\newcommand\F{\fahrenheit}
+%
+% Area
+\newcommand\sqft{\unit{sq\,\foot}}  % square foot
+%
+% Volume
+\newcommand\liter{\unit{L}}
+\newcommand\gallon{\unit{gal}}
+%
+% Frequency
+\newcommand\hertz{\unit{Hz}}
+\newcommand\rpm{\unit{rpm}}
+%
+% Voltage
+\newcommand\volt{\unit{V}}
+\newcommand\V{\volt}
+\newcommand\millivolt{\milli\volt}
+\newcommand\mV{\milli\volt}
+\newcommand\kilovolt{\kilo\volt}
+\newcommand\kV{\kilo\volt}
+%
+% Current
+\newcommand\ampere{\unit{A}}
+\newcommand\A{\ampere}
+\newcommand\milliampereA{\milli\ampere}
+\newcommand\mA{\milli\ampere}
+\newcommand\kiloampereA{\kilo\ampere}
+\newcommand\kA{\kilo\ampere}
+%
+% Resistance
+\newcommand\ohm{\Omega}
+\newcommand\milliohm{\milli\ohm}
+\newcommand\kiloohm{\kilo\ohm} % correct SI spelling
+\newcommand\kilohm{\kilo\ohm} % &quot;American&quot; spelling used in siunitx
+\newcommand\megaohm{\mega\ohm} % correct SI spelling
+\newcommand\megohm{\mega\ohm} % &quot;American&quot; spelling used in siunitx
+%
+% Capacitance
+\newcommand\farad{\unit{F}}
+\newcommand\F{\farad}
+\newcommand\microfarad{\micro\farad}
+\newcommand\muF{\micro\farad}
+%
+% Inductance
+\newcommand\henry{\unit{H}}
+\newcommand\H{\henry}
+\newcommand\millihenry{\milli\henry}
+\newcommand\mH{\milli\henry}
+%
+% Power
+\newcommand\watt{\unit{W}}
+\newcommand\W{\watt}
+\newcommand\milliwatt{\milli\watt}
+\newcommand\mW{\milli\watt}
+\newcommand\kilowatt{\kilo\watt}
+\newcommand\kW{\kilo\watt}
+%
+% Energy
+\newcommand\joule{\unit{J}}
+\newcommand\J{\joule}
+%
+% Composite units
+%
+% Torque
+\newcommand\ozin{\unit{\ounce}\,\unit{in}}
+\newcommand\newtonmeter{\unit{\newton\,\meter}}
+%
+% Pressure
+\newcommand\psf{\unit{psf}}  % pounds per square foot
+\newcommand\pcf{\unit{pcf}}  % pounds per cubic foot
+\newcommand\pascal{\unit{Pa}}
+\newcommand\Pa{\pascal}
+\newcommand\ksi{\unit{ksi}} % kilopound per square inch
+\newcommand\bar{\unit{bar}}
+\end{aligned}\end{align} \]</div>
+<p><span class="raw-html"></div></span></p>
+<p>Sep 09, 2026 | 3124 words | 31 min
+read</p>
+<section class="tex2jax_ignore mathjax_ignore" id="pcms-spreadsheet-foundations">
+<span id="ex-m1-pre-class-mats"></span><h1><span class="section-number">3.1.1. </span>PCMs: Spreadsheet Foundations<a class="headerlink" href="#pcms-spreadsheet-foundations" title="Link to this heading">#</a></h1>
+<p>These pre-class materials introduce the foundational Excel skills you will use
+throughout ENGR 131. These skills allow you to organize data, perform basic engineering
+calculations, and communicate results clearly using charts.</p>
+<p>If you are already comfortable with Excel, you may move quickly through the videos. If
+not, plan to pause, practice, and ask questions in class.</p>
+<section id="getting-started-with-excel">
+<h2>Getting Started with Excel<a class="headerlink" href="#getting-started-with-excel" title="Link to this heading">#</a></h2>
+<p>Excel is a spreadsheet tool used to:</p>
+<ul class="simple">
+<li><p>Organize structured data</p></li>
+<li><p>Perform calculations using formulas</p></li>
+<li><p>Analyze trends</p></li>
+<li><p>Create charts to communicate results</p></li>
+</ul>
+<section id="introduction-to-excel">
+<h3>Introduction to Excel<a class="headerlink" href="#introduction-to-excel" title="Link to this heading">#</a></h3>
+<p>In this video, you will review how to:</p>
+<ul class="simple">
+<li><p>Open and create a new workbook</p></li>
+<li><p>Save your workbook appropriately</p></li>
+<li><p>Navigate worksheets and basic spreadsheet layout.</p></li>
+</ul>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_vup7l0zu&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_8jcrx3ah%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Introduction to Excel"></iframe>
+<div class="note admonition">
+<p class="admonition-title">Additional Resource</p>
+<p><a class="reference download internal" download="" href="../../_downloads/6173c567e9df34af70446b4eca95f95b/Excel%20Workspace%20Shortcuts_PC_MC.docx"><code class="xref download docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">Workspace</span> <span class="pre">Shortcuts</span></code></a></p>
+<p>If you would like a broader overview of Excel features, review the
+<a class="reference external" href="https://support.microsoft.com/en-us/office/what-is-excel-94b00f50-5896-479c-b0c5-ff74603b35a3">Microsoft Support article: What is Excel?</a></p>
+</div>
+</section>
+</section>
+<section id="organizing-data-for-engineering-work">
+<h2>Organizing Data for Engineering Work<a class="headerlink" href="#organizing-data-for-engineering-work" title="Link to this heading">#</a></h2>
+<p>In ENGR 131, spreadsheets must:</p>
+<ul class="simple">
+<li><p>Use clear, descriptive headers</p></li>
+<li><p>Include units</p></li>
+<li><p>Keep one variable per column</p></li>
+<li><p>Avoid merged cells in data tables</p></li>
+<li><p>Be readable by another engineer</p></li>
+</ul>
+<section id="cleaning-and-formatting-your-data">
+<h3>Cleaning and Formatting Your Data<a class="headerlink" href="#cleaning-and-formatting-your-data" title="Link to this heading">#</a></h3>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_l87b3jyi&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_yqg1ln62%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Formatting Your Data for Technical Presentations in Excel"></iframe>
+<div class="tip admonition">
+<p class="admonition-title">Practice</p>
+<p>Download and open the following files to follow along with the video:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/954206baa6dbfc6dfbf29e7bde7d5912/Specimen1_1_Steel.xls"><code class="xref download docutils literal notranslate"><span class="pre">Specimen1_1_Steel.xls</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/ac2e79c0244197795691245413cb3113/Specimen1_2_Steel.xls"><code class="xref download docutils literal notranslate"><span class="pre">Specimen1_2_Steel.xls</span></code></a></p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="writing-formulas-in-excel">
+<h2>Writing Formulas in Excel<a class="headerlink" href="#writing-formulas-in-excel" title="Link to this heading">#</a></h2>
+<p>In Excel, an equation that performs mathematical calculations on worksheet values is
+called a formula.</p>
+<p>All formulas in Excel begin with an equals sign <code class="docutils literal notranslate"><span class="pre">=</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">=A2*B2</span></code> would
+multiply the values in cells A2 and B2.</p>
+<section id="operators-in-excel">
+<h3>Operators in Excel<a class="headerlink" href="#operators-in-excel" title="Link to this heading">#</a></h3>
+<p>Excel uses mathematical operators inside formulas.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Operator</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Addition</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=A1+B1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Subtraction</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=A1-B1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Multiplication</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=A1*B1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Division</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=A1/B1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Exponent (Power)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">^</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=A1^B1</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="order-of-operations">
+<h3>Order of Operations<a class="headerlink" href="#order-of-operations" title="Link to this heading">#</a></h3>
+<p>Excel follows standard order of operations:</p>
+<ol class="arabic simple">
+<li><p>Parentheses</p></li>
+<li><p>Exponents</p></li>
+<li><p>Multiplication and Division (Left to Right)</p></li>
+<li><p>Addition and Subtraction (Left to Right)</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>Which Excel formula correctly multiplies the values in cells A2 and B2?</p>
+<p>A. <code class="docutils literal notranslate"><span class="pre">A2*B2</span></code><br>
+B. <code class="docutils literal notranslate"><span class="pre">=A2*B2</span></code><br>
+C. <code class="docutils literal notranslate"><span class="pre">=A2+B2</span></code><br>
+D. <code class="docutils literal notranslate"><span class="pre">A2=B2</span></code><br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: B</strong></p>
+<p class="sd-card-text">All Excel formulas must begin with an equals sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>).</p>
+</div>
+</details></div>
+</section>
+<section id="calculations-in-excel">
+<h3>Calculations in Excel<a class="headerlink" href="#calculations-in-excel" title="Link to this heading">#</a></h3>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_g6rmua2u&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_8baown3m%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Calculations in Excel"></iframe>
+<div class="tip admonition">
+<p class="admonition-title">Practice</p>
+<p>Download and open the following file to follow along with the video:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/3d5758e91e6c749f31404fd1c4efcf65/Calculations_Specimen_Steel%2004.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">Calculations_Specimen_Steel</span> <span class="pre">04.xlsx</span></code></a></p></li>
+</ul>
+</div>
+</section>
+<section id="cell-references">
+<h3>Cell References<a class="headerlink" href="#cell-references" title="Link to this heading">#</a></h3>
+<p>When writing formulas, Excel refers to other cells using <strong>cell addresses</strong>. Examples:
+<code class="docutils literal notranslate"><span class="pre">A1</span></code>, <code class="docutils literal notranslate"><span class="pre">B4</span></code>, or <code class="docutils literal notranslate"><span class="pre">D12</span></code></p>
+<section id="relative-reference">
+<h4>Relative Reference<a class="headerlink" href="#relative-reference" title="Link to this heading">#</a></h4>
+<p>A <strong>relative reference</strong> changes when you copy a formula to another cell.</p>
+<p>Example:
+If <code class="docutils literal notranslate"><span class="pre">=A2+B2</span></code> is copied down one row, it becomes <code class="docutils literal notranslate"><span class="pre">=A3+B3</span></code>.</p>
+</section>
+<section id="absolute-references">
+<h4>Absolute References<a class="headerlink" href="#absolute-references" title="Link to this heading">#</a></h4>
+<p>An <strong>absolute reference</strong> stays fixed when copied. To create an absolute reference, use
+the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol in front of the column letter and row number.</p>
+<p>Example:
+If <code class="docutils literal notranslate"><span class="pre">=$A$2+B2</span></code> is copied down one row, it becomes <code class="docutils literal notranslate"><span class="pre">=$A$2+B3</span></code>.</p>
+<p>Absolute references are used when you need to lock a constant value, such as a tax rate
+or conversion factor.</p>
+</section>
+<section id="mixed-references">
+<h4>Mixed References<a class="headerlink" href="#mixed-references" title="Link to this heading">#</a></h4>
+<p>A <strong>mixed reference</strong> locks either the row or the column of a cell reference, but not
+both. Mixed references use the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol in front of either the column letter or the
+row number.</p>
+<p>Example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$A1</span></code> - column A is locked, but the row will change when copied</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A$1</span></code> - row 1 is locked, but the column will change when copied</p></li>
+</ul>
+<p>Mixed references are useful when copying a formula across rows and columns, where one
+dimension (row or column) must remain constant while the other adjusts automatically.</p>
+<div class="note admonition">
+<p class="admonition-title">Shortcut</p>
+<p>Press F4 (Windows) or Fn + F4 (Mac) while editing a cell reference to toggle between
+relative, mixed, and absolute references.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>A formula contains the reference <code class="docutils literal notranslate"><span class="pre">=$A$2</span></code>. What happens if the formula is copied to
+another cell?</p>
+<p>A. The reference changes automatically<br>
+B. Only the column changes<br>
+C. Only the row changes<br>
+D. The reference stays fixed<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: D</strong></p>
+<p class="sd-card-text">An <strong>absolute reference</strong> uses <code class="docutils literal notranslate"><span class="pre">$</span></code> to lock both the column and row so the reference does
+not change when the formula is copied.</p>
+</div>
+</details></div>
+<div class="note admonition">
+<p class="admonition-title">Additional Resource</p>
+<p>To review additional documentation on cell references, review
+<a class="reference external" href="https://support.microsoft.com/en-us/office/switch-between-relative-absolute-and-mixed-references-dfec08cd-ae65-4f56-839e-5f0d8d0baca9">Switch between Relative, Absolute, and Mixed References</a></p>
+</div>
+</section>
+</section>
+<section id="built-in-functions-in-excel">
+<h3>Built-in Functions in Excel<a class="headerlink" href="#built-in-functions-in-excel" title="Link to this heading">#</a></h3>
+<p>A <strong>function</strong> is a pre-determined formula built into Excel that performs a common
+calculation.</p>
+<p>Functions help you perform calculations efficiently and accurately without rewriting
+complex formulas.</p>
+<p>All functions:</p>
+<ul class="simple">
+<li><p>Begin with <code class="docutils literal notranslate"><span class="pre">=</span></code></p></li>
+<li><p>Include parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
+<li><p>Take inputs called arguments</p></li>
+</ul>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">=SUM(A1:A5)</span></code> calculates the total of the values in cells A1 through A5.</p>
+<section id="common-functions-to-know">
+<h4>Common Functions to Know<a class="headerlink" href="#common-functions-to-know" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">=SUM()</span></code> : calculates the total value of a range</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=COUNT()</span></code> : returns the number of cells in a range that contain numeric data only</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=MIN()</span></code> : finds the smallest value in a range</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=MAX()</span></code> : finds the largest value in a range</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=AVERAGE()</span></code> : calculates the mean of a range of values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=MEDIAN()</span></code> : finds the middle value in a group of numbers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=MODE.SNGL()</span></code> : returns a single most frequent value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=MODE.MULT()</span></code> : returns multiple values if there is more than one mode</p></li>
+</ul>
+<p>In ENGR 131, you are expected to select appropriate built-in functions rather than
+manually calculating statistics.</p>
+</section>
+<section id="additional-built-in-functions">
+<h4>Additional Built-In Functions<a class="headerlink" href="#additional-built-in-functions" title="Link to this heading">#</a></h4>
+<p>Excel includes many additional built-in functions beyond basic statistics. These allow
+you to perform more advanced engineering calculations efficiently.</p>
+<p>In the accompanying video, you will see examples of:</p>
+<ul class="simple">
+<li><p>Unit conversions using <code class="docutils literal notranslate"><span class="pre">=CONVERT()</span></code></p></li>
+<li><p>Trigonometric functions such as <code class="docutils literal notranslate"><span class="pre">=SIN()</span></code>, <code class="docutils literal notranslate"><span class="pre">=COS()</span></code>, and <code class="docutils literal notranslate"><span class="pre">=TAN()</span></code></p></li>
+<li><p>Converting between degrees and radians using <code class="docutils literal notranslate"><span class="pre">=RADIANS()</span></code> and <code class="docutils literal notranslate"><span class="pre">=DEGREES()</span></code></p></li>
+</ul>
+<p>These tools are especially useful when modeling physical systems, working with angles,
+or converting between measurement units.</p>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_a0xrybnh&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_xnkop7yf%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Functions in Excel"></iframe>
+<div class="tip admonition">
+<p class="admonition-title">Practice</p>
+<p>Download and open the following file to follow along with the video:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/4d74436c2c61b11437ba5b547842a279/Functions_Excel.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">Functions_Excel.xlsx</span></code></a></p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>You want to determine <strong>how many measurements were recorded in a dataset</strong>, but only
+count cells that contain numeric values.</p>
+<p>Which Excel function should you use?</p>
+<p>A. <code class="docutils literal notranslate"><span class="pre">=SUM()</span></code><br>
+B. <code class="docutils literal notranslate"><span class="pre">=COUNT()</span></code><br>
+C. <code class="docutils literal notranslate"><span class="pre">=AVERAGE()</span></code><br>
+D. <code class="docutils literal notranslate"><span class="pre">=MAX()</span></code><br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: B – <code class="docutils literal notranslate"><span class="pre">=COUNT()</span></code></strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">=COUNT()</span></code> returns the number of cells in a range that contain <strong>numeric values only</strong>.</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">=SUM()</span></code> adds numbers together.
+<code class="docutils literal notranslate"><span class="pre">=AVERAGE()</span></code> calculates the mean.
+<code class="docutils literal notranslate"><span class="pre">=MAX()</span></code> returns the largest value in a range.</p>
+</div>
+</details></div>
+<div class="note admonition">
+<p class="admonition-title">Additional Resource</p>
+<p>To review additional keyboard shortcuts, read
+<a class="reference external" href="https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f">Keyboard Shortcuts in Excel</a></p>
+</div>
+</section>
+</section>
+</section>
+<section id="significant-figures-and-rounding-in-excel">
+<h2>Significant Figures and Rounding in Excel<a class="headerlink" href="#significant-figures-and-rounding-in-excel" title="Link to this heading">#</a></h2>
+<p>When working with measured data, it is important to communicate both the <strong>value</strong> and
+the <strong>precision</strong> of a measurement. The number of <strong>significant figures (sig figs)</strong> in
+a value indicates how precise that measurement is.</p>
+<p>All measurements contain <strong>uncertainty</strong>. Significant figures help indicate <strong>where that
+uncertainty occurs</strong> in a number. More precise measurements contain <strong>more significant
+digits</strong>, but no measurement is ever perfectly exact.</p>
+<p>For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">2.512</span></code> and <code class="docutils literal notranslate"><span class="pre">2.5</span></code> have about the same <strong>magnitude</strong>, but <code class="docutils literal notranslate"><span class="pre">2.512</span></code> is more <strong>precise</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2.512</span></code> implies accuracy to the <strong>nearest thousandth</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2.5</span></code> implies accuracy to the <strong>nearest tenth</strong>.</p></li>
+</ul>
+<section id="identifying-significant-figures">
+<h3>Identifying Significant Figures<a class="headerlink" href="#identifying-significant-figures" title="Link to this heading">#</a></h3>
+<p>The significant digits in a number begin with the <strong>first non-zero digit</strong> and end with
+the <strong>last recorded digit</strong>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>Significant Figures</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1214</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.214</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>0.00001214</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Leading zeros are <strong>not significant</strong> because they only indicate the position of the
+decimal.</p>
+</section>
+<hr class="docutils" />
+<section id="significant-figures-in-calculations">
+<h3>Significant Figures in Calculations<a class="headerlink" href="#significant-figures-in-calculations" title="Link to this heading">#</a></h3>
+<p>When calculations involve measured values, the <strong>precision of the result should reflect
+the precision of the measurements used</strong>. Because measurements contain uncertainty,
+results from calculations <strong>cannot be more precise than the least precise measurement</strong>.
+However, spreadsheet tools like <strong>Excel do not automatically account for measurement
+uncertainty</strong>. Excel may display many decimal places even when those digits are not
+meaningful.</p>
+<p>Example:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Measurement</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Significant Figures</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cost ($)</p></td>
+<td><p>0.57</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mass (lbs)</p></td>
+<td><p>2.8</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Cost / Mass ($/lb)</p></td>
+<td><p>0.203571429</p></td>
+<td><p>Excel displays many digits</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Although Excel displays nine digits, the result should realistically only be reported
+with <strong>two significant figures</strong>, matching the least precise measurement.</p>
+</section>
+<hr class="docutils" />
+<section id="rules-for-calculations">
+<h3>Rules for Calculations<a class="headerlink" href="#rules-for-calculations" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Rule</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Addition / Subtraction</p></td>
+<td><p>Round the result to the same number of decimal places as the value with the fewest decimal places.</p></td>
+<td><p><span class="math notranslate nohighlight">\(2210.2541 + 21.45 = 2231.70 \)</span><br>2 decimal places</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multiplication / Division</p></td>
+<td><p>Round the result to the same number of significant figures as the least precise value (fewest significant figures).</p></td>
+<td><p><span class="math notranslate nohighlight">\(12120 * 1.3 = 16000\)</span><br>2 significant figures</p></td>
+</tr>
+<tr class="row-even"><td><p>Statistics</p></td>
+<td><p>Round the result to one additional decimal place than your least precise number.</p></td>
+<td><p>Mean of 36.3, 24.5, 48.9, 65.2, 21.7 is 39.32</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These rules help ensure that calculated values do not imply <strong>more precision than the
+measurements support</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="rounding-values-in-excel">
+<h3>Rounding Values in Excel<a class="headerlink" href="#rounding-values-in-excel" title="Link to this heading">#</a></h3>
+<p>Because Excel often displays more digits than are meaningful, engineers must <strong>round
+results appropriately</strong> before reporting them.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ROUND()</span></code> function can be used to control the number of decimal places displayed.</p>
+<blockquote>
+<div><p>General structure: <code class="docutils literal notranslate"><span class="pre">=ROUND(number,</span> <span class="pre">num_digits)</span></code><br>- <code class="docutils literal notranslate"><span class="pre">number</span></code> - the value or formula
+you want to round<br>- <code class="docutils literal notranslate"><span class="pre">num_digits</span></code> - the number of decimal places to keep</p>
+</div></blockquote>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Example Formula</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">=ROUND(3.14159,2)</span></code></p></td>
+<td><p>3.14</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">=ROUND(3.14159,3)</span></code></p></td>
+<td><p>3.142</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">=ROUND(A2/B2,2)</span></code></p></td>
+<td><p>Rounds a calculation to two decimal places</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">ROUND()</span></code> helps ensure that reported results <strong>reflect the precision of the
+original measurements</strong> rather than the default output from Excel.</p>
+</section>
+<section id="statistics-convention-for-this-course">
+<h3>Statistics Convention for This Course<a class="headerlink" href="#statistics-convention-for-this-course" title="Link to this heading">#</a></h3>
+<p>When reporting <strong>mean or standard deviation</strong>, it is acceptable in this course to round
+to <strong>one additional decimal place beyond the least precise measurement</strong>. This provides
+reasonable precision for introductory data analysis.</p>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>A student measures the mass of a sample as <strong>2.8 lbs</strong> and the cost of the sample as
+<strong>$0.57</strong>. They calculate the cost per pound in Excel using the formula <code class="docutils literal notranslate"><span class="pre">=0.57/2.8</span></code>, and
+Excel displays <strong>0.203571429</strong>.</p>
+<p><strong>a)</strong> Based on the measurements, how many significant figures should the final answer
+contain?</p>
+<p><strong>b)</strong> What value should be reported after rounding?</p>
+<p><strong>c)</strong> Write an Excel formula using <code class="docutils literal notranslate"><span class="pre">ROUND()</span></code> that would report the correct value.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>a)</strong> 2 significant figures - Both measurements (<strong>0.57</strong> and <strong>2.8</strong>) contain <strong>2
+significant figures</strong>, so the result must also contain <strong>2 significant figures</strong>.</p>
+<p class="sd-card-text"><strong>b)</strong> 0.20 - The Excel result <code class="docutils literal notranslate"><span class="pre">0.203571429</span></code> rounded to <strong>2 significant figures</strong>
+becomes <strong>0.20</strong>.</p>
+<p class="sd-card-text"><strong>c)</strong> <code class="docutils literal notranslate"><span class="pre">=ROUND(0.57/2.8,2)</span></code> - The <code class="docutils literal notranslate"><span class="pre">ROUND()</span></code> function ensures the value is reported with
+an appropriate number of decimal places instead of Excel displaying many unnecessary
+digits.</p>
+</div>
+</details></div>
+</section>
+</section>
+<section id="data-visualization">
+<h2>Data Visualization<a class="headerlink" href="#data-visualization" title="Link to this heading">#</a></h2>
+<section id="why-do-we-visualize-data">
+<h3>Why Do We Visualize Data?<a class="headerlink" href="#why-do-we-visualize-data" title="Link to this heading">#</a></h3>
+<p>Engineers do not just calculate values; they communicate results. Data visualization
+helps transform raw numbers into information that others can quickly interpret.</p>
+<p>We visualize data to:</p>
+<ul class="simple">
+<li><p>Identify patterns and trends</p></li>
+<li><p>Compare groups</p></li>
+<li><p>Detect outliers or unusual results</p></li>
+<li><p>Support data-driven decisions</p></li>
+<li><p>Communicate findings clearly and efficiently</p></li>
+</ul>
+<p>A table of numbers may contain the same information as a graph, but a well-designed
+visualization allows patterns to be recognized immediately.</p>
+<p>When selecting a visualization, the <strong>type of data</strong> determines the appropriate chart.</p>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_5j8w229i&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_4mfc5ndv%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Data Visualization: Chart Selection in Excel"></iframe>
+</section>
+<section id="types-of-data">
+<h3>Types of Data<a class="headerlink" href="#types-of-data" title="Link to this heading">#</a></h3>
+<p>Before choosing a graph, you must correctly identify your data type.</p>
+<p>There are two primary categories of data:</p>
+<ul class="simple">
+<li><p>Categorical data</p></li>
+<li><p>Numerical data</p></li>
+</ul>
+<section id="categorical-data">
+<h4>Categorical Data<a class="headerlink" href="#categorical-data" title="Link to this heading">#</a></h4>
+<p><strong>Categorical data</strong> describes labels or groups. It is used to classify information
+rather than measure it. Categorical data is generally summarized using counts or
+percentages.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>Material type</p></li>
+<li><p>Engineering major</p></li>
+<li><p>Device model</p></li>
+</ul>
+<p>Categorical data can be further divided into two types: nominal and ordinal.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nominal</p></td>
+<td><p>Categories with <strong>no inherent order</strong>. There is no ranking or progression</p></td>
+<td><p>- Eye color<br>- Brand name<br>- Fuel type</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ordinal</p></td>
+<td><p>Categories that have a <strong>logical order</strong> but the spacing between categories is not measurable.</p></td>
+<td><p>- First-year &gt; Senior <br>- Poor &gt; Excellent<br>- Small &gt; Medium &gt; Large</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="numerical-data">
+<h4>Numerical Data<a class="headerlink" href="#numerical-data" title="Link to this heading">#</a></h4>
+<p><strong>Numerical data</strong> represents measurable quantities. Arithmetic operations such as
+addition, subtraction, and averaging are meaningful.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>Time (seconds)</p></li>
+<li><p>Temperature (<span class="math notranslate nohighlight">\(^\circ\text{C}\)</span>)</p></li>
+<li><p>Distance (meters)</p></li>
+<li><p>Voltage (V)</p></li>
+</ul>
+<p>Numerical data can be divided into two types: discrete and continuous.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Discrete</p></td>
+<td><p><strong>Countable</strong>. Usually consists of whole numbers.</p></td>
+<td><p>- Number of students<br>- Number of defects<br>- Number of points in a game</p></td>
+</tr>
+<tr class="row-odd"><td><p>Continuous</p></td>
+<td><p><strong>Measured</strong>. Can take on any value within a range.</p></td>
+<td><p>- Time<br>- Temperature<br>- Height</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>Which of the following is an example of <strong>continuous data</strong>?</p>
+<p>A. Number of students in a class<br>
+B. Number of defects in a product<br>
+C. Temperature measured during an experiment<br>
+D. Number of attempts to complete a task<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: C – Temperature</strong></p>
+<p class="sd-card-text">Continuous data is measured and can take on any value within a range.</p>
+</div>
+</details></div>
+<section id="be-careful-numbers-do-not-always-mean-numerical-data">
+<h5>Be Careful: Numbers Do Not Always Mean Numerical Data<a class="headerlink" href="#be-careful-numbers-do-not-always-mean-numerical-data" title="Link to this heading">#</a></h5>
+<p>It is a common misconception that if data contains numbers, it must be numerical. If the
+number functions as a label or identifier, the data is categorical.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>Jersey numbers</p></li>
+<li><p>Zip codes</p></li>
+<li><p>Room numbers</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>Which dataset is <strong>categorical data</strong>?</p>
+<p>A. Time required to complete a test (seconds)<br>
+B. Temperature measured during an experiment (<span class="math notranslate nohighlight">\(^\circ\text{C}\)</span>)<br>
+C. Engineering major of each student in a class<br>
+D. Distance traveled by a vehicle (meters)<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: C – Engineering major</strong></p>
+<p class="sd-card-text">Categorical data describes labels or groups rather than measurable quantities.</p>
+<p class="sd-card-text">Time, temperature, and distance are numerical because mathematical operations such as
+averaging or subtraction are meaningful.</p>
+</div>
+</details></div>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>A survey asks students to rate their experience with a lab activity using the following
+scale:</p>
+<p>1 = Very Unsatisfied
+2 = Unsatisfied
+3 = Neutral
+4 = Satisfied
+5 = Very Satisfied</p>
+<p>How should this data be classified?</p>
+<p>A. Nominal data<br>
+B. Ordinal data<br>
+C. Discrete numerical data<br>
+D. Continuous numerical data<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: B – Ordinal data</strong></p>
+<p class="sd-card-text">The responses have a <strong>clear order</strong>, but the difference between values (for example
+between 2 and 3) is not a measurable quantity.</p>
+<p class="sd-card-text">Therefore the data is <strong>categorical with an inherent order</strong>, which makes it ordinal.</p>
+</div>
+</details></div>
+</section>
+</section>
+</section>
+<section id="why-data-type-matters">
+<h3>Why Data Type Matters<a class="headerlink" href="#why-data-type-matters" title="Link to this heading">#</a></h3>
+<p>Choosing the wrong visualization often begins with misidentifying the data type.</p>
+<ul class="simple">
+<li><p>Categorical data is often displayed using bar or column charts.</p></li>
+<li><p>Numerical data is often displayed using histograms, line graphs, or scatter plots.</p></li>
+</ul>
+</section>
+<section id="asking-the-right-question">
+<h3>Asking the Right Question<a class="headerlink" href="#asking-the-right-question" title="Link to this heading">#</a></h3>
+<section id="your-data-is-only-as-good-as-the-questions-you-ask">
+<h4>Your Data is Only as Good as the Questions You Ask<a class="headerlink" href="#your-data-is-only-as-good-as-the-questions-you-ask" title="Link to this heading">#</a></h4>
+<p>Before creating a visualization, ask: What question am I trying to answer?</p>
+<p>A graph does not exist just to “show data.” It exists to answer a specific question. If
+the question is unclear, the visualization will likely be ineffective or misleading. The
+type of question you are asking determines the type of chart you should use.</p>
+</section>
+<section id="types-of-questions-in-data-analysis">
+<h4>Types of Questions in Data Analysis<a class="headerlink" href="#types-of-questions-in-data-analysis" title="Link to this heading">#</a></h4>
+<p>Most engineering data questions fall into one of four categories.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>These Questions Ask…</p></th>
+<th class="head"><p>Examples</p></th>
+<th class="head"><p>Recommended Chart Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Comparison</p></td>
+<td><p>- How do two or more groups differ?<br>- Which condition performs better?<br>- How does a value change over time?</p></td>
+<td><p>- Which material has the longest battery life?<br>- How does efficiency differ between two designs?<br>- How does performance change over time?</p></td>
+<td><p>Bar Chart (for comparing categories)<br>Line Chart / Time Series Plot (for change over time)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Composition</p></td>
+<td><p>- What makes up a whole?<br>- What percentage does each category represent?<br>- How is a total divided among groups?</p></td>
+<td><p>- What percentage of students selected each major?<br>- How is the budget allocated across categories?</p></td>
+<td><p>Pie Chart (for parts of a whole; limit to 5 to 7 sections)</p></td>
+</tr>
+<tr class="row-even"><td><p>Relationship</p></td>
+<td><p>- How does one variable change as another changes?<br>- Is there a trend between two measured quantities?</p></td>
+<td><p>- How does temperature affect resistance?<br>- How does time affect voltage?</p></td>
+<td><p>Scatter Plot (markers for measured data; smooth line for modeled data)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Distribution</p></td>
+<td><p>- Which values are most or least common?<br>- How are values spread across a range?<br>- Where are data points concentrated?</p></td>
+<td><p>- What score range occurs most often?<br>- How are voltage readings distributed?</p></td>
+<td><p>Histogram (bins show frequency across intervals)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Excel and Histograms</p>
+<p>Excel creates a default histogram, but you will often need to:</p>
+<ul class="simple">
+<li><p>Modify the number of bins</p></li>
+<li><p>Estimate or calculate appropriate bin width</p></li>
+<li><p>Adjust formatting for clarity</p></li>
+</ul>
+<p>The default settings are rarely optimal.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>You want to determine whether <strong>increasing temperature changes electrical resistance</strong>.</p>
+<p>Which chart type should you use?</p>
+<p>A. Scatter plot<br>
+B. Pie chart<br>
+C. Bar chart<br>
+D. Histogram<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: A – Scatter plot</strong></p>
+<p class="sd-card-text">Scatter plots are used to examine relationships between two variables.</p>
+</div>
+</details></div>
+</section>
+</section>
+<section id="how-to-insert-a-chart-in-excel">
+<h3>How to Insert a Chart in Excel<a class="headerlink" href="#how-to-insert-a-chart-in-excel" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Select your data</p></li>
+<li><p>Go to the <strong>Insert</strong> tab.</p></li>
+<li><p>Review the chart options available.</p></li>
+<li><p>You may:
+a. Select a chart type directly, or
+b. Use the <strong>Recommended Charts</strong> option to preview how your data will appear in
+different formats.</p></li>
+</ol>
+<p>Always verify that the chart matches your question type before finalizing.</p>
+</section>
+<section id="formatting-charts-in-excel">
+<h3>Formatting Charts in Excel<a class="headerlink" href="#formatting-charts-in-excel" title="Link to this heading">#</a></h3>
+<p>Creating a chart is only the first step. Engineers must also format charts so that
+results are clear, accurate, and easy to interpret.</p>
+<p>Poorly formatted charts can make data difficult to understand or lead to incorrect
+conclusions. A well-designed chart allows readers to quickly identify trends and compare
+values.</p>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_3c8bg3ge&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_wvd4u4q2%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Formatting Charts in Excel"></iframe>
+<section id="basic-chart-formatting-guidelines">
+<h4>Basic Chart Formatting Guidelines<a class="headerlink" href="#basic-chart-formatting-guidelines" title="Link to this heading">#</a></h4>
+<p>When formatting charts in Excel, follow these best practices:</p>
+<ul class="simple">
+<li><p>Include a clear and descriptive chart title</p></li>
+<li><p>Label both axes so the reader knows what variables are being displayed</p></li>
+<li><p>Include units of measurement in axis labels when appropriate</p></li>
+<li><p>Use a legend when multiple datasets appear on the same chart</p></li>
+<li><p>Choose appropriate axis scales so data patterns are visible</p></li>
+<li><p>Avoid unnecessary visual effects such as 3D charts</p></li>
+</ul>
+<p>Charts should prioritize clarity and readability over decoration.</p>
+</section>
+<section id="chart-titles">
+<h4>Chart Titles<a class="headerlink" href="#chart-titles" title="Link to this heading">#</a></h4>
+<p>A chart title should clearly describe what the reader should learn from the chart.</p>
+<p>Titles should be descriptive, not generic.</p>
+<p>For example:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Poor Title</p></th>
+<th class="head"><p>Better Title</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Variable X vs Variable Y</p></td>
+<td><p>Battery Life of Three Materials at Different Temperatures</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A strong title provides enough context for the reader to understand the purpose of the
+chart without needing additional explanation.</p>
+</section>
+<section id="axis-labels">
+<h4>Axis Labels<a class="headerlink" href="#axis-labels" title="Link to this heading">#</a></h4>
+<p>Both axes must be clearly labeled so readers understand what variables are being
+displayed.</p>
+<p>Axis labels should:</p>
+<ul class="simple">
+<li><p>Identify the variable being measured</p></li>
+<li><p>Include units of measurement</p></li>
+<li><p>Be large enough to read easily</p></li>
+<li><p>Stand out clearly from the data</p></li>
+</ul>
+<p>Example axis labels:</p>
+<ul class="simple">
+<li><p>Temperature (<span class="math notranslate nohighlight">\(^\circ\text{C}\)</span>)</p></li>
+<li><p>Voltage (V)</p></li>
+<li><p>Time (seconds)</p></li>
+</ul>
+<p>Titles and axis labels can be added in Excel by:</p>
+<ol class="arabic simple">
+<li><p>Selecting the chart</p></li>
+<li><p>Opening the <strong>Chart Design</strong> tab</p></li>
+<li><p>Choosing <strong>Add Chart Element</strong></p></li>
+<li><p>Selecting <strong>Chart Title</strong> or <strong>Axis Titles</strong></p></li>
+</ol>
+</section>
+<section id="scaling-the-axis">
+<h4>Scaling the Axis<a class="headerlink" href="#scaling-the-axis" title="Link to this heading">#</a></h4>
+<p>Axis scaling affects how easily readers can interpret a chart. Whenever possible, scale
+axes to meaningful reference values.</p>
+<p>For example, when displaying percentages:</p>
+<ul class="simple">
+<li><p>If the largest value is 43%, it may still be helpful to scale the axis from 0% to 100%</p></li>
+<li><p>This provides a clearer frame of reference for interpretation</p></li>
+</ul>
+<p>To modify axis scaling in Excel:</p>
+<ol class="arabic simple">
+<li><p>Right-click the axis</p></li>
+<li><p>Select <strong>Format Axis</strong></p></li>
+<li><p>Adjust the minimum and maximum bounds</p></li>
+</ol>
+<p>Improving readability may also require increasing the font size of titles and labels,
+since Excel sometimes uses small default text sizes (around 9 pt).</p>
+<div class="important admonition">
+<p class="admonition-title">Choosing Chart Orientation</p>
+<p>In some cases, category labels may be difficult to read when placed along the horizontal
+axis.</p>
+<p>This can occur when:</p>
+<ul class="simple">
+<li><p>Category names are long</p></li>
+<li><p>Many categories are included</p></li>
+</ul>
+<p>In these situations, a horizontal bar chart may improve readability.</p>
+</div>
+</section>
+<section id="ordering-data-in-bar-charts">
+<h4>Ordering Data in Bar Charts<a class="headerlink" href="#ordering-data-in-bar-charts" title="Link to this heading">#</a></h4>
+<p>When creating bar charts, categories should usually be arranged from largest to smallest
+values. This ordering helps readers quickly identify the most significant differences
+between groups. Unordered bars can make comparisons harder to interpret.</p>
+<p>However, if the categories represent a natural sequence, the original order should be
+preserved.</p>
+<p>Examples of sequential categories include:</p>
+<ul class="simple">
+<li><p>Days of the week</p></li>
+<li><p>Months of the year</p></li>
+<li><p>Time intervals</p></li>
+<li><p>Ordered rating scales</p></li>
+</ul>
+<p>In these cases, maintaining the natural order helps the reader understand how values
+change across the sequence.</p>
+</section>
+<section id="modifying-markers-and-lines">
+<h4>Modifying Markers and Lines<a class="headerlink" href="#modifying-markers-and-lines" title="Link to this heading">#</a></h4>
+<p>When working with line charts or scatter plots, markers and lines can be adjusted to
+improve readability.</p>
+<p>You can modify:</p>
+<ul class="simple">
+<li><p>Marker shape</p></li>
+<li><p>Marker size</p></li>
+<li><p>Marker color</p></li>
+<li><p>Line style or thickness</p></li>
+</ul>
+<p>These changes help distinguish multiple datasets within the same chart.</p>
+</section>
+<section id="making-charts-accessible">
+<h4>Making Charts Accessible<a class="headerlink" href="#making-charts-accessible" title="Link to this heading">#</a></h4>
+<p>Charts should remain clear for readers with different visual abilities and in different
+viewing conditions.</p>
+<p>To improve accessibility:</p>
+<ul class="simple">
+<li><p>Use different colors to distinguish datasets</p></li>
+<li><p>Also use different marker shapes or line styles</p></li>
+<li><p>Avoid relying on color alone to convey meaning</p></li>
+<li><p>Use solid fills instead of gradient effects</p></li>
+</ul>
+<p>Charts should remain readable when:</p>
+<ul class="simple">
+<li><p>Printed in black and white</p></li>
+<li><p>Viewed on different screens or displays</p></li>
+</ul>
+</section>
+<section id="avoiding-chart-junk">
+<h4>Avoiding Chart Junk<a class="headerlink" href="#avoiding-chart-junk" title="Link to this heading">#</a></h4>
+<p>Chart junk refers to visual elements that do not communicate meaningful information.</p>
+<p>Examples include:</p>
+<ul class="simple">
+<li><p>Decorative backgrounds</p></li>
+<li><p>Excessive colors</p></li>
+<li><p>Unnecessary gridlines</p></li>
+<li><p>3D effects</p></li>
+</ul>
+<p>These elements can distract from the data and make charts harder to interpret. Effective
+charts prioritize clarity and simplicity.</p>
+</section>
+<section id="consistency-across-charts">
+<h4>Consistency Across Charts<a class="headerlink" href="#consistency-across-charts" title="Link to this heading">#</a></h4>
+<p>When multiple charts appear in the same report, presentation, or assignment, formatting
+should remain consistent.</p>
+<p>This includes:</p>
+<ul class="simple">
+<li><p>Font styles and sizes</p></li>
+<li><p>Color schemes</p></li>
+<li><p>Axis formatting</p></li>
+<li><p>Marker styles</p></li>
+</ul>
+<p>Consistent formatting makes charts easier to compare and creates a more professional
+presentation.</p>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>Which formatting choice improves the readability of a bar chart?</p>
+<p>A. Using a 3D bar chart<br>
+B. Removing axis labels<br>
+C. Ordering bars from largest to smallest<br>
+D. Adding decorative background colors<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: C</strong></p>
+<p class="sd-card-text">Ordering bars from largest to smallest helps readers quickly compare values and identify
+the largest and smallest categories.</p>
+</div>
+</details></div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Part_02_Excel/M1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1_pre-class_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.1. </span>Pre-Class Assignments</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tasks/pre_1/a/instructions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.1.2. </span>PCA: Calculations and Charting in Excel</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-excel">Getting Started with Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-excel">Introduction to Excel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-data-for-engineering-work">Organizing Data for Engineering Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-and-formatting-your-data">Cleaning and Formatting Your Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-formulas-in-excel">Writing Formulas in Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-in-excel">Operators in Excel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-operations">Order of Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-in-excel">Calculations in Excel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-references">Cell References</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-reference">Relative Reference</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-references">Absolute References</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-references">Mixed References</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions-in-excel">Built-in Functions in Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#common-functions-to-know">Common Functions to Know</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-built-in-functions">Additional Built-In Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-figures-and-rounding-in-excel">Significant Figures and Rounding in Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-significant-figures">Identifying Significant Figures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-figures-in-calculations">Significant Figures in Calculations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-calculations">Rules for Calculations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rounding-values-in-excel">Rounding Values in Excel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-convention-for-this-course">Statistics Convention for This Course</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization">Data Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-visualize-data">Why Do We Visualize Data?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-data">Types of Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data">Categorical Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data">Numerical Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-numbers-do-not-always-mean-numerical-data">Be Careful: Numbers Do Not Always Mean Numerical Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-data-type-matters">Why Data Type Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asking-the-right-question">Asking the Right Question</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#your-data-is-only-as-good-as-the-questions-you-ask">Your Data is Only as Good as the Questions You Ask</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-questions-in-data-analysis">Types of Questions in Data Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-insert-a-chart-in-excel">How to Insert a Chart in Excel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-charts-in-excel">Formatting Charts in Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-chart-formatting-guidelines">Basic Chart Formatting Guidelines</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-titles">Chart Titles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels">Axis Labels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-the-axis">Scaling the Axis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ordering-data-in-bar-charts">Ordering Data in Bar Charts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-markers-and-lines">Modifying Markers and Lines</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#making-charts-accessible">Making Charts Accessible</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-chart-junk">Avoiding Chart Junk</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-across-charts">Consistency Across Charts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="/engr-13100-2026-fall/Appendices/contributors.html">Contributors</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

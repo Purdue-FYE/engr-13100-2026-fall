@@ -1,0 +1,1761 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.1.1. PCMs: Data Analysis and Histograms in Excel &#8212; Purdue University ENGR 13100</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=07d23ebc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=a8e58a58"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Part_02_Excel/M2/1.1_materials';</script>
+    <link rel="icon" href="../../_static/avatar.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.1.2. PCA: Descriptive Statistics and Logical Functions" href="tasks/pre_1/a/instructions.html" />
+    <link rel="prev" title="4.1. Pre-Class Assignments" href="1_pre-class_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Purdue University ENGR 13100 - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Purdue University ENGR 13100 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ENGR 13100<br> Transforming Ideas to Innovation I
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome to ENGR 131</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/meet_the_team.html">Meet Your Instructional Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/help_sessions.html">Help Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/course_schedule.html">Course Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/comp_basics.html">Computer Basics and File Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/course_software/course_software.html">Course Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glue_factory.html">Glue Factory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Professional Engineering Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/0_overview.html">1. Professional Preparation and Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.1_instructions.html">1.1. Course Policies Exploration</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2_ce.html">1.2. Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE.html">1.2.1. CE: Agricultural Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.2_CEM.html">1.2.2. CE: Construction Engineering and Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.3_BioE.html">1.2.3. CE: Biological Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.4_NE.html">1.2.4. CE: Nuclear Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.5_SEE.html">1.2.5. CE: Sustainability and Environmental Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.6_MSE.html">1.2.6. CE: Materials Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.7_CE.html">1.2.7. CE: Civil Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.8_CHE.html">1.2.8. CE: Chemical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.9_ME.html">1.2.9. CE: Mechanical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.10_AAE.html">1.2.10. CE: Aeronautical and Astronautical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.11_IE.html">1.2.11. CE: Industrial Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.12_BME.html">1.2.12. CE: Biomedical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.13_MDE.html">1.2.13. CE: Multidisciplinary Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.14_ECE.html">1.2.14. CE: Electrical and Computer Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.15_ENRE.html">1.2.15. CE: Environmental and Natural Resources Engineering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.3_eym.html">1.3. Engineering Your Major</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/0_overview.html">2. Teaming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/2_CATME_inst.html">2.1. CATME Teaming</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/1_TM_assignments.html">2.2. Teaming Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_fundamentals.html">2.2.1. PCMs: Working in an Engineering Team</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_fundamentals_inst.html">2.2.2. PCA: Teaming Fundamentals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_inst.html">2.2.3. TM: Code of Cooperation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_CATMEdimensions.html">2.2.4. PCMs: The 5 CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_CATMEdimensions_inst.html">2.2.5. PCA: CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_revisit_inst.html">2.2.6. TM: Code of Cooperation Revisit</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Excel</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M1/0_overview.html">3. Spreadsheet Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M1/1_pre-class_overview.html">3.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M1/1.1_materials.html">3.1.1. PCMs: Spreadsheet Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M1/tasks/pre_1/a/instructions.html">3.1.2. PCA: Calculations and Charting in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M1/2_in-class_overview.html">3.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M1/tasks/ICA_1/a/instructions.html">3.2.1. ICA: Tennis Ball Launcher Performance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M1/3_assignment_overview.html">3.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M1/tasks/1/a/instructions.html">3.3.1. EX: Spreadsheet Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_overview.html">4. Data Analysis in Excel</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="1_pre-class_overview.html">4.1. Pre-Class Assignments</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">4.1.1. PCMs: Data Analysis and Histograms in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks/pre_1/a/instructions.html">4.1.2. PCA: Descriptive Statistics and Logical Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks/pre_2/a/instructions.html">4.1.3. PCA: Histograms and Outliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="2_in-class_overview.html">4.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tasks/ICA_1/a/instructions.html">4.2.1. ICA: Coffee Cooling Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks/ICA_2/a/instructions.html">4.2.2. ICA: COGO Bike Share</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="3_assignment_overview.html">4.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tasks/1/a/instructions.html">4.3.1. EX - Data Analysis &amp; Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M3/0_overview.html">5. Probability and Uncertainty</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M3/1_pre-class_overview.html">5.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M3/1.1_materials.html">5.1.1. PCMs: Probability and Normal Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M3/tasks/pre_1/a/instructions.html">5.1.2. PCA: Probability and Z-Scores in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M3/2_in-class_overview.html">5.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M3/tasks/ICA_1/a/instructions.html">5.2.1. ICA: Semiconductor Quality Control</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M3/3_assignment_overview.html">5.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M3/tasks/1/a/instructions.html">5.3.1. EX: Probability and Normal Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M4/0_overview.html">6. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/1_pre-class_overview.html">6.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/1.1_materials.html">6.1.1. PCMs: Linear Regression in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/pre_1/a/instructions.html">6.1.2. PCA: Linear Regression in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/2_in-class_overview.html">6.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/ICA_1/a/instructions.html">6.2.1. ICA: Speaker Wire Resistance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/3_assignment_overview.html">6.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/1/a/instructions.html">6.3.1. EX: Linear Data and Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_03_AI/0_overview.html">7. AI in Engineering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_03_AI/1_pre-class_overview.html">7.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.1_materials.html">7.1.1. PCMs: Computer Operations and Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.2_computer_ops.html">7.1.2. PCA: Computer Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.3_materials.html">7.1.3. PCMs: What is Artificial Intelligence?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.4_AI.html">7.1.4. PCA: What is AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.5_materials.html">7.1.5. PCMs: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.6_decisiontrees.html">7.1.6. PCA: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.7_materials.html">7.1.7. PCMs: Neural Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.8_neuralnetworks.html">7.1.8. PCA: Neural Networks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_03_AI/2_in-class_overview.html">7.2. In-Class Activities</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_03_AI/3_assignment_overview.html">7.3. AI Design Challenge: Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/tasks/ind_1/a/DT_instructions.html">7.3.1. Software Logic - Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/tasks/ind_1/a/NN_instructions.html">7.3.2. Hardware System - Neural Networks</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M1/0_overview.html">8. Python Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M1/1_pre-class_overview.html">8.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/1.1_materials.html">8.1.1. PCMs: Python Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/tasks/pre_1/b/instructions.html">8.1.2. PCA: Data Types and Calculations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M1/2_in-class_overview.html">8.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/tasks/ICA_1/a/instructions.html">8.2.1. ICA: Debugging and Auto Grader Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M1/3_assignment_overview.html">8.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/tasks/ind_1/b/instructions.html">8.3.1. PY: Python Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M2/0_overview.html">9. Logic and Modularity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M2/1_pre-class_overview.html">9.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/1.1_materials.html">9.1.1. PCMs: Logic and Modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/pre_1/a/instructions.html">9.1.2. PCA: Selection Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/pre_2/a/instructions.html">9.1.3. PCA: User-Defined Functions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M2/2_in-class_overview.html">9.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/ICA_1/a/instructions.html">9.2.1. ICA: Factory Alarm System</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M2/3_assignment_overview.html">9.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/ind_1/b/instructions.html">9.3.1. PY: Logic and Modularity</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M3/0_overview.html">10. Looping Structures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M3/1_pre-class_overview.html">10.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/1.1_materials.html">10.1.1. PCMs: Loops in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/pre_1/a/instructions.html">10.1.2. PCA: While Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/pre_2/a/instructions.html">10.1.3. PCA: For Loops</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M3/2_in-class_overview.html">10.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/ICA_1/a/instructions.html">10.2.1. ICA: Dog Park Tennis Ball Launcher</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M3/3_assignment_overview.html">10.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/ind_1/a/instructions.html">10.3.1. PY: Looping Structures</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M4/0_overview.html">11. Data Analysis and Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M4/1_pre-class_overview.html">11.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/1.1_materials.html">11.1.1. PCMs: Data Analysis and Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/pre_1/a/instructions.html">11.1.2. PCA: Data Manipulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/pre_2/a/instructions.html">11.1.3. PCA: Plotting and Statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M4/2_in-class_overview.html">11.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/ICA_1/a/instructions.html">11.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M4/3_assignment_overview.html">11.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/ind_1/a/instructions.html">11.3.1. PY: Data Analysis and Visualization</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M5/0_overview.html">12. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M5/1_pre-class_overview.html">12.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/1.1_materials.html">12.1.1. PCMs: Linear Regression in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/tasks/pre_1/b/instructions.html">12.1.2. PCA: Linear Regression Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M5/2_in-class_overview.html">12.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/tasks/ICA_1/a/instructions.html">12.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M5/3_assignment_overview.html">12.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/tasks/ind_1/a/instructions.html">12.3.1. PY: Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Purdue-FYE/engr-13100-2026-fall/issues/new?title=Issue%20on%20page%20%2FPart_02_Excel/M2/1.1_materials.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PCMs: Data Analysis and Histograms in Excel</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-statistics">Descriptive Statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-of-central-tendency">Measures of Central Tendency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-of-variation">Measures of Variation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-deviation-and-variance">Standard Deviation and Variance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-functions">Logical Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-comparison-operators">Relational (Comparison) Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-function">IF Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-and-or-functions">AND and OR Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-if-functions">Nested IF Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-a-histogram">Components of a Histogram</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interval-notation-for-bins">Interval Notation for Bins</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-number-of-bins">Choosing the Number of Bins</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-number-of-bins-and-bin-size">Calculating Number of Bins and Bin Size</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-histograms-can-show">What Histograms Can Show</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms-vs-bar-charts">Histograms vs Bar Charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-distributions">Types of Distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kurtosis">Kurtosis</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-histogram-in-excel">Creating a Histogram in Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjusting-histogram-bins">Adjusting Histogram Bins</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-histogram-readability">Improving Histogram Readability</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-histograms">Interpreting Histograms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outliers">Outliers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-outliers-occur">Why Outliers Occur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-potential-outliers-interquartile-range">Identifying Potential Outliers - Interquartile Range</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-quartiles-in-excel">Finding Quartiles in Excel</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-potential-outliers-standard-deviation">Identifying Potential Outliers - Standard Deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-outlier-detection-methods">Comparing Outlier Detection Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-outliers">Handling Outliers</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-for-possible-errors">Check for Possible Errors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#investigate-the-data">Investigate the Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-results-with-and-without-the-outlier">Compare Results With and Without the Outlier</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-matters">Why This Matters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="raw-html"><div class="d-none"></span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand\blank{~\underline{\hspace{1.2cm}}~}\\% Bold symbols (vectors)
+\newcommand\bs[1]{\mathbf{#1}}\\% Differential
+\newcommand\dd[2][]{\mathrm{d}^{#1}{#2}}  % use as \dd, \dd{x}, or \dd[2]{x}\\% Poor man's siunitx
+\newcommand\unit[1]{\mathrm{#1}}
+\newcommand\num[1]{#1}
+\newcommand\qty[2]{#1~\unit{#2}}\\\newcommand\per{/}
+\newcommand\squared{{}^2}
+\newcommand\cubed{{}^3}
+%
+% Scale
+\newcommand\milli{\unit{m}}
+\newcommand\centi{\unit{c}}
+\newcommand\kilo{\unit{k}}
+\newcommand\mega{\unit{M}}
+%
+% Percent
+\newcommand\percent{\unit{{\kern-4mu}\%}}
+%
+% Angle
+\newcommand\radian{\unit{rad}}
+\newcommand\degree{\unit{{\kern-4mu}^\circ}}
+%
+% Time
+\newcommand\second{\unit{s}}
+\newcommand\s{\second}
+\newcommand\minute{\unit{min}}
+\newcommand\hour{\unit{h}}
+%
+% Distance
+\newcommand\meter{\unit{m}}
+\newcommand\m{\meter}
+\newcommand\inch{\unit{in}}
+\newcommand\foot{\unit{ft}}
+%
+% Force
+\newcommand\newton{\unit{N}}
+\newcommand\kip{\unit{kip}} % kilopound in &quot;freedom&quot; units - edit made by Sri
+%
+% Mass
+\newcommand\gram{\unit{g}}
+\newcommand\g{\gram}
+\newcommand\kilogram{\unit{kg}}
+\newcommand\kg{\kilogram}
+\newcommand\grain{\unit{grain}}
+\newcommand\ounce{\unit{oz}}
+%
+% Temperature
+\newcommand\kelvin{\unit{K}}
+\newcommand\K{\kelvin}
+\newcommand\celsius{\unit{{}^\circ C}}
+\newcommand\C{\celsius}
+\newcommand\fahrenheit{\unit{{}^\circ F}}
+\newcommand\F{\fahrenheit}
+%
+% Area
+\newcommand\sqft{\unit{sq\,\foot}}  % square foot
+%
+% Volume
+\newcommand\liter{\unit{L}}
+\newcommand\gallon{\unit{gal}}
+%
+% Frequency
+\newcommand\hertz{\unit{Hz}}
+\newcommand\rpm{\unit{rpm}}
+%
+% Voltage
+\newcommand\volt{\unit{V}}
+\newcommand\V{\volt}
+\newcommand\millivolt{\milli\volt}
+\newcommand\mV{\milli\volt}
+\newcommand\kilovolt{\kilo\volt}
+\newcommand\kV{\kilo\volt}
+%
+% Current
+\newcommand\ampere{\unit{A}}
+\newcommand\A{\ampere}
+\newcommand\milliampereA{\milli\ampere}
+\newcommand\mA{\milli\ampere}
+\newcommand\kiloampereA{\kilo\ampere}
+\newcommand\kA{\kilo\ampere}
+%
+% Resistance
+\newcommand\ohm{\Omega}
+\newcommand\milliohm{\milli\ohm}
+\newcommand\kiloohm{\kilo\ohm} % correct SI spelling
+\newcommand\kilohm{\kilo\ohm} % &quot;American&quot; spelling used in siunitx
+\newcommand\megaohm{\mega\ohm} % correct SI spelling
+\newcommand\megohm{\mega\ohm} % &quot;American&quot; spelling used in siunitx
+%
+% Capacitance
+\newcommand\farad{\unit{F}}
+\newcommand\F{\farad}
+\newcommand\microfarad{\micro\farad}
+\newcommand\muF{\micro\farad}
+%
+% Inductance
+\newcommand\henry{\unit{H}}
+\newcommand\H{\henry}
+\newcommand\millihenry{\milli\henry}
+\newcommand\mH{\milli\henry}
+%
+% Power
+\newcommand\watt{\unit{W}}
+\newcommand\W{\watt}
+\newcommand\milliwatt{\milli\watt}
+\newcommand\mW{\milli\watt}
+\newcommand\kilowatt{\kilo\watt}
+\newcommand\kW{\kilo\watt}
+%
+% Energy
+\newcommand\joule{\unit{J}}
+\newcommand\J{\joule}
+%
+% Composite units
+%
+% Torque
+\newcommand\ozin{\unit{\ounce}\,\unit{in}}
+\newcommand\newtonmeter{\unit{\newton\,\meter}}
+%
+% Pressure
+\newcommand\psf{\unit{psf}}  % pounds per square foot
+\newcommand\pcf{\unit{pcf}}  % pounds per cubic foot
+\newcommand\pascal{\unit{Pa}}
+\newcommand\Pa{\pascal}
+\newcommand\ksi{\unit{ksi}} % kilopound per square inch
+\newcommand\bar{\unit{bar}}
+\end{aligned}\end{align} \]</div>
+<p><span class="raw-html"></div></span></p>
+<p>Sep 09, 2026 | 3427 words | 34 min
+read</p>
+<section class="tex2jax_ignore mathjax_ignore" id="pcms-data-analysis-and-histograms-in-excel">
+<span id="ex-m2-pre-class-mats"></span><h1><span class="section-number">4.1.1. </span>PCMs: Data Analysis and Histograms in Excel<a class="headerlink" href="#pcms-data-analysis-and-histograms-in-excel" title="Link to this heading">#</a></h1>
+<p>These pre-class materials introduce statistical tools that engineers use to analyze and
+interpret datasets using Microsoft Excel.</p>
+<p>In engineering, data is often collected through experiments, testing, or simulations. To
+understand what the data means, engineers must summarize the results, compare different
+groups, and identify patterns within the dataset.</p>
+<p>In this module, you will learn how to compute summary statistics, apply conditional
+calculations, and visualize how data values are distributed.</p>
+<section id="descriptive-statistics">
+<h2>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Link to this heading">#</a></h2>
+<p>Descriptive statistics are used to summarize and describe the characteristics of a
+dataset.</p>
+<p>Rather than examining every individual value, engineers use descriptive statistics to
+understand:</p>
+<ul class="simple">
+<li><p>Typical values within a dataset</p></li>
+<li><p>Variation between data points</p></li>
+<li><p>Differences between groups</p></li>
+<li><p>Trends or patterns in data</p></li>
+</ul>
+<p>These summaries help engineers interpret results, compare systems, and make decisions
+based on data.</p>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_ll7naxr1&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_taldjaew%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Descriptive Statistics in Excel"></iframe>
+<section id="measures-of-central-tendency">
+<h3>Measures of Central Tendency<a class="headerlink" href="#measures-of-central-tendency" title="Link to this heading">#</a></h3>
+<p>Measures of central tendency describe the typical value of a dataset. These concepts
+were introduced in <a class="reference internal" href="../M1/1.1_materials.html"><span class="doc">PCM: Spreadsheet Foundations</span></a>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Statistic</p></th>
+<th class="head"><p>Definition</p></th>
+<th class="head"><p>Excel Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mean</p></td>
+<td><p>The average value of a dataset.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=AVERAGE()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Median</p></td>
+<td><p>The middle value when the data are ordered. If the number of data points is even, the median is the average of the two middle values.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=MEDIAN()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Mode</p></td>
+<td><p>The most frequent value in the dataset.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=MODE.SNGL()</span></code><br><code class="docutils literal notranslate"><span class="pre">=MODE.MULT()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If the number of data points is even, the median is the <strong>average of the two middle
+values</strong> after the data are ordered.</p>
+</section>
+<section id="measures-of-variation">
+<h3>Measures of Variation<a class="headerlink" href="#measures-of-variation" title="Link to this heading">#</a></h3>
+<p>In addition to understanding the center of a dataset, engineers must also understand how
+<strong>spread out the data values are</strong>. In this course, we will use three key measures of
+variation: <strong>range, variance, and standard deviation</strong>.</p>
+<section id="range">
+<h4>Range<a class="headerlink" href="#range" title="Link to this heading">#</a></h4>
+<p>Range is the <strong>difference between the largest and smallest values</strong> in a dataset. It
+provides a quick way to estimate how widely the data values are spread.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mathematical Expression</p></th>
+<th class="head"><p>Excel Expression</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\text{Range} = \text{max} - \text{min}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=MAX(range)</span> <span class="pre">-</span> <span class="pre">MIN(range)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Range is often useful as a quick way to <strong>identify potential outliers</strong> or unusually
+large or small values in a dataset. However, because it only uses the minimum and
+maximum values, it does not describe how the rest of the data are distributed.</p>
+<p>For this reason, range is typically used alongside other measures of variation such as
+<strong>variance and standard deviation</strong>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>Which Excel expression correctly calculates the <strong>range</strong> of the values in cells
+<code class="docutils literal notranslate"><span class="pre">A1:A10</span></code>?</p>
+<p>A. <code class="docutils literal notranslate"><span class="pre">=RANGE(A1:A10)</span></code><br>
+B. <code class="docutils literal notranslate"><span class="pre">=STDEV.S(A1:A10)</span></code><br>
+C. <code class="docutils literal notranslate"><span class="pre">=AVERAGE(A1:A10)</span></code><br>
+D. <code class="docutils literal notranslate"><span class="pre">=MAX(A1:A10)-MIN(A1:A10)</span></code><br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: D</strong></p>
+<p class="sd-card-text">Excel does <strong>not</strong> have a built-in <code class="docutils literal notranslate"><span class="pre">RANGE()</span></code> function.
+To calculate the range, subtract the minimum value from the maximum value:</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">=MAX(A1:A10)</span> <span class="pre">-</span> <span class="pre">MIN(A1:A10)</span></code></p>
+</div>
+</details></div>
+</section>
+<section id="standard-deviation-and-variance">
+<h4>Standard Deviation and Variance<a class="headerlink" href="#standard-deviation-and-variance" title="Link to this heading">#</a></h4>
+<p>Standard deviation and variance describe <strong>how far data values spread from the mean</strong>.</p>
+<p>Variance measures the <strong>average squared difference</strong> between each value and the mean. A
+larger variance indicates greater spread in the dataset, while a smaller variance
+indicates that the data values are closer to the mean.</p>
+<p>Standard deviation is the <strong>square root of the variance</strong>, which means it measures the
+same spread but in the <strong>same units as the original data</strong>, making it easier to
+interpret.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Measure</p></th>
+<th class="head"><p>Definition</p></th>
+<th class="head"><p>Excel Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Standard Deviation</p></td>
+<td><p>Measures how far data values typically spread from the mean.</p></td>
+<td><p>Population: <code class="docutils literal notranslate"><span class="pre">=STDEV.P()</span></code><br>Sample: <code class="docutils literal notranslate"><span class="pre">=STDEV.S()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Variance</p></td>
+<td><p>Measures the average squared difference between each data value and the mean.</p></td>
+<td><p>Population: <code class="docutils literal notranslate"><span class="pre">=VAR.P()</span></code><br>Sample: <code class="docutils literal notranslate"><span class="pre">=VAR.S()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A <strong>sample</strong> represents a subset of a larger population. In engineering analysis, we
+often work with sample data because measuring every possible value in a population is
+not practical.</p>
+<p>For this course, you will use the <strong>sample functions</strong> <code class="docutils literal notranslate"><span class="pre">=STDEV.S()</span></code> and <code class="docutils literal notranslate"><span class="pre">=VAR.S()</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>Two datasets have the same mean. Dataset A has a larger standard deviation than Dataset
+B.</p>
+<p>What does this indicate?</p>
+<p>A. Dataset A has larger values than Dataset B<br>
+B. Dataset A’s values are more spread out from the mean<br>
+C. Dataset A has more data points<br>
+D. Dataset A has a larger median<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: B</strong></p>
+<p class="sd-card-text">A larger standard deviation indicates that the data values are more spread out from the
+mean.</p>
+</div>
+</details></div>
+</section>
+</section>
+</section>
+<section id="logical-functions">
+<h2>Logical Functions<a class="headerlink" href="#logical-functions" title="Link to this heading">#</a></h2>
+<p>Logical functions allow Excel to <strong>evaluate conditions and return results based on
+whether those conditions are true or false</strong>.</p>
+<p>These functions are useful when engineers need to:</p>
+<ul class="simple">
+<li><p>classify results</p></li>
+<li><p>check whether a value meets a requirement</p></li>
+<li><p>apply rules to a dataset</p></li>
+<li><p>automate decision-making within calculations</p></li>
+</ul>
+<p>Logical functions test whether a condition is satisfied. The result of the test is
+either <strong>TRUE</strong> or <strong>FALSE</strong>.</p>
+<p>In Excel calculations, these logical values can also behave like numbers in some
+situations:</p>
+<ul class="simple">
+<li><p><strong>TRUE</strong> corresponds to <strong>1</strong></p></li>
+<li><p><strong>FALSE</strong> corresponds to <strong>0</strong></p></li>
+</ul>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_7qhv1rlr&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_wbs5vu5a%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Logical Formulas in Excel"></iframe>
+<div class="tip admonition">
+<p class="admonition-title">Practice</p>
+<p>Download and open the following file to follow along with the video:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/fc48ea85a812655138f9c71f791b104f/LogicalFunctionsApplication.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">LogicalFunctionsApplication.xlsx</span></code></a></p></li>
+</ul>
+</div>
+<section id="relational-comparison-operators">
+<h3>Relational (Comparison) Operators<a class="headerlink" href="#relational-comparison-operators" title="Link to this heading">#</a></h3>
+<p>Logical functions use <strong>comparison operators</strong> to test conditions.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>less than</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>greater than</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>less than or equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>greater than or equal to</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">=</span></code></p></td>
+<td><p>equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code></p></td>
+<td><p>not equal to</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These operators allow Excel to compare values between cells.</p>
+<p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">A1</span> <span class="pre">&gt;</span> <span class="pre">10</span></code>
+This condition evaluates to:</p>
+<ul class="simple">
+<li><p><strong>TRUE</strong> if the value in <code class="docutils literal notranslate"><span class="pre">A1</span></code> is greater than 10</p></li>
+<li><p><strong>FALSE</strong> if it is not</p></li>
+</ul>
+</section>
+<section id="if-function">
+<h3>IF Function<a class="headerlink" href="#if-function" title="Link to this heading">#</a></h3>
+<p>The IF function evaluates a condition and returns one value if the condition is TRUE and
+another value if the condition is FALSE.</p>
+<blockquote>
+<div><p>General structure: <code class="docutils literal notranslate"><span class="pre">=IF(condition,</span> <span class="pre">value_if_true,</span> <span class="pre">value_if_false)</span></code><br></p>
+</div></blockquote>
+<p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">=IF(B2&lt;30,&quot;Freshman&quot;,&quot;Upperclassman&quot;)</span></code>
+This formula checks whether the value in cell <code class="docutils literal notranslate"><span class="pre">B2</span></code> is less than 30.</p>
+<ul class="simple">
+<li><p>If the condition is <strong>TRUE</strong>, Excel returns <strong>“Freshman”</strong></p></li>
+<li><p>If the condition is <strong>FALSE</strong>, Excel returns <strong>“Upperclassman”</strong></p></li>
+</ul>
+</section>
+<section id="and-and-or-functions">
+<h3>AND and OR Functions<a class="headerlink" href="#and-and-or-functions" title="Link to this heading">#</a></h3>
+<p>More complex conditions can be created using <strong>AND</strong> and <strong>OR</strong> functions.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AND()</span></code></p></td>
+<td><p>Checks if <strong>all conditions are TRUE</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">OR()</span></code></p></td>
+<td><p>Checks if <strong>any condition is TRUE</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">=AND(A2&gt;50,</span> <span class="pre">B2&gt;50)</span></code> <br> Returns TRUE only if <strong>both conditions are
+satisfied</strong>.</p>
+<p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">=OR(A2&gt;50,</span> <span class="pre">B2&gt;50)</span></code> <br> Returns TRUE if <strong>either condition is satisfied</strong>.</p>
+</section>
+<section id="nested-if-functions">
+<h3>Nested IF Functions<a class="headerlink" href="#nested-if-functions" title="Link to this heading">#</a></h3>
+<p>A <strong>nested IF function</strong> places one IF statement inside another IF statement.</p>
+<p>This allows Excel to evaluate <strong>multiple conditions sequentially</strong>.</p>
+<p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">=IF(A2&gt;89,&quot;A&quot;,IF(A2&gt;79,&quot;B&quot;,IF(A2&gt;69,&quot;C&quot;,IF(A2&gt;59,&quot;D&quot;,&quot;F&quot;))))</span></code><br>This
+formula assigns a letter grade based on the value in <code class="docutils literal notranslate"><span class="pre">A2</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>What will Excel return if the following condition is evaluated?</p>
+<p><code class="docutils literal notranslate"><span class="pre">=OR(5&gt;10,</span> <span class="pre">8&gt;3)</span></code></p>
+<p>A. TRUE<br>
+B. FALSE<br>
+C. ERROR<br>
+D. 8<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: A</strong></p>
+<p class="sd-card-text">The first condition is FALSE, but the second condition is TRUE. Because <code class="docutils literal notranslate"><span class="pre">OR()</span></code> returns
+TRUE when <strong>any condition is true</strong>, the result is TRUE.</p>
+</div>
+</details></div>
+</section>
+</section>
+<section id="histograms">
+<h2>Histograms<a class="headerlink" href="#histograms" title="Link to this heading">#</a></h2>
+<p>Engineers often use software tools such as Excel to generate histograms and analyze
+distributions.</p>
+<p>A <strong>histogram</strong> is a chart used to show how numerical data are distributed across a
+range of values.</p>
+<p>Instead of displaying individual data points, histograms group values into <strong>intervals
+called bins</strong>. Each bin represents a range of values, and the height of the bar shows
+how many data points fall within that range.</p>
+<p>Histograms help engineers understand how data values are distributed and whether they
+cluster within certain ranges.</p>
+<iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/983291/embedPlaykitJs/uiconf_id/56090002?iframeembed=true&amp;entry_id=1_1wij3h5v&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_x7r18dfw%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 400px;height: 285px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Histograms"></iframe>
+<div class="tip admonition">
+<p class="admonition-title">Practice</p>
+<p>Download and open the following file to follow along with the video:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/dcb6ec23dd63a16108cea13bd31f57b6/histogram_data.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">histogram_data.xlsx</span></code></a></p></li>
+</ul>
+</div>
+<section id="components-of-a-histogram">
+<h3>Components of a Histogram<a class="headerlink" href="#components-of-a-histogram" title="Link to this heading">#</a></h3>
+<div style="float: right; width: 420px; margin-left: 20px;">
+<figure class="align-default" id="id1">
+<img alt="Histogram showing tree circumference distribution by bins and frequency." src="../../_images/histogram-freq-bin.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">A histogram showing tree circumference values grouped into bins along the
+x-axis, with frequency shown on the y-axis.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>A histogram has several key parts:</p>
+<ul class="simple">
+<li><p><strong>Bins</strong> - ranges of numerical values used to group the data</p></li>
+<li><p><strong>Frequency (count)</strong> - the number of values that fall within each bin</p></li>
+<li><p><strong>X-axis</strong> - shows the ranges of values (the bins)</p></li>
+<li><p><strong>Y-axis</strong> - shows the <strong>frequency</strong>, or number of observations</p></li>
+</ul>
+<p>Each bar represents how many data values fall within a specific range.</p>
+<div style="clear: both;"></div>
+<p>Bins divide the number line into <strong>intervals of equal width</strong>, making it easier to see
+how frequently values occur across different parts of the dataset.</p>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>In a histogram, the <strong>height of each bin represents ______ and is plotted along the
+______.</strong></p>
+<p>A. Frequency (count); x-axis<br>
+B. Frequency (count); y-axis<br>
+C. Duration; y-axis<br>
+D. Frequency (count); percentage<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: B</strong></p>
+<p class="sd-card-text">The height of each bin represents the <strong>frequency (count)</strong> of data values and is
+plotted on the <strong>y-axis</strong>.</p>
+</div>
+</details></div>
+<section id="interval-notation-for-bins">
+<h4>Interval Notation for Bins<a class="headerlink" href="#interval-notation-for-bins" title="Link to this heading">#</a></h4>
+<p>Histogram bins are often written using interval notation, which indicates whether the
+endpoints of a range are included.</p>
+<p>Two symbols are commonly used:</p>
+<ul class="simple">
+<li><p><strong>Parentheses ( )</strong> -&gt; value is <strong>not included</strong></p></li>
+<li><p><strong>Brackets [ ]</strong> -&gt; value is <strong>included</strong></p></li>
+</ul>
+<p><strong>Example:</strong> <span class="math notranslate nohighlight">\((30,70]\)</span> means the bin contains values greater than 30 and up to and
+including 70. Or mathematically, <span class="math notranslate nohighlight">\(30 &lt; x \leq 70\)</span></p>
+<p>This notation helps avoid counting values in more than one bin.</p>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>In a histogram, how should the bin labeled <strong>[20, 45)</strong> be interpreted?</p>
+<p>A. The interval from 20 to 45, including 20 and 45<br>
+B. The interval from 20 to 45, including 20 but not including 45<br>
+C. The interval from 20 to 45, not including 20 but including 45<br>
+D. The interval from 20 to 45, not including 20 or 45<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: B</strong></p>
+<p class="sd-card-text">The notation <strong>[20, 45)</strong> means the bin includes values <strong>greater than or equal to 20
+and less than 45</strong>.</p>
+</div>
+</details></div>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>Why do histogram bins often use <strong>interval notation</strong> such as <code class="docutils literal notranslate"><span class="pre">(20,</span> <span class="pre">40]</span></code> or <code class="docutils literal notranslate"><span class="pre">[40,</span> <span class="pre">60)</span></code>?</p>
+<p>A. To make the histogram easier to draw<br>
+B. To make the bins the same width<br>
+C. To ensure each data value is counted in only one bin<br>
+D. To show that the data are continuous<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: C</strong></p>
+<p class="sd-card-text">Interval notation helps ensure that <strong>each data value belongs to only one bin</strong>,
+preventing values at the boundaries from being counted twice.</p>
+</div>
+</details></div>
+</section>
+</section>
+<section id="choosing-the-number-of-bins">
+<h3>Choosing the Number of Bins<a class="headerlink" href="#choosing-the-number-of-bins" title="Link to this heading">#</a></h3>
+<p>The number of bins used in a histogram affects how clearly the distribution can be
+interpreted.</p>
+<ul class="simple">
+<li><p><strong>Too few bins</strong> may hide important patterns in the data.</p></li>
+<li><p><strong>Too many bins</strong> may make the histogram appear noisy or difficult to interpret.</p></li>
+</ul>
+<p>The goal is to choose bins that clearly show the <strong>overall distribution and spread of
+the dataset</strong>.</p>
+<section id="calculating-number-of-bins-and-bin-size">
+<h4>Calculating Number of Bins and Bin Size<a class="headerlink" href="#calculating-number-of-bins-and-bin-size" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Determine the number of bins needed using the formula: <span class="math notranslate nohighlight">\(\text{Number of bins} = \sqrt{N}\)</span>, rounded to a wholenumber, where N is the sample size, or the total number of data points in the data set. <em>Hint: In Excel, use <code class="docutils literal notranslate"><span class="pre">=COUNT(</span> <span class="pre">)</span></code> to quickly find N.</em></p></li>
+<li><p>Determine the range of the data.</p></li>
+<li><p>Determine the number of items in each bin using the formula: <span class="math notranslate nohighlight">\(\text{Bin size} = \text{range} / \text{number of bins}\)</span>. Note that bin size is often rounded to a whole number.</p></li>
+</ol>
+</section>
+</section>
+<section id="what-histograms-can-show">
+<h3>What Histograms Can Show<a class="headerlink" href="#what-histograms-can-show" title="Link to this heading">#</a></h3>
+<p>Histograms help engineers analyze datasets in several ways:</p>
+<ul class="simple">
+<li><p>Understanding the <strong>spread of the data</strong></p></li>
+<li><p>Determining whether values are <strong>clustered in certain ranges</strong></p></li>
+<li><p>Identifying <strong>possible outliers</strong></p></li>
+<li><p>Comparing the distributions of different datasets</p></li>
+<li><p>Observing whether a dataset follows a <strong>normal (bell-shaped) distribution</strong></p></li>
+</ul>
+</section>
+<section id="histograms-vs-bar-charts">
+<h3>Histograms vs Bar Charts<a class="headerlink" href="#histograms-vs-bar-charts" title="Link to this heading">#</a></h3>
+<p>Histograms and bar charts may look similar, but they represent different types of data.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Histogram</p></th>
+<th class="head"><p>Bar Chart</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Used for <strong>continuous numerical data</strong></p></td>
+<td><p>Used for <strong>categorical data</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bars represent <strong>ranges of values (bins)</strong></p></td>
+<td><p>Bars represent <strong>categories or groups</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>The <strong>shape of the distribution</strong> is important</p></td>
+<td><p>Individual category values are compared</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bars <strong>touch each other</strong></p></td>
+<td><p>Bars are usually <strong>separated</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>Which type of data is most appropriate for a <strong>histogram</strong>?</p>
+<p>A. Eye color categories<br>
+B. Types of materials<br>
+C. Temperature measurements<br>
+D. Favorite programming language<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: C</strong></p>
+<p class="sd-card-text">Histograms are used for <strong>continuous numerical data</strong>, such as measurements like
+temperature.</p>
+</div>
+</details></div>
+</section>
+<section id="types-of-distributions">
+<h3>Types of Distributions<a class="headerlink" href="#types-of-distributions" title="Link to this heading">#</a></h3>
+<p>Histograms can reveal the <strong>shape of a dataset’s distribution</strong>, which helps engineers
+understand how values are spread across the data.</p>
+<p>Some distributions are <strong>symmetrical</strong>, meaning the left and right sides look similar.
+Others are <strong>skewed</strong>, meaning the distribution stretches farther in one direction than
+the other.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Distribution Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Key Characteristics</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Normal (Gaussian)</strong></p></td>
+<td><p>A symmetrical, bell-shaped distribution where most values cluster near the center.</p></td>
+<td><p>Mean, median, and mode are approximately equal. Values decrease evenly on both sides of the center.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Right-Skewed (Positive Skew)</strong></p></td>
+<td><p>A distribution where the tail extends toward larger values.</p></td>
+<td><p>Most values occur on the left side, with a few unusually large values stretching the distribution to the right.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Left-Skewed (Negative Skew)</strong></p></td>
+<td><p>A distribution where the tail extends toward smaller values.</p></td>
+<td><p>Most values occur on the right side, with a few unusually small values stretching the distribution to the left.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>As shown in the figure below, skewed distributions stretch more to one side of the
+histogram.</p>
+<figure class="align-default" id="id2">
+<img alt="Three curves comparing positive skew, a normal distribution, and negative skew, each with mean, median, and mode marked." src="../../_images/distribution_normal_skew.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Comparison of positive skew, normal distribution, and negative skew. In the
+normal distribution (center) the mean, median, and mode occur at the same
+location. In the positively skewed distribution (left) the tail extends to the
+right and the mean is greater than the median and mode. In the negatively
+skewed distribution (right) the tail extends to the left and the mean is less
+than the median and mode.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>A <strong>normal distribution</strong> is commonly described as which shape?</p>
+<p>A. Bell-shaped curve<br>
+B. Flat line<br>
+C. U-shaped curve<br>
+D. Random spikes<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: A</strong></p>
+<p class="sd-card-text">A normal distribution forms a <strong>bell-shaped curve</strong>, where most values cluster near the
+center and fewer values appear toward the extremes.</p>
+</div>
+</details></div>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>Skewness describes the ________ of a distribution.</p>
+<p>A. Symmetry<br>
+B. Frequency<br>
+C. Measurement units<br>
+D. Requirements<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: A</strong></p>
+<p class="sd-card-text">Skewness describes whether a distribution is <strong>symmetrical or stretched more to one
+side</strong>.</p>
+</div>
+</details></div>
+<section id="kurtosis">
+<h4>Kurtosis<a class="headerlink" href="#kurtosis" title="Link to this heading">#</a></h4>
+<div style="float: right; width: 420px; margin-left: 20px;">
+<figure class="align-default" id="id3">
+<img alt="Three overlapping curves comparing positive kurtosis, a normal distribution, and negative kurtosis." src="../../_images/kurtosis.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Comparison of positive kurtosis, normal distribution, and negative kurtosis.
+The taller, narrower curve represents positive kurtosis, with heavier tails and
+more extreme values. The wider, flatter curve represents negative kurtosis, with
+lighter tails and fewer extreme values. The normal distribution sits between
+them.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p><strong>Kurtosis</strong> describes how heavy or light the <strong>tails of a distribution</strong> are.</p>
+<p>The tails of a distribution represent the <strong>extreme values</strong> in a dataset. When the
+tails are heavier, the dataset is more likely to contain <strong>unusually large or small
+values (outliers)</strong>.</p>
+<div style="clear: both;"></div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type of Kurtosis</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>High (Positive) Kurtosis</strong></p></td>
+<td><p>The distribution has <strong>heavier tails</strong>, meaning extreme values occur more often.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Normal Kurtosis</strong></p></td>
+<td><p>The distribution has a typical bell shape with a moderate number of extreme values.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Low (Negative) Kurtosis</strong></p></td>
+<td><p>The distribution has <strong>lighter tails</strong>, meaning extreme values occur less often.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Kurtosis helps engineers understand whether a dataset may contain <strong>more or fewer
+extreme values than expected</strong>.</p>
+</section>
+</section>
+<section id="creating-a-histogram-in-excel">
+<h3>Creating a Histogram in Excel<a class="headerlink" href="#creating-a-histogram-in-excel" title="Link to this heading">#</a></h3>
+<p>To create a histogram in Excel:</p>
+<ol class="arabic simple">
+<li><p><strong>Select the data</strong> you want to analyze.</p></li>
+<li><p>Go to the <strong>Insert</strong> tab.</p></li>
+<li><p>In the <strong>Charts</strong> section, select <strong>Insert Statistic Chart</strong>.</p></li>
+<li><p>Choose <strong>Histogram</strong>.</p></li>
+</ol>
+<p>Excel will generate a histogram with bins that group the data into ranges.</p>
+<section id="adjusting-histogram-bins">
+<h4>Adjusting Histogram Bins<a class="headerlink" href="#adjusting-histogram-bins" title="Link to this heading">#</a></h4>
+<p>Excel automatically chooses a default number of bins, but engineers may need to adjust
+the bin settings to better represent the data.</p>
+<p>To modify the bins:</p>
+<ol class="arabic simple">
+<li><p>Click on the <strong>horizontal axis</strong> of the histogram.</p></li>
+<li><p>Right-click and select <strong>Format Axis</strong>.</p></li>
+<li><p>In the <strong>Axis Options</strong> panel, adjust one of the following:</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Bin Width</strong> - controls the size of each interval</p></li>
+<li><p><strong>Number of Bins</strong> - controls how many intervals appear in the histogram</p></li>
+</ul>
+<p>Choosing an appropriate bin size helps reveal the <strong>true shape of the distribution</strong>.</p>
+<p>Excel also provides options for:</p>
+<ul class="simple">
+<li><p><strong>Underflow Bin</strong> - groups all values <strong>below a specified limit</strong> into a single bin</p></li>
+<li><p><strong>Overflow Bin</strong> - groups all values <strong>above a specified limit</strong> into a single bin</p></li>
+</ul>
+<p>These options can be useful when you want to <strong>separate extreme values or outliers from
+the main dataset</strong>.</p>
+</section>
+<section id="improving-histogram-readability">
+<h4>Improving Histogram Readability<a class="headerlink" href="#improving-histogram-readability" title="Link to this heading">#</a></h4>
+<p>After creating a histogram, you may need to adjust the formatting to make it easier to
+interpret.</p>
+<p>Good histogram formatting includes:</p>
+<ul class="simple">
+<li><p>Adding a <strong>clear chart title</strong></p></li>
+<li><p>Labeling the <strong>axes</strong></p></li>
+<li><p>Including <strong>units of measurement</strong> when appropriate</p></li>
+<li><p>Avoiding unnecessary visual effects such as <strong>3-D charts</strong></p></li>
+</ul>
+<p>Clear formatting helps ensure the histogram communicates the data accurately.</p>
+</section>
+</section>
+<section id="interpreting-histograms">
+<h3>Interpreting Histograms<a class="headerlink" href="#interpreting-histograms" title="Link to this heading">#</a></h3>
+<p>When analyzing a histogram, engineers often consider several key questions:</p>
+<ul class="simple">
+<li><p>Where are most of the values located?</p></li>
+<li><p>How wide is the spread of the data?</p></li>
+<li><p>Is the distribution <strong>symmetrical or skewed</strong>?</p></li>
+<li><p>Are there any <strong>unusually large or small values (outliers)</strong>?</p></li>
+</ul>
+<p>By examining these characteristics, engineers can better understand patterns in data and
+evaluate how a system or process behaves.</p>
+</section>
+</section>
+<section id="outliers">
+<h2>Outliers<a class="headerlink" href="#outliers" title="Link to this heading">#</a></h2>
+<p>When analyzing data, some values may appear very different from the rest of the dataset.
+These values are called <strong>outliers</strong>.</p>
+<p>An <strong>outlier</strong> is a data point that lies far outside the overall pattern of the data.</p>
+<p>Outliers may appear in visualizations such as histograms, scatter plots, or box plots as
+values that are clearly separated from the majority of observations.</p>
+<section id="why-outliers-occur">
+<h3>Why Outliers Occur<a class="headerlink" href="#why-outliers-occur" title="Link to this heading">#</a></h3>
+<p>Outliers can appear for several different reasons. It is important to understand <em>why</em>
+an outlier occurs before deciding how to handle it.</p>
+<p>Common causes include:</p>
+<ul class="simple">
+<li><p>Measurement errors</p></li>
+<li><p>Data entry mistakes</p></li>
+<li><p>Instrument malfunction</p></li>
+<li><p>Unusual or rare real-world events</p></li>
+<li><p>Natural variation in the system being studied</p></li>
+</ul>
+<p>Not all outliers are mistakes. Some represent <strong>important observations</strong> that may reveal
+new information about the system being analyzed.</p>
+</section>
+<section id="identifying-potential-outliers-interquartile-range">
+<h3>Identifying Potential Outliers - Interquartile Range<a class="headerlink" href="#identifying-potential-outliers-interquartile-range" title="Link to this heading">#</a></h3>
+<p>One common way to identify potential outliers is by using the <strong>Interquartile Range
+(IQR)</strong>.</p>
+<p>The interquartile range describes the spread of the <strong>middle 50% of the data</strong>.</p>
+<p>The steps for identifying potential outliers are:</p>
+<ol class="arabic simple">
+<li><p>Find the first quartile (Q1).</p></li>
+<li><p>Find the third quartile (Q3).</p></li>
+<li><p>Calculate the interquartile range: <code class="docutils literal notranslate"><span class="pre">IQR</span> <span class="pre">=</span> <span class="pre">Q3</span> <span class="pre">-</span> <span class="pre">Q1</span></code></p></li>
+<li><p>Calculate the lower and upper bounds:</p>
+<ul class="simple">
+<li><p>Lower bound: <code class="docutils literal notranslate"><span class="pre">Q1</span> <span class="pre">-</span> <span class="pre">1.5</span> <span class="pre">*</span> <span class="pre">IQR</span></code></p></li>
+<li><p>Upperbound: <code class="docutils literal notranslate"><span class="pre">Q3</span> <span class="pre">+</span> <span class="pre">1.5</span> <span class="pre">*</span> <span class="pre">IQR</span></code></p></li>
+</ul>
+</li>
+</ol>
+<p>Any data points outside these bounds may be considered <strong>potential outliers</strong>.</p>
+<section id="finding-quartiles-in-excel">
+<h4>Finding Quartiles in Excel<a class="headerlink" href="#finding-quartiles-in-excel" title="Link to this heading">#</a></h4>
+<p>Quartiles divide a dataset into four equal parts.</p>
+<ul class="simple">
+<li><p><strong>Q1 (first quartile)</strong> represents the 25th percentile of the data.</p></li>
+<li><p><strong>Q3 (third quartile)</strong> represents the 75th percentile of the data.</p></li>
+</ul>
+<p>In Excel, quartiles can be calculated using the <code class="docutils literal notranslate"><span class="pre">QUARTILE.INC</span></code> function.</p>
+<blockquote>
+<div><p>General structure: <code class="docutils literal notranslate"><span class="pre">=QUARTILE.INC(array,quart)</span></code><br> - <code class="docutils literal notranslate"><span class="pre">array</span></code> - the range of data
+values<br> - <code class="docutils literal notranslate"><span class="pre">quart</span></code> - the quartile number to calculate</p>
+</div></blockquote>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quartile</p></th>
+<th class="head"><p>Example Formula</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Q1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=QUARTILE.INC(A2:A31,1)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Q2 (Median)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=QUARTILE.INC(A2:A31,2)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Q3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=QUARTILE.INC(A2:A31,3)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Once Q1 and Q3 are calculated, the <strong>IQR</strong> can be computed using: <code class="docutils literal notranslate"><span class="pre">IQR</span> <span class="pre">=</span> <span class="pre">Q3</span> <span class="pre">-</span> <span class="pre">Q1</span></code></p>
+<p>This value is then used to determine the <strong>upper and lower bounds for potential
+outliers</strong>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>A dataset has the following quartile values:</p>
+<p>Q1 = 24
+Q3 = 32</p>
+<p>Using the IQR method, calculate:</p>
+<ol class="arabic simple">
+<li><p>The <strong>interquartile range (IQR)</strong></p></li>
+<li><p>The <strong>lower bound</strong> for potential outliers</p></li>
+<li><p>The <strong>upper bound</strong> for potential outliers</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">First calculate the <strong>interquartile range</strong>:</p>
+<p class="sd-card-text">IQR = Q3 - Q1
+IQR = 32 - 24 = <strong>8</strong></p>
+<p class="sd-card-text">Next calculate the bounds:</p>
+<p class="sd-card-text">Lower Bound = Q1 - 1.5 <span class="math notranslate nohighlight">\(\times\)</span> IQR
+Lower Bound = 24 - 1.5(8) = 24 - 12 = <strong>12</strong></p>
+<p class="sd-card-text">Upper Bound = Q3 + 1.5 <span class="math notranslate nohighlight">\(\times\)</span> IQR
+Upper Bound = 32 + 1.5(8) = 32 + 12 = <strong>44</strong></p>
+<p class="sd-card-text">Final answers:</p>
+<ul class="simple">
+<li><p class="sd-card-text">IQR = <strong>8</strong></p></li>
+<li><p class="sd-card-text">Lower Bound = <strong>12</strong></p></li>
+<li><p class="sd-card-text">Upper Bound = <strong>44</strong></p></li>
+</ul>
+</div>
+</details></div>
+</section>
+</section>
+<section id="identifying-potential-outliers-standard-deviation">
+<h3>Identifying Potential Outliers - Standard Deviation<a class="headerlink" href="#identifying-potential-outliers-standard-deviation" title="Link to this heading">#</a></h3>
+<p>Another common method identifies outliers using the <strong>mean and standard deviation</strong>.</p>
+<p>A common guideline is that values outside the following range may be considered
+potential outliers:</p>
+<div class="math notranslate nohighlight" id="equation-eq-ex2-three-sigma-range">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-eq-ex2-three-sigma-range" title="Link to this equation">#</a></span>\[\text{Mean}\space\pm\space 3\space*\space \text{Standard Deviation}\]</div>
+<p>This method is sometimes used when data follows a <strong>normal distribution</strong>.</p>
+<p>However, when datasets are highly skewed or contain long tails, the <strong>interquartile
+range (IQR) method</strong> often provides more reliable results.</p>
+</section>
+<section id="comparing-outlier-detection-methods">
+<h3>Comparing Outlier Detection Methods<a class="headerlink" href="#comparing-outlier-detection-methods" title="Link to this heading">#</a></h3>
+<div style="float: right; width: 420px; margin-left: 20px;">
+<figure class="align-default" id="id4">
+<img alt="Histogram of bike trip durations with a strong right skew and a long tail of extreme values." src="../../_images/bike_trip_outliers.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Histogram of bike trip durations showing a right-skewed distribution with
+several extreme values. Most trips are short, but a few are much longer.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>Different statistical methods can identify <strong>very different numbers of outliers</strong>,
+especially when the dataset is skewed.</p>
+<p>In the histogram shown, most bike trips are relatively short, but a small number of
+trips last much longer. These extreme values appear in the <strong>long right tail of the
+distribution</strong>.</p>
+<div style="clear: both;"></div>
+<p>When two different outlier detection methods are applied:</p>
+<ul class="simple">
+<li><p>The <strong>Interquartile Range (IQR) method</strong> may identify many potential outliers.</p></li>
+<li><p>The <strong>Standard Deviation method</strong> may identify far fewer outliers.</p></li>
+</ul>
+<p>In one example dataset:</p>
+<ul class="simple">
+<li><p>The IQR method identified 146 potential outliers</p></li>
+<li><p>The Standard Deviation method identified only 3 potential outliers</p></li>
+</ul>
+<p>This occurs because the two methods measure variability differently.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Key Idea</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>IQR Method</strong></p></td>
+<td><p>Focuses on the <strong>middle 50% of the data</strong>, making it more sensitive to extreme values in skewed distributions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Standard Deviation Method</strong></p></td>
+<td><p>Uses the <strong>mean and standard deviation</strong>, which can be influenced by large values.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Because of these differences, engineers often compare multiple approaches and use
+<strong>engineering judgment</strong> when interpreting results.</p>
+</section>
+<section id="handling-outliers">
+<h3>Handling Outliers<a class="headerlink" href="#handling-outliers" title="Link to this heading">#</a></h3>
+<p>After identifying a potential outlier, the next step is to decide how it should be
+handled.</p>
+<p>Outliers should <strong>not be removed automatically</strong>. Engineers must first determine whether
+the value represents an error or a meaningful observation.</p>
+<section id="check-for-possible-errors">
+<h4>Check for Possible Errors<a class="headerlink" href="#check-for-possible-errors" title="Link to this heading">#</a></h4>
+<p>Some outliers occur because of mistakes during measurement or data entry.</p>
+<p>Ask whether the value is <strong>reasonable in the context of the problem</strong>.</p>
+<p>Examples of possible errors include:</p>
+<ul class="simple">
+<li><p>Typographical mistakes when entering data</p></li>
+<li><p>Unit conversion errors</p></li>
+<li><p>Sensor malfunctions</p></li>
+</ul>
+<p>For example, if a dataset contains a recorded <strong>body temperature of 986
+<span class="math notranslate nohighlight">\(^\circ\text{F}\)</span></strong>, the value is likely the result of a data entry error.</p>
+</section>
+<section id="investigate-the-data">
+<h4>Investigate the Data<a class="headerlink" href="#investigate-the-data" title="Link to this heading">#</a></h4>
+<p>If the value is not clearly an error, examine the data more closely.</p>
+<p>Consider questions such as:</p>
+<ul class="simple">
+<li><p>What makes this data point different from the others?</p></li>
+<li><p>Does the observation represent a rare but valid event?</p></li>
+<li><p>Could environmental or system conditions explain the value?</p></li>
+</ul>
+<p>Outliers sometimes represent <strong>important real-world events</strong> rather than mistakes.</p>
+</section>
+<section id="compare-results-with-and-without-the-outlier">
+<h4>Compare Results With and Without the Outlier<a class="headerlink" href="#compare-results-with-and-without-the-outlier" title="Link to this heading">#</a></h4>
+<p>Another useful strategy is to analyze the data <strong>with and without the outlier</strong>.</p>
+<p>Consider the following questions:</p>
+<ul class="simple">
+<li><p>Do the summary statistics change significantly?</p></li>
+<li><p>Does the distribution shape change?</p></li>
+<li><p>Do the conclusions drawn from the data change?</p></li>
+</ul>
+<p>If the results change dramatically, the outlier may strongly influence the analysis and
+should be carefully considered.</p>
+</section>
+<section id="why-this-matters">
+<h4>Why This Matters<a class="headerlink" href="#why-this-matters" title="Link to this heading">#</a></h4>
+<p>Different outlier detection methods may identify <strong>very different numbers of outliers</strong>,
+especially when data is skewed.</p>
+<p>For example, one method might identify many values as outliers, while another method
+identifies only a few.</p>
+<p>Because of this, engineers should <strong>interpret the results carefully</strong> and consider the
+context of the data rather than relying only on a formula.</p>
+<div class="tip admonition">
+<p class="admonition-title">Check for Understanding</p>
+<p>A dataset contains one value that is much larger than all the other observations. After
+checking the data collection process, the team determines that the value resulted from a
+sensor malfunction.</p>
+<p>What is the most appropriate action?</p>
+<p>A. Keep the value because all data should remain in the dataset<br>
+B. Ignore the value but leave it in the dataset<br>
+C. Remove the value because it resulted from a measurement error<br>
+D. Replace the value with the average of the other data points<br></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Show Answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Correct Answer: C – Remove the value</strong></p>
+<p class="sd-card-text">Outliers caused by measurement or recording errors may be removed after the issue has
+been verified. Valid observations, however, should typically remain in the dataset.</p>
+</div>
+</details></div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Part_02_Excel/M2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1_pre-class_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>Pre-Class Assignments</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tasks/pre_1/a/instructions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.1.2. </span>PCA: Descriptive Statistics and Logical Functions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-statistics">Descriptive Statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-of-central-tendency">Measures of Central Tendency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-of-variation">Measures of Variation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-deviation-and-variance">Standard Deviation and Variance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-functions">Logical Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-comparison-operators">Relational (Comparison) Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-function">IF Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-and-or-functions">AND and OR Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-if-functions">Nested IF Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-a-histogram">Components of a Histogram</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interval-notation-for-bins">Interval Notation for Bins</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-number-of-bins">Choosing the Number of Bins</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-number-of-bins-and-bin-size">Calculating Number of Bins and Bin Size</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-histograms-can-show">What Histograms Can Show</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms-vs-bar-charts">Histograms vs Bar Charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-distributions">Types of Distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kurtosis">Kurtosis</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-histogram-in-excel">Creating a Histogram in Excel</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjusting-histogram-bins">Adjusting Histogram Bins</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-histogram-readability">Improving Histogram Readability</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-histograms">Interpreting Histograms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outliers">Outliers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-outliers-occur">Why Outliers Occur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-potential-outliers-interquartile-range">Identifying Potential Outliers - Interquartile Range</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-quartiles-in-excel">Finding Quartiles in Excel</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-potential-outliers-standard-deviation">Identifying Potential Outliers - Standard Deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-outlier-detection-methods">Comparing Outlier Detection Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-outliers">Handling Outliers</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-for-possible-errors">Check for Possible Errors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#investigate-the-data">Investigate the Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-results-with-and-without-the-outlier">Compare Results With and Without the Outlier</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-matters">Why This Matters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="/engr-13100-2026-fall/Appendices/contributors.html">Contributors</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

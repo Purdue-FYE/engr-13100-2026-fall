@@ -1,0 +1,1720 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>10.1.1. PCMs: Loops in Python &#8212; Purdue University ENGR 13100</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=07d23ebc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=a8e58a58"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Part_04_Python/M3/1.1_materials';</script>
+    <link rel="icon" href="../../_static/avatar.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10.1.2. PCA: While Loops" href="tasks/pre_1/a/instructions.html" />
+    <link rel="prev" title="10.1. Pre-Class Assignments" href="1_pre-class_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Purdue University ENGR 13100 - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Purdue University ENGR 13100 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ENGR 13100<br> Transforming Ideas to Innovation I
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome to ENGR 131</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/meet_the_team.html">Meet Your Instructional Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/help_sessions.html">Help Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/course_schedule.html">Course Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/comp_basics.html">Computer Basics and File Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/course_software/course_software.html">Course Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glue_factory.html">Glue Factory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Professional Engineering Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/0_overview.html">1. Professional Preparation and Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.1_instructions.html">1.1. Course Policies Exploration</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2_ce.html">1.2. Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE.html">1.2.1. CE: Agricultural Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.2_CEM.html">1.2.2. CE: Construction Engineering and Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.3_BioE.html">1.2.3. CE: Biological Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.4_NE.html">1.2.4. CE: Nuclear Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.5_SEE.html">1.2.5. CE: Sustainability and Environmental Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.6_MSE.html">1.2.6. CE: Materials Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.7_CE.html">1.2.7. CE: Civil Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.8_CHE.html">1.2.8. CE: Chemical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.9_ME.html">1.2.9. CE: Mechanical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.10_AAE.html">1.2.10. CE: Aeronautical and Astronautical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.11_IE.html">1.2.11. CE: Industrial Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.12_BME.html">1.2.12. CE: Biomedical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.13_MDE.html">1.2.13. CE: Multidisciplinary Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.14_ECE.html">1.2.14. CE: Electrical and Computer Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.15_ENRE.html">1.2.15. CE: Environmental and Natural Resources Engineering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.3_eym.html">1.3. Engineering Your Major</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/0_overview.html">2. Teaming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/2_CATME_inst.html">2.1. CATME Teaming</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/1_TM_assignments.html">2.2. Teaming Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_fundamentals.html">2.2.1. PCMs: Working in an Engineering Team</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_fundamentals_inst.html">2.2.2. PCA: Teaming Fundamentals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_inst.html">2.2.3. TM: Code of Cooperation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_CATMEdimensions.html">2.2.4. PCMs: The 5 CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_CATMEdimensions_inst.html">2.2.5. PCA: CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_revisit_inst.html">2.2.6. TM: Code of Cooperation Revisit</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Excel</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/0_overview.html">3. Spreadsheet Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/1_pre-class_overview.html">3.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/1.1_materials.html">3.1.1. PCMs: Spreadsheet Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/tasks/pre_1/a/instructions.html">3.1.2. PCA: Calculations and Charting in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/2_in-class_overview.html">3.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/tasks/ICA_1/a/instructions.html">3.2.1. ICA: Tennis Ball Launcher Performance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/3_assignment_overview.html">3.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/tasks/1/a/instructions.html">3.3.1. EX: Spreadsheet Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/0_overview.html">4. Data Analysis in Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/1_pre-class_overview.html">4.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/1.1_materials.html">4.1.1. PCMs: Data Analysis and Histograms in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/pre_1/a/instructions.html">4.1.2. PCA: Descriptive Statistics and Logical Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/pre_2/a/instructions.html">4.1.3. PCA: Histograms and Outliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/2_in-class_overview.html">4.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/ICA_1/a/instructions.html">4.2.1. ICA: Coffee Cooling Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/ICA_2/a/instructions.html">4.2.2. ICA: COGO Bike Share</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/3_assignment_overview.html">4.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/1/a/instructions.html">4.3.1. EX - Data Analysis &amp; Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/0_overview.html">5. Probability and Uncertainty</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/1_pre-class_overview.html">5.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/1.1_materials.html">5.1.1. PCMs: Probability and Normal Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/tasks/pre_1/a/instructions.html">5.1.2. PCA: Probability and Z-Scores in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/2_in-class_overview.html">5.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/tasks/ICA_1/a/instructions.html">5.2.1. ICA: Semiconductor Quality Control</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/3_assignment_overview.html">5.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/tasks/1/a/instructions.html">5.3.1. EX: Probability and Normal Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/0_overview.html">6. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/1_pre-class_overview.html">6.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/1.1_materials.html">6.1.1. PCMs: Linear Regression in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/tasks/pre_1/a/instructions.html">6.1.2. PCA: Linear Regression in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/2_in-class_overview.html">6.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/tasks/ICA_1/a/instructions.html">6.2.1. ICA: Speaker Wire Resistance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/3_assignment_overview.html">6.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/tasks/1/a/instructions.html">6.3.1. EX: Linear Data and Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_03_AI/0_overview.html">7. AI in Engineering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_03_AI/1_pre-class_overview.html">7.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.1_materials.html">7.1.1. PCMs: Computer Operations and Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.2_computer_ops.html">7.1.2. PCA: Computer Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.3_materials.html">7.1.3. PCMs: What is Artificial Intelligence?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.4_AI.html">7.1.4. PCA: What is AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.5_materials.html">7.1.5. PCMs: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.6_decisiontrees.html">7.1.6. PCA: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.7_materials.html">7.1.7. PCMs: Neural Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/7.1.8_neuralnetworks.html">7.1.8. PCA: Neural Networks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_03_AI/2_in-class_overview.html">7.2. In-Class Activities</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_03_AI/3_assignment_overview.html">7.3. AI Design Challenge: Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/tasks/ind_1/a/DT_instructions.html">7.3.1. Software Logic - Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/tasks/ind_1/a/NN_instructions.html">7.3.2. Hardware System - Neural Networks</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M1/0_overview.html">8. Python Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M1/1_pre-class_overview.html">8.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M1/1.1_materials.html">8.1.1. PCMs: Python Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M1/tasks/pre_1/b/instructions.html">8.1.2. PCA: Data Types and Calculations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M1/2_in-class_overview.html">8.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M1/tasks/ICA_1/a/instructions.html">8.2.1. ICA: Debugging and Auto Grader Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M1/3_assignment_overview.html">8.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M1/tasks/ind_1/b/instructions.html">8.3.1. PY: Python Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M2/0_overview.html">9. Logic and Modularity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M2/1_pre-class_overview.html">9.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M2/1.1_materials.html">9.1.1. PCMs: Logic and Modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M2/tasks/pre_1/a/instructions.html">9.1.2. PCA: Selection Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M2/tasks/pre_2/a/instructions.html">9.1.3. PCA: User-Defined Functions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M2/2_in-class_overview.html">9.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M2/tasks/ICA_1/a/instructions.html">9.2.1. ICA: Factory Alarm System</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M2/3_assignment_overview.html">9.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M2/tasks/ind_1/b/instructions.html">9.3.1. PY: Logic and Modularity</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_overview.html">10. Looping Structures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="1_pre-class_overview.html">10.1. Pre-Class Assignments</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">10.1.1. PCMs: Loops in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks/pre_1/a/instructions.html">10.1.2. PCA: While Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks/pre_2/a/instructions.html">10.1.3. PCA: For Loops</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="2_in-class_overview.html">10.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tasks/ICA_1/a/instructions.html">10.2.1. ICA: Dog Park Tennis Ball Launcher</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="3_assignment_overview.html">10.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tasks/ind_1/a/instructions.html">10.3.1. PY: Looping Structures</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M4/0_overview.html">11. Data Analysis and Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/1_pre-class_overview.html">11.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/1.1_materials.html">11.1.1. PCMs: Data Analysis and Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/pre_1/a/instructions.html">11.1.2. PCA: Data Manipulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/pre_2/a/instructions.html">11.1.3. PCA: Plotting and Statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/2_in-class_overview.html">11.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/ICA_1/a/instructions.html">11.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M4/3_assignment_overview.html">11.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M4/tasks/ind_1/a/instructions.html">11.3.1. PY: Data Analysis and Visualization</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M5/0_overview.html">12. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M5/1_pre-class_overview.html">12.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M5/1.1_materials.html">12.1.1. PCMs: Linear Regression in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../M5/tasks/pre_1/b/instructions.html">12.1.2. PCA: Linear Regression Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M5/2_in-class_overview.html">12.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M5/tasks/ICA_1/a/instructions.html">12.2.1. ICA: Title</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../M5/3_assignment_overview.html">12.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../M5/tasks/ind_1/a/instructions.html">12.3.1. PY: Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Purdue-FYE/engr-13100-2026-fall/issues/new?title=Issue%20on%20page%20%2FPart_04_Python/M3/1.1_materials.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PCMs: Loops in Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repetition-structures">Repetition Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">The <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-while-loops">Definite <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-while-loops">Infinite <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indefinite-while-loops">Indefinite <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-controlled-while-loops">Sentinel-Controlled <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-for-loop">The <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> Loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-for-loops">Definite <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> Loops</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-loops">Nested Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-statements">Control Statements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-structures">More Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#common-list-methods-and-operations">Common List Methods and Operations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-lists-for-storing-multi-dimensional-data">Nested Lists for storing multi-dimensional data</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-list">One-Dimensional List</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#two-dimensional-list">Two-Dimensional List</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-list">Multidimensional List</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-arrays">Python Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">NumPy Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-numpy-arrays">Creating NumPy arrays</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-attributes">NumPy array attributes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#common-numpy-array-methods">Common NumPy array methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#common-numpy-array-operations">Common NumPy array operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-operations">Element-wise operations</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">Broadcasting</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">Transpose</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="raw-html"><div class="d-none"></span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand\blank{~\underline{\hspace{1.2cm}}~}\\% Bold symbols (vectors)
+\newcommand\bs[1]{\mathbf{#1}}\\% Differential
+\newcommand\dd[2][]{\mathrm{d}^{#1}{#2}}  % use as \dd, \dd{x}, or \dd[2]{x}\\% Poor man's siunitx
+\newcommand\unit[1]{\mathrm{#1}}
+\newcommand\num[1]{#1}
+\newcommand\qty[2]{#1~\unit{#2}}\\\newcommand\per{/}
+\newcommand\squared{{}^2}
+\newcommand\cubed{{}^3}
+%
+% Scale
+\newcommand\milli{\unit{m}}
+\newcommand\centi{\unit{c}}
+\newcommand\kilo{\unit{k}}
+\newcommand\mega{\unit{M}}
+%
+% Percent
+\newcommand\percent{\unit{{\kern-4mu}\%}}
+%
+% Angle
+\newcommand\radian{\unit{rad}}
+\newcommand\degree{\unit{{\kern-4mu}^\circ}}
+%
+% Time
+\newcommand\second{\unit{s}}
+\newcommand\s{\second}
+\newcommand\minute{\unit{min}}
+\newcommand\hour{\unit{h}}
+%
+% Distance
+\newcommand\meter{\unit{m}}
+\newcommand\m{\meter}
+\newcommand\inch{\unit{in}}
+\newcommand\foot{\unit{ft}}
+%
+% Force
+\newcommand\newton{\unit{N}}
+\newcommand\kip{\unit{kip}} % kilopound in &quot;freedom&quot; units - edit made by Sri
+%
+% Mass
+\newcommand\gram{\unit{g}}
+\newcommand\g{\gram}
+\newcommand\kilogram{\unit{kg}}
+\newcommand\kg{\kilogram}
+\newcommand\grain{\unit{grain}}
+\newcommand\ounce{\unit{oz}}
+%
+% Temperature
+\newcommand\kelvin{\unit{K}}
+\newcommand\K{\kelvin}
+\newcommand\celsius{\unit{{}^\circ C}}
+\newcommand\C{\celsius}
+\newcommand\fahrenheit{\unit{{}^\circ F}}
+\newcommand\F{\fahrenheit}
+%
+% Area
+\newcommand\sqft{\unit{sq\,\foot}}  % square foot
+%
+% Volume
+\newcommand\liter{\unit{L}}
+\newcommand\gallon{\unit{gal}}
+%
+% Frequency
+\newcommand\hertz{\unit{Hz}}
+\newcommand\rpm{\unit{rpm}}
+%
+% Voltage
+\newcommand\volt{\unit{V}}
+\newcommand\V{\volt}
+\newcommand\millivolt{\milli\volt}
+\newcommand\mV{\milli\volt}
+\newcommand\kilovolt{\kilo\volt}
+\newcommand\kV{\kilo\volt}
+%
+% Current
+\newcommand\ampere{\unit{A}}
+\newcommand\A{\ampere}
+\newcommand\milliampereA{\milli\ampere}
+\newcommand\mA{\milli\ampere}
+\newcommand\kiloampereA{\kilo\ampere}
+\newcommand\kA{\kilo\ampere}
+%
+% Resistance
+\newcommand\ohm{\Omega}
+\newcommand\milliohm{\milli\ohm}
+\newcommand\kiloohm{\kilo\ohm} % correct SI spelling
+\newcommand\kilohm{\kilo\ohm} % &quot;American&quot; spelling used in siunitx
+\newcommand\megaohm{\mega\ohm} % correct SI spelling
+\newcommand\megohm{\mega\ohm} % &quot;American&quot; spelling used in siunitx
+%
+% Capacitance
+\newcommand\farad{\unit{F}}
+\newcommand\F{\farad}
+\newcommand\microfarad{\micro\farad}
+\newcommand\muF{\micro\farad}
+%
+% Inductance
+\newcommand\henry{\unit{H}}
+\newcommand\H{\henry}
+\newcommand\millihenry{\milli\henry}
+\newcommand\mH{\milli\henry}
+%
+% Power
+\newcommand\watt{\unit{W}}
+\newcommand\W{\watt}
+\newcommand\milliwatt{\milli\watt}
+\newcommand\mW{\milli\watt}
+\newcommand\kilowatt{\kilo\watt}
+\newcommand\kW{\kilo\watt}
+%
+% Energy
+\newcommand\joule{\unit{J}}
+\newcommand\J{\joule}
+%
+% Composite units
+%
+% Torque
+\newcommand\ozin{\unit{\ounce}\,\unit{in}}
+\newcommand\newtonmeter{\unit{\newton\,\meter}}
+%
+% Pressure
+\newcommand\psf{\unit{psf}}  % pounds per square foot
+\newcommand\pcf{\unit{pcf}}  % pounds per cubic foot
+\newcommand\pascal{\unit{Pa}}
+\newcommand\Pa{\pascal}
+\newcommand\ksi{\unit{ksi}} % kilopound per square inch
+\newcommand\bar{\unit{bar}}
+\end{aligned}\end{align} \]</div>
+<p><span class="raw-html"></div></span></p>
+<p>Sep 09, 2026 | 1540 words | 15 min
+read</p>
+<section class="tex2jax_ignore mathjax_ignore" id="pcms-loops-in-python">
+<span id="py-m3-pre-class-mats"></span><h1><span class="section-number">10.1.1. </span>PCMs: Loops in Python<a class="headerlink" href="#pcms-loops-in-python" title="Link to this heading">#</a></h1>
+<!--Read the following official Python documents.
+
+https://docs.python.org/3/tutorial/introduction.html#first-steps-towards-programming
+
+https://docs.python.org/3/tutorial/controlflow.html#for-statements
+
+https://docs.python.org/3/tutorial/controlflow.html#the-range-function
+-->
+<section id="repetition-structures">
+<h2>Repetition Structures<a class="headerlink" href="#repetition-structures" title="Link to this heading">#</a></h2>
+<p>Repetition structures, also known as iteration structures or loops, allow us to execute
+a block of code multiple times based on a condition or a sequence.  When the number of
+iterations is known beforehand, we call it a definite loop.  When the number of
+iterations is not known beforehand, we call it an indefinite loop.</p>
+<dl class="simple myst">
+<dt>Definite loop</dt><dd><p>the number of iterations is known beforehand</p>
+</dd>
+<dt>Indefinite loop</dt><dd><p>the number of iterations is not known beforehand</p>
+</dd>
+</dl>
+<p>In Python, we have two different keywords we can use to create loops:
+<code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code>.  Their usage is summarized below.</p>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_8g7q4nd3&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_ciji560c" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="711_1_repetition_structures"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/8cbf089a0d13808419828bc61025385e/01_repetition_structures.py"><code class="xref download docutils literal notranslate"><span class="pre">01_repetition_structures.py</span></code></a>
+<a class="reference download internal" download="" href="../../_downloads/f8f9e0d7648985bf88871d1ac2c7286c/02_while_loop.py"><code class="xref download docutils literal notranslate"><span class="pre">02_while_loop.py</span></code></a>
+<a class="reference download internal" download="" href="../../_downloads/236d53f291d893db3c6f8494a7bb956f/03_for_loop.py"><code class="xref download docutils literal notranslate"><span class="pre">03_for_loop.py</span></code></a>
+<a class="reference download internal" download="" href="../../_downloads/f26b80f734d78a784d5f15472468b6cd/04_nested_loops.py"><code class="xref download docutils literal notranslate"><span class="pre">04_nested_loops.py</span></code></a>
+<a class="reference download internal" download="" href="../../_downloads/ef7eefa41178db001f8cf1aef4bdd807/05_control_statements.py"><code class="xref download docutils literal notranslate"><span class="pre">05_control_statements.py</span></code></a></p>
+<section id="the-while-loop">
+<h3>The <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loop<a class="headerlink" href="#the-while-loop" title="Link to this heading">#</a></h3>
+<p>A <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> loop is used to repeatedly execute a block of statements as long as
+its condition expression evaluates to <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code>. It is most commonly used when
+the number of iterations is not known beforehand (i.e., an indefinite loop),
+though it can also be used in situations where the number of iterations is
+controlled manually.</p>
+<section id="definite-while-loops">
+<h4>Definite <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops<a class="headerlink" href="#definite-while-loops" title="Link to this heading">#</a></h4>
+<p>To create a definite <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> loop, we:</p>
+<ol class="arabic simple">
+<li><p>initialize a control variable before entering the loop</p></li>
+<li><p>use the control variable in the condition expression, entering the loop if the
+expression evaluates to <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code>.</p></li>
+<li><p>update the control variable inside the loop such that the condition expression will
+eventually evaluate to <code class="code highlight python docutils literal highlight-python"><span class="kc">False</span></code></p></li>
+</ol>
+<p class="rubric">Example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># initialize a control variable</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>  <span class="c1"># check the control variable</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Count is:&quot;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># update the control variable</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Count is: 1
+Count is: 2
+Count is: 3
+Count is: 4
+Count is: 5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="infinite-while-loops">
+<h4>Infinite <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops<a class="headerlink" href="#infinite-while-loops" title="Link to this heading">#</a></h4>
+<p>An infinite loop is a loop that never ends. This is usually caused by a mistake in the
+code. It occurs when the condition expression never evaluates to <code class="code highlight python docutils literal highlight-python"><span class="kc">False</span></code>.  A
+common cause of infinite loops is forgetting to update the control variable inside the
+loop.</p>
+<p class="rubric">Example:</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># initialize a control variable</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>  <span class="c1"># check the control variable</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Count is:&quot;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+    <span class="c1"># missing update of the control variable</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p>The above code will create an infinite loop because the control variable <code class="code highlight python docutils literal highlight-python"><span class="n">count</span></code>
+is never updated inside the loop.  Infinite loops can cause your program to become
+unresponsive.  If you accidentally create an infinite loop, you can stop it by pressing
+<kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> in your terminal.</p>
+</div>
+</section>
+<section id="indefinite-while-loops">
+<h4>Indefinite <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops<a class="headerlink" href="#indefinite-while-loops" title="Link to this heading">#</a></h4>
+<p>To create an indefinite <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> loop, we set the condition expression such that
+it depends on some external factor such as user input.  There is no way of knowing ahead
+of time, how many times the loop will execute.</p>
+<p class="rubric">Example:</p>
+<p>In this example, the user enters <code class="code docutils literal notranslate"><span class="pre">&quot;yes&quot;</span></code> the first two times they are prompted
+for input, and then enters <code class="code docutils literal notranslate"><span class="pre">&quot;yes!&quot;</span></code> the third time, which causes the loop to
+terminate because <code class="code docutils literal notranslate"><span class="pre">&quot;yes!&quot;</span></code> is not equal to <code class="code docutils literal notranslate"><span class="pre">&quot;yes&quot;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Would you like to start the program? (yes/no): &quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">response</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The program is running.&quot;</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Would you like to run the program again? (yes/no): &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The program has ended.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Would you like to start the program? (yes/no): yes
+The program is running.
+Would you like to run the program again? (yes/no): yes
+The program is running.
+Would you like to run the program again? (yes/no): yes!
+The program has ended.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sentinel-controlled-while-loops">
+<h4>Sentinel-Controlled <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops<a class="headerlink" href="#sentinel-controlled-while-loops" title="Link to this heading">#</a></h4>
+<p>The sentinel-controlled loop is a common type of indefinite loop where the loop
+continues until a special value called the <strong>sentinel value</strong> is encountered.  The
+sentinel value should be distinct from other values in the sequence.  Common examples of
+sentinel values include: <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(-1\)</span>, <code class="code docutils literal notranslate"><span class="pre">q</span></code>, <code class="code docutils literal notranslate"><span class="pre">Q</span></code>, <code class="code docutils literal notranslate"><span class="pre">quit</span></code>,
+<code class="code docutils literal notranslate"><span class="pre">done</span></code>, and EOF (end of file).</p>
+<p class="rubric">Example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number (-1 to stop): &quot;</span><span class="p">))</span>
+<span class="k">while</span> <span class="n">number</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number (-1 to stop): &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You entered -1. The program has stopped.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter a number (-1 to stop): 1
+Enter a number (-1 to stop): 6
+Enter a number (-1 to stop): 7
+Enter a number (-1 to stop): -1
+You entered -1. The program has stopped.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-for-loop">
+<h3>The <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> Loop<a class="headerlink" href="#the-for-loop" title="Link to this heading">#</a></h3>
+<p>A <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> loop is used to iterate over a sequence or other iterable objects.  They
+are typically used when the number of iterations is known beforehand (i.e. a definite
+loop).</p>
+<section id="definite-for-loops">
+<h4>Definite <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> Loops<a class="headerlink" href="#definite-for-loops" title="Link to this heading">#</a></h4>
+<p>To create a definite <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> loop, we use the <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> keyword followed by a
+loop variable, the <code class="code highlight python docutils literal highlight-python"><span class="ow">in</span></code> keyword, and an iterable object such as a list, tuple,
+string, or range.  The loop variable takes on the value of each element in the iterable
+object one by one, and the block of code inside the loop is executed for each element.</p>
+<p class="rubric">Example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>  <span class="c1"># iterate over a range of numbers from 1 to 5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Count is:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Count is: 1
+Count is: 2
+Count is: 3
+Count is: 4
+Count is: 5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-py-m3-loop-comparison">
+<caption><span class="caption-number">Table 10.1 </span><span class="caption-text">Loop Comparison</span><a class="headerlink" href="#tab-py-m3-loop-comparison" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>The <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> Loop</p></th>
+<th class="head"><p>The <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loop</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Use Case</p></td>
+<td><p>When the number of iterations is known</p></td>
+<td><p>When the number of iterations is not known</p></td>
+</tr>
+<tr class="row-odd"><td><p>Syntax</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">variable</span> <span class="pre">in</span> <span class="pre">iterable:</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">condition:</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Control Variable</p></td>
+<td><p>Implicitly defined by the iterable</p></td>
+<td><p>Explicitly defined and updated by the programmer</p></td>
+</tr>
+<tr class="row-odd"><td><p>Readability</p></td>
+<td><p>More concise and easier to read for definite loops</p></td>
+<td><p>Can be less readable for complex conditions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="nested-loops">
+<h3>Nested Loops<a class="headerlink" href="#nested-loops" title="Link to this heading">#</a></h3>
+<p>A nested loop is a loop inside another loop.  The inner loop is executed completely for
+each iteration of the outer loop.  Both <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> loops and <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> loops
+can be nested within each other.</p>
+<p class="rubric">Example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nested for loop to print a multiplication table</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>  <span class="c1"># Outer loop for rows</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>  <span class="c1"># Inner loop for columns</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">j</span><span class="si">:</span><span class="s2">4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>  <span class="c1"># Print product with formatting</span>
+    <span class="nb">print</span><span class="p">()</span>  <span class="c1"># New line after each row</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   1    2    3    4    5 
+   2    4    6    8   10 
+   3    6    9   12   15 
+   4    8   12   16   20 
+   5   10   15   20   25 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="control-statements">
+<h3>Control Statements<a class="headerlink" href="#control-statements" title="Link to this heading">#</a></h3>
+<p>Control statements can be used to alter the flow of execution within loops.</p>
+<dl class="simple myst">
+<dt><code class="code highlight python docutils literal highlight-python"><span class="k">break</span></code></dt><dd><p>Exits the loop immediately, regardless of the loop’s condition.  Control is
+transferred to the statement immediately following the loop.</p>
+</dd>
+<dt><code class="code highlight python docutils literal highlight-python"><span class="k">continue</span></code></dt><dd><p>Causes the loop to skip the remainder of its body and immediately
+retest its condition prior to reiterating.</p>
+</dd>
+<dt><code class="code highlight python docutils literal highlight-python"><span class="k">pass</span></code></dt><dd><p>A null operation; nothing happens when it is executed.  It is useful as a placeholder
+when a statement is required syntactically but no action is needed or desired.</p>
+</dd>
+<dt><code class="code highlight python docutils literal highlight-python"><span class="k">return</span></code></dt><dd><p>While not strictly a loop control statement, it is often used within functions that
+contain loops to exit the function and return a value to the caller.  A return
+statement can be used to exit a loop when that loop is inside a function.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="more-data-structures">
+<h2>More Data Structures<a class="headerlink" href="#more-data-structures" title="Link to this heading">#</a></h2>
+<section id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h3>
+<p>A list is a collection of elements of different types stored in potentially
+non-contiguous memory locations.  Lists are mutable, meaning that their elements can be
+changed after creation.  Lists are one of the most commonly used data structures in
+Python due to their flexibility and ease of use.  See the <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#lists">Python
+Official Documentation on
+Lists</a> for more details.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a list</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+
+<span class="c1"># Creating a list with different data types</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+
+<span class="c1"># Creating a list with a for loop</span>
+<span class="n">my_squares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">my_squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_squares</span><span class="p">)</span>
+
+<span class="c1"># This can equivalently be done using list comprehension</span>
+<span class="n">my_squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_squares</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+[1, &#39;Hello&#39;, 3.14, True]
+[1, 4, 9, 16, 25]
+[1, 4, 9, 16, 25]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="common-list-methods-and-operations">
+<h4>Common List Methods and Operations<a class="headerlink" href="#common-list-methods-and-operations" title="Link to this heading">#</a></h4>
+<p>For a list <code class="code highlight python docutils literal highlight-python"><span class="n">m</span></code>, index <code class="code highlight python docutils literal highlight-python"><span class="n">i</span></code>, iterable object <code class="code highlight python docutils literal highlight-python"><span class="n">t</span></code>, and arbitrary
+object <code class="code highlight python docutils literal highlight-python"><span class="n">x</span></code>:</p>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span></code> replaces the element at index i with x</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> adds x to the end of the list</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span></code> inserts x at index i</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> removes the first occurrence of x</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></code> removes the element at index i</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></code> removes all elements</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">t</span><span class="p">)</span></code> adds the elements of t to the end of the list</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span> <span class="o">+=</span> <span class="n">t</span></code> adds the elements of t to the end of the list</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span> <span class="o">*=</span> <span class="n">n</span></code> repeats the list n times</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span></code> reverses the list</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span></code> sorts the list</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></code> returns a shallow copy of the list</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> returns the index of the first occurrence of x</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> returns the number of occurrences of x</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span></code> returns the number of elements in m</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="nb">min</span><span class="p">(</span><span class="n">m</span><span class="p">)</span></code> returns the smallest element in m</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="nb">max</span><span class="p">(</span><span class="n">m</span><span class="p">)</span></code> returns the largest element in m</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="nb">sum</span><span class="p">(</span><span class="n">m</span><span class="p">)</span></code> returns the sum of elements in m</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="nb">sorted</span><span class="p">(</span><span class="n">m</span><span class="p">)</span></code> returns a new sorted list</p></li>
+</ul>
+</section>
+<section id="indexing-and-slicing">
+<h4>Indexing and Slicing<a class="headerlink" href="#indexing-and-slicing" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></code> returns the element at index i</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]</span></code> returns the elements from index i to j-1</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">:</span><span class="n">k</span><span class="p">]</span></code> returns the elements from index i to j-1 with step k</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">]</span></code> returns the element at index -i</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">:]</span></code> returns the elements from index -i to the end of the list</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="p">[:</span><span class="o">-</span><span class="n">i</span><span class="p">]</span></code> returns the elements from the beginning of the list to index -i</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">m</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></code> returns the elements in reverse order</p></li>
+</ul>
+<section id="example">
+<h5>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h5>
+<p>Indexing and slicing can be applied to strings just like lists since they are also
+sequences.</p>
+<p>```{table} String indexing in <strong class="program">Python</strong></p>
+<dl class="myst field-list simple">
+<dt class="field-odd">name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tab:Py:M3:materials_index_slice_ex</p>
+</dd>
+</dl>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>H</p></th>
+<th class="head text-center"><p>e</p></th>
+<th class="head text-center"><p>l</p></th>
+<th class="head text-center"><p>l</p></th>
+<th class="head text-center"><p>o</p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p>W</p></th>
+<th class="head text-center"><p>o</p></th>
+<th class="head text-center"><p>r</p></th>
+<th class="head text-center"><p>l</p></th>
+<th class="head text-center"><p>d</p></th>
+<th class="head text-center"><p>,</p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p>H</p></th>
+<th class="head text-center"><p>a</p></th>
+<th class="head text-center"><p>i</p></th>
+<th class="head text-center"><p>l</p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p>P</p></th>
+<th class="head text-center"><p>u</p></th>
+<th class="head text-center"><p>r</p></th>
+<th class="head text-center"><p>d</p></th>
+<th class="head text-center"><p>u</p></th>
+<th class="head text-center"><p>e</p></th>
+<th class="head text-center"><p>!</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>5</p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>7</p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p>9</p></td>
+<td class="text-center"><p>10</p></td>
+<td class="text-center"><p>11</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>13</p></td>
+<td class="text-center"><p>14</p></td>
+<td class="text-center"><p>15</p></td>
+<td class="text-center"><p>16</p></td>
+<td class="text-center"><p>17</p></td>
+<td class="text-center"><p>18</p></td>
+<td class="text-center"><p>19</p></td>
+<td class="text-center"><p>20</p></td>
+<td class="text-center"><p>21</p></td>
+<td class="text-center"><p>22</p></td>
+<td class="text-center"><p>23</p></td>
+<td class="text-center"><p>24</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>-25</p></td>
+<td class="text-center"><p>-24</p></td>
+<td class="text-center"><p>-23</p></td>
+<td class="text-center"><p>-22</p></td>
+<td class="text-center"><p>-21</p></td>
+<td class="text-center"><p>-20</p></td>
+<td class="text-center"><p>-19</p></td>
+<td class="text-center"><p>-18</p></td>
+<td class="text-center"><p>-17</p></td>
+<td class="text-center"><p>-16</p></td>
+<td class="text-center"><p>-15</p></td>
+<td class="text-center"><p>-14</p></td>
+<td class="text-center"><p>-13</p></td>
+<td class="text-center"><p>-12</p></td>
+<td class="text-center"><p>-11</p></td>
+<td class="text-center"><p>-10</p></td>
+<td class="text-center"><p>-9</p></td>
+<td class="text-center"><p>-8</p></td>
+<td class="text-center"><p>-7</p></td>
+<td class="text-center"><p>-6</p></td>
+<td class="text-center"><p>-5</p></td>
+<td class="text-center"><p>-4</p></td>
+<td class="text-center"><p>-3</p></td>
+<td class="text-center"><p>-2</p></td>
+<td class="text-center"><p>-1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```{code-cell} python
+# string initialization
+s = &quot;Hello World, Hail Purdue!&quot;
+
+print(s[0])  # = &#39;H&#39;
+print()
+print(s[18:24])  # = &#39;Purdue&#39;
+print(s[-7:-1])  # = &#39;Purdue&#39;
+print()
+print(s[0:5])    # = &#39;Hello&#39;
+print(s[:5])     # = &#39;Hello&#39;
+print()
+print(s[-1])         # = &#39;!&#39;
+print(s[24])         # = &#39;!&#39;
+print(s[-1:])        # = &#39;!&#39;
+print(s[24:])        # = &#39;!&#39;
+print(s[len(s)-1])   # = &#39;!&#39;
+print(s[-1:len(s)])  # = &#39;!&#39;
+print()
+print(s[:-1])  # = &#39;Hello World, Hail Purdue&#39;
+print(s[:24])  # = &#39;Hello World, Hail Purdue&#39;
+print()
+print(s[::-1])       # = &#39;!eudruP liaH ,dlroW olleH&#39;
+print(s[-1:-26:-1])  # = &#39;!eudruP liaH ,dlroW olleH&#39;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="nested-lists-for-storing-multi-dimensional-data">
+<h4>Nested Lists for storing multi-dimensional data<a class="headerlink" href="#nested-lists-for-storing-multi-dimensional-data" title="Link to this heading">#</a></h4>
+<p>Lists can be nested within other lists to create multi-dimensional data structures, such
+as
+matrices (2D lists) or tensors (3D lists and higher). We use repeated indexing to access
+elements in nested lists.  For example:</p>
+<ul class="simple">
+<li><p>One-dimensional list: <code class="code highlight python docutils literal highlight-python"><span class="n">list_name</span><span class="p">[</span><span class="n">index</span><span class="p">]</span></code></p></li>
+<li><p>Two-dimensional list: <code class="code highlight python docutils literal highlight-python"><span class="n">list_name</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">]</span></code></p></li>
+<li><p>Multidimensional list: <code class="code highlight python docutils literal highlight-python"><span class="n">list_name</span><span class="p">[</span><span class="n">dim1</span><span class="p">][</span><span class="n">dim2</span><span class="p">][</span><span class="n">dim3</span><span class="p">]</span><span class="o">...</span></code></p></li>
+</ul>
+<p>Examples of creating different dimensional lists are shown below.</p>
+<section id="one-dimensional-list">
+<h5>One-Dimensional List<a class="headerlink" href="#one-dimensional-list" title="Link to this heading">#</a></h5>
+<p>Here we create a literal one-dimensional list containing elements of different types.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, &#39;a&#39;, True, Ellipsis]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="two-dimensional-list">
+<h5>Two-Dimensional List<a class="headerlink" href="#two-dimensional-list" title="Link to this heading">#</a></h5>
+<p>Here we create a literal two-dimensional list (matrix) containing integers, strings,
+and boolean values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_2d_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_2d_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2, 3, 4], [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], [True, False]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also use loops to create a 2D list (matrix).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a 2D list (matrix) with 2 rows and 3 columns using nested for loops</span>
+<span class="n">my_2d_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>  <span class="c1"># 2 rows</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>  <span class="c1"># 3 columns</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span>  <span class="c1"># Fill with numbers from 0 to 5</span>
+    <span class="n">my_2d_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_2d_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 1, 2], [3, 4, 5]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multidimensional-list">
+<h5>Multidimensional List<a class="headerlink" href="#multidimensional-list" title="Link to this heading">#</a></h5>
+<p>Here we create a literal multidimensional list (3D and higher).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a 2x3x2 multidimensional list (2 rows, 3 columns, 2 depth)</span>
+<span class="n">my_3d_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_3d_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This can equivalently be done with nested loops.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_3d_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="c1"># Outer loop: Iterates through the 2 depth layers</span>
+    <span class="n">depth</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="c1"># Middle loop: Iterates through the 2 sub-lists (rows)</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Inner loop: Appends the next 3 sequential numbers</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+            <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">depth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="n">my_3d_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_3d_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or by nesting list comprehensions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_3d_list</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">6</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_3d_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="python-arrays">
+<h3>Python Arrays<a class="headerlink" href="#python-arrays" title="Link to this heading">#</a></h3>
+<p>Python has a built-in array module for creating arrays, which are collections
+of elements of the same type stored in contiguous memory locations. Arrays are more
+efficient than lists for storing large amounts of homogeneous data; however, all
+elements <strong>must</strong> be of the same type and arrays can only be one-dimensional. See the
+<a class="reference external" href="https://docs.python.org/3/library/array.html">Python Official Documentation on
+Arrays</a> for more details. Due to these
+limitations, we will primarily use NumPy arrays when working with large datasets and for
+storing multi-dimensional data.</p>
+</section>
+<section id="numpy-arrays">
+<h3>NumPy Arrays<a class="headerlink" href="#numpy-arrays" title="Link to this heading">#</a></h3>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/983291/sp/98329100/embedIframeJs/uiconf_id/44472651/partner_id/983291?iframeembed=true&playerId=kaltura_player&entry_id=1_hdf944j1&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_cyavdx4z" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="711_2_numpy_arrays"></iframe>
+<p><a class="reference download internal" download="" href="../../_downloads/01fad71d33d38a6cf4a6aebed41dec1c/06_numpy_arrays.py"><code class="xref download docutils literal notranslate"><span class="pre">06_numpy_arrays.py</span></code></a></p>
+<section id="creating-numpy-arrays">
+<span id="py-m3-python-3-creating-numpy-arrays"></span><h4>Creating NumPy arrays<a class="headerlink" href="#creating-numpy-arrays" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Import the NumPy library as <code class="code highlight python docutils literal highlight-python"><span class="n">np</span></code></p></li>
+<li><p>Create an array using the <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">()</span></code> function</p></li>
+</ul>
+<p class="rubric">Example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Creating a 1D array</span>
+<span class="n">array_1d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;array_1d = </span><span class="si">{</span><span class="n">array_1d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Creating a 2D array (matrix)</span>
+<span class="n">array_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;array_2d = </span><span class="se">\n</span><span class="si">{</span><span class="n">array_2d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Creating an array from a PIllow Image object (will be relevant for Py5)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="c1"># Create a simple 2x2 image with RGB values</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># Red image</span>
+<span class="n">image_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;image_array shape = </span><span class="si">{</span><span class="n">image_array</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array_1d = [1 2 3 4 5]
+array_2d = 
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+image_array shape = (2, 2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numpy-array-attributes">
+<h4>NumPy array attributes<a class="headerlink" href="#numpy-array-attributes" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">shape</span></code> Returns the dimensions of the array.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">size</span></code> Returns the total number of elements in the array.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">ndim</span></code> Returns the number of dimensions of the array.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">dtype</span></code> Returns the data type of the elements in the array.</p></li>
+</ul>
+</section>
+<section id="common-numpy-array-methods">
+<span id="py-m3-python-3-common-numpy-array-methods"></span><h4>Common NumPy array methods<a class="headerlink" href="#common-numpy-array-methods" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span></code> Creates an array of zeros with the specified shape.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span></code> Creates an array of ones with the specified shape.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></code> Creates an array of the specified shape filled with
+the specified value.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span></code> Creates an array with a range of values from
+start to stop with the specified step.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span></code> Creates an array with a range of values
+from start to stop with the specified number of elements.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span></code> Creates an array of random values with the
+specified shape.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">new_shape</span><span class="p">)</span></code> Reshapes the array to the specified new
+shape.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code> Transposes the array (swaps rows and columns).</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">),</span> <span class="n">axis</span><span class="p">)</span></code> Concatenates two arrays along the
+specified axis.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">))</span></code> Stacks arrays vertically.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">))</span></code> Stacks arrays horizontally.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">indices_or_sections</span><span class="p">)</span></code> Splits the array into multiple
+sub-arrays.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code> Returns the maximum value in the array.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code> Returns the minimum value in the array.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code> Returns the mean of the values in the array.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code> Returns the standard deviation of the values in the array.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code> Returns the median of the values in the array.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">)</span></code> Computes the dot product of two arrays.</p></li>
+</ul>
+</section>
+<section id="common-numpy-array-operations">
+<h4>Common NumPy array operations<a class="headerlink" href="#common-numpy-array-operations" title="Link to this heading">#</a></h4>
+<p>With NumPy arrays, mathematical operations can be performed element-wise or using matrix
+operations.  Here are some common operations:</p>
+<section id="element-wise-operations">
+<h5>Element-wise operations<a class="headerlink" href="#element-wise-operations" title="Link to this heading">#</a></h5>
+<p>Element-wise operations are operations that are performed on each corresponding element
+of two arrays of the same shape.</p>
+<p class="rubric">Example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="c1"># create two 2D arrays (matrices)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># element-wise addition</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;C = </span><span class="se">\n</span><span class="si">{</span><span class="n">C</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># element-wise multiplication</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">B</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;D = </span><span class="si">{</span><span class="n">D</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C = 
+[[10 10 10]
+ [10 10 10]
+ [10 10 10]]
+D = [[ 9 16 21]
+ [24 25 24]
+ [21 16  9]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="broadcasting">
+<h5>Broadcasting<a class="headerlink" href="#broadcasting" title="Link to this heading">#</a></h5>
+<p>Broadcasting stretches the smaller array across the larger array so that they have
+compatible
+shapes for element-wise operations. This allows operations to be performed on arrays of
+different shapes.  Details on the broadcasting rules can be found in the
+<a class="reference external" href="https://numpy.org/doc/stable/user/basics.broadcasting.html">NumPy documentation</a>.</p>
+<p class="rubric">Example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># create a 2D array (matrix) and a 1D array (vector)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="c1"># broadcasting addition</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;C = </span><span class="se">\n</span><span class="si">{</span><span class="n">C</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C = 
+[[ 2  4  6]
+ [ 5  7  9]
+ [ 8 10 12]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="transpose">
+<h5>Transpose<a class="headerlink" href="#transpose" title="Link to this heading">#</a></h5>
+<p>Transposing an array involves swapping its rows and columns. This is done using the
+<code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span></code> function.</p>
+<p class="rubric">Example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># create a 2D array (matrix)</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+
+<span class="c1"># transpose the matrix</span>
+<span class="n">transposed_matrix</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+
+<span class="c1"># Results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;original matrix = </span><span class="se">\n</span><span class="si">{</span><span class="n">matrix</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;transposed_matrix = </span><span class="se">\n</span><span class="si">{</span><span class="n">transposed_matrix</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>original matrix = 
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+transposed_matrix = 
+[[1 4 7]
+ [2 5 8]
+ [3 6 9]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="slicing">
+<h5>Slicing<a class="headerlink" href="#slicing" title="Link to this heading">#</a></h5>
+<p>Slicing is used to access specific elements or sub-arrays within a NumPy array.</p>
+<p class="rubric">Example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># create a 2D array (matrix)</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+
+<span class="c1"># slice the matrix to get the first two rows and first two columns</span>
+<span class="n">sub_matrix</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sub_matrix = </span><span class="se">\n</span><span class="si">{</span><span class="n">sub_matrix</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sub_matrix = 
+[[1 2]
+ [4 5]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Part_04_Python/M3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1_pre-class_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10.1. </span>Pre-Class Assignments</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tasks/pre_1/a/instructions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10.1.2. </span>PCA: While Loops</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repetition-structures">Repetition Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">The <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-while-loops">Definite <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-while-loops">Infinite <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indefinite-while-loops">Indefinite <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-controlled-while-loops">Sentinel-Controlled <code class="code highlight python docutils literal highlight-python"><span class="k">while</span></code> Loops</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-for-loop">The <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> Loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-for-loops">Definite <code class="code highlight python docutils literal highlight-python"><span class="k">for</span></code> Loops</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-loops">Nested Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-statements">Control Statements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-structures">More Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#common-list-methods-and-operations">Common List Methods and Operations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-lists-for-storing-multi-dimensional-data">Nested Lists for storing multi-dimensional data</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-list">One-Dimensional List</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#two-dimensional-list">Two-Dimensional List</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-list">Multidimensional List</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-arrays">Python Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">NumPy Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-numpy-arrays">Creating NumPy arrays</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-attributes">NumPy array attributes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#common-numpy-array-methods">Common NumPy array methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#common-numpy-array-operations">Common NumPy array operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-operations">Element-wise operations</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">Broadcasting</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">Transpose</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="/engr-13100-2026-fall/Appendices/contributors.html">Contributors</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
