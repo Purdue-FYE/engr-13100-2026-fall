@@ -1,0 +1,1275 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>9.3.1. PY: Logic and Modularity &#8212; Purdue University ENGR 13100</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css?v=07d23ebc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../../_static/documentation_options.js?v=a8e58a58"></script>
+    <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Part_04_Python/M2/tasks/ind_1/b/instructions';</script>
+    <link rel="icon" href="../../../../../_static/avatar.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="10. Looping Structures" href="../../../../M3/0_overview.html" />
+    <link rel="prev" title="9.3. Assignments" href="../../../3_assignment_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.png" class="logo__image only-light" alt="Purdue University ENGR 13100 - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo.png" class="logo__image only-dark" alt="Purdue University ENGR 13100 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../../intro.html">
+                    ENGR 13100<br> Transforming Ideas to Innovation I
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome to ENGR 131</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/meet_the_team.html">Meet Your Instructional Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/help_sessions.html">Help Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/course_schedule.html">Course Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/comp_basics.html">Computer Basics and File Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/course_software/course_software.html">Course Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/style_guide.html">Python Style Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../glue_factory.html">Glue Factory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Professional Engineering Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/0_overview.html">1. Professional Preparation and Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.1_instructions.html">1.1. Course Policies Exploration</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2_ce.html">1.2. Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE.html">1.2.1. CE: Agricultural Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.2_CEM.html">1.2.2. CE: Construction Engineering and Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.3_BioE.html">1.2.3. CE: Biological Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.4_NE.html">1.2.4. CE: Nuclear Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.5_SEE.html">1.2.5. CE: Sustainability and Environmental Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.6_MSE.html">1.2.6. CE: Materials Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.7_CE.html">1.2.7. CE: Civil Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.8_CHE.html">1.2.8. CE: Chemical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.9_ME.html">1.2.9. CE: Mechanical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.10_AAE.html">1.2.10. CE: Aeronautical and Astronautical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.11_IE.html">1.2.11. CE: Industrial Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.12_BME.html">1.2.12. CE: Biomedical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.13_MDE.html">1.2.13. CE: Multidisciplinary Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.14_ECE.html">1.2.14. CE: Electrical and Computer Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.15_ENRE.html">1.2.15. CE: Environmental and Natural Resources Engineering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.3_eym.html">1.3. Engineering Your Major</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/0_overview.html">2. Teaming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/2_CATME_inst.html">2.1. CATME Teaming</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/1_TM_assignments.html">2.2. Teaming Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_fundamentals.html">2.2.1. PCMs: Working in an Engineering Team</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_fundamentals_inst.html">2.2.2. PCA: Teaming Fundamentals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_inst.html">2.2.3. TM: Code of Cooperation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_CATMEdimensions.html">2.2.4. PCMs: The 5 CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_CATMEdimensions_inst.html">2.2.5. PCA: CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_revisit_inst.html">2.2.6. TM: Code of Cooperation Revisit</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Excel</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M1/0_overview.html">3. Spreadsheet Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M1/1_pre-class_overview.html">3.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M1/1.1_materials.html">3.1.1. PCMs: Spreadsheet Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M1/tasks/pre_1/a/instructions.html">3.1.2. PCA: Calculations and Charting in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M1/2_in-class_overview.html">3.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M1/tasks/ICA_1/a/instructions.html">3.2.1. ICA: Tennis Ball Launcher Performance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M1/3_assignment_overview.html">3.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M1/tasks/1/a/instructions.html">3.3.1. EX: Spreadsheet Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M2/0_overview.html">4. Data Analysis in Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M2/1_pre-class_overview.html">4.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/1.1_materials.html">4.1.1. PCMs: Data Analysis and Histograms in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/tasks/pre_1/a/instructions.html">4.1.2. PCA: Descriptive Statistics and Logical Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/tasks/pre_2/a/instructions.html">4.1.3. PCA: Histograms and Outliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M2/2_in-class_overview.html">4.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/tasks/ICA_1/a/instructions.html">4.2.1. ICA: Coffee Cooling Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/tasks/ICA_2/a/instructions.html">4.2.2. ICA: COGO Bike Share</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M2/3_assignment_overview.html">4.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/tasks/1/a/instructions.html">4.3.1. EX - Data Analysis &amp; Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M3/0_overview.html">5. Probability and Uncertainty</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M3/1_pre-class_overview.html">5.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M3/1.1_materials.html">5.1.1. PCMs: Probability and Normal Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M3/tasks/pre_1/a/instructions.html">5.1.2. PCA: Probability and Z-Scores in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M3/2_in-class_overview.html">5.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M3/tasks/ICA_1/a/instructions.html">5.2.1. ICA: Semiconductor Quality Control</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M3/3_assignment_overview.html">5.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M3/tasks/1/a/instructions.html">5.3.1. EX: Probability and Normal Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M4/0_overview.html">6. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M4/1_pre-class_overview.html">6.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M4/1.1_materials.html">6.1.1. PCMs: Linear Regression in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M4/tasks/pre_1/a/instructions.html">6.1.2. PCA: Linear Regression in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M4/2_in-class_overview.html">6.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M4/tasks/ICA_1/a/instructions.html">6.2.1. ICA: Speaker Wire Resistance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M4/3_assignment_overview.html">6.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M4/tasks/1/a/instructions.html">6.3.1. EX: Linear Data and Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_03_AI/M1/0_overview.html">7. AI in Engineering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_03_AI/M1/1_pre-class_overview.html">7.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.1_materials.html">7.1.1. PCMs: Computer Operations and Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.2_computer_ops.html">7.1.2. PCA: Computer Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.3_materials.html">7.1.3. PCMs: What is Artificial Intelligence?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.4_AI.html">7.1.4. PCA: What is AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.5_materials.html">7.1.5. PCMs: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.6_decisiontrees.html">7.1.6. PCA: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.7_materials.html">7.1.7. PCMs: Neural Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.8_neuralnetworks.html">7.1.8. PCA: Neural Networks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_03_AI/M1/2_in-class_overview.html">7.2. In-Class Activities</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_03_AI/M1/3_assignment_overview.html">7.3. AI Design Challenge: Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/tasks/ind_1/a/instructions.html">7.3.1. Software Logic - Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/tasks/ind_2/a/instructions.html">7.3.2. Hardware System - Neural Networks</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../M1/0_overview.html">8. Python Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M1/1_pre-class_overview.html">8.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M1/1.1_materials.html">8.1.1. PCMs: Python Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M1/tasks/pre_1/b/instructions.html">8.1.2. PCA: Data Types and Calculations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M1/2_in-class_overview.html">8.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M1/tasks/ICA_1/a/instructions.html">8.2.1. ICA: Debugging and Auto Grader Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M1/3_assignment_overview.html">8.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M1/tasks/ind_1/b/instructions.html">8.3.1. PY: Python Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../0_overview.html">9. Logic and Modularity</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../1_pre-class_overview.html">9.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../1.1_materials.html">9.1.1. PCMs: Logic and Modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../pre_1/a/instructions.html">9.1.2. PCA: Selection Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../pre_2/a/instructions.html">9.1.3. PCA: User-Defined Functions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../2_in-class_overview.html">9.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ICA_1/a/instructions.html">9.2.1. ICA: Factory Alarm System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ICA_2/a/instructions.html">9.2.2. ICA: UDFs and Code Efficiency</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../../3_assignment_overview.html">9.3. Assignments</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">9.3.1. PY: Logic and Modularity</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../M3/0_overview.html">10. Looping Structures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M3/1_pre-class_overview.html">10.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M3/1.1_materials.html">10.1.1. PCMs: Loops in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M3/tasks/pre_1/a/instructions.html">10.1.2. PCA: While Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M3/tasks/pre_2/a/instructions.html">10.1.3. PCA: For Loops</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M3/2_in-class_overview.html">10.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M3/tasks/ICA_1/a/instructions.html">10.2.1. ICA: “How Many Tries?” - Guessing Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M3/tasks/ICA_2/a/instructions.html">10.2.2. ICA: Dog Park Tennis Ball Launcher</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M3/3_assignment_overview.html">10.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M3/tasks/ind_1/a/instructions.html">10.3.1. PY: Looping Structures</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../M4/0_overview.html">11. Data Analysis and Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M4/1_pre-class_overview.html">11.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M4/1.1_materials.html">11.1.1. PCMs: Data Analysis and Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M4/tasks/pre_1/a/instructions.html">11.1.2. PCA: Data Manipulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M4/tasks/pre_2/a/instructions.html">11.1.3. PCA: Plotting and Statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M4/2_in-class_overview.html">11.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M4/tasks/ICA_1/a/instructions.html">11.2.1. ICA: Cleaning Up Coffee Sales Data</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M4/3_assignment_overview.html">11.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M4/tasks/ind_1/a/instructions.html">11.3.1. PY: Data Analysis and Visualization</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../M5/0_overview.html">12. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M5/1_pre-class_overview.html">12.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M5/1.1_materials.html">12.1.1. PCMs: Linear Regression in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M5/tasks/pre_1/b/instructions.html">12.1.2. PCA: Linear Regression Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M5/2_in-class_overview.html">12.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M5/tasks/ICA_1/a/instructions.html">12.2.1. ICA: Good Fit or Bad Fit?</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../M5/3_assignment_overview.html">12.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../M5/tasks/ind_1/a/instructions.html">12.3.1. PY: Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Purdue-FYE/engr-13100-2026-fall/issues/new?title=Issue%20on%20page%20%2FPart_04_Python/M2/tasks/ind_1/b/instructions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PY: Logic and Modularity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-files">Required Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-a-field-engineer-s-toolkit">Task 1: A Field Engineer’s Toolkit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-function-menu-and-program-routing">Main Function: Menu and Program Routing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irrigation-system-check">Irrigation System Check</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input">User Input</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#input-validation">Input Validation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irrigation-recommendation">Irrigation Recommendation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-velocity-calculator">Escape Velocity Calculator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">User Input</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-output">Program Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-output">Sample Output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-program-analysis-and-flowchart">Task 2: Program Analysis and Flowchart</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-analysis">Program Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-flowchart">Program Flowchart</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradescope-submission">Gradescope Submission</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="raw-html"><div class="d-none"></span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand\blank{~\underline{\hspace{1.2cm}}~}\\% Bold symbols (vectors)
+\newcommand\bs[1]{\mathbf{#1}}\\% Differential
+\newcommand\dd[2][]{\mathrm{d}^{#1}{#2}}  % use as \dd, \dd{x}, or \dd[2]{x}\\% Poor man's siunitx
+\newcommand\unit[1]{\mathrm{#1}}
+\newcommand\num[1]{#1}
+\newcommand\qty[2]{#1~\unit{#2}}\\\newcommand\per{/}
+\newcommand\squared{{}^2}
+\newcommand\cubed{{}^3}
+%
+% Scale
+\newcommand\milli{\unit{m}}
+\newcommand\centi{\unit{c}}
+\newcommand\kilo{\unit{k}}
+\newcommand\mega{\unit{M}}
+%
+% Percent
+\newcommand\percent{\unit{{\kern-4mu}\%}}
+%
+% Angle
+\newcommand\radian{\unit{rad}}
+\newcommand\degree{\unit{{\kern-4mu}^\circ}}
+%
+% Time
+\newcommand\second{\unit{s}}
+\newcommand\s{\second}
+\newcommand\minute{\unit{min}}
+\newcommand\hour{\unit{h}}
+%
+% Distance
+\newcommand\meter{\unit{m}}
+\newcommand\m{\meter}
+\newcommand\inch{\unit{in}}
+\newcommand\foot{\unit{ft}}
+%
+% Force
+\newcommand\newton{\unit{N}}
+\newcommand\kip{\unit{kip}} % kilopound in &quot;freedom&quot; units - edit made by Sri
+%
+% Mass
+\newcommand\gram{\unit{g}}
+\newcommand\g{\gram}
+\newcommand\kilogram{\unit{kg}}
+\newcommand\kg{\kilogram}
+\newcommand\grain{\unit{grain}}
+\newcommand\ounce{\unit{oz}}
+%
+% Temperature
+\newcommand\kelvin{\unit{K}}
+\newcommand\K{\kelvin}
+\newcommand\celsius{\unit{{}^\circ C}}
+\newcommand\C{\celsius}
+\newcommand\fahrenheit{\unit{{}^\circ F}}
+\newcommand\F{\fahrenheit}
+%
+% Area
+\newcommand\sqft{\unit{sq\,\foot}}  % square foot
+%
+% Volume
+\newcommand\liter{\unit{L}}
+\newcommand\gallon{\unit{gal}}
+%
+% Frequency
+\newcommand\hertz{\unit{Hz}}
+\newcommand\rpm{\unit{rpm}}
+%
+% Voltage
+\newcommand\volt{\unit{V}}
+\newcommand\V{\volt}
+\newcommand\millivolt{\milli\volt}
+\newcommand\mV{\milli\volt}
+\newcommand\kilovolt{\kilo\volt}
+\newcommand\kV{\kilo\volt}
+%
+% Current
+\newcommand\ampere{\unit{A}}
+\newcommand\A{\ampere}
+\newcommand\milliampereA{\milli\ampere}
+\newcommand\mA{\milli\ampere}
+\newcommand\kiloampereA{\kilo\ampere}
+\newcommand\kA{\kilo\ampere}
+%
+% Resistance
+\newcommand\ohm{\Omega}
+\newcommand\milliohm{\milli\ohm}
+\newcommand\kiloohm{\kilo\ohm} % correct SI spelling
+\newcommand\kilohm{\kilo\ohm} % &quot;American&quot; spelling used in siunitx
+\newcommand\megaohm{\mega\ohm} % correct SI spelling
+\newcommand\megohm{\mega\ohm} % &quot;American&quot; spelling used in siunitx
+%
+% Capacitance
+\newcommand\farad{\unit{F}}
+\newcommand\F{\farad}
+\newcommand\microfarad{\micro\farad}
+\newcommand\muF{\micro\farad}
+%
+% Inductance
+\newcommand\henry{\unit{H}}
+\newcommand\H{\henry}
+\newcommand\millihenry{\milli\henry}
+\newcommand\mH{\milli\henry}
+%
+% Power
+\newcommand\watt{\unit{W}}
+\newcommand\W{\watt}
+\newcommand\milliwatt{\milli\watt}
+\newcommand\mW{\milli\watt}
+\newcommand\kilowatt{\kilo\watt}
+\newcommand\kW{\kilo\watt}
+%
+% Energy
+\newcommand\joule{\unit{J}}
+\newcommand\J{\joule}
+%
+% Composite units
+%
+% Torque
+\newcommand\ozin{\unit{\ounce}\,\unit{in}}
+\newcommand\newtonmeter{\unit{\newton\,\meter}}
+%
+% Pressure
+\newcommand\psf{\unit{psf}}  % pounds per square foot
+\newcommand\pcf{\unit{pcf}}  % pounds per cubic foot
+\newcommand\pascal{\unit{Pa}}
+\newcommand\Pa{\pascal}
+\newcommand\ksi{\unit{ksi}} % kilopound per square inch
+% NOTE: do NOT define \bar -- it is the built-in LaTeX accent used by \bar{x},
+% \bar{y} (sample means). Redefining it made those render as the word &quot;bar&quot;.
+\newcommand\barunit{\unit{bar}}
+\end{aligned}\end{align} \]</div>
+<p><span class="raw-html"></div></span></p>
+<p>Sep 25, 2026 | 1528 words | 15 min
+read</p>
+<section class="tex2jax_ignore mathjax_ignore" id="py-logic-and-modularity">
+<span id="py-m2-a1"></span><h1><span class="section-number">9.3.1. </span>PY: Logic and Modularity<a class="headerlink" href="#py-logic-and-modularity" title="Link to this heading">#</a></h1>
+<p>You are a junior engineer supporting two projects. A local farmer needs help determining whether an irrigation system is watering correctly, while a mission team needs to calculate the escape velocity required to leave a planet. You will develop one menu-driven Python program containing both engineering tools, analyze the organization and design of the program, and create a flowchart representing its program flow.</p>
+<section id="required-files">
+<h2>Required Files<a class="headerlink" href="#required-files" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Download the <strong class="program">Python</strong> template
+<a class="reference download internal" download="" href="../../../../../_downloads/19256f18ef8faabee85374609ee85ef8/ENGR131_Python_Template.py"><code class="xref download docutils literal notranslate"><span class="pre">ENGR131_Python_Template.py</span></code></a> and
+save it as <span class="pasted-text">9_3_1_username.py</span>.</p></li>
+<li><p>Download the <a class="reference download internal" download="" href="../../../../../_downloads/d9fdfb2d10a75a78d8c8f98996d73fa6/9_3_1_report_template.docx"><code class="xref download docutils literal notranslate"><span class="pre">report</span> <span class="pre">template</span></code></a>, complete it, and save it as <span class="pasted-text">9_3_1_report_username.pdf</span>.</p></li>
+<li><p>Create and save your program flowchart as a PDF or a PNG:
+<span class="pasted-text">9_3_1_flowchart_username.pdf</span> or <span class="pasted-text">9_3_1_flowchart_username.png</span>.</p></li>
+</ol>
+<p class="rubric">Quick Guide: Completing &amp; Submitting Your Report as PDF</p>
+<p>To complete your technical report, you must edit the provided <strong>Word template (<code class="docutils literal notranslate"><span class="pre">.docx</span></code>)</strong> and convert it to a <strong>PDF</strong> for final grading. Follow this simplified workflow:</p>
+<ol class="arabic simple">
+<li><p><strong>Edit in Word:</strong> Download and open the <code class="docutils literal notranslate"><span class="pre">.docx</span></code> template in Microsoft Word. Avoid editing in web previewers or Google Docs, as they will corrupt your formulas and chart formatting.</p></li>
+<li><p><strong>Save as PDF Only When Finished:</strong> Type your answers and copy any charts or images directly into the Word document, saving your progress frequently. Once your report is 100% complete, save or export the document as a PDF. <em>(Do not convert to PDF early, as PDFs are static and cannot be edited!)</em>
+Copy charts or images into the report and keep the originals in the workbook, since
+Gradescope grades the workbook.</p></li>
+<li><p><strong>Submit to Gradescope:</strong> Upload your finalized PDF and any other required deliverables to the corresponding assignment in Gradescope. Always review your uploaded files from the Gradescope confirmation screen to verify your work is complete.</p></li>
+</ol>
+<div class="warning admonition">
+<p class="admonition-title">Reminder</p>
+<p>Rename your files with your Purdue username, replacing “template” in the filename. Then
+fill out any required information in the template such as student name, email, etc.</p>
+</div>
+</section>
+<section id="task-1-a-field-engineer-s-toolkit">
+<h2>Task 1: A Field Engineer’s Toolkit<a class="headerlink" href="#task-1-a-field-engineer-s-toolkit" title="Link to this heading">#</a></h2>
+<p>Rather than developing two separate scripts, your supervisor has asked you to create a single command-line toolkit. When the program runs, it will present the user with a menu and route the user to the appropriate engineering tool based on their selection. The irrigation system check will use conditional logic to evaluate operating conditions, while the escape velocity calculator will use a sequence of engineering calculations to determine the required velocity.</p>
+<p>Organize the program using user-defined functions so that each function performs a specific task. This modular structure will make the program easier to read, test, debug, and reuse.</p>
+<div class="warning admonition">
+<p class="admonition-title">Reminder</p>
+<p>Review and reference the <a class="reference internal" href="../../../../../Part_00_Course_Resources/style_guide.html"><span class="doc">Python Style Guide</span></a> to ensure your code follows the required formatting and documentation standards, including the use of clear and descriptive comments.</p>
+</div>
+<section id="main-function-menu-and-program-routing">
+<h3>Main Function: Menu and Program Routing<a class="headerlink" href="#main-function-menu-and-program-routing" title="Link to this heading">#</a></h3>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">main</span></code> function that displays the menu, collects the user’s selection, and calls the appropriate user-defined function.</p>
+<p>When the program runs, it should prompt the user with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="n">a</span> <span class="n">tool</span><span class="p">:</span>
+  <span class="mi">1</span><span class="p">)</span> <span class="n">Irrigation</span> <span class="n">System</span> <span class="n">Check</span>
+  <span class="mi">2</span><span class="p">)</span> <span class="n">Escape</span> <span class="n">Velocity</span> <span class="n">Calculator</span>
+<span class="n">Enter</span> <span class="n">choice</span> <span class="p">(</span><span class="mi">1</span> <span class="ow">or</span> <span class="mi">2</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Use an <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> structure to route the program:</p>
+<ul class="simple">
+<li><p>If the user enters <code class="docutils literal notranslate"><span class="pre">1</span></code>, call the user-defined function for the irrigation system check.</p></li>
+<li><p>If the user enters <code class="docutils literal notranslate"><span class="pre">2</span></code>, call the user-defined function for the escape velocity calculator.</p></li>
+<li><p>If the user enters any other value, display an appropriate warning message and call <code class="docutils literal notranslate"><span class="pre">main()</span></code> again to redisplay the menu.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> function should manage the overall program flow. Place the detailed calculations and decision-making logic within the appropriate user-defined functions.</p>
+</section>
+<section id="irrigation-system-check">
+<h3>Irrigation System Check<a class="headerlink" href="#irrigation-system-check" title="Link to this heading">#</a></h3>
+<p>Create a user-defined function that collects information about the irrigation system, validates the inputs, and displays an operating recommendation.</p>
+<section id="user-input">
+<h4>User Input<a class="headerlink" href="#user-input" title="Link to this heading">#</a></h4>
+<p>Prompt the user to enter:</p>
+<ul class="simple">
+<li><p>soil moisture as a percentage from 0 to 60,</p></li>
+<li><p>forecasted rain in millimeters from 0 to 50,</p></li>
+<li><p>whether the system is experiencing low pressure, and</p></li>
+<li><p>whether the system requires maintenance.</p></li>
+</ul>
+<p>Use the following prompts:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Enter soil moisture (%, 0-60):
+Enter forecasted rain (mm, 0-50):
+Is the system experiencing low pressure? (yes/no):
+Is maintenance needed? (yes/no):
+</pre></div>
+</div>
+<p>Convert the soil moisture and forecasted rain inputs to <code class="docutils literal notranslate"><span class="pre">float</span></code> values. Format the two yes/no responses using the appropriate string methods so that differences in capitalization or extra spaces do not affect the program.</p>
+</section>
+<section id="input-validation">
+<h4>Input Validation<a class="headerlink" href="#input-validation" title="Link to this heading">#</a></h4>
+<p>Validate the inputs before evaluating the irrigation conditions.</p>
+<ul class="simple">
+<li><p>If either numeric input is outside its expected range, display a warning message and use <code class="docutils literal notranslate"><span class="pre">return</span></code> to end the function early.</p></li>
+<li><p>Convert each valid yes/no response to a Boolean value. Assign <code class="docutils literal notranslate"><span class="pre">True</span></code> when the response is <code class="docutils literal notranslate"><span class="pre">yes</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> when the response is <code class="docutils literal notranslate"><span class="pre">no</span></code>. If the user enters any other response, display a warning and assign <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</section>
+<section id="irrigation-recommendation">
+<h4>Irrigation Recommendation<a class="headerlink" href="#irrigation-recommendation" title="Link to this heading">#</a></h4>
+<p>Evaluate the conditions in the order shown below. Once a condition is satisfied, display the corresponding recommendation.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Priority</p></th>
+<th class="head"><p>Condition</p></th>
+<th class="head"><p>Recommendation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>1</p></td>
+<td><p>Maintenance is required</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DO</span> <span class="pre">NOT</span> <span class="pre">IRRIGATE</span> <span class="pre">-</span> <span class="pre">maintenance</span> <span class="pre">required.</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>2</p></td>
+<td><p>The system is experiencing low pressure</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DO</span> <span class="pre">NOT</span> <span class="pre">IRRIGATE</span> <span class="pre">-</span> <span class="pre">low</span> <span class="pre">pressure</span> <span class="pre">condition.</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>3</p></td>
+<td><p>Forecasted rain is at least 10 mm</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DELAY</span> <span class="pre">-</span> <span class="pre">significant</span> <span class="pre">rainfall</span> <span class="pre">expected.</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>4</p></td>
+<td><p>Soil moisture is less than 20%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">FULL</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>5</p></td>
+<td><p>Soil moisture is between 20% and 25%, inclusive</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">REDUCED</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>6</p></td>
+<td><p>Soil moisture is greater than 25%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SKIP</span> <span class="pre">-</span> <span class="pre">soil</span> <span class="pre">moisture</span> <span class="pre">is</span> <span class="pre">adequate.</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="escape-velocity-calculator">
+<h3>Escape Velocity Calculator<a class="headerlink" href="#escape-velocity-calculator" title="Link to this heading">#</a></h3>
+<p>Create a user-defined function that prompts the user for information about a planet and calculates its escape velocity. Organize the calculations into separate user-defined functions.</p>
+<section id="id1">
+<h4>User Input<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Prompt the user to enter:</p>
+<ul class="simple">
+<li><p>the planet’s average density in <span class="math notranslate nohighlight">\(\kilogram/\meter^3\)</span>, and</p></li>
+<li><p>the planet’s radius in <span class="math notranslate nohighlight">\(\meter\)</span>.</p></li>
+</ul>
+<p>Use the following prompts:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Enter the density of the planet (kg/m^3):
+Enter the radius of the planet (m):
+</pre></div>
+</div>
+<p>Convert both inputs to <code class="docutils literal notranslate"><span class="pre">float</span></code> values.</p>
+</section>
+<section id="calculations">
+<h4>Calculations<a class="headerlink" href="#calculations" title="Link to this heading">#</a></h4>
+<p>Create separate user-defined functions for each calculation. Choose clear, descriptive names for the functions and their parameters.</p>
+<div class="pst-scrollable-table-container"><table class="cases table" id="tab-py-m2-escape-functions">
+<caption><span class="caption-number">Table 9.5 </span><span class="caption-text">Escape Velocity Calculation Functions</span><a class="headerlink" href="#tab-py-m2-escape-functions" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function Purpose</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Calculation</p></th>
+<th class="head"><p>Returned Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Calculate planet volume</p></td>
+<td><p>Radius</p></td>
+<td><p><span class="math notranslate nohighlight">\(V = \frac{4}{3}\pi r^3\)</span></p></td>
+<td><p>Planet volume</p></td>
+</tr>
+<tr class="row-odd"><td><p>Calculate planet mass</p></td>
+<td><p>Density and volume</p></td>
+<td><p><span class="math notranslate nohighlight">\(m = \rho V\)</span></p></td>
+<td><p>Planet mass</p></td>
+</tr>
+<tr class="row-even"><td><p>Calculate escape velocity</p></td>
+<td><p>Mass and radius</p></td>
+<td><p><span class="math notranslate nohighlight">\(v_e = \sqrt{\frac{2Gm}{r}}\)</span></p></td>
+<td><p>Escape velocity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In these equations:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r\)</span> is the planet’s radius in meters,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> is the planet’s average density in <span class="math notranslate nohighlight">\(\mathrm{kg/m^3}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span> is the planet’s volume in <span class="math notranslate nohighlight">\(\mathrm{m^3}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> is the planet’s mass in kilograms, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant, <span class="math notranslate nohighlight">\(6.6743 \times 10^{-11}\)</span>.</p></li>
+</ul>
+<p>Import the <code class="docutils literal notranslate"><span class="pre">math</span></code> module. Use <code class="docutils literal notranslate"><span class="pre">math.pi</span></code> for <span class="math notranslate nohighlight">\(\pi\)</span> and <code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code> to calculate the square root. Each function must return its calculated value. Convert the radius from meters to kilometers before displaying the results. This can be done using division in <strong class="program">Python</strong>.</p>
+<p>The example flowchart below demonstrates how the escape velocity calculation can be divided among multiple user-defined functions. Each function performs one calculation and returns its result for use in the next calculation.</p>
+<figure class="align-default" id="fig-py-m2-ind-1-flowchart">
+<a class="reference internal image-reference" href="../../../../../_images/py2_ind_1_b_flowchart.jpg"><img alt="Flowchart for an escape velocity calculator using modular functions." src="../../../../../_images/py2_ind_1_b_flowchart.jpg" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.1 </span><span class="caption-text">Example organization of the escape velocity calculations using user-defined functions.</span><a class="headerlink" href="#fig-py-m2-ind-1-flowchart" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="program-output">
+<h3>Program Output<a class="headerlink" href="#program-output" title="Link to this heading">#</a></h3>
+<p>Your final program output must:</p>
+<ul class="simple">
+<li><p>display the menu and all required input prompts,</p></li>
+<li><p>display the appropriate irrigation recommendation when the irrigation system check is selected,</p></li>
+<li><p>display the planet’s radius in kilometers when the escape velocity calculator is selected,</p></li>
+<li><p>display the escape velocity in meters per second,</p></li>
+<li><p>format the radius and escape velocity to two decimal places, and</p></li>
+<li><p>use clear labels and spacing for readability.</p></li>
+</ul>
+<p>Use the sample output below to verify that your program produces the expected values and follows the required output format.</p>
+<p>The meaning of each test input depends on the selected tool:</p>
+<div class="pst-scrollable-table-container"><table class="cases table" id="tab-py-m2-test-input-key">
+<caption><span class="caption-number">Table 9.6 </span><span class="caption-text">Test Input Key</span><a class="headerlink" href="#tab-py-m2-test-input-key" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Menu Choice</p></th>
+<th class="head"><p>Tool</p></th>
+<th class="head"><p>Input 1</p></th>
+<th class="head"><p>Input 2</p></th>
+<th class="head"><p>Input 3</p></th>
+<th class="head"><p>Input 4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>Irrigation System Check</p></td>
+<td><p>Soil moisture (%)</p></td>
+<td><p>Forecasted rain (mm)</p></td>
+<td><p>Low pressure</p></td>
+<td><p>Maintenance required</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td><p>Escape Velocity Calculator</p></td>
+<td><p>Density (<span class="math notranslate nohighlight">\(\kilogram/\meter^3\)</span>)</p></td>
+<td><p>Radius (<span class="math notranslate nohighlight">\(\meter\)</span>)</p></td>
+<td><p>Not used</p></td>
+<td><p>Not used</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sample-output">
+<span id="mod-part-04-python-m2-ind-1-b-sample-output"></span><h3>Sample Output<a class="headerlink" href="#sample-output" title="Link to this heading">#</a></h3>
+<p>Use the values in <a class="reference internal" href="#tab-part-04-python-m2-ind-1-b-test-cases"><span class="std std-numref">Table 9.7</span></a>
+below to test your program.</p>
+<div class="pst-scrollable-table-container"><table class="test-case-table table" id="tab-part-04-python-m2-ind-1-b-test-cases">
+<caption><span class="caption-number">Table 9.7 </span><span class="caption-text">Test Cases</span><a class="headerlink" href="#tab-part-04-python-m2-ind-1-b-test-cases" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Case</p></th>
+<th class="head text-center"><p>Menu choice</p></th>
+<th class="head text-center"><p>Input 1</p></th>
+<th class="head text-center"><p>Input 2</p></th>
+<th class="head text-center"><p>Input 3</p></th>
+<th class="head text-center"><p>Input 4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>15</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>no</p></td>
+<td class="text-center"><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>5</p></td>
+<td class="text-center"><p>23</p></td>
+<td class="text-center"><p>yes</p></td>
+<td class="text-center"><p>no</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>15</p></td>
+<td class="text-center"><p>23</p></td>
+<td class="text-center"><p>no</p></td>
+<td class="text-center"><p>no</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>15</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>no</p></td>
+<td class="text-center"><p>no</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>5513.0</p></td>
+<td class="text-center"><p>6371000</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>6</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>1879.8</p></td>
+<td class="text-center"><p>2574730</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ensure your program’s output matches the provided samples exactly.
+This includes all characters, white space, and punctuation. In the
+samples, user input is <span class=user-input>highlighted like
+this</span> for clarity, but your program should not highlight user
+input in this way.</p>
+<div class="sample-output admonition">
+<p class="admonition-title">Case 1 Sample Output</p>
+<p><span class="raw-html">$ <span class='user-input'>python3 py2_ind_1_username.py</span></span>
+<span class="raw-html">Select a tool:</span>
+<span class="raw-html">  1) Irrigation System Check</span>
+<span class="raw-html">  2) Escape Velocity Calculator</span>
+<span class="raw-html">Enter choice (1 or 2): <span class='user-input'>1</span></span>
+<span class="raw-html">Enter soil moisture (%, 0-60): <span class='user-input'>15</span></span>
+<span class="raw-html">Enter forecasted rain (mm, 0-50): <span class='user-input'>0</span></span>
+<span class="raw-html">Is the system experiencing low pressure? (yes/no): <span class='user-input'>no</span></span>
+<span class="raw-html">Is maintenance needed? (yes/no): <span class='user-input'>yes</span></span></p>
+<p><span class="raw-html">DO NOT IRRIGATE - maintenance required.</span></p>
+</div>
+<div class="sample-output admonition">
+<p class="admonition-title">Case 2 Sample Output</p>
+<p><span class="raw-html">$ <span class='user-input'>python3 py2_ind_1_username.py</span></span>
+<span class="raw-html">Select a tool:</span>
+<span class="raw-html">  1) Irrigation System Check</span>
+<span class="raw-html">  2) Escape Velocity Calculator</span>
+<span class="raw-html">Enter choice (1 or 2): <span class='user-input'>1</span></span>
+<span class="raw-html">Enter soil moisture (%, 0-60): <span class='user-input'>5</span></span>
+<span class="raw-html">Enter forecasted rain (mm, 0-50): <span class='user-input'>23</span></span>
+<span class="raw-html">Is the system experiencing low pressure? (yes/no): <span class='user-input'>yes</span></span>
+<span class="raw-html">Is maintenance needed? (yes/no): <span class='user-input'>no</span></span></p>
+<p><span class="raw-html">DO NOT IRRIGATE - low pressure condition.</span></p>
+</div>
+<div class="sample-output admonition">
+<p class="admonition-title">Case 3 Sample Output</p>
+<p><span class="raw-html">$ <span class='user-input'>python3 py2_ind_1_username.py</span></span>
+<span class="raw-html">Select a tool:</span>
+<span class="raw-html">  1) Irrigation System Check</span>
+<span class="raw-html">  2) Escape Velocity Calculator</span>
+<span class="raw-html">Enter choice (1 or 2): <span class='user-input'>1</span></span>
+<span class="raw-html">Enter soil moisture (%, 0-60): <span class='user-input'>15</span></span>
+<span class="raw-html">Enter forecasted rain (mm, 0-50): <span class='user-input'>23</span></span>
+<span class="raw-html">Is the system experiencing low pressure? (yes/no): <span class='user-input'>no</span></span>
+<span class="raw-html">Is maintenance needed? (yes/no): <span class='user-input'>no</span></span></p>
+<p><span class="raw-html">DELAY - significant rainfall expected.</span></p>
+</div>
+<div class="sample-output admonition">
+<p class="admonition-title">Case 4 Sample Output</p>
+<p><span class="raw-html">$ <span class='user-input'>python3 py2_ind_1_username.py</span></span>
+<span class="raw-html">Select a tool:</span>
+<span class="raw-html">  1) Irrigation System Check</span>
+<span class="raw-html">  2) Escape Velocity Calculator</span>
+<span class="raw-html">Enter choice (1 or 2): <span class='user-input'>1</span></span>
+<span class="raw-html">Enter soil moisture (%, 0-60): <span class='user-input'>15</span></span>
+<span class="raw-html">Enter forecasted rain (mm, 0-50): <span class='user-input'>0</span></span>
+<span class="raw-html">Is the system experiencing low pressure? (yes/no): <span class='user-input'>no</span></span>
+<span class="raw-html">Is maintenance needed? (yes/no): <span class='user-input'>no</span></span></p>
+<p><span class="raw-html">RUN FULL</span></p>
+</div>
+<div class="sample-output admonition">
+<p class="admonition-title">Case 5 Sample Output</p>
+<p><span class="raw-html">$ <span class='user-input'>python3 py2_ind_1_username.py</span></span>
+<span class="raw-html">Select a tool:</span>
+<span class="raw-html">  1) Irrigation System Check</span>
+<span class="raw-html">  2) Escape Velocity Calculator</span>
+<span class="raw-html">Enter choice (1 or 2): <span class='user-input'>2</span></span>
+<span class="raw-html">Enter the density of the planet (kg/m^3): <span class='user-input'>5513.0</span></span>
+<span class="raw-html">Enter the radius of the planet (m): <span class='user-input'>6371000</span></span></p>
+<p><span class="raw-html">---Calculator Results---</span>
+<span class="raw-html">Planet radius: 6371.00 km</span>
+<span class="raw-html">Escape velocity: 11185.72 m/s</span></p>
+</div>
+<div class="sample-output admonition">
+<p class="admonition-title">Case 6 Sample Output</p>
+<p><span class="raw-html">$ <span class='user-input'>python3 py2_ind_1_username.py</span></span>
+<span class="raw-html">Select a tool:</span>
+<span class="raw-html">  1) Irrigation System Check</span>
+<span class="raw-html">  2) Escape Velocity Calculator</span>
+<span class="raw-html">Enter choice (1 or 2): <span class='user-input'>2</span></span>
+<span class="raw-html">Enter the density of the planet (kg/m^3): <span class='user-input'>1879.8</span></span>
+<span class="raw-html">Enter the radius of the planet (m): <span class='user-input'>2574730</span></span></p>
+<p><span class="raw-html">---Calculator Results---</span>
+<span class="raw-html">Planet radius: 2574.73 km</span>
+<span class="raw-html">Escape velocity: 2639.67 m/s</span></p>
+</div>
+</section>
+</section>
+<section id="task-2-program-analysis-and-flowchart">
+<h2>Task 2: Program Analysis and Flowchart<a class="headerlink" href="#task-2-program-analysis-and-flowchart" title="Link to this heading">#</a></h2>
+<p>After completing and testing your Python program, analyze its organization and create a flowchart representing the complete program flow.</p>
+<section id="program-analysis">
+<h3>Program Analysis<a class="headerlink" href="#program-analysis" title="Link to this heading">#</a></h3>
+<p>Complete the analysis questions in the report template downloaded from the <strong>Required Files</strong> section. Use specific examples from your program to support your responses and use clear, professional language.</p>
+<p>Save the completed report as
+<span class="pasted-text">9_3_1_report_username.pdf</span>.</p>
+</section>
+<section id="program-flowchart">
+<h3>Program Flowchart<a class="headerlink" href="#program-flowchart" title="Link to this heading">#</a></h3>
+<p>Create a flowchart representing the complete program. The flowchart must include:</p>
+<ul class="simple">
+<li><p>the menu and initial user selection,</p></li>
+<li><p>the program path for each menu option,</p></li>
+<li><p>the major validation and decision paths used by the irrigation system check,</p></li>
+<li><p>each user-defined function call used by the escape velocity calculator, and</p></li>
+<li><p>the values returned by the calculation functions.</p></li>
+</ul>
+<p>We recommend using <a class="reference external" href="https://app.diagrams.net/">diagrams.net</a> to create the flowchart.</p>
+<p>Export the completed flowchart as a PDF or PNG using the flowchart filename specified in the <strong>Required Files</strong> section.</p>
+</section>
+</section>
+<section id="gradescope-submission">
+<h2>Gradescope Submission<a class="headerlink" href="#gradescope-submission" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Save Deliverables:</strong> Ensure all required assignment files are saved and named
+exactly as specified in the assignment instructions. If a template file name
+contains the word <code class="docutils literal notranslate"><span class="pre">template</span></code>, replace only that word with your Purdue username.
+When a task lists more than one deliverable, such as a workbook and a report,
+submit each deliverable to its own matching Gradescope assignment instead of
+combining them into one upload.</p></li>
+<li><p><strong>Navigate to Gradescope:</strong> Log in to Gradescope. From your Dashboard, open the
+assignment.</p></li>
+<li><p><strong>Upload your work:</strong> Select the <strong>Upload</strong> submission method. Drag and drop <strong>all</strong>
+required files (or a compressed <code class="docutils literal notranslate"><span class="pre">.zip</span></code> folder) into Gradescope, and select
+<strong>Upload</strong>.</p></li>
+<li><p><strong>Confirm Submission:</strong> When your upload is successful, you will see a confirmation
+message on your screen and receive an automated email receipt.</p></li>
+<li><p><strong>Add Team Members (if applicable):</strong> If this is a team assignment, add all team
+members to the submission. Each teammate should confirm they can see the submission
+in their own Gradescope account. For help, visit
+<a class="reference external" href="https://help.gradescope.com/article/m5qz2xsnjy-student-add-group-members">Gradescope’s documentation on adding team members</a>.</p></li>
+<li><p><strong>Review Autograder Results:</strong> Wait a few minutes for the autograder to evaluate the
+relevant files. Scroll down to view any failed test cases. If you need assistance
+interpreting the output or errors, ask your teaching team.</p></li>
+<li><p><strong>Resubmit if Necessary:</strong> You can edit your files and select <strong>Resubmit</strong> as many
+times as you need before the assignment deadline. Only your final, active submission
+is graded. <em>(Note: If you need to resubmit, you must upload <strong>all required files</strong>
+for the assignment again).</em></p></li>
+</ol>
+<p>For a detailed walkthrough, review the official
+<a class="reference external" href="https://guides.gradescope.com/hc/en-us/articles/21865616724749-Submitting-a-Code-assignment">Gradescope Submission Guide</a>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Part_04_Python/M2/tasks/ind_1/b"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../../3_assignment_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9.3. </span>Assignments</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../../M3/0_overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Looping Structures</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-files">Required Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-a-field-engineer-s-toolkit">Task 1: A Field Engineer’s Toolkit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-function-menu-and-program-routing">Main Function: Menu and Program Routing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irrigation-system-check">Irrigation System Check</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input">User Input</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#input-validation">Input Validation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irrigation-recommendation">Irrigation Recommendation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-velocity-calculator">Escape Velocity Calculator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">User Input</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-output">Program Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-output">Sample Output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-program-analysis-and-flowchart">Task 2: Program Analysis and Flowchart</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-analysis">Program Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-flowchart">Program Flowchart</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradescope-submission">Gradescope Submission</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="/engr-13100-2026-fall/Appendices/contributors.html">Contributors</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
