@@ -1,0 +1,1315 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>18.4. Control Strategies Primer &#8212; Purdue University ENGR 13100</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=87e28bcf" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=a8e58a58"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Part_05_Team_Project/M3/1_primer';</script>
+    <link rel="icon" href="../../_static/avatar.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="18.5. Milestone 3 - Control Strategies Check (Individual)" href="tasks/pre_1/a/instructions.html" />
+    <link rel="prev" title="18. Milestone 3: Design, Test and Iterate" href="0_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Purdue University ENGR 13100 - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Purdue University ENGR 13100 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ENGR 13100<br> Transforming Ideas to Innovation I
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome to ENGR 131</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/meet_the_team.html">Meet Your Instructional Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/help_sessions.html">Help Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/ebec_studio.html">FYE-EBEC Undergraduate Coding and Debugging Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/fye_hub.html">FYE Hub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/course_schedule.html">Course Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/comp_basics.html">Computer Basics and File Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/course_software/course_software.html">Course Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Part_00_Course_Resources/style_guide.html">Python Style Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glue_factory.html">Glue Factory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Professional Engineering Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/0_overview.html">1. Professional Preparation and Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.1_instructions.html">1.1. Course Policies Exploration</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2_ce.html">1.2. Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE.html">1.2.1. CE: Agricultural Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.2_CEM.html">1.2.2. CE: Construction Engineering and Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.3_BioE.html">1.2.3. CE: Biological Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.4_NE.html">1.2.4. CE: Nuclear Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.5_SEE.html">1.2.5. CE: Sustainability and Environmental Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.6_MSE.html">1.2.6. CE: Materials Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.7_CE.html">1.2.7. CE: Civil Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.8_CHE.html">1.2.8. CE: Chemical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.9_ME.html">1.2.9. CE: Mechanical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.10_AAE.html">1.2.10. CE: Aeronautical and Astronautical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.11_IE.html">1.2.11. CE: Industrial Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.12_BME.html">1.2.12. CE: Biomedical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.13_MDE.html">1.2.13. CE: Multidisciplinary Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.14_ECE.html">1.2.14. CE: Electrical and Computer Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.15_ENRE.html">1.2.15. CE: Environmental and Natural Resources Engineering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M1_Professional_Preparation/1.3_eym.html">1.3. Engineering Your Major</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/0_overview.html">2. Teaming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/2_CATME_inst.html">2.1. CATME Teaming</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/1_TM_assignments.html">2.2. Teaming Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_fundamentals.html">2.2.1. PCMs: Working in an Engineering Team</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_fundamentals_inst.html">2.2.2. PCA: Teaming Fundamentals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_inst.html">2.2.3. TM: Code of Cooperation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_CATMEdimensions.html">2.2.4. PCMs: The 5 CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_CATMEdimensions_inst.html">2.2.5. PCA: CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_revisit_inst.html">2.2.6. TM: Code of Cooperation Revisit</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Excel</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/0_overview.html">3. Spreadsheet Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/1_pre-class_overview.html">3.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/1.1_materials.html">3.1.1. PCMs: Spreadsheet Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/tasks/pre_1/a/instructions.html">3.1.2. PCA: Calculations and Charting in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/2_in-class_overview.html">3.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/tasks/ICA_1/a/instructions.html">3.2.1. ICA: Tennis Ball Launcher Performance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M1/3_assignment_overview.html">3.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M1/tasks/1/a/instructions.html">3.3.1. EX: Spreadsheet Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/0_overview.html">4. Data Analysis in Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/1_pre-class_overview.html">4.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/1.1_materials.html">4.1.1. PCMs: Data Analysis and Histograms in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/pre_1/a/instructions.html">4.1.2. PCA: Descriptive Statistics and Logical Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/pre_2/a/instructions.html">4.1.3. PCA: Histograms and Outliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/2_in-class_overview.html">4.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/ICA_1/a/instructions.html">4.2.1. ICA: Coffee Cooling Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/ICA_2/a/instructions.html">4.2.2. ICA: COGO Bike Share</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M2/3_assignment_overview.html">4.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M2/tasks/1/a/instructions.html">4.3.1. EX - Data Analysis &amp; Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/0_overview.html">5. Probability and Uncertainty</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/1_pre-class_overview.html">5.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/1.1_materials.html">5.1.1. PCMs: Probability and Normal Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/tasks/pre_1/a/instructions.html">5.1.2. PCA: Probability and Z-Scores in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/2_in-class_overview.html">5.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/tasks/ICA_1/a/instructions.html">5.2.1. ICA: Semiconductor Quality Control</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M3/3_assignment_overview.html">5.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M3/tasks/1/a/instructions.html">5.3.1. EX: Probability and Normal Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/0_overview.html">6. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/1_pre-class_overview.html">6.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/1.1_materials.html">6.1.1. PCMs: Linear Regression in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/tasks/pre_1/a/instructions.html">6.1.2. PCA: Linear Regression in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/2_in-class_overview.html">6.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/tasks/ICA_1/a/instructions.html">6.2.1. ICA: Speaker Wire Resistance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_02_Excel/M4/3_assignment_overview.html">6.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_02_Excel/M4/tasks/1/a/instructions.html">6.3.1. EX: Linear Data and Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_03_AI/M1/0_overview.html">7. AI in Engineering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_03_AI/M1/1_pre-class_overview.html">7.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/M1/7.1.1_materials.html">7.1.1. PCMs: Computer Operations and Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/M1/7.1.2_computer_ops.html">7.1.2. PCA: Computer Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/M1/7.1.3_materials.html">7.1.3. PCMs: What is Artificial Intelligence?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/M1/7.1.4_AI.html">7.1.4. PCA: What is AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/M1/7.1.5_materials.html">7.1.5. PCMs: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/M1/7.1.6_decisiontrees.html">7.1.6. PCA: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/M1/7.1.7_materials.html">7.1.7. PCMs: Neural Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/M1/7.1.8_neuralnetworks.html">7.1.8. PCA: Neural Networks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Part_03_AI/M1/2_in-class_overview.html">7.2. In-Class Activities</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_03_AI/M1/3_assignment_overview.html">7.3. AI Design Challenge: Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/M1/tasks/ind_1/a/instructions.html">7.3.1. Software Logic - Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_03_AI/M1/tasks/ind_2/a/instructions.html">7.3.2. Hardware System - Neural Networks</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M1/0_overview.html">8. Python Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M1/1_pre-class_overview.html">8.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/1.1_materials.html">8.1.1. PCMs: Python Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/tasks/pre_1/b/instructions.html">8.1.2. PCA: Data Types and Calculations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M1/2_in-class_overview.html">8.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/tasks/ICA_1/a/instructions.html">8.2.1. ICA: Debugging and Auto Grader Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M1/3_assignment_overview.html">8.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M1/tasks/ind_1/b/instructions.html">8.3.1. PY: Python Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M2/0_overview.html">9. Logic and Modularity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M2/1_pre-class_overview.html">9.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/1.1_materials.html">9.1.1. PCMs: Logic and Modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/pre_1/a/instructions.html">9.1.2. PCA: Selection Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/pre_2/a/instructions.html">9.1.3. PCA: User-Defined Functions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M2/2_in-class_overview.html">9.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/ICA_1/a/instructions.html">9.2.1. ICA: Factory Alarm System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/ICA_2/a/instructions.html">9.2.2. ICA: UDFs and Code Efficiency</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M2/3_assignment_overview.html">9.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M2/tasks/ind_1/b/instructions.html">9.3.1. PY: Logic and Modularity</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M3/0_overview.html">10. Looping Structures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M3/1_pre-class_overview.html">10.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/1.1_materials.html">10.1.1. PCMs: Loops in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/pre_1/a/instructions.html">10.1.2. PCA: While Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/pre_2/a/instructions.html">10.1.3. PCA: For Loops</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M3/2_in-class_overview.html">10.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/ICA_1/a/instructions.html">10.2.1. ICA: “How Many Tries?” - Guessing Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/ICA_2/a/instructions.html">10.2.2. ICA: Dog Park Tennis Ball Launcher</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M3/3_assignment_overview.html">10.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M3/tasks/ind_1/a/instructions.html">10.3.1. PY: Looping Structures</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M4/0_overview.html">11. Data Analysis and Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M4/1_pre-class_overview.html">11.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/1.1_materials.html">11.1.1. PCMs: Data Analysis and Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/pre_1/a/instructions.html">11.1.2. PCA: Data Manipulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/pre_2/a/instructions.html">11.1.3. PCA: Plotting and Statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M4/2_in-class_overview.html">11.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/ICA_1/a/instructions.html">11.2.1. ICA: Cleaning Up Coffee Sales Data</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M4/3_assignment_overview.html">11.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M4/tasks/ind_1/a/instructions.html">11.3.1. PY: Data Analysis and Visualization</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Part_04_Python/M5/0_overview.html">12. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M5/1_pre-class_overview.html">12.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/1.1_materials.html">12.1.1. PCMs: Linear Regression in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/tasks/pre_1/b/instructions.html">12.1.2. PCA: Linear Regression Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M5/2_in-class_overview.html">12.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/tasks/ICA_1/a/instructions.html">12.2.1. ICA: Good Fit or Bad Fit?</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Part_04_Python/M5/3_assignment_overview.html">12.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Part_04_Python/M5/tasks/ind_1/a/instructions.html">12.3.1. PY: Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Engineering Design - Team Project</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0_overview.html">13. Team Project: The Martian Greenhouse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mission_brief.html">14. Mission Brief</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_design_process.html">15. The Engineering Design Process</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M1/0_overview.html">16. Milestone 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../M1/1.1_materials.html">16.3. PCMs: Milestone 1 - Problem Scoping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../M1/tasks/pre_1/a/instructions.html">16.4. Milestone 1 - Client Needs Analysis (Individual)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../M1/tasks/pre_2/a/instructions.html">16.5. Milestone 1 - Problem Formulation (Individual)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M2/0_overview.html">17. Milestone 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../M2/tasks/pre_1/a/instructions.html">17.3. Milestone 2 - Operating the Greenhouse (Individual)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../M2/tasks/team_1/a/instructions.html">17.4. Milestone 2 - Failure Investigation (Team)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../M2/tasks/team_2/a/instructions.html">17.5. Milestone 2 - Insulation and the Heat-Loss Model (Team)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_overview.html">18. Milestone 3</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">18.4. Control Strategies Primer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/pre_1/a/instructions.html">18.5. Milestone 3 - Control Strategies Check (Individual)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/team_1/a/instructions.html">18.6. Milestone 3 - Design Memo (Team)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M4/0_overview.html">19. Milestone 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../M4/tasks/ICA_1/a/instructions.html">19.3. Milestone 4 - Iteration #2: Greenhouse Controller (Team)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../M4/tasks/ICA_2/a/instructions.html">19.4. Milestone 4 - Peer Review (Team)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../M4/tasks/ind_1/a/instructions.html">19.5. Milestone 4 - Controller Trace (Individual)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../M5/0_overview.html">20. Milestone 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../M5/tasks/team_1/a/instructions.html">20.3. Milestone 5 - Final Technical Report (Team)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../M5/tasks/team_2/a/instructions.html">20.4. Milestone 5 - Project Presentation (Team)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../M5/tasks/ind_1/a/instructions.html">20.5. Milestone 5 - Reflection (Individual)</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Purdue-FYE/engr-13100-2026-fall/issues/new?title=Issue%20on%20page%20%2FPart_05_Team_Project/M3/1_primer.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Control Strategies Primer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-manual-control-to-automatic-control">18.4.1. From Manual Control to Automatic Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-control-loop">18.4.2. What Is a Control Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-things-that-make-control-hard">18.4.3. Two Things That Make Control Hard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-acceptance-test-requires">18.4.4. What the Acceptance Test Requires</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-1-thresholds-fixed-output-bands">18.4.5. Strategy 1: Thresholds (Fixed Output Bands)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-2-proportional-p">18.4.6. Strategy 2: Proportional (P)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-3-proportional-integral-pi">18.4.7. Strategy 3: Proportional-Integral (PI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-4-pid">18.4.8. Strategy 4: PID</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-strategies">18.4.9. Mixing Strategies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-and-strategy">18.4.10. Hardware and Strategy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controller-state">18.4.11. Controller State</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-good-tuning-looks-like">18.4.12. What Good Tuning Looks Like</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-control-loop-appears">18.4.13. Where the Control Loop Appears</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="raw-html"><div class="d-none"></span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand\blank{~\underline{\hspace{1.2cm}}~}\\% Bold symbols (vectors)
+\newcommand\bs[1]{\mathbf{#1}}\\% Differential
+\newcommand\dd[2][]{\mathrm{d}^{#1}{#2}}  % use as \dd, \dd{x}, or \dd[2]{x}\\% Poor man's siunitx
+\newcommand\unit[1]{\mathrm{#1}}
+\newcommand\num[1]{#1}
+\newcommand\qty[2]{#1~\unit{#2}}\\\newcommand\per{/}
+\newcommand\squared{{}^2}
+\newcommand\cubed{{}^3}
+%
+% Scale
+\newcommand\milli{\unit{m}}
+\newcommand\centi{\unit{c}}
+\newcommand\kilo{\unit{k}}
+\newcommand\mega{\unit{M}}
+%
+% Percent
+\newcommand\percent{\unit{{\kern-4mu}\%}}
+%
+% Angle
+\newcommand\radian{\unit{rad}}
+\newcommand\degree{\unit{{\kern-4mu}^\circ}}
+%
+% Time
+\newcommand\second{\unit{s}}
+\newcommand\s{\second}
+\newcommand\minute{\unit{min}}
+\newcommand\hour{\unit{h}}
+%
+% Distance
+\newcommand\meter{\unit{m}}
+\newcommand\m{\meter}
+\newcommand\inch{\unit{in}}
+\newcommand\foot{\unit{ft}}
+%
+% Force
+\newcommand\newton{\unit{N}}
+\newcommand\kip{\unit{kip}} % kilopound in &quot;freedom&quot; units - edit made by Sri
+%
+% Mass
+\newcommand\gram{\unit{g}}
+\newcommand\g{\gram}
+\newcommand\kilogram{\unit{kg}}
+\newcommand\kg{\kilogram}
+\newcommand\grain{\unit{grain}}
+\newcommand\ounce{\unit{oz}}
+%
+% Temperature
+\newcommand\kelvin{\unit{K}}
+\newcommand\K{\kelvin}
+\newcommand\celsius{\unit{{}^\circ C}}
+\newcommand\C{\celsius}
+\newcommand\fahrenheit{\unit{{}^\circ F}}
+\newcommand\F{\fahrenheit}
+%
+% Area
+\newcommand\sqft{\unit{sq\,\foot}}  % square foot
+%
+% Volume
+\newcommand\liter{\unit{L}}
+\newcommand\gallon{\unit{gal}}
+%
+% Frequency
+\newcommand\hertz{\unit{Hz}}
+\newcommand\rpm{\unit{rpm}}
+%
+% Voltage
+\newcommand\volt{\unit{V}}
+\newcommand\V{\volt}
+\newcommand\millivolt{\milli\volt}
+\newcommand\mV{\milli\volt}
+\newcommand\kilovolt{\kilo\volt}
+\newcommand\kV{\kilo\volt}
+%
+% Current
+\newcommand\ampere{\unit{A}}
+\newcommand\A{\ampere}
+\newcommand\milliampereA{\milli\ampere}
+\newcommand\mA{\milli\ampere}
+\newcommand\kiloampereA{\kilo\ampere}
+\newcommand\kA{\kilo\ampere}
+%
+% Resistance
+\newcommand\ohm{\Omega}
+\newcommand\milliohm{\milli\ohm}
+\newcommand\kiloohm{\kilo\ohm} % correct SI spelling
+\newcommand\kilohm{\kilo\ohm} % &quot;American&quot; spelling used in siunitx
+\newcommand\megaohm{\mega\ohm} % correct SI spelling
+\newcommand\megohm{\mega\ohm} % &quot;American&quot; spelling used in siunitx
+%
+% Capacitance
+\newcommand\farad{\unit{F}}
+\newcommand\F{\farad}
+\newcommand\microfarad{\micro\farad}
+\newcommand\muF{\micro\farad}
+%
+% Inductance
+\newcommand\henry{\unit{H}}
+\newcommand\H{\henry}
+\newcommand\millihenry{\milli\henry}
+\newcommand\mH{\milli\henry}
+%
+% Power
+\newcommand\watt{\unit{W}}
+\newcommand\W{\watt}
+\newcommand\milliwatt{\milli\watt}
+\newcommand\mW{\milli\watt}
+\newcommand\kilowatt{\kilo\watt}
+\newcommand\kW{\kilo\watt}
+%
+% Energy
+\newcommand\joule{\unit{J}}
+\newcommand\J{\joule}
+%
+% Composite units
+%
+% Torque
+\newcommand\ozin{\unit{\ounce}\,\unit{in}}
+\newcommand\newtonmeter{\unit{\newton\,\meter}}
+%
+% Pressure
+\newcommand\psf{\unit{psf}}  % pounds per square foot
+\newcommand\pcf{\unit{pcf}}  % pounds per cubic foot
+\newcommand\pascal{\unit{Pa}}
+\newcommand\Pa{\pascal}
+\newcommand\ksi{\unit{ksi}} % kilopound per square inch
+% NOTE: do NOT define \bar -- it is the built-in LaTeX accent used by \bar{x},
+% \bar{y} (sample means). Redefining it made those render as the word &quot;bar&quot;.
+\newcommand\barunit{\unit{bar}}
+\end{aligned}\end{align} \]</div>
+<p><span class="raw-html"></div></span></p>
+<p>Oct 08, 2026 | 2988 words | 30 min
+read</p>
+<section class="tex2jax_ignore mathjax_ignore" id="control-strategies-primer">
+<span id="tp-m3-primer"></span><h1><span class="section-number">18.4. </span>Control Strategies Primer<a class="headerlink" href="#control-strategies-primer" title="Link to this heading">#</a></h1>
+<section id="from-manual-control-to-automatic-control">
+<h2><span class="section-number">18.4.1. </span>From Manual Control to Automatic Control<a class="headerlink" href="#from-manual-control-to-automatic-control" title="Link to this heading">#</a></h2>
+<p>In Milestone 2, the greenhouse ran under manual control. An operator reads the sensors,
+decides what the heater and the valves should do, and moves the sliders. A controller
+performs the same task automatically, once every tick.</p>
+<p>This primer describes (1) the control loop, (2) the acceptance criteria your design must meet,
+and (3) the four strategies for turning error into action. It also explains <strong>how your hardware determines which of these strategies can meet the criteria.</strong></p>
+</section>
+<section id="what-is-a-control-loop">
+<h2><span class="section-number">18.4.2. </span>What Is a Control Loop<a class="headerlink" href="#what-is-a-control-loop" title="Link to this heading">#</a></h2>
+<p>Every controller runs the same loop once every tick: measure, compare, decide, act,
+and repeat.</p>
+<figure class="align-default" id="tp-control-loop">
+<img alt="Feedback loop block diagram: setpoint, comparison, controller, actuators, greenhouse, and sensors back to the comparison." src="../../_images/control_loop_diagram_v2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18.1 </span><span class="caption-text">One tick of the control loop. The comparison subtracts the measurement from the
+setpoint to produce the error. The controller turns the error into commands, the
+actuators act on the greenhouse, and the sensors return the next measurement. The five
+numbered steps are described above: measure, compare, decide, act, and
+repeat.</span><a class="headerlink" href="#tp-control-loop" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The GHU-2 controller runs this loop. Once per minute, it receives the current sensor
+readings and outputs a percentage for each actuator.</p>
+<p><strong>The strategies below use the same terms:</strong></p>
+<p>The <strong>setpoint</strong> is the target value. The
+temperature setpoint might be <span class="math notranslate nohighlight">\(23\ ^\circ\text{C}\)</span>.</p>
+<p>The <strong>measurement</strong> is the current sensor reading, for example <span class="math notranslate nohighlight">\(21\ ^\circ\text{C}\)</span>.</p>
+<p>The <strong>error</strong> is the difference between the setpoint and the measurement.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>error = setpoint - measurement
+</pre></div>
+</div>
+<p>With a setpoint of <span class="math notranslate nohighlight">\(23\ ^\circ\text{C}\)</span> and a measurement of <span class="math notranslate nohighlight">\(21\ ^\circ\text{C}\)</span>, the
+error is <span class="math notranslate nohighlight">\(+2\ ^\circ\text{C}\)</span>. A positive error means the greenhouse is too cold, so the
+controller should heat. A negative error means the greenhouse is too hot.</p>
+<p>An <strong>actuator</strong> is a device that moves the greenhouse environment back toward the
+setpoint. The heater, a valve, and a pump are actuators.</p>
+<p><strong>Feedback</strong> closes the loop. The next measurement reflects the action taken on the
+previous tick, so the loop can correct itself.</p>
+<p>Each strategy below is a different rule for the decide step. Each one turns the error
+into an action in a different way.</p>
+<div class="tip admonition">
+<p class="admonition-title">Everyday Examples of Control Loops</p>
+<p>A home thermostat measures the room, compares it to the dialed setting, and switches
+the furnace on or off. Cruise control holds a car at a set speed the same way. So does
+a shower handle: when the water is too cold, you turn it toward hot, and when the water
+is too hot, you turn it back.</p>
+</div>
+</section>
+<section id="two-things-that-make-control-hard">
+<span id="tp-m3-hard"></span><h2><span class="section-number">18.4.3. </span>Two Things That Make Control Hard<a class="headerlink" href="#two-things-that-make-control-hard" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Real sensors are not perfect, and real actuators do not act instantly. These two
+properties of physical systems, noise and lag, shape every strategy that follows.</p></li>
+<li><p><strong>Noise.</strong> Real sensors report the true value plus a small random jitter. The table
+shows five consecutive readings with the air held at a constant <span class="math notranslate nohighlight">\(21\ ^\circ\text{C}\)</span>.</p></li>
+</ol>
+<div align="center">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tick</p></th>
+<th class="head"><p>True temperature</p></th>
+<th class="head"><p>Sensor reading</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>21.0 C</p></td>
+<td><p>21.3 C</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>21.0 C</p></td>
+<td><p>20.8 C</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>21.0 C</p></td>
+<td><p>21.2 C</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>21.0 C</p></td>
+<td><p>20.7 C</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>21.0 C</p></td>
+<td><p>21.1 C</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The true temperature is constant, but the reading changes on every tick. A controller
+that responds to each change spends its output correcting noise instead of holding the
+temperature. One of the strategies below is especially sensitive to noise.</p>
+<p><strong>Lag.</strong> When the heater output rises, the air does not warm instantly. The response
+takes time, and this delay is why aggressive control overshoots. The controller keeps
+raising its output while the greenhouse is still catching up to the previous increase,
+so by the time the air reaches the setpoint, the heater is already set too high. The
+greenhouse has this lag, so a controller tuned too aggressively will oscillate.</p>
+<div class="tip admonition">
+<p class="admonition-title">Everyday Example of Lag</p>
+<p>A shower that warms slowly behaves the same way. The water is too cold, so you turn the
+handle toward hot, and the water warms only gradually. You turn it hotter still, and by
+the time the water catches up, it is too hot.</p>
+</div>
+</section>
+<section id="what-the-acceptance-test-requires">
+<span id="tp-m3-spec"></span><h2><span class="section-number">18.4.4. </span>What the Acceptance Test Requires<a class="headerlink" href="#what-the-acceptance-test-requires" title="Link to this heading">#</a></h2>
+<p>Every candidate in your design memo is judged against the same acceptance test. The
+table lists its criteria. The Milestone 4 practice test checks the same criteria.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criterion</p></th>
+<th class="head"><p>Requirement</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Crop survival</p></td>
+<td><p>At least 28 of 30 sols</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temperature tracking</p></td>
+<td><p>Mean absolute error below <span class="math notranslate nohighlight">\(2.5\ ^\circ\text{C}\)</span>, measured against the day and night setpoints on every tick</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(CO_2\)</span> control</p></td>
+<td><p>Inside <span class="math notranslate nohighlight">\(800\)</span> to <span class="math notranslate nohighlight">\(1000\ \text{ppm}\)</span> on at least 65 % of ticks</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(CO_2\)</span> safety</p></td>
+<td><p>Never 30 consecutive minutes at or above <span class="math notranslate nohighlight">\(5000\ \text{ppm}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Relative humidity</p></td>
+<td><p>Inside <span class="math notranslate nohighlight">\(40\)</span> to <span class="math notranslate nohighlight">\(60\%\)</span> on at least 25 % of ticks</p></td>
+</tr>
+<tr class="row-odd"><td><p>Determinism</p></td>
+<td><p>Two runs with the same seed give identical results</p></td>
+</tr>
+<tr class="row-even"><td><p>Launch mass</p></td>
+<td><p>Glazing, heater, and battery together at most <span class="math notranslate nohighlight">\(600\ \text{kg}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Compare each strategy below against these criteria. Whether a strategy meets them
+depends on the hardware it runs on.</p>
+</section>
+<section id="strategy-1-thresholds-fixed-output-bands">
+<h2><span class="section-number">18.4.5. </span>Strategy 1: Thresholds (Fixed Output Bands)<a class="headerlink" href="#strategy-1-thresholds-fixed-output-bands" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>if temperature &lt; 18:    heater = 100
+elif temperature &lt; 22:  heater = 60
+else:                   heater = 0
+</pre></div>
+</div>
+<p>The rule reads <code class="docutils literal notranslate"><span class="pre">temperature</span></code>, the measured greenhouse temperature in degrees Celsius,
+and sets <code class="docutils literal notranslate"><span class="pre">heater</span></code>, the heater command in percent of full power. A threshold controller
+is built from <code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code> logic, which was introduced in the
+<a class="reference internal" href="../../Part_04_Python/M2/0_overview.html#py-m2-overview"><span class="std std-ref">Python logic module</span></a>. The sandbox rule tables use the same
+mechanism. Thresholds are simple, readable, and predictable, and real safety systems use
+them for these reasons.</p>
+<p>Your Milestone 2 analysis showed the drawback of thresholds. GHU-1’s heater was a
+threshold controller with a single rule, and the telemetry log shows the result: the
+temperature <strong>sawtooths</strong>. The heater is either fully on or fully off. The greenhouse
+overshoots, the heater cuts out, the temperature drifts back down, and the cycle
+repeats. The standard deviation you calculated in the failure investigation mixes this
+cycling with the day-night swing and the cold nights, so it
+overstates the sawtooth. A short daytime window of the temperature trace shows the
+sawtooth itself.</p>
+<p>The effect of the sawtooth depends on the hardware. When the heater has capacity to
+spare, each cycle is short and shallow. When the heater barely keeps up, the
+temperature falls further before the rule responds. Test a threshold design on your
+hardware to find out whether it meets the temperature criterion.</p>
+<figure class="align-default" id="tp-threshold-sawtooth">
+<img alt="Temperature zigzags between about 21 and 22.5 degrees C, below a 23 degree setpoint, as the heater switches between 60 and 0." src="../../_images/threshold_sawtooth.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18.2 </span><span class="caption-text">The three-band rule above, run in the project simulation on the as-built hardware. The
+plot covers about 45 minutes around midday so that individual cycles are visible. Over
+a full sol, the switching is too rapid to see. The heater switches between 60 %
+and off, so the temperature cycles between about <span class="math notranslate nohighlight">\(21\)</span> and <span class="math notranslate nohighlight">\(22.5\ ^\circ\text{C}\)</span> around
+the rule’s <span class="math notranslate nohighlight">\(22\ ^\circ\text{C}\)</span> band edge and does not settle. It never reaches the
+<span class="math notranslate nohighlight">\(23\ ^\circ\text{C}\)</span> daytime setpoint, because the band edges are fixed numbers in the
+rule and do not follow the setpoint. Through the coldest hours of the night the
+as-built heater sits at 100 %, so the rule has nothing to switch and no sawtooth
+forms.</span><a class="headerlink" href="#tp-threshold-sawtooth" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Everyday parallel</p>
+<p>A cheap thermostat that clicks on and off produces the same sawtooth.</p>
+</div>
+</section>
+<section id="strategy-2-proportional-p">
+<h2><span class="section-number">18.4.6. </span>Strategy 2: Proportional (P)<a class="headerlink" href="#strategy-2-proportional-p" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>output = Kp x error        (then clamp to [0, 100])
+</pre></div>
+</div>
+<p>The equation uses three terms.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">output</span></code> is the command sent to the actuator, in percent of full power, from 0 to 100.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> is the setpoint minus the measurement, as defined above. For the heater, its
+unit is <span class="math notranslate nohighlight">\(^\circ\text{C}\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Kp</span></code> is the proportional <strong>gain</strong>, a constant that the design team chooses.</p></li>
+</ul>
+<p>A proportional controller sets the output in proportion to the error. A small error
+produces a small output, and a large error produces a large output.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Kp</span></code> converts error into output, so its unit is percent of output per unit of error, or
+<span class="math notranslate nohighlight">\(\%/^\circ\text{C}\)</span> for the heater. With a <code class="docutils literal notranslate"><span class="pre">Kp</span></code> of 10, an error of <span class="math notranslate nohighlight">\(1\ ^\circ\text{C}\)</span>
+commands 10 % heater power, and an error of <span class="math notranslate nohighlight">\(2\ ^\circ\text{C}\)</span> commands 20 %. A large
+<code class="docutils literal notranslate"><span class="pre">Kp</span></code> produces a large output for a small error. A small <code class="docutils literal notranslate"><span class="pre">Kp</span></code> responds more gradually.
+The output is recalculated from the current error on every tick, so the output shrinks
+as the error shrinks. When the error reaches zero, the output is zero.</p>
+<p>The <strong>clamp</strong> limits the calculated output to the actuator’s physical range. A heater
+cannot run at 130 % or at minus 20 %. Any output outside the range 0 to 100
+is set to the nearest limit before it is sent.</p>
+<p>Proportional control has a limitation on Mars. Holding <span class="math notranslate nohighlight">\(23\ ^\circ\text{C}\)</span> inside
+while the outside air falls as low as <span class="math notranslate nohighlight">\(-70\ ^\circ\text{C}\)</span> requires the heater to
+run continuously. A
+proportional controller’s output falls toward zero as the error closes. The
+temperature therefore settles slightly below the setpoint, where the remaining error
+is just large enough to command the heat the environment demands. This gap is called
+<strong>steady-state offset</strong>. The offset is proportional to the heat the environment
+demands, so better insulation makes it smaller.</p>
+<div class="tip admonition">
+<p class="admonition-title">Everyday Example of Proportional Control</p>
+<p>Cruise control set to 65 on a long hill settles at 63 and holds there. The remaining
+speed error commands the extra throttle that the hill requires.</p>
+</div>
+<figure class="align-default" id="tp-p-offset">
+<img alt="Two sols of proportional control: temperature stays below a setpoint that steps between 23 degrees C by day and 18 at night." src="../../_images/proportional_offset.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18.3 </span><span class="caption-text">Proportional control of the GHU-2 heater on the as-built hardware, run in the project
+simulation. At midday the heater runs well below full power, and the temperature
+settles about <span class="math notranslate nohighlight">\(2\ ^\circ\text{C}\)</span> below the <span class="math notranslate nohighlight">\(23\ ^\circ\text{C}\)</span> setpoint. That gap is
+the steady-state offset. The lower plot shows the cause. The output is calculated from
+the current error, so the output falls as the error closes. The temperature settles
+where the remaining error commands exactly the heat the environment demands. The night
+gap is larger for two reasons. First, heat demand is higher at night, so the offset is
+larger. Second, the heater is pinned at 100 % through the coldest hours. There
+the gap comes from the heater running out of capacity, and it is separate from the
+offset. No controller can close that part of the gap. The integral windup section
+below describes its effect on a controller with an integral.</span><a class="headerlink" href="#tp-p-offset" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="strategy-3-proportional-integral-pi">
+<h2><span class="section-number">18.4.7. </span>Strategy 3: Proportional-Integral (PI)<a class="headerlink" href="#strategy-3-proportional-integral-pi" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>integral = integral + error x dt
+output   = Kp x error + Ki x integral      (then clamp)
+</pre></div>
+</div>
+<p>The first line updates a running total of the error, and the second line calculates the
+output. The equations use five terms.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">integral</span></code> is the running total of the error over time. The controller stores it
+between ticks, and it starts at zero. On the right side of the first line, <code class="docutils literal notranslate"><span class="pre">integral</span></code>
+is the total from the previous tick. On the left side, it is the updated total. Its
+unit is error multiplied by time, or <span class="math notranslate nohighlight">\(^\circ\text{C}\cdot\text{s}\)</span> for the heater.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dt</span></code> is the length of one tick in seconds. GHU-2 ticks once per minute, so <code class="docutils literal notranslate"><span class="pre">dt</span></code> is 60.
+Multiplying by <code class="docutils literal notranslate"><span class="pre">dt</span></code> weights each error by how long it lasted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ki</span></code> is the integral gain, a constant that the design team chooses. It converts the
+accumulated error into output, in <span class="math notranslate nohighlight">\(\%/(^\circ\text{C}\cdot\text{s})\)</span> for the heater.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Kp</span></code>, <code class="docutils literal notranslate"><span class="pre">error</span></code>, and <code class="docutils literal notranslate"><span class="pre">output</span></code> are the same as in proportional control.</p></li>
+</ul>
+<p>Proportional control uses only the current error. The integral term, <code class="docutils literal notranslate"><span class="pre">Ki</span> <span class="pre">x</span> <span class="pre">integral</span></code>,
+responds to past error. On every tick, the controller multiplies the current error by
+<code class="docutils literal notranslate"><span class="pre">dt</span></code> and adds the result to the running total. An error of <span class="math notranslate nohighlight">\(1\ ^\circ\text{C}\)</span> that
+lasts 10 ticks adds <span class="math notranslate nohighlight">\(600\ ^\circ\text{C}\cdot\text{s}\)</span> to the integral. With a <code class="docutils literal notranslate"><span class="pre">Ki</span></code> of
+0.01, that raises the output by 6 %. A small error that persists keeps increasing the
+total, which raises the output until the offset is gone. In this way, PI removes the
+steady-state offset that proportional control alone cannot remove. For this reason, PI
+is the most widely used strategy in industrial control. It has two tunable coefficients,
+<code class="docutils literal notranslate"><span class="pre">Kp</span></code> and <code class="docutils literal notranslate"><span class="pre">Ki</span></code>.</p>
+<p>The same accumulation causes PI’s characteristic failure, called <strong>integral windup</strong>.</p>
+<p>Windup happens when the heater cannot keep up. Your Milestone 2 heat-loss calculation
+showed which glazing and heater combinations fall short on a cold night. The GHU-1
+telemetry log showed what falling short looks like. Through the coldest hours, the
+heater is pinned at 100 % and the greenhouse is still below its night setpoint.
+The output is already at its limit, but the integral keeps adding the error on every
+tick. It accumulates a demand that the heater cannot deliver.</p>
+<p>At sunrise the error goes away, but the accumulated term remains. It holds the heater
+at full output long after the greenhouse has warmed up, and the temperature
+overshoots. On the as-built glazing and heater, a PI heater with no defense peaks at
+<span class="math notranslate nohighlight">\(47.5\ ^\circ\text{C}\)</span>, above the <span class="math notranslate nohighlight">\(40\ ^\circ\text{C}\)</span> lethal limit. It stays above
+that limit for 47 to 48 minutes each morning. Sustained heat kills the crop after 60
+minutes, so the crop survives with about 12 minutes to spare.</p>
+<p>The standard defense is a single condition: stop adding to the integral while the
+output is <strong>saturated</strong>, or pinned at its limit. <strong>If your design uses an integral, your flowchart must show the windup defense.</strong></p>
+<figure class="align-default" id="tp-heater-windup">
+<img alt="PI heaters with and without windup defense: the undefended one spikes to nearly 48 degrees C after each night." src="../../_images/heater_integral_windup.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18.4 </span><span class="caption-text">Integral windup on the GHU-2 heater with the as-built glazing and heater, run in the
+project simulation over about one and a half sols. The middle plot shows the cause.
+The heater is pinned at 100 % through the coldest hours of the night, so the
+error remains no matter what the controller commands. The lower plot shows the result
+of accumulating anyway. The undefended integral climbs to about
+<span class="math notranslate nohighlight">\(175{,}000\ ^\circ\text{C}\cdot\text{s}\)</span> overnight, and the defended integral stays
+near zero on the same scale. The upper plot shows where the
+stored demand goes at sunrise. The undefended controller overshoots past the
+<span class="math notranslate nohighlight">\(40\ ^\circ\text{C}\)</span> lethal line, and the defended controller tracks the setpoint. The
+two controllers are identical except for one condition around the integral update.</span><a class="headerlink" href="#tp-heater-windup" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>How often the heater saturates depends on the hardware. On the as-built glazing and
+heater, measured over a 30-sol mission, a defended PI heater sits at 100 % for
+about 28 % of all ticks and about 56 % of night ticks. On this hardware,
+windup is a normal nightly condition. On hardware with heating capacity to spare, the
+same controller sits at 100 % for under 1 % of ticks. A design with an
+integral needs the defense on any hardware. The hardware determines how much the rest
+of the design depends on it.</p>
+</section>
+<section id="strategy-4-pid">
+<h2><span class="section-number">18.4.8. </span>Strategy 4: PID<a class="headerlink" href="#strategy-4-pid" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>derivative = (error - previous_error) / dt
+output     = Kp x error + Ki x integral + Kd x derivative      (then clamp)
+</pre></div>
+</div>
+<p>The equations add three terms to those of PI.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">previous_error</span></code> is the error from the previous tick. The controller stores it between
+ticks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">derivative</span></code> is the rate of change of the error, in <span class="math notranslate nohighlight">\(^\circ\text{C/s}\)</span> for the heater.
+It is positive when the error is increasing and negative when the error is decreasing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Kd</span></code> is the derivative gain, a constant that the design team chooses, in
+<span class="math notranslate nohighlight">\(\%/(^\circ\text{C/s})\)</span> for the heater.</p></li>
+</ul>
+<p>The derivative term, <code class="docutils literal notranslate"><span class="pre">Kd</span> <span class="pre">x</span> <span class="pre">derivative</span></code>, responds to the rate of change of the error.
+When the greenhouse warms quickly toward the setpoint, the error falls quickly, so the
+derivative is negative and the derivative term subtracts from the output. The output
+drops before the temperature reaches the setpoint, which reduces overshoot.</p>
+<p>The limitation of the derivative is the <a class="reference internal" href="#tp-m3-hard"><span class="std std-ref">noise</span></a> described earlier.
+The derivative is calculated from the difference between consecutive readings, and
+sensor noise dominates that difference. With a noisy sensor, the derivative term
+responds to changes that are not in the true signal, and the actuator follows those
+changes.</p>
+<p>The sensors in this project are noisy. A derivative term is permitted but not
+required. <strong>A design that includes one must demonstrate in Milestone 4 that it
+measurably improves performance over the same design without it.</strong></p>
+<div class="tip admonition">
+<p class="admonition-title">Everyday parallel</p>
+<p>Lifting off the gas before a stop sign, instead of braking at the line, works the same
+way.</p>
+</div>
+</section>
+<section id="mixing-strategies">
+<h2><span class="section-number">18.4.9. </span>Mixing Strategies<a class="headerlink" href="#mixing-strategies" title="Link to this heading">#</a></h2>
+<p>A design controls four actuators, and <strong>each actuator can use a different strategy.</strong> For example, PI for the heater, proportional control with a
+safety clamp for the CO2 valve, and plain thresholds for the irrigation pump. <strong>Choose a
+strategy for each actuator, and justify each choice.</strong></p>
+<p>Two constraints from the mission brief affect the design:</p>
+<ul class="simple">
+<li><p>The CO2 valve is one-way. Software cannot remove CO2, so an output that calculates
+as negative must be clamped to zero. An overshoot cannot be corrected, so approach
+the band conservatively from below.</p></li>
+<li><p>The primary CO2 sensor fails intermittently. Your M2 analysis established this and
+measured the cost of trusting it. <strong>Any design that reads CO2 must choose between the
+two readings on every tick, and your memo must state the selection rule.</strong> The M2
+divergence analysis suggests one.</p></li>
+</ul>
+</section>
+<section id="hardware-and-strategy">
+<h2><span class="section-number">18.4.10. </span>Hardware and Strategy<a class="headerlink" href="#hardware-and-strategy" title="Link to this heading">#</a></h2>
+<p>Your Milestone 2 hardware choice and your controller strategy depend on each other.
+Each glazing and heater combination sets the problem the controller has to solve. Each
+strategy handles some of those problems better than others. The list below describes
+three of these connections.</p>
+<ul class="simple">
+<li><p><strong>Heating margin:</strong> A heater that cannot cover the coldest nights saturates. This
+makes windup routine and sets a lower limit on the temperature error that no
+strategy can remove. More insulation or a larger heater removes the saturation but
+adds mass.</p></li>
+<li><p><strong>Light:</strong> Glazing that passes less sunlight leaves the grow LEDs to make up the
+difference, especially in a dust storm. On dim glazing, an LED rule that switches
+off whenever the greenhouse runs warm can leave the crop without enough light.</p></li>
+<li><p><strong>Energy:</strong> Every watt that the heater and the LEDs draw on the worst sol adds
+battery mass. Insulation lowers the heating energy. Glazing that blocks light raises
+the LED energy.</p></li>
+</ul>
+<p>Each candidate in your design memo pairs a hardware selection with a controller
+strategy. The sandbox runs on any hardware from the menu, so you can run a threshold
+rule table on each glazing before you commit. For example, this command runs the
+sandbox with aerogel glazing and a 3000 W heater.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python run_sandbox.py --glazing aerogel --heater 3000
+</pre></div>
+</div>
+</section>
+<section id="controller-state">
+<h2><span class="section-number">18.4.11. </span>Controller State<a class="headerlink" href="#controller-state" title="Link to this heading">#</a></h2>
+<p>A threshold controller stores nothing between ticks. PI stores the integral, and PID
+also stores the previous error. Control functions run once per tick, so a value needed
+on a later tick cannot be rebuilt from the current reading alone. The controller must
+store the value on one tick and read it back on the next.</p>
+<p>In this project, those values are held in a dictionary named <code class="docutils literal notranslate"><span class="pre">state</span></code>, which is passed to
+the control functions on every tick. Read the previous value from it, calculate the
+new value, and write the new value back so it is available on the next tick. The
+Milestone 4 template shows the exact lines. For the design memo, your flowchart must
+show what is stored and when it is updated.</p>
+</section>
+<section id="what-good-tuning-looks-like">
+<h2><span class="section-number">18.4.12. </span>What Good Tuning Looks Like<a class="headerlink" href="#what-good-tuning-looks-like" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Kp</span></code>, <code class="docutils literal notranslate"><span class="pre">Ki</span></code>, and <code class="docutils literal notranslate"><span class="pre">Kd</span></code> have no universal values. You find them by experiment in
+Milestone 4. The table lists common behaviors and their likely causes.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>You observe</p></th>
+<th class="head"><p>Likely cause</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Slow sawtooth oscillation</p></td>
+<td><p>Thresholds or <code class="docutils literal notranslate"><span class="pre">Kp</span></code> far too high</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temperature settles below setpoint at night, heater below 100 %</p></td>
+<td><p>P-only offset. Consider adding an integral.</p></td>
+</tr>
+<tr class="row-even"><td><p>Temperature below setpoint on the coldest nights, heater at 100 %</p></td>
+<td><p>Heater saturation. Tuning cannot fix it. Only a change of hardware (glazing or heater) can.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Big overshoot just after sunrise</p></td>
+<td><p>Integral windup. Add windup defense.</p></td>
+</tr>
+<tr class="row-even"><td><p>Output changes with every reading</p></td>
+<td><p>Derivative is amplifying sensor noise.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Once you identify the cause, the fix is usually a single change. Milestone 4 tuning
+starts from the table below.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symptom</p></th>
+<th class="head"><p>Likely fix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Oscillates around the setpoint</p></td>
+<td><p>Lower the gain</p></td>
+</tr>
+<tr class="row-odd"><td><p>Never quite reaches the setpoint</p></td>
+<td><p>Add integral action</p></td>
+</tr>
+<tr class="row-even"><td><p>Actuator changes state constantly</p></td>
+<td><p>Filter the reading, or drop the derivative</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sustained overshoot after a cold night</p></td>
+<td><p>Check your windup defense</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="where-the-control-loop-appears">
+<h2><span class="section-number">18.4.13. </span>Where the Control Loop Appears<a class="headerlink" href="#where-the-control-loop-appears" title="Link to this heading">#</a></h2>
+<p><strong>The control loop in this project is used wherever a value must be held steady.</strong>
+Examples include home thermostats, automotive cruise control, a drone holding its
+hover, an oven holding its temperature, an insulin pump regulating blood glucose, and
+the life-support system on the International Space Station that maintains the air its
+crew breathes.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Part_05_Team_Project/M3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>Milestone 3: Design, Test and Iterate</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tasks/pre_1/a/instructions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">18.5. </span>Milestone 3 - Control Strategies Check (Individual)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-manual-control-to-automatic-control">18.4.1. From Manual Control to Automatic Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-control-loop">18.4.2. What Is a Control Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-things-that-make-control-hard">18.4.3. Two Things That Make Control Hard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-acceptance-test-requires">18.4.4. What the Acceptance Test Requires</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-1-thresholds-fixed-output-bands">18.4.5. Strategy 1: Thresholds (Fixed Output Bands)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-2-proportional-p">18.4.6. Strategy 2: Proportional (P)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-3-proportional-integral-pi">18.4.7. Strategy 3: Proportional-Integral (PI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-4-pid">18.4.8. Strategy 4: PID</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-strategies">18.4.9. Mixing Strategies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-and-strategy">18.4.10. Hardware and Strategy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controller-state">18.4.11. Controller State</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-good-tuning-looks-like">18.4.12. What Good Tuning Looks Like</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-control-loop-appears">18.4.13. Where the Control Loop Appears</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="/engr-13100-2026-fall/Appendices/contributors.html">Contributors</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1179 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>17.5. Milestone 2 - Insulation and the Heat-Loss Model (Team) &#8212; Purdue University ENGR 13100</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css?v=87e28bcf" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../../_static/documentation_options.js?v=a8e58a58"></script>
+    <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Part_05_Team_Project/M2/tasks/team_2/a/instructions';</script>
+    <link rel="icon" href="../../../../../_static/avatar.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="18. Milestone 3: Design, Test and Iterate" href="../../../../M3/0_overview.html" />
+    <link rel="prev" title="17.4. Milestone 2 - Failure Investigation (Team)" href="../../team_1/a/instructions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.png" class="logo__image only-light" alt="Purdue University ENGR 13100 - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo.png" class="logo__image only-dark" alt="Purdue University ENGR 13100 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../../intro.html">
+                    ENGR 13100<br> Transforming Ideas to Innovation I
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome to ENGR 131</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/meet_the_team.html">Meet Your Instructional Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/help_sessions.html">Help Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/ebec_studio.html">FYE-EBEC Undergraduate Coding and Debugging Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/fye_hub.html">FYE Hub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/course_schedule.html">Course Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/comp_basics.html">Computer Basics and File Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/course_software/course_software.html">Course Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Part_00_Course_Resources/style_guide.html">Python Style Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../glue_factory.html">Glue Factory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Professional Engineering Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/0_overview.html">1. Professional Preparation and Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.1_instructions.html">1.1. Course Policies Exploration</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2_ce.html">1.2. Career Exploration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.1_AgE.html">1.2.1. CE: Agricultural Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.2_CEM.html">1.2.2. CE: Construction Engineering and Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.3_BioE.html">1.2.3. CE: Biological Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.4_NE.html">1.2.4. CE: Nuclear Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.5_SEE.html">1.2.5. CE: Sustainability and Environmental Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.6_MSE.html">1.2.6. CE: Materials Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.7_CE.html">1.2.7. CE: Civil Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.8_CHE.html">1.2.8. CE: Chemical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.9_ME.html">1.2.9. CE: Mechanical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.10_AAE.html">1.2.10. CE: Aeronautical and Astronautical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.11_IE.html">1.2.11. CE: Industrial Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.12_BME.html">1.2.12. CE: Biomedical Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.13_MDE.html">1.2.13. CE: Multidisciplinary Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.14_ECE.html">1.2.14. CE: Electrical and Computer Engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.2.15_ENRE.html">1.2.15. CE: Environmental and Natural Resources Engineering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M1_Professional_Preparation/1.3_eym.html">1.3. Engineering Your Major</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/0_overview.html">2. Teaming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/2_CATME_inst.html">2.1. CATME Teaming</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/1_TM_assignments.html">2.2. Teaming Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_fundamentals.html">2.2.1. PCMs: Working in an Engineering Team</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_fundamentals_inst.html">2.2.2. PCA: Teaming Fundamentals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_inst.html">2.2.3. TM: Code of Cooperation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCM_CATMEdimensions.html">2.2.4. PCMs: The 5 CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/PCA_CATMEdimensions_inst.html">2.2.5. PCA: CATME Teamwork Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_01_Professional_Development/M2_Teaming/tasks/CodeOfCoop_revisit_inst.html">2.2.6. TM: Code of Cooperation Revisit</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Excel</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M1/0_overview.html">3. Spreadsheet Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M1/1_pre-class_overview.html">3.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M1/1.1_materials.html">3.1.1. PCMs: Spreadsheet Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M1/tasks/pre_1/a/instructions.html">3.1.2. PCA: Calculations and Charting in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M1/2_in-class_overview.html">3.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M1/tasks/ICA_1/a/instructions.html">3.2.1. ICA: Tennis Ball Launcher Performance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M1/3_assignment_overview.html">3.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M1/tasks/1/a/instructions.html">3.3.1. EX: Spreadsheet Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M2/0_overview.html">4. Data Analysis in Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M2/1_pre-class_overview.html">4.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/1.1_materials.html">4.1.1. PCMs: Data Analysis and Histograms in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/tasks/pre_1/a/instructions.html">4.1.2. PCA: Descriptive Statistics and Logical Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/tasks/pre_2/a/instructions.html">4.1.3. PCA: Histograms and Outliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M2/2_in-class_overview.html">4.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/tasks/ICA_1/a/instructions.html">4.2.1. ICA: Coffee Cooling Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/tasks/ICA_2/a/instructions.html">4.2.2. ICA: COGO Bike Share</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M2/3_assignment_overview.html">4.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M2/tasks/1/a/instructions.html">4.3.1. EX - Data Analysis &amp; Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M3/0_overview.html">5. Probability and Uncertainty</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M3/1_pre-class_overview.html">5.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M3/1.1_materials.html">5.1.1. PCMs: Probability and Normal Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M3/tasks/pre_1/a/instructions.html">5.1.2. PCA: Probability and Z-Scores in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M3/2_in-class_overview.html">5.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M3/tasks/ICA_1/a/instructions.html">5.2.1. ICA: Semiconductor Quality Control</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M3/3_assignment_overview.html">5.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M3/tasks/1/a/instructions.html">5.3.1. EX: Probability and Normal Distributions</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M4/0_overview.html">6. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M4/1_pre-class_overview.html">6.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M4/1.1_materials.html">6.1.1. PCMs: Linear Regression in Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M4/tasks/pre_1/a/instructions.html">6.1.2. PCA: Linear Regression in Excel</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M4/2_in-class_overview.html">6.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M4/tasks/ICA_1/a/instructions.html">6.2.1. ICA: Speaker Wire Resistance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_02_Excel/M4/3_assignment_overview.html">6.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_02_Excel/M4/tasks/1/a/instructions.html">6.3.1. EX: Linear Data and Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_03_AI/M1/0_overview.html">7. AI in Engineering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_03_AI/M1/1_pre-class_overview.html">7.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.1_materials.html">7.1.1. PCMs: Computer Operations and Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.2_computer_ops.html">7.1.2. PCA: Computer Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.3_materials.html">7.1.3. PCMs: What is Artificial Intelligence?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.4_AI.html">7.1.4. PCA: What is AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.5_materials.html">7.1.5. PCMs: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.6_decisiontrees.html">7.1.6. PCA: Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.7_materials.html">7.1.7. PCMs: Neural Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/7.1.8_neuralnetworks.html">7.1.8. PCA: Neural Networks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Part_03_AI/M1/2_in-class_overview.html">7.2. In-Class Activities</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_03_AI/M1/3_assignment_overview.html">7.3. AI Design Challenge: Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/tasks/ind_1/a/instructions.html">7.3.1. Software Logic - Decision Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_03_AI/M1/tasks/ind_2/a/instructions.html">7.3.2. Hardware System - Neural Networks</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M1/0_overview.html">8. Python Foundations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M1/1_pre-class_overview.html">8.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M1/1.1_materials.html">8.1.1. PCMs: Python Foundations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M1/tasks/pre_1/b/instructions.html">8.1.2. PCA: Data Types and Calculations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M1/2_in-class_overview.html">8.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M1/tasks/ICA_1/a/instructions.html">8.2.1. ICA: Debugging and Auto Grader Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M1/3_assignment_overview.html">8.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M1/tasks/ind_1/b/instructions.html">8.3.1. PY: Python Foundations</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M2/0_overview.html">9. Logic and Modularity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M2/1_pre-class_overview.html">9.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M2/1.1_materials.html">9.1.1. PCMs: Logic and Modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M2/tasks/pre_1/a/instructions.html">9.1.2. PCA: Selection Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M2/tasks/pre_2/a/instructions.html">9.1.3. PCA: User-Defined Functions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M2/2_in-class_overview.html">9.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M2/tasks/ICA_1/a/instructions.html">9.2.1. ICA: Factory Alarm System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M2/tasks/ICA_2/a/instructions.html">9.2.2. ICA: UDFs and Code Efficiency</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M2/3_assignment_overview.html">9.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M2/tasks/ind_1/b/instructions.html">9.3.1. PY: Logic and Modularity</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M3/0_overview.html">10. Looping Structures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M3/1_pre-class_overview.html">10.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M3/1.1_materials.html">10.1.1. PCMs: Loops in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M3/tasks/pre_1/a/instructions.html">10.1.2. PCA: While Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M3/tasks/pre_2/a/instructions.html">10.1.3. PCA: For Loops</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M3/2_in-class_overview.html">10.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M3/tasks/ICA_1/a/instructions.html">10.2.1. ICA: “How Many Tries?” - Guessing Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M3/tasks/ICA_2/a/instructions.html">10.2.2. ICA: Dog Park Tennis Ball Launcher</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M3/3_assignment_overview.html">10.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M3/tasks/ind_1/a/instructions.html">10.3.1. PY: Looping Structures</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M4/0_overview.html">11. Data Analysis and Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M4/1_pre-class_overview.html">11.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M4/1.1_materials.html">11.1.1. PCMs: Data Analysis and Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M4/tasks/pre_1/a/instructions.html">11.1.2. PCA: Data Manipulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M4/tasks/pre_2/a/instructions.html">11.1.3. PCA: Plotting and Statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M4/2_in-class_overview.html">11.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M4/tasks/ICA_1/a/instructions.html">11.2.1. ICA: Cleaning Up Coffee Sales Data</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M4/3_assignment_overview.html">11.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M4/tasks/ind_1/a/instructions.html">11.3.1. PY: Data Analysis and Visualization</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M5/0_overview.html">12. Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M5/1_pre-class_overview.html">12.1. Pre-Class Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M5/1.1_materials.html">12.1.1. PCMs: Linear Regression in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M5/tasks/pre_1/b/instructions.html">12.1.2. PCA: Linear Regression Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M5/2_in-class_overview.html">12.2. In-Class Activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M5/tasks/ICA_1/a/instructions.html">12.2.1. ICA: Good Fit or Bad Fit?</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../Part_04_Python/M5/3_assignment_overview.html">12.3. Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Part_04_Python/M5/tasks/ind_1/a/instructions.html">12.3.1. PY: Regression</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Engineering Design - Team Project</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../0_overview.html">13. Team Project: The Martian Greenhouse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../1_mission_brief.html">14. Mission Brief</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../2_design_process.html">15. The Engineering Design Process</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../M1/0_overview.html">16. Milestone 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M1/1.1_materials.html">16.3. PCMs: Milestone 1 - Problem Scoping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M1/tasks/pre_1/a/instructions.html">16.4. Milestone 1 - Client Needs Analysis (Individual)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M1/tasks/pre_2/a/instructions.html">16.5. Milestone 1 - Problem Formulation (Individual)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../0_overview.html">17. Milestone 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../pre_1/a/instructions.html">17.3. Milestone 2 - Operating the Greenhouse (Individual)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../team_1/a/instructions.html">17.4. Milestone 2 - Failure Investigation (Team)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">17.5. Milestone 2 - Insulation and the Heat-Loss Model (Team)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../M3/0_overview.html">18. Milestone 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M3/1_primer.html">18.4. Control Strategies Primer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M3/tasks/pre_1/a/instructions.html">18.5. Milestone 3 - Control Strategies Check (Individual)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M3/tasks/team_1/a/instructions.html">18.6. Milestone 3 - Design Memo (Team)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../M4/0_overview.html">19. Milestone 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M4/tasks/ICA_1/a/instructions.html">19.3. Milestone 4 - Iteration #2: Greenhouse Controller (Team)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M4/tasks/ICA_2/a/instructions.html">19.4. Milestone 4 - Peer Review (Team)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M4/tasks/ind_1/a/instructions.html">19.5. Milestone 4 - Controller Trace (Individual)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../M5/0_overview.html">20. Milestone 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M5/tasks/team_1/a/instructions.html">20.3. Milestone 5 - Final Technical Report (Team)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M5/tasks/team_2/a/instructions.html">20.4. Milestone 5 - Project Presentation (Team)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../M5/tasks/ind_1/a/instructions.html">20.5. Milestone 5 - Reflection (Individual)</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Purdue-FYE/engr-13100-2026-fall/issues/new?title=Issue%20on%20page%20%2FPart_05_Team_Project/M2/tasks/team_2/a/instructions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Milestone 2 - Insulation and the Heat-Loss Model (Team)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heat-loss-model">17.5.1. The Heat-Loss Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-the-heat-loss-of-ghu-2">17.5.2. Measuring the Heat Loss of GHU-2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-test-in-the-sandbox">Run the Test in the Sandbox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-models">Fit the Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpret-the-fits">Interpret the Fits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#greenhouse-hardware-design-choice">17.5.3. Greenhouse Hardware Design Choice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-trade-offs-and-calculations">Design Trade-offs and Calculations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">17.5.4. Submission</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="raw-html"><div class="d-none"></span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand\blank{~\underline{\hspace{1.2cm}}~}\\% Bold symbols (vectors)
+\newcommand\bs[1]{\mathbf{#1}}\\% Differential
+\newcommand\dd[2][]{\mathrm{d}^{#1}{#2}}  % use as \dd, \dd{x}, or \dd[2]{x}\\% Poor man's siunitx
+\newcommand\unit[1]{\mathrm{#1}}
+\newcommand\num[1]{#1}
+\newcommand\qty[2]{#1~\unit{#2}}\\\newcommand\per{/}
+\newcommand\squared{{}^2}
+\newcommand\cubed{{}^3}
+%
+% Scale
+\newcommand\milli{\unit{m}}
+\newcommand\centi{\unit{c}}
+\newcommand\kilo{\unit{k}}
+\newcommand\mega{\unit{M}}
+%
+% Percent
+\newcommand\percent{\unit{{\kern-4mu}\%}}
+%
+% Angle
+\newcommand\radian{\unit{rad}}
+\newcommand\degree{\unit{{\kern-4mu}^\circ}}
+%
+% Time
+\newcommand\second{\unit{s}}
+\newcommand\s{\second}
+\newcommand\minute{\unit{min}}
+\newcommand\hour{\unit{h}}
+%
+% Distance
+\newcommand\meter{\unit{m}}
+\newcommand\m{\meter}
+\newcommand\inch{\unit{in}}
+\newcommand\foot{\unit{ft}}
+%
+% Force
+\newcommand\newton{\unit{N}}
+\newcommand\kip{\unit{kip}} % kilopound in &quot;freedom&quot; units - edit made by Sri
+%
+% Mass
+\newcommand\gram{\unit{g}}
+\newcommand\g{\gram}
+\newcommand\kilogram{\unit{kg}}
+\newcommand\kg{\kilogram}
+\newcommand\grain{\unit{grain}}
+\newcommand\ounce{\unit{oz}}
+%
+% Temperature
+\newcommand\kelvin{\unit{K}}
+\newcommand\K{\kelvin}
+\newcommand\celsius{\unit{{}^\circ C}}
+\newcommand\C{\celsius}
+\newcommand\fahrenheit{\unit{{}^\circ F}}
+\newcommand\F{\fahrenheit}
+%
+% Area
+\newcommand\sqft{\unit{sq\,\foot}}  % square foot
+%
+% Volume
+\newcommand\liter{\unit{L}}
+\newcommand\gallon{\unit{gal}}
+%
+% Frequency
+\newcommand\hertz{\unit{Hz}}
+\newcommand\rpm{\unit{rpm}}
+%
+% Voltage
+\newcommand\volt{\unit{V}}
+\newcommand\V{\volt}
+\newcommand\millivolt{\milli\volt}
+\newcommand\mV{\milli\volt}
+\newcommand\kilovolt{\kilo\volt}
+\newcommand\kV{\kilo\volt}
+%
+% Current
+\newcommand\ampere{\unit{A}}
+\newcommand\A{\ampere}
+\newcommand\milliampereA{\milli\ampere}
+\newcommand\mA{\milli\ampere}
+\newcommand\kiloampereA{\kilo\ampere}
+\newcommand\kA{\kilo\ampere}
+%
+% Resistance
+\newcommand\ohm{\Omega}
+\newcommand\milliohm{\milli\ohm}
+\newcommand\kiloohm{\kilo\ohm} % correct SI spelling
+\newcommand\kilohm{\kilo\ohm} % &quot;American&quot; spelling used in siunitx
+\newcommand\megaohm{\mega\ohm} % correct SI spelling
+\newcommand\megohm{\mega\ohm} % &quot;American&quot; spelling used in siunitx
+%
+% Capacitance
+\newcommand\farad{\unit{F}}
+\newcommand\F{\farad}
+\newcommand\microfarad{\micro\farad}
+\newcommand\muF{\micro\farad}
+%
+% Inductance
+\newcommand\henry{\unit{H}}
+\newcommand\H{\henry}
+\newcommand\millihenry{\milli\henry}
+\newcommand\mH{\milli\henry}
+%
+% Power
+\newcommand\watt{\unit{W}}
+\newcommand\W{\watt}
+\newcommand\milliwatt{\milli\watt}
+\newcommand\mW{\milli\watt}
+\newcommand\kilowatt{\kilo\watt}
+\newcommand\kW{\kilo\watt}
+%
+% Energy
+\newcommand\joule{\unit{J}}
+\newcommand\J{\joule}
+%
+% Composite units
+%
+% Torque
+\newcommand\ozin{\unit{\ounce}\,\unit{in}}
+\newcommand\newtonmeter{\unit{\newton\,\meter}}
+%
+% Pressure
+\newcommand\psf{\unit{psf}}  % pounds per square foot
+\newcommand\pcf{\unit{pcf}}  % pounds per cubic foot
+\newcommand\pascal{\unit{Pa}}
+\newcommand\Pa{\pascal}
+\newcommand\ksi{\unit{ksi}} % kilopound per square inch
+% NOTE: do NOT define \bar -- it is the built-in LaTeX accent used by \bar{x},
+% \bar{y} (sample means). Redefining it made those render as the word &quot;bar&quot;.
+\newcommand\barunit{\unit{bar}}
+\end{aligned}\end{align} \]</div>
+<p><span class="raw-html"></div></span></p>
+<p>Oct 08, 2026 | 1881 words | 19 min
+read</p>
+<section class="tex2jax_ignore mathjax_ignore" id="milestone-2-insulation-and-the-heat-loss-model-team">
+<span id="tp-m2-team2"></span><h1><span class="section-number">17.5. </span>Milestone 2 - Insulation and the Heat-Loss Model (Team)<a class="headerlink" href="#milestone-2-insulation-and-the-heat-loss-model-team" title="Link to this heading">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">At a Glance</p>
+<p><strong>What you will do:</strong> Measure the heat loss of GHU-2’s wall in the sandbox, compare two
+regression models of it at four times of day in Python or Excel, and check the wall
+against its rated U-value. Then choose GHU-2’s glazing and heater, and size its battery.</p>
+<p><strong>What you will submit:</strong> Per team, one technical write-up (PDF) containing your results
+table, the regression plots, and the design justification, your sandbox data file, and
+your Python code or Excel workbook.</p>
+</div>
+<section id="the-heat-loss-model">
+<h2><span class="section-number">17.5.1. </span>The Heat-Loss Model<a class="headerlink" href="#the-heat-loss-model" title="Link to this heading">#</a></h2>
+<p>The crop needs a stable temperature inside the greenhouse to survive. Mars is extremely
+cold, so the greenhouse loses heat to the Martian atmosphere through its outer walls and
+glazing at all times.</p>
+<p>This relationship models the rate of conductive heat loss, <span class="math notranslate nohighlight">\(Q\)</span>, in watts (<span class="math notranslate nohighlight">\(\text{W}\)</span>).</p>
+<div class="math notranslate nohighlight">
+\[Q = U \cdot A \cdot \Delta T\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> is the heat-loss rate (<span class="math notranslate nohighlight">\(\text{W}\)</span>).</p></li>
+<li><p><span class="math notranslate nohighlight">\(U\)</span> is the thermal transmittance, or <strong>U-value</strong>
+(<span class="math notranslate nohighlight">\(\text{W}/(\text{m}^2\cdot\text{K})\)</span>). The U-value is an insulation constant that
+represents how easily heat passes through a material. A lower U-value means better
+insulation.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> is the total structural surface area of the greenhouse (<span class="math notranslate nohighlight">\(\text{m}^2\)</span>). For the
+GHU-2 design, this area is fixed at <span class="math notranslate nohighlight">\(43.2\text{ m}^2\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta T\)</span> is the temperature difference across the glazing (<span class="math notranslate nohighlight">\(\text{K}\)</span> or
+<span class="math notranslate nohighlight">\(^\circ\text{C}\)</span>), calculated as <span class="math notranslate nohighlight">\(\Delta T = T_{\text{in}} - T_{\text{out}}\)</span>.</p></li>
+</ul>
+<p>The heat-loss rate <span class="math notranslate nohighlight">\(Q\)</span> is directly proportional to <span class="math notranslate nohighlight">\(\Delta T\)</span>. The model predicts no
+heat loss (<span class="math notranslate nohighlight">\(Q = 0\)</span>) when there is no temperature difference (<span class="math notranslate nohighlight">\(\Delta T = 0\)</span>), so the
+model is a line through the origin.</p>
+<div class="math notranslate nohighlight">
+\[y = m \cdot x + b \quad \text{where} \quad b = 0\]</div>
+<p>Plot <span class="math notranslate nohighlight">\(Q\)</span> on the vertical (<span class="math notranslate nohighlight">\(y\)</span>) axis and <span class="math notranslate nohighlight">\(\Delta T\)</span> on the horizontal (<span class="math notranslate nohighlight">\(x\)</span>) axis. The
+terms of the two equations then correspond as follows.</p>
+<ul>
+<li><p>The independent variable (<span class="math notranslate nohighlight">\(x\)</span>) is <span class="math notranslate nohighlight">\(\Delta T\)</span>.</p></li>
+<li><p>The dependent variable (<span class="math notranslate nohighlight">\(y\)</span>) is <span class="math notranslate nohighlight">\(Q\)</span>.</p></li>
+<li><p>The model’s <span class="math notranslate nohighlight">\(y\)</span>-intercept (<span class="math notranslate nohighlight">\(b\)</span>) is <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>The slope (<span class="math notranslate nohighlight">\(m\)</span>) of the best-fit line is equal to the product of the insulation
+constant and the surface area.</p>
+<div class="math notranslate nohighlight">
+\[\text{slope} = U \cdot A\]</div>
+</li>
+</ul>
+<p>Measured data rarely fit a model exactly. Two fits test this model against data: one
+with the intercept fixed at zero, as the model predicts, and one with a fitted
+intercept. Random error scatters the points about either line. A systematic error that
+shifts every point by the same amount moves the fitted intercept away from zero and
+leaves the slope unchanged.</p>
+</section>
+<section id="measuring-the-heat-loss-of-ghu-2">
+<h2><span class="section-number">17.5.2. </span>Measuring the Heat Loss of GHU-2<a class="headerlink" href="#measuring-the-heat-loss-of-ghu-2" title="Link to this heading">#</a></h2>
+<p>The hardware menu below lists a rated U-value for each glazing. GHU-2’s as-built
+twin-wall glazing is rated at <span class="math notranslate nohighlight">\(U = 0.6\ \text{W}/(\text{m}^2\cdot\text{K})\)</span>. Before your
+team compares glazing options, measure whether the as-built wall meets its rating.</p>
+<p>At night the greenhouse receives no sunlight. With the grow LEDs off, the heater is the
+only source of heat. When the greenhouse temperature stops changing, the heater supplies
+heat at the same rate the wall loses it, so the heater power is a measurement of <span class="math notranslate nohighlight">\(Q\)</span>.
+During the day, sunlight through the glazing also heats the greenhouse. Running the
+heater at several power levels and recording the temperature difference each level
+sustains produces the data for the regression. Building engineers use the same method,
+called a co-heating test, to measure the heat loss of a finished house.</p>
+<section id="run-the-test-in-the-sandbox">
+<h3>Run the Test in the Sandbox<a class="headerlink" href="#run-the-test-in-the-sandbox" title="Link to this heading">#</a></h3>
+<p>From inside the unzipped sandbox folder from
+<a class="reference internal" href="../../pre_1/a/instructions.html#tp-m2-pre1"><span class="std std-ref">Operating the Greenhouse</span></a>, launch the sandbox with the as-built
+hardware and your team number as the seed. For team 12:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>run_sandbox.py<span class="w"> </span><span class="m">12</span><span class="w"> </span>--glazing<span class="w"> </span>twin_wall<span class="w"> </span>--heater<span class="w"> </span><span class="m">2000</span>
+</pre></div>
+</div>
+<p>Set the LED, CO2 valve, and pump sliders to 0. Then complete one run for each heater
+setting: 0, 25, 50, 75, and 100 %.</p>
+<ol class="arabic simple">
+<li><p>Press <strong>Reset</strong>. The clock returns to Sol 0 00:00 LMST and the greenhouse returns to
+<span class="math notranslate nohighlight">\(15\ ^\circ\text{C}\)</span>. The sliders keep their positions.</p></li>
+<li><p>Confirm that the title above the greenhouse reads <code class="docutils literal notranslate"><span class="pre">Mode:</span> <span class="pre">MANUAL</span></code>. Reset does not
+clear the <strong>Auto</strong> checkbox, and in Auto mode the rules overwrite the heater slider.</p></li>
+<li><p>Set the heater slider to the setting for this run.</p></li>
+<li><p>Enter Sol 0 and 12:00 in the Run to fields above the greenhouse, then press <strong>Run
+to</strong>. The sandbox runs at the selected speed and pauses when the clock reaches 12:00
+LMST on Sol 0.</p></li>
+</ol>
+<p>After the fifth run, press <strong>Save data (CSV)</strong> and save the file. The file holds every
+reading from every run since the sandbox opened, one row per simulated minute, with a
+<code class="docutils literal notranslate"><span class="pre">run</span></code> column that numbers the runs. If a run goes wrong, press Reset and repeat it. The
+file keeps every run, so use the <code class="docutils literal notranslate"><span class="pre">mode</span></code> and <code class="docutils literal notranslate"><span class="pre">heater_pct</span></code> columns to choose the five good
+ones.</p>
+<p>Each run starts from the same state, so at any clock time the outside conditions are
+identical in every run, and the heater setting is the only difference between runs. The
+crop dies in every run. This test measures the wall, not the crop.</p>
+<div class="note admonition">
+<p class="admonition-title">If you cannot run the sandbox</p>
+<p>Use <a class="reference download internal" download="" href="../../../../../_downloads/2fa66a4ac02fce959ee4f6392d6492df/ghu2_coheating_log.csv"><code class="xref download docutils literal notranslate"><span class="pre">ghu2_coheating_log.csv</span></code></a>, saved from the sandbox
+with this procedure at seed 42.</p>
+</div>
+</section>
+<section id="fit-the-models">
+<h3>Fit the Models<a class="headerlink" href="#fit-the-models" title="Link to this heading">#</a></h3>
+<p>From the file, take one row per run at each of four clock times in the <code class="docutils literal notranslate"><span class="pre">lmst</span></code> column:
+01:00, 02:00, 08:00, and 12:00. If two rows of a run share a clock time, use the first.
+Convert <code class="docutils literal notranslate"><span class="pre">heater_pct</span></code> to watts with the heater’s <span class="math notranslate nohighlight">\(2000\ \text{W}\)</span> rating, and calculate
+<span class="math notranslate nohighlight">\(\Delta T\)</span> from <code class="docutils literal notranslate"><span class="pre">t_in_c</span></code> and <code class="docutils literal notranslate"><span class="pre">t_out_c</span></code>.</p>
+<p>At each clock time, fit two linear models of <span class="math notranslate nohighlight">\(Q\)</span> against <span class="math notranslate nohighlight">\(\Delta T\)</span>: one with a fitted
+intercept, and one with the intercept fixed at zero. For both models, calculate the sum
+of squared errors (SSE) from the residuals, and calculate the coefficient of
+determination with the total sum of squares (SST) taken about the mean of <span class="math notranslate nohighlight">\(Q\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[R^2 = 1 - \frac{\text{SSE}}{\text{SST}}\]</div>
+<ul class="simple">
+<li><p><strong>Excel Workflow:</strong> Review the <a class="reference internal" href="../../../../../Part_02_Excel/M4/0_overview.html"><span class="doc">Part 02 Excel M4</span></a>
+module. Filter the data to the four clock times. Use <code class="docutils literal notranslate"><span class="pre">=LINEST</span></code> with its third argument
+<code class="docutils literal notranslate"><span class="pre">TRUE</span></code> for the model with an intercept and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> for the model through the origin.
+When the third argument is <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>, LINEST reports an <span class="math notranslate nohighlight">\(R^2\)</span> with SST taken about zero
+instead of about the mean, so calculate both <span class="math notranslate nohighlight">\(R^2\)</span> values yourselves from SSE and SST.</p></li>
+<li><p><strong>Python Workflow:</strong> Review the
+<a class="reference internal" href="../../../../../Part_04_Python/M5/0_overview.html"><span class="doc">Part 04 Python M5</span></a> module. Load the file with
+<code class="docutils literal notranslate"><span class="pre">pandas</span></code> and filter it to the four clock times. Fit both models with
+<code class="docutils literal notranslate"><span class="pre">sklearn.linear_model.LinearRegression</span></code>, using <code class="docutils literal notranslate"><span class="pre">fit_intercept=True</span></code> and
+<code class="docutils literal notranslate"><span class="pre">fit_intercept=False</span></code>, and calculate SSE and <span class="math notranslate nohighlight">\(R^2\)</span> from the residuals. If your team
+has not yet completed Python Module 5, use the Excel workflow for this milestone. The
+Python path is optional.</p></li>
+</ul>
+</section>
+<section id="interpret-the-fits">
+<h3>Interpret the Fits<a class="headerlink" href="#interpret-the-fits" title="Link to this heading">#</a></h3>
+<p>Report the following in your write-up.</p>
+<ul class="simple">
+<li><p>A table with one row per clock time and model: slope, intercept, SSE, <span class="math notranslate nohighlight">\(R^2\)</span>, and the
+U-value from the slope.</p></li>
+<li><p>Plots of <span class="math notranslate nohighlight">\(Q\)</span> against <span class="math notranslate nohighlight">\(\Delta T\)</span> at 02:00 and at 12:00, each with both fitted lines.</p></li>
+<li><p>Which model describes the data at each clock time, and what SSE and <span class="math notranslate nohighlight">\(R^2\)</span> each show
+about the comparison.</p></li>
+<li><p>Why the 01:00 slope differs from the later slopes.</p></li>
+<li><p>How the fitted intercept changes from 02:00 to 12:00, what the 12:00 intercept
+represents physically, and how the 0 % run shows the same effect.</p></li>
+<li><p>Whether the as-built wall meets its rated U-value, and by what margin.</p></li>
+</ul>
+<p>If the fitted-intercept U-values at 02:00, 08:00, and 12:00 differ from the rating by
+more than 5 %, check the procedure before you continue: Manual mode on every run, a
+Reset before every run, and all five heater settings present at each clock time. The
+trade study below uses the rated U-value of each glazing.</p>
+</section>
+</section>
+<section id="greenhouse-hardware-design-choice">
+<h2><span class="section-number">17.5.3. </span>Greenhouse Hardware Design Choice<a class="headerlink" href="#greenhouse-hardware-design-choice" title="Link to this heading">#</a></h2>
+<p>GHU-2’s hull, sensors, and grow LEDs are final. Your team chooses two other parts of
+its hardware, the wall glazing and the heater. Mission Control will fly the combination
+your team specifies. Your choice sets the physics your controller must handle. In
+Milestone 4 you declare the choice in your controller package, and the acceptance test
+runs your controller on the hardware you chose.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Glazing</p></th>
+<th class="head"><p>U-value</p></th>
+<th class="head"><p>Light transmittance</p></th>
+<th class="head"><p>Areal mass</p></th>
+<th class="head"><p>Material cost</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Single-layer polycarbonate</p></td>
+<td><p><span class="math notranslate nohighlight">\(1.8\text{ W}/(\text{m}^2\cdot\text{K})\)</span></p></td>
+<td><p>88 %</p></td>
+<td><p><span class="math notranslate nohighlight">\(2\ \text{kg}/\text{m}^2\)</span></p></td>
+<td><p>200 USD per square meter</p></td>
+</tr>
+<tr class="row-odd"><td><p>Twin-wall polycarbonate (as built)</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.6\text{ W}/(\text{m}^2\cdot\text{K})\)</span></p></td>
+<td><p>80 %</p></td>
+<td><p><span class="math notranslate nohighlight">\(3.5\ \text{kg}/\text{m}^2\)</span></p></td>
+<td><p>400 USD per square meter</p></td>
+</tr>
+<tr class="row-even"><td><p>Aerogel multi-layer</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.3\text{ W}/(\text{m}^2\cdot\text{K})\)</span></p></td>
+<td><p>50 %</p></td>
+<td><p><span class="math notranslate nohighlight">\(8\ \text{kg}/\text{m}^2\)</span></p></td>
+<td><p>1,500 USD per square meter</p></td>
+</tr>
+<tr class="row-odd"><td><p>Vacuum-insulated panel</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.15\text{ W}/(\text{m}^2\cdot\text{K})\)</span></p></td>
+<td><p>0 % (opaque)</p></td>
+<td><p><span class="math notranslate nohighlight">\(12\ \text{kg}/\text{m}^2\)</span></p></td>
+<td><p>4,000 USD per square meter</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Light transmittance is the fraction of outside sunlight that reaches the crop. Better
+insulation generally passes less light. Any light the glazing blocks must come from the
+grow LEDs instead.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Heater</p></th>
+<th class="head"><p>Rated power</p></th>
+<th class="head"><p>Mass</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Standard (as built)</p></td>
+<td><p><span class="math notranslate nohighlight">\(2000\ \text{W}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(6\ \text{kg}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Upgraded</p></td>
+<td><p><span class="math notranslate nohighlight">\(3000\ \text{W}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(9\ \text{kg}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>GHU-2 draws its power from solar arrays and a battery. Size the battery for the worst
+case, a sol inside a dust storm. During that sol the arrays deliver almost nothing, and
+the battery alone must run the heater and the LEDs for a full sol (<span class="math notranslate nohighlight">\(24.66\)</span> hours).
+Space-rated battery packs store <span class="math notranslate nohighlight">\(125\ \text{Wh}/\text{kg}\)</span>, and only <span class="math notranslate nohighlight">\(80\%\)</span> of a
+pack’s rated capacity may be used. The battery mass is therefore</p>
+<div class="math notranslate nohighlight">
+\[m_{\text{battery}} = \frac{E_{\text{worst sol}}}{0.80 \times 125\ \text{Wh}/\text{kg}}\]</div>
+<p>Mission Control budgets launch at roughly 50,000 USD per kilogram delivered to the
+Martian surface. It sets a ceiling of <strong><span class="math notranslate nohighlight">\(600\ \text{kg}\)</span></strong> on the configurable launch
+mass, which is the glazing, heater, and battery together.</p>
+<section id="design-trade-offs-and-calculations">
+<h3>Design Trade-offs and Calculations<a class="headerlink" href="#design-trade-offs-and-calculations" title="Link to this heading">#</a></h3>
+<p>Evaluate all four glazing options at the representative Martian cold-night condition.
+At that condition the inside setpoint is <span class="math notranslate nohighlight">\(18^\circ\text{C}\)</span> and the outside low is
+<span class="math notranslate nohighlight">\(-70^\circ\text{C}\)</span> (<span class="math notranslate nohighlight">\(\Delta T = 88\text{ K}\)</span>). Use the surface area
+<span class="math notranslate nohighlight">\(A = 43.2\text{ m}^2\)</span> to compute the following for each option.</p>
+<ul class="simple">
+<li><p>The heat-loss rate (<span class="math notranslate nohighlight">\(Q\)</span>).</p></li>
+<li><p>The heater capacity usage percentage, for both heater ratings. If an option’s heat
+loss exceeds what a heater can supply, say so, and state what happens to the crop on
+a cold night.</p></li>
+<li><p>The nightly heating energy over a Martian night of <span class="math notranslate nohighlight">\(12.33\)</span> hours (half of one sol),
+assuming the cold-night heat loss holds all night. This overstates the energy,
+because the outside temperature is not at its minimum all night. State that
+assumption in your write-up.</p></li>
+<li><p>The glazing mass for the greenhouse, and its launch cost.</p></li>
+</ul>
+<p>Then choose your two strongest glazing and heater combinations. For each one, estimate
+the energy of a dust-storm sol. In that sol, the heater must cover the heat loss through
+the whole sol with almost no solar gain, and the LEDs must supply most of the crop’s
+light. State every assumption you make, including the LED power level and hours and
+the average outside temperature. Then convert the energy into a battery mass and a
+total launch mass.</p>
+<p>Your estimate will not match the simulator exactly. In Milestone 4, the acceptance test
+reports the worst-sol energy your controller draws. Comparing the two is part of your
+gap analysis.</p>
+<p>Use this check to catch a spreadsheet error early. The four options span a wide range
+of insulation quality, so your four heat-loss numbers should bracket the
+<span class="math notranslate nohighlight">\(2000\ \text{W}\)</span> heater. At least one option should fall below <span class="math notranslate nohighlight">\(100\%\)</span> of its capacity
+and at least one above it. If all four fall on the same side, re-check your arithmetic
+before you interpret the result.</p>
+<p>In your technical report, justify a provisional choice by weighing launch mass, light,
+and heating margin against one another. No option is best on all three, so your
+justification should state which trade-off your team accepts and why. This analysis
+feeds into the Idea Generation and Weighted Decision Matrix sections of your final
+Design Project Technical Report.</p>
+<p>In the write-up, name who ran the sandbox test, who ran the regression, who verified the
+regression independently (with the second tool or a hand calculation), and who authored
+the design justification.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Your hardware choice is provisional until Milestone 3. In Milestone 3, your team weighs
+hardware and controller architecture together and may revise the choice. Record any
+change and the reason in your decision matrix. From Milestone 4 on, the acceptance test
+runs your controller on the hardware you declare. The test <strong>fails any design whose
+launch mass exceeds <span class="math notranslate nohighlight">\(600\ \text{kg}\)</span></strong>.</p>
+</div>
+</section>
+</section>
+<section id="submission">
+<h2><span class="section-number">17.5.4. </span>Submission<a class="headerlink" href="#submission" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Submit
+<strong>one PDF (containing the write-up and plot) and one Excel workbook or Python script</strong>
+per team to <strong>17.3.1 Milestone 2 - Insulation and the Heat-Loss Model (Team)</strong> in Gradescope, with all members added.</p></li>
+<li><p>Submit before the deadline on the
+<a class="reference internal" href="../../../../../Part_00_Course_Resources/course_schedule.html"><span class="doc">Course Schedule</span></a>.</p></li>
+</ul>
+<p class="rubric">Learning Objectives</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">DV01<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Table and Plot Formatting - Prepare tables and plots for technical presentation with proper formatting. Include descriptive titles, axis labels with units, appropriately scaled axes, and visible legends.</p>
+</dd>
+</dl>
+<dl class="myst field-list simple">
+<dt class="field-odd">DV04<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Regression Model Construction - Construct regression models that describe relationships between variables and support prediction.</p>
+</dd>
+</dl>
+<dl class="myst field-list simple">
+<dt class="field-odd">DV05<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Regression Model Evaluation - Evaluate and compare regression models using quantitative metrics (SSE, SST, and R²) and contextual reasoning.</p>
+</dd>
+</dl>
+<dl class="myst field-list simple">
+<dt class="field-odd">UC03<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mathematical Modeling of Systems - Define engineering systems or processes using mathematical models that represent inputs, outputs, and accumulations.</p>
+</dd>
+</dl>
+<dl class="myst field-list simple">
+<dt class="field-odd">UC05<span class="colon">:</span></dt>
+<dd class="field-odd"><p>System Efficiency and Performance - Calculate and interpret the efficiency of a system, product, or process in terms of energy, cost, or other engineering performance measures.</p>
+</dd>
+</dl>
+<dl class="myst field-list simple">
+<dt class="field-odd">EB01<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Testing and Comparison - Test prototypes and analyze results to compare alternative solutions.</p>
+</dd>
+</dl>
+<dl class="myst field-list simple">
+<dt class="field-odd">EB04<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Metrics and Weighting - Justify evaluation metrics and weighting based on stakeholder priorities.</p>
+</dd>
+</dl>
+<dl class="myst field-list simple">
+<dt class="field-odd">SQ01<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Technical Accuracy - Use accurate scientific, mathematical, and technical concepts, units, and data.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Part_05_Team_Project/M2/tasks/team_2/a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../team_1/a/instructions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">17.4. </span>Milestone 2 - Failure Investigation (Team)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../../M3/0_overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>Milestone 3: Design, Test and Iterate</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heat-loss-model">17.5.1. The Heat-Loss Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-the-heat-loss-of-ghu-2">17.5.2. Measuring the Heat Loss of GHU-2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-test-in-the-sandbox">Run the Test in the Sandbox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-models">Fit the Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpret-the-fits">Interpret the Fits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#greenhouse-hardware-design-choice">17.5.3. Greenhouse Hardware Design Choice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-trade-offs-and-calculations">Design Trade-offs and Calculations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">17.5.4. Submission</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="/engr-13100-2026-fall/Appendices/contributors.html">Contributors</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
