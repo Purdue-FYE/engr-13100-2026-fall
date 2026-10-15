@@ -1,0 +1,21 @@
+order_id,customer_name,item,price,quantity,order_date,payment_method
+1001,Maria Lopez,Latte,$4.50,2,2024-03-01,Card
+1002,James Chen,Cappuccino,$4.00,1,03/01/2024,Cash
+1003,Aisha Khan,,$3.50,3,2024-03-01,Card
+1004,Devon Brooks,Espresso,$2.75,1,2024-03-02,Card
+1005,Maria Lopez,Latte,$4.50,2,2024-03-01,Card
+1006,Priya Patel,Muffin,$3.25,two,2024-03-02,Cash
+1007,Sam Turner,Cold Brew,,1,2024-03-02,Card
+1008,Nina Volkov,Latte,$4.50,4,03/03/2024,Cash
+1009,Devon Brooks,Espresso,$2.75,1,2024-03-02,Card
+1010,Carlos Ruiz,Croissant,$3.00,2,2024-03-03,Card
+1011,Emma Wilson,Cappuccino,$4.00,1,2024-03-03,Cash
+1012,Liam O'Brien,,$3.50,1,2024-03-04,Card
+1013,Sofia Rossi,Latte,$4.50,3,2024-03-04,Card
+1014,Sam Turner,Cold Brew,$3.75,1,2024-03-02,Card
+1015,Grace Kim,Muffin,$3.25,2,03/05/2024,Cash
+1016,Noah Adams,Espresso,$2.75,,2024-03-05,Card
+1017,Olivia Bennett,Croissant,$3.00,1,2024-03-05,Cash
+1018,Ethan Clarke,Latte,$4.50,2,2024-03-06,Card
+1019,Ethan Clarke,Latte,$4.50,2,2024-03-06,Card
+1020,Zoe Martin,Cappuccino,$4.00,3,2024-03-06,Cash
